@@ -1,8 +1,8 @@
 @import '../../Style/Mixins.scss';
 
 .nav {
-    @include container;
     a {
+        color: #333;
         @include fluid(margin-right, 20px, 40px);
         &:last-child {
             margin-right: 0;

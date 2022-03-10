@@ -1,5 +1,5 @@
 import React from 'react'
-import NavItem from '../NavItem/NavItem'
+import NavItem from './NavItem'
 import style from './Nav.module.scss'
 function Nav() {
     return (<nav className={style.nav}>

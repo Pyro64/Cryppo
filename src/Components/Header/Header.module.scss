@@ -1,0 +1,8 @@
+@import '../../Style/Mixins';
+.header {
+    background-color: rgb(26, 178, 224);
+}
+.container {
+    @include container;
+    @include flex;
+}

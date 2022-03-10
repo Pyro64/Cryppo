@@ -1,9 +1,12 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import "../src/Style/Style.scss";
 import Cryppo from "./Components/Cryppo/Cryppo";
 import CryppoBusiness from "./Components/CryppoBusiness/CryppoBusiness";
 import CryppoIndex from "./Components/CryppoIndex/CryppoIndex";
+import React from 'react';
+
+
 
 function App() {
   return (
