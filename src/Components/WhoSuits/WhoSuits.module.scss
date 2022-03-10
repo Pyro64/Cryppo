@@ -1,0 +1,33 @@
+@import '../../Style/Mixins.scss';
+
+.block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    img {
+        object-fit: contain;
+        width: 30%;
+        @include fluid(height, 250px, 350px);
+    }
+}
+.item {
+    background: $gradient;
+    margin-right: 5%;
+    width: 30%;
+    border-radius: 45px;
+    @include fluid(padding-top, 40px, 80px);
+    @include fluid(padding-bottom, 40px, 80px);
+    @include fluid(padding-left, 10px, 20px);
+    @include fluid(padding-right, 10px, 20px);
+    @include fluid(margin-bottom, 15px, 30px);
+    &:nth-child(3n) {
+        margin-right: 0;
+    }
+}
+.title {
+    @include fluid(font-size, 18px, 24px);
+    @include fluid(margin-bottom, 15px, 25px);
+}
+.text {
+    @include fluid(font-size, 14px, 16px);
+}

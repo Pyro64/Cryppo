@@ -2,9 +2,9 @@ import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import "../src/Style/Style.scss";
 import Cryppo from "./Components/Cryppo/Cryppo";
-import CryppoBusiness from "./Components/CryppoBusiness/CryppoBusiness";
 import CryppoIndex from "./Components/CryppoIndex/CryppoIndex";
 import React from 'react';
+import CryppoBusinessContainer from "./Components/CryppoBusiness/CryppoBusinessContainer";
 
 
 
@@ -18,12 +18,10 @@ function App() {
             path="/"
             element={<Cryppo />}
           />
+          <Route path="business"
+            element={<CryppoBusinessContainer />} />
           <Route
-            path="/business"
-            element={<CryppoBusiness />}
-          />
-          <Route
-            path="/index"
+            path="index"
             element={<CryppoIndex />}
           />
         </Routes>

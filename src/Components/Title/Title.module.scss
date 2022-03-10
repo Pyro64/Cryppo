@@ -1,0 +1,8 @@
+@import '../../Style/Mixins.scss';
+
+h1 {
+    width: 50%;
+    color: #fff;
+    @include fluid(font-size, 30px, 60px);
+    @include fluid(margin-bottom, 30px, 80px);
+}

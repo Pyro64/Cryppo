@@ -1,6 +1,7 @@
 import React from 'react'
 import NavItem from './NavItem'
 import style from './Nav.module.scss'
+import { Outlet } from 'react-router';
 function Nav() {
     return (<nav className={style.nav}>
         <NavItem href='/' name='CRYPPO' />

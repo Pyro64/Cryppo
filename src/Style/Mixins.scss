@@ -11,11 +11,17 @@ $container-md: 720px;
 $container-sm: 540px;
 
 $p: 15px;
-
+$blue: #2f69ff;
+$green: #00c0a9;
+$gradient: linear-gradient(91.42deg, $blue 0%, $green 100%);
+@mixin textGradient {
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 @mixin flex {
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 @mixin container {
     width: 100%;

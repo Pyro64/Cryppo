@@ -1,9 +1,11 @@
-
 import { NavLink } from "react-router-dom";
-console.log(NavLink)
+import style from './Nav.module.scss'
+
 function NavItem(props) {
     return (
-        <NavLink to={props.href} className="nav__link">{props.name}</NavLink>
+        <NavLink to={props.href} className={({ isActive }) => isActive ? `${style.link} ${style.active}` : `${style.link}`}>
+            {props.name}
+        </NavLink>
     );
 }
 

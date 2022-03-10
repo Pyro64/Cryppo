@@ -1,5 +1,5 @@
 import React from 'react';
-import Login from '../Login/Login';
+import LoginContainer from '../Login/LoginContainer';
 import Logo from '../Logo/Logo';
 import Nav from '../Nav/Nav';
 import style from './Header.module.scss'
@@ -8,8 +8,10 @@ const Header = (props) => {
         <div className={style.header}>
             <div className={style.container}>
                 <Logo />
-                <Nav />
-                <Login />
+                <div className={style.block}>
+                    <Nav />
+                    <LoginContainer />
+                </div>
             </div>
         </div>
     );

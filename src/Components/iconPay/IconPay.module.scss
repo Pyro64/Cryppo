@@ -1,0 +1,31 @@
+@import '../../Style/Mixins';
+.block {
+    @include flex;
+    flex-wrap: wrap;
+}
+.item {
+    @include fluid(margin-bottom, 15px, 30px);
+    @include fluid(margin-right, 25px, 75px);
+    @include flex;
+    flex-direction: column;
+    img {
+        object-fit: contain;
+        transition: 0.38s ease-in-out;
+        filter: saturate(0);
+        @include fluid(margin-bottom, 5px, 10px);
+        @include fluid(width, 25px, 50px);
+        @include fluid(height, 25px, 50px);
+    }
+    p {
+        transition: 0.38s ease-in-out;
+        opacity: 0;
+    }
+    &:hover {
+        p {
+            opacity: 1;
+        }
+        img {
+            filter: none;
+        }
+    }
+}
