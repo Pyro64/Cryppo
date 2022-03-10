@@ -2,7 +2,7 @@
 
 .nav {
     a {
-        color: #333;
+        color: #fff;
         @include fluid(margin-right, 20px, 40px);
         &:last-child {
             margin-right: 0;

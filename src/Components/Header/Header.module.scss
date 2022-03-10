@@ -1,8 +1,20 @@
 @import '../../Style/Mixins';
 .header {
-    background-color: rgb(26, 178, 224);
+    position: relative;
+    @include fluid(padding-top, 45px, 90px);
+    &::after {
+        content: '';
+        position: absolute;
+        right: -50%;
+        top: -50%;
+        background: radial-gradient(50% 50% at 50% 50%, rgba(47, 105, 255, 0.3) 0%, rgba(47, 105, 255, 0) 100%);
+        width: 100%;
+        @include fluid(height, 400px, 800px);
+    }
 }
 .container {
     @include container;
     @include flex;
+    @include fluid(padding-bottom, 20px, 40px);
+    border-bottom: 1px solid #6d6d6d;
 }

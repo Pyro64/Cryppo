@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
 @import '../Style/Mixins';
-
+@import '../fonts/cera-pro/stylesheet.css';
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,12 +7,13 @@
 }
 
 body {
-  font-family: 'Montserrat';
-  background: #f5faff;
+  font-family: 'Cera pro';
+  background: #0d0d0d;
   color: #333333;
   height: 100%;
   font-weight: normal;
   font-style: normal;
+  overflow: hidden;
 }
 
 a {
