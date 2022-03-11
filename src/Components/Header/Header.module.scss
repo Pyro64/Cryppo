@@ -1,26 +1,134 @@
 @import '../../Style/Mixins';
 .header {
-    position: relative;
+    position: fixed;
+    width: 100%;
+    left: -1%;
+    z-index: 1;
+    @include fluid(top, 45px, 90px);
+    transition: left 0.3s ease-in-out;
+}
+.container {
     @include container;
-    @include fluid(padding-top, 45px, 90px);
+}
+.block {
+    justify-content: space-between;
+    border-bottom: 1px solid #6d6d6d;
+    @include flex;
+    @include fluid(padding-bottom, 15px, 30px);
+    @include fluid(margin-bottom, 25px, 50px);
+}
+.parallax {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    right: -50%;
+    top: -200%;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(47, 105, 255, 0.6) 0%, rgba(47, 105, 255, 0) 100%);
+    width: 100%;
+    @include fluid(height, 400px, 800px);
+}
+
+.wrapper {
+    @include flex;
+}
+.item {
+    display: flex;
+    align-items: center;
+    div {
+        @include fluid(margin-right, 35px, 50px);
+    }
+}
+.nav {
+    @include flex;
+    align-items: center;
+    @include fluid(margin-right, 30px, 60px);
+}
+.link {
+    color: #fff;
+    position: relative;
+    transition: color 0.38s ease-in-out;
+    @include fluid(margin-right, 25px, 55px);
+    &:last-child {
+        margin-right: 0;
+    }
     &::after {
         content: '';
         position: absolute;
-        z-index: -1;
-        right: -50%;
-        top: -50%;
-        background: radial-gradient(50% 50% at 50% 50%, rgba(47, 105, 255, 0.3) 0%, rgba(47, 105, 255, 0) 100%);
-        width: 100%;
-        @include fluid(height, 400px, 800px);
+        left: 50%;
+        transform: translate(-50%);
+        transition: 0.38s ease-in-out;
+        background: $blueGradient;
+        width: 0;
+        border-radius: 3px;
+        @include fluid(bottom, -10px, -15px);
+        @include fluid(height, 3px, 5px);
+    }
+    &:hover {
+        color: $green;
     }
 }
-.container {
-    @include flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #6d6d6d;
-    z-index: 1;
-    @include fluid(padding-bottom, 15px, 30px);
+.active {
+    &::after {
+        width: 100%;
+    }
 }
-.block {
-    @include flex;
+.scroll {
+    transition: left 0.3s ease-in-out;
+    position: fixed;
+    left: 0;
+    height: 100%;
+    top: 0;
+    width: 15%;
+    backdrop-filter: blur(24px);
+    background-color: rgba(47, 105, 255, 0.3);
+    @include fluid(padding-top, 30px, 60px);
+    @include fluid(padding-left, 15px, 30px);
+    @include fluid(padding-right, 15px, 30px);
+    .block {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .logo {
+        @include fluid(margin-bottom, 15px, 30px);
+    }
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .link {
+        margin-right: 0;
+        @include fluid(margin-bottom, 15px, 30px);
+        &::after {
+            display: none;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            transform: translate(-50%);
+            transition: 0.38s ease-in-out;
+            background: $blueGradient;
+            border-radius: 3px;
+            top: 0;
+            height: 0;
+            width: 5px;
+            @include fluid(right, -10px, -15px);
+        }
+    }
+    .active {
+        &::before {
+            height: 100%;
+        }
+    }
+    .item {
+        align-items: flex-start;
+        flex-direction: column;
+        div {
+            margin-right: 0;
+            @include fluid(margin-bottom, 15px, 30px);
+        }
+    }
 }

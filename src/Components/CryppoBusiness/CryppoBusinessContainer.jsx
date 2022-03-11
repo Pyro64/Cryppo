@@ -8,6 +8,7 @@ let mapStateToProps = (state) => {
         appIcon: state.cryppoBusinessPage.appIconData,
         description: state.cryppoBusinessPage.descriptionData,
         whoSuits: state.cryppoBusinessPage.whoSuitsData,
+        about: state.cryppoBusinessPage.aboutData,
     }
 }
 

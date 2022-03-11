@@ -1,6 +1,7 @@
 @import '../../Style/Mixins.scss';
 
 h1 {
+    font-family: 'Days One Regular';
     width: 50%;
     color: #fff;
     @include fluid(font-size, 30px, 60px);
