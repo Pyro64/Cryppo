@@ -103,25 +103,9 @@
         margin-right: 0;
         @include fluid(margin-bottom, 15px, 30px);
         &::after {
-            display: none;
-        }
-        &::before {
-            content: '';
-            position: absolute;
-            transform: translate(-50%);
-            transition: 0.38s ease-in-out;
-            background: $blueGradient;
-            border-radius: 3px;
-            top: 0;
-            height: 0;
-            width: 5px;
-            @include fluid(right, -10px, -15px);
         }
     }
     .active {
-        &::before {
-            height: 100%;
-        }
     }
     .item {
         align-items: flex-start;
