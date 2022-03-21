@@ -102,10 +102,6 @@
     .link {
         margin-right: 0;
         @include fluid(margin-bottom, 15px, 30px);
-        &::after {
-        }
-    }
-    .active {
     }
     .item {
         align-items: flex-start;
