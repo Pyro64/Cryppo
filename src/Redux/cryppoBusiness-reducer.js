@@ -74,7 +74,7 @@ let initialState = {
         {
             id: 12,
             svg: tvelve,
-            text: 'BTC112',
+            text: 'BTC12',
         },
     ],
     descriptionData: [
