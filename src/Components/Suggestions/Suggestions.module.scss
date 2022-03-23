@@ -1,0 +1,62 @@
+@import '../../Style/Mixins.scss';
+
+.container{
+   display: flex;
+   justify-content: center;
+    background: rgba(91, 91, 91, 0.2);
+    border: 1px solid #545454;
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(100px);
+    border-radius: 45px;
+    @include fluid(padding-top,40px,80px);
+    @include fluid(padding-bottom,40px,80px);
+    @include fluid(margin-bottom,100px,250px);
+    
+}
+.containerContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+}
+.title{
+    font-weight: 500;
+    @include fluid(font-size,16px,18px);
+    @include fluid(margin-bottom,30px,55px);
+}
+.text{
+    font-family: 'Cera Pro', sans-serif;
+    font-weight: 400;
+    @include fluid(font-size,24px,36px);
+    @include fluid(line-height,36px,45px);
+    text-align: center;
+    @include fluid(margin-bottom,35px,70px);
+}
+.block{
+    display: flex;
+    justify-content: space-between;
+}
+.item{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: max-content;
+}
+.itemNumber{
+    color: #2F69FF;
+    font-weight: 700;
+    @include fluid(font-size,26px,36px);
+    @include fluid(line-height,36px,45px);
+    @include fluid(margin-bottom,8px,10px);
+
+
+}
+.itemText{
+    color: #6D6D6D;
+    @include fluid(font-size,16px,18px);
+    text-align: center;
+    line-height: 145%;
+}
