@@ -21,8 +21,17 @@
     &:last-child {
         margin-right: 0;
     }
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        object-fit: contain;
+        @include fluid(width, 30px, 40px);
+        @include fluid(height, 30px, 40px);
+    }
 }
 .wrapper {
+    @include fluid(padding-left, 40px, 55px);
     p {
         @include fluid(font-size, 14px, 16px);
     }

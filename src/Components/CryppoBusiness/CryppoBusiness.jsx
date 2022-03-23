@@ -4,14 +4,13 @@ import Subtitle from '../Subtitle/Subtitle'
 import Text from '../Text/Text'
 import Title from '../Title/Title'
 import WhoSuits from '../WhoSuits/WhoSuits'
-import style from './CryppoBusiness.module.scss'
 import WhatsBussiness from '../WhatsBussiness/WhatsBussiness'
 import AboutBusiness from '../AboutBusiness/AboutBusiness'
 export default function CryppoBusiness(props) {
 
     return (
         <div className="container">
-            <Title text="Принимайте платежи в криптовалюте по всему миру" />
+            <Title text="Принимайте платежи в криптовалюте по всему миру" gradient="." />
             <Text text="С автоматической стабилизацией курса в USDT и BUSD" />
             <Description description={props.description} />
             <WhatsBussiness appIcon={props.appIcon} />

@@ -1,6 +1,6 @@
 @import '../../Style/Mixins.scss';
 
-h1 {
+.title {
     font-family: 'Days One Regular';
     position: relative;
     width: 50%;
@@ -14,7 +14,7 @@ h1 {
         height: 100%;
         content: attr(data-text);
         clip: rect(0, 900px, 0, 0);
-        animation: glitch-anim-2 4s infinite linear alternate-reverse;
+        animation: glitch-anim-2 11s infinite linear alternate-reverse;
         left: -2px;
         text-shadow: -2px 0 $blue;
     }
@@ -26,9 +26,12 @@ h1 {
         content: attr(data-text);
         clip: rect(0, 900px, 0, 0);
         top: 0;
-        animation: glitch-anim 3s infinite linear alternate-reverse;
+        animation: glitch-anim 9s infinite linear alternate-reverse;
         left: 1px;
         text-shadow: 1px 0 $green;
+    }
+    span {
+        @include textGradient;
     }
 }
 @keyframes glitch-anim-2 {
