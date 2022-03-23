@@ -14,7 +14,7 @@ $p: 15px;
 $blue: #2f69ff;
 $green: #00c0a9;
 $blueGradient: linear-gradient(91.42deg, $blue 0%, $green 100%);
-$purpleGradient: linear-gradient(140.58deg, #2f69ff 13.96%, #bc2fff 82.99%);
+$purpleGradient: linear-gradient(140.58deg, $blue 13.96%, #bc2fff 82.99%);
 @mixin textGradient {
     background: $blueGradient;
     -webkit-background-clip: text;

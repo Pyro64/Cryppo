@@ -9,11 +9,11 @@ const Header = (props) => {
     const [scroll, setScroll] = useState(false)
     useEffect(() => {
         window.addEventListener("scroll", () => {
-            setScroll(window.scrollY > 100)
+            setScroll(window.scrollY > 50)
         })
     }, []);
     return (
-        <header className={scroll ? `${style.scroll}` : `${style.header}`}>
+        <header className={scroll ? `${style.scroll} ${style.header}` : `${style.header}`}>
             <div className={style.container}>
                 <Parallax className={style.parallax} speed={50} translateX={[-200, 100,]} />
                 <div className={style.block}>
