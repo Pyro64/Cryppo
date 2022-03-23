@@ -14,10 +14,10 @@ export default function CryppoBusiness(props) {
             <Text text="С автоматической стабилизацией курса в USDT и BUSD" />
             <Description description={props.description} />
             <WhatsBussiness appIcon={props.appIcon} />
-            <Subtitle subtitle="Кому подойдёт CRYPPO Business" gradient="?" />
-            <WhoSuits whoSuits={props.whoSuits} />
             <Subtitle subtitle="Почему CRYPPO Business" gradient="?" />
             <AboutBusiness about={props.about} />
+            <Subtitle subtitle="Кому подойдёт CRYPPO Business" gradient="?" />
+            <WhoSuits whoSuits={props.whoSuits} />
         </div>
     )
 }

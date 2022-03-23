@@ -7,29 +7,29 @@
     color: #fff;
     @include fluid(font-size, 30px, 60px);
     @include fluid(margin-bottom, 30px, 80px);
-    &::before {
-        background: #0d0d0d;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        content: attr(data-text);
-        clip: rect(0, 900px, 0, 0);
-        animation: glitch-anim-2 11s infinite linear alternate-reverse;
-        left: -2px;
-        text-shadow: -2px 0 $blue;
-    }
-    &:after {
-        background: #0d0d0d;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        content: attr(data-text);
-        clip: rect(0, 900px, 0, 0);
-        top: 0;
-        animation: glitch-anim 9s infinite linear alternate-reverse;
-        left: 1px;
-        text-shadow: 1px 0 $green;
-    }
+    // &::before {
+    //     background: #0d0d0d;
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 100%;
+    //     content: attr(data-text);
+    //     clip: rect(0, 900px, 0, 0);
+    //     animation: glitch-anim-2 11s infinite linear alternate-reverse;
+    //     left: -2px;
+    //     text-shadow: -2px 0 $blue;
+    // }
+    // &:after {
+    //     background: #0d0d0d;
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 100%;
+    //     content: attr(data-text);
+    //     clip: rect(0, 900px, 0, 0);
+    //     top: 0;
+    //     animation: glitch-anim 9s infinite linear alternate-reverse;
+    //     left: 1px;
+    //     text-shadow: 1px 0 $green;
+    // }
     span {
         @include textGradient;
     }

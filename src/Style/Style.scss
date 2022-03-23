@@ -39,3 +39,20 @@ textarea:focus::-webkit-input-placeholder {
 .content {
   @include fluid(margin-top, 50px, 150px);
 }
+.text {
+  color: #fff;
+  @include fluid(font-size, 14px, 16px);
+  @include fluid(margin-bottom, 40px, 80px);
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  @include fluid(margin-bottom, 50px, 100px);
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .text {
+    width: 70%;
+  }
+}

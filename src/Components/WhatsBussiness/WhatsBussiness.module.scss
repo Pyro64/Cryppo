@@ -1,11 +1,10 @@
 @import '../../Style/Mixins.scss';
 
 .container {
-    padding-left: 50%;
-    margin-left: auto;
     position: relative;
     @include fluid(margin-bottom, 70px, 170px);
 }
+
 .parallax {
     content: '';
     position: absolute;

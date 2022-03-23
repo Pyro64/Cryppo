@@ -2,18 +2,21 @@
 .block {
     @include flex;
     flex-wrap: wrap;
+    width: 80%;
+    @include fluid(margin-left, 30px, 100px);
 }
 .item {
     @include fluid(margin-bottom, 15px, 30px);
-    @include fluid(margin-right, 25px, 75px);
+    @include fluid(margin-right, 25px, 55px);
     @include flex;
     flex-direction: column;
+    justify-content: center;
     img {
         object-fit: contain;
         transition: 0.38s ease-in-out;
         @include fluid(margin-bottom, 5px, 10px);
-        @include fluid(width, 25px, 50px);
-        @include fluid(height, 25px, 50px);
+        @include fluid(width, 25px, 58px);
+        @include fluid(height, 25px, 58px);
     }
     p {
         transition: 0.38s ease-in-out;
