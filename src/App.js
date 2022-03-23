@@ -23,7 +23,7 @@ function App() {
             <Route path="business"
               element={<CryppoBusinessContainer />} />
             <Route
-              path="index"
+              path="cryppoindex"
               element={<CryppoIndex />}
             />
           </Routes>

@@ -19,8 +19,8 @@
         @include fluid(padding-bottom, 10px, 15px);
     }
     .logo {
-        @include fluid(width, 80px, 120px);
-        @include fluid(height, 30px, 40px);
+        @include fluid(width, 80px, 140px);
+        @include fluid(height, 30px, 45px);
     }
     .login {
         img {
