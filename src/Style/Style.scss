@@ -27,6 +27,8 @@ li {
 }
 .container {
   @include container;
+  @include fluid(padding-top, 200px, 400px);
+  transition: 0.38s ease-in-out;
 }
 input:focus::-webkit-input-placeholder {
   color: transparent;

@@ -11,6 +11,9 @@ import ten from '../Images/payIcon/10.svg'
 import eleven from '../Images/payIcon/11.svg'
 import tvelve from '../Images/payIcon/12.svg'
 
+import money from '../Images/icon/money.svg'
+import shield from '../Images/icon/shield.svg'
+import world from '../Images/icon/world.svg'
 let initialState = {
     appIconData: [
         {
@@ -79,16 +82,19 @@ let initialState = {
             id: 1,
             number: 13,
             text: "самых популярных криптовалют",
+            img: money,
         },
         {
             id: 2,
             number: 7,
             text: "стейблкоинов, чтобы защитить ваш доход от высокой волатильности",
+            img: shield,
         },
         {
             id: 3,
             number: 190,
             text: "стран, из которых вы сможете принимать платежи",
+            img: world,
         },
     ],
     whoSuitsData: [

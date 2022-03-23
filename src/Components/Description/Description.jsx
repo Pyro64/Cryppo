@@ -8,6 +8,7 @@ export default function Description(props) {
             number={e.number}
             text={e.text}
             key={e.id}
+            img={e.img}
         />
     )
     return (

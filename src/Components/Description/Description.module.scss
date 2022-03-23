@@ -16,10 +16,13 @@
 .item {
     width: 30%;
     margin-right: 5%;
+    position: relative;
     @include fluid(margin-bottom, 15px, 30px);
     &:last-child {
         margin-right: 0;
     }
+}
+.wrapper {
     p {
         @include fluid(font-size, 14px, 16px);
     }

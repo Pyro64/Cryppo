@@ -10,7 +10,7 @@ import AboutBusiness from '../AboutBusiness/AboutBusiness'
 export default function CryppoBusiness(props) {
 
     return (
-        <div className={style.container}>
+        <div className="container">
             <Title text="Принимайте платежи в криптовалюте по всему миру" />
             <Text text="С автоматической стабилизацией курса в USDT и BUSD" />
             <Description description={props.description} />
