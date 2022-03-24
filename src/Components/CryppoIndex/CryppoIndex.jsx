@@ -11,16 +11,17 @@ import BenefitsIndex from '../BenefitsIndex/BenefitsIndex'
 
 export default function CryppoIndex(props) {
     return (
-        <div className='container'>
+        <div className='main'>
+         <div className='container'>
             <div className="banner">
                 <div className="banner__block">
                     <Title text="CRYPPO Index" gradient="." />
                     <Text text="Автоматически ребалансируемый индекс из 8 самых высококапитализированных цифровых активов на основе машинного обучения (искусственного интеллекта)" />
                     <Btn link="#" text="Узнать больше" />
                 </div>
-                <div className={style.item}>
+            <div className={style.item}>
 
-                </div>
+            </div>
             </div>
             <Suggestions />
             <div className="aboutIndex">
@@ -37,6 +38,9 @@ export default function CryppoIndex(props) {
                 <Subtitle text=""/>
                 <BenefitsIndex/>
             </div>
+        </div>
+
+           
         </div>
     )
 }

@@ -72,3 +72,25 @@ textarea:focus::-webkit-input-placeholder {
     @include textGradient;
   }
 }
+.aboutIndex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__block{
+    width: 50%;
+    .text{
+      @include fluid(margin-bottom,10px,20px);
+    }
+  }
+}
+.banner{
+  display: flex;
+  align-items: center;
+  @include fluid(margin-bottom,70px,170px);
+  &__block{
+    width: 50%;
+    .title{
+      width: 100%;
+    }
+  }
+}
