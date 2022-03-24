@@ -1,15 +1,18 @@
 @import '../../Style/Mixins.scss';
 
-.btn{
-    color: #FFF;
-    @include fluid(font-size,12px,14px);
-    @include fluid(padding-top,8px,10px);
-    @include fluid(padding-bottom,8px,10px);
-    @include fluid(padding-left,30px,50px);
-    @include fluid(padding-right,30px,50px);
-    background: linear-gradient(91.42deg, #2F69FF 0%, #BC2FFF 100%);
+.btn {
+    color: #fff;
+    @include fluid(font-size, 12px, 14px);
+    @include fluid(padding-top, 8px, 10px);
+    @include fluid(padding-bottom, 8px, 10px);
+    @include fluid(padding-left, 30px, 50px);
+    @include fluid(padding-right, 30px, 50px);
+    background: $purpleGradient;
+    background-size: 150% 100%;
     box-shadow: 0px 0px 20px rgba(47, 105, 255, 0.38);
     border-radius: 8px;
-    line-height: 163%;
-    
+    transition: 0.38s ease-in-out;
+    &:hover {
+        background-size: 100% 100%;
+    }
 }
