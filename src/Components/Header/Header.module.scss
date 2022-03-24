@@ -28,6 +28,9 @@
             @include fluid(height, 20px, 40px);
         }
     }
+    .parallax {
+        display: none;
+    }
 }
 .logo {
     transition: 0.38s ease-in-out;

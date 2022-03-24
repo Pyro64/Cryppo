@@ -1,7 +1,6 @@
 import React from 'react'
 import style from './WhoSuits.module.scss'
 import WhoSuitsItem from './WhoSuitsItem'
-import image from '../../Images/content/1.png'
 export default function WhoSuits(props) {
     let elementItem = props.whoSuits.map(e =>
         <WhoSuitsItem
@@ -9,12 +8,12 @@ export default function WhoSuits(props) {
             key={e.id}
             title={e.title}
             text={e.text}
+            img={e.img}
         />
     )
     return (
-        <div className={style.block}>
+        <div className={style.container}>
             {elementItem}
-            <img src={image} alt="image" />
         </div>
     )
 }

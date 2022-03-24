@@ -6,15 +6,16 @@ $breakpoint-lg: 992px;
 $breakpoint-md: 768px;
 $breakpoint-sm: 576px;
 
-$container-lg: 1200px;
+$container-lg: 1230px;
 $container-md: 720px;
 $container-sm: 540px;
 
 $p: 15px;
 $blue: #2f69ff;
 $green: #00c0a9;
+$purple: #bc2fff;
 $blueGradient: linear-gradient(91.42deg, $blue 0%, $green 100%);
-$purpleGradient: linear-gradient(140.58deg, $blue 13.96%, #bc2fff 82.99%);
+$purpleGradient: linear-gradient(140.58deg, $blue 13.96%, $purple 82.99%);
 @mixin textGradient {
     background: $blueGradient;
     -webkit-background-clip: text;

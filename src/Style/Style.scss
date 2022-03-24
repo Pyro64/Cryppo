@@ -25,10 +25,16 @@ a {
 li {
   list-style: none;
 }
-.container {
-  @include container;
+.main {
   @include fluid(padding-top, 200px, 400px);
   transition: 0.38s ease-in-out;
+}
+.container {
+  @include container;
+}
+.bigContainer {
+  @include container;
+  max-width: 1430px;
 }
 input:focus::-webkit-input-placeholder {
   color: transparent;

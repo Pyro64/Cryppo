@@ -14,6 +14,12 @@ import tvelve from '../Images/payIcon/12.svg'
 import money from '../Images/icon/money.svg'
 import shield from '../Images/icon/shield.svg'
 import world from '../Images/icon/world.svg'
+
+import world2 from '../Images/icon/world-2.svg'
+import shop from '../Images/icon/shop.svg'
+import heart from '../Images/icon/heart.svg'
+import handshake from '../Images/icon/handshake.svg'
+import briefcase from '../Images/icon/briefcase.svg'
 let initialState = {
     appIconData: [
         {
@@ -102,26 +108,31 @@ let initialState = {
             id: 1,
             title: 'Международный бизнес',
             text: 'CRYPPO Business упрощает работу с иностранными покупателями и делает ваш бизнес более открытым для новых клиентов и партнёров.',
+            img: world2,
         },
         {
             id: 2,
             title: 'Интернет-магазины',
             text: 'CRYPPO Business подходит для оплаты любых товаров или услуг в криптовалюте и помогает вашему магазину выйти на новую аудиторию покупателей.',
+            img: shop,
         },
         {
             id: 3,
             title: 'Краудфандинг',
             text: 'CRYPPO Business позволяет принимать пожертвования в криптовалюте со всего мира, чтобы ваш проект получил поддержку в других странах и смог собрать больше денег.',
+            img: heart,
         },
         {
             id: 4,
             title: 'Малый бизнес',
             text: 'Условия платёжной системы CRYPPO Business подойдут для компаний с небольшими оборотами и локальных проектов, которые ищут возможности для дальнейшего развития.',
+            img: handshake,
         },
         {
             id: 5,
             title: 'Стартапы',
             text: 'CRYPPO Business поможет начать быстрый рост в сфере криптовалютной коммерции и получить преимущество перед конкурентами с первых дней работы. ',
+            img: briefcase,
         },
     ],
     aboutData: [
