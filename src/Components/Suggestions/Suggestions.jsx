@@ -5,7 +5,7 @@ export default function Suggestions(props) {
   return (
     <div className='container'>
         <div className={style.container}>
-            <div className={style.containerContent}>
+            <div className={style.content}>
             <div className={style.title}>ПРЕДЛОЖЕНИЕ ДЛЯ ПРОФЕССИОНАЛЬНЫХ ИНВЕСТОРОВ</div>
             <div className={style.text}>Разместите до 10% инвестиционного капитала, чтобы получить от 3 до 15% в месяц в долларовом эквиваленте*, без навыков профессионального трейдинга и/или передачи средств в доверительное управление.</div>
             <div className={style.block}>
