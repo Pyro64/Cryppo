@@ -62,3 +62,13 @@ textarea:focus::-webkit-input-placeholder {
     width: 70%;
   }
 }
+.subtitle {
+  font-family: 'Days One Regular';
+  width: 100%;
+  color: #fff;
+  @include fluid(font-size, 24px, 36px);
+  @include fluid(margin-bottom, 15px, 30px);
+  span {
+    @include textGradient;
+  }
+}
