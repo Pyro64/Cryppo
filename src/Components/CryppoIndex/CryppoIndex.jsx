@@ -7,6 +7,7 @@ import Btn from '../Btn/Btn'
 
 import Suggestions from '../Suggestions/Suggestions'
 import BenefitsIndex from '../BenefitsIndex/BenefitsIndex'
+import BenefitsIndexItem from '../BenefitsIndex/BenefitsIndexItem'
 
 
 export default function CryppoIndex(props) {
@@ -35,8 +36,8 @@ export default function CryppoIndex(props) {
                 </div>
             </div>
             <div className="benefistIndex">
-                <Subtitle text=""/>
-                <BenefitsIndex/>
+                <Subtitle  subtitle="Преимущества и гарантии" gradient="."/>
+                <BenefitsIndex benefits={props.benefits}/>
             </div>
         </div>
 
