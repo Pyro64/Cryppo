@@ -1,10 +1,8 @@
 import React from 'react';
-
-const Scrollbtn = () => {
+import style from './ScrollBtn.module.scss'
+const Scrollbtn = (props) => {
     return (
-        <div>
-
-        </div>
+        <div className={style.link}>{props.name}</div>
     );
 }
 

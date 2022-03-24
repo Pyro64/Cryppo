@@ -13,7 +13,9 @@ export default function Description(props) {
     )
     return (
         <div className={style.block}>
-            {elementDescription}
+            <div className={style.flex}>
+                {elementDescription}
+            </div>
         </div>
     )
 }

@@ -1,9 +1,12 @@
 @import '../../Style/Mixins';
 .block {
+    @include container;
+    @include fluid(margin-bottom, 70px, 170px);
+}
+.flex {
     @include flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    @include fluid(margin-bottom, 70px, 170px);
 }
 .number {
     font-weight: 700;

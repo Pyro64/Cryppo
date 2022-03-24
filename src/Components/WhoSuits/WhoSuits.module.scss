@@ -1,6 +1,11 @@
 @import '../../Style/Mixins.scss';
 
 .container {
+    @include container;
+    max-width: 1400px;
+    @include fluid(margin-bottom, 70px, 170px);
+}
+.flex {
     display: flex;
     justify-content: center;
     @include fluid(padding-top, 20px, 40px);
@@ -9,7 +14,6 @@
     backdrop-filter: blur(100px);
     border: 1px solid #545454;
     border-radius: 45px;
-    @include fluid(margin-bottom, 70px, 170px);
 }
 .block {
     width: 16.5%;

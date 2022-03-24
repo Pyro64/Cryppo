@@ -32,10 +32,6 @@ li {
 .container {
   @include container;
 }
-.bigContainer {
-  @include container;
-  max-width: 1430px;
-}
 input:focus::-webkit-input-placeholder {
   color: transparent;
 }
@@ -45,51 +41,14 @@ textarea:focus::-webkit-input-placeholder {
 .content {
   @include fluid(margin-top, 50px, 150px);
 }
-.text {
-  color: #fff;
-  @include fluid(font-size, 14px, 16px);
-  @include fluid(margin-bottom, 40px, 80px);
-}
-.item {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  @include fluid(margin-bottom, 50px, 100px);
-  &:last-child {
-    margin-bottom: 0;
-  }
-  .text {
-    width: 70%;
-  }
-}
-.subtitle {
-  font-family: 'Days One Regular';
-  width: 100%;
-  color: #fff;
-  @include fluid(font-size, 24px, 36px);
-  @include fluid(margin-bottom, 15px, 30px);
-  span {
-    @include textGradient;
-  }
-}
-.aboutIndex{
+
+.banner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  &__block{
+  @include fluid(margin-bottom, 70px, 170px);
+  &__block {
     width: 50%;
-    .text{
-      @include fluid(margin-bottom,10px,20px);
-    }
-  }
-}
-.banner{
-  display: flex;
-  align-items: center;
-  @include fluid(margin-bottom,70px,170px);
-  &__block{
-    width: 50%;
-    .title{
+    .title {
       width: 100%;
     }
   }

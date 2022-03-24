@@ -3,6 +3,7 @@ import { Parallax } from 'react-scroll-parallax';
 import LoginContainer from '../Login/LoginContainer';
 import Logo from '../Logo/Logo';
 import Nav from '../Nav/Nav';
+import Scrollbtn from "../ScrollBtn/ScrollBtn";
 import style from './Header.module.scss'
 
 const Header = (props) => {
@@ -24,11 +25,11 @@ const Header = (props) => {
                     </div>
                 </div>
                 <div className={style.item}>
-                    <div>Кому подойдет</div>
-                    <div>Преимущества</div>
-                    <div>Как подключить</div>
-                    <div>FAQ</div>
-                    <div>Мобильное приложение</div>
+                    <Scrollbtn name="Кому подойдет" />
+                    <Scrollbtn name="Преимущества" />
+                    <Scrollbtn name="Как подключить" />
+                    <Scrollbtn name="FAQ" />
+                    <Scrollbtn name="Мобильное приложение" />
                 </div>
             </div>
         </header>

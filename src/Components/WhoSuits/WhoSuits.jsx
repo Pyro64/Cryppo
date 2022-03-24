@@ -1,4 +1,5 @@
 import React from 'react'
+import Subtitle from '../Subtitle/Subtitle'
 import style from './WhoSuits.module.scss'
 import WhoSuitsItem from './WhoSuitsItem'
 export default function WhoSuits(props) {
@@ -13,7 +14,10 @@ export default function WhoSuits(props) {
     )
     return (
         <div className={style.container}>
-            {elementItem}
+            <Subtitle modify={{ textAlign: 'center' }} subtitle="Кому подойдёт CRYPPO Business" gradient="?" />
+            <div className={style.flex}>
+                {elementItem}
+            </div>
         </div>
     )
 }
