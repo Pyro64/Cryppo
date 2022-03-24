@@ -3,7 +3,7 @@
 .title {
     font-family: 'Days One Regular';
     position: relative;
-    width: 50%;
+    width: 100%;
     color: #fff;
     @include fluid(font-size, 30px, 60px);
     @include fluid(margin-bottom, 30px, 80px);
