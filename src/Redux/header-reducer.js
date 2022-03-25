@@ -32,23 +32,20 @@ let initialState = {
     },
     location: '/'
 };
+
+
 const headerReducer = (state = initialState, action) => {
     switch (action.type) {
         case BUSSINESS_PAGE:
             return {
-                ...state = {
-                    btn: [
-                        {
-                            id: 1,
-                            name: 'Кому подойдет',
-                        },
-                    ],
-                    logo: businessSvg,
+                ...state,
+                headerData: {
+                    logo: businessSvg
                 }
-
             };
         case LOCATION:
             return {
+                ...state,
                 location: action.value
             };
         default:
@@ -57,4 +54,8 @@ const headerReducer = (state = initialState, action) => {
 }
 export const bussiness = () => ({ type: BUSSINESS_PAGE })
 export const location = (value) => ({ type: LOCATION, value })
+
+if (initialState.location === '/business') {
+    bussiness()
+}
 export default headerReducer;

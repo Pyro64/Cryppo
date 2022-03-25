@@ -6,7 +6,7 @@ let mapStateToProps = (state) => {
     return {
         logo: state.header.headerData.logo,
         btn: state.header.headerData.btn,
-        stateLocation: state.header.location
+        location: state.header.location
     }
 }
 const HeaderContainer = connect(mapStateToProps, { bussiness, location })(Header);

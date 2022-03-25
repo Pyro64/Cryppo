@@ -14,10 +14,9 @@ const Header = (props) => {
             setScroll(window.scrollY > 50)
         })
     }, []);
-    // let thisLocation = useLocation();
-    // let value = thisLocation.pathname
-    // let loc = props.location(value)
-    // console.log(loc)
+    let thisLocation = useLocation();
+    let value = thisLocation.pathname
+    let loc = props.location(value)
 
     let elementItem = props.btn.map(e =>
         <Scrollbtn
