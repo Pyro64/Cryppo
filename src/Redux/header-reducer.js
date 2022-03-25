@@ -78,11 +78,11 @@ const headerReducer = (state = initialState, action) => {
                     btn: [
                         {
                             id: 1,
-                            name: 'Кому подойдет',
+                            name: 'CRYPPO Index',
                         },
                         {
                             id: 2,
-                            name: 'Преимущества',
+                            name: 'Мобильное приложение',
                         },
                     ],
                     logo: indexSvg
