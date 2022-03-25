@@ -1,0 +1,6 @@
+@import '../../Style/Mixins.scss';
+
+.container {
+    @include container;
+    @include fluid(padding-bottom, 70px, 170px);
+}

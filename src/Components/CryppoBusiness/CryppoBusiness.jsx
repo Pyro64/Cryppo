@@ -5,6 +5,7 @@ import Title from '../Title/Title'
 import WhoSuits from '../WhoSuits/WhoSuits'
 import WhatsBusiness from '../WhatsBusiness/WhatsBusiness'
 import AboutBusiness from '../AboutBusiness/AboutBusiness'
+import SecurityBusiness from '../SecurityBusiness/SecurityBusiness'
 export default function CryppoBusiness(props) {
 
     return (
@@ -17,6 +18,7 @@ export default function CryppoBusiness(props) {
             <WhatsBusiness appIcon={props.appIcon} />
             <WhoSuits whoSuits={props.whoSuits} />
             <AboutBusiness about={props.about} />
+            <SecurityBusiness />
         </div>
     )
 }
