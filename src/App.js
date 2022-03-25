@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
-import Header from "./Components/Header/Header";
 import "../src/Style/Style.scss";
 import Cryppo from "./Components/Cryppo/Cryppo";
 import CryppoIndex from "./Components/CryppoIndex/CryppoIndex";
 import React from 'react';
 import CryppoBusinessContainer from "./Components/CryppoBusiness/CryppoBusinessContainer";
 import { ParallaxProvider } from "react-scroll-parallax";
+import HeaderContainer from "./Components/Header/HeaderContainer";
 
 
 
@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <ParallaxProvider>
         <div className="App">
-          <Header />
+          <HeaderContainer />
           <Routes>
             <Route
               path="/"

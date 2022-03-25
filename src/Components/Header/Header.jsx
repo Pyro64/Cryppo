@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router";
 import { Parallax } from 'react-scroll-parallax';
 import LoginContainer from '../Login/LoginContainer';
 import Logo from '../Logo/Logo';
@@ -13,23 +14,31 @@ const Header = (props) => {
             setScroll(window.scrollY > 50)
         })
     }, []);
+    // let thisLocation = useLocation();
+    // let value = thisLocation.pathname
+    // let loc = props.location(value)
+    // console.log(loc)
+
+    let elementItem = props.btn.map(e =>
+        <Scrollbtn
+            id={e.id}
+            key={e.id}
+            name={e.name}
+        />
+    )
     return (
         <header className={scroll ? `${style.scroll} ${style.header}` : `${style.header}`}>
             <div className={style.container}>
                 <Parallax className={style.parallax} speed={50} translateX={[-200, 100,]} />
                 <div className={style.block}>
-                    <Logo />
+                    <Logo img={props.logo} />
                     <div className={style.wrapper}>
                         <Nav />
                         <LoginContainer />
                     </div>
                 </div>
                 <div className={style.item}>
-                    <Scrollbtn name="Кому подойдет" />
-                    <Scrollbtn name="Преимущества" />
-                    <Scrollbtn name="Как подключить" />
-                    <Scrollbtn name="FAQ" />
-                    <Scrollbtn name="Мобильное приложение" />
+                    {elementItem}
                 </div>
             </div>
         </header>
