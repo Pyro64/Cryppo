@@ -53,14 +53,15 @@ textarea:focus::-webkit-input-placeholder {
     }
   }
 }
-.benefistIndex , .aboutIndex{
-  @include fluid(margin-bottom,70px,170px);
+.benefistIndex,
+.aboutIndex {
+  @include fluid(margin-bottom, 70px, 170px);
 }
-.aboutIndex{
+.aboutIndex {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  &__block{
+  &__block {
     width: 50%;
   }
 }

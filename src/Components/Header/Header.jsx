@@ -35,6 +35,7 @@ const Header = (props) => {
             id={e.id}
             key={e.id}
             name={e.name}
+            to={e.to}
         />
     )
     return (

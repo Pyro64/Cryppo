@@ -13,7 +13,7 @@ export default function WhoSuits(props) {
         />
     )
     return (
-        <div className={style.container}>
+        <div id="about" className={style.container}>
             <Subtitle modify={{ textAlign: 'center' }} subtitle="Кому подойдёт CRYPPO Business" gradient="?" />
             <div className={style.flex}>
                 {elementItem}

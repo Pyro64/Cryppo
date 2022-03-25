@@ -47,10 +47,12 @@ const headerReducer = (state = initialState, action) => {
                         {
                             id: 1,
                             name: 'Кому подойдет',
+                            to: "about"
                         },
                         {
                             id: 2,
                             name: 'Преимущества',
+                            to: "benefits"
                         },
                         {
                             id: 3,
@@ -59,6 +61,7 @@ const headerReducer = (state = initialState, action) => {
                         {
                             id: 4,
                             name: 'FAQ',
+
                         },
                         {
                             id: 5,

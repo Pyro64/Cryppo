@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-scroll'
 import style from './ScrollBtn.module.scss'
 const Scrollbtn = (props) => {
     return (
-        <div className={style.link}>{props.name}</div>
+        <Link activeClass={style.active} to={props.to} spy={true} offset={-150} duration={600} smooth={true} className={style.link}>{props.name}</Link>
     );
 }
 

@@ -3,6 +3,14 @@
 .link {
     cursor: pointer;
     position: relative;
+    transition: 0.38s ease-in-out;
+    @include fluid(margin-right, 30px, 75px);
+    &:hover {
+        color: $blue;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
     // &:hover {
     //     &::before {
     //         background: #0d0d0d;
@@ -158,4 +166,7 @@
     100% {
         clip: rect(15px, 9999px, 72px, 0);
     }
+}
+.active {
+    color: $blue;
 }
