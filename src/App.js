@@ -6,6 +6,8 @@ import React from 'react';
 import CryppoBusinessContainer from "./Components/CryppoBusiness/CryppoBusinessContainer";
 import { ParallaxProvider } from "react-scroll-parallax";
 import HeaderContainer from "./Components/Header/HeaderContainer";
+import CryppoIndexContainer from "./Components/CryppoIndex/CryppoIndexContainer";
+
 
 
 
@@ -24,7 +26,7 @@ function App() {
               element={<CryppoBusinessContainer />} />
             <Route
               path="cryppoindex"
-              element={<CryppoIndex />}
+              element={<CryppoIndexContainer />}
             />
           </Routes>
         </div>
