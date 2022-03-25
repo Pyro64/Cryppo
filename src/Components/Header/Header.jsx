@@ -9,14 +9,26 @@ import style from './Header.module.scss'
 
 const Header = (props) => {
     const [scroll, setScroll] = useState(false)
+    let thisLocation = useLocation();
+    let value = thisLocation.pathname
     useEffect(() => {
         window.addEventListener("scroll", () => {
             setScroll(window.scrollY > 50)
         })
     }, []);
-    let thisLocation = useLocation();
-    let value = thisLocation.pathname
-    let loc = props.location(value)
+    useEffect(() => {
+        switch (value) {
+            case '/business':
+                props.bussiness()
+                break
+            case '/cryppoindex':
+                props.index()
+                break
+            default:
+                props.cryppo()
+                break
+        }
+    }, [value]);
 
     let elementItem = props.btn.map(e =>
         <Scrollbtn
