@@ -4,7 +4,7 @@ import Subtitle from '../Subtitle/Subtitle'
 import Title from '../Title/Title'
 import style from './CryppoIndex.module.scss'
 import Btn from '../Btn/Btn'
-
+import ChartIndex from '../ChartIndex/ChartIndex'
 import Suggestions from '../Suggestions/Suggestions'
 import BenefitsIndex from '../BenefitsIndex/BenefitsIndex'
 import AboutIndex from '../AboutIndex/AboutIndex'
@@ -38,9 +38,12 @@ export default function CryppoIndex(props) {
                 <Subtitle modify={{textAlign:"center"}} subtitle="Преимущества и гарантии" gradient="."/>
                 <BenefitsIndex benefits={props.benefits}/>
             </div>
+            </div>
+            <ChartIndex style={style.chart}/>
+            <div className='container'>
             <Subtitle modify={{textAlign:"center"}} subtitle="О технологии" gradient="."/>
             <Text modify={{textAlign:"center"}} text="Специально обученная нейронная сеть в режиме реального времени 24/7, анализирует состояние рынка, составляет прогноз, совершает от 48 до 96 операций ребалансирования в сутки и изменяет балансовый состав индекса для увеличения финансовой стоимости активов инвесторов."/>
-          </div>
+            </div>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './BenefistIndex.module.scss'
+import style from './BenefitsIndex.module.scss'
 import BenefitsIndexItem from './BenefitsIndexItem'
 export default function BenefitsIndex(props) {
   

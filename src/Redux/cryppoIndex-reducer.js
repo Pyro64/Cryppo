@@ -2,6 +2,9 @@ import Benefist1 from '../Images/icon/Benefist1.svg'
 import Benefist2 from '../Images/icon/Benefist2.svg'
 import Benefist3 from '../Images/icon/Benefist3.svg'
 import Benefist4 from '../Images/icon/Benefist4.svg'
+import ICX from '../Images/icon/ICX.svg'
+import ETH from '../Images/icon/ETH.svg'
+import ARDE from '../Images/icon/ARDE.svg'
 
 
 let initialState = {
@@ -33,7 +36,54 @@ let initialState = {
         },
 
 
+    ],
+    AdsoluteData:{
+        ChartAbsolute:[
+            {
+                id:1,
+                text:'$45.78'
+            },
+            
+        ],
+        ChartItem:[
+            {
+                
+                id:1,
+                coinIcon:ICX,
+                name:"ICX",
+                number:78.444 ,
+
+            },
+            {
+                id:2,
+                coinIcon:ETH,
+                name:"ETH",
+                number:1.347  ,
+            },
+            {
+                id:3,
+                coinIcon:ARDE,
+                name:"ARDE",
+                number:18.769  ,
+            },
+
+        ],
+        ChartStatistics:[
+            {
+                id:1,
+                statistic:"50%"
+            },
+            {
+                id:2,
+                statistic:"15%"
+            },
+        ]
+    },
+    ChartsData:[
+
     ]
+      
+    
 }
 const cryppoIndexReducer = (state = initialState, action) => {
     switch (action.type) {
