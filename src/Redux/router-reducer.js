@@ -8,7 +8,7 @@ const BUSSINESS_PAGE = 'BUSSINESS_PAGE';
 const INDEX_PAGE = 'INDEX_PAGE';
 const CRYPPO_PAGE = 'CRYPPO_PAGE';
 let initialState = {
-    headerData: {
+    routerData: {
         btn: [
             {
                 id: 1,
@@ -37,12 +37,12 @@ let initialState = {
 };
 
 
-const headerReducer = (state = initialState, action) => {
+const routerReducer = (state = initialState, action) => {
     switch (action.type) {
         case BUSSINESS_PAGE:
             return {
                 ...state,
-                headerData: {
+                routerData: {
                     btn: [
                         {
                             id: 1,
@@ -61,7 +61,7 @@ const headerReducer = (state = initialState, action) => {
                         {
                             id: 4,
                             name: 'FAQ',
-
+                            to: "faq"
                         },
                         {
                             id: 5,
@@ -74,15 +74,15 @@ const headerReducer = (state = initialState, action) => {
         case INDEX_PAGE:
             return {
                 ...state,
-                headerData: {
+                routerData: {
                     btn: [
                         {
                             id: 1,
-                            name: 'CRYPPO Index',
+                            name: 'Кому подойдет',
                         },
                         {
                             id: 2,
-                            name: 'Мобильное приложение',
+                            name: 'Преимущества',
                         },
                     ],
                     logo: indexSvg
@@ -91,7 +91,7 @@ const headerReducer = (state = initialState, action) => {
         case CRYPPO_PAGE:
             return {
                 ...state,
-                headerData: {
+                routerData: {
                     btn: [
                         {
                             id: 1,
@@ -123,4 +123,4 @@ export const cryppo = () => ({ type: CRYPPO_PAGE })
 
 
 
-export default headerReducer;
+export default routerReducer;

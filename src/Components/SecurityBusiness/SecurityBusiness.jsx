@@ -10,10 +10,10 @@ import 'swiper/css/pagination';
 import style from './SecurityBusiness.module.scss'
 export default function SecurityBusiness(props) {
     let elementItem = props.security.map(e =>
-        <SwiperSlide >
+        <SwiperSlide
+            id={e.id}
+            key={e.id}>
             <SecurityBusinessItem
-                id={e.id}
-                key={e.id}
                 title={e.title}
                 text={e.text}
                 img={e.img}
@@ -22,7 +22,7 @@ export default function SecurityBusiness(props) {
     )
     return (
         <div className={style.container}>
-            <Subtitle modify={{ width: '50%' }} subtitle="Безопасность для вас и ваших клиентов." />
+            <Subtitle modify={{ width: '50%' }} subtitle="Безопасность для вас и ваших клиентов" gradient="." />
             <div className={style.flex}>
                 <AnimPlanet />
                 <div className={style.wrapper}>
