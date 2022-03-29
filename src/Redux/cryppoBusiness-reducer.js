@@ -191,9 +191,11 @@ let initialState = {
             img: blockchain,
         },
     ],
-    listConnectionData: [
+    connectionData: {
+       listData:[
         {
             id: 1,
+            
             text: 'Зарегистрируйтесь в личном кабинете CRYPPO Business.',
 
         },
@@ -209,7 +211,9 @@ let initialState = {
             id: 4,
             text: 'Добавьте сгенерированный код на ваш сайт, где вы хотите принимать оплату криптовалютой или выберите подключение через API.'
         }
-    ],
+       ],
+
+    },
 };
 const cryppoBusinessReducer = (state = initialState, action) => {
     switch (action.type) {
