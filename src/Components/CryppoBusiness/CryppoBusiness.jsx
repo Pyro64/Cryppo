@@ -18,7 +18,7 @@ export default function CryppoBusiness(props) {
             <WhatsBusiness appIcon={props.appIcon} />
             <WhoSuits whoSuits={props.whoSuits} />
             <AboutBusiness about={props.about} />
-            <SecurityBusiness />
+            <SecurityBusiness security={props.security} />
         </div>
     )
 }

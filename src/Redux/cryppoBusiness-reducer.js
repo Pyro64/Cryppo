@@ -20,6 +20,10 @@ import shop from '../Images/icon/shop.svg'
 import heart from '../Images/icon/heart.svg'
 import handshake from '../Images/icon/handshake.svg'
 import briefcase from '../Images/icon/briefcase.svg'
+
+import password from '../Images/icon/password.svg'
+import shield2 from '../Images/icon/shield-2.svg'
+import blockchain from '../Images/icon/blockchain.svg'
 let initialState = {
     appIconData: [
         {
@@ -167,6 +171,26 @@ let initialState = {
             text: 'CRYPPO Business позволяет принимать пожертвования в криптовалюте со всего мира, чтобы ваш проект получил поддержку в других странах и смог собрать больше денег.',
         },
     ],
+    securityData: [
+        {
+            id: 1,
+            title: 'Шифрование информации',
+            text: 'Все платежи проходят через систему блокчейн, где данные хранятся на нескольких устройствах вместо одной базы данных. Это позволяет снизить риск сбоев и сохранить информацию о каждой транзакции.',
+            img: password,
+        },
+        {
+            id: 2,
+            title: 'Личные данные под защитой',
+            text: 'При оплате через CRYPPO Business вашему клиенту не нужно указывать личные данные, которые могут попасть к злоумышленникам.',
+            img: shield2,
+        },
+        {
+            id: 3,
+            title: 'Шифрование информации',
+            text: 'CRYPPO Business использует передовые протоколы безопасности, которые пом огают зашифровать передаваемые данные и защитить их от перехвата третьими лицами.',
+            img: blockchain,
+        },
+    ]
 };
 const cryppoBusinessReducer = (state = initialState, action) => {
     switch (action.type) {

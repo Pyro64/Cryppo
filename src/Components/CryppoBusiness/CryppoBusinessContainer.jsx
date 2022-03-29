@@ -9,6 +9,7 @@ let mapStateToProps = (state) => {
         description: state.cryppoBusinessPage.descriptionData,
         whoSuits: state.cryppoBusinessPage.whoSuitsData,
         about: state.cryppoBusinessPage.aboutData,
+        security: state.cryppoBusinessPage.securityData,
     }
 }
 
