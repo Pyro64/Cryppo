@@ -195,9 +195,7 @@ let initialState = {
         listData: [
             {
                 id: 1,
-
                 text: 'Зарегистрируйтесь в личном кабинете CRYPPO Business.',
-
             },
             {
                 id: 2,
@@ -211,62 +209,60 @@ let initialState = {
                 id: 4,
                 text: 'Добавьте сгенерированный код на ваш сайт, где вы хотите принимать оплату криптовалютой или выберите подключение через API.'
             }
-
-        ],
-        faqData: [
-            {
-                id: 1,
-                title: 'Зачем нужен CRYPPO Business?',
-                text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-            },
-            {
-                id: 2,
-                title: 'Какую комиссию я буду платить?',
-                text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-            },
-            {
-                id: 3,
-                title: 'Будут ли добавляться новые криптовалюты?',
-                text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-            },
-            {
-                id: 4,
-                title: 'Что такое стейблкоины?',
-                text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-            },
-            {
-                id: 5,
-                title: 'Я могу создать свой кошелёк с помощью CRYPPO Business?',
-                text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-            },
-            {
-                id: 6,
-                title: 'Безопасно ли работать с CRYPPO Business?',
-                text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-            },
-            {
-                id: 7,
-                title: 'Cryptadium принимает оплату через Visa и Mastercard?',
-                text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-            },
-            {
-                id: 8,
-                title: 'У вас есть техническая поддержка?',
-                text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-            },
-            {
-                id: 9,
-                title: 'Может ли физическое лицо работать с CRYPPO Business?',
-                text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-            },
-            {
-                id: 10,
-                title: 'У вас есть реферальная программа?',
-                text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-            },
         ],
     },
-
+    faqData: [
+        {
+            id: 1,
+            title: 'Зачем нужен CRYPPO Business?',
+            text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        },
+        {
+            id: 2,
+            title: 'Какую комиссию я буду платить?',
+            text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        },
+        {
+            id: 3,
+            title: 'Будут ли добавляться новые криптовалюты?',
+            text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        },
+        {
+            id: 4,
+            title: 'Что такое стейблкоины?',
+            text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        },
+        {
+            id: 5,
+            title: 'Я могу создать свой кошелёк с помощью CRYPPO Business?',
+            text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        },
+        {
+            id: 6,
+            title: 'Безопасно ли работать с CRYPPO Business?',
+            text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        },
+        {
+            id: 7,
+            title: 'Cryptadium принимает оплату через Visa и Mastercard?',
+            text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        },
+        {
+            id: 8,
+            title: 'У вас есть техническая поддержка?',
+            text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        },
+        {
+            id: 9,
+            title: 'Может ли физическое лицо работать с CRYPPO Business?',
+            text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        },
+        {
+            id: 10,
+            title: 'У вас есть реферальная программа?',
+            text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        },
+    ],
 };
 const cryppoBusinessReducer = (state = initialState, action) => {
     switch (action.type) {
