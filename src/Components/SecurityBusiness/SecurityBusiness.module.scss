@@ -7,13 +7,13 @@
 .flex {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
 }
 .wrapper {
     width: 50%;
 }
 .block {
-    background: linear-gradient(180deg, rgba(47, 105, 255, 0.7) 0%, rgba(188, 47, 255, 0.7) 100%);
+    background: $purpleGradient;
     border-radius: 45px;
     @include fluid(padding, 30px, 60px);
 }
@@ -33,7 +33,7 @@
     @include fluid(height, 40px, 55px);
     @include fluid(width, 40px, 55px);
     border-radius: 50%;
-    background: $purple;
+    background: rgba(188, 47, 255, 0.5);
     @include fluid(margin-right, 10px, 15px);
     display: flex;
     align-items: center;
@@ -43,6 +43,19 @@
         @include fluid(width, 20px, 25px);
         @include fluid(height, 20px, 25px);
     }
+}
+.animate {
+    background: url('../../Images/content/security.svg') no-repeat;
+    background-size: contain;
+    width: 469px;
+    height: 509px;
+    position: relative;
+}
+.test {
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    transform: translate(-50%, -50%);
 }
 .navigation {
     @include fluid(margin-top, 30px, 60px);

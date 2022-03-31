@@ -24,7 +24,11 @@ export default function SecurityBusiness(props) {
         <div className={style.container}>
             <Subtitle modify={{ width: '50%' }} subtitle="Безопасность для вас и ваших клиентов" gradient="." />
             <div className={style.flex}>
-                <AnimPlanet />
+                <div className={style.animate}>
+                    <div className={style.test}>
+                        <AnimPlanet />
+                    </div>
+                </div>
                 <div className={style.wrapper}>
                     <Swiper
                         modules={[Navigation, Pagination, Autoplay,]}

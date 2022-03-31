@@ -1,77 +1,64 @@
 @import '../../Style/Mixins.scss';
 
-.item{
+.container {
+    @include container;
+    @include fluid(margin-bottom, 70px, 170px);
+}
+.block {
     display: flex;
     justify-content: space-between;
     position: relative;
-    &::before{
-        content: "";
-        background: url('../../Images/bitcoin.png') no-repeat;
-        background-size: contain;
-        position: absolute;
-        right: -40px;
-        bottom: -25px;
-        @include fluid (width,75px,105px);
-        @include fluid (height,95px,125px);
-        z-index: 3;
-    }
 }
-.block{
+.item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    @include fluid(padding-top,30px,60px);
-    @include fluid(padding-left,15px,30px);
-    @include fluid(padding-right,15px,30px);
-    @include fluid(padding-bottom,20px,40px);
-    border: 1px solid #545454;
-    box-sizing: border-box;
-    box-shadow: 0px 5px 5px rgba(56, 56, 56, 0.25);
-    backdrop-filter: blur(100px);
-    background: rgba(91, 91, 91, 0.2);
-    border-radius: 35px;
+    @include fluid(padding-top, 30px, 60px);
+    @include fluid(padding-left, 15px, 30px);
+    @include fluid(padding-right, 15px, 30px);
+    @include fluid(padding-bottom, 20px, 40px);
     width: 23%;
     position: relative;
     z-index: 2;
-    &::before{
+    @include neumorphism;
+    &::before {
         content: '';
         position: absolute;
-        background: linear-gradient(136.22deg, rgba(47, 105, 255, 0.7) 21.14%, rgba(0, 192, 169, 0.7) 72.2%);
+        background: $blueGradient;
         opacity: 0;
         width: 100%;
         height: 100%;
         top: 0;
         left: 0;
         z-index: 1;
-        border-radius: 35px;
-    transition: .38s ease-in-out;
-
+        border-radius: 45px;
+        transition: 0.38s ease-in-out;
     }
-    &:hover{
-        &::before{
+    &:hover {
+        &::before {
             opacity: 1;
         }
-        .icon{
-            background: #2F69FF;
-                }
+        img {
+            background: rgba(47, 105, 255, 0.5);
+        }
+    }
+    img {
+        z-index: 3;
+        @include fluid(margin-bottom, 15px, 30px);
+        @include fluid(width, 15px, 35px);
+        @include fluid(height, 15px, 35px);
+        background: #6d6d6d;
+        border-radius: 50%;
+        object-fit: contain;
+        transition: 0.38s ease-in-out;
+        padding: 5px;
     }
 }
-.icon{
- z-index: 3;
- @include fluid(margin-bottom,15px,30px);
- @include fluid(width,15px,35px);
- @include fluid(height,15px,35px);
- background: #6D6D6D;
- border-radius: 50%;
- object-fit: contain;
- transition: .38s ease-in-out;
- padding: 5px;
-}
-.text{
+
+.text {
     z-index: 3;
-    @include fluid(font-size,14px,16px);
-    color: #FFF;
+    @include fluid(font-size, 14px, 16px);
+    color: #fff;
     line-height: 150%;
     font-weight: 500;
-
 }

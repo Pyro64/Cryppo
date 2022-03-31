@@ -1,13 +1,12 @@
 @import '../../Style/Mixins';
 
 .center {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
-    background: $purpleGradient;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: url('../../Images/content/zamok.svg') no-repeat;
+    border: 1px solid rgba(0, 192, 169, 0.5);
+    background-size: contain;
     animation: shadow 2s infinite linear;
     cursor: pointer;
 }
@@ -17,16 +16,17 @@
     height: 42px;
     object-fit: contain;
     border-radius: 50%;
-    box-shadow: 0px 0px 8px 0px rgba(47, 105, 255, 1);
+    background: rgba(188, 47, 255, 0.5);
+    border: 1px solid $purple;
 }
 @keyframes shadow {
     0% {
-        box-shadow: 0px 0px 0px 0px rgba(188, 47, 255, 1);
+        box-shadow: 0px 0px 8px 0px rgba(0, 192, 169, 0.5);
     }
     50% {
-        box-shadow: 0px 0px 50px 0px rgba(188, 47, 255, 1);
+        box-shadow: 0px 0px 50px 0px rgba(0, 192, 169, 1);
     }
     100% {
-        box-shadow: 0px 0px 0px 0px rgba(188, 47, 255, 1);
+        box-shadow: 0px 0px 8px 0px rgba(0, 192, 169, 0.5);
     }
 }

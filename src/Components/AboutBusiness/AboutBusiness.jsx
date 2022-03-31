@@ -14,12 +14,12 @@ export default function AboutBusiness(props) {
         />
     )
     return (
-        <div id="benefits" className={style.container}>
+        <div id="benefitsBusiness" className={style.container}>
             <Subtitle modify={{ textAlign: 'center' }} subtitle="Почему CRYPPO Business" gradient="?" />
             <div className={style.flex}>
                 {elementItem}
             </div>
-            <Parallax className={style.parallax} translateX={[200, -200,]} />
+            <Parallax className={style.parallax} translateX={[300, -300,]} />
         </div>
     )
 }

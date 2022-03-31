@@ -52,11 +52,12 @@ const routerReducer = (state = initialState, action) => {
                         {
                             id: 2,
                             name: 'Преимущества',
-                            to: "benefits"
+                            to: "benefitsBusiness"
                         },
                         {
                             id: 3,
                             name: 'Как подключить',
+                            to: "connect"
                         },
                         {
                             id: 4,
@@ -83,6 +84,7 @@ const routerReducer = (state = initialState, action) => {
                         {
                             id: 2,
                             name: 'Преимущества',
+                            to: 'benefitsIndex'
                         },
                     ],
                     logo: indexSvg

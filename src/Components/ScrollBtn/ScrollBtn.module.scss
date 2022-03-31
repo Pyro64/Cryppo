@@ -6,7 +6,7 @@
     transition: 0.38s ease-in-out;
     @include fluid(margin-right, 30px, 75px);
     &:hover {
-        color: $blue;
+        color: $green;
     }
     &:last-child {
         margin-right: 0;
@@ -168,5 +168,5 @@
     }
 }
 .active {
-    color: $blue;
+    color: $green;
 }

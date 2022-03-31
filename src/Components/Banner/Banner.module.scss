@@ -1,0 +1,10 @@
+@import '../../Style/Mixins';
+.container {
+    @include container;
+}
+.flex {
+    display: flex;
+}
+.block {
+    width: 50%;
+}

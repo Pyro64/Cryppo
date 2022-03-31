@@ -14,13 +14,14 @@
     background: rgba(84, 84, 84, 0.2);
     margin-right: 2%;
     width: 32%;
-    border-radius: 45px;
     overflow: hidden;
     position: relative;
     z-index: 1;
-    border: 1px solid #545454;
+    transition: 0.38s ease-in-out;
     @include fluid(padding, 10px, 20px);
     @include fluid(margin-bottom, 15px, 30px);
+    @include neumorphism;
+    box-shadow: 10px 10px 30px #0b0b0b, -10px -10px 30px #0f0f0f;
     &:nth-child(3n) {
         margin-right: 0;
     }
@@ -36,11 +37,11 @@
         opacity: 0;
     }
     &:hover {
-        // &::before {
-        //     opacity: 1;
-        // }
+        &::before {
+            opacity: 1;
+        }
         .wrapper {
-            background: $blue;
+            background: rgba(46, 105, 255, 0.2);
         }
     }
 }
@@ -49,7 +50,7 @@
     @include fluid(width, 28px, 36px);
     @include fluid(height, 28px, 36px);
     border-radius: 50%;
-    background: #6d6d6d;
+    background: rgba(109, 109, 109, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,20 +68,21 @@
 }
 .title {
     @include fluid(margin-top, 15px, 25px);
-    @include fluid(font-size, 18px, 24px);
+    @include fluid(font-size, 16px, 16px);
     @include fluid(margin-bottom, 15px, 25px);
 }
 .text {
-    @include fluid(font-size, 14px, 16px);
+    @include fluid(font-size, 12px, 14px);
+    @include fluid(line-height, 18px, 20px);
 }
 .parallax {
     content: '';
     position: absolute;
     z-index: -1;
     right: 0;
-    top: -30%;
+    top: -80%;
     transform: translate(-50%);
-    background: radial-gradient(50% 50% at 50% 50%, rgba(188, 47, 255, 0.4) 0%, rgba(47, 105, 255, 0) 100%);
-    width: 100%;
-    @include fluid(height, 500px, 1000px);
+    background: radial-gradient(50% 50% at 50% 50%, rgba(47, 105, 255, 0.3) 0%, rgba(47, 105, 255, 0) 100%);
+    @include fluid(width, 1000px, 2000px);
+    @include fluid(height, 1000px, 2000px);
 }

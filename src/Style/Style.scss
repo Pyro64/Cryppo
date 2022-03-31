@@ -22,9 +22,9 @@ a {
   text-decoration: none;
 }
 
-li {
-  list-style: none;
-}
+// li {
+//   list-style: none;
+// }
 .main {
   @include fluid(padding-top, 200px, 400px);
   transition: 0.38s ease-in-out;
@@ -40,30 +40,6 @@ textarea:focus::-webkit-input-placeholder {
 }
 .content {
   @include fluid(margin-top, 50px, 150px);
-}
-
-.banner {
-  display: flex;
-  align-items: center;
-  @include fluid(margin-bottom, 70px, 170px);
-  &__block {
-    width: 50%;
-    .title {
-      width: 100%;
-    }
-  }
-}
-.benefistIndex,
-.aboutIndex {
-  @include fluid(margin-bottom, 70px, 170px);
-}
-.aboutIndex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  &__block {
-    width: 50%;
-  }
 }
 .sec {
   @include fluid(width, 18px, 22px);

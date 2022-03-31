@@ -12,6 +12,7 @@ let mapStateToProps = (state) => {
                 security: state.cryppoBusinessPage.securityData,
                 faq: state.cryppoBusinessPage.faqData,
                 connectionList: state.cryppoBusinessPage.connectionData.listData,
+                banner: state.cryppoBusinessPage.bannerData,
         }
 }
 

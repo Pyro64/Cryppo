@@ -1,28 +1,25 @@
 import React from 'react'
 import Description from '../Description/Description'
-import Text from '../Text/Text'
-import Title from '../Title/Title'
+
 import WhoSuits from '../WhoSuits/WhoSuits'
 import WhatsBusiness from '../WhatsBusiness/WhatsBusiness'
 import AboutBusiness from '../AboutBusiness/AboutBusiness'
 import SecurityBusiness from '../SecurityBusiness/SecurityBusiness'
 import FaqBusiness from '../FaqBusiness/FaqBusiness'
 import ConnectionBusiness from '../СonnectionBusiness/ConnectionBusiness'
+import Banner from '../Banner/Banner'
 
 export default function CryppoBusiness(props) {
 
     return (
         <div className="main">
-            <div className='container'>
-                <Title text="Принимайте платежи в криптовалюте по всему миру" gradient="." />
-                <Text text="С автоматической стабилизацией курса в USDT и BUSD" />
-            </div>
+            <Banner page="business" banner={props.banner} />
             <Description description={props.description} />
             <WhatsBusiness appIcon={props.appIcon} />
             <WhoSuits whoSuits={props.whoSuits} />
             <AboutBusiness about={props.about} />
-            <ConnectionBusiness connectionList={props.connectionList} />
             <SecurityBusiness security={props.security} />
+            <ConnectionBusiness connectionList={props.connectionList} />
             <FaqBusiness faq={props.faq} />
         </div>
     )

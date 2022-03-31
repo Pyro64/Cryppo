@@ -24,9 +24,9 @@ const AnimPlanet = () => {
             bounceDirection="BOTTOM"
             orbitStyle={(defaultStyle) => ({
                 ...defaultStyle,
-                borderWidth: 2,
+                borderWidth: 1,
                 borderStyle: 'solid',
-                borderColor: '#2f69ff',
+                borderColor: '#bc2fff',
             })}
         >
             <AnimPlanetAtom img={test7} />
