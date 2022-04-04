@@ -16,7 +16,7 @@ export default function CryppoIndex(props) {
         <div className='main'>
             <Banner page="index" banner={props.banner} bannerIndex={props.bannerIndex} addStep={props.addStep} step={props.step} />
             <Suggestions suggestions={props.suggestions} />
-            <AboutIndex />
+            <AboutIndex aboutData={props.aboutData} />
             <BenefitsIndex benefits={props.benefits} />
             <StatisticIndex style={style.chart} />
             <TechnologiesIndex />

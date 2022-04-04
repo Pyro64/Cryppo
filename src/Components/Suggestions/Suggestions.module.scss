@@ -4,11 +4,22 @@
     @include container;
     max-width: 1400px;
     @include fluid(margin-bottom, 70px, 170px);
-    // display: flex;
-    // justify-content: center;
+    position: relative;
+}
+.parallax {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: -100%;
+    transform: translate(-50%);
+    background: radial-gradient(50% 50% at 50% 50%, rgba(47, 105, 255, 0.3) 0%, rgba(47, 105, 255, 0) 100%);
+    @include fluid(width, 1000px, 2000px);
+    @include fluid(height, 1000px, 2000px);
 }
 .block {
     @include neumorphism;
+    background: rgba(28, 28, 28, 0.7);
     @include fluid(padding-top, 40px, 80px);
     @include fluid(padding-bottom, 40px, 80px);
     @include fluid(padding-left, 100px, 250px);

@@ -2,10 +2,10 @@ import Benefist1 from '../Images/icon/Benefist1.svg'
 import Benefist2 from '../Images/icon/Benefist2.svg'
 import Benefist3 from '../Images/icon/Benefist3.svg'
 import Benefist4 from '../Images/icon/Benefist4.svg'
-import ICX from '../Images/icon/ICX.svg'
-import ETH from '../Images/icon/ETH.svg'
-import ARDE from '../Images/icon/ARDE.svg'
 
+import one from '../Images/payIcon/1.svg'
+import two from '../Images/payIcon/2.svg'
+import three from '../Images/payIcon/3.svg'
 import banner from '../Images/content/banner-index.svg'
 let initialState = {
     bannerData: {
@@ -14,7 +14,7 @@ let initialState = {
         text: 'Автоматически ребалансируемый индекс из 8 самых высококапитализированных цифровых активов на основе машинного обучения (искусственного интеллекта)',
         img: banner,
     },
-    BenefitsData: [
+    benefitsData: [
         {
             id: 1,
             icon: Benefist1,
@@ -42,49 +42,44 @@ let initialState = {
 
 
     ],
-    AdsoluteData: {
-        ChartAbsolute: [
+    aboutData: {
+        Index: {
+            id: 1,
+            text: '$45.78',
+            title: 'Index'
+        },
+        CoinItem: [
             {
                 id: 1,
-                text: '$45.78'
-            },
-
-        ],
-        ChartItem: [
-            {
-
-                id: 1,
-                coinIcon: ICX,
-                name: "ICX",
+                img: one,
+                title: "ICX",
                 number: 78.444,
-
             },
             {
                 id: 2,
-                coinIcon: ETH,
-                name: "ETH",
+                img: three,
+                title: "ETH",
                 number: 1.347,
             },
             {
                 id: 3,
-                coinIcon: ARDE,
-                name: "ARDE",
+                img: two,
+                title: "ARDE",
                 number: 18.769,
             },
-
         ],
-        ChartStatistics: [
+        Bar: [
             {
                 id: 1,
-                statistic: "50%"
+                value: "50%"
             },
             {
                 id: 2,
-                statistic: "15%"
+                value: "15%"
             },
         ]
     },
-    SuggestionsData: [
+    suggestionsData: [
         {
             id: 1,
             number: '390',

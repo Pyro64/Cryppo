@@ -3,6 +3,18 @@
 .container {
     @include container;
     @include fluid(margin-bottom, 70px, 170px);
+    position: relative;
+}
+.parallax {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: -60%;
+    transform: translate(-50%);
+    background: radial-gradient(50% 50% at 50% 50%, rgba(47, 105, 255, 0.4) 0%, rgba(47, 105, 255, 0) 100%);
+    width: 100%;
+    @include fluid(height, 500px, 1000px);
 }
 .block {
     display: flex;

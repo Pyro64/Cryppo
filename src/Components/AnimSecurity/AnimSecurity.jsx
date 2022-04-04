@@ -15,7 +15,7 @@ const AnimSecurity = () => {
         <Planet
             centerContent={<AnimSecurityCenter />}
             // hideOrbit
-            autoClose
+            open={true}
             orbitRadius={120}
             bounceOnClose
             rotation={105}
@@ -24,9 +24,9 @@ const AnimSecurity = () => {
             bounceDirection="BOTTOM"
             orbitStyle={(defaultStyle) => ({
                 ...defaultStyle,
-                borderWidth: 1,
+                borderWidth: 0.5,
                 borderStyle: 'solid',
-                borderColor: '#bc2fff',
+                borderColor: '#00c0a9',
             })}
         >
             <AnimSecurityAtom img={test7} />

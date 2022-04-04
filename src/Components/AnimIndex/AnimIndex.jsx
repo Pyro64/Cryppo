@@ -32,7 +32,9 @@ const AnimIndex = (props) => {
         <Planet
             centerContent={<AnimIndexCenter />}
             // hideOrbit
+            open={true}
             autoClose
+            mass={2}
             orbitRadius={120}
             bounceOnClose
             rotation={105}
