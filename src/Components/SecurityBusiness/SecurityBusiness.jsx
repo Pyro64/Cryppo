@@ -1,5 +1,5 @@
 import React from 'react'
-import AnimPlanet from '../AnimationPlanet/AnimPlanet'
+
 import SecurityBusinessItem from './SecurityBusinessItem';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
@@ -8,6 +8,7 @@ import 'swiper/scss';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import style from './SecurityBusiness.module.scss'
+import AnimSecurity from '../AnimSecurity/AnimSecurity';
 export default function SecurityBusiness(props) {
     let elementItem = props.security.map(e =>
         <SwiperSlide
@@ -25,8 +26,8 @@ export default function SecurityBusiness(props) {
             <Subtitle modify={{ width: '50%' }} subtitle="Безопасность для вас и ваших клиентов" gradient="." />
             <div className={style.flex}>
                 <div className={style.animate}>
-                    <div className={style.test}>
-                        <AnimPlanet />
+                    <div className={style.animateImg}>
+                        <AnimSecurity />
                     </div>
                 </div>
                 <div className={style.wrapper}>

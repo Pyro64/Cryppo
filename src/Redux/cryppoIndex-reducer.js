@@ -7,7 +7,6 @@ import ETH from '../Images/icon/ETH.svg'
 import ARDE from '../Images/icon/ARDE.svg'
 
 import banner from '../Images/content/banner-index.svg'
-
 let initialState = {
     bannerData: {
         title: 'CRYPPO INDEX',

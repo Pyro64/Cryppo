@@ -1,7 +1,7 @@
 import React from 'react';
 import { Planet } from 'react-planet';
-import AnimPlanetAtom from './AnimPlanetAtom';
-import AnimPlanetCenter from './AnimPlanetCenter';
+import AnimSecurityAtom from './AnimSecurityAtom';
+import AnimSecurityCenter from './AnimSecurityCenter';
 
 import test from '../../Images/payIcon/1.svg'
 import test2 from '../../Images/payIcon/2.svg'
@@ -10,10 +10,10 @@ import test4 from '../../Images/payIcon/4.svg'
 import test5 from '../../Images/payIcon/5.svg'
 import test6 from '../../Images/payIcon/6.svg'
 import test7 from '../../Images/payIcon/11.svg'
-const AnimPlanet = () => {
+const AnimSecurity = () => {
     return (
         <Planet
-            centerContent={<AnimPlanetCenter />}
+            centerContent={<AnimSecurityCenter />}
             // hideOrbit
             autoClose
             orbitRadius={120}
@@ -29,14 +29,14 @@ const AnimPlanet = () => {
                 borderColor: '#bc2fff',
             })}
         >
-            <AnimPlanetAtom img={test7} />
-            <AnimPlanetAtom img={test2} />
-            <AnimPlanetAtom img={test3} />
-            <AnimPlanetAtom img={test4} />
-            <AnimPlanetAtom img={test5} />
-            <AnimPlanetAtom img={test6} />
+            <AnimSecurityAtom img={test7} />
+            <AnimSecurityAtom img={test2} />
+            <AnimSecurityAtom img={test3} />
+            <AnimSecurityAtom img={test4} />
+            <AnimSecurityAtom img={test5} />
+            <AnimSecurityAtom img={test6} />
         </Planet>
     );
 }
 
-export default AnimPlanet;
+export default AnimSecurity;
