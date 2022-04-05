@@ -12,49 +12,83 @@ import {
 
 const data = [
     {
-        name: "Page A",
-        uv: 4000,
+        name: "Янв",
+        Цена: 100_000,
         pv: 2400,
         amt: 2400
     },
     {
-        name: "Page B",
-        uv: 3000,
+        name: "Фев",
+        Цена: 25_000,
         pv: 1398,
         amt: 2210
     },
     {
-        name: "Page C",
-        uv: 2000,
-        pv: 9800,
-        amt: 2290
+        name: "Мар",
+        Цена: 45_000,
+        pv: 1398,
+        amt: 2210
     },
     {
-        name: "Page D",
-        uv: 2780,
-        pv: 3908,
-        amt: 2000
+        name: "Апр",
+        Цена: 42_000,
+        pv: 1398,
+        amt: 2210
     },
     {
-        name: "Page E",
-        uv: 1890,
-        pv: 4800,
-        amt: 2181
+        name: "Май",
+        Цена: 30_000,
+        pv: 1398,
+        amt: 2210
     },
     {
-        name: "Page F",
-        uv: 2390,
-        pv: 3800,
-        amt: 2500
+        name: "Июн",
+        Цена: 80_000,
+        pv: 1398,
+        amt: 2210
     },
     {
-        name: "Page G",
-        uv: 3490,
-        pv: 4300,
-        amt: 2100
-    }
+        name: "Июл",
+        Цена: 50_000,
+        pv: 1398,
+        amt: 2210
+    },
+    {
+        name: "Авг",
+        Цена: 25_000,
+        pv: 1398,
+        amt: 2210
+    },
+    {
+        name: "Сен",
+        Цена: 55_000,
+        pv: 1398,
+        amt: 2210
+    },
+    {
+        name: "Окт",
+        Цена: 100_000,
+        pv: 1398,
+        amt: 2210
+    },
+    {
+        name: "Дек",
+        Цена: 120_000,
+        pv: 1398,
+        amt: 2210
+    },
 ];
-
+const divStyle = {
+    color: 'white',
+    opacity: '0.7',
+    borderTop: '1px solid rgba(255, 255, 255,0.5)',
+};
+const wrapperStyle = {
+    background: 'linear-gradient(91.42deg, #2F69FF 0%, #00C0A9 100%)',
+    borderRadius: '5px',
+    boxShadow: '0px 0px 20px rgba(47, 105, 255, 0.38)',
+    border: 'none',
+};
 export default function ChartIndex() {
     return (
         <ResponsiveContainer width="100%" height={220}>
@@ -75,11 +109,11 @@ export default function ChartIndex() {
                         <stop offset="100%" stopColor="#02bdad" stopOpacity={0.13} />
                     </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" />
+                <CartesianGrid vertical={false} strokeDasharray="0.5" />
                 <XAxis dataKey="name" />
                 <YAxis />
-                <Tooltip />
-                <Area type="monotone" dataKey="uv" stroke="#40FFE8" fill="url(#colorUv)" />
+                <Tooltip contentStyle={wrapperStyle} itemStyle={divStyle} />
+                <Area dot={false} activeDot={{ stroke: 'rgba(64, 255, 232, 0.37)', strokeWidth: 5, r: 5 }} type="linear" dataKey="Цена" stroke="#40FFE8" fill="url(#colorUv)" />
             </AreaChart>
         </ResponsiveContainer>
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import Subtitle from '../Subtitle/Subtitle'
 import Text from '../Text/Text'
+import AboutChart from './AboutChart'
 import style from './AboutIndex.module.scss'
 import AboutIndexBar from './AboutIndexBar'
 import AboutIndexCoin from './AboutIndexCoin'
@@ -30,6 +31,9 @@ export default function AboutIndex(props) {
           </div>
           <AboutIndexCoin coin={props.aboutData.CoinItem} />
           <AboutIndexBar bar={props.aboutData.Bar} />
+          <div className={style.chart}>
+            <AboutChart />
+          </div>
         </div>
 
 
