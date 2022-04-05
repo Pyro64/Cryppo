@@ -34,7 +34,7 @@ const AnimIndex = (props) => {
             // hideOrbit
             open={true}
             autoClose
-            mass={2}
+            mass={1}
             orbitRadius={120}
             bounceOnClose
             rotation={105}

@@ -1,6 +1,6 @@
 import React from 'react'
 import AnimIndex from '../AnimIndex/AnimIndex'
-
+import Btn from '../Btn/Btn'
 
 import Text from '../Text/Text'
 import Title from '../Title/Title'
@@ -26,6 +26,7 @@ export default function Banner(props) {
                     <div className={style.block}>
                         <Title text={props.banner.title} gradient={props.banner.gradient} />
                         <Text text={props.banner.text} />
+                        <Btn link="#" text="Узнать больше" />
                     </div>
                     <div className={style.item}>
                         <div className={style.animIndex}>
