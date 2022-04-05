@@ -1,57 +1,87 @@
-import React from 'react';
+
+import React from "react";
 import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
+    AreaChart,
+    Area,
+    XAxis,
+    YAxis,
+    CartesianGrid,
     Tooltip,
-    Legend,
-} from 'chart.js';
-import { Line } from 'react-chartjs-2';
-import faker from 'faker';
+    ResponsiveContainer
+} from "recharts";
 
-ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend
-);
+const data = [
+    {
+        name: "Page A",
+        uv: 4000,
+        pv: 2400,
+        amt: 2400
+    },
+    {
+        name: "Page B",
+        uv: 3000,
+        pv: 1398,
+        amt: 2210
+    },
+    {
+        name: "Page C",
+        uv: 2000,
+        pv: 9800,
+        amt: 2290
+    },
+    {
+        name: "Page D",
+        uv: 2780,
+        pv: 3908,
+        amt: 2000
+    },
+    {
+        name: "Page E",
+        uv: 1890,
+        pv: 4800,
+        amt: 2181
+    },
+    {
+        name: "Page F",
+        uv: 2390,
+        pv: 3800,
+        amt: 2500
+    },
+    {
+        name: "Page G",
+        uv: 3490,
+        pv: 4300,
+        amt: 2100
+    }
+];
 
+export default function ChartIndex() {
+    return (
+        <ResponsiveContainer width="100%" height={220}>
+            <AreaChart
+                width={500}
+                height={400}
+                data={data}
+                margin={{
+                    top: 10,
+                    right: 30,
+                    left: 0,
+                    bottom: 0
+                }}
+            >
+                <defs>
+                    <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#2c6efa" stopOpacity={0.7} />
+                        <stop offset="100%" stopColor="#02bdad" stopOpacity={0.13} />
+                    </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Area type="monotone" dataKey="uv" stroke="#40FFE8" fill="url(#colorUv)" />
+            </AreaChart>
+        </ResponsiveContainer>
 
-
-export function ChartIndex() {
-    const options = {
-        responsive: true,
-        plugins: {
-            legend: {
-                display: false,
-            },
-            title: {
-                display: false,
-            },
-        },
-    };
-
-
-    const labels = ['Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'];
-
-    const data = {
-        labels,
-        datasets: [
-            {
-                label: '',
-                fill: true,
-                data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-                borderColor: 'rgb(0, 192, 169)',
-                backgroundColor: "rgba(75,192,192,0.2)",
-
-            },
-        ],
-    };
-    return <Line options={options} data={data} />;
+    );
 }
