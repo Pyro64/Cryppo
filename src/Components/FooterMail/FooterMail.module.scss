@@ -1,0 +1,11 @@
+@import '../../Style/Mixins.scss';
+
+.text{
+    @include fluid(padding-top,10px,15px);
+    @include fluid(font-size,12px,14px);
+    color:#FFF;
+    transition:  .38s ease-in-out;
+    &:hover{
+        color: #00c0a9;
+    }
+}

@@ -2,7 +2,8 @@ import React, { useEffect, useState} from "react";
 import Logo from "../Logo/Logo";
 import FooterMail from "../FooterMail/FooterMail";
 import FooterSocial from "../FooterSocial/FooterSocial";
-import style from './/Footer.module.scss'
+import FooterPhone from "../FooterPhone/FooterPhone";
+import style from './Footer.module.scss'
 
 const Footer = (props) => {
     let elementItem = props.mail.map(e =>
@@ -20,6 +21,13 @@ const Footer = (props) => {
           href={e.href}
       />
   )
+  let elementPhone = props.phone.map(e =>
+    <FooterPhone
+        id={e.id}
+        key={e.id}
+        phone={e.phone}
+    />
+)
 
 
   return (
@@ -28,28 +36,20 @@ const Footer = (props) => {
               <div className={style.logo}>
                 <Logo img={props.logo} bussiness={props.bussiness} index={props.index} cryppo={props.cryppo} />
                 <div className={style.posothialWrapper}>
-                <div className={style.posothialText}>PRIVACY POLICY</div>
-                <div className={style.posothialText}>TERMS OF USE</div>
+                <a href="#" className={style.posothialText}>PRIVACY POLICY</a>
+                <a href="#" className={style.posothialText}>TERMS OF USE</a>
                 </div>
 
               </div>
-              <div className={style.mail}>
+
               {elementItem} 
-              </div>
               <div className={style.social}>
-                <div className={style.number}>Телефон для связи:8 800 888-88-88</div>
+                <div className={style.number}>Телефон для связи:</div>
+                <div className={style.phone}>{elementPhone}</div>
                 <div className={style.iconContainer}>{elementIcon}</div>
               </div>
               </div>
-           <div className={style.footerItem}></div>
-          <div className={style.footerItem}></div>
-           <div className={style.footerItem}></div>
-  
 </div>
-    
-   
-    
-    
   )
 }
 export default Footer;

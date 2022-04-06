@@ -6,6 +6,7 @@ let mapStateToProps = (state) => {
         logo: state.router.routerData.logo,
         mail: state.footer.mail,
         icon: state.footer.social,
+        phone :state.footer.phone,
     }
 }
 const FooterContainer = connect(mapStateToProps,{ bussiness, index, cryppo })(Footer);

@@ -1,0 +1,46 @@
+@import '../../Style/Mixins.scss';
+.footer{
+    @include container;
+    border-top:1px solid #6D6D6D;
+    @include fluid(padding-top,15px,30px);
+    @include fluid(padding-bottom,15px,30px);
+}
+
+.footerItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+}
+.posothialWrapper{
+    display: flex;
+    align-items: center;
+    @include fluid(margin-top,15px,25px);
+}
+
+.posothialText{
+    @include fluid(font-size,12,14px);
+    @include fluid(margin-right,20px,50px);
+    transition: .38s ease-in-out;
+    color: #fff;
+    &:last-child{
+        margin-right: 0;
+    }
+    &:hover{
+        color: #00c0a9;
+    }
+}
+.social{
+    @include fluid(margin-top,10px,15px);
+}
+.iconContainer{
+    @include fluid(margin-top,10px,20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+

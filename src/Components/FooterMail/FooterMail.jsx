@@ -3,7 +3,7 @@ import React from 'react'
 
  const FooterMail =(props)=>{
 return (
-    <div className={style.text}>{props.text}</div>
+    <a href={`mailto:${props.text}`} className={style.text}>{props.text}</a>
 )
 
 

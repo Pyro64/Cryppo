@@ -1,0 +1,10 @@
+@import '../../Style/Mixins.scss';
+
+.phone{
+    color: #FFF;
+    transition: .38s ease-in-out;
+    &:hover{
+        padding-top: 3px;
+        color: #00c0a9;
+    }
+}

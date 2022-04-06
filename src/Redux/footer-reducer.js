@@ -41,6 +41,12 @@ let initialState = {
             icon:fb,
             href:'#'
         },
+    ],
+    phone:[
+        {
+            id:1,
+            phone:'8 800 888-88-88',
+        }
     ]
 }
 const footerReducer = (state = initialState, action) => {
