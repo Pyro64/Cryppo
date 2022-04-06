@@ -16,6 +16,7 @@ export default function ConnectionBusiness(props) {
   )
   return (
     <div id="connect" className={style.container}>
+      <Parallax className={style.parallax} translateX={[200, -200,]} />
       <div className={style.block}>
         <Subtitle subtitle="Как подключить CRYPPO Business" gradient="?" />
         <Text text="Вы сможете легко настроить CRYPPO Business под любой бизнес: от небольшого интернет-магазина до крупной компании с клиентами по всему миру." />
@@ -27,7 +28,6 @@ export default function ConnectionBusiness(props) {
         <img className={style.img} src={img} alt="" />
         <img className={style.card} src={card} alt="" />
       </div>
-      <Parallax className={style.parallax} translateX={[300, -300,]} />
     </div>
   )
 }

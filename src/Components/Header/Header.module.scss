@@ -28,9 +28,9 @@
             @include fluid(height, 20px, 40px);
         }
     }
-    .parallax {
-        display: none;
-    }
+    // .parallax {
+    //     display: none;
+    // }
 }
 .logo {
     transition: 0.38s ease-in-out;
@@ -49,16 +49,16 @@
     @include fluid(padding-bottom, 15px, 30px);
     @include fluid(margin-bottom, 25px, 50px);
 }
-.parallax {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    right: -50%;
-    top: -200%;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(47, 105, 255, 0.6) 0%, rgba(47, 105, 255, 0) 100%);
-    width: 100%;
-    @include fluid(height, 400px, 800px);
-}
+// .parallax {
+//     content: '';
+//     position: absolute;
+//     z-index: -1;
+//     right: -50%;
+//     top: -200%;
+//     background: radial-gradient(50% 50% at 50% 50%, rgba(47, 105, 255, 0.6) 0%, rgba(47, 105, 255, 0) 100%);
+//     width: 100%;
+//     @include fluid(height, 400px, 800px);
+// }
 .login {
     display: flex;
     align-items: center;

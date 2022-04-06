@@ -13,7 +13,7 @@ export default function Suggestions(props) {
     )
     return (
         <div className={style.container}>
-            <Parallax className={style.parallax} translateX={[300, -300,]} />
+            <Parallax className={style.parallax} translateX={[200, -200,]} />
             <div className={style.block}>
                 <div className={style.title}>ПРЕДЛОЖЕНИЕ ДЛЯ ПРОФЕССИОНАЛЬНЫХ ИНВЕСТОРОВ</div>
                 <div className={style.description}>Разместите до 10% инвестиционного капитала, чтобы получить от 3 до 15% в месяц в долларовом эквиваленте*, без навыков профессионального трейдинга и/или передачи средств в доверительное управление.</div>

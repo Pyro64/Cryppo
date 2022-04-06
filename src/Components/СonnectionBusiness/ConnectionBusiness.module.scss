@@ -9,6 +9,7 @@
     @include fluid(padding-right, 50px, 100px);
     @include neumorphism;
     display: flex;
+    position: relative;
 }
 .animate {
     position: relative;
@@ -63,10 +64,10 @@
     content: '';
     position: absolute;
     z-index: -1;
-    right: 0;
-    top: -80%;
-    transform: translate(-50%);
-    background: radial-gradient(50% 50% at 50% 50%, rgba(47, 105, 255, 0.2) 0%, rgba(47, 105, 255, 0) 100%);
-    @include fluid(width, 1000px, 2000px);
-    @include fluid(height, 1000px, 2000px);
+    right: 50%;
+    top: 0;
+    // transform: translate(-50%);
+    background: radial-gradient(50% 50% at 50% 50%, rgba(47, 105, 255, 0.8) 0%, rgba(47, 105, 255, 0) 100%);
+    @include fluid(width, 1000px, 1000px);
+    @include fluid(height, 1000px, 1000px);
 }

@@ -90,6 +90,7 @@ const wrapperStyle = {
     border: 'none',
 };
 export default function ChartIndex() {
+
     return (
         <ResponsiveContainer width="100%" height={220}>
             <AreaChart

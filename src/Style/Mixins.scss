@@ -20,7 +20,7 @@ $purpleGradient: linear-gradient(140.58deg, rgba(46, 105, 255, 0.5) 13.96%, rgba
 @mixin neumorphism {
     border-radius: 45px;
     border: 0.5px solid #545454;
-    background: rgb(28, 28, 28);
+    background: rgba(28, 28, 28, 0.5);
     box-shadow: 10px 10px 15px #181818, -10px -10px 15px #202020;
 }
 @mixin block {
