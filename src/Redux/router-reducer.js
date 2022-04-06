@@ -32,9 +32,7 @@ let initialState = {
             },
         ],
         logo: cryppoSvg,
-
     },
-
 };
 
 
@@ -71,7 +69,6 @@ const routerReducer = (state = initialState, action) => {
                         },
                     ],
                     logo: businessSvg,
-
                 }
             };
         case INDEX_PAGE:
@@ -115,7 +112,6 @@ const routerReducer = (state = initialState, action) => {
                         },
                     ],
                     logo: cryppoSvg,
-
                 }
             }
         default:
