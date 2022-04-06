@@ -1,10 +1,10 @@
 import React from 'react'
 import style from './CryppoIndex.module.scss'
-import Suggestions from '../Suggestions/Suggestions'
-import BenefitsIndex from '../BenefitsIndex/BenefitsIndex'
-import AboutIndex from '../AboutIndex/AboutIndex'
-import StatisticIndex from '../StatisticIndex/StatisticIndex'
-import TechnologiesIndex from '../TechnologiesIndex/TechnologiesIndex'
+import Suggestions from '../CryppoIndexComponents/Suggestions/Suggestions'
+import BenefitsIndex from '../CryppoIndexComponents/BenefitsIndex/BenefitsIndex'
+import AboutIndex from '../CryppoIndexComponents/AboutIndex/AboutIndex'
+import StatisticIndex from '../CryppoIndexComponents/StatisticIndex/StatisticIndex'
+import TechnologiesIndex from '../CryppoIndexComponents/TechnologiesIndex/TechnologiesIndex'
 import Banner from '../Banner/Banner'
 
 export default function CryppoIndex(props) {

@@ -1,12 +1,12 @@
 import React from 'react'
 import Description from '../Description/Description'
 
-import WhoSuits from '../WhoSuits/WhoSuits'
-import WhatsBusiness from '../WhatsBusiness/WhatsBusiness'
-import AboutBusiness from '../AboutBusiness/AboutBusiness'
-import SecurityBusiness from '../SecurityBusiness/SecurityBusiness'
-import FaqBusiness from '../FaqBusiness/FaqBusiness'
-import ConnectionBusiness from '../СonnectionBusiness/ConnectionBusiness'
+import WhoSuits from '../CryppoBusinessComponents/WhoSuits/WhoSuits'
+import WhatsBusiness from '../CryppoBusinessComponents/WhatsBusiness/WhatsBusiness'
+import AboutBusiness from '../CryppoBusinessComponents/AboutBusiness/AboutBusiness'
+import SecurityBusiness from '../CryppoBusinessComponents/SecurityBusiness/SecurityBusiness'
+import FaqBusiness from '../CryppoBusinessComponents/FaqBusiness/FaqBusiness'
+import ConnectionBusiness from '../CryppoBusinessComponents/СonnectionBusiness/ConnectionBusiness'
 import Banner from '../Banner/Banner'
 
 export default function CryppoBusiness(props) {
