@@ -10,6 +10,7 @@ let mapStateToProps = (state) => {
         bannerIndex: state.anim.bannerIndex,
         step: state.anim.step,
         aboutData: state.cryppoIndexPage.aboutData,
+        
     }
 }
 const CryppoIndexContainer = connect(mapStateToProps, { addStep })(CryppoIndex);

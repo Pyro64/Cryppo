@@ -5,6 +5,7 @@ import cryppoBusinessReducer from "./cryppoBusiness-reducer";
 import cryppoIndexReducer from './cryppoIndex-reducer'
 import routerReducer from "./router-reducer";
 import animReducer from "./anim-reduсer";
+import footerReducer from "./footer-reducer";
 
 
 let reducers = combineReducers({
@@ -13,6 +14,7 @@ let reducers = combineReducers({
     router: routerReducer,
     anim: animReducer,
     cryppoIndexPage: cryppoIndexReducer,
+    footer: footerReducer,
     form: formReducer
 });
 
