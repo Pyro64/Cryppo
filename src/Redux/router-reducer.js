@@ -71,16 +71,25 @@ const routerReducer = (state = initialState, action) => {
                         },
                     ],
                     logo: businessSvg,
-                    
+
                 }
             };
         case INDEX_PAGE:
             return {
                 ...state,
                 routerData: {
-                  
-                    logo: indexSvg,
-                 
+                    btn: [
+                        {
+                            id: 1,
+                            name: 'Кому подойдет',
+                        },
+                        {
+                            id: 2,
+                            name: 'Преимущества',
+                            to: 'benefitsIndex'
+                        },
+                    ],
+                    logo: indexSvg
                 }
             };
         case CRYPPO_PAGE:
@@ -106,7 +115,7 @@ const routerReducer = (state = initialState, action) => {
                         },
                     ],
                     logo: cryppoSvg,
-                 
+
                 }
             }
         default:

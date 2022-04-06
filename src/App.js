@@ -19,7 +19,6 @@ function App() {
           <HeaderContainer />
           <ScrollToTop />
           <Routes>
-
             <Route
               path="/"
               element={<Cryppo />}
