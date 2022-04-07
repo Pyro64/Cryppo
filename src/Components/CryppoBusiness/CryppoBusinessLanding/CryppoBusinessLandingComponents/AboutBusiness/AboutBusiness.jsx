@@ -1,6 +1,6 @@
 import React from 'react'
 import { Parallax } from 'react-scroll-parallax'
-import Subtitle from '../../Subtitle/Subtitle'
+import Subtitle from '../../../../Subtitle/Subtitle'
 import style from './AboutBusiness.module.scss'
 import AboutBusinessItem from './AboutBusinessItem'
 

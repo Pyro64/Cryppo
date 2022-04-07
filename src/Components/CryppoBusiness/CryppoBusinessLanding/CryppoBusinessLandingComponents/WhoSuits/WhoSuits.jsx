@@ -1,5 +1,5 @@
 import React from 'react'
-import Subtitle from '../../Subtitle/Subtitle'
+import Subtitle from '../../../../Subtitle/Subtitle'
 import style from './WhoSuits.module.scss'
 import WhoSuitsItem from './WhoSuitsItem'
 export default function WhoSuits(props) {

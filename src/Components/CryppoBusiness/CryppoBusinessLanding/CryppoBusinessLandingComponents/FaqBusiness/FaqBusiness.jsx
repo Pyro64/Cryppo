@@ -1,6 +1,6 @@
 import React from 'react'
-import Accordeon from '../../Accordeon/Accordeon'
-import Subtitle from '../../Subtitle/Subtitle'
+import Accordeon from '../../../../Accordeon/Accordeon'
+import Subtitle from '../../../../Subtitle/Subtitle'
 import style from './FaqBusiness.module.scss'
 export default function FaqBusiness(props) {
     let elementItem = props.faq.map(e =>

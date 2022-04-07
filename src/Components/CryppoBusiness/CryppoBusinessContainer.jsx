@@ -1,9 +1,11 @@
 
 import { connect } from "react-redux";
 import CryppoBusiness from "./CryppoBusiness";
+import { login } from '../../Redux/cryppoBusiness-reducer';
 
 
 let mapStateToProps = (state) => {
+
         return {
                 appIcon: state.cryppoBusinessPage.appIconData,
                 description: state.cryppoBusinessPage.descriptionData,
@@ -13,9 +15,13 @@ let mapStateToProps = (state) => {
                 faq: state.cryppoBusinessPage.faqData,
                 connectionList: state.cryppoBusinessPage.connectionData.listData,
                 banner: state.cryppoBusinessPage.bannerData,
+                isLogin: state.cryppoBusinessPage.isLogin,
+                logo: state.cryppoBusinessPage.route.logo,
+                btn: state.cryppoBusinessPage.route.btn,
+                url: state.cryppoBusinessPage.url,
         }
 }
 
-const CryppoBusinessContainer = connect(mapStateToProps)(CryppoBusiness);
+const CryppoBusinessContainer = connect(mapStateToProps, {login})(CryppoBusiness);
 
 export default CryppoBusinessContainer;

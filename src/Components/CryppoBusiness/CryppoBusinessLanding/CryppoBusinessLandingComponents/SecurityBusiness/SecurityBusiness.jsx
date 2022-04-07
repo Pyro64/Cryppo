@@ -3,12 +3,12 @@ import React from 'react'
 import SecurityBusinessItem from './SecurityBusinessItem';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
-import Subtitle from '../../Subtitle/Subtitle'
+import Subtitle from '../../../../Subtitle/Subtitle'
 import 'swiper/scss';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import style from './SecurityBusiness.module.scss'
-import AnimSecurity from '../../AnimSecurity/AnimSecurity';
+import AnimSecurity from '../../../../AnimSecurity/AnimSecurity';
 export default function SecurityBusiness(props) {
     let elementItem = props.security.map(e =>
         <SwiperSlide
