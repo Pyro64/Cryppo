@@ -101,10 +101,6 @@ let initialState = {
         logo: indexSvg,
         btn: [
             {
-                id: 1,
-                name: 'Кому подойдет',
-            },
-            {
                 id: 2,
                 name: 'Преимущества',
                 to: 'benefitsIndex'

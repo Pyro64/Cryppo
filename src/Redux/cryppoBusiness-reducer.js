@@ -27,7 +27,7 @@ import blockchain from '../Images/icon/blockchain.svg'
 
 import banner from '../Images/content/banner-business.svg'
 import businessSvg from '../Images/cryppo-business.svg';
-const LOGIN = 'LOGIN';
+const LOGIN_BUSINESS = 'LOGIN';
 let initialState = {
     bannerData: {
         title: 'Принимайте платежи в криптовалюте по всему миру',
@@ -296,18 +296,14 @@ let initialState = {
                 name: 'FAQ',
                 to: "faq"
             },
-            {
-                id: 5,
-                name: 'Мобильные приложение',
-            },
         ],
     },
     isLogin: false,
-    url:'/business/lk',
+    url: '/business/lk',
 };
 const cryppoBusinessReducer = (state = initialState, action) => {
     switch (action.type) {
-        case LOGIN:
+        case LOGIN_BUSINESS:
             return {
                 ...state,
                 isLogin: action.value,
@@ -316,5 +312,5 @@ const cryppoBusinessReducer = (state = initialState, action) => {
             return state;
     }
 }
-export const login = (value) => ({ type: LOGIN, value })
+export const login = (value) => ({ type: LOGIN_BUSINESS, value })
 export default cryppoBusinessReducer;

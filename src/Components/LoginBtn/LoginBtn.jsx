@@ -3,10 +3,16 @@ import style from './LoginBtn.module.scss'
 import img from '../../Images/icon/open.png'
 import { NavLink } from "react-router-dom";
 const Loginbtn = (props) => {
-    let value = !props.IsLogin
+    // const [state, setstate] = useState(initialState);
+    let value = true
+    console.log(props)
     if (props.isLogin) {
         return (
-            <NavLink to={props.url} className={({ isActive }) => isActive ? `${style.link} ${style.active}` : `${style.link}`}>Личный Кабинет</NavLink>
+            <div>
+                <NavLink to={props.url} className={({ isActive }) => isActive ? `${style.link} ${style.active}` : `${style.link}`}>Личный Кабинет</NavLink>
+                <div >выйти</div>
+            </div>
+
         );
     }
     else {
