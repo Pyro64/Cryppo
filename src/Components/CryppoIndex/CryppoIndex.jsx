@@ -1,21 +1,28 @@
-import React from 'react'
-import style from './CryppoIndex.module.scss'
-import Suggestions from '../CryppoIndexComponents/Suggestions/Suggestions'
-import BenefitsIndex from '../CryppoIndexComponents/BenefitsIndex/BenefitsIndex'
-import AboutIndex from '../CryppoIndexComponents/AboutIndex/AboutIndex'
-import StatisticIndex from '../CryppoIndexComponents/StatisticIndex/StatisticIndex'
-import TechnologiesIndex from '../CryppoIndexComponents/TechnologiesIndex/TechnologiesIndex'
-import Banner from '../Banner/Banner'
+import React, { useState } from "react";
+import { Route, Routes } from "react-router";
+import Footer from "../Footer/Footer";
+import FooterContainer from "../Footer/FooterContainer";
+import Header from '../Header/Header'
+import CryppoIndexLanding from "./CryppoIndexLanding/CryppoIndexLanding";
+import CryppoIndexLk from "./CryppoIndexLk/CryppoIndexLk";
 
 export default function CryppoIndex(props) {
     return (
-        <div className='main'>
-            <Banner page="index" banner={props.banner} bannerIndex={props.bannerIndex} addStep={props.addStep} step={props.step} />
-            <Suggestions suggestions={props.suggestions} />
-            <AboutIndex aboutData={props.aboutData} />
-            <BenefitsIndex benefits={props.benefits} />
-            <StatisticIndex style={style.chart} />
-            <TechnologiesIndex />
+        <div>
+            <Header logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} />
+            <Routes>
+                <Route
+                    path="/"
+                    element={<CryppoIndexLanding banner={props.banner} bannerIndex={props.bannerIndex}
+                        addStep={props.addStep} step={props.step} suggestions={props.suggestions}
+                        aboutData={props.aboutData} benefits={props.benefits} />}
+                />
+                <Route
+                    path="/lk"
+                    element={<CryppoIndexLk />}
+                />
+            </Routes>
+            <FooterContainer logo={props.logo} />
         </div>
     )
 }

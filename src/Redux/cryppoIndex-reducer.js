@@ -2,11 +2,12 @@ import Benefist1 from '../Images/icon/Benefist1.svg'
 import Benefist2 from '../Images/icon/Benefist2.svg'
 import Benefist3 from '../Images/icon/Benefist3.svg'
 import Benefist4 from '../Images/icon/Benefist4.svg'
-
+import indexSvg from '../Images/cryppo-index.svg'
 import one from '../Images/payIcon/1.svg'
 import two from '../Images/payIcon/2.svg'
 import three from '../Images/payIcon/3.svg'
 import banner from '../Images/content/banner-index.svg'
+const LOGIN = 'LOGIN';
 let initialState = {
     bannerData: {
         title: 'CRYPPO INDEX',
@@ -96,12 +97,32 @@ let initialState = {
             text: 'ПРИБЫЛИ USDT',
         },
     ],
+    route: {
+        logo: indexSvg,
+        btn: [
+            {
+                id: 1,
+                name: 'Кому подойдет',
+            },
+            {
+                id: 2,
+                name: 'Преимущества',
+                to: 'benefitsIndex'
+            },
+        ],
+    },
+    isLogin: false,
 }
 const cryppoIndexReducer = (state = initialState, action) => {
     switch (action.type) {
+        case LOGIN:
+            return {
+                ...state,
+                isLogin: action.value,
+            };
         default:
             return state;
     }
 }
-
+export const login = (value) => ({ type: LOGIN, value })
 export default cryppoIndexReducer;

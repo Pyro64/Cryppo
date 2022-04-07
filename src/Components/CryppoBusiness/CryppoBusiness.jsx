@@ -12,6 +12,7 @@ import Banner from '../Banner/Banner'
 export default function CryppoBusiness(props) {
 
     return (
+        
         <div className="main">
             <Banner page="business" banner={props.banner} />
             <Description description={props.description} />

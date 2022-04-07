@@ -6,8 +6,8 @@ let initialState = {
         id: 1,
         img: annaBobs,
         name: "Anna Bobs",
-        isLogin: true
     },
+    isLogin: false,
 };
 const loginReducer = (state = initialState, action) => {
     switch (action.type) {

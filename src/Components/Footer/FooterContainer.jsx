@@ -1,14 +1,12 @@
 import { connect } from "react-redux";
 import Footer from "./Footer";
-import { bussiness, index, cryppo } from '../../Redux/router-reducer';
 let mapStateToProps = (state) => {
     return {
-        logo: state.router.routerData.logo,
         mail: state.footer.mail,
         icon: state.footer.social,
-        phone :state.footer.phone,
+        phone: state.footer.phone,
     }
 }
-const FooterContainer = connect(mapStateToProps,{ bussiness, index, cryppo })(Footer);
+const FooterContainer = connect(mapStateToProps)(Footer);
 
 export default FooterContainer;

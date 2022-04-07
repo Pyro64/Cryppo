@@ -1,6 +1,6 @@
 import React from 'react'
-import Subtitle from '../../Subtitle/Subtitle'
-import Text from '../../Text/Text'
+import Subtitle from '../../../../Subtitle/Subtitle'
+import Text from '../../../../Text/Text'
 import style from './TechnologiesIndex.module.scss'
 export default function TechnologiesIndex() {
     return (

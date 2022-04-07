@@ -1,19 +1,19 @@
 import { combineReducers, createStore } from "redux";
 import { reducer as formReducer } from 'redux-form'
 import loginReducer from "./login-reducer";
+import cryppoReducer from './cryppo-reducer'
 import cryppoBusinessReducer from "./cryppoBusiness-reducer";
 import cryppoIndexReducer from './cryppoIndex-reducer'
-import routerReducer from "./router-reducer";
 import animReducer from "./anim-reduсer";
 import footerReducer from "./footer-reducer";
 
 
 let reducers = combineReducers({
-    login: loginReducer,
+    cryppoPage: cryppoReducer,
     cryppoBusinessPage: cryppoBusinessReducer,
-    router: routerReducer,
-    anim: animReducer,
     cryppoIndexPage: cryppoIndexReducer,
+    login: loginReducer,
+    anim: animReducer,
     footer: footerReducer,
     form: formReducer
 });

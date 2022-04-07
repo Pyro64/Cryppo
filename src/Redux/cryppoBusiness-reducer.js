@@ -26,6 +26,7 @@ import shield2 from '../Images/icon/shield-2.svg'
 import blockchain from '../Images/icon/blockchain.svg'
 
 import banner from '../Images/content/banner-business.svg'
+import businessSvg from '../Images/cryppo-business.svg';
 let initialState = {
     bannerData: {
         title: 'Принимайте платежи в криптовалюте по всему миру',
@@ -271,6 +272,36 @@ let initialState = {
             text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         },
     ],
+    route: {
+        logo: businessSvg,
+        btn: [
+            {
+                id: 1,
+                name: 'Кому подойдет',
+                to: "about"
+            },
+            {
+                id: 2,
+                name: 'Преимущества',
+                to: "benefitsBusiness"
+            },
+            {
+                id: 3,
+                name: 'Как подключить',
+                to: "connect"
+            },
+            {
+                id: 4,
+                name: 'FAQ',
+                to: "faq"
+            },
+            {
+                id: 5,
+                name: 'Мобильные приложение',
+            },
+        ],
+    },
+    isLogin: false,
 };
 const cryppoBusinessReducer = (state = initialState, action) => {
     switch (action.type) {

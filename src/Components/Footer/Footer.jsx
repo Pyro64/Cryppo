@@ -34,7 +34,7 @@ const Footer = (props) => {
     <div className={style.container}>
       <div className={style.flex}>
         <div className={style.item}>
-          <Logo img={props.logo} bussiness={props.bussiness} index={props.index} cryppo={props.cryppo} />
+          <Logo logo={props.logo} bussiness={props.bussiness} index={props.index} cryppo={props.cryppo} />
           <div className={style.wrapper}>
             <a href="#">PRIVACY POLICY</a>
             <a href="#">TERMS OF USE</a>
