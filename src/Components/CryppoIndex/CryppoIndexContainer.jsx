@@ -11,6 +11,7 @@ let mapStateToProps = (state) => {
         logo: state.cryppoIndexPage.route.logo,
         btn: state.cryppoIndexPage.route.btn,
         isLogin: state.cryppoIndexPage.isLogin,
+        url: state.cryppoIndexPage.url,
         bannerIndex: state.anim.bannerIndex,
         step: state.anim.step,
     }

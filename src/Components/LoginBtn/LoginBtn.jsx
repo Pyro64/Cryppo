@@ -6,7 +6,7 @@ const Loginbtn = (props) => {
     let value = !props.IsLogin
     if (props.isLogin) {
         return (
-            <NavLink to="/cryppoindex/lk" className={({ isActive }) => isActive ? `${style.link} ${style.active}` : `${style.link}`}>Личный Кабинет</NavLink>
+            <NavLink to={props.url} className={({ isActive }) => isActive ? `${style.link} ${style.active}` : `${style.link}`}>Личный Кабинет</NavLink>
         );
     }
     else {

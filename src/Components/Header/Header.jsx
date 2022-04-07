@@ -6,7 +6,6 @@ import Scrollbtn from "../ScrollBtn/ScrollBtn";
 import style from './Header.module.scss'
 
 const Header = (props) => {
-
     const [scroll, setScroll] = useState(false)
     useEffect(() => {
         window.addEventListener("scroll", () => {
@@ -28,7 +27,7 @@ const Header = (props) => {
                     <Logo logo={props.logo} />
                     <div className={style.wrapper}>
                         <Nav />
-                        <Loginbtn login={props.login} isLogin={props.isLogin} />
+                        <Loginbtn login={props.login} isLogin={props.isLogin} url={props.url} />
                     </div>
                 </div>
                 <div className={style.item}>

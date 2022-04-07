@@ -9,7 +9,7 @@ import CryppoIndexLk from "./CryppoIndexLk/CryppoIndexLk";
 export default function CryppoIndex(props) {
     return (
         <div>
-            <Header logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} />
+            <Header logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} url={props.url} />
             <Routes>
                 <Route
                     path="/"
