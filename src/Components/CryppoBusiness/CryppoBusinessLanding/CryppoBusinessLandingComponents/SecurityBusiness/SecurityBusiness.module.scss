@@ -1,4 +1,4 @@
-@import '../../../Style/Mixins.scss';
+@import '../../../../../Style/Mixins.scss';
 
 .container {
     @include container;
@@ -45,7 +45,7 @@
     }
 }
 .animate {
-    background: url('../../../Images/content/security.svg') no-repeat;
+    background: url('../../../../../Images/content/security.svg') no-repeat;
     background-size: contain;
     width: 469px;
     height: 509px;

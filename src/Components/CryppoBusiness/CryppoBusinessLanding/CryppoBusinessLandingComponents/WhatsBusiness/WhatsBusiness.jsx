@@ -1,8 +1,8 @@
 import React from 'react';
 import { Parallax } from 'react-scroll-parallax';
-import IconPay from '../../iconPay/IconPay';
-import Subtitle from '../../Subtitle/Subtitle';
-import Text from '../../Text/Text';
+import IconPay from '../../../../iconPay/IconPay';
+import Subtitle from '../../../../Subtitle/Subtitle';
+import Text from '../../../../Text/Text';
 import style from './WhatsBusiness.module.scss'
 const WhatsBussiness = (props) => {
     return (

@@ -1,11 +1,11 @@
 import React from 'react'
-import Subtitle from '../../Subtitle/Subtitle'
+import Subtitle from '../../../../Subtitle/Subtitle'
 import style from './ConnectionBusiness.module.scss'
-import Text from '../../Text/Text'
+import Text from '../../../../Text/Text'
 import ConnectionBusinessItem from './ConnectionBusinessItem'
 import { Parallax } from 'react-scroll-parallax'
-import img from '../../../Images/content/connect-business.svg'
-import card from '../../../Images/content/card.svg'
+import img from '../../../../../Images/content/connect-business.svg'
+import card from '../../../../../Images/content/card.svg'
 export default function ConnectionBusiness(props) {
   let elementItem = props.connectionList.map(e =>
     <ConnectionBusinessItem

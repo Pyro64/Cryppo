@@ -27,6 +27,7 @@ import blockchain from '../Images/icon/blockchain.svg'
 
 import banner from '../Images/content/banner-business.svg'
 import businessSvg from '../Images/cryppo-business.svg';
+const LOGIN = 'LOGIN';
 let initialState = {
     bannerData: {
         title: 'Принимайте платежи в криптовалюте по всему миру',
@@ -302,12 +303,18 @@ let initialState = {
         ],
     },
     isLogin: false,
+    url:'/business/lk',
 };
 const cryppoBusinessReducer = (state = initialState, action) => {
     switch (action.type) {
+        case LOGIN:
+            return {
+                ...state,
+                isLogin: action.value,
+            };
         default:
             return state;
     }
 }
-
+export const login = (value) => ({ type: LOGIN, value })
 export default cryppoBusinessReducer;

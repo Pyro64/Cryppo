@@ -1,4 +1,4 @@
-@import '../../../Style/Mixins';
+@import '../../../../../Style/Mixins.scss';
 
 .container {
     @include container;
@@ -57,7 +57,7 @@
     transition: 0.38s ease-in-out;
 }
 .check {
-    background: url('../../../Images/icon/check.svg') no-repeat;
+    background: url('../../../../../Images/icon/check.svg') no-repeat;
     background-size: contain;
     @include fluid(width, 16px, 21px);
     @include fluid(height, 13px, 16px);
