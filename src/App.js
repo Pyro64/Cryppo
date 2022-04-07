@@ -4,6 +4,7 @@ import "../src/Style/Style.scss";
 import { ParallaxProvider } from "react-scroll-parallax";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import Spinner from './Components/Spinner/Spinner';
+import Appp from './Components/App/Appp';
 // import CryppoContainer from './Components/Cryppo/CryppoContainer';
 
 // import CryppoBusinessContainer from "./Components/CryppoBusiness/CryppoBusinessContainer";
@@ -21,11 +22,11 @@ function App() {
           <div className="App">
             <ScrollToTop />
             <Routes>
-              <Route path="/"  >
+              <Route path="/" element={<Appp />}  >
 
                 <Route
                   index
-                  path="/cryppo/*"
+                  path="cryppo/*"
                   element={<CryppoContainer />}
                 />
                 <Route path="business"
