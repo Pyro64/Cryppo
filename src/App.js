@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import "../src/Style/Style.scss";
 import { ParallaxProvider } from "react-scroll-parallax";
@@ -20,7 +20,6 @@ function App() {
             <ScrollToTop />
             <Routes>
               <Route path="/" element={<Appp />}  >
-
                 <Route
                   index
                   path="cryppo/*"

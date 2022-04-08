@@ -108,7 +108,6 @@ let initialState = {
         ],
     },
     isLogin: false,
-    url: '/cryppoindex/lk',
 }
 const cryppoIndexReducer = (state = initialState, action) => {
     switch (action.type) {

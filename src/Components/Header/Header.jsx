@@ -27,7 +27,7 @@ const Header = (props) => {
                     <Logo logo={props.logo} />
                     <div className={style.wrapper}>
                         <Nav />
-                        <Loginbtn login={props.login} isLogin={props.isLogin} url={props.url} />
+                        <Loginbtn login={props.login} isLogin={props.isLogin} />
                     </div>
                 </div>
                 <div className={style.item}>

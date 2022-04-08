@@ -299,7 +299,6 @@ let initialState = {
         ],
     },
     isLogin: false,
-    url: '/business/lk',
 };
 const cryppoBusinessReducer = (state = initialState, action) => {
     switch (action.type) {

@@ -6,8 +6,7 @@ let initialState = {
         btn: [
         ],
     },
-    isLogin: true,
-    url: '/cryppo/lk',
+    isLogin: false,
 }
 const cryppoReducer = (state = initialState, action) => {
     switch (action.type) {

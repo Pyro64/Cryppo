@@ -5,12 +5,13 @@ import { NavLink } from "react-router-dom";
 const Loginbtn = (props) => {
     // const [state, setstate] = useState(initialState);
     let value = true
+
     console.log(props)
     if (props.isLogin) {
         return (
             <div>
-                <NavLink to={props.url} className={({ isActive }) => isActive ? `${style.link} ${style.active}` : `${style.link}`}>Личный Кабинет</NavLink>
-                <div >выйти</div>
+                <NavLink to='lk' className={({ isActive }) => isActive ? `${style.link} ${style.active}` : `${style.link}`}>Личный Кабинет</NavLink>
+                <div onClick={() => props.login(!value)} >выйти</div>
             </div>
 
         );

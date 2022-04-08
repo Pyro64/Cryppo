@@ -18,10 +18,9 @@ let mapStateToProps = (state) => {
                 isLogin: state.cryppoBusinessPage.isLogin,
                 logo: state.cryppoBusinessPage.route.logo,
                 btn: state.cryppoBusinessPage.route.btn,
-                url: state.cryppoBusinessPage.url,
         }
 }
 
-const CryppoBusinessContainer = connect(mapStateToProps, {login})(CryppoBusiness);
+const CryppoBusinessContainer = connect(mapStateToProps, { login })(CryppoBusiness);
 
 export default CryppoBusinessContainer;

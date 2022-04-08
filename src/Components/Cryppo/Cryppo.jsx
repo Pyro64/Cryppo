@@ -8,14 +8,14 @@ import CryppoLk from "./CryppoLk/CryppoLk";
 export default function Cryppo(props) {
     return (
         <div>
-            <Header logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} url={props.url} />
+            <Header logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} />
             <Routes>
                 <Route
                     path="/"
                     element={<CryppoLanding />}
                 />
                 <Route
-                    path="/lk"
+                    path="/lk/*"
                     element={<CryppoLk />}
                 />
             </Routes>
