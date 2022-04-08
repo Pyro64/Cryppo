@@ -15,24 +15,22 @@ function App() {
   return (
     <BrowserRouter>
       <ParallaxProvider>
-        <Suspense fallback={<Spinner />} >
-          <div className="App">
-            <ScrollToTop />
-            <Routes>
-              <Route
-                index
-                path="/*"
-                element={<CryppoContainer />}
-              />
-              <Route path="business/*"
-                element={<CryppoBusinessContainer />} />
-              <Route
-                path="cryppoindex/*"
-                element={<CryppoIndexContainer />}
-              />
-            </Routes>
-          </div>
-        </Suspense>
+        <div className="App">
+          <ScrollToTop />
+          <Routes>
+            <Route
+              index
+              path="/*"
+              element={<CryppoContainer />}
+            />
+            <Route path="business/*"
+              element={<CryppoBusinessContainer />} />
+            <Route
+              path="cryppoindex/*"
+              element={<CryppoIndexContainer />}
+            />
+          </Routes>
+        </div>
       </ParallaxProvider>
     </BrowserRouter>
   );
