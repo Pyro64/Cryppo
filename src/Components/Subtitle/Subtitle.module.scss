@@ -5,7 +5,7 @@
     width: 100%;
     color: #fff;
     @include fluid(font-size, 24px, 32px);
-    @include fluid(margin-bottom, 15px, 30px);
+    @include fluid(margin-bottom, 20px, 30px);
     span {
         @include textGradient;
     }

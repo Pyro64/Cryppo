@@ -15,14 +15,13 @@ export default function CryppoIndex(props) {
                     path="/"
                     element={<CryppoIndexLanding banner={props.banner} bannerIndex={props.bannerIndex}
                         addStep={props.addStep} step={props.step} suggestions={props.suggestions}
-                        aboutData={props.aboutData} benefits={props.benefits} />}
+                        aboutData={props.aboutData} benefits={props.benefits} logo={props.logo} />}
                 />
                 <Route
                     path="/lk/*"
                     element={<CryppoIndexLk />}
                 />
             </Routes>
-            <FooterContainer logo={props.logo} />
         </div>
     )
 }

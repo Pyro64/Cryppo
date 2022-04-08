@@ -5,9 +5,7 @@ import Subtitle from '../../../../Subtitle/Subtitle';
 import Text from '../../../../Text/Text';
 import style from './WhatsBusiness.module.scss'
 const WhatsBussiness = (props) => {
-    // if(Window.innerWidth<=992){
-    //     Text.props.modify = {width:'100%'};
-    // }
+
     return (
         <div className={style.container}>
             <Parallax className={style.parallax} translateX={[-100, 100,]} />
