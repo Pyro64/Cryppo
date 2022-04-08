@@ -15,7 +15,7 @@ export default function Banner(props) {
                         <Title text={props.banner.title} gradient={props.banner.gradient} />
                         <Text text={props.banner.text} />
                     </div>
-                    <img src={props.banner.img} alt="" />
+                    <img className={style.img} src={props.banner.img} alt="" />
                 </div>
             </div>
         )
@@ -32,7 +32,7 @@ export default function Banner(props) {
                         <div className={style.animIndex}>
                             <AnimIndex bannerIndex={props.bannerIndex} addStep={props.addStep} step={props.step} />
                         </div>
-                        <img className={style.banner} src={props.banner.img} alt="" />
+                        <img className={style.img} src={props.banner.img} alt="" />
                     </div>
                 </div>
             </div>

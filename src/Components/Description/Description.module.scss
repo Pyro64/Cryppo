@@ -39,3 +39,12 @@
         @include fluid(font-size, 14px, 16px);
     }
 }
+@media screen and(max-width:768px) {
+    .flex{
+        flex-direction: column;
+    }
+    .item{
+        width: 100%;
+        margin-right: 0;
+    }
+}

@@ -10,3 +10,8 @@
         @include textGradient;
     }
 }
+@media screen and(max-width:768px) {
+    .subtitle{
+        text-align: center;
+    }
+}
