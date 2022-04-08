@@ -33,13 +33,10 @@ const AnimIndex = (props) => {
             centerContent={<AnimIndexCenter />}
             // hideOrbit
             open={true}
-            autoClose
             mass={1}
             orbitRadius={120}
             bounceOnClose
             rotation={105}
-            // the bounce direction is minimal visible
-            // but on close it seems the button wobbling a bit to the bottom
             bounceDirection="BOTTOM"
             orbitStyle={(defaultStyle) => ({
                 ...defaultStyle,

@@ -20,22 +20,39 @@ const Header = (props) => {
             to={e.to}
         />
     )
-    return (
-        <header className={scroll ? `${style.scroll} ${style.header}` : `${style.header}`}>
-            <div className={style.container}>
-                <div className={style.block}>
-                    <Logo logo={props.logo} />
-                    <div className={style.wrapper}>
-                        <Nav />
-                        <Loginbtn login={props.login} isLogin={props.isLogin} />
+    if (props.isLogin) {
+        return (
+            <header className={scroll ? `${style.scroll} ${style.header}` : `${style.header}`}>
+                <div className={style.container}>
+                    <div className={style.block}>
+                        <Logo logo={props.logo} />
+                        <div className={style.wrapper}>
+                            <Nav />
+                            <Loginbtn login={props.login} isLogin={props.isLogin} />
+                        </div>
                     </div>
                 </div>
-                <div className={style.item}>
-                    {elementItem}
+            </header>
+        );
+    } else {
+        return (
+            <header className={scroll ? `${style.scroll} ${style.header}` : `${style.header}`}>
+                <div className={style.container}>
+                    <div className={style.block}>
+                        <Logo logo={props.logo} />
+                        <div className={style.wrapper}>
+                            <Nav />
+                            <Loginbtn login={props.login} isLogin={props.isLogin} />
+                        </div>
+                    </div>
+                    <div className={style.item}>
+                        {elementItem}
+                    </div>
                 </div>
-            </div>
-        </header>
-    );
+            </header>
+        );
+    }
+
 }
 
 export default Header;
