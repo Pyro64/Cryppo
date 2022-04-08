@@ -1,5 +1,5 @@
 import cryppoSvg from '../Images/cryppo.svg'
-const LOGIN = 'LOGIN';
+const LOGIN_CRYPPO = 'LOGIN_CRYPPO';
 let initialState = {
     route: {
         logo: cryppoSvg,
@@ -10,7 +10,7 @@ let initialState = {
 }
 const cryppoReducer = (state = initialState, action) => {
     switch (action.type) {
-        case LOGIN:
+        case LOGIN_CRYPPO:
             return {
                 ...state,
                 isLogin: action.value,
@@ -19,5 +19,5 @@ const cryppoReducer = (state = initialState, action) => {
             return state;
     }
 }
-export const login = (value) => ({ type: LOGIN, value })
+export const login = (value) => ({ type: LOGIN_CRYPPO, value })
 export default cryppoReducer;

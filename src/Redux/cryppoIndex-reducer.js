@@ -7,7 +7,7 @@ import one from '../Images/payIcon/1.svg'
 import two from '../Images/payIcon/2.svg'
 import three from '../Images/payIcon/3.svg'
 import banner from '../Images/content/banner-index.svg'
-const LOGIN = 'LOGIN';
+const LOGIN_INDEX = 'LOGIN_INDEX';
 let initialState = {
     bannerData: {
         title: 'CRYPPO INDEX',
@@ -111,7 +111,7 @@ let initialState = {
 }
 const cryppoIndexReducer = (state = initialState, action) => {
     switch (action.type) {
-        case LOGIN:
+        case LOGIN_INDEX:
             return {
                 ...state,
                 isLogin: action.value,
@@ -120,5 +120,5 @@ const cryppoIndexReducer = (state = initialState, action) => {
             return state;
     }
 }
-export const login = (value) => ({ type: LOGIN, value })
+export const login = (value) => ({ type: LOGIN_INDEX, value })
 export default cryppoIndexReducer;

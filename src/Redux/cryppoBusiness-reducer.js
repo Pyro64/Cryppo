@@ -27,7 +27,7 @@ import blockchain from '../Images/icon/blockchain.svg'
 
 import banner from '../Images/content/banner-business.svg'
 import businessSvg from '../Images/cryppo-business.svg';
-const LOGIN_BUSINESS = 'LOGIN';
+const LOGIN_BUSINESS = 'LOGIN_BUSINESS';
 let initialState = {
     bannerData: {
         title: 'Принимайте платежи в криптовалюте по всему миру',
