@@ -19,19 +19,17 @@ function App() {
           <div className="App">
             <ScrollToTop />
             <Routes>
-              <Route path="/" element={<Appp />}  >
-                <Route
-                  index
-                  path="cryppo/*"
-                  element={<CryppoContainer />}
-                />
-                <Route path="business/*"
-                  element={<CryppoBusinessContainer />} />
-                <Route
-                  path="cryppoindex/*"
-                  element={<CryppoIndexContainer />}
-                />
-              </Route>
+              <Route
+                index
+                path="/*"
+                element={<CryppoContainer />}
+              />
+              <Route path="business/*"
+                element={<CryppoBusinessContainer />} />
+              <Route
+                path="cryppoindex/*"
+                element={<CryppoIndexContainer />}
+              />
             </Routes>
           </div>
         </Suspense>
