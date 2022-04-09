@@ -5,6 +5,8 @@ import BenefitsIndex from './CryppoIndexLandingComponents/BenefitsIndex/Benefits
 import AboutIndex from './CryppoIndexLandingComponents/AboutIndex/AboutIndex'
 import StatisticIndex from './CryppoIndexLandingComponents/StatisticIndex/StatisticIndex'
 import TechnologiesIndex from './CryppoIndexLandingComponents/TechnologiesIndex/TechnologiesIndex'
+import FooterContainer from "../../Footer/FooterContainer";
+
 import Banner from '../../Banner/Banner'
 
 export default function CryppoIndexLanding(props) {
@@ -16,6 +18,7 @@ export default function CryppoIndexLanding(props) {
             <BenefitsIndex benefits={props.benefits} />
             <StatisticIndex style={style.chart} />
             <TechnologiesIndex />
+            <FooterContainer logo={props.logo} />
         </div>
     )
 }

@@ -12,14 +12,13 @@ export default function Cryppo(props) {
             <Routes>
                 <Route
                     path="/"
-                    element={<CryppoLanding />}
+                    element={<CryppoLanding logo={props.logo}/>}
                 />
                 <Route
                     path="/lk/*"
                     element={<CryppoLk />}
                 />
             </Routes>
-            <FooterContainer logo={props.logo} />
         </div>
     )
 }

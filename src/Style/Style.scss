@@ -27,6 +27,7 @@ a {
 // }
 .main {
   @include fluid(padding-top, 200px, 400px);
+  overflow-x: hidden;
   transition: 0.38s ease-in-out;
 }
 .container {

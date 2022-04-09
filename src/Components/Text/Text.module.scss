@@ -1,6 +1,7 @@
 @import '../../Style/Mixins.scss';
 
 .text {
+    text-align: center;
     color: #fff;
     @include fluid(font-size, 14px, 16px);
     @include fluid(margin-bottom, 40px, 80px);

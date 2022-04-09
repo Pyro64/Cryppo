@@ -28,3 +28,11 @@
     width: 100%;
     @include fluid(height, 500px, 1000px);
 }
+@media screen and(max-width:992px) {
+    .item{
+        flex-direction: column;
+    }
+    .text{
+        width: 100% !important;
+    }
+}
