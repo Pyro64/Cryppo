@@ -27,6 +27,7 @@ import blockchain from '../Images/icon/blockchain.svg'
 
 import banner from '../Images/content/banner-business.svg'
 import businessSvg from '../Images/cryppo-business.svg';
+import annaBobs from '../Images/login/anna_bobs.svg'
 const LOGIN_BUSINESS = 'LOGIN_BUSINESS';
 let initialState = {
     bannerData: {
@@ -297,6 +298,12 @@ let initialState = {
                 to: "faq"
             },
         ],
+    },
+    userData:
+    {
+        id: 1,
+        img: annaBobs,
+        name: "Anna Bobs",
     },
     isLogin: false,
 };

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Loginbtn from "../LoginBtn/LoginBtn";
 import Logo from '../Logo/Logo';
 import Nav from '../Nav/Nav';
 import Scrollbtn from "../ScrollBtn/ScrollBtn";
+import User from "../User/User";
 import style from './Header.module.scss'
 
 const Header = (props) => {
@@ -28,7 +28,7 @@ const Header = (props) => {
                         <Logo logo={props.logo} />
                         <div className={style.wrapper}>
                             <Nav />
-                            <Loginbtn login={props.login} isLogin={props.isLogin} />
+                            <User login={props.login} isLogin={props.isLogin} loginData={props.loginData} userData={props.userData} />
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@ const Header = (props) => {
                         <Logo logo={props.logo} />
                         <div className={style.wrapper}>
                             <Nav />
-                            <Loginbtn login={props.login} isLogin={props.isLogin} />
+                            <User login={props.login} isLogin={props.isLogin} loginData={props.loginData} userData={props.userData} />
                         </div>
                     </div>
                     <div className={style.item}>

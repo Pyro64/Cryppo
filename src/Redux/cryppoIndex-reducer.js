@@ -7,6 +7,7 @@ import one from '../Images/payIcon/1.svg'
 import two from '../Images/payIcon/2.svg'
 import three from '../Images/payIcon/3.svg'
 import banner from '../Images/content/banner-index.svg'
+import annaBobs from '../Images/login/anna_bobs.svg'
 const LOGIN_INDEX = 'LOGIN_INDEX';
 let initialState = {
     bannerData: {
@@ -106,6 +107,12 @@ let initialState = {
                 to: 'benefitsIndex'
             },
         ],
+    },
+    userData:
+    {
+        id: 1,
+        img: annaBobs,
+        name: "Anna Bobs",
     },
     isLogin: false,
 }

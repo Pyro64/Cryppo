@@ -13,6 +13,7 @@ let mapStateToProps = (state) => {
         isLogin: state.cryppoIndexPage.isLogin,
         bannerIndex: state.anim.bannerIndex,
         step: state.anim.step,
+        user: state.cryppoIndexPage.userData,
     }
 }
 

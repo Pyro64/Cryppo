@@ -1,10 +1,17 @@
 import cryppoSvg from '../Images/cryppo.svg'
+import annaBobs from '../Images/login/anna_bobs.svg'
 const LOGIN_CRYPPO = 'LOGIN_CRYPPO';
 let initialState = {
     route: {
         logo: cryppoSvg,
         btn: [
         ],
+    },
+    userData:
+    {
+        id: 1,
+        img: annaBobs,
+        name: "Anna Bobs",
     },
     isLogin: false,
 }

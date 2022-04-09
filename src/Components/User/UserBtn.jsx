@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import style from './LoginBtn.module.scss'
 import img from '../../Images/icon/open.png'
 import { NavLink } from "react-router-dom";
-const Loginbtn = (props) => {
+import Login from "../User/User";
+const Userbtn = (props) => {
     // const [state, setstate] = useState(initialState);
     let value = true
 
@@ -12,8 +13,8 @@ const Loginbtn = (props) => {
             <div>
                 <NavLink to='lk' className={({ isActive }) => isActive ? `${style.link} ${style.active}` : `${style.link}`}>Личный Кабинет</NavLink>
                 <div onClick={() => props.login(!value)} >выйти</div>
+                <Login />
             </div>
-
         );
     }
     else {
@@ -26,4 +27,4 @@ const Loginbtn = (props) => {
     }
 }
 
-export default Loginbtn;
+export default Userbtn;
