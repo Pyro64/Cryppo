@@ -11,7 +11,7 @@ export default function Cryppo(props) {
             <Header logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} user={props.user} />
             <Routes>
                 <Route
-                    path="/"
+                    index
                     element={<CryppoLanding logo={props.logo} />}
                 />
                 <Route

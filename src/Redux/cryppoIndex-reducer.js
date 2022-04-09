@@ -112,7 +112,7 @@ let initialState = {
     {
         id: 1,
         img: annaBobs,
-        name: "Anna Bobs",
+        name: "Index Bobs",
     },
     isLogin: false,
 }

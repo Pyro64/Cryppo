@@ -11,7 +11,7 @@ let initialState = {
     {
         id: 1,
         img: annaBobs,
-        name: "Anna Bobs",
+        name: "Cryppo Bobs",
     },
     isLogin: false,
 }

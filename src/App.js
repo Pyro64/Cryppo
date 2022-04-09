@@ -19,7 +19,6 @@ function App() {
           <ScrollToTop />
           <Routes>
             <Route
-              index
               path="/*"
               element={<CryppoContainer />}
             />

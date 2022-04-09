@@ -9,12 +9,12 @@ export default function User(props) {
     if (props.isLogin) {
         return (
             <div>
-                <NavLink to='lk' className={({ isActive }) => isActive ? `${style.link} ${style.active}` : `${style.link}`}>Личный Кабинет</NavLink>
+                <NavLink to='lk' className={({ isActive }) => isActive ? ` ${style.active}` : `${style.link}`}>Личный Кабинет</NavLink>
                 <div className={style.login}>
                     <img src={state.img} alt="avatar" />
                     <div>
                         <p>{state.name}</p>
-                        <div onClick={() => props.login(!value)} >выйти</div>
+                        <NavLink to='/' onClick={() => props.login(!value)} >выйти</NavLink>
                     </div>
                 </div>
             </div>
