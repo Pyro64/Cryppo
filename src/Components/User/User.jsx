@@ -3,21 +3,22 @@ import style from '../User/User.module.scss'
 import { NavLink } from "react-router-dom";
 import img from '../../Images/icon/open.png'
 export default function User(props) {
-    let state = props.userData
+    let state = props.user
     console.log(props)
     let value = true
     if (props.isLogin) {
         return (
             <div>
                 <NavLink to='lk' className={({ isActive }) => isActive ? `${style.link} ${style.active}` : `${style.link}`}>Личный Кабинет</NavLink>
+                <div className={style.login}>
+                    <img src={state.img} alt="avatar" />
+                    <div>
+                        <p>{state.name}</p>
+                        <div onClick={() => props.login(!value)} >выйти</div>
+                    </div>
+                </div>
             </div>
-            // <div className={style.login}>
-            //     <img src={state.img} alt="avatar" />
-            //     <div>
-            //         <p>{state.name}</p>
-            //         <div onClick={() => props.login(!value)} >выйти</div>
-            //     </div>
-            // </div>
+
         )
 
     }

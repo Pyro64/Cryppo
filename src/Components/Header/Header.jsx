@@ -28,7 +28,7 @@ const Header = (props) => {
                         <Logo logo={props.logo} />
                         <div className={style.wrapper}>
                             <Nav />
-                            <User login={props.login} isLogin={props.isLogin} loginData={props.loginData} userData={props.userData} />
+                            <User login={props.login} isLogin={props.isLogin} user={props.user} />
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@ const Header = (props) => {
                         <Logo logo={props.logo} />
                         <div className={style.wrapper}>
                             <Nav />
-                            <User login={props.login} isLogin={props.isLogin} loginData={props.loginData} userData={props.userData} />
+                            <User login={props.login} isLogin={props.isLogin} user={props.user} />
                         </div>
                     </div>
                     <div className={style.item}>

@@ -7,7 +7,7 @@ import Header from '../Header/Header'
 export default function CryppoBusiness(props) {
   return (
     <div>
-      <Header logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} />
+      <Header logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} user={props.user} />
       <Routes>
         <Route
           path="/"
@@ -20,7 +20,7 @@ export default function CryppoBusiness(props) {
           element={<CryppoBusinessLk />}
         />
       </Routes>
-      
+
     </div>
   )
 }
