@@ -23,7 +23,6 @@ export default function CryppoBusinessLanding(props) {
             <SecurityBusiness security={props.security} />
             <ConnectionBusiness connectionList={props.connectionList} />
             <FaqBusiness faq={props.faq} />
-            <FooterContainer logo={props.logo} />
         </div>
     )
 }

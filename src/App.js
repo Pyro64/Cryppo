@@ -11,7 +11,6 @@ import CryppoIndexContainer from "./Components/CryppoIndex/CryppoIndexContainer"
 
 
 function App() {
-
   return (
     <BrowserRouter>
       <ParallaxProvider>

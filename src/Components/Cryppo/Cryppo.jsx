@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router";
 import FooterContainer from "../Footer/FooterContainer";
 import Header from '../Header/Header'
 import CryppoLanding from "./CryppoLanding/CryppoLanding";
-import CryppoLk from "./CryppoLk/CryppoLk";
+import CryppoLk from "../Lk/CryppoLk/CryppoLk";
 
 export default function Cryppo(props) {
     return (
@@ -19,6 +19,8 @@ export default function Cryppo(props) {
                     element={<CryppoLk />}
                 />
             </Routes>
+        <FooterContainer logo={props.logo} />
+
         </div>
     )
 }

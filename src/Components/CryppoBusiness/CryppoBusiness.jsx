@@ -1,8 +1,9 @@
 import React from 'react'
 import { Route, Routes } from "react-router";
 import CryppoBusinessLanding from './CryppoBusinessLanding/CryppoBusinessLanding'
-import CryppoBusinessLk from './CryppoBusinessLk/CryppoBusinessLk'
+import CryppoBusinessLk from '../Lk/CryppoBusinessLk/CryppoBusinessLk'
 import Header from '../Header/Header'
+import FooterContainer from '../Footer/FooterContainer'
 
 export default function CryppoBusiness(props) {
   return (
@@ -20,6 +21,7 @@ export default function CryppoBusiness(props) {
           element={<CryppoBusinessLk />}
         />
       </Routes>
+      <FooterContainer logo={props.logo} />
 
     </div>
   )

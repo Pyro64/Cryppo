@@ -5,12 +5,13 @@ import cryppoBusinessReducer from "./cryppoBusiness-reducer";
 import cryppoIndexReducer from './cryppoIndex-reducer'
 import animReducer from "./anim-reduсer";
 import footerReducer from "./footer-reducer";
-
+import cryppoIndexLkReducer from './cryppoIndexLk-reducer';
 
 let reducers = combineReducers({
     cryppoPage: cryppoReducer,
     cryppoBusinessPage: cryppoBusinessReducer,
     cryppoIndexPage: cryppoIndexReducer,
+    cryppoIndexLk: cryppoIndexLkReducer,
     anim: animReducer,
     footer: footerReducer,
     form: formReducer

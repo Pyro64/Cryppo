@@ -18,7 +18,6 @@ export default function CryppoIndexLanding(props) {
             <BenefitsIndex benefits={props.benefits} />
             <StatisticIndex style={style.chart} />
             <TechnologiesIndex />
-            <FooterContainer logo={props.logo} />
         </div>
     )
 }

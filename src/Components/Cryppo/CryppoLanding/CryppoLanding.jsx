@@ -6,7 +6,6 @@ export default function CryppoLanding(props) {
     return (
         <div className='main'>
             ландинг
-        <FooterContainer logo={props.logo} />
 
         </div>
 
