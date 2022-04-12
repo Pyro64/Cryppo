@@ -14,7 +14,6 @@ let mapStateToProps = (state) => {
         bannerIndex: state.anim.bannerIndex,
         step: state.anim.step,
         user: state.cryppoIndexPage.userData,
-        card:state.cryppoIndexLk.cardData,
     }
 }
 

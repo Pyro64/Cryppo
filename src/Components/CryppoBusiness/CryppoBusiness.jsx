@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Routes } from "react-router";
 import CryppoBusinessLanding from './CryppoBusinessLanding/CryppoBusinessLanding'
-import CryppoBusinessLk from '../Lk/CryppoBusinessLk/CryppoBusinessLk'
+import CryppoBusinessLk from '../Lk/BusinessLk/BusinessLk'
 import Header from '../Header/Header'
 import FooterContainer from '../Footer/FooterContainer'
 
