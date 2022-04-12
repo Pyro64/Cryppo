@@ -4,7 +4,6 @@
     cursor: pointer;
     position: relative;
     transition: 0.38s linear;
-    width: fit-content;
     @include fluid(margin-right, 30px, 75px);
     // &:hover {
     //     color: $green;
@@ -12,7 +11,8 @@
     &::after {
         content: '';
         position: absolute;
-        left: 0;
+        left: 50%;
+        transform: translate(-50%);
         transition: 0.38s ease-in-out;
         background: $purpleGradient;
         width: 0;
@@ -29,6 +29,6 @@
     font-weight: bold;
     position: relative;
     &::after {
-        width: 100%;
+        width: 50%;
     }
 }
