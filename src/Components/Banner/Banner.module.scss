@@ -4,16 +4,18 @@
 }
 .flex {
     display: flex;
+    align-items: center;
 }
 .block {
     width: 50%;
+    flex-grow: 1;
 }
 .item {
     position: relative;
 }
-.img{
-    @include fluid(width,350px,555px);
-    @include fluid(height,420px,615px);
+.img {
+    @include fluid(width, 350px, 557px);
+    @include fluid(height, 420px, 588px);
     object-fit: contain;
 }
 .animIndex {
@@ -39,18 +41,18 @@
     }
 }
 @media screen and(max-width:992px) {
-    .flex{
+    .flex {
         flex-direction: column;
         align-items: center;
         position: relative;
     }
-    .block{
+    .block {
         width: 100%;
         align-items: center;
         text-align: center;
         margin-bottom: 20px;
     }
-    .img{
+    .img {
         top: 0;
         left: 0;
         position: absolute;
@@ -60,6 +62,4 @@
     }
 }
 @media screen and(max-width:576px) {
-    
-    
 }

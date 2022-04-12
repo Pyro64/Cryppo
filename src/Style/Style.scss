@@ -26,7 +26,7 @@ a {
 //   list-style: none;
 // }
 .main {
-  @include fluid(padding-top, 200px, 400px);
+  @include fluid(padding-top, 100px, 130px);
   overflow-x: hidden;
   transition: 0.38s ease-in-out;
 }

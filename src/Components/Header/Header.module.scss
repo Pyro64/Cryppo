@@ -1,18 +1,19 @@
 @import '../../Style/Mixins';
 .header {
-    position: fixed;
     width: 100%;
+    position: sticky;
     z-index: 1;
     @include fluid(top, 30px, 90px);
     transition: 0.5s ease-in-out;
 }
 .header.scroll {
-    @include fluid(padding-top, 5px, 10px);
-    @include fluid(padding-bottom, 5px, 10px);
+    position: sticky;
+    @include fluid(padding-top, 15px, 30px);
+    @include fluid(padding-bottom, 15px, 25px);
     z-index: 5;
     top: 0;
-    backdrop-filter: blur(24px);
-    background-color: rgba(13, 13, 13, 0.3);
+    // backdrop-filter: blur(24px);
+    background-color: rgba(13, 13, 13, 0.9);
     box-shadow: 0px 4px 8px 0px rgba(47, 105, 255, 0.5);
     .block {
         @include fluid(margin-bottom, 10px, 15px);
@@ -104,7 +105,8 @@
 .link {
     color: #fff;
     position: relative;
-    transition: color 0.38s ease-in-out;
+    font-weight: 400;
+    transition: 0.38s ease-in-out;
     @include fluid(margin-right, 25px, 55px);
     &:last-child {
         margin-right: 0;
@@ -122,7 +124,10 @@
         @include fluid(height, 3px, 5px);
     }
     &:hover {
-        color: $green;
+        font-weight: bold;
+        &::after {
+            width: 100%;
+        }
     }
 }
 .active {
@@ -130,6 +135,5 @@
         width: 100%;
     }
 }
-@media screen and (max-width:992px) {
-    
+@media screen and (max-width: 992px) {
 }

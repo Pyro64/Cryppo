@@ -16,7 +16,7 @@ $blue: rgb(46, 105, 255);
 $green: rgb(0, 192, 169);
 $purple: #bc2fff;
 $blueGradient: linear-gradient(91.42deg, rgba(46, 105, 255, 0.5) 0%, rgba(0, 192, 169, 0.5) 100%);
-$purpleGradient: linear-gradient(140.58deg, rgba(46, 105, 255, 0.5) 13.96%, rgba(188, 47, 255, 0.5) 82.99%);
+$purpleGradient: linear-gradient(140.58deg, rgba(46, 105, 255, 1) 13.96%, rgba(188, 47, 255, 1) 82.99%);
 @mixin neumorphism {
     border-radius: 45px;
     border: 0.5px solid #545454;
