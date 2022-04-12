@@ -1,0 +1,12 @@
+@import '../../../../Style/Mixins.scss';
+
+.flex{
+    @include container();
+    display: flex;
+    align-items: center;
+}
+.img{
+    @include fluid(width,350px,656px);
+    @include fluid(height,250px,535px);
+    object-fit: contain;
+}
