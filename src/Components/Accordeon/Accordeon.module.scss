@@ -4,9 +4,11 @@
     transition: border 0s ease-in-out;
     display: flex;
     flex-direction: column;
-    border-radius: 20px;
+    border-radius: 40px;
     height: auto;
-    @include fluid(padding, 15px, 25px);
+    @include fluid(padding-left, 50px, 100px);
+    @include fluid(padding-right, 50px, 100px);
+    @include fluid(margin-bottom, 15px, 25px);
 }
 
 .block {
@@ -38,8 +40,11 @@
 
 .open {
     @include neumorphism;
-    border-radius: 20px;
-    @include fluid(margin-bottom, 15px, 25px);
+    border: none;
+    border-radius: 40px;
+    @include fluid(padding, 15px, 25px);
+    @include fluid(padding-left, 50px, 100px);
+    @include fluid(padding-right, 50px, 100px);
     .block {
         @include fluid(margin-bottom, 15px, 25px);
     }

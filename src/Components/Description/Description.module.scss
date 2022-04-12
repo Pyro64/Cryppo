@@ -5,6 +5,7 @@
 }
 .flex {
     @include flex;
+    align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
 }
@@ -12,9 +13,6 @@
     font-weight: 700;
     @include fluid(margin-bottom, 10px, 20px);
     @include fluid(font-size, 24px, 36px);
-    span {
-        @include textGradient;
-    }
 }
 .item {
     width: 30%;
@@ -36,14 +34,15 @@
 .wrapper {
     @include fluid(padding-left, 40px, 55px);
     p {
-        @include fluid(font-size, 14px, 16px);
+        width: 70%;
+        @include fluid(font-size, 14px, 18px);
     }
 }
 @media screen and(max-width:768px) {
-    .flex{
+    .flex {
         flex-direction: column;
     }
-    .item{
+    .item {
         width: 100%;
         margin-right: 0;
     }

@@ -13,7 +13,7 @@ export default function Banner(props) {
                 <div className={style.flex}>
                     <div className={style.block}>
                         <Title text={props.banner.title} gradient={props.banner.gradient} />
-                        <Text text={props.banner.text} />
+                        <div className={style.text}>С автоматической стабилизацией курса в USDT и BUSD</div>
                     </div>
                     <img className={style.img} src={props.banner.img} alt="" />
                 </div>

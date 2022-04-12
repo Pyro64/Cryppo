@@ -5,7 +5,6 @@ import Text from '../../../Text/Text'
 import ConnectionBusinessItem from './ConnectionBusinessItem'
 import { Parallax } from 'react-scroll-parallax'
 import img from '../../../../Images/content/connect-business.svg'
-import card from '../../../../Images/content/card.svg'
 export default function ConnectionBusiness(props) {
   let elementItem = props.connectionList.map(e =>
     <ConnectionBusinessItem
@@ -17,17 +16,19 @@ export default function ConnectionBusiness(props) {
   return (
     <div id="connect" className={style.container}>
       <Parallax className={style.parallax} translateX={[200, -200,]} />
-      <div className={style.block}>
-        <Subtitle subtitle="Как подключить CRYPPO Business" gradient="?" />
-        <Text text="Вы сможете легко настроить CRYPPO Business под любой бизнес: от небольшого интернет-магазина до крупной компании с клиентами по всему миру." />
-        <div className={style.list}>
-          {elementItem}
+      <div className={style.flex}>
+        <div className={style.block}>
+          <Subtitle subtitle="Как подключить CRYPPO Business" gradient="?" />
+          <Text text="Вы сможете легко настроить CRYPPO Business под любой бизнес: от небольшого интернет-магазина до крупной компании с клиентами по всему миру." />
+          <div className={style.list}>
+            {elementItem}
+          </div>
+        </div>
+        <div className={style.animate}>
+          <img className={style.img} src={img} alt="" />
         </div>
       </div>
-      <div className={style.animate}>
-        <img className={style.img} src={img} alt="" />
-        <img className={style.card} src={card} alt="" />
-      </div>
+
     </div>
   )
 }

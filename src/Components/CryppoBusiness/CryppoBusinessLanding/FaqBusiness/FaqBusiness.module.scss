@@ -2,9 +2,9 @@
 
 .container {
     @include container;
+    max-width: 1430px;
     @include fluid(margin-bottom, 70px, 170px);
 }
 .wrapper {
     @include container;
-    max-width: 1200px;
 }

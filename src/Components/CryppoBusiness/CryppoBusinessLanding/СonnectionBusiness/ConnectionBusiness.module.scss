@@ -2,13 +2,13 @@
 
 .container {
     @include container;
+    max-width: 1430px;
     @include fluid(margin-bottom, 70px, 170px);
     @include fluid(padding-top, 30px, 60px);
     @include fluid(padding-bottom, 30px, 60px);
-    @include fluid(padding-left, 50px, 100px);
-    @include fluid(padding-right, 50px, 100px);
+    @include fluid(padding-left, 50px, 120px);
+    @include fluid(padding-right, 50px, 120px);
     @include neumorphism;
-    display: flex;
     position: relative;
 }
 .animate {
@@ -18,29 +18,16 @@
     position: relative;
     z-index: 3;
 }
-.card {
-    position: absolute;
-    right: 0;
-    top: 0;
-    animation: right 5s infinite ease-in-out;
-}
-@keyframes right {
-    0% {
-        right: 0;
-    }
-    50% {
-        right: 60px;
-        top: 10px;
-    }
-    100% {
-        right: 0;
-    }
+.flex {
+    display: flex;
+
+    align-items: center;
 }
 .block {
     width: 60%;
 }
 .id {
-    background: $purpleGradient;
+    background: #2f69ff;
     @include fluid(height, 40px, 66px);
     @include fluid(width, 40px, 66px);
     border-radius: 50%;

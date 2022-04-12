@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router";
 import FooterContainer from "../Footer/FooterContainer";
 import Header from '../Header/Header'
 import CryppoIndexLanding from "./CryppoIndexLanding/CryppoIndexLanding";
-import CryppoIndexLk from "../Lk/CryppoIndexLk/CryppoIndexLk";
+import IndexLk from "../Lk/IndexLk/IndexLk";
 
 export default function CryppoIndex(props) {
     return (
@@ -18,7 +18,7 @@ export default function CryppoIndex(props) {
                 />
                 <Route
                     path="/lk/*"
-                    element={<CryppoIndexLk card={props.card} />}
+                    element={<IndexLk card={props.card} />}
                 />
             </Routes>
             <FooterContainer logo={props.logo} />

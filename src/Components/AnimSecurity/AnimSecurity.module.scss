@@ -1,8 +1,8 @@
 @import '../../Style/Mixins';
 
 .center {
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     background: url('../../Images/content/zamok.svg') no-repeat;
     background-size: contain;
@@ -10,16 +10,16 @@
     position: relative;
     cursor: default;
     &::before {
-        content: '';
-        border-radius: 50%;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%) rotate(0deg);
-        width: 70%;
-        height: 70%;
-        border: 20px inset rgba(0, 192, 169, 0.5);
-        animation: rotate 15s infinite linear;
+        // content: '';
+        // border-radius: 50%;
+        // position: absolute;
+        // left: 50%;
+        // top: 50%;
+        // transform: translate(-50%, -50%) rotate(0deg);
+        // width: 70%;
+        // height: 70%;
+        // border: 20px inset rgba(0, 192, 169, 0.5);
+        // animation: rotate 15s infinite linear;
     }
 }
 

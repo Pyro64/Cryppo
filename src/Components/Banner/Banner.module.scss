@@ -18,6 +18,10 @@
     @include fluid(height, 420px, 588px);
     object-fit: contain;
 }
+.text {
+    width: 50%;
+    @include fluid(line-height, 20px, 30px);
+}
 .animIndex {
     width: 160px;
     height: 160px;

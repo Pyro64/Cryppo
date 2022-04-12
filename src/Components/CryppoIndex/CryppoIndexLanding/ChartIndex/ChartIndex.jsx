@@ -111,8 +111,8 @@ export default function ChartIndex() {
                     </linearGradient>
                 </defs>
                 <CartesianGrid vertical={false} strokeDasharray="0.5" />
-                <XAxis dataKey="name" />
-                <YAxis mirror={true} />
+                <XAxis dataKey="name" hide={true} padding={{ bottom: 20 }} />
+                <YAxis />
                 <Tooltip contentStyle={wrapperStyle} itemStyle={divStyle} />
                 <Area dot={false} activeDot={{ stroke: 'rgba(64, 255, 232, 0.37)', strokeWidth: 5, r: 5 }} type="linear" dataKey="Цена" stroke="#40FFE8" fill="url(#colorUv)" />
             </AreaChart>

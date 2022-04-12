@@ -13,7 +13,7 @@
     width: 50%;
 }
 .block {
-    background: $purpleGradient;
+    background: rgba(188, 47, 255, 0.5);
     border-radius: 45px;
     @include fluid(padding, 30px, 60px);
 }
@@ -30,11 +30,11 @@
     @include fluid(font-size, 14px, 18px);
 }
 .img {
-    @include fluid(height, 40px, 55px);
-    @include fluid(width, 40px, 55px);
+    @include fluid(height, 40px, 52px);
+    @include fluid(width, 40px, 52px);
     border-radius: 50%;
-    background: rgba(188, 47, 255, 0.5);
-    @include fluid(margin-right, 10px, 15px);
+    background: rgba(188, 47, 255, 1);
+    @include fluid(margin-right, 8px, 12px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,20 +61,19 @@
     @include fluid(margin-top, 30px, 60px);
     position: relative;
     z-index: 20;
-    width: 15%;
+    width: 10%;
     margin-left: auto;
     display: flex;
     justify-content: space-between;
 }
-@media screen and (max-width:992px) {
-    .subtitle{
+@media screen and (max-width: 992px) {
+    .subtitle {
         width: 100% !important;
     }
-   .flex{
-       flex-direction: column;
-   }
-    .wrapper{
+    .flex {
+        flex-direction: column;
+    }
+    .wrapper {
         width: 100%;
     }
-    
 }
