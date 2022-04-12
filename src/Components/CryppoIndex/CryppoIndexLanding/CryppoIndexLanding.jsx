@@ -1,12 +1,10 @@
 import React from 'react'
 import style from './CryppoIndexLanding.module.scss'
-import Suggestions from './CryppoIndexLandingComponents/Suggestions/Suggestions'
-import BenefitsIndex from './CryppoIndexLandingComponents/BenefitsIndex/BenefitsIndex'
-import AboutIndex from './CryppoIndexLandingComponents/AboutIndex/AboutIndex'
-import StatisticIndex from './CryppoIndexLandingComponents/StatisticIndex/StatisticIndex'
-import TechnologiesIndex from './CryppoIndexLandingComponents/TechnologiesIndex/TechnologiesIndex'
-import FooterContainer from "../../Footer/FooterContainer";
-
+import Suggestions from './Suggestions/Suggestions'
+import BenefitsIndex from './BenefitsIndex/BenefitsIndex'
+import AboutIndex from './AboutIndex/AboutIndex'
+import StatisticIndex from './StatisticIndex/StatisticIndex'
+import TechnologiesIndex from './TechnologiesIndex/TechnologiesIndex'
 import Banner from '../../Banner/Banner'
 
 export default function CryppoIndexLanding(props) {

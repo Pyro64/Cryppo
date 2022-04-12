@@ -16,7 +16,7 @@ export default function Cryppo(props) {
                 />
                 <Route
                     path="/lk/*"
-                    element={<CryppoLk />}
+                    element={<CryppoLk card={props.card}/>}
                 />
             </Routes>
         <FooterContainer logo={props.logo} />

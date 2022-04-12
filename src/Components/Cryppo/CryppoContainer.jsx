@@ -7,6 +7,7 @@ let mapStateToProps = (state) => {
         btn: state.cryppoPage.route.btn,
         isLogin: state.cryppoPage.isLogin,
         user: state.cryppoPage.userData,
+        card: state.cryppoLk.cardData
     }
 }
 

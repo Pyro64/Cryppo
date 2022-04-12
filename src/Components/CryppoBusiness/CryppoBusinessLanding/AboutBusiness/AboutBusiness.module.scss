@@ -1,0 +1,115 @@
+@import '../../../../Style/Mixins.scss';
+
+.container {
+    @include container;
+    max-width: 1000px;
+    position: relative;
+    @include fluid(margin-bottom, 70px, 170px);
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.block {
+    background: rgba(84, 84, 84, 0.2);
+    margin-right: 2%;
+    width: 32%;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: 0.38s ease-in-out;
+    @include fluid(padding, 10px, 20px);
+    @include fluid(margin-bottom, 15px, 30px);
+    @include neumorphism;
+    box-shadow: 10px 10px 30px #0b0b0b, -10px -10px 30px #0f0f0f;
+    &:nth-child(3n) {
+        margin-right: 0;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transition: 0.38s ease-in-out;
+        background: $blueGradient;
+        opacity: 0;
+    }
+    &:hover {
+        &::before {
+            opacity: 1;
+        }
+        .wrapper {
+            background: rgba(46, 105, 255, 0.2);
+        }
+    }
+}
+.wrapper {
+    margin: auto;
+    @include fluid(width, 28px, 36px);
+    @include fluid(height, 28px, 36px);
+    border-radius: 50%;
+    background: rgba(109, 109, 109, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.38s ease-in-out;
+}
+.check {
+    background: url('../../../../Images/icon/check.svg') no-repeat;
+    background-size: contain;
+    @include fluid(width, 16px, 21px);
+    @include fluid(height, 13px, 16px);
+}
+.item {
+    position: relative;
+    z-index: 2;
+}
+.title {
+    @include fluid(margin-top, 15px, 25px);
+    @include fluid(font-size, 16px, 16px);
+    @include fluid(margin-bottom, 15px, 25px);
+}
+.text {
+    @include fluid(font-size, 12px, 14px);
+    @include fluid(line-height, 18px, 20px);
+}
+.parallax {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: -80%;
+    transform: translate(-50%);
+    background: radial-gradient(50% 50% at 50% 50%, rgba(47, 105, 255, 0.3) 0%, rgba(47, 105, 255, 0) 100%);
+    @include fluid(width, 1000px, 2000px);
+    @include fluid(height, 1000px, 2000px);
+}
+@media screen and (max-width:992px) {
+    
+    .flex{
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .block{
+        width: 45%;
+        padding: 15px;
+        &:nth-child(3n){
+            margin-right: 0;
+        }
+    }
+    .item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .text{
+        text-align: center;
+    }
+}
+@media screen and (max-width:768px) {
+    .block{
+        width: 100%;
+    }
+}

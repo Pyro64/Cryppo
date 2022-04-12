@@ -1,9 +1,9 @@
 import React from 'react'
-import style from './CryppoLk.module.scss'
+import style from './IndexLk.module.scss'
 import Subtitle from '../../Subtitle/Subtitle'
-import Check from './CryppoLkComponents/CheckLk/Check'
+import Check from './IndexLkComponents/CheckLk/Check'
 
-export default function CryppoLk(props) {
+export default function CryppoIndexLk(props) {
     debugger
     return (
         <div className={style.container}>

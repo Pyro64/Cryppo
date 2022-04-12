@@ -1,13 +1,12 @@
 import React from 'react'
 import Description from '../../Description/Description'
-import WhoSuits from './CryppoBusinessLandingComponents/WhoSuits/WhoSuits'
-import WhatsBusiness from './CryppoBusinessLandingComponents/WhatsBusiness/WhatsBusiness'
-import AboutBusiness from './CryppoBusinessLandingComponents/AboutBusiness/AboutBusiness'
-import SecurityBusiness from './CryppoBusinessLandingComponents/SecurityBusiness/SecurityBusiness'
-import FaqBusiness from './CryppoBusinessLandingComponents/FaqBusiness/FaqBusiness'
-import ConnectionBusiness from './CryppoBusinessLandingComponents/СonnectionBusiness/ConnectionBusiness'
+import WhoSuits from './WhoSuits/WhoSuits'
+import WhatsBusiness from './WhatsBusiness/WhatsBusiness'
+import AboutBusiness from './AboutBusiness/AboutBusiness'
+import SecurityBusiness from './SecurityBusiness/SecurityBusiness'
+import FaqBusiness from './FaqBusiness/FaqBusiness'
+import ConnectionBusiness from './СonnectionBusiness/ConnectionBusiness'
 import Banner from '../../Banner/Banner'
-import FooterContainer from "../../Footer/FooterContainer";
 
 
 export default function CryppoBusinessLanding(props) {
