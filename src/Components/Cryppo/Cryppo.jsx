@@ -11,15 +11,15 @@ export default function Cryppo(props) {
             <Header logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} user={props.user} />
             <Routes>
                 <Route
-                    index
+                    path="/"
                     element={<CryppoLanding logo={props.logo} />}
                 />
                 <Route
                     path="/lk/*"
-                    element={<CryppoLk card={props.card}/>}
+                    element={<CryppoLk card={props.card} />}
                 />
             </Routes>
-        <FooterContainer logo={props.logo} />
+            <FooterContainer logo={props.logo} />
 
         </div>
     )

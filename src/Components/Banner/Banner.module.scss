@@ -22,6 +22,12 @@
     width: 50%;
     @include fluid(line-height, 20px, 30px);
 }
+.textIndex {
+    @include fluid(margin-bottom, 25px, 50px);
+    line-height: 1.5;
+    @include fluid(font-size, 14px, 18px);
+    font-weight: 500;
+}
 .animIndex {
     width: 160px;
     height: 160px;

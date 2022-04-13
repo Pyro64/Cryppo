@@ -20,7 +20,10 @@
     z-index: 1;
     transition: 0.38s linear;
     @include fluid(margin-right, 10px, 15px);
-    @include fluid(padding, 12px, 20px);
+    @include fluid(padding-left, 10px, 15px);
+    @include fluid(padding-right, 10px, 15px);
+    @include fluid(padding-top, 15px, 25px);
+    @include fluid(padding-bottom, 15px, 25px);
     @include neumorphism;
     &:nth-child(5n) {
         margin-right: 0;

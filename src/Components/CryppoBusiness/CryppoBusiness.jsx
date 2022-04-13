@@ -11,7 +11,7 @@ export default function CryppoBusiness(props) {
       <Header logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} user={props.user} />
       <Routes>
         <Route
-          index
+          path="/"
           element={<CryppoBusinessLanding appIcon={props.appIcon} description={props.description}
             whoSuits={props.whoSuits} about={props.about} security={props.security}
             faq={props.faq} connectionList={props.connectionList} banner={props.banner} logo={props.logo} />}

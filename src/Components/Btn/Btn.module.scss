@@ -1,7 +1,9 @@
 @import '../../Style/Mixins.scss';
 
 .btn {
+    display: block;
     color: #fff;
+    width: fit-content;
     @include fluid(font-size, 12px, 14px);
     @include fluid(padding-top, 8px, 10px);
     @include fluid(padding-bottom, 8px, 10px);

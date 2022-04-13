@@ -14,7 +14,13 @@
         margin-bottom: 0;
     }
     .text {
-        width: 70%;
+        width: 60%;
+        p {
+            @include fluid(padding-bottom, 10px, 20px);
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
     }
 }
 .parallax {
@@ -29,10 +35,10 @@
     @include fluid(height, 500px, 1000px);
 }
 @media screen and(max-width:992px) {
-    .item{
+    .item {
         flex-direction: column;
     }
-    .text{
+    .text {
         width: 100% !important;
     }
 }

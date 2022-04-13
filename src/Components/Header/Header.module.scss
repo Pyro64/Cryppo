@@ -124,7 +124,6 @@
         @include fluid(height, 3px, 5px);
     }
     &:hover {
-        font-weight: bold;
         &::after {
             width: 50%;
         }

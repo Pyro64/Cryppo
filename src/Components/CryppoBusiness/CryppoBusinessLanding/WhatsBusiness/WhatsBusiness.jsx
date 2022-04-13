@@ -12,10 +12,12 @@ const WhatsBussiness = (props) => {
             <div className={style.block}>
                 <div className={style.item}>
                     <Subtitle subtitle="Что такое CRYPPO Business" gradient="?" />
-                    <div className={style.text}>CRYPPO Business – это платёжная система, 
-                    которая принимает платежи в криптовалютах и защищает ваши доходы от колебаний курса на криптовалютной бирже. 
-                    По вашему желанию CRYPPO Business может переводить все поступающие средства в 
-                    стейблкоины – криптовалюты со стабильным курсом, который привязан к доллару.</div>
+                    <div className={style.text}>
+                        <p>CRYPPO Business – это платёжная система,
+                            которая принимает платежи в криптовалютах и защищает ваши доходы от колебаний курса на криптовалютной бирже.</p>
+                        <p>По вашему желанию CRYPPO Business может переводить все поступающие средства в
+                            стейблкоины – криптовалюты со стабильным курсом, который привязан к доллару.</p>
+                    </div>
                 </div>
                 <div className={style.item}>
                     <Subtitle subtitle="CRYPPO Business принимает к оплате" gradient=":" />

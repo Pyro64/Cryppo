@@ -31,7 +31,9 @@
     transition: 0.38s ease-in-out;
     position: relative;
     &:hover {
-        color: $green;
+        &::after {
+            width: 50%;
+        }
     }
     &::after {
         content: '';
@@ -46,8 +48,36 @@
         @include fluid(height, 3px, 5px);
     }
 }
+.dropdown {
+    width: 20px;
+    height: 20px;
+    background: $purpleGradient;
+    cursor: pointer;
+    margin-left: 20px;
+}
 .active {
+    font-weight: bold;
     &::after {
-        width: 100%;
+        width: 50%;
     }
+}
+.flex {
+    display: flex;
+    align-items: center;
+}
+.out {
+    color: #fff;
+}
+.block {
+    position: relative;
+}
+.login {
+    display: none;
+}
+.open {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 50px;
 }

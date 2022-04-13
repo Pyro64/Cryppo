@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import "../src/Style/Style.scss";
 import { ParallaxProvider } from "react-scroll-parallax";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
-import Spinner from './Components/Spinner/Spinner';
+
 
 import CryppoContainer from './Components/Cryppo/CryppoContainer';
 import CryppoBusinessContainer from "./Components/CryppoBusiness/CryppoBusinessContainer";

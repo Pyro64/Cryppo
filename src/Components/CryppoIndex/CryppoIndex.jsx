@@ -11,7 +11,7 @@ export default function CryppoIndex(props) {
             <Header logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} user={props.user} />
             <Routes>
                 <Route
-                    index
+                    path="/"
                     element={<CryppoIndexLanding banner={props.banner} bannerIndex={props.bannerIndex}
                         addStep={props.addStep} step={props.step} suggestions={props.suggestions}
                         aboutData={props.aboutData} benefits={props.benefits} logo={props.logo} />}
