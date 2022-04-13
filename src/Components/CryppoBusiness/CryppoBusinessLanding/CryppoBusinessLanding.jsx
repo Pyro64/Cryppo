@@ -7,6 +7,7 @@ import SecurityBusiness from './SecurityBusiness/SecurityBusiness'
 import FaqBusiness from './FaqBusiness/FaqBusiness'
 import ConnectionBusiness from './СonnectionBusiness/ConnectionBusiness'
 import Banner from '../../Banner/Banner'
+import LevelBusiness from './LevelBusiness/LevelBusiness'
 
 export default function CryppoBusinessLanding(props) {
 
@@ -20,6 +21,7 @@ export default function CryppoBusinessLanding(props) {
             <SecurityBusiness security={props.security} />
             <ConnectionBusiness connectionList={props.connectionList} />
             <FaqBusiness faq={props.faq} />
+            <LevelBusiness/>
         </div>
     )
 }

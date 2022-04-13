@@ -19,10 +19,14 @@
 }
 .block {
     @include neumorphism;
-    @include fluid(padding-top, 40px, 80px);
-    @include fluid(padding-bottom, 40px, 80px);
+    @include fluid(padding-top, 40px, 85px);
+    @include fluid(padding-bottom, 40px, 85px);
     @include fluid(padding-left, 100px, 250px);
     @include fluid(padding-right, 100px, 250px);
+    background: rgba(91, 91, 91, 0.2);
+    border: 1px solid #545454;
+    box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(100px);
 }
 
 .flex {
@@ -40,16 +44,17 @@
     font-weight: 500;
     text-align: center;
     @include fluid(font-size, 16px, 18px);
-    @include fluid(margin-bottom, 30px, 55px);
+    @include fluid(margin-bottom, 30px, 50px);
     text-transform: uppercase;
 }
 .description {
-    font-family: 'Cera Pro', sans-serif;
+    font-family: 'Cera Pro';
     font-weight: 400;
     @include fluid(font-size, 24px, 36px);
     @include fluid(line-height, 36px, 45px);
     text-align: center;
     @include fluid(margin-bottom, 35px, 70px);
+    @include fluid(line-height,25px,45px);
 }
 .number {
     color: $blue;

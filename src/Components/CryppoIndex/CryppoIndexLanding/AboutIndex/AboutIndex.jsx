@@ -19,7 +19,7 @@ export default function AboutIndex(props) {
       <div className={style.flex}>
         <div className={style.block}>
           <Subtitle subtitle="О проекте" gradient="." />
-          <Text modify={{ marginBottom: "20px" }} text="Проект «CRYPPO INDEX» был создан в 2018 году, изначально для личного использования, как инструмент минимизации рисков и преумножения капитала на высоко волатильном рынке цифровых активов." />
+          <Text modify={{ marginBottom: "20px" }} text="Проект «CRYPPO INVEST» был создан в 2018 году, изначально для личного использования, как инструмент минимизации рисков и преумножения капитала на высоко волатильном рынке цифровых активов." />
           <Text text="В течение первых 19 месяцев было осуществлено 1574 инвестиционных операции. Итоговая доходность за последние  12 месяцев составила 38% в долларовом эквиваленте (USDT). С июля 2020 года проект стал открытым для внешних инвесторов. Начальная стоимость индекса составляла $1. Стоимость индекса на текущий момент составляет $24.76." />
         </div>
 
@@ -31,7 +31,7 @@ export default function AboutIndex(props) {
           </div>
           <AboutIndexCoin coin={props.aboutData.CoinItem} />
           <AboutIndexBar bar={props.aboutData.Bar} />
-          <div className={style.chart}>
+          <div className={style.chartImg}>
             <AboutChart />
           </div>
         </div>

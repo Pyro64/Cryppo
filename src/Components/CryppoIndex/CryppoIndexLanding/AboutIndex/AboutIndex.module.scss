@@ -47,6 +47,25 @@
     left: 5%;
     bottom: -15%;
 }
+.coinImg{
+    @include fluid(padding-right, 50px, 80px);
+    position: absolute;
+    left: 5%;
+    bottom: -15%;
+}
+.chartImg{
+    width: 255px;
+    position: absolute;
+    right: 0;
+    top: -10%;
+    height: 270px;
+}
+.barImg{
+    width: 255px;
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+}
 .coinBlock {
     @include flex;
     @include fluid(margin-bottom, 15px, 30px);

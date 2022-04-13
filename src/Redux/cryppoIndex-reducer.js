@@ -11,7 +11,7 @@ import annaBobs from '../Images/login/anna_bobs.svg'
 const LOGIN_INDEX = 'LOGIN_INDEX';
 let initialState = {
     bannerData: {
-        title: 'CRYPPO INDEX',
+        title: 'CRYPPO Invest',
         gradient: '.',
         text: 'Автоматически ребалансируемый индекс из 8 самых высококапитализированных цифровых активов на основе машинного обучения (искусственного интеллекта)',
         img: banner,
