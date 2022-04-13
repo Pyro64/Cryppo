@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import img from '../../Images/icon/open.png'
 export default function User(props) {
     let state = props.user
-    console.log(props)
     let value = true
     if (props.isLogin) {
         return (

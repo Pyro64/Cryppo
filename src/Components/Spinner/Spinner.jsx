@@ -2,10 +2,7 @@ import style from './Spinner.module.scss'
 export default function Spinner() {
     return (
         <div className={style.container}>
-            <div className={style.circle}></div>
-            <div className={style.circle}></div>
-            <div className={style.circle}></div>
-            <div className={style.circle}></div>
+            <div className={style.circle}>Спиннер</div>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Description from '../../Description/Description'
 import WhoSuits from './WhoSuits/WhoSuits'
 import WhatsBusiness from './WhatsBusiness/WhatsBusiness'
@@ -8,11 +8,9 @@ import FaqBusiness from './FaqBusiness/FaqBusiness'
 import ConnectionBusiness from './СonnectionBusiness/ConnectionBusiness'
 import Banner from '../../Banner/Banner'
 
-
 export default function CryppoBusinessLanding(props) {
 
     return (
-        
         <div className="main">
             <Banner page="business" banner={props.banner} />
             <Description description={props.description} />

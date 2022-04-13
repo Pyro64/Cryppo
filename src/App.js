@@ -8,8 +8,6 @@ import Spinner from './Components/Spinner/Spinner';
 import CryppoContainer from './Components/Cryppo/CryppoContainer';
 import CryppoBusinessContainer from "./Components/CryppoBusiness/CryppoBusinessContainer";
 import CryppoIndexContainer from "./Components/CryppoIndex/CryppoIndexContainer";
-
-
 function App() {
   return (
     <BrowserRouter>
