@@ -10,10 +10,10 @@ export default function Events() {
             </TabList>
 
             <TabPanel>
-                <h2>хехе</h2>
+                <h2>tab 1</h2>
             </TabPanel>
             <TabPanel>
-                <h2>не хехе</h2>
+                <h2>tab 2</h2>
             </TabPanel>
         </Tabs>
     )

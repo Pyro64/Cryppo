@@ -305,6 +305,28 @@ let initialState = {
         img: annaBobs,
         name: "Business Bobs",
     },
+    navData: [
+        {
+            id: 1,
+            name: "Главная",
+            href: '/'
+        },
+        {
+            id: 2,
+            name: "События",
+            href: '/event'
+        },
+        {
+            id: 3,
+            name: "Переводы",
+            href: '/translations'
+        },
+        {
+            id: 4,
+            name: "Настройки",
+            href: '/settings'
+        },
+    ],
     isLogin: false,
 };
 const cryppoBusinessReducer = (state = initialState, action) => {

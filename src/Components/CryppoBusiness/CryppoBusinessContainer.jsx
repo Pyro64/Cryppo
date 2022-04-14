@@ -18,6 +18,7 @@ let mapStateToProps = (state) => {
                 logo: state.cryppoBusinessPage.route.logo,
                 btn: state.cryppoBusinessPage.route.btn,
                 user: state.cryppoBusinessPage.userData,
+                nav: state.cryppoBusinessPage.navData,
         }
 }
 

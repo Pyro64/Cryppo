@@ -114,6 +114,28 @@ let initialState = {
         img: annaBobs,
         name: "Index Bobs",
     },
+    navData: [
+        {
+            id: 1,
+            name: "Главная",
+            href: '/'
+        },
+        {
+            id: 2,
+            name: "События",
+            href: '/event'
+        },
+        {
+            id: 3,
+            name: "Переводы",
+            href: '/translations'
+        },
+        {
+            id: 4,
+            name: "Настройки",
+            href: '/settings'
+        },
+    ],
     isLogin: false,
 }
 const cryppoIndexReducer = (state = initialState, action) => {

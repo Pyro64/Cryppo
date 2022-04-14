@@ -7,7 +7,6 @@ import User from "../User/User";
 import style from './Header.module.scss'
 
 const Header = (props) => {
-    debugger
     const [scroll, setScroll] = useState(false)
     useEffect(() => {
         window.addEventListener("scroll", () => {

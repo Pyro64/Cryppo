@@ -8,7 +8,7 @@ import IndexLk from "../Lk/IndexLk/IndexLk";
 export default function CryppoIndex(props) {
     return (
         <div>
-            <Header logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} user={props.user} />
+            <Header logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} user={props.user} nav={props.nav} />
             <Routes>
                 <Route
                     path="/"
