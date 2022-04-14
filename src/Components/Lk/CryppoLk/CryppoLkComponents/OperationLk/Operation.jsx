@@ -3,7 +3,6 @@ import style from "./Operation.module.scss";
 import OperationItem from "./OperationItem";
 
 export default function Operation(props) {
-  debugger;
   let elementItem = props.operationData.operation.map((e) => (
     <OperationItem
       id={e.id}
@@ -19,6 +18,7 @@ export default function Operation(props) {
     <div className={style.container}>
       <div className={style.title}>{props.operationData.title}</div>
       <div className={style.wrapper}>{elementItem}</div>
+      <div className={style.btn}>Все операции</div>
     </div>
   );
 }

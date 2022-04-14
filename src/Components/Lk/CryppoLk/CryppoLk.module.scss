@@ -1,5 +1,13 @@
-@import '../../../Style/Mixins.scss';
+@import "../../../Style/Mixins.scss";
 
-.container{
-    @include container;
+.container {
+  @include container;
+  display: flex;
+  justify-content: space-between;
+}
+.wrapperMin {
+  width: 30%;
+}
+.wrapperMax {
+  width: 68%;
 }

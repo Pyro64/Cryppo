@@ -2,6 +2,7 @@ import React from "react";
 import style from "./Check.module.scss";
 import CheckItem from "./CheckItem";
 import CheckCard from "./CheckCard";
+import SubtitleLk from "../../../SubtitleLk/SubtitleLk";
 
 export default function Check(props) {
   let elementCard = props.card.map((e) => (
@@ -18,12 +19,15 @@ export default function Check(props) {
     <CheckCard id={e.id} key={e.id} number={e.number} logo={e.logo} />
   ));
   return (
-    <div className={style.block}>
-      <div className={style.item}>{elementCard}</div>
-      <div className={style.card}>
-        <div className={style.drop} />
-        <div className={style.text}>Банковские карты</div>
-        <div className={style.card}>{bankCard}</div>
+    <div>
+      <SubtitleLk arrow={true} subtitle="Счета и карты" />
+      <div className={style.block}>
+        <div className={style.item}>{elementCard}</div>
+        <div className={style.card}>
+          <div className={style.drop} />
+          <div className={style.text}>Банковские карты</div>
+          <div className={style.card}>{bankCard}</div>
+        </div>
       </div>
     </div>
   );

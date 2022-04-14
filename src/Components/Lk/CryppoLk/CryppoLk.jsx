@@ -5,13 +5,13 @@ import Check from "./CryppoLkComponents/CheckLk/Check";
 import Invest from "./CryppoLkComponents/InvestLk/Invest";
 import AddCard from "./CryppoLkComponents/AddCard/AddCard";
 import Operation from "./CryppoLkComponents/OperationLk/Operation";
+import Statistic from "./CryppoLkComponents/StatisticLk/Statistic";
 
 export default function CryppoLk(props) {
   return (
     <div className={style.container}>
       <div className={style.wrapperMin}>
         <div className={style.item}>
-          <Subtitle subtitle="Счета и карты" />
           <Check card={props.card} bankCard={props.bankCard} />
         </div>
         <div className={style.item}>
@@ -22,10 +22,10 @@ export default function CryppoLk(props) {
         </div>
       </div>
       <div className={style.wrapperMax}>
-        <Subtitle subtitle="Последние операции >" />
         <div className={style.item}>
           <Operation operationData={props.operationData} />
         </div>
+        <Statistic className={style.item} statistic={props.statistic} />
       </div>
     </div>
   );

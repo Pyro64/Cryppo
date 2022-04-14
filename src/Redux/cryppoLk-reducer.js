@@ -31,14 +31,14 @@ let initialState = {
       prise: "9 656 $",
     },
     {
-      id: 2,
+      id: 3,
       icon: arde,
       text: "ARDE",
       availability: "17.235 ARDE",
       prise: "9 656 $",
     },
     {
-      id: 1,
+      id: 4,
       icon: usd,
       text: "USD",
       availability: "56.254 USD",
