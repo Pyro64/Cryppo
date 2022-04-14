@@ -5,8 +5,35 @@ let initialState = {
     route: {
         logo: cryppoSvg,
         btn: [
+            {
+                id: 1,
+                name: 'Кому подойдет',
+                to: "about"
+            },
         ],
     },
+    navData: [
+        {
+            id: 1,
+            name: "Главная",
+            href: '/'
+        },
+        {
+            id: 2,
+            name: "События",
+            href: '/event'
+        },
+        {
+            id: 3,
+            name: "Переводы",
+            href: '/translations'
+        },
+        {
+            id: 4,
+            name: "Настройки",
+            href: '/settings'
+        },
+    ],
     userData:
     {
         id: 1,

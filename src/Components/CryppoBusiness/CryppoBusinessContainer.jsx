@@ -5,7 +5,6 @@ import { login } from '../../Redux/cryppoBusiness-reducer';
 
 
 let mapStateToProps = (state) => {
-
         return {
                 appIcon: state.cryppoBusinessPage.appIconData,
                 description: state.cryppoBusinessPage.descriptionData,

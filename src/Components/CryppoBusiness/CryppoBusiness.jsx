@@ -22,7 +22,6 @@ export default function CryppoBusiness(props) {
         />
       </Routes>
       <FooterContainer logo={props.logo} />
-
     </div>
   )
 }

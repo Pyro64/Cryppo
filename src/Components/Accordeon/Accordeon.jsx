@@ -7,7 +7,6 @@ export default function Accordeon(props) {
     };
     return (
         <div className={open ? `${style.container} ${style.open}` : `${style.container}`}>
-
             <div className={style.block} onClick={toggleHandler}>
                 <div>{props.title}</div>
                 <div className={style.dropdown}></div>
