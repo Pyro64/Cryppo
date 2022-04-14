@@ -1,1 +1,5 @@
-@import '../../../Style/Mixins.scss'
+@import '../../../Style/Mixins.scss';
+
+.container{
+    @include container;
+}

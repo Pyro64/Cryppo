@@ -3,7 +3,6 @@ import style from './Check.module.scss'
 import CheckItem from './CheckItem'
 
 export default function Check(props) {
-  debugger
   let elementCard = props.card.map(e =>
     <CheckItem
       id={e.id}
