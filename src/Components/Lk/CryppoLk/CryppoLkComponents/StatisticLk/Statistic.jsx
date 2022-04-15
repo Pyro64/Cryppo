@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./Statistic.module.scss";
 import StatisticItem from "./StatisticItem";
+import SubtitleLk from "../../../SubtitleLk/SubtitleLk";
 
 export default function Statistic(props) {
   let elementItem = props.statistic.map((e) => (
@@ -13,5 +14,12 @@ export default function Statistic(props) {
       descripthion={e.descripthion}
     />
   ));
-  return <div className={style.item}>{elementItem}</div>;
+  return (
+    <div className="">
+      <SubtitleLk arrow={true} subtitle="Последние операции" />
+      <div className={style.container}>
+        <div className={style.items}>{elementItem}</div>
+      </div>
+    </div>
+  );
 }

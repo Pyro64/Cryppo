@@ -1,6 +1,7 @@
 @import "../../../Style/Mixins.scss";
 
 .subtitle {
+  width: fit-content;
   @include fluid(font-size, 18px, 24px);
   font-family: "Days One Regular";
   @include fluid(margin-bottom, 15px, 35px);
@@ -8,11 +9,20 @@
 }
 .arrow {
   &::before {
-    background: url("../../../Images/arrow.svg"), no-repeat;
-    @include fluid(width, 6px, 8px);
-    @include fluid(height, 6px, 8px);
+    content: "";
+    background: url("../../../Images/arrow.svg") no-repeat;
+    @include fluid(width, 6px, 12px);
+    @include fluid(height, 6px, 12px);
     background-size: contain;
+    transform: translateY(-50%);
     position: absolute;
-    right: 0;
+    top: 50%;
+    right: -10%;
+    transition: 0.38s ease-in-out;
+  }
+  &:hover {
+    &::before {
+      right: -12%;
+    }
   }
 }

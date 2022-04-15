@@ -122,3 +122,22 @@
   flex-direction: column;
   align-items: flex-end;
 }
+.cardDown {
+  display: flex;
+  align-items: center;
+  @include fluid(margin-top, 10px, 20px);
+  transform: scale(1);
+}
+.cart {
+  @include fluid(margin-bottom, 10px, 15px);
+  @include fluid(margin-right, 15px, 30px);
+  cursor: pointer;
+  transition: 0.38s ease-in-out;
+  &:nth-child(2n) {
+    background: #39e1cc;
+    margin-bottom: 0;
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+}

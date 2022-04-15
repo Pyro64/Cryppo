@@ -5,8 +5,10 @@ export default function CheckCard(props) {
   return (
     <div className={style.cart}>
       <div className={style.cartLine}></div>
-      <div className={style.number}>{props.number}</div>
-      <img src={props.logo} className={style.logo}></img>
+      <div className={style.cardDown}>
+        <div className={style.number}>{props.number}</div>
+        <img src={props.logo} className={style.logo}></img>
+      </div>
     </div>
   );
 }
