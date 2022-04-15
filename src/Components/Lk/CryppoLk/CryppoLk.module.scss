@@ -4,6 +4,7 @@
   @include container;
   display: flex;
   justify-content: space-between;
+  @include fluid(padding-top, 130px, 170px);
 }
 .wrapperMin {
   width: 30%;

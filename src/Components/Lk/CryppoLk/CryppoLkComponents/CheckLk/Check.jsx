@@ -24,9 +24,11 @@ export default function Check(props) {
       <div className={style.block}>
         <div className={style.item}>{elementCard}</div>
         <div className={style.card}>
-          <div className={style.drop} />
-          <div className={style.text}>Банковские карты</div>
-          <div className={style.card}>{bankCard}</div>
+          <div className={style.last}>
+            <div className={style.drop} />
+            <div className={style.bankText}>Банковские карты</div>
+          </div>
+          <div className={style.cardLine}>{bankCard}</div>
         </div>
       </div>
     </div>
