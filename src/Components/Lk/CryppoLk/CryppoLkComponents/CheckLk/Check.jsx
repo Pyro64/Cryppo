@@ -19,7 +19,7 @@ export default function Check(props) {
     <CheckCard id={e.id} key={e.id} number={e.number} logo={e.logo} />
   ));
   return (
-    <div>
+    <div className={style.containers}>
       <SubtitleLk arrow={true} subtitle="Счета и карты" />
       <div className={style.block}>
         <div className={style.item}>{elementCard}</div>

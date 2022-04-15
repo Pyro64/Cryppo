@@ -20,7 +20,7 @@ let initialState = {
       id: 1,
       icon: eth,
       text: "ETH",
-      availability: "1.234 ETH",
+      availability: "00000000000000001.234 ETH",
       prise: "9 656 $",
     },
     {
