@@ -112,7 +112,13 @@ let initialState = {
         icon: yandex,
         title: "Яндекс Такси",
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
-        status: true,
+        status: {
+          true: {},
+          false: {
+            text: "операция отклонена",
+          },
+          load: {},
+        },
         cash: -1.234,
       },
       {
