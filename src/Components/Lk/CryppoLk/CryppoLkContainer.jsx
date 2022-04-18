@@ -3,11 +3,11 @@ import CryppoLk from "./CryppoLk";
 
 let mapStateToProps = (state) => {
   return {
-    card: state.cryppoIndexLk.cardData,
-    bankCard: state.cryppoIndexLk.bankCardData,
+    card: state.cryppoLk.cardData,
+    bankCard: state.cryppoLk.bankCardData,
     invest: state.cryppoLk.investData,
     newCard: state.cryppoLk.newCardData,
-    tabs: state.cryppoLk.tabsData,
+    news: state.cryppoLk.newsData,
     operationData: state.cryppoLk.operationData,
     statistic: state.cryppoLk.statisticData,
   };

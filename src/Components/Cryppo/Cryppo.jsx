@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router";
 import FooterContainer from "../Footer/FooterContainer";
 import Header from "../Header/Header";
 import CryppoLanding from "./CryppoLanding/CryppoLanding";
-import CryppoLk from "../Lk/CryppoLk/CryppoLk";
+import CryppoLkContainer from "../Lk/CryppoLk/CryppoLkContainer";
 
 export default function Cryppo(props) {
   return (
@@ -21,7 +21,7 @@ export default function Cryppo(props) {
         <Route
           path="lk/*"
           element={
-            <CryppoLk
+            <CryppoLkContainer
               card={props.card}
               bankCard={props.bankCard}
               invest={props.invest}

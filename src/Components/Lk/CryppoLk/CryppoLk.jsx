@@ -6,8 +6,10 @@ import CryppoLkSettings from "./CryppoLkComponents/CryppoLkSettings/CryppoLkSett
 export default function CryppoLk(props) {
   return (
     <Routes>
-      <Route path="/" element={<CryppoLkMain card={props.card} statistic={props.statistic} bankCard={props.bankCard}
-        invest={props.invest} newCard={props.newCard} operationData={props.operationData} />} />
+      <Route path="/"
+        element={<CryppoLkMain
+          card={props.card} statistic={props.statistic} bankCard={props.bankCard}
+          invest={props.invest} newCard={props.newCard} operationData={props.operationData} news={props.news} />} />
       <Route
         path="settings/*"
         element={

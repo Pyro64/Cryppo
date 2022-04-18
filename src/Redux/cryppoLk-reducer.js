@@ -6,9 +6,10 @@ import masterCard from "../Images/icon/mastercard.svg";
 import bag from "../Images/icon/bag.svg";
 import qron from "../Images/icon/qron.svg";
 import elementum from "../Images/icon/elementum.svg";
-import calculate from "../Images/icon/calculate.svg";
-import diagram from "../Images/icon/diagram.svg";
-import card from "../Images/icon/card.svg";
+import calculate from "../Images/news/1.svg";
+import analitica from "../Images/news/2.svg";
+import cryptocard from "../Images/news/3.svg";
+import cryptocard2 from "../Images/news/4.svg";
 import visa from "../Images/icon/VISA.svg";
 import yandex from "../Images/icon/yandex.svg";
 import gipo from "../Images/icon/gipo.svg";
@@ -72,25 +73,25 @@ let initialState = {
     povered: "Powered by QRON",
     poveredIcon: qron,
   },
-  tabsData: [
+  newsData: [
     {
       id: 1,
-      icon: calculate,
+      img: calculate,
       text: "Ваши траты за месяц",
     },
     {
       id: 2,
-      icon: diagram,
+      img: analitica,
       text: "Аналитика",
     },
     {
       id: 3,
-      icon: card,
+      img: cryptocard,
       text: "Криптокарта",
     },
     {
       id: 4,
-      icon: card,
+      img: cryptocard2,
       text: "Криптокарта",
     },
   ],
