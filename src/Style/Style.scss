@@ -51,6 +51,7 @@ textarea:focus::-webkit-input-placeholder {
 .flex {
   display: flex;
   justify-content: space-between;
+  @include fluid(margin-bottom, 30px, 110px);
 }
 .sidebar {
   width: 30%;
@@ -63,6 +64,20 @@ textarea:focus::-webkit-input-placeholder {
   width: 68%;
 }
 
-// .swiper-wrapper {
-//   align-items: center;
-// }
+.swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  left: 0 !important;
+  bottom: 0 !important;
+  transform: translateX(0) !important;
+  text-align: left;
+}
+.swiper-pagination-bullet {
+  border: 1px solid #6d6d6d;
+}
+.swiper-pagination-bullet {
+  background: #6d6d6d !important;
+}
+.swiper-wrapper {
+  align-items: center;
+}
+// display: flex;
