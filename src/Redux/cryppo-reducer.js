@@ -16,22 +16,22 @@ let initialState = {
         {
             id: 1,
             name: "Главная",
-            href: '/'
+            href: '/lk'
         },
         {
             id: 2,
             name: "События",
-            href: '/event'
+            href: 'lk/event'
         },
         {
             id: 3,
             name: "Переводы",
-            href: '/translations'
+            href: 'lk/translations'
         },
         {
             id: 4,
             name: "Настройки",
-            href: '/settings'
+            href: 'lk/settings'
         },
     ],
     userData:

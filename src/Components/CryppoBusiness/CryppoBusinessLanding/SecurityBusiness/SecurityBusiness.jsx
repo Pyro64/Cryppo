@@ -2,11 +2,11 @@ import React from 'react'
 
 import SecurityBusinessItem from './SecurityBusinessItem';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper';
+import { Autoplay, Navigation, Pagination, A11y } from 'swiper';
 import Subtitle from '../../../Subtitle/Subtitle'
 import 'swiper/scss';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import 'swiper/scss/navigation';
+import 'swiper/scss/pagination';
 import style from './SecurityBusiness.module.scss'
 import AnimSecurity from '../../../AnimSecurity/AnimSecurity';
 export default function SecurityBusiness(props) {
@@ -32,19 +32,19 @@ export default function SecurityBusiness(props) {
                 </div>
                 <div className={style.wrapper}>
                     <Swiper
-                        modules={[Navigation, Pagination, Autoplay,]}
+                        modules={[Navigation, Pagination, Autoplay, A11y]}
                         spaceBetween={50}
-                        // slidesPerView={1}
+                        slidesPerView={1}
                         loop={true}
-                        autoplay={{ delay: 5000, }}
-                        navigation={{ nextEl: '.sec-next', prevEl: '.sec-prev', }}
-                        pagination={{ clickable: true, dynamicBullets: true, dynamicMainBullets: 1, }}
+                        // autoplay={{ delay: 5000, }}
+                        navigation={{ nextEl: `${style.next}`, prevEl: `${style.prev}`, }}
+                        pagination={{ clickable: true, bulletClass: `${style.bullet}`, modifierClass: `${style.fraction}`, }}
                         className={style.swiper}
                     >
                         {elementItem}
                         <div className={style.navigation}>
-                            <div className='sec sec-prev'></div>
-                            <div className='sec sec-next'></div>
+                            <div className={style.prev}></div>
+                            <div className={style.next}></div>
                         </div>
                     </Swiper>
                 </div>

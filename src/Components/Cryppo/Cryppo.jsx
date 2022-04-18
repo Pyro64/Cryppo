@@ -17,9 +17,9 @@ export default function Cryppo(props) {
         nav={props.nav}
       />
       <Routes>
-        <Route path="/" element={<CryppoLanding logo={props.logo} />} />
+        <Route path="/*" element={<CryppoLanding logo={props.logo} />} />
         <Route
-          path="/lk/*"
+          path="lk/*"
           element={
             <CryppoLk
               card={props.card}

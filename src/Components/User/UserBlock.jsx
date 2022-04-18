@@ -12,7 +12,7 @@ const Userblock = (props) => {
     return (
         <div className={style.block}>
             <div className={style.flex}>
-                <NavLink to='lk' className={({ isActive }) => isActive ? `${style.link} ${style.active}` : `${style.link}`}>Личный Кабинет</NavLink>
+                <NavLink to='lk' className={({ isActive }) => isActive ? `${style.link} ${style.active}` : `${style.link}`} end>Личный Кабинет</NavLink>
                 <div onClick={toggleHandler} className={style.dropdown}></div>
             </div>
             <div className={open ? `${style.login} ${style.open}` : `${style.login}`}>
