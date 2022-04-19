@@ -3,7 +3,7 @@
 .block {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   transition: 0.38s ease-in-out;
   @include neumorphism;
   border-radius: 15px;

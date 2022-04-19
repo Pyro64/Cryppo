@@ -1,12 +1,18 @@
-@import '../../../../Style/Mixins.scss';
+@import "../../../../Style/Mixins.scss";
 
-.flex{
-    @include container();
-    display: flex;
-    align-items: center;
+.flex {
+  @include container();
+  display: flex;
+  align-items: center;
 }
-.img{
-    @include fluid(width,350px,656px);
-    @include fluid(height,250px,535px);
-    object-fit: contain;
+.img {
+  @include fluid(width, 350px, 656px);
+  @include fluid(height, 250px, 535px);
+  object-fit: cover;
+}
+@media screen and (max-width: 768px) {
+  .flex {
+    flex-direction: column;
+    align-items: center;
+  }
 }

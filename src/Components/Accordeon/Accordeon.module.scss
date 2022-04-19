@@ -1,60 +1,66 @@
-@import '../../Style/Mixins.scss';
+@import "../../Style/Mixins.scss";
 .container {
-    transition: 0.3s linear;
-    transition: border 0s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    border-radius: 40px;
-    height: auto;
-    @include fluid(padding-left, 50px, 100px);
-    @include fluid(padding-right, 50px, 100px);
-    @include fluid(margin-bottom, 15px, 25px);
+  transition: 0.3s linear;
+  transition: border 0s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  border-radius: 40px;
+  height: auto;
+  @include fluid(padding-left, 50px, 100px);
+  @include fluid(padding-right, 50px, 100px);
+  @include fluid(margin-bottom, 15px, 25px);
 }
 
 .block {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: 0.38s ease-in-out;
-    &:hover {
-        .dropdown {
-            background-image: url('../../Images/icon/color-dropdown.svg');
-        }
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.38s ease-in-out;
+  &:hover {
+    .dropdown {
+      background-image: url("../../Images/icon/color-dropdown.svg");
     }
+  }
 }
 .content {
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
 }
 .dropdown {
-    background: url('../../Images/icon/dropdown.svg') no-repeat;
-    background-size: contain;
-    @include fluid(width, 12px, 15px);
-    @include fluid(height, 6px, 8px);
-    transition: 0.38s ease-in-out;
-    transform: rotate(0deg);
-    transform-origin: center;
+  background: url("../../Images/icon/dropdown.svg") no-repeat;
+  background-size: contain;
+  @include fluid(width, 12px, 15px);
+  @include fluid(height, 6px, 8px);
+  transition: 0.38s ease-in-out;
+  transform: rotate(0deg);
+  transform-origin: center;
 }
 
 .open {
-    @include neumorphism;
-    border: none;
-    border-radius: 40px;
-    @include fluid(padding, 15px, 25px);
-    @include fluid(padding-left, 50px, 100px);
-    @include fluid(padding-right, 50px, 100px);
-    .block {
-        @include fluid(margin-bottom, 15px, 25px);
-    }
-    .content {
-        overflow: auto;
-        height: auto;
-        opacity: 1;
-    }
-    .dropdown {
-        background-image: url('../../Images/icon/color-dropdown.svg');
-        transform: rotate(180deg);
-    }
+  @include neumorphism;
+  border: none;
+  border-radius: 40px;
+  @include fluid(padding, 15px, 25px);
+  @include fluid(padding-left, 50px, 100px);
+  @include fluid(padding-right, 50px, 100px);
+  .block {
+    @include fluid(margin-bottom, 15px, 25px);
+  }
+  .content {
+    overflow: auto;
+    height: auto;
+    opacity: 1;
+  }
+  .dropdown {
+    background-image: url("../../Images/icon/color-dropdown.svg");
+    transform: rotate(180deg);
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }

@@ -1,17 +1,18 @@
-@import '../../Style/Mixins.scss';
+@import "../../Style/Mixins.scss";
 
 .subtitle {
-    font-family: 'Days One Regular';
-    width: 100%;
-    color: #fff;
-    @include fluid(font-size, 24px, 32px);
-    @include fluid(margin-bottom, 20px, 30px);
-    span {
-        @include textGradient;
-    }
+  font-family: "Days One Regular";
+  width: 100%;
+  color: #fff;
+  @include fluid(font-size, 24px, 32px);
+  @include fluid(margin-bottom, 20px, 30px);
+  span {
+    @include textGradient;
+  }
 }
-@media screen and(max-width:768px) {
-    .subtitle{
-        text-align: center;
-    }
+@media screen and(max-width:992px) {
+  .subtitle {
+    width: 100%;
+    text-align: center;
+  }
 }

@@ -172,6 +172,38 @@ let initialState = {
       descripthion: "Больше февраля на 345 $",
     },
   ],
+  translationsData: [
+    {
+      id: 1,
+      title: "По номеру телефона",
+      icon: gipo,
+    },
+    {
+      id: 2,
+      title: "По номеру карты",
+      icon: gipo,
+    },
+    {
+      id: 3,
+      title: "По реквизитам",
+      icon: gipo,
+    },
+    {
+      id: 4,
+      title: "Между своими счетами",
+      icon: gipo,
+    },
+    {
+      id: 5,
+      title: "По номеру карты",
+      icon: gipo,
+    },
+    {
+      id: 6,
+      title: "По реквизитам",
+      icon: gipo,
+    },
+  ],
 };
 
 const cryppoLkReducer = (state = initialState, action) => {

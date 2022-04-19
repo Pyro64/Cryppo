@@ -125,7 +125,7 @@
 .cardDown {
   display: flex;
   align-items: center;
-  @include fluid(margin-top, 10px, 20px);
+  margin-top: 20px;
   transform: scale(1);
 }
 .cart {

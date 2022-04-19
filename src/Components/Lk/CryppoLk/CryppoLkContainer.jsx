@@ -10,6 +10,7 @@ let mapStateToProps = (state) => {
     news: state.cryppoLk.newsData,
     operationData: state.cryppoLk.operationData,
     statistic: state.cryppoLk.statisticData,
+    translations: state.cryppoLk.translationsData,
   };
 };
 
