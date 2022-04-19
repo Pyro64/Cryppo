@@ -48,13 +48,41 @@
         @include fluid(font-size, 12px, 14px);
     }
 }
-.pagination {
+
+// .bullet {
+//     border: 1px solid #6d6d6d;
+//     background: #6d6d6d;
+// }
+.block {
+    position: relative;
+}
+.navigation {
+    width: 10%;
     display: flex;
+    margin-left: auto;
+    justify-content: space-between;
 }
-.bullet {
-    border: 1px solid #6d6d6d;
-    background: #6d6d6d;
+.prev {
+    @include fluid(width, 18px, 22px);
+    @include fluid(height, 10px, 14px);
+    cursor: pointer;
+    transition: 0.38s ease-in-out;
+    opacity: 0.5;
+    background: url('../../../Images/icon/sec-prev.svg') no-repeat;
+    &:hover {
+        opacity: 1;
+    }
 }
-.swipper {
-    // display: none;
+.next {
+    @include fluid(width, 18px, 22px);
+    @include fluid(height, 10px, 14px);
+    cursor: pointer;
+    transition: 0.38s ease-in-out;
+    opacity: 0.5;
+    top: 0;
+    right: 0;
+    background: url('../../../Images/icon/sec-next.svg') no-repeat;
+    &:hover {
+        opacity: 1;
+    }
 }
