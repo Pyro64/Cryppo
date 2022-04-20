@@ -14,6 +14,9 @@ import visa from "../Images/icon/VISA.svg";
 import yandex from "../Images/icon/yandex.svg";
 import gipo from "../Images/icon/gipo.svg";
 import arrow from "../Images/icon/arrow.svg";
+import index from "../Images/icon/index.svg";
+import profit from "../Images/icon/profit.svg";
+import plus from "../Images/icon/plus.svg";
 
 let initialState = {
   cardData: [
@@ -204,6 +207,55 @@ let initialState = {
       icon: gipo,
     },
   ],
+  tabsData: {
+    invest: [
+      {
+        id: 1,
+        icon: bag,
+        title: "Инвестиции CRYPPO INVEST",
+        statistic: "0.00000000",
+        cash: "$ 0.00",
+        text: "Powered by Elementum",
+        povered: elementum,
+      },
+    ],
+    addCart: [
+      {
+        id: 1,
+        title: "Привязать карту",
+        povered: "Powered by QRON",
+        poveredIcon: qron,
+      },
+    ],
+    indexNow: {
+      id: 1,
+      icon: index,
+      title: "Текущая стоимость индекса",
+      cash: "$ 28.84",
+    },
+
+    volumeIndex: {
+      id: 1,
+      icon: bag,
+      title: "Объем вашего индекса",
+      statistic: "0.00000000 TOP8",
+      cash: "$ 0.00",
+    },
+
+    indexProfit: {
+      id: 1,
+      icon: profit,
+      title: "Индексный доход за сегодня",
+      statistic: "$ 0.00",
+      text: "0% за последние 30 дней",
+    },
+
+    buyNow: {
+      id: 1,
+      icon: plus,
+      title: "Купить индекс",
+    },
+  },
 };
 
 const cryppoLkReducer = (state = initialState, action) => {

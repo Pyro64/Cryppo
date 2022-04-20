@@ -30,6 +30,12 @@ let initialState = {
     },
     {
       id: 4,
+      name: "Инвестиции",
+      href: "lk/invest",
+    },
+
+    {
+      id: 5,
       name: "Настройки",
       href: "lk/settings",
     },
