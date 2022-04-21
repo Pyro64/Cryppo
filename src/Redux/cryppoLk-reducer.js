@@ -94,6 +94,26 @@ let initialState = {
       img: cryptocard2,
       text: "Криптокарта",
     },
+    {
+      id: 5,
+      img: calculate,
+      text: "Ваши траты за месяц",
+    },
+    {
+      id: 6,
+      img: analitica,
+      text: "Аналитика",
+    },
+    {
+      id: 7,
+      img: cryptocard,
+      text: "Криптокарта",
+    },
+    {
+      id: 8,
+      img: cryptocard2,
+      text: "Криптокарта",
+    },
   ],
   operationData: {
     title: "Сегодня",
