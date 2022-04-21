@@ -11,6 +11,7 @@ let mapStateToProps = (state) => {
     operationData: state.cryppoLk.operationData,
     statistic: state.cryppoLk.statisticData,
     translations: state.cryppoLk.translationsData,
+    tabs: state.cryppoLk.tabsData,
   };
 };
 
