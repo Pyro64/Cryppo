@@ -6,7 +6,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 
-import faker from 'faker';
+
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const StatisticMoney = () => {
