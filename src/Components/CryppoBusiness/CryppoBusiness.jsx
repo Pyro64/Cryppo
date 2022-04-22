@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Route, Routes } from "react-router";
 import CryppoBusinessLanding from './CryppoBusinessLanding/CryppoBusinessLanding'
 import CryppoBusinessLk from '../Lk/BusinessLk/BusinessLk'
@@ -6,6 +6,10 @@ import Header from '../Header/Header'
 import FooterContainer from '../Footer/FooterContainer'
 
 export default function CryppoBusiness(props) {
+  useEffect(()=>{
+      props.getCryppoBusinessThunkCreator();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   return (
     <div>
       <Header logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} user={props.user} nav={props.nav} />

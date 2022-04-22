@@ -8,6 +8,9 @@ import two from '../Images/payIcon/2.svg'
 import three from '../Images/payIcon/3.svg'
 import banner from '../Images/content/banner-index.svg'
 import annaBobs from '../Images/login/anna_bobs.svg'
+import {CryppoIndexGet} from "../Api/api"
+
+const GET = 'GET'
 const LOGIN_INDEX = 'LOGIN_INDEX';
 let initialState = {
     bannerData: {
@@ -145,9 +148,29 @@ const cryppoIndexReducer = (state = initialState, action) => {
                 ...state,
                 isLogin: action.value,
             };
+        case GET:
+            return {
+                ...state,
+                isLogin: action.value,
+            };
         default:
             return state;
     }
 }
+
+export const getCryppoIndexThunkCreator = () =>{
+    return (dispatch) => {
+        CryppoIndexGet()
+          .then((data)=>{
+            let value = JSON.parse(JSON.stringify(data))
+            dispatch({type: 'GET', value});
+          })
+          .catch((response) => {
+              console.log(response);
+              console.log('error');
+          })
+    }
+}
 export const login = (value) => ({ type: LOGIN_INDEX, value })
+export const get = (value) => ({ type: GET, value })
 export default cryppoIndexReducer;

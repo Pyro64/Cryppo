@@ -1,6 +1,11 @@
 import cryppoSvg from "../Images/cryppo.svg";
 import annaBobs from "../Images/login/anna_bobs.svg";
+import {CryppoGet} from "../Api/api"
+
 const LOGIN_CRYPPO = "LOGIN_CRYPPO";
+const GET = 'GET';
+
+
 let initialState = {
   route: {
     logo: cryppoSvg,
@@ -54,9 +59,28 @@ const cryppoReducer = (state = initialState, action) => {
         ...state,
         isLogin: action.value,
       };
+    case GET:
+          return {
+            ...state,
+            ...action.value
+          };
     default:
       return state;
   }
 };
+export const getCryppoThunkCreator = () =>{
+  return (dispatch) => {
+      CryppoGet()
+        .then((data)=>{
+          let value = JSON.parse(JSON.stringify(data))
+          dispatch({type: 'GET', value});
+        })
+        .catch((response) => {
+            console.log(response);
+            console.log('error');
+        })
+  }
+}
 export const login = (value) => ({ type: LOGIN_CRYPPO, value });
+export const get = (value) => ({ type: GET, value });
 export default cryppoReducer;
