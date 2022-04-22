@@ -1,7 +1,7 @@
 @import '../../../Style/Mixins.scss';
 
 .container {
-    @include fluid(margin-bottom, 50px, 100px);
+    @include fluid(margin-bottom, 30px, 60px);
     overflow: hidden;
 }
 .flex {
@@ -63,6 +63,8 @@
     justify-content: space-between;
 }
 .prev {
+    border: none;
+    outline: none;
     @include fluid(width, 18px, 22px);
     @include fluid(height, 10px, 14px);
     cursor: pointer;
@@ -74,6 +76,8 @@
     }
 }
 .next {
+    border: none;
+    outline: none;
     @include fluid(width, 18px, 22px);
     @include fluid(height, 10px, 14px);
     cursor: pointer;

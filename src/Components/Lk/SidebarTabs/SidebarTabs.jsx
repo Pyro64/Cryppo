@@ -1,17 +1,20 @@
 import React from "react";
 import style from "./SidebarTabs.module.scss";
-import SidebarTabsItem from "./SidebarTabsItem";
 
 export default function SidebarTabs(props) {
+  let title = <div className={style.title}>{props.tabs.title}</div>;
+  let cash = <div className={style.subtitle}>{props.tabs.cash}</div>;
+  let statistic = <div className={style.subtitle}>{props.tabs.statistic}</div>;
+  let text = <div className={style.text}>{props.tabs.text}</div>;
   return (
     <div className={style.block}>
       <div className={style.wrapper}>
         <img src={props.tabs.icon} className={style.icon} />
         <div className={style.textWrapper}>
-          <div className={style.title}>{props.tabs.title}</div>
-          <div className={style.subtitle}>{props.tabs.cash}</div>
-          <div className={style.subtitle}>{props.tabs.statistic}</div>
-          <div className={style.text}>{props.tabs.text}</div>
+          <div>{props.tabs.title ? title : ""}</div>
+          <div>{props.tabs.statistic ? statistic : ""}</div>
+          <div>{props.tabs.cash ? cash : ""}</div>
+          <div>{props.tabs.text ? text : ""}</div>
         </div>
       </div>
     </div>

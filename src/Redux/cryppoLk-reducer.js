@@ -17,6 +17,9 @@ import arrow from "../Images/icon/arrow.svg";
 import index from "../Images/icon/index.svg";
 import profit from "../Images/icon/profit.svg";
 import plus from "../Images/icon/plus.svg";
+import {CryppoLkGet} from "../Api/api"
+
+const GET = "GET"
 
 let initialState = {
   cardData: [
@@ -94,6 +97,26 @@ let initialState = {
     },
     {
       id: 4,
+      img: cryptocard2,
+      text: "Криптокарта",
+    },
+    {
+      id: 5,
+      img: calculate,
+      text: "Ваши траты за месяц",
+    },
+    {
+      id: 6,
+      img: analitica,
+      text: "Аналитика",
+    },
+    {
+      id: 7,
+      img: cryptocard,
+      text: "Криптокарта",
+    },
+    {
+      id: 8,
       img: cryptocard2,
       text: "Криптокарта",
     },
@@ -260,8 +283,28 @@ let initialState = {
 
 const cryppoLkReducer = (state = initialState, action) => {
   switch (action.type) {
+    case GET:
+      return {
+        ...state,
+        ...action.value
+      }
     default:
       return state;
   }
 };
+
+export const getCryppoLkThunkCreator = () =>{
+  return (dispatch) => {
+      CryppoLkGet()
+        .then((data)=>{
+          let value = JSON.parse(JSON.stringify(data))
+          dispatch({type: 'GET', value});
+        })
+        .catch((response) => {
+            console.log(response);
+            console.log('error');
+        })
+  }
+}
+export const get = (value) => ({ type: GET, value })
 export default cryppoLkReducer;

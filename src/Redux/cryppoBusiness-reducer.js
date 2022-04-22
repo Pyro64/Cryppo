@@ -28,7 +28,10 @@ import blockchain from '../Images/icon/blockchain.svg'
 import banner from '../Images/content/banner-business.svg'
 import businessSvg from '../Images/cryppo-business.svg';
 import annaBobs from '../Images/login/anna_bobs.svg'
+
+import {CryppoBusinessGet} from "../Api/api"
 const LOGIN_BUSINESS = 'LOGIN_BUSINESS';
+const GET = 'GET';
 let initialState = {
     bannerData: {
         title: 'Принимайте платежи в криптовалюте по всему миру',
@@ -336,9 +339,28 @@ const cryppoBusinessReducer = (state = initialState, action) => {
                 ...state,
                 isLogin: action.value,
             };
+        case GET:
+            return {
+                ...state,
+                ...action.value,
+            };
         default:
             return state;
     }
 }
+export const getCryppoBusinessThunkCreator = () =>{
+    return (dispatch) => {
+        CryppoBusinessGet()
+          .then((data)=>{
+            let value = JSON.parse(JSON.stringify(data))
+            dispatch({type: 'GET', value});
+          })
+          .catch((response) => {
+              console.log(response);
+              console.log('error');
+          })
+    }
+}
 export const login = (value) => ({ type: LOGIN_BUSINESS, value })
+export const get = (value) => ({ type: GET, value })
 export default cryppoBusinessReducer;

@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
-import { login } from "../../Redux/cryppo-reducer";
+import { login, get, getCryppoThunkCreator } from "../../Redux/cryppo-reducer";
 import Cryppo from "./Cryppo";
+
 let mapStateToProps = (state) => {
   return {
     logo: state.cryppoPage.route.logo,
@@ -11,5 +12,5 @@ let mapStateToProps = (state) => {
   };
 };
 
-const CryppoContainer = connect(mapStateToProps, { login })(Cryppo);
+const CryppoContainer = connect(mapStateToProps, { login, get, getCryppoThunkCreator })(Cryppo);
 export default CryppoContainer;

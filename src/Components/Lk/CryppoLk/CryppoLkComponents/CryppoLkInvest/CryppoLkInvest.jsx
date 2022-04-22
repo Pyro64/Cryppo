@@ -2,6 +2,7 @@ import React from "react";
 import SidebarTabs from "../../../SidebarTabs/SidebarTabs";
 import SubtitleLk from "../../../SubtitleLk/SubtitleLk";
 import ChartIndex from "../../../../CryppoIndex/CryppoIndexLanding/ChartIndex/ChartIndex";
+import CompositionIndex from "../CompositionIndex/CompositionIndex";
 
 export default function CryppoLkInvest(props) {
   return (
@@ -15,6 +16,10 @@ export default function CryppoLkInvest(props) {
             <SidebarTabs tabs={props.tabs.indexProfit} />
             <SidebarTabs tabs={props.tabs.buyNow} />
           </div>
+        </div>
+        <div className="content">
+          <SubtitleLk subtitle="Состав индекса" />
+          <CompositionIndex />
         </div>
       </div>
     </div>

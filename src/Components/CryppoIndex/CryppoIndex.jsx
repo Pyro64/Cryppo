@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router";
 import FooterContainer from "../Footer/FooterContainer";
 import Header from '../Header/Header'
@@ -6,6 +6,9 @@ import CryppoIndexLanding from "./CryppoIndexLanding/CryppoIndexLanding";
 import IndexLk from "../Lk/IndexLk/IndexLk";
 
 export default function CryppoIndex(props) {
+    useEffect(() => {
+        props.getCryppoIndexThunkCreator();
+    }, [])
     return (
         <div>
             <Header logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} user={props.user} nav={props.nav} />

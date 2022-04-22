@@ -1,7 +1,7 @@
 
 import { connect } from "react-redux";
 import CryppoBusiness from "./CryppoBusiness";
-import { login } from '../../Redux/cryppoBusiness-reducer';
+import { login, get, getCryppoBusinessThunkCreator } from '../../Redux/cryppoBusiness-reducer';
 
 
 let mapStateToProps = (state) => {
@@ -22,6 +22,6 @@ let mapStateToProps = (state) => {
         }
 }
 
-const CryppoBusinessContainer = connect(mapStateToProps, { login })(CryppoBusiness);
+const CryppoBusinessContainer = connect(mapStateToProps, { login, get, getCryppoBusinessThunkCreator })(CryppoBusiness);
 
 export default CryppoBusinessContainer;

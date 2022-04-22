@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import CryppoIndex from './CryppoIndex'
 import { addStep } from '../../Redux/anim-reduсer';
-import { login } from '../../Redux/cryppoIndex-reducer';
+import { login, getCryppoIndexThunkCreator } from '../../Redux/cryppoIndex-reducer';
 let mapStateToProps = (state) => {
     return {
         benefits: state.cryppoIndexPage.benefitsData,
@@ -18,5 +18,5 @@ let mapStateToProps = (state) => {
     }
 }
 
-const CryppoIndexContainer = connect(mapStateToProps, { addStep, login })(CryppoIndex);
+const CryppoIndexContainer = connect(mapStateToProps, { addStep, login, getCryppoIndexThunkCreator })(CryppoIndex);
 export default CryppoIndexContainer
