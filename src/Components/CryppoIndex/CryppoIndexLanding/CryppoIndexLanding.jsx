@@ -12,7 +12,7 @@ export default function CryppoIndexLanding(props) {
         <div className='main'>
             <Banner page="index" banner={props.banner} bannerIndex={props.bannerIndex} addStep={props.addStep} step={props.step} />
             <Suggestions suggestions={props.suggestions} />
-            <AboutIndex aboutData={props.aboutData} />
+            <AboutIndex aboutDataIndex={props.aboutDataIndex} />
             <BenefitsIndex benefits={props.benefits} />
             <StatisticIndex style={style.chart} />
             <TechnologiesIndex />

@@ -7,7 +7,7 @@ let mapStateToProps = (state) => {
         benefits: state.cryppoIndexPage.benefitsData,
         suggestions: state.cryppoIndexPage.suggestionsData,
         banner: state.cryppoIndexPage.bannerData,
-        aboutData: state.cryppoIndexPage.aboutData,
+        aboutDataIndex: state.cryppoIndexPage.aboutDataIndex,
         logo: state.cryppoIndexPage.route.logo,
         btn: state.cryppoIndexPage.route.btn,
         isLogin: state.cryppoIndexPage.isLogin,

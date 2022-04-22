@@ -11,7 +11,7 @@ import AboutIndexCoin from './AboutIndexCoin'
 
 
 export default function AboutIndex(props) {
-  let index = props.aboutData.Index
+  let index = props.aboutDataIndex.Index
 
   return (
     <div className={style.container}>
@@ -29,8 +29,8 @@ export default function AboutIndex(props) {
             <h3>{index.title}</h3>
             <p>{index.text}</p>
           </div>
-          <AboutIndexCoin coin={props.aboutData.CoinItem} />
-          <AboutIndexBar bar={props.aboutData.Bar} />
+          <AboutIndexCoin coin={props.aboutDataIndex.CoinItem} />
+          <AboutIndexBar bar={props.aboutDataIndex.Bar} />
           <div className={style.chartImg}>
             <AboutChart />
           </div>

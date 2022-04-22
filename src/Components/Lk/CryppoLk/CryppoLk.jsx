@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { Route, Routes } from "react-router";
 import CryppoLkMain from "./CryppoLkComponents/CryppoLkMain/CryppoLkMain";
 import CryppoLkSettings from "./CryppoLkComponents/CryppoLkSettings/CryppoLkSettings";
@@ -6,9 +6,13 @@ import CryppoLkTranslation from "../CryppoLk/CryppoLkComponents/CryppoLkTranslat
 import CryppoLkInvest from "./CryppoLkComponents/CryppoLkInvest/CryppoLkInvest";
 
 export default function CryppoLk(props) {
-  useEffect(()=>{
-      props.getCryppoLkThunkCreator();
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+  const get = () => props.getCryppoLkThunkCreator();
+  useEffect(() => {
+    //   if (currentStep >= iconLenght) {
+    //     return;
+    // }
+    const interval = setInterval(get, 5000);
+    // return () => clearInterval(interval);
   }, [])
   return (
     <Routes>
