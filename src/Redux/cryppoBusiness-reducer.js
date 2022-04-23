@@ -29,7 +29,7 @@ import banner from '../Images/content/banner-business.svg'
 import businessSvg from '../Images/cryppo-business.svg';
 import annaBobs from '../Images/login/anna_bobs.svg'
 
-import {CryppoBusinessGet} from "../Api/api"
+import { CryppoBusinessGet } from "../Api/api"
 const LOGIN_BUSINESS = 'LOGIN_BUSINESS';
 const GET = 'GET';
 let initialState = {
@@ -348,17 +348,17 @@ const cryppoBusinessReducer = (state = initialState, action) => {
             return state;
     }
 }
-export const getCryppoBusinessThunkCreator = () =>{
+export const getCryppoBusinessThunkCreator = () => {
     return (dispatch) => {
         CryppoBusinessGet()
-          .then((data)=>{
-            let value = JSON.parse(JSON.stringify(data))
-            dispatch({type: 'GET', value});
-          })
-          .catch((response) => {
-              console.log(response);
-              console.log('error');
-          })
+            .then((data) => {
+                let value = JSON.parse(JSON.stringify(data))
+                dispatch({ type: 'GET', value });
+            })
+            .catch((response) => {
+                console.log(response);
+                console.log('error');
+            })
     }
 }
 export const login = (value) => ({ type: LOGIN_BUSINESS, value })
