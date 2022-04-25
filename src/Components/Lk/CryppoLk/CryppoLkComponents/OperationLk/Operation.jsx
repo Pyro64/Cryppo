@@ -3,7 +3,7 @@ import style from "./Operation.module.scss";
 import SubtitleLk from "../../../SubtitleLk/SubtitleLk";
 import Btn from "../../../../Btn/Btn";
 import OperationInner from "./OperationInner";
-
+import OperationModal from "../../../Modal/OperationModal";
 
 export default function Operation(props) {
   // operationModal={props.operationModal}
@@ -12,12 +12,15 @@ export default function Operation(props) {
       <SubtitleLk arrow={true} subtitle="Последние операции" />
       <div className={style.container}>
         <div className={style.title}>{props.operationData.title}</div>
-        <OperationInner operationData={props.operationData} setModal={props.setModal} />
+        <OperationInner
+          operationData={props.operationData}
+          setModal={props.setModal}
+        />
         <div className={style.btnContainer}>
           <Btn link="#" text="Все операции" />
         </div>
         <div>
-          {props.operationModal.title}
+          <OperationModal operationModal={props.operationModal} />
         </div>
       </div>
     </div>
