@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { Suspense } from "react";
 import style from './CryppoIndexLanding.module.scss'
 import Suggestions from './Suggestions/Suggestions'
 import BenefitsIndex from './BenefitsIndex/BenefitsIndex'
 import AboutIndex from './AboutIndex/AboutIndex'
 import StatisticIndex from './StatisticIndex/StatisticIndex'
 import TechnologiesIndex from './TechnologiesIndex/TechnologiesIndex'
-import Banner from '../../Banner/Banner'
 
+import Banner from '../../Banner/Banner'
 export default function CryppoIndexLanding(props) {
     return (
         <div className='main'>

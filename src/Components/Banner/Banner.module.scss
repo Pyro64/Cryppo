@@ -1,17 +1,19 @@
-@import "../../Style/Mixins";
+@import '../../Style/Mixins';
 .container {
   @include container;
 }
 .flex {
   display: flex;
-  align-items: center;
 }
 .block {
   width: 50%;
-  flex-grow: 1;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  transition: 0.38s ease-in-out;
 }
 .item {
   position: relative;
+  width: 50%;
 }
 .img {
   @include fluid(width, 350px, 557px);

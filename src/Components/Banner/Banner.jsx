@@ -1,10 +1,11 @@
-import React from 'react'
-import AnimIndex from '../AnimIndex/AnimIndex'
-import Btn from '../Btn/Btn'
+import React, { Suspense } from 'react'
 
+import Btn from '../Btn/Btn'
+import Spinner from '../Spinner/Spinner'
 import Text from '../Text/Text'
 import Title from '../Title/Title'
 import style from './Banner.module.scss'
+const AnimIndex = React.lazy(() => import('../AnimIndex/AnimIndex'));
 export default function Banner(props) {
 
     if (props.page === "business") {
@@ -29,13 +30,15 @@ export default function Banner(props) {
                         <Btn link="#" text="Узнать больше" />
                     </div>
                     <div className={style.item}>
-                        <div className={style.animIndex}>
-                            <AnimIndex bannerIndex={props.bannerIndex} addStep={props.addStep} step={props.step} />
-                        </div>
-                        <img className={style.imgAnim} src={props.banner.img} alt="" />
+                        <Suspense fallback={<Spinner />}>
+                            <div className={style.animIndex}>
+                                <AnimIndex bannerIndex={props.bannerIndex} addStep={props.addStep} step={props.step} />
+                            </div>
+                            <img className={style.imgAnim} src={props.banner.img} alt="" />
+                        </Suspense>
                     </div>
                 </div>
-            </div>
+            </div >
         )
     }
 
