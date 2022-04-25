@@ -3,7 +3,18 @@ import style from "./CompositionIndex.module.scss";
 import CompositionIndexItem from "./CompositionIndexItem";
 
 export default function CompositionIndex(props) {
-  let items = props.map((e) => <CompositionIndexItem id={e.id} key={e.key} />);
+  let items = props.composition.map((e) => (
+    <CompositionIndexItem
+      id={e.id}
+      key={e.key}
+      icon={e.icon}
+      name={e.name}
+      cash={e.cash}
+      valute={e.valute}
+      proccent={e.proccent}
+      color={e.color}
+    />
+  ));
   return (
     <div className={style.block}>
       <div className={style.text}>
