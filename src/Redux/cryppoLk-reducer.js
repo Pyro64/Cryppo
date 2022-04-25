@@ -20,7 +20,7 @@ import plus from "../Images/icon/plus.svg";
 
 import { CryppoLkGet } from "../Api/api"
 const GET = "GET";
-
+const SET_MODAL = "SET_MODAL";
 let initialState = {
   cardData: [
     {
@@ -128,7 +128,7 @@ let initialState = {
         id: 1,
         type: "Транспорт",
         icon: yandex,
-        title: "Яндекс Такси",
+        title: "Яндекс Такси 1",
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
         status: false,
         cash: -1.234,
@@ -137,7 +137,7 @@ let initialState = {
         id: 2,
         type: "Транспорт",
         icon: yandex,
-        title: "Яндекс Такси",
+        title: "Яндекс Такси 2",
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
         status: {
           true: {},
@@ -152,7 +152,7 @@ let initialState = {
         id: 3,
         type: "Транспорт",
         icon: yandex,
-        title: "Яндекс Такси",
+        title: "Яндекс Такси 3",
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
         status: false,
         cash: -1.234,
@@ -161,13 +161,23 @@ let initialState = {
         id: 4,
         type: "Транспорт",
         icon: yandex,
-        title: "Яндекс Такси",
+        title: "Яндекс Такси 4",
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
         status: false,
         cash: -1.234,
       },
     ],
   },
+  operationModal: {
+    id: null,
+    type: null,
+    icon: null,
+    title: null,
+    check: null,
+    status: null,
+    cash: null,
+  },
+  isModal: false,
   statisticData: [
     {
       id: 1,
@@ -320,6 +330,7 @@ let initialState = {
       value: 12,
     },
   ],
+
   composition: [{}, {}],
 
 };
@@ -331,6 +342,11 @@ const cryppoLkReducer = (state = initialState, action) => {
       return {
         ...state,
         ...action.value,
+      };
+    case SET_MODAL:
+      return {
+        ...state,
+        operationModal: action.value
       };
     default:
       return state;
@@ -350,5 +366,6 @@ export const getCryppoLkThunkCreator = () => {
       });
   };
 };
+export const setModal = (value) => ({ type: SET_MODAL, value })
 export const get = (value) => ({ type: GET, value });
 export default cryppoLkReducer;

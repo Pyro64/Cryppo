@@ -2,18 +2,13 @@ import React from 'react'
 import style from "./Operation.module.scss";
 import OperationItem from './OperationItem';
 
-// export const toggleHandler = (props) => {
-//     return (
-//         <div className={style.inner}>
-//             <Modal>
-//                 <div>{props.title}</div>
-//             </Modal>
-//         </div>
-//     )
-// };
+
+
 export default function OperationInner(props) {
     let elementItem = props.operationData.operation.map((e) => (
+
         <OperationItem
+            setModal={props.setModal}
             id={e.id}
             key={e.id}
             type={e.type}

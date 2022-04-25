@@ -2,10 +2,9 @@ import React from "react";
 import style from "./Operation.module.scss";
 import { toggleHandler } from './OperationInner'
 export default function OperationItem(props) {
-
-
+  let value = props
   return (
-    <div className={style.line} onClick={() => toggleHandler(props)}>
+    <div className={style.line} onClick={() => props.setModal(value)}>
       <div className={style.flex}>
         <img src={props.icon} className={style.icon} alt="icon" />
         <div className={style.wrapper}>

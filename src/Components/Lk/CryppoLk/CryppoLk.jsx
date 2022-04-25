@@ -25,6 +25,8 @@ export default function CryppoLk(props) {
             news={props.news}
             currency={props.currency}
             tabs={props.tabs}
+            setModal={props.setModal}
+            operationModal={props.operationModal}
           />
         }
       />
