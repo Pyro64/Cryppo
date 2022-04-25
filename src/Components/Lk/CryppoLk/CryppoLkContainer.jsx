@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import CryppoLk from "./CryppoLk";
-import {get, getCryppoLkThunkCreator} from "../../../Redux/cryppoLk-reducer"
+import { get, getCryppoLkThunkCreator } from "../../../Redux/cryppoLk-reducer";
 
 let mapStateToProps = (state) => {
   return {
@@ -13,8 +13,12 @@ let mapStateToProps = (state) => {
     statistic: state.cryppoLk.statisticData,
     translations: state.cryppoLk.translationsData,
     tabs: state.cryppoLk.tabsData,
+    composition: state.cryppoLk.compositionData,
   };
 };
 
-const CryppoLkContainer = connect(mapStateToProps, { get, getCryppoLkThunkCreator })(CryppoLk);
+const CryppoLkContainer = connect(mapStateToProps, {
+  get,
+  getCryppoLkThunkCreator,
+})(CryppoLk);
 export default CryppoLkContainer;

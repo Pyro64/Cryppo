@@ -17,9 +17,9 @@ import arrow from "../Images/icon/arrow.svg";
 import index from "../Images/icon/index.svg";
 import profit from "../Images/icon/profit.svg";
 import plus from "../Images/icon/plus.svg";
-import {CryppoLkGet} from "../Api/api"
+import { CryppoLkGet } from "../Api/api";
 
-const GET = "GET"
+const GET = "GET";
 
 let initialState = {
   cardData: [
@@ -231,25 +231,24 @@ let initialState = {
     },
   ],
   tabsData: {
-    invest: [
-      {
-        id: 1,
-        icon: bag,
-        title: "Инвестиции CRYPPO INVEST",
-        statistic: "0.00000000",
-        cash: "$ 0.00",
-        text: "Powered by Elementum",
-        povered: elementum,
-      },
-    ],
-    addCart: [
-      {
-        id: 1,
-        title: "Привязать карту",
-        povered: "Powered by QRON",
-        poveredIcon: qron,
-      },
-    ],
+    invest: {
+      id: 1,
+      icon: bag,
+      title: "Инвестиции CRYPPO INVEST",
+      statistic: "0.00000000",
+      cash: "$ 0.00",
+      text: "Powered by Elementum",
+      povered: elementum,
+    },
+
+    addCart: {
+      id: 1,
+      icon: plus,
+      title: "Привязать карту",
+      text: "Powered by QRON",
+      povered: qron,
+    },
+
     indexNow: {
       id: 1,
       icon: index,
@@ -279,6 +278,7 @@ let initialState = {
       title: "Купить индекс",
     },
   },
+  composition: [{}, {}],
 };
 
 const cryppoLkReducer = (state = initialState, action) => {
@@ -286,25 +286,25 @@ const cryppoLkReducer = (state = initialState, action) => {
     case GET:
       return {
         ...state,
-        ...action.value
-      }
+        ...action.value,
+      };
     default:
       return state;
   }
 };
 
-export const getCryppoLkThunkCreator = () =>{
+export const getCryppoLkThunkCreator = () => {
   return (dispatch) => {
-      CryppoLkGet()
-        .then((data)=>{
-          let value = JSON.parse(JSON.stringify(data))
-          dispatch({type: 'GET', value});
-        })
-        .catch((response) => {
-            console.log(response);
-            console.log('error');
-        })
-  }
-}
-export const get = (value) => ({ type: GET, value })
+    CryppoLkGet()
+      .then((data) => {
+        let value = JSON.parse(JSON.stringify(data));
+        dispatch({ type: "GET", value });
+      })
+      .catch((response) => {
+        console.log(response);
+        console.log("error");
+      });
+  };
+};
+export const get = (value) => ({ type: GET, value });
 export default cryppoLkReducer;
