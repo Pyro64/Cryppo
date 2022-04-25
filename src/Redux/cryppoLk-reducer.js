@@ -17,7 +17,7 @@ import arrow from "../Images/icon/arrow.svg";
 import index from "../Images/icon/index.svg";
 import profit from "../Images/icon/profit.svg";
 import plus from "../Images/icon/plus.svg";
-import {CryppoLkGet} from "../Api/api"
+import { CryppoLkGet } from "../Api/api"
 
 const GET = "GET"
 
@@ -279,6 +279,48 @@ let initialState = {
       title: "Купить индекс",
     },
   },
+  currencyStatisticData: [
+    {
+      id: 1,
+      category: 'Транспорт',
+      cash: 9.56,
+      currency: 'USD',
+      color: '#2F69FF',
+      value: 10,
+    },
+    {
+      id: 2,
+      category: 'Cвязь',
+      cash: 4.56,
+      currency: 'USD',
+      color: '#FF612F',
+      value: 5,
+    },
+    {
+      id: 3,
+      category: 'Супермаркеты',
+      cash: 6.56,
+      currency: 'USD',
+      color: '#BC2FFF',
+      value: 8,
+    },
+    {
+      id: 4,
+      category: 'Переводы',
+      cash: 5.56,
+      currency: 'USD',
+      color: '#FF40D5',
+      value: 5,
+    },
+    {
+      id: 5,
+      category: 'Остальное',
+      cash: 12.56,
+      currency: 'USD',
+      color: '#FF4949;',
+      value: 12,
+    },
+  ]
 };
 
 const cryppoLkReducer = (state = initialState, action) => {
@@ -293,17 +335,17 @@ const cryppoLkReducer = (state = initialState, action) => {
   }
 };
 
-export const getCryppoLkThunkCreator = () =>{
+export const getCryppoLkThunkCreator = () => {
   return (dispatch) => {
-      CryppoLkGet()
-        .then((data)=>{
-          let value = JSON.parse(JSON.stringify(data))
-          dispatch({type: 'GET', value});
-        })
-        .catch((response) => {
-            console.log(response);
-            console.log('error');
-        })
+    CryppoLkGet()
+      .then((data) => {
+        let value = JSON.parse(JSON.stringify(data))
+        dispatch({ type: 'GET', value });
+      })
+      .catch((response) => {
+        console.log(response);
+        console.log('error');
+      })
   }
 }
 export const get = (value) => ({ type: GET, value })

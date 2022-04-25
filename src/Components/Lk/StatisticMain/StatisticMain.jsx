@@ -1,16 +1,26 @@
 import React from 'react';
 import SubtitleLk from '../SubtitleLk/SubtitleLk';
-import style from "./StatisticMoney.module.scss";
+import style from "./StatisticMain.module.scss";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+import StatisticMainItem from './StatisticMainItem';
 
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const StatisticMoney = () => {
-
+const StatisticMain = (props) => {
+  let elementItem = props.currency.map(e =>
+    <StatisticMainItem
+      id={e.id}
+      key={e.id}
+      color={e.color}
+      category={e.category}
+      cash={e.cash}
+      currency={e.currency}
+    />
+  )
   const data = {
     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
     datasets: [
@@ -64,8 +74,13 @@ const StatisticMoney = () => {
             <Tab className={style.tab} selectedClassName={style.activeTab}><p>Поступления</p></Tab>
           </TabList>
           <TabPanel>
-            <div className={style.chartInner}>
-              <Doughnut data={data} options={options} />
+            <div className={style.flex}>
+              <div className={style.items}>
+                {elementItem}
+              </div>
+              <div className={style.chartInner}>
+                <Doughnut data={data} options={options} />
+              </div>
             </div>
           </TabPanel>
           <TabPanel>
@@ -77,4 +92,4 @@ const StatisticMoney = () => {
   );
 }
 
-export default StatisticMoney;
+export default StatisticMain;

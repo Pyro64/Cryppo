@@ -70,8 +70,28 @@
 }
 .chartInner {
     position: relative;
-    margin-top: 200px;
-    width: 500px;
+    width: 40%;
     height: 500px;
     overflow: visible;
+}
+.flex {
+    display: flex;
+    align-items: center;
+}
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+}
+.item {
+    display: flex;
+    align-items: center;
+    @include fluid(padding, 6px, 8px);
+    background: #2d2d2d;
+    border-radius: 10px;
+}
+.circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
 }

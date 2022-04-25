@@ -27,6 +27,7 @@ export default function CryppoLk(props) {
             newCard={props.newCard}
             operationData={props.operationData}
             news={props.news}
+            currency={props.currency}
           />
         }
       />

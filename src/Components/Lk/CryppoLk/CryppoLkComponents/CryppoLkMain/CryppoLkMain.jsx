@@ -6,7 +6,7 @@ import AddCard from "../AddCard/AddCard";
 import Operation from "../OperationLk/Operation";
 import Statistic from "../StatisticLk/Statistic";
 import News from '../../../News/News';
-import StatisticMoney from '../../../StatisticMoney/StatisticMoney';
+import StatisticMain from '../../../StatisticMain/StatisticMain';
 export default function CryppoLkMain(props) {
     return (
         <div className="main">
@@ -21,7 +21,7 @@ export default function CryppoLkMain(props) {
                 <div className="content">
                     <News news={props.news} />
                     <Operation operationData={props.operationData} />
-                    <StatisticMoney />
+                    <StatisticMain currency={props.currency} />
                     <Statistic statistic={props.statistic} />
                 </div>
             </div>
