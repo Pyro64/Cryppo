@@ -316,7 +316,7 @@ let initialState = {
       category: 'Остальное',
       cash: 12.56,
       currency: 'USD',
-      color: '#FF4949;',
+      color: '#FF4949',
       value: 12,
     },
   ],

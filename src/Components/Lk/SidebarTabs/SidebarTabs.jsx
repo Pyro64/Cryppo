@@ -2,7 +2,6 @@ import React from "react";
 import style from "./SidebarTabs.module.scss";
 
 export default function SidebarTabs(props) {
-  debugger;
   let title = <div className={style.title}>{props.tabs.title}</div>;
   let cash = <div className={style.subtitle}>{props.tabs.cash}</div>;
   let statistic = <div className={style.subtitle}>{props.tabs.statistic}</div>;
