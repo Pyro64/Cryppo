@@ -1,0 +1,61 @@
+@import "../../../Style/Mixins.scss";
+.dataPay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2d2d2d;
+  @include fluid(padding-top, 15px, 30px);
+  @include fluid(padding-bottom, 15px, 30px);
+  @include fluid(padding-left, 15px, 30px);
+  @include fluid(padding-right, 15px, 30px);
+  color: #fff;
+  @include fluid(font-size, 10px, 12px);
+  @include fluid(margin-bottom, 10px, 15px);
+  border-radius: 12px;
+  right: auto;
+  bottom: auto;
+}
+.container {
+  @include fluid(width, 320px, 600px);
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
+  @include fluid(padding-top, 25px, 50px);
+  @include fluid(padding-bottom, 25px, 50px);
+  @include fluid(padding-left, 20px, 40px);
+  @include fluid(padding-right, 20px, 40px);
+  background: rgba(91, 91, 91, 0.2);
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @include fluid(padding-top, 30px, 60px);
+  @include fluid(padding-left, 35px, 70px);
+  @include fluid(padding-right, 35px, 70px);
+  @include fluid(padding-bottom, 30px, 60px);
+  background: #2d2d2d;
+  border-radius: 12px;
+}
+.icon {
+  @include fluid(width, 45px, 75px);
+  @include fluid(height, 45px, 75px);
+  object-fit: contain;
+  @include fluid(margin-bottom, 10px, 20px);
+}
+.firm {
+  @include fluid(margin-bottom, 8px, 10px);
+  @include fluid(font-size, 14px, 16px);
+}
+.type {
+  color: #6d6d6d;
+  @include fluid(font-size, 12px, 14px);
+  @include fluid(margin-bottom, 30px, 80px);
+}
+.cash {
+  @include fluid(font-size, 28px, 48px);
+  @include fluid(margin-bottom, 10px, 20px);
+}
+.status {
+  display: flex;
+  align-items: center;
+}

@@ -18,7 +18,7 @@ import index from "../Images/icon/index.svg";
 import profit from "../Images/icon/profit.svg";
 import plus from "../Images/icon/plus.svg";
 
-import { CryppoLkGet } from "../Api/api"
+import { CryppoLkGet } from "../Api/api";
 const GET = "GET";
 const SET_MODAL = "SET_MODAL";
 let initialState = {
@@ -130,8 +130,12 @@ let initialState = {
         icon: yandex,
         title: "Яндекс Такси 1",
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
+        data: "3 марта, 16:35",
+        iconPay: eth,
+        currencyPay: "ETH",
         status: false,
         cash: -1.234,
+        firm: "Яндекс",
       },
       {
         id: 2,
@@ -139,13 +143,11 @@ let initialState = {
         icon: yandex,
         title: "Яндекс Такси 2",
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
-        status: {
-          true: {},
-          false: {
-            text: "операция отклонена",
-          },
-          load: {},
-        },
+        data: "3 марта, 16:35",
+        iconPay: eth,
+        currencyPay: "ETH",
+        status: false,
+        firm: "Яндекс",
         cash: -1.234,
       },
       {
@@ -154,7 +156,11 @@ let initialState = {
         icon: yandex,
         title: "Яндекс Такси 3",
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
+        data: "3 марта, 16:35",
+        iconPay: eth,
+        currencyPay: "ETH",
         status: false,
+        firm: "Яндекс",
         cash: -1.234,
       },
       {
@@ -163,6 +169,10 @@ let initialState = {
         icon: yandex,
         title: "Яндекс Такси 4",
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
+        data: "3 марта, 16:35",
+        iconPay: eth,
+        currencyPay: "ETH",
+        firm: "Яндекс",
         status: false,
         cash: -1.234,
       },
@@ -174,8 +184,12 @@ let initialState = {
     icon: null,
     title: null,
     check: null,
+    data: null,
+    iconPay: null,
+    currencyPay: null,
     status: null,
     cash: null,
+    firm: null,
   },
   isModal: false,
   statisticData: [
@@ -291,50 +305,48 @@ let initialState = {
   currencyStatisticData: [
     {
       id: 1,
-      category: 'Транспорт',
+      category: "Транспорт",
       cash: 9.56,
-      currency: 'USD',
-      color: '#2F69FF',
+      currency: "USD",
+      color: "#2F69FF",
       value: 10,
     },
     {
       id: 2,
-      category: 'Cвязь',
+      category: "Cвязь",
       cash: 4.56,
-      currency: 'USD',
-      color: '#FF612F',
+      currency: "USD",
+      color: "#FF612F",
       value: 5,
     },
     {
       id: 3,
-      category: 'Супермаркеты',
+      category: "Супермаркеты",
       cash: 6.56,
-      currency: 'USD',
-      color: '#BC2FFF',
+      currency: "USD",
+      color: "#BC2FFF",
       value: 8,
     },
     {
       id: 4,
-      category: 'Переводы',
+      category: "Переводы",
       cash: 5.56,
-      currency: 'USD',
-      color: '#FF40D5',
+      currency: "USD",
+      color: "#FF40D5",
       value: 5,
     },
     {
       id: 5,
-      category: 'Остальное',
+      category: "Остальное",
       cash: 12.56,
-      currency: 'USD',
-      color: '#FF4949',
+      currency: "USD",
+      color: "#FF4949",
       value: 12,
     },
   ],
 
   composition: [{}, {}],
-
 };
-
 
 const cryppoLkReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -346,7 +358,7 @@ const cryppoLkReducer = (state = initialState, action) => {
     case SET_MODAL:
       return {
         ...state,
-        operationModal: action.value
+        operationModal: action.value,
       };
     default:
       return state;
@@ -366,6 +378,6 @@ export const getCryppoLkThunkCreator = () => {
       });
   };
 };
-export const setModal = (value) => ({ type: SET_MODAL, value })
+export const setModal = (value) => ({ type: SET_MODAL, value });
 export const get = (value) => ({ type: GET, value });
 export default cryppoLkReducer;

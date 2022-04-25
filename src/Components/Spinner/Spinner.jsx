@@ -1,8 +1,8 @@
-import style from './Spinner.module.scss'
+import style from "./Spinner.module.scss";
 export default function Spinner() {
-    return (
-        <div className={style.container}>
-            <div className={style.item}>Загрузка</div>
-        </div>
-    )
+  return (
+    <div className={style.container}>
+      <div className={style.spinner}></div>
+    </div>
+  );
 }
