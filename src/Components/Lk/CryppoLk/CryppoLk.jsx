@@ -8,12 +8,8 @@ import CryppoLkInvest from "./CryppoLkComponents/CryppoLkInvest/CryppoLkInvest";
 export default function CryppoLk(props) {
   const get = () => props.getCryppoLkThunkCreator();
   useEffect(() => {
-    //   if (currentStep >= iconLenght) {
-    //     return;
-    // }
     const interval = setInterval(get, 5000);
-    // return () => clearInterval(interval);
-  }, [])
+  }, []);
   return (
     <Routes>
       <Route
@@ -27,6 +23,7 @@ export default function CryppoLk(props) {
             newCard={props.newCard}
             operationData={props.operationData}
             news={props.news}
+            tabs={props.tabs}
           />
         }
       />
@@ -35,7 +32,11 @@ export default function CryppoLk(props) {
         element={<CryppoLkTranslation translations={props.translations} />}
       />
       <Route path="invest/*" element={<CryppoLkInvest tabs={props.tabs} />} />
-      <Route path="settings/*" element={<CryppoLkSettings />} />
+      <Route
+        path="settings/*"
+        element={<CryppoLkSettings />}
+        composition={props.composition}
+      />
     </Routes>
   );
 }
