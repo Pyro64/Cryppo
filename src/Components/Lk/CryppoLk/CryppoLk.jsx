@@ -6,10 +6,10 @@ import CryppoLkTranslation from "../CryppoLk/CryppoLkComponents/CryppoLkTranslat
 import CryppoLkInvest from "./CryppoLkComponents/CryppoLkInvest/CryppoLkInvest";
 
 export default function CryppoLk(props) {
-  // const get = () => props.getCryppoLkThunkCreator();
-  // useEffect(() => {
-  //   const interval = setInterval(get, 5000);
-  // }, []);
+  const get = () => props.getCryppoLkThunkCreator();
+  useEffect(() => {
+    const interval = setInterval(get, 5000);
+  }, []);
   return (
     <Routes>
       <Route
