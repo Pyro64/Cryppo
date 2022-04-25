@@ -21,6 +21,7 @@ import plus from "../Images/icon/plus.svg";
 import { CryppoLkGet } from "../Api/api";
 const GET = "GET";
 const SET_MODAL = "SET_MODAL";
+const SWITCH_MODAL = "SWITCH_MODAL";
 let initialState = {
   cardData: [
     {
@@ -360,6 +361,11 @@ const cryppoLkReducer = (state = initialState, action) => {
         ...state,
         operationModal: action.value,
       };
+    case SWITCH_MODAL:
+      return {
+        ...state,
+        isModal: action.isModal,
+      };
     default:
       return state;
   }
@@ -378,6 +384,7 @@ export const getCryppoLkThunkCreator = () => {
       });
   };
 };
+export const switchModal = (isModal) => ({ type: SWITCH_MODAL, isModal });
 export const setModal = (value) => ({ type: SET_MODAL, value });
 export const get = (value) => ({ type: GET, value });
 export default cryppoLkReducer;

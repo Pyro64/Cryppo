@@ -15,12 +15,14 @@ export default function Operation(props) {
         <OperationInner
           operationData={props.operationData}
           setModal={props.setModal}
+          isModal={props.isModal}
+          switchModal={props.switchModal}
         />
         <div className={style.btnContainer}>
           <Btn link="#" text="Все операции" />
         </div>
         <div>
-          <OperationModal operationModal={props.operationModal} />
+          <OperationModal operationModal={props.operationModal} isModal={props.isModal} switchModal={props.switchModal} />
         </div>
       </div>
     </div>

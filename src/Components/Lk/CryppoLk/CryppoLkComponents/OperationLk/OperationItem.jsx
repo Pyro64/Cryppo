@@ -1,10 +1,16 @@
 import React from "react";
+import { switchModal } from "../../../../../Redux/cryppoLk-reducer";
 import style from "./Operation.module.scss";
 import { toggleHandler } from './OperationInner'
 export default function OperationItem(props) {
   let value = props
+  let isModal = !props.isModal
+  const a = () => {
+    props.setModal(value)
+    props.switchModal(isModal)
+  }
   return (
-    <div className={style.line} onClick={() => props.setModal(value)}>
+    <div className={style.line} onClick={() => a()}>
       <div className={style.flex}>
         <img src={props.icon} className={style.icon} alt="icon" />
         <div className={style.wrapper}>
