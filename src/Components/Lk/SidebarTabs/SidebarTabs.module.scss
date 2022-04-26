@@ -46,6 +46,10 @@
   @include fluid(font-size, 14px, 16px);
   transition: 0.38s ease-in-out;
 }
+.info {
+  display: flex;
+  align-items: center;
+}
 
 .povered {
   @include fluid(font-size, 10px, 12px);
@@ -53,6 +57,8 @@
 .wrapper {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 .textWrapper {
   display: flex;

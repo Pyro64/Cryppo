@@ -105,3 +105,21 @@ textarea:focus::-webkit-input-placeholder {
   opacity: 1;
   transition: opacity 1000ms;
 }
+
+.ReactModal__Overlay {
+  opacity: 0;
+  position: fixed;
+  z-index: 10;
+  inset: 0px;
+  background-color: rgba(196, 196, 196, 0.2) !important;
+  backdrop-filter: blur(3px);
+  transition: 0.38s ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
