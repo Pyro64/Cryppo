@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route, Routes } from "react-router";
+import { Navigate, Route, Routes } from "react-router";
 import CryppoLkMain from "./CryppoLkComponents/CryppoLkMain/CryppoLkMain";
 import CryppoLkSettings from "./CryppoLkComponents/CryppoLkSettings/CryppoLkSettings";
 import CryppoLkTranslation from "../CryppoLk/CryppoLkComponents/CryppoLkTranslation/CryppoLkTranslation";
@@ -10,6 +10,7 @@ export default function CryppoLk(props) {
   // useEffect(() => {
   //   const interval = setInterval(get, 5000);
   // }, []);
+  if (props.isLogin === false) return <Navigate to={'/auth'} />
   return (
     <Routes>
       <Route
