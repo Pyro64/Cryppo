@@ -118,3 +118,18 @@
 .statisticPercent {
     text-align: center;
 }
+
+.hoverExit {
+    opacity: 0;
+}
+.hoverEnter {
+    opacity: 0;
+}
+.hoverExitDone {
+    opacity: 1;
+    transition: opacity 1000ms;
+}
+.hoverEnterDone {
+    opacity: 1;
+    transition: opacity 1000ms;
+}
