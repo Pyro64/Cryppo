@@ -85,7 +85,11 @@
 .item {
     display: flex;
     align-items: center;
-    @include fluid(padding, 6px, 8px);
+    @include fluid(padding-left, 7px, 9px);
+    @include fluid(padding-right, 7px, 9px);
+    @include fluid(padding-bottom, 1px, 3px);
+    @include fluid(padding-top, 1px, 3px);
+    @include fluid(margin, 6px, 8px);
     background: #2d2d2d;
     border-radius: 10px;
 }
@@ -93,7 +97,12 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
+    @include fluid(margin, 8px, 10px);
 }
+.cash{
+    @include fluid(margin, 3px, 5px);
+}
+
 .statisticBlock {
     position: absolute;
     left: 50%;
@@ -106,3 +115,7 @@
 .statisticName {
     text-align: center;
 }
+.statisticPercent {
+    text-align: center;
+}
+

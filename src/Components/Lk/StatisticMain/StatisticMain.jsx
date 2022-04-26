@@ -9,8 +9,18 @@ import StatisticMainItem from "./StatisticMainItem";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+
 const StatisticMain = (props) => {
-  let elementItem = props.currency.map((e) => (
+  let total = 0;
+  let dataItems = [];
+  debugger;
+  let backgroundColorItems = [];
+  props.currency.statisticItems.map(e => {
+    dataItems.push(e.value);
+    backgroundColorItems.push(e.color);
+    total += e.cash;
+  });
+  let elementItem = props.currency.statisticItems.map((e) => (
     <StatisticMainItem
       id={e.id}
       key={e.id}
@@ -18,48 +28,27 @@ const StatisticMain = (props) => {
       category={e.category}
       cash={e.cash}
       currency={e.currency}
+      onClick={() => {}}
     />
   ));
+  const options = {
+    plugins: {
+      tooltip:{
+        enabled: false
+      },
+    },
+    cutout: 110,
+  };
   const data = {
     labels: [],
     datasets: [
       {
-        label: "# of Votes",
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
-        ],
-        borderWidth: 1,
-        hoverOffset: 10,
+        data: dataItems,
+        backgroundColor: backgroundColorItems,
+        borderWidth: 0,
+        hoverOffset: 20,
       },
-    ],
-  };
-  const options = {
-    plugins: {
-      // legend: {
-      //   display: false,
-      //   labels: {
-      //     color: 'rgba(255, 99, 132,0.1)'
-      //   }
-      // },
-      subtitle: {
-        display: true,
-        text: "Custom Chart Subtitle",
-      },
-    },
+    ]
   };
 
   return (
@@ -81,8 +70,9 @@ const StatisticMain = (props) => {
               <div className={style.chartInner}>
                 <Doughnut data={data} options={options} />
                 <div className={style.statisticBlock}>
-                  <div className={style.statisticCash}>32 094 $</div>
-                  <div className={style.statisticName}>Общий баланс</div>
+                  <div className={style.statisticName}>Расходы</div>
+                  <div className={style.statisticCash}>{total} $</div>
+                  <div className={style.statisticPercent}>100 %</div>
                 </div>
               </div>
             </div>
