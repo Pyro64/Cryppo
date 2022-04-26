@@ -6,6 +6,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import StatisticMainItem from "./StatisticMainItem";
+import ChartText from "./ChartText";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -13,14 +14,13 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const StatisticMain = (props) => {
   let total = 0;
   let dataItems = [];
-  debugger;
   let backgroundColorItems = [];
-  props.currency.statisticItems.map(e => {
-    dataItems.push(e.value);
+  props.currency.map(e => {
+    dataItems.push(e.percent);
     backgroundColorItems.push(e.color);
     total += e.cash;
   });
-  let elementItem = props.currency.statisticItems.map((e) => (
+  let elementItem = props.currency.map((e) => (
     <StatisticMainItem
       id={e.id}
       key={e.id}
@@ -28,12 +28,12 @@ const StatisticMain = (props) => {
       category={e.category}
       cash={e.cash}
       currency={e.currency}
-      onClick={() => {}}
+      onClick={() => { }}
     />
   ));
   const options = {
     plugins: {
-      tooltip:{
+      tooltip: {
         enabled: false
       },
     },
@@ -69,11 +69,7 @@ const StatisticMain = (props) => {
               <div className={style.items}>{elementItem}</div>
               <div className={style.chartInner}>
                 <Doughnut data={data} options={options} />
-                <div className={style.statisticBlock}>
-                  <div className={style.statisticName}>Расходы</div>
-                  <div className={style.statisticCash}>{total} $</div>
-                  <div className={style.statisticPercent}>100 %</div>
-                </div>
+                <ChartText chartTextData={props.chartTextData} />
               </div>
             </div>
           </TabPanel>

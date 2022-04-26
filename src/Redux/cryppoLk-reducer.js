@@ -22,6 +22,7 @@ import { CryppoLkGet } from "../Api/api";
 const GET = "GET";
 const SET_MODAL = "SET_MODAL";
 const SWITCH_MODAL = "SWITCH_MODAL";
+const SET_CHART_TEXT = "SET_CHART_TEXT";
 let initialState = {
   cardData: [
     {
@@ -303,52 +304,53 @@ let initialState = {
       title: "Купить индекс",
     },
   },
-  currencyStatisticData: {
-    statisticName: "Расходы",
-    statisticCash: 0,
-    statisticPercent: 100,
-   statisticItems :[{
-    id: 1,
-    category: "Транспорт",
-    cash: 9.56,
-    currency: "USD",
-    color: "#2F69FF",
-    value: 10,
+  currencyStatisticData: [
+    {
+      id: 1,
+      category: "Транспорт",
+      cash: 9.56,
+      currency: "USD",
+      color: "#2F69FF",
+      percent: 10,
+    },
+    {
+      id: 2,
+      category: "Cвязь",
+      cash: 4.56,
+      currency: "USD",
+      color: "#FF612F",
+      percent: 5,
+    },
+    {
+      id: 3,
+      category: "Супермаркеты",
+      cash: 6.56,
+      currency: "USD",
+      color: "#BC2FFF",
+      percent: 8,
+    },
+    {
+      id: 4,
+      category: "Переводы",
+      cash: 5.56,
+      currency: "USD",
+      color: "#FF40D5",
+      percent: 5,
+    },
+    {
+      id: 5,
+      category: "Остальное",
+      cash: 12.56,
+      currency: "USD",
+      color: "#FF4949",
+      percent: 12,
+    },
+  ],
+  chartTextData: {
+    category: 'Расходы',
+    cash: '100 USD',
+    percent: '100%',
   },
-  {
-    id: 2,
-    category: "Cвязь",
-    cash: 4.56,
-    currency: "USD",
-    color: "#FF612F",
-    value: 5,
-  },
-  {
-    id: 3,
-    category: "Супермаркеты",
-    cash: 6.56,
-    currency: "USD",
-    color: "#BC2FFF",
-    value: 8,
-  },
-  {
-    id: 4,
-    category: "Переводы",
-    cash: 5.56,
-    currency: "USD",
-    color: "#FF40D5",
-    value: 5,
-  },
-  {
-    id: 5,
-    category: "Остальное",
-    cash: 12.56,
-    currency: "USD",
-    color: "#FF4949",
-    value: 12,
-  },]
-  },
-
   composition: [{}, {}],
 };
 
@@ -369,6 +371,11 @@ const cryppoLkReducer = (state = initialState, action) => {
         ...state,
         isModal: action.isModal,
       };
+    case SET_CHART_TEXT:
+      return {
+        ...state,
+        chartTextData: action.value
+      }
     default:
       return state;
   }
@@ -387,6 +394,7 @@ export const getCryppoLkThunkCreator = () => {
       });
   };
 };
+export const setChartText = (value) => ({ type: SET_CHART_TEXT, value })
 export const switchModal = (isModal) => ({ type: SWITCH_MODAL, isModal });
 export const setModal = (value) => ({ type: SET_MODAL, value });
 export const get = (value) => ({ type: GET, value });

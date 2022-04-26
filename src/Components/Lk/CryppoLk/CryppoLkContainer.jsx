@@ -18,6 +18,7 @@ let mapStateToProps = (state) => {
     composition: state.cryppoLk.compositionData,
     operationModal: state.cryppoLk.operationModal,
     isModal: state.cryppoLk.isModal,
+    chartTextData: state.cryppoLk.chartTextData,
   };
 };
 

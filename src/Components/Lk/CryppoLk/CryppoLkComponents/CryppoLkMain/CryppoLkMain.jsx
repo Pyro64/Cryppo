@@ -20,7 +20,7 @@ export default function CryppoLkMain(props) {
         <div className="content">
           <News news={props.news} />
           <Operation operationData={props.operationData} setModal={props.setModal} operationModal={props.operationModal} isModal={props.isModal} switchModal={props.switchModal} />
-          <StatisticMain currency={props.currency} />
+          <StatisticMain currency={props.currency} chartTextData={props.chartTextData} />
           <Statistic statistic={props.statistic} />
         </div>
       </div>
