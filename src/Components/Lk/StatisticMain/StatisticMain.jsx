@@ -12,23 +12,23 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 
 const StatisticMain = (props) => {
-  let total = 0;
   let dataItems = [];
   let backgroundColorItems = [];
   props.currency.map(e => {
     dataItems.push(e.percent);
     backgroundColorItems.push(e.color);
-    total += e.cash;
   });
   let elementItem = props.currency.map((e) => (
     <StatisticMainItem
+      setChartText={props.setChartText}
+      initChartText={props.initChartText}
+      percent={e.percent}
       id={e.id}
       key={e.id}
       color={e.color}
       category={e.category}
       cash={e.cash}
       currency={e.currency}
-      onClick={() => { }}
     />
   ));
   const options = {
@@ -69,7 +69,7 @@ const StatisticMain = (props) => {
               <div className={style.items}>{elementItem}</div>
               <div className={style.chartInner}>
                 <Doughnut data={data} options={options} />
-                <ChartText chartTextData={props.chartTextData} />
+                <ChartText isHover={props.isHover} chartTextData={props.chartTextData} />
               </div>
             </div>
           </TabPanel>

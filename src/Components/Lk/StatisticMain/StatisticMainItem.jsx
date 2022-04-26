@@ -1,8 +1,9 @@
 import React from "react";
 import style from "./StatisticMain.module.scss";
-const Statisticmainitem = (props) => {
+const StatisticMainItem = (props) => {
+  let value = props
   return (
-    <div className={style.item}>
+    <div className={style.item} onMouseEnter={() => props.setChartText(value)} onMouseLeave={() => props.initChartText()}>
       <div
         style={{ background: `${props.color}` }}
         className={style.circle}
@@ -14,4 +15,4 @@ const Statisticmainitem = (props) => {
   );
 };
 
-export default Statisticmainitem;
+export default StatisticMainItem;

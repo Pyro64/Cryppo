@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import CryppoLk from "./CryppoLk";
-import { get, getCryppoLkThunkCreator, setModal, switchModal } from "../../../Redux/cryppoLk-reducer"
+import { get, getCryppoLkThunkCreator, setModal, switchModal, setChartText, initChartText } from "../../../Redux/cryppoLk-reducer"
 
 
 let mapStateToProps = (state) => {
@@ -19,6 +19,7 @@ let mapStateToProps = (state) => {
     operationModal: state.cryppoLk.operationModal,
     isModal: state.cryppoLk.isModal,
     chartTextData: state.cryppoLk.chartTextData,
+    isHover: state.cryppoLk.isHover,
   };
 };
 
@@ -26,6 +27,8 @@ const CryppoLkContainer = connect(mapStateToProps, {
   get,
   getCryppoLkThunkCreator,
   setModal,
-  switchModal
+  switchModal,
+  setChartText,
+  initChartText,
 })(CryppoLk);
 export default CryppoLkContainer;

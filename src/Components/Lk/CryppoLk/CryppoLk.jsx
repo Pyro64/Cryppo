@@ -10,8 +10,7 @@ export default function CryppoLk(props) {
   // useEffect(() => {
   //   const interval = setInterval(get, 5000);
   // }, []);
-  alert(props.isLogin)
-  if (props.isLogin === false) return <Navigate to={'/auth'} />
+  // if (props.isLogin === false) return <Navigate to={'/auth'} />
   return (
     <Routes>
       <Route
@@ -32,6 +31,9 @@ export default function CryppoLk(props) {
             isModal={props.isModal}
             switchModal={props.switchModal}
             chartTextData={props.chartTextData}
+            setChartText={props.setChartText}
+            initChartText={props.initChartText}
+            isHover={props.isHover}
           />
         }
       />

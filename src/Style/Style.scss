@@ -1,6 +1,6 @@
-@import "../Style/Mixins";
-@import "../fonts/cera-pro/stylesheet.css";
-@import "../fonts/style.css";
+@import '../Style/Mixins';
+@import '../fonts/cera-pro/stylesheet.css';
+@import '../fonts/style.css';
 
 * {
   box-sizing: border-box;
@@ -10,22 +10,18 @@
 .App {
   position: relative;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     z-index: -1;
     right: -40%;
     top: -5%;
-    background: radial-gradient(
-      50% 50% at 50% 50%,
-      rgba(47, 105, 255, 0.4) 0%,
-      rgba(47, 105, 255, 0) 100%
-    );
+    background: radial-gradient(50% 50% at 50% 50%, rgba(47, 105, 255, 0.4) 0%, rgba(47, 105, 255, 0) 100%);
     width: 100%;
     @include fluid(height, 400px, 800px);
   }
 }
 body {
-  font-family: "Cera pro";
+  font-family: 'Cera pro';
   background: #0d0d0d;
   color: #fff;
   height: 100%;
@@ -92,3 +88,17 @@ textarea:focus::-webkit-input-placeholder {
 //   justify-content: center;
 //   border-radius: 10px;
 // }
+.my-node-enter {
+  opacity: 0;
+}
+.my-node-enter-done {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+.my-node-exit {
+  opacity: 0;
+}
+.my-node-exit-done {
+  opacity: 1;
+  transition: opacity 1000ms;
+}

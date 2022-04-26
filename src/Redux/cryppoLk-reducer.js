@@ -23,6 +23,7 @@ const GET = "GET";
 const SET_MODAL = "SET_MODAL";
 const SWITCH_MODAL = "SWITCH_MODAL";
 const SET_CHART_TEXT = "SET_CHART_TEXT";
+const INIT_CHART_TEXT = "INIT_CHART_TEXT";
 let initialState = {
   cardData: [
     {
@@ -348,9 +349,10 @@ let initialState = {
   ],
   chartTextData: {
     category: 'Расходы',
-    cash: '100 USD',
-    percent: '100%',
+    cash: '10000',
+    percent: 100,
   },
+  isHover: false,
   composition: [{}, {}],
 };
 
@@ -374,7 +376,14 @@ const cryppoLkReducer = (state = initialState, action) => {
     case SET_CHART_TEXT:
       return {
         ...state,
-        chartTextData: action.value
+        chartTextData: action.value,
+        isHover: true
+      }
+    case INIT_CHART_TEXT:
+      return {
+        ...state,
+        chartTextData: initialState.chartTextData,
+        isHover: false
       }
     default:
       return state;
@@ -394,6 +403,7 @@ export const getCryppoLkThunkCreator = () => {
       });
   };
 };
+export const initChartText = () => ({ type: INIT_CHART_TEXT })
 export const setChartText = (value) => ({ type: SET_CHART_TEXT, value })
 export const switchModal = (isModal) => ({ type: SWITCH_MODAL, isModal });
 export const setModal = (value) => ({ type: SET_MODAL, value });
