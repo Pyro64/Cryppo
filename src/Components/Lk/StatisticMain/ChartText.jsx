@@ -19,8 +19,7 @@ export default function ChartText(props) {
             in={props.isHover}
             // classNames='my-node'
             classNames={{ ...classNames }}
-            transitionEnterTimeout={1000}
-            transitionLeaveTimeout={1000}
+            timeout={300}
         >
             <div className={style.statisticBlock}>
                 <div className={style.statisticName}>{chartText.category}</div>

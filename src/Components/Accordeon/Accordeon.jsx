@@ -18,6 +18,7 @@ export default function Accordeon(props) {
         <CSSTransition
             in={open}
             classNames={{ ...classNames }}
+            timeout={300}
         >
             <div className={open ? `${style.container} ${style.open}` : `${style.container}`}>
                 <div className={style.block} onClick={() => setOpen(!open)}>
