@@ -1,29 +1,51 @@
 import axios from "axios";
 
-axios.defaults.baseURL = 'http://192.168.88.61/NetCoreTemplateApi/v1.0/';
-// axios.defaults.baseURL = 'http://localhost:5000/v1.0';
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
+const localApi = axios.create({
+    baseURL: 'http://192.168.88.61/NetCoreTemplateApi/v1.0/',
+    headers: {'Access-Control-Allow-Origin': '*' }
+})
 
+const prodApi = axios.create({
+    baseURL: 'https://b.cryppowallet.com/',
+    headers: {'Access-Control-Allow-Origin': 'http://localhost:3000' }
+})
+//Прод Api
+export const AuthorizationPost = (email, password) => {
+    debugger;
+    return prodApi.post('Account/Login', {
+        email,
+        password,
+        twoFactorCode: "",
+        deviceId: "1",
+        deviceOs: "Android Pie",
+        deviceIp: "192.168.0.1"
+    }).then(response => {
+        return response.data
+    })
+}
+
+//Локальное Api
 export const CryppoBusinessGet = () => {
-    return axios.get('CryppoBusiness/Get')
+    return localApi.get('CryppoBusiness/Get')
         .then(response => {
             return response.data
         });
 }
 export const CryppoGet = () => {
-    return axios.get('Cryppo/Get')
+    return localApi.get('Cryppo/Get')
         .then(response => {
             return response.data
         })
 }
 export const CryppoLkGet = () => {
-    return axios.get('CryppoLk/Get')
+    return localApi.get('CryppoLk/Get')
         .then(response => {
             return response.data
         })
 }
 export const CryppoIndexGet = () => {
-    return axios.get('CryppoIndex/Get')
+    return localApi.get('CryppoIndex/Get')
         .then(response => {
             return response.data
         })

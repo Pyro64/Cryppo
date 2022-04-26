@@ -1,7 +1,7 @@
 
 import { connect } from "react-redux";
 import CryppoBusiness from "./CryppoBusiness";
-import { login, get, getCryppoBusinessThunkCreator } from '../../Redux/cryppoBusiness-reducer';
+import { login, get, getCryppoBusinessThunkCreator, authorizationPostThunkCreator } from '../../Redux/cryppoBusiness-reducer';
 
 
 let mapStateToProps = (state) => {
@@ -19,9 +19,11 @@ let mapStateToProps = (state) => {
                 btn: state.cryppoBusinessPage.route.btn,
                 user: state.cryppoBusinessPage.userData,
                 nav: state.cryppoBusinessPage.navData,
+                authorizationPost: state.cryppoBusinessPage.authorizationPost
         }
 }
 
-const CryppoBusinessContainer = connect(mapStateToProps, { login, get, getCryppoBusinessThunkCreator })(CryppoBusiness);
+const CryppoBusinessContainer = connect(mapStateToProps, { login, get, getCryppoBusinessThunkCreator,
+        authorizationPostThunkCreator})(CryppoBusiness);
 
 export default CryppoBusinessContainer;

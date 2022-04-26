@@ -29,8 +29,9 @@ import banner from '../Images/content/banner-business.svg'
 import businessSvg from '../Images/cryppo-business.svg';
 import annaBobs from '../Images/login/anna_bobs.svg'
 
-import { CryppoBusinessGet } from "../Api/api"
+import { CryppoBusinessGet, AuthorizationPost } from "../Api/api"
 const LOGIN_BUSINESS = 'LOGIN_BUSINESS';
+const AUTHORIZATION = 'AUTHORIZATION';
 const GET = 'GET';
 let initialState = {
     bannerData: {
@@ -344,8 +345,26 @@ const cryppoBusinessReducer = (state = initialState, action) => {
                 ...state,
                 ...action.value,
             };
+        case AUTHORIZATION:
+            return {
+                ...state,
+                ...action.value,
+            };
         default:
             return state;
+    }
+}
+export const authorizationPostThunkCreator = (email, password) => {
+    return (dispatch) => {
+        AuthorizationPost(email, password)
+            .then((data) => {
+                let value = JSON.parse(JSON.stringify(data))
+                dispatch({ type: AUTHORIZATION, value });
+            })
+            .catch((response) => {
+                console.log(response);
+                console.log('error');
+            })
     }
 }
 export const getCryppoBusinessThunkCreator = () => {

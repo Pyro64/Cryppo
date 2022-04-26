@@ -4,7 +4,7 @@ import "../src/Style/Style.scss";
 import { ParallaxProvider } from "react-scroll-parallax";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import Spinner from './Components/Spinner/Spinner';
-import Authorization from "./Components/Authorization/Authorization";
+import AuthorizationContainer from "./Components/Authorization/AuthorizationContainer";
 
 const CryppoContainer = React.lazy(() => import('./Components/Cryppo/CryppoContainer'));
 const CryppoBusinessContainer = React.lazy(() => import('./Components/CryppoBusiness/CryppoBusinessContainer'));
@@ -29,7 +29,7 @@ function App() {
               />
               <Route
                 path="/auth"
-                element={<Authorization />}
+                element={<AuthorizationContainer />}
               />
             </Routes>
           </Suspense>
