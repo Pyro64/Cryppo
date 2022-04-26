@@ -1,7 +1,5 @@
 import React from "react";
-import { switchModal } from "../../../../../Redux/cryppoLk-reducer";
 import style from "./Operation.module.scss";
-import { toggleHandler } from './OperationInner'
 export default function OperationItem(props) {
   let value = props
   let isModal = !props.isModal

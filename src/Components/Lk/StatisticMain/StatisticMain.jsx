@@ -21,7 +21,7 @@ const StatisticMain = (props) => {
     />
   ));
   const data = {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    labels: [],
     datasets: [
       {
         label: "# of Votes",
@@ -80,6 +80,10 @@ const StatisticMain = (props) => {
               <div className={style.items}>{elementItem}</div>
               <div className={style.chartInner}>
                 <Doughnut data={data} options={options} />
+                <div className={style.statisticBlock}>
+                  <div className={style.statisticCash}>32 094 $</div>
+                  <div className={style.statisticName}>Общий баланс</div>
+                </div>
               </div>
             </div>
           </TabPanel>
