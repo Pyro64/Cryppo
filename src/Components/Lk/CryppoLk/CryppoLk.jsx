@@ -10,8 +10,8 @@ export default function CryppoLk(props) {
   // useEffect(() => {
   //   const interval = setInterval(get, 5000);
   // }, []);
-  alert(props.isLogin)
-  if (props.isLogin === false) return <Navigate to={'/auth'} />
+  // alert(props.isLogin)
+  // if (props.isLogin === false) return <Navigate to={'/auth'} />
   return (
     <Routes>
       <Route
@@ -39,7 +39,7 @@ export default function CryppoLk(props) {
         path="translations/*"
         element={<CryppoLkTranslation translations={props.translations} />}
       />
-      <Route path="invest/*" element={<CryppoLkInvest tabs={props.tabs} />} />
+      <Route path="invest/*" element={<CryppoLkInvest tabs={props.tabs} composition={props.composition} />} />
       <Route
         path="settings/*"
         element={<CryppoLkSettings />}

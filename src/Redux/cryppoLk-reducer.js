@@ -1,7 +1,14 @@
 import usd from "../Images/payIcon/12.svg";
 import icx from "../Images/payIcon/6.svg";
+import btc from "../Images/payIcon/1.svg";
+import ltc from "../Images/payIcon/2.svg";
+import xrp from "../Images/payIcon/7.svg";
+import xtz from "../Images/payIcon/5.svg";
+import eos from "../Images/payIcon/4.svg";
 import arde from "../Images/payIcon/arde.svg";
 import eth from "../Images/payIcon/eth.svg";
+import bnb from "../Images/payIcon/BNB.svg";
+import bch from "../Images/payIcon/BCH.svg";
 import masterCard from "../Images/icon/mastercard.svg";
 import bag from "../Images/icon/bag.svg";
 import qron from "../Images/icon/qron.svg";
@@ -351,7 +358,72 @@ let initialState = {
     cash: '100 USD',
     percent: '100%',
   },
-  composition: [{}, {}],
+  compositionData: [
+    {
+      id: 1,
+      name: "BTC",
+      icon: btc,
+      percent: 35,
+      value: 9656,
+      color: "#F7931A",
+    },
+    {
+      id: 2,
+      name: "ETH",
+      icon: eth,
+      percent: 27,
+      value: 6566,
+      color: "#3AB83A",
+    },
+    {
+      id: 3,
+      name: "BNB",
+      icon: bnb,
+      percent: 21,
+      value: 3656,
+      color: "#D80A22",
+    },
+    {
+      id: 4,
+      name: "BCH",
+      icon: bch,
+      percent: 17,
+      value: 1656,
+      color: "#6417B1",
+    },
+    {
+      id: 5,
+      name: "LTC",
+      icon: ltc,
+      percent: 0,
+      value: 0,
+      color: "#A3A3A3",
+    },
+    {
+      id: 6,
+      name: "XTZ",
+      icon: xtz,
+      percent: 0,
+      value: 0,
+      color: "#E0BC00",
+    },
+    {
+      id: 7,
+      name: "EOS",
+      icon: eos,
+      percent: 35,
+      value: 9656,
+      color: "#B134DD",
+    },
+    {
+      id: 8,
+      name: "XRP",
+      icon: xrp,
+      percent: 0,
+      value: 0,
+      color: "#1276A7",
+    } 
+    ],
 };
 
 const cryppoLkReducer = (state = initialState, action) => {
