@@ -8,7 +8,7 @@ const localApi = axios.create({
 
 const prodApi = axios.create({
     baseURL: 'https://b.cryppowallet.com/',
-    headers: {'Access-Control-Allow-Origin': 'http://localhost:3000' }
+    headers: {'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Method': "*"  }
 })
 //Прод Api
 export const AuthorizationPost = (email, password) => {
@@ -20,6 +20,17 @@ export const AuthorizationPost = (email, password) => {
         deviceId: "1",
         deviceOs: "Android Pie",
         deviceIp: "192.168.0.1"
+    }).then(response => {
+        return response.data
+    })
+}
+
+export const RegistrationPost = (email, password, company) => {
+    debugger;
+    return prodApi.post('Account/Register', {
+        email,
+        password,
+        company
     }).then(response => {
         return response.data
     })
