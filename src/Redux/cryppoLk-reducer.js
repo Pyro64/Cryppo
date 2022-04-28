@@ -354,9 +354,9 @@ let initialState = {
     },
   ],
   chartTextData: {
-    category: 'Расходы',
-    cash: '100 USD',
-    percent: '100%',
+    category: "Расходы",
+    cash: "100 USD",
+    percent: "100%",
   },
   compositionData: [
     {
@@ -366,6 +366,7 @@ let initialState = {
       percent: 35,
       value: 9656,
       color: "#F7931A",
+      dataKey: "btc",
     },
     {
       id: 2,
@@ -374,6 +375,7 @@ let initialState = {
       percent: 27,
       value: 6566,
       color: "#3AB83A",
+      dataKey: "eth",
     },
     {
       id: 3,
@@ -382,6 +384,7 @@ let initialState = {
       percent: 21,
       value: 3656,
       color: "#D80A22",
+      dataKey: "bnb",
     },
     {
       id: 4,
@@ -390,6 +393,7 @@ let initialState = {
       percent: 17,
       value: 1656,
       color: "#6417B1",
+      dataKey: "bch",
     },
     {
       id: 5,
@@ -398,6 +402,7 @@ let initialState = {
       percent: 0,
       value: 0,
       color: "#A3A3A3",
+      dataKey: "ltc",
     },
     {
       id: 6,
@@ -406,6 +411,7 @@ let initialState = {
       percent: 0,
       value: 0,
       color: "#E0BC00",
+      dataKey: "xtz",
     },
     {
       id: 7,
@@ -414,6 +420,7 @@ let initialState = {
       percent: 35,
       value: 9656,
       color: "#B134DD",
+      dataKey: "eos",
     },
     {
       id: 8,
@@ -422,8 +429,9 @@ let initialState = {
       percent: 0,
       value: 0,
       color: "#1276A7",
-    } 
-    ],
+      dataKey: "xrp",
+    },
+  ],
 };
 
 const cryppoLkReducer = (state = initialState, action) => {
@@ -446,8 +454,8 @@ const cryppoLkReducer = (state = initialState, action) => {
     case SET_CHART_TEXT:
       return {
         ...state,
-        chartTextData: action.value
-      }
+        chartTextData: action.value,
+      };
     default:
       return state;
   }
@@ -466,7 +474,7 @@ export const getCryppoLkThunkCreator = () => {
       });
   };
 };
-export const setChartText = (value) => ({ type: SET_CHART_TEXT, value })
+export const setChartText = (value) => ({ type: SET_CHART_TEXT, value });
 export const switchModal = (isModal) => ({ type: SWITCH_MODAL, isModal });
 export const setModal = (value) => ({ type: SET_MODAL, value });
 export const get = (value) => ({ type: GET, value });
