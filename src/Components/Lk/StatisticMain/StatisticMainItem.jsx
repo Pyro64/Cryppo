@@ -1,9 +1,14 @@
 import React from "react";
 import style from "./StatisticMain.module.scss";
+import { NavLink } from "react-router-dom";
 const StatisticMainItem = (props) => {
-  let value = props
+  let value = props;
   return (
-    <div className={style.item} onMouseEnter={() => props.setChartText(value)} onMouseLeave={() => props.initChartText()}>
+    <NavLink to={`/lk/event/${props.category}`}
+      className={style.item}
+      onMouseEnter={() => props.setChartText(value)}
+      onMouseLeave={() => props.initChartText()}
+    >
       <div
         style={{ background: `${props.color}` }}
         className={style.circle}
@@ -11,7 +16,7 @@ const StatisticMainItem = (props) => {
       <div className={style.category}>{props.category}</div>
       <div className={style.cash}>{props.cash}</div>
       <div className={style.currency}>{props.currency}</div>
-    </div>
+    </NavLink>
   );
 };
 

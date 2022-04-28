@@ -4,11 +4,7 @@ import CompositionIndexItem from "./CompositionIndexItem";
 import {
   BarChart,
   Bar,
-  Area,
   Legend,
-  XAxis,
-  CartesianGrid,
-  Tooltip,
   ResponsiveContainer,
 } from "recharts";
 
@@ -27,9 +23,6 @@ const renderCustomBarLabel = ({ payload, x, y, width, height, value }) => {
         {`${value}`}
       </text>
   );
-};
-const renderCustomAxisTick = ({ x, y, payload }) => {
-  return <text fill="#fff">payload.value</text>;
 };
 const renderLegend = (props) => {
   const { payload } = props;

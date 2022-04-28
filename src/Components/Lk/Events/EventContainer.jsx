@@ -1,19 +1,13 @@
 import { connect } from "react-redux";
-import CryppoLk from "./CryppoLk";
-import { get, getCryppoLkThunkCreator, setModal, switchModal, setChartText, initChartText } from "../../../Redux/cryppoLk-reducer";
+import Event from "./Event";
+import { get, setModal, switchModal, setChartText, initChartText } from "../../../Redux/cryppoLk-reducer"
 
- 
+
 let mapStateToProps = (state) => {
   return {
-    card: state.cryppoLk.cardData,
-    bankCard: state.cryppoLk.bankCardData,
-    invest: state.cryppoLk.investData,
-    newCard: state.cryppoLk.newCardData,
-    news: state.cryppoLk.newsData,
     operationData: state.cryppoLk.operationData,
     statistic: state.cryppoLk.statisticData,
     translations: state.cryppoLk.translationsData,
-    tabs: state.cryppoLk.tabsData,
     currency: state.cryppoLk.currencyStatisticData,
     composition: state.cryppoLk.compositionData,
     operationModal: state.cryppoLk.operationModal,
@@ -23,12 +17,11 @@ let mapStateToProps = (state) => {
   };
 };
 
-const CryppoLkContainer = connect(mapStateToProps, {
+const EventContainer = connect(mapStateToProps, {
   get,
-  getCryppoLkThunkCreator,
   setModal,
   switchModal,
   setChartText,
   initChartText,
-})(CryppoLk);
-export default CryppoLkContainer;
+})(Event);
+export default EventContainer;

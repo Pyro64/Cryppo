@@ -4,6 +4,7 @@ import CryppoLkMain from "./CryppoLkComponents/CryppoLkMain/CryppoLkMain";
 import CryppoLkSettings from "./CryppoLkComponents/CryppoLkSettings/CryppoLkSettings";
 import CryppoLkTranslation from "../CryppoLk/CryppoLkComponents/CryppoLkTranslation/CryppoLkTranslation";
 import CryppoLkInvest from "./CryppoLkComponents/CryppoLkInvest/CryppoLkInvest";
+import Event from "../Events/Event";
 
 export default function CryppoLk(props) {
   // const get = () => props.getCryppoLkThunkCreator();
@@ -48,6 +49,34 @@ export default function CryppoLk(props) {
         element={<CryppoLkSettings />}
         composition={props.composition}
       />
+    <Route
+        path="event"
+        element={<Event 
+            operationData={props.operationData}
+            currency={props.currency}
+            setModal={props.setModal}
+            operationModal={props.operationModal}
+            isModal={props.isModal}
+            switchModal={props.switchModal}
+            chartTextData={props.chartTextData}
+            setChartText={props.setChartText}
+            initChartText={props.initChartText}
+            isHover={props.isHover}/>}
+    />
+    <Route
+        path="event/:category"
+        element={<Event 
+            operationData={props.operationData}
+            currency={props.currency}
+            setModal={props.setModal}
+            operationModal={props.operationModal}
+            isModal={props.isModal}
+            switchModal={props.switchModal}
+            chartTextData={props.chartTextData}
+            setChartText={props.setChartText}
+            initChartText={props.initChartText}
+            isHover={props.isHover}/>}
+    />
     </Routes>
   );
 }

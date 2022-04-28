@@ -9,7 +9,7 @@ export default function StatisticItem(props) {
           <div className={style.text}>{props.text}</div>
           <div className={style.title}>{props.title}</div>
         </div>
-        <img src={props.icon} className={style.icon} />
+        <img src={props.icon} className={style.icon} alt="img"/>
       </div>
       <div className={style.descripthion}>{props.descripthion}</div>
     </div>
