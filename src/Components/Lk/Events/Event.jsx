@@ -13,29 +13,28 @@ import s from "../../Lk/CryppoLk/CryppoLkComponents/OperationLk/Operation.module
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-
 const Event = (props) => {
-    const {category} = useParams();
-    debugger;
+    const {category, subcategory} = useParams();
     let operations = props.operationData.operation;
     let currency = props.currency;
     if (category !== undefined){
         currency = props.currency.filter((item)=>{
             return item.category === category
         });
+        currency = currency[0];
         operations = operations.filter((item) =>{
             return item.type === category
         })
     }
-    
     let dataItems = [];
     let backgroundColorItems = [];
-    currency.map(e => {
-        dataItems.push(e.percent);
-        backgroundColorItems.push(e.color);
-    });
-    
-    let elementItem = currency.map((e) => (
+    let elementItem = [];
+    if (Array.isArray(currency)){
+        currency.map((e) => {
+            dataItems.push(e.percent);
+            backgroundColorItems.push(e.color);
+        });
+        elementItem = currency.map((e) => (
         <StatisticMainItem
             setChartText={props.setChartText}
             initChartText={props.initChartText}
@@ -48,6 +47,25 @@ const Event = (props) => {
             currency={e.currency}
         />
     ));
+    }
+
+    
+    
+    if (category !== undefined){
+        elementItem = currency.childCurrencyStatistics.map((e) => (
+            <StatisticMainItem
+                setChartText={props.setChartText}
+                initChartText={props.initChartText}
+                percent={e.percent}
+                id={e.id}
+                key={e.id}
+                color={e.color}
+                category={e.category}
+                cash={e.cash}
+                currency={e.currency}
+            />
+        ));
+    }
     const options = {
         plugins: {
             tooltip: {

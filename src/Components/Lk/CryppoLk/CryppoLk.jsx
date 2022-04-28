@@ -77,6 +77,20 @@ export default function CryppoLk(props) {
             initChartText={props.initChartText}
             isHover={props.isHover}/>}
     />
+    <Route
+        path="event/:category/:subcategory"
+        element={<Event 
+            operationData={props.operationData}
+            currency={props.currency}
+            setModal={props.setModal}
+            operationModal={props.operationModal}
+            isModal={props.isModal}
+            switchModal={props.switchModal}
+            chartTextData={props.chartTextData}
+            setChartText={props.setChartText}
+            initChartText={props.initChartText}
+            isHover={props.isHover}/>}
+    />
     </Routes>
   );
 }

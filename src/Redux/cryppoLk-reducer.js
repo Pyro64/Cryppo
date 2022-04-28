@@ -376,6 +376,32 @@ let initialState = {
       currency: "USD",
       color: "#2F69FF",
       percent: 10,
+      childCurrencyStatistics:[
+        {
+          id: 1,
+          category: "Яндекс Такси",
+          cash: 9.56,
+          currency: "USD",
+          color: "#2F69FF",
+          percent: 35,
+        },
+        {
+          id: 2,
+          category: "Uber",
+          cash: 9.56,
+          currency: "USD",
+          color: "#2F69FF",
+          percent: 40,
+        },
+        {
+          id: 3,
+          category: "Ситимобил",
+          cash: 9.56,
+          currency: "USD",
+          color: "#2F69FF",
+          percent: 25,
+        },
+      ]
     },
     {
       id: 2,
@@ -384,6 +410,32 @@ let initialState = {
       currency: "USD",
       color: "#FF612F",
       percent: 5,
+      childCurrencyStatistics:[
+        {
+          id: 1,
+          category: "Мегафон",
+          cash: 9.56,
+          currency: "USD",
+          color: "#2F69FF",
+          percent: 35,
+        },
+        {
+          id: 2,
+          category: "Билайн",
+          cash: 9.56,
+          currency: "USD",
+          color: "#2F69FF",
+          percent: 40,
+        },
+        {
+          id: 3,
+          category: "Теле2",
+          cash: 9.56,
+          currency: "USD",
+          color: "#2F69FF",
+          percent: 25,
+        },
+      ]
     },
     {
       id: 3,
@@ -392,6 +444,32 @@ let initialState = {
       currency: "USD",
       color: "#BC2FFF",
       percent: 8,
+      childCurrencyStatistics:[
+        {
+          id: 1,
+          category: "Магнит",
+          cash: 9.56,
+          currency: "USD",
+          color: "#2F69FF",
+          percent: 35,
+        },
+        {
+          id: 2,
+          category: "Лента",
+          cash: 9.56,
+          currency: "USD",
+          color: "#2F69FF",
+          percent: 40,
+        },
+        {
+          id: 3,
+          category: "Метро",
+          cash: 9.56,
+          currency: "USD",
+          color: "#2F69FF",
+          percent: 25,
+        },
+      ]
     },
     {
       id: 4,
@@ -400,6 +478,32 @@ let initialState = {
       currency: "USD",
       color: "#FF40D5",
       percent: 5,
+      childCurrencyStatistics:[
+        {
+          id: 1,
+          category: "Tinkoff",
+          cash: 9.56,
+          currency: "USD",
+          color: "#2F69FF",
+          percent: 35,
+        },
+        {
+          id: 2,
+          category: "Сбербанк",
+          cash: 9.56,
+          currency: "USD",
+          color: "#2F69FF",
+          percent: 40,
+        },
+        {
+          id: 3,
+          category: "ВТБ",
+          cash: 9.56,
+          currency: "USD",
+          color: "#2F69FF",
+          percent: 25,
+        },
+      ]
     },
     {
       id: 5,

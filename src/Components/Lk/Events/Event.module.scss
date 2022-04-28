@@ -1,7 +1,7 @@
 @import '../../../Style/Mixins.scss';
 
 .container {
-    @include fluid(margin-bottom, 30px, 60px);
+    @include fluid(margin, 30px, 60px);
 }
 .block {
     @include neumorphism;
