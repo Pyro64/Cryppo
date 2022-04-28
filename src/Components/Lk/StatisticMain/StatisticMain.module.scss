@@ -99,7 +99,7 @@
     border-radius: 50%;
     @include fluid(margin, 8px, 10px);
 }
-.cash{
+.cash {
     @include fluid(margin, 3px, 5px);
 }
 
@@ -119,3 +119,17 @@
     text-align: center;
 }
 
+.hoverExit {
+    opacity: 0;
+}
+.hoverEnter {
+    opacity: 0;
+}
+.hoverExitDone {
+    opacity: 1;
+    transition: opacity 200ms;
+}
+.hoverEnterDone {
+    opacity: 1;
+    transition: opacity 200ms;
+}

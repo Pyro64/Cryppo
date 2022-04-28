@@ -1,4 +1,4 @@
-@import "../../Style/Mixins.scss";
+@import '../../Style/Mixins.scss';
 .container {
   transition: 0.3s linear;
   transition: border 0s ease-in-out;
@@ -19,7 +19,7 @@
   transition: 0.38s ease-in-out;
   &:hover {
     .dropdown {
-      background-image: url("../../Images/icon/color-dropdown.svg");
+      background-image: url('../../Images/icon/color-dropdown.svg');
     }
   }
 }
@@ -29,7 +29,7 @@
   overflow: hidden;
 }
 .dropdown {
-  background: url("../../Images/icon/dropdown.svg") no-repeat;
+  background: url('../../Images/icon/dropdown.svg') no-repeat;
   background-size: contain;
   @include fluid(width, 12px, 15px);
   @include fluid(height, 6px, 8px);
@@ -54,9 +54,23 @@
     opacity: 1;
   }
   .dropdown {
-    background-image: url("../../Images/icon/color-dropdown.svg");
+    background-image: url('../../Images/icon/color-dropdown.svg');
     transform: rotate(180deg);
   }
+}
+.hoverExit {
+  opacity: 0;
+}
+.hoverEnter {
+  opacity: 0;
+}
+.hoverExitDone {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+.hoverEnterDone {
+  opacity: 1;
+  transition: opacity 1000ms;
 }
 @media screen and (max-width: 768px) {
   .container {

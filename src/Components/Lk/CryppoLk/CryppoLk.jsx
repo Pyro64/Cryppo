@@ -32,6 +32,9 @@ export default function CryppoLk(props) {
             isModal={props.isModal}
             switchModal={props.switchModal}
             chartTextData={props.chartTextData}
+            setChartText={props.setChartText}
+            initChartText={props.initChartText}
+            isHover={props.isHover}
           />
         }
       />
