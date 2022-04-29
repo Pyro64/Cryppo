@@ -21,6 +21,16 @@
     }
   }
 }
+.status {
+  @include fluid(width, 10px, 11px);
+  @include fluid(height, 10px, 11px);
+  border-radius: 50%;
+  @include fluid(margin-left, 5px, 10px);
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+}
 .line {
   @include fluid(padding-left, 25px, 55px);
   @include fluid(padding-right, 25px, 55px);
@@ -87,6 +97,8 @@
   @include fluid(font-size, 10px, 14px);
   margin-bottom: 5px;
   font-weight: 500;
+  display: flex;
+  align-items: center;
 }
 .check {
   @include fluid(font-size, 7px, 9px);
