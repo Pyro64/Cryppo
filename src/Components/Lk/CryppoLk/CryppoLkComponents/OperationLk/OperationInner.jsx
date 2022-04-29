@@ -3,6 +3,7 @@ import style from "./Operation.module.scss";
 import OperationItem from "./OperationItem";
 
 export default function OperationInner(props) {
+  debugger;
   let elementItem = props.operationData.map((e) => (
     <OperationItem
       isModal={props.isModal}
