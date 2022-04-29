@@ -1,9 +1,9 @@
-import React from "react";
+import React, {useRef}  from "react";
 import style from "./Event.module.scss";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { Doughnut } from "react-chartjs-2";
+import { Doughnut, getElementsAtEvent,  } from "react-chartjs-2";
 import StatisticMainItem from "../StatisticMain/StatisticMainItem";
 import ChartText from "../StatisticMain/ChartText";
 import {useParams} from "react-router-dom";
@@ -14,27 +14,68 @@ import s from "../../Lk/CryppoLk/CryppoLkComponents/OperationLk/Operation.module
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Event = (props) => {
+    let value = props;
+    let dataItems = [];
+    let backgroundColorItems = [];
+    let elementItem = [];
     const {category, subcategory} = useParams();
     let operations = props.operationData.operation;
     let currency = props.currency;
-    if (category !== undefined){
+    const chartRef = useRef(null);
+
+    const onClick = (event) => {
+        const { current: chart } = chartRef;
+        if (!chart) {
+            return;
+        }
+        let eTarget = (getElementsAtEvent(chart, event));
+        props.setChartText(value[eTarget[0].index]);
+        
+    };
+    
+    if (category !== undefined)
+    {
+      value = value.currency.filter((item) =>{
+        return item.category === category
+      })
+      value = value[0].childCurrencyStatistics.filter((item)=>{
+        return item.parentCategory === category
+      })
         currency = props.currency.filter((item)=>{
             return item.category === category
         });
         currency = currency[0];
-        operations = operations.filter((item) =>{
-            return item.type === category
-        })
-    }
-    let dataItems = [];
-    let backgroundColorItems = [];
-    let elementItem = [];
-    if (Array.isArray(currency)){
-        currency.map((e) => {
+        if (subcategory !== undefined){
+            operations = operations.filter((item) =>{
+                return item.firm === subcategory
+            });
+        }
+        else{
+            operations = operations.filter((item) =>{
+                return item.type === category
+            });
+        }
+        
+        currency.childCurrencyStatistics.map((e) => {
             dataItems.push(e.percent);
             backgroundColorItems.push(e.color);
         });
-        elementItem = currency.map((e) => (
+        elementItem = currency.childCurrencyStatistics.map((e) => (
+          <StatisticMainItem
+              setChartText={props.setChartText}
+              initChartText={props.initChartText}
+              percent={e.percent}
+              id={e.id}
+              key={e.id}
+              color={e.color}
+              category={e.category}
+              cash={e.cash}
+              currency={e.currency}
+          />
+      ));
+    }
+    else{
+      elementItem = currency.map((e) => (
         <StatisticMainItem
             setChartText={props.setChartText}
             initChartText={props.initChartText}
@@ -46,46 +87,51 @@ const Event = (props) => {
             cash={e.cash}
             currency={e.currency}
         />
-    ));
+      ));
+      currency.map((e) => {
+        dataItems.push(e.percent);
+        backgroundColorItems.push(e.color);
+      });
     }
-
     
-    
-    if (category !== undefined){
-        elementItem = currency.childCurrencyStatistics.map((e) => (
-            <StatisticMainItem
-                setChartText={props.setChartText}
-                initChartText={props.initChartText}
-                percent={e.percent}
-                id={e.id}
-                key={e.id}
-                color={e.color}
-                category={e.category}
-                cash={e.cash}
-                currency={e.currency}
-            />
-        ));
-    }
     const options = {
         plugins: {
-            tooltip: {
-                enabled: false
-            },
+          options: {
+        },
+        tooltip: {
+          enabled: false
+          },
         },
         cutout: 110,
     };
-  const data = {
-    labels: [],
-    datasets: [
-      {
-        data: dataItems,
-        backgroundColor: backgroundColorItems,
-        borderWidth: 0,
-        hoverOffset: 20,
-      },
-    ]
-  };
-
+    const data = {
+      labels: [],
+      datasets: [
+        {
+          data: dataItems,
+          backgroundColor: backgroundColorItems,
+          borderWidth: 0,
+          hoverOffset: 20,
+          
+        },
+      ]
+    };
+    if (subcategory !== undefined){
+        return(
+            <div className={s.container}>
+                <div className={s.title}>{props.operationData.title}</div>
+                <OperationInner
+                operationData={operations}
+                setModal={props.setModal}
+                isModal={props.isModal}
+                switchModal={props.switchModal}
+                />
+                <div>
+                <OperationModal operationModal={props.operationModal} isModal={props.isModal} switchModal={props.switchModal} />
+                </div>
+            </div>
+        )
+    }
   return (
     <div сlassName={style.container}>
       <div className={style.block}>
@@ -102,7 +148,8 @@ const Event = (props) => {
             <div className={style.flex}>
               <div className={style.items}>{elementItem}</div>
               <div className={style.chartInner}>
-                <Doughnut data={data} options={options} />
+                <Doughnut data={data} options={options} onClick={onClick} ref={chartRef}
+                onMouseLeave={() => props.initChartText()} />
                 <ChartText isHover={props.isHover} chartTextData={props.chartTextData} />
               </div>
             </div>

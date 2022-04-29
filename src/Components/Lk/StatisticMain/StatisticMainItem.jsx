@@ -1,10 +1,17 @@
 import React from "react";
 import style from "./StatisticMain.module.scss";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
+
 const StatisticMainItem = (props) => {
   let value = props;
+  const {category, subcategory} = useParams();
+  let url = `/lk/event/${props.category}`
+  if (category !== undefined)
+  {
+    url = `/lk/event/${category}/${props.category}`
+  }
   return (
-    <NavLink to={`/lk/event/${props.category}`}
+    <NavLink to={url}
       className={style.item}
       onMouseEnter={() => props.setChartText(value)}
       onMouseLeave={() => props.initChartText()}
