@@ -8,6 +8,7 @@ import StatisticMain from '../../../StatisticMain/StatisticMain';
 import SidebarTabs from "../../../SidebarTabs/SidebarTabs";
 export default function CryppoLkMain(props) {
   return (
+
     <div className="main">
       <div className="flex container">
         <div className="sidebar">

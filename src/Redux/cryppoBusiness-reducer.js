@@ -29,9 +29,7 @@ import banner from '../Images/content/banner-business.svg'
 import businessSvg from '../Images/cryppo-business.svg';
 import annaBobs from '../Images/login/anna_bobs.svg'
 
-import { CryppoBusinessGet, AuthorizationPost, RegistrationPost } from "../Api/api"
-const LOGIN_BUSINESS = 'LOGIN_BUSINESS';
-const AUTHORIZATION = 'AUTHORIZATION';
+import { CryppoBusinessGet } from "../Api/api"
 const GET = 'GET';
 let initialState = {
     bannerData: {
@@ -335,17 +333,7 @@ let initialState = {
 };
 const cryppoBusinessReducer = (state = initialState, action) => {
     switch (action.type) {
-        case LOGIN_BUSINESS:
-            return {
-                ...state,
-                isLogin: action.value,
-            };
         case GET:
-            return {
-                ...state,
-                ...action.value,
-            };
-        case AUTHORIZATION:
             return {
                 ...state,
                 ...action.value,
@@ -354,32 +342,7 @@ const cryppoBusinessReducer = (state = initialState, action) => {
             return state;
     }
 }
-export const authorizationPostThunkCreator = (email, password) => {
-    return (dispatch) => {
-        AuthorizationPost(email, password)
-            .then((data) => {
-                let value = JSON.parse(JSON.stringify(data))
-                dispatch({ type: AUTHORIZATION, value });
-            })
-            .catch((response) => {
-                console.log(response);
-                console.log('error');
-            })
-    }
-}
-export const registrationPostThunkCreator = (email, password, company) => {
-    return (dispatch) => {
-        RegistrationPost(email, password, company)
-            .then((data) => {
-                let value = JSON.parse(JSON.stringify(data))
-                dispatch({ type: AUTHORIZATION, value });
-            })
-            .catch((response) => {
-                console.log(response);
-                console.log('error');
-            })
-    }
-}
+
 export const getCryppoBusinessThunkCreator = () => {
     return (dispatch) => {
         CryppoBusinessGet()
@@ -393,6 +356,5 @@ export const getCryppoBusinessThunkCreator = () => {
             })
     }
 }
-export const login = (value) => ({ type: LOGIN_BUSINESS, value })
 export const get = (value) => ({ type: GET, value })
 export default cryppoBusinessReducer;

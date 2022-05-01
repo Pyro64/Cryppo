@@ -13,6 +13,7 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 import style from "./News.module.scss";
 import SubtitleLk from "../SubtitleLk/SubtitleLk";
 const News = (props) => {
+  debugger;
   let newsItem = props.news.map((e) => (
     <Slide className={style.slide} index={e.id} id={e.id} key={e.id}>
       <NewsItem text={e.text} img={e.img} />

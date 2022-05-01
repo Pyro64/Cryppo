@@ -1,20 +1,21 @@
 import { connect } from 'react-redux'
 import CryppoIndex from './CryppoIndex'
 import { addStep } from '../../Redux/anim-reduсer';
-import { login, getCryppoIndexThunkCreator } from '../../Redux/cryppoIndex-reducer';
+import { getCryppoIndexThunkCreator } from '../../Redux/cryppoIndex-reducer';
+import { login } from '../../Redux/user-reducer';
 let mapStateToProps = (state) => {
     return {
-        benefits: state.cryppoIndexPage.benefitsData,
+        benefits: state.interface.benefitsData,
         suggestions: state.cryppoIndexPage.suggestionsData,
-        banner: state.cryppoIndexPage.bannerData,
+        banner: state.interface.bannerData,
         aboutDataIndex: state.cryppoIndexPage.aboutDataIndex,
-        logo: state.cryppoIndexPage.route.logo,
-        btn: state.cryppoIndexPage.route.btn,
-        isLogin: state.cryppoIndexPage.isLogin,
+        logo: state.link.route.logo,
+        btn: state.link.route.btn,
+        isLogin: state.user.isLogin,
         bannerIndex: state.anim.bannerIndex,
         step: state.anim.step,
-        user: state.cryppoIndexPage.userData,
-        nav: state.cryppoIndexPage.navData,
+        user: state.user.userData,
+        nav: state.link.navData,
     }
 }
 

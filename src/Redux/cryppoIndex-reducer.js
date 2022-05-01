@@ -1,52 +1,12 @@
-import Benefist1 from '../Images/icon/Benefist1.svg'
-import Benefist2 from '../Images/icon/Benefist2.svg'
-import Benefist3 from '../Images/icon/Benefist3.svg'
-import Benefist4 from '../Images/icon/Benefist4.svg'
-import indexSvg from '../Images/cryppo-index.svg'
 import one from '../Images/payIcon/1.svg'
 import two from '../Images/payIcon/2.svg'
 import three from '../Images/payIcon/3.svg'
-import banner from '../Images/content/banner-index.svg'
-import annaBobs from '../Images/login/anna_bobs.svg'
+
 import { CryppoIndexGet } from "../Api/api"
 
 const GET = 'GET'
 const LOGIN_INDEX = 'LOGIN_INDEX';
 let initialState = {
-    bannerData: {
-        title: 'CRYPPO Invest',
-        gradient: '.',
-        text: 'Автоматически ребалансируемый индекс из 8 самых высококапитализированных цифровых активов на основе машинного обучения (искусственного интеллекта)',
-        img: banner,
-    },
-    benefitsData: [
-        {
-            id: 1,
-            icon: Benefist1,
-            text: "Ваши инвестиции на личном кошельке инвестора внутри блокчейна CRYPPO INDEX",
-
-        },
-        {
-            id: 2,
-            icon: Benefist2,
-            text: "Абсолютная прозрачность всех инвестиционных транзакций",
-
-        },
-        {
-            id: 3,
-            icon: Benefist3,
-            text: "Отсутствие спекуляций и манипуляций курсом индекса: после вывода средств токены инвестора уничтожаются",
-
-        },
-        {
-            id: 4,
-            icon: Benefist4,
-            text: "Свободный вывод средств по истечении рекомендованного периода",
-
-        },
-
-
-    ],
     aboutDataIndex: {
         Index: {
             id: 1,
@@ -101,45 +61,7 @@ let initialState = {
             text: 'ПРИБЫЛИ USDT',
         },
     ],
-    route: {
-        logo: indexSvg,
-        btn: [
-            {
-                id: 2,
-                name: 'Преимущества',
-                to: 'benefitsIndex'
-            },
-        ],
-    },
-    userData:
-    {
-        id: 1,
-        img: annaBobs,
-        name: "Index Bobs",
-    },
-    navData: [
-        {
-            id: 1,
-            name: "Главная",
-            href: '/'
-        },
-        {
-            id: 2,
-            name: "События",
-            href: '/event'
-        },
-        {
-            id: 3,
-            name: "Переводы",
-            href: '/translations'
-        },
-        {
-            id: 4,
-            name: "Настройки",
-            href: '/settings'
-        },
-    ],
-    isLogin: false,
+    
 }
 const cryppoIndexReducer = (state = initialState, action) => {
     switch (action.type) {

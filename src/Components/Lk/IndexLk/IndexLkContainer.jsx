@@ -3,8 +3,8 @@ import CryppoIndexLk from './CryppoIndexLk'
 
 let mapStateToProps = (state) => {
     return {
-        card: state.cryppoIndexLk.cardData,
-        bankCard: state.cryppoIndexLk.bankCardData,
+        card: state.user.cardData,
+        bankCard: state.user.bankCardData,
     }
 }
 

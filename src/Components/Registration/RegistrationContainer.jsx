@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Registration from "./Registration";
-import {registrationPostThunkCreator } from '../../Redux/cryppoBusiness-reducer';
+import {registrationPostThunkCreator } from '../../Redux/user-reducer';
 
 
 let mapStateToProps = (state) => {

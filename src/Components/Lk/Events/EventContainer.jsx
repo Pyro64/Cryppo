@@ -5,15 +5,15 @@ import { get, setModal, switchModal, setChartText, initChartText } from "../../.
 
 let mapStateToProps = (state) => {
   return {
-    operationData: state.cryppoLk.operationData,
-    statistic: state.cryppoLk.statisticData,
-    translations: state.cryppoLk.translationsData,
-    currency: state.cryppoLk.currencyStatisticData,
-    composition: state.cryppoLk.compositionData,
+    operationData: state.user.operationData,
+    statistic: state.user.statisticData,
+    translations: state.interface.translationsData,
+    currency: state.user.currencyStatisticData,
+    composition: state.user.compositionData,
     operationModal: state.cryppoLk.operationModal,
     isModal: state.cryppoLk.isModal,
-    chartTextData: state.cryppoLk.chartTextData,
-    isHover: state.cryppoLk.isHover,
+    chartTextData: state.interface.chartTextData,
+    isHover: state.interface.isHover,
   };
 };
 
