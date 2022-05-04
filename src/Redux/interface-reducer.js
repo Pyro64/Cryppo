@@ -141,6 +141,7 @@ const interfaceReducer = (state = initialState, action) => {
                 chartTextData: initialState.chartTextData,
                 isHover: false,
             };
+        
         default:
             return {...state};    
     }

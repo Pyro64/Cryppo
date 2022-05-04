@@ -3,7 +3,15 @@ import style from "./CompositionIndex.module.scss";
 
 export default function CompositionIndexItem(props) {
   return (
-    <div className={style.index}>
+    <div
+      className={style.index}
+      onMouseEnter={() => {
+        props.changeActiveIndex(props.id - 1);
+      }}
+      onMouseLeave={() => {
+        props.changeActiveIndex(-1);
+      }}
+    >
       <div className={style.left}>
         <img src={props.icon} className={style.icon} alt="img" />
         <div className={style.titleIndex}>

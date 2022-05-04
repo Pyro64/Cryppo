@@ -1,0 +1,74 @@
+@import '../../../../Style/Mixins.scss';
+
+.container {
+    @include fluid(margin, 30px, 60px);
+}
+.block {
+    @include neumorphism;
+    @include fluid(padding-top, 10px, 20px);
+    @include fluid(padding-bottom, 10px, 20px);
+    @include fluid(padding-left, 25px, 50px);
+    @include fluid(padding-right, 25px, 50px);
+    border-radius: 15px;
+    height: 51px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.calendar{
+    display: flex;
+    flex-direction: row;
+    height: 31px;
+    background: #2D2D2D;
+    border-radius: 76px;
+    @include fluid(margin-left, 25px, 50px);
+    @include fluid(margin-right, 25px, 50px);
+}
+.button{
+    @include fluid(padding-left, 10px, 25px);
+    @include fluid(padding-right, 10px, 25px);
+    background: #2D2D2D;
+    cursor: pointer;
+    border: none;
+    
+}
+.buttonLeft{
+    border-radius: 76px 0 0 76px;
+}
+.buttonRight{
+    border-radius:  0 76px 76px 0;
+}
+.calendarInput{
+    position: relative;
+    @include fluid(padding-left, 10px, 25px);
+    @include fluid(padding-right, 10px, 25px);
+    background: #2D2D2D;
+    cursor: pointer;
+    border: none;
+    color: #FFFFFF;
+}
+.input{
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    
+}
+.inputItem{
+    height: 20px;
+    letter-spacing: 0.02em;
+    color: #6D6D6D;
+    line-height: 19px;
+    width: 100%;
+    background: none;
+    border: none;
+}
+.dropdownWrapper{
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+}
+.dropdownItem{
+    @include fluid(padding-top, 10px, 20px);
+    @include fluid(padding-bottom, 10px, 20px);
+}

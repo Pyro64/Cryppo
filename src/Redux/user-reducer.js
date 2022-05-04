@@ -20,6 +20,7 @@ import { AuthorizationPost, RegistrationPost } from "../Api/api"
 
 const AUTHORIZATION = 'AUTHORIZATION';
 const LOGIN = "LOGIN_CRYPPO";
+const CHANGE_ACTIVE_INDEX = "CHANGE_ACTIVE_INDEX";
 
 
 let statusPay = {
@@ -353,80 +354,84 @@ let initialState = {
             childCurrencyStatistics: []
         },
     ],
-    compositionData: [
-        {
-            id: 1,
-            name: "BTC",
-            icon: btc,
-            percent: 35,
-            value: 9656,
-            color: "#F7931A",
-            dataKey: "btc",
-        },
-        {
-            id: 2,
-            name: "ETH",
-            icon: eth,
-            percent: 27,
-            value: 6566,
-            color: "#3AB83A",
-            dataKey: "eth",
-        },
-        {
-            id: 3,
-            name: "BNB",
-            icon: bnb,
-            percent: 21,
-            value: 3656,
-            color: "#D80A22",
-            dataKey: "bnb",
-        },
-        {
-            id: 4,
-            name: "BCH",
-            icon: bch,
-            percent: 17,
-            value: 1656,
-            color: "#6417B1",
-            dataKey: "bch",
-        },
-        {
-            id: 5,
-            name: "LTC",
-            icon: ltc,
-            percent: 0,
-            value: 0,
-            color: "#A3A3A3",
-            dataKey: "ltc",
-        },
-        {
-            id: 6,
-            name: "XTZ",
-            icon: xtz,
-            percent: 0,
-            value: 0,
-            color: "#E0BC00",
-            dataKey: "xtz",
-        },
-        {
-            id: 7,
-            name: "EOS",
-            icon: eos,
-            percent: 35,
-            value: 9656,
-            color: "#B134DD",
-            dataKey: "eos",
-        },
-        {
-            id: 8,
-            name: "XRP",
-            icon: xrp,
-            percent: 0,
-            value: 0,
-            color: "#1276A7",
-            dataKey: "xrp",
-        },
-    ],
+    compositionData: {
+        activeIndex: 0,
+        compositions:[
+            {
+                id: 1,
+                name: "BTC",
+                icon: btc,
+                percent: 35,
+                value: 9656,
+                color: "#F7931A",
+                dataKey: "btc",
+            },
+            {
+                id: 2,
+                name: "ETH",
+                icon: eth,
+                percent: 27,
+                value: 6566,
+                color: "#3AB83A",
+                dataKey: "eth",
+            },
+            {
+                id: 3,
+                name: "BNB",
+                icon: bnb,
+                percent: 21,
+                value: 3656,
+                color: "#D80A22",
+                dataKey: "bnb",
+            },
+            {
+                id: 4,
+                name: "BCH",
+                icon: bch,
+                percent: 17,
+                value: 1656,
+                color: "#6417B1",
+                dataKey: "bch",
+            },
+            {
+                id: 5,
+                name: "LTC",
+                icon: ltc,
+                percent: 0,
+                value: 0,
+                color: "#A3A3A3",
+                dataKey: "ltc",
+            },
+            {
+                id: 6,
+                name: "XTZ",
+                icon: xtz,
+                percent: 0,
+                value: 0,
+                color: "#E0BC00",
+                dataKey: "xtz",
+            },
+            {
+                id: 7,
+                name: "EOS",
+                icon: eos,
+                percent: 35,
+                value: 9656,
+                color: "#B134DD",
+                dataKey: "eos",
+            },
+            {
+                id: 8,
+                name: "XRP",
+                icon: xrp,
+                percent: 0,
+                value: 0,
+                color: "#1276A7",
+                dataKey: "xrp",
+            },
+        ],
+    },
+    
     userData:
     {
         id: 1,
@@ -447,6 +452,14 @@ const userReducer = (state = initialState, action) => {
             return {
               ...state,
               isLogin: action.value,
+            };
+        case CHANGE_ACTIVE_INDEX:
+            return {
+                ...state,
+                compositionData: {
+                    activeIndex: action.value,
+                    compositions: state.compositionData.compositions
+                }
             };
         default:
             return {...state};
@@ -480,4 +493,5 @@ export const registrationPostThunkCreator = (email, password, company) => {
 }
 
 export const login = (value) => ({ type: LOGIN, value })
+export const changeActiveIndex = (value) => ({ type: CHANGE_ACTIVE_INDEX, value });
 export default userReducer;

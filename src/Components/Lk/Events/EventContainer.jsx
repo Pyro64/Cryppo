@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Event from "./Event";
-import { get, setModal, switchModal, setChartText, initChartText } from "../../../Redux/cryppoLk-reducer"
+import { get, setModal, switchModal, setChartText, initChartText, addTag } from "../../../Redux/cryppoLk-reducer"
 
 
 let mapStateToProps = (state) => {
@@ -23,5 +23,6 @@ const EventContainer = connect(mapStateToProps, {
   switchModal,
   setChartText,
   initChartText,
+  addTag
 })(Event);
 export default EventContainer;

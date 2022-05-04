@@ -19,7 +19,10 @@ export default function CryppoLkInvest(props) {
         </div>
         <div className="content">
           <SubtitleLk subtitle="Состав индекса" />
-          <CompositionIndex composition={props.composition} />
+          <CompositionIndex
+            composition={props.composition}
+            changeActiveIndex={props.changeActiveIndex}
+          />
         </div>
       </div>
     </div>

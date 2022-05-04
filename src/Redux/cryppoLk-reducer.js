@@ -9,8 +9,7 @@ import { CryppoLkGet } from "../Api/api";
 const GET = "GET";
 const SET_MODAL = "SET_MODAL";
 const SWITCH_MODAL = "SWITCH_MODAL";
-
-
+const ADD_TAG = "ADD_TAG";
 
 let initialState = {
 
@@ -53,7 +52,6 @@ let initialState = {
         },
     },
     isModal: false,
-
 
     tabsData: {
         invest: {
@@ -103,9 +101,11 @@ let initialState = {
             title: "Купить индекс",
         },
     },
-
-
-
+    operationsFilter:{
+        type:"initial",
+        searchQuery:"",
+        tags:[]
+    }
 };
 
 const cryppoLkReducer = (state = initialState, action) => {
@@ -114,6 +114,15 @@ const cryppoLkReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...action.value,
+            };
+        case ADD_TAG:
+            return {
+                ...state,
+                operationsFilter:{
+                    type: state.operationsFilter.type,
+                    searchQuery: "",
+                    tags: [...action.value]
+                }
             };
         case SET_MODAL:
             return {
@@ -144,7 +153,7 @@ export const getCryppoLkThunkCreator = () => {
             });
     };
 }
-
+export const addTag = (value) => ({ type: ADD_TAG, value });
 export const switchModal = (isModal) => ({ type: SWITCH_MODAL, isModal });
 export const setModal = (value) => ({ type: SET_MODAL, value });
 export const get = (value) => ({ type: GET, value });
