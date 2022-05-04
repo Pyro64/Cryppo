@@ -1,14 +1,15 @@
 import { connect } from "react-redux";
-import { login, get, getCryppoThunkCreator } from "../../Redux/cryppo-reducer";
+import {login} from "../../Redux/user-reducer";
+import { get, getCryppoThunkCreator } from "../../Redux/cryppo-reducer";
 import Cryppo from "./Cryppo";
 
 let mapStateToProps = (state) => {
   return {
-    logo: state.cryppoPage.route.logo,
-    btn: state.cryppoPage.route.btn,
-    isLogin: state.cryppoPage.isLogin,
-    user: state.cryppoPage.userData,
-    nav: state.cryppoPage.navData,
+    logo: state.link.route.logo,
+    btn: state.link.route.btn,
+    isLogin: state.user.isLogin,
+    user: state.user.userData,
+    nav: state.link.navData,
   };
 };
 

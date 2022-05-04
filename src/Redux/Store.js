@@ -6,6 +6,9 @@ import cryppoIndexReducer from "./cryppoIndex-reducer";
 import animReducer from "./anim-reduсer";
 import footerReducer from "./footer-reducer";
 import cryppoLkReducer from "./cryppoLk-reducer";
+import linkReducer from "./link-reducer";
+import interfaceReducer from "./interface-reducer";
+import userReducer from "./user-reducer";
 import thunkMiddleware from "redux-thunk"
 
 let reducers = combineReducers({
@@ -15,6 +18,9 @@ let reducers = combineReducers({
   cryppoLk: cryppoLkReducer,
   anim: animReducer,
   footer: footerReducer,
+  link: linkReducer,
+  user: userReducer,
+  interface: interfaceReducer,
   form: formReducer,
 });
 

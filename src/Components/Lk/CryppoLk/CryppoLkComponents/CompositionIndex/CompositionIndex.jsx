@@ -1,12 +1,7 @@
 import React from "react";
 import style from "./CompositionIndex.module.scss";
 import CompositionIndexItem from "./CompositionIndexItem";
-import {
-  BarChart,
-  Bar,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
+import { BarChart, Bar, Legend, ResponsiveContainer } from "recharts";
 
 const ulStyle = {
   padding: 0,
@@ -19,9 +14,9 @@ const liStyle = {
 };
 const renderCustomBarLabel = ({ payload, x, y, width, height, value }) => {
   return (
-      <text x={x + width / 2} y={y} fill="#FFFFFF" textAnchor="middle" dy={-6}>
-        {`${value}`}
-      </text>
+    <text x={x + width / 2} y={y} fill="#FFFFFF" textAnchor="middle" dy={-6}>
+      {`${value}`}
+    </text>
   );
 };
 const renderLegend = (props) => {
@@ -59,14 +54,6 @@ export default function CompositionIndex(props) {
     data.push({ name });
     data[index][dataKey] = value;
   });
-  let chartItems = props.composition.map((e) => (
-    <Bar
-      dataKey={e.dataKey}
-      fill={e.color}
-      label={renderCustomBarLabel}
-      minPointSize={10}
-    />
-  ));
   return (
     <div className={style.container}>
       <div className={style.text}>
@@ -74,14 +61,29 @@ export default function CompositionIndex(props) {
         индексе
       </div>
       <div className={style.wrapperIndex}>{items}</div>
-      <div className={style.wrapper}>
         <ResponsiveContainer width="100%" height={300}>
-          <BarChart width={150} height={40} data={data}>
-            {chartItems}
+          <BarChart
+            data={data}
+            margin={{
+              top: 30,
+              right: 10,
+              left: 10,
+              bottom: 15,
+            }}
+          >
+            {props.composition.map((e) => (
+                <Bar
+                    barSize={65}
+                    radius={[8, 8, 0, 0]}
+                    dataKey={e.dataKey}
+                    fill={e.color}
+                    label={renderCustomBarLabel}
+                    minPointSize={10}
+
+                />))}
             <Legend content={renderLegend} />
           </BarChart>
         </ResponsiveContainer>
-      </div>
     </div>
   );
 }
