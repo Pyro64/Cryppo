@@ -193,3 +193,85 @@ textarea:focus::-webkit-input-placeholder {
 .list-text {
   @include fluid(margin-bottom, 10px, 15px);
 }
+
+.next {
+  @include fluid(width, 15px, 22px);
+  @include fluid(height, 15px, 22px);
+  background: url("../Images/icon/sec-next.svg") no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: 0px;
+  top: 0;
+  z-index: 3;
+  cursor: pointer;
+}
+.prev {
+  @include fluid(width, 15px, 22px);
+  @include fluid(height, 15px, 22px);
+  background: url("../Images/icon/sec-prev.svg") no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: 25px;
+  top: 0;
+  z-index: 3;
+  @include fluid(margin-right, 5px, 10px);
+  cursor: pointer;
+}
+.nextE {
+  @include fluid(width, 15px, 22px);
+  @include fluid(height, 15px, 22px);
+  background: url("../Images/icon/sec-next.svg") no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: 0px;
+  top: 0;
+  z-index: 3;
+  cursor: pointer;
+}
+.prevE {
+  @include fluid(width, 15px, 22px);
+  @include fluid(height, 15px, 22px);
+  background: url("../Images/icon/sec-prev.svg") no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: 25px;
+  top: 0;
+  z-index: 3;
+  @include fluid(margin-right, 5px, 10px);
+  cursor: pointer;
+}
+.dot {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  @include fluid(margin-top, 10px, 15px);
+  .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    border: 1px solid #6d6d6d;
+    border-radius: 50%;
+    margin-right: 5px;
+    &-active {
+      background: #6d6d6d;
+    }
+  }
+}
+.dotE {
+  display: flex;
+  @include fluid(margin-top, 25px, 50px);
+  .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    border: 1px solid #6d6d6d;
+    border-radius: 50%;
+    margin-right: 5px;
+    &-active {
+      background: #6d6d6d;
+    }
+  }
+}
+.swiper-wrapper {
+  @include fluid(padding-top, 7px, 10px);
+  @include fluid(padding-bottom, 7px, 10px);
+}
