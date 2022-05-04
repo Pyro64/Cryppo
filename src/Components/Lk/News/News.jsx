@@ -1,44 +1,46 @@
 import React from "react";
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-  DotGroup,
-  Dot,
-} from "pure-react-carousel";
+import { Swiper, SwiperSlide } from "swiper/react";
 import NewsItem from "./NewsItem";
-import "pure-react-carousel/dist/react-carousel.es.css";
-import style from "./News.module.scss";
+import { useSwiper } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper";
 import SubtitleLk from "../SubtitleLk/SubtitleLk";
+import "swiper/css";
+
+import style from "./News.module.scss";
+
 const News = (props) => {
+  const swiper = useSwiper();
   let newsItem = props.news.map((e) => (
-    <Slide className={style.slide} index={e.id} id={e.id} key={e.id}>
-      <NewsItem text={e.text} img={e.img} />
-    </Slide>
+    <SwiperSlide>
+      <NewsItem id={e.id} key={e.key} text={e.text} img={e.img} />
+    </SwiperSlide>
   ));
   return (
     <div className={style.container}>
-      <CarouselProvider
-        naturalSlideWidth={180}
-        naturalSlideHeight={180}
-        totalSlides={newsItem.length}
-        className={style.provider}
-        visibleSlides={3.9}
-        step={4}
-        dragStep={4}
+      <SubtitleLk subtitle="Для вас"></SubtitleLk>
+      <div className={style.navigation}>
+        <div className="next"></div>
+        <div className="prev"></div>
+      </div>
+
+      <Swiper
+        spaceBetween={25}
+        slidesPerView={4}
+        slidesPerGroup={4}
+        navigation={{ nextEl: ".next", prevEl: ".prev", slidesPerGroup: 4 }}
+        pagination={{
+          type: "bullets",
+          clickable: true,
+          el: ".dot",
+          slidesPerGroup: 4,
+        }}
+        className={style.swiper}
+        centeredSlides={false}
+        modules={[Navigation, Pagination]}
       >
-        <div className={style.flex}>
-          <SubtitleLk subtitle="Для вас" />
-          <div className={style.navigation}>
-            <ButtonBack className={style.prev} />
-            <ButtonNext className={style.next} />
-          </div>
-        </div>
-        <Slider className={style.slider}>{newsItem}</Slider>
-        <DotGroup/>
-      </CarouselProvider>
+        {newsItem}
+      </Swiper>
+      <div className="dot"></div>
     </div>
   );
 };
