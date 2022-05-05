@@ -78,6 +78,7 @@ export default function CryppoLk(props) {
                         addTag={props.addTag}
                         removeTag={props.removeTag}
                         filterOperations={props.filterOperations}
+                        inputChange={props.inputChange}
                     />
                 }
             />
@@ -99,6 +100,7 @@ export default function CryppoLk(props) {
                         addTag={props.addTag}
                         removeTag={props.removeTag}
                         filterOperations={props.filterOperations}
+                        inputChange={props.inputChange}
                     />
                 }
             />
@@ -120,6 +122,7 @@ export default function CryppoLk(props) {
                         addTag={props.addTag}
                         removeTag={props.removeTag}
                         filterOperations={props.filterOperations}
+                        inputChange={props.inputChange}
                     />
                 }
             />

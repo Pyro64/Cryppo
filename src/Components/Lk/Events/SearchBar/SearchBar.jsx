@@ -34,6 +34,9 @@ const Searchbar = (props) => {
         }
     }, []);
 
+    const inputChange = () =>{
+        props.inputChange()
+    }
     const AddTag = () => {
         let input = document.querySelector("input[type=text]");
         props.addTag(input.value);
@@ -114,6 +117,7 @@ const Searchbar = (props) => {
                         placeholder="Найдите любые события и операции"
                         type="text"
                         onKeyDown={inputKeyDown}
+                        onChange={inputChange}
                     />
                 </div>
                 <div className={style.icon} onClick={AddTag}>

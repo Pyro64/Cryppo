@@ -6,7 +6,8 @@ import {
     setModal,
     switchModal,
     addTag,
-    removeTag
+    removeTag,
+    inputChange
 } from "../../../Redux/cryppoLk-reducer";
 import { setChartText, initChartText } from "../../../Redux/interface-reducer";
 import {
@@ -46,5 +47,6 @@ const CryppoLkContainer = connect(mapStateToProps, {
     addTag,
     removeTag,
     filterOperations,
+    inputChange
 })(CryppoLk);
 export default CryppoLkContainer;

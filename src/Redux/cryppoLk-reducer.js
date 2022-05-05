@@ -11,6 +11,7 @@ const SET_MODAL = "SET_MODAL";
 const SWITCH_MODAL = "SWITCH_MODAL";
 const ADD_TAG = "ADD_TAG";
 const REMOVE_TAG = "REMOVE_TAG";
+const INPUT_CHANGE = "INPUT_CHANGE";
 
 let initialState = {
 
@@ -125,6 +126,15 @@ const cryppoLkReducer = (state = initialState, action) => {
                     tags: [ ...state.operationsFilter.tags, action.tag]
                 }
             };
+        case INPUT_CHANGE:
+                return {
+                    ...state,
+                    operationsFilter:{
+                        type: state.operationsFilter.type,
+                        searchQuery: action.value,
+                        tags: [...state.operationsFilter.tags]
+                    }
+                };
         case REMOVE_TAG:
             return {
                 ...state,
@@ -163,6 +173,7 @@ export const getCryppoLkThunkCreator = () => {
             });
     };
 }
+export const inputChange = (value) =>({type: INPUT_CHANGE, value});
 export const addTag = (tag) => ({ type: ADD_TAG, tag });
 export const removeTag = (value) => ({ type: REMOVE_TAG, value });
 export const switchModal = (isModal) => ({ type: SWITCH_MODAL, isModal });

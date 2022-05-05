@@ -15,7 +15,6 @@ import SearchBar from "./SearchBar/SearchBar";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Event = (props) => {
-    
     let value = props;
     let dataItems = [];
     let backgroundColorItems = [];
@@ -139,7 +138,12 @@ const Event = (props) => {
     }
     return (
         <div сlassName={style.container}>
-            <SearchBar operationsFilter={props.operationsFilter} addTag={props.addTag} removeTag={props.removeTag}/>
+            <SearchBar
+                operationsFilter={props.operationsFilter}
+                addTag={props.addTag}
+                removeTag={props.removeTag}
+                inputChange={props.inputChange}
+            />
             <div className={style.block}>
                 <Tabs>
                     <TabList className={style.list}>
