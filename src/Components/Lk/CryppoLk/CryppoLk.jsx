@@ -75,6 +75,9 @@ export default function CryppoLk(props) {
                         initChartText={props.initChartText}
                         isHover={props.isHover}
                         operationsFilter={props.operationsFilter}
+                        addTag={props.addTag}
+                        removeTag={props.removeTag}
+                        filterOperations={props.filterOperations}
                     />
                 }
             />
@@ -93,6 +96,9 @@ export default function CryppoLk(props) {
                         initChartText={props.initChartText}
                         isHover={props.isHover}
                         operationsFilter={props.operationsFilter}
+                        addTag={props.addTag}
+                        removeTag={props.removeTag}
+                        filterOperations={props.filterOperations}
                     />
                 }
             />
@@ -111,6 +117,9 @@ export default function CryppoLk(props) {
                         initChartText={props.initChartText}
                         isHover={props.isHover}
                         operationsFilter={props.operationsFilter}
+                        addTag={props.addTag}
+                        removeTag={props.removeTag}
+                        filterOperations={props.filterOperations}
                     />
                 }
             />

@@ -5,9 +5,14 @@ import {
     getCryppoLkThunkCreator,
     setModal,
     switchModal,
+    addTag,
+    removeTag
 } from "../../../Redux/cryppoLk-reducer";
 import { setChartText, initChartText } from "../../../Redux/interface-reducer";
-import { changeActiveIndex } from "../../../Redux/user-reducer";
+import {
+    changeActiveIndex,
+    filterOperations,
+} from "../../../Redux/user-reducer";
 
 let mapStateToProps = (state) => {
     return {
@@ -38,5 +43,8 @@ const CryppoLkContainer = connect(mapStateToProps, {
     setChartText,
     initChartText,
     changeActiveIndex,
+    addTag,
+    removeTag,
+    filterOperations,
 })(CryppoLk);
 export default CryppoLkContainer;

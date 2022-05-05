@@ -51,7 +51,7 @@
     display: flex;
     flex-direction: row;
     width: 40%;
-    
+    align-items:center    
 }
 .inputItem{
     height: 20px;
@@ -71,4 +71,12 @@
 .dropdownItem{
     @include fluid(padding-top, 10px, 20px);
     @include fluid(padding-bottom, 10px, 20px);
+}
+.tag{
+    display: flex;
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 5px;
+    align-items: center;
+    background-color: #6D6D6D;
+    border-radius: 5px;
 }

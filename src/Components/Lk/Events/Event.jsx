@@ -15,6 +15,7 @@ import SearchBar from "./SearchBar/SearchBar";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Event = (props) => {
+    
     let value = props;
     let dataItems = [];
     let backgroundColorItems = [];
@@ -37,12 +38,15 @@ const Event = (props) => {
         value = value.currency.filter((item) => {
             return item.category === category;
         });
+
         value = value[0].childCurrencyStatistics.filter((item) => {
             return item.parentCategory === category;
         });
+
         currency = props.currency.filter((item) => {
             return item.category === category;
         });
+
         currency = currency[0];
         if (subcategory !== undefined) {
             operations = operations.filter((item) => {
@@ -58,6 +62,7 @@ const Event = (props) => {
             dataItems.push(e.percent);
             backgroundColorItems.push(e.color);
         });
+
         elementItem = currency.childCurrencyStatistics.map((e) => (
             <StatisticMainItem
                 setChartText={props.setChartText}
@@ -69,6 +74,7 @@ const Event = (props) => {
                 category={e.category}
                 cash={e.cash}
                 currency={e.currency}
+                addTag={props.addTag}
             />
         ));
     } else {
@@ -133,7 +139,7 @@ const Event = (props) => {
     }
     return (
         <div сlassName={style.container}>
-            <SearchBar operationsFilter={props.operationsFilter} addTag={props.addTag}/>
+            <SearchBar operationsFilter={props.operationsFilter} addTag={props.addTag} removeTag={props.removeTag}/>
             <div className={style.block}>
                 <Tabs>
                     <TabList className={style.list}>

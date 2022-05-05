@@ -21,6 +21,7 @@ import { AuthorizationPost, RegistrationPost } from "../Api/api"
 const AUTHORIZATION = 'AUTHORIZATION';
 const LOGIN = "LOGIN_CRYPPO";
 const CHANGE_ACTIVE_INDEX = "CHANGE_ACTIVE_INDEX";
+const FILTER_OPERATIONS = "FILTER_OPERATIONS";
 
 
 let statusPay = {
@@ -453,6 +454,13 @@ const userReducer = (state = initialState, action) => {
               ...state,
               isLogin: action.value,
             };
+        case FILTER_OPERATIONS:
+            return {
+              ...state,
+              currencyStatisticData: state.currencyStatisticData.filter((item)=>{
+                  return item.category === action.value;
+              }),
+            };
         case CHANGE_ACTIVE_INDEX:
             return {
                 ...state,
@@ -494,4 +502,5 @@ export const registrationPostThunkCreator = (email, password, company) => {
 
 export const login = (value) => ({ type: LOGIN, value })
 export const changeActiveIndex = (value) => ({ type: CHANGE_ACTIVE_INDEX, value });
+export const filterOperations = (value) => ({ type: FILTER_OPERATIONS, value });
 export default userReducer;

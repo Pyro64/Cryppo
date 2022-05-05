@@ -4,6 +4,7 @@ import { NavLink, useParams } from "react-router-dom";
 
 const StatisticMainItem = (props) => {
   let value = props;
+  const tag = props.category
   const {category, subcategory} = useParams();
   let url = `/lk/event/${props.category}`
   if (category !== undefined)
@@ -15,6 +16,7 @@ const StatisticMainItem = (props) => {
       className={style.item}
       onMouseEnter={() => props.setChartText(value)}
       onMouseLeave={() => props.initChartText()}
+      onClick={() => props.addTag(tag)}
     >
       <div
         style={{ background: `${props.color}` }}
