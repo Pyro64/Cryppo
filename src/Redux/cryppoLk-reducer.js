@@ -106,7 +106,8 @@ let initialState = {
     operationsFilter:{
         type:"initial",
         searchQuery:"",
-        tags:[]
+        tags:[
+        ]
     }
 };
 
@@ -117,20 +118,31 @@ const cryppoLkReducer = (state = initialState, action) => {
                 ...state,
                 ...action.value,
             };
+        case SET_MODAL:
+            return {
+                ...state,
+                operationModal: action.value,
+            };
+        case SWITCH_MODAL:
+            return {
+                ...state,
+                isModal: action.isModal,
+            };
         case ADD_TAG:
+            let body = state.operationsFilter.searchQuery;
             return {
                 ...state,
                 operationsFilter:{
                     type: "Tags",
                     searchQuery: "",
-                    tags: [ ...state.operationsFilter.tags, action.tag]
+                    tags: [ ...state.operationsFilter.tags, {id:2,name:action.tag}]
                 }
             };
         case INPUT_CHANGE:
                 return {
                     ...state,
                     operationsFilter:{
-                        type: state.operationsFilter.type,
+                        // type: state.operationsFilter.type,
                         searchQuery: action.value,
                         tags: [...state.operationsFilter.tags]
                     }
@@ -144,16 +156,7 @@ const cryppoLkReducer = (state = initialState, action) => {
                     tags: [ ...state.operationsFilter.tags.filter((item)=> {return item !== action.value})]
                 }
             };
-        case SET_MODAL:
-            return {
-                ...state,
-                operationModal: action.value,
-            };
-        case SWITCH_MODAL:
-            return {
-                ...state,
-                isModal: action.isModal,
-            };
+
         
         default:
             return state;

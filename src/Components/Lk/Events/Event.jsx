@@ -1,15 +1,14 @@
-import React, { useRef } from "react";
-import style from "./Event.module.scss";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import React, {useRef} from "react";
+import {Tab, Tabs, TabList, TabPanel} from "react-tabs";
 
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { Doughnut, getElementsAtEvent } from "react-chartjs-2";
+import {Chart as ChartJS, ArcElement, Tooltip, Legend} from "chart.js";
+import {Doughnut, getElementsAtEvent} from "react-chartjs-2";
 import StatisticMainItem from "../StatisticMain/StatisticMainItem";
 import ChartText from "../StatisticMain/ChartText";
-import { useParams } from "react-router-dom";
+import {useParams} from "react-router-dom";
 import OperationInner from "../CryppoLk/CryppoLkComponents/OperationLk/OperationInner";
 import OperationModal from "../Modal/OperationModal";
-import s from "../../Lk/CryppoLk/CryppoLkComponents/OperationLk/Operation.module.scss";
+import style from "./Event.module.scss";
 import SearchBar from "./SearchBar/SearchBar";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -19,13 +18,13 @@ const Event = (props) => {
     let dataItems = [];
     let backgroundColorItems = [];
     let elementItem = [];
-    const { category, subcategory } = useParams();
+    const {category, subcategory} = useParams();
     let operations = props.operationData.operation;
     let currency = props.currency;
     const chartRef = useRef(null);
 
     const onClick = (event) => {
-        const { current: chart } = chartRef;
+        const {current: chart} = chartRef;
         if (!chart) {
             return;
         }
@@ -116,87 +115,67 @@ const Event = (props) => {
             },
         ],
     };
-    if (subcategory !== undefined) {
-        return (
-            <div className={s.container}>
-                <div className={s.title}>{props.operationData.title}</div>
-                <OperationInner
-                    operationData={operations}
-                    setModal={props.setModal}
-                    isModal={props.isModal}
-                    switchModal={props.switchModal}
-                />
-                <div>
-                    <OperationModal
-                        operationModal={props.operationModal}
-                        isModal={props.isModal}
-                        switchModal={props.switchModal}
-                    />
-                </div>
-            </div>
-        );
-    }
+    // if (subcategory !== undefined) {
+    //     return (
+    //         <div className={style.container}>
+    //             <div className={style.title}>{props.operationData.title}</div>
+    //             <OperationInner
+    //                 operationData={operations}
+    //                 setModal={props.setModal}
+    //                 isModal={props.isModal}
+    //                 switchModal={props.switchModal}
+    //             />
+    //             <div>
+    //                 <OperationModal
+    //                     operationModal={props.operationModal}
+    //                     isModal={props.isModal}
+    //                     switchModal={props.switchModal}
+    //                 />
+    //             </div>
+    //         </div>
+    //     );
+    // }
     return (
-        <div сlassName={style.container}>
-            <SearchBar
-                operationsFilter={props.operationsFilter}
-                addTag={props.addTag}
-                removeTag={props.removeTag}
-                inputChange={props.inputChange}
-            />
-            <div className={style.block}>
-                <Tabs>
-                    <TabList className={style.list}>
-                        <Tab
-                            className={style.tab}
-                            selectedClassName={style.activeTab}
-                        >
-                            <p>Расходы</p>
-                        </Tab>
-                        <Tab
-                            className={style.tab}
-                            selectedClassName={style.activeTab}
-                        >
-                            <p>Поступления</p>
-                        </Tab>
-                    </TabList>
-                    <TabPanel>
-                        <div className={style.flex}>
-                            <div className={style.items}>{elementItem}</div>
-                            <div className={style.chartInner}>
-                                <Doughnut
-                                    data={data}
-                                    options={options}
-                                    onClick={onClick}
-                                    ref={chartRef}
-                                    onMouseLeave={() => props.initChartText()}
-                                />
-                                <ChartText
-                                    isHover={props.isHover}
-                                    chartTextData={props.chartTextData}
-                                />
-                            </div>
-                        </div>
-                    </TabPanel>
-                    <TabPanel>
-                        <h2>tab 2</h2>
-                    </TabPanel>
-                </Tabs>
-            </div>
-            <div className={s.container}>
-                <div className={s.title}>{props.operationData.title}</div>
-                <OperationInner
-                    operationData={operations}
-                    setModal={props.setModal}
-                    isModal={props.isModal}
-                    switchModal={props.switchModal}
+        <div className="main">
+            <div сlassName={style.container}>
+                <SearchBar
+                    operationsFilter={props.operationsFilter}
+                    addTag={props.addTag}
+                    removeTag={props.removeTag}
+                    inputChange={props.inputChange}
                 />
-                <div>
-                    <OperationModal
-                        operationModal={props.operationModal}
-                        isModal={props.isModal}
-                        switchModal={props.switchModal}
-                    />
+                <div className={style.block}>
+                    <Tabs>
+                        <TabList className={style.list}>
+                            <Tab className={style.tab} selectedClassName={style.activeTab}>
+                                <p>Расходы</p>
+                            </Tab>
+                            <Tab className={style.tab} selectedClassName={style.activeTab} >
+                                <p>Поступления</p>
+                            </Tab>
+                        </TabList>
+                        <TabPanel>
+                            <div className={style.flex}>
+                                <div className={style.items}>{elementItem}</div>
+                                <div className={style.chartInner}>
+                                    <Doughnut
+                                        data={data}
+                                        options={options}
+                                        onClick={onClick}
+                                        ref={chartRef}
+                                        onMouseLeave={() => props.initChartText()}
+                                    />
+                                    <ChartText
+                                        isHover={props.isHover}
+                                        chartTextData={props.chartTextData}
+                                    />
+                                </div>
+                            </div>
+                        </TabPanel>
+                        <TabPanel>
+                            <h2>tab 2</h2>
+                        </TabPanel>
+                    </Tabs>
                 </div>
             </div>
         </div>

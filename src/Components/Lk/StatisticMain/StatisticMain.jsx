@@ -66,33 +66,32 @@ const StatisticMain = (props) => {
 
   return (
     <div сlassName={style.container}>
-      <SubtitleLk arrow={true} subtitle="Статистика за март" />
       <div className={style.block}>
-        <Tabs>
-          <TabList className={style.list}>
-            <Tab className={style.tab} selectedClassName={style.activeTab}>
-              <p>Расходы</p>
-            </Tab>
-            <Tab className={style.tab} selectedClassName={style.activeTab}>
-              <p>Поступления</p>
-            </Tab>
-          </TabList>
-          <TabPanel>
-            <div className={style.flex}>
-              <div className={style.items}>{elementItem}</div>
-              <div className={style.chartInner}>
-                <Doughnut data={data} options={options} />
-                <ChartText
-                  isHover={props.isHover}
-                  chartTextData={props.chartTextData}
-                />
+          <Tabs>
+            <TabList className={style.list}>
+              <Tab className={style.tab} selectedClassName={style.activeTab}>
+                <p>Расходы</p>
+              </Tab>
+              <Tab className={style.tab} selectedClassName={style.activeTab}>
+                <p>Поступления</p>
+              </Tab>
+            </TabList>
+            <TabPanel>
+              <div className={style.flex}>
+                <div className={style.items}>{elementItem}</div>
+                <div className={style.chartInner}>
+                  <Doughnut data={data} options={options} />
+                  <ChartText
+                      isHover={props.isHover}
+                      chartTextData={props.chartTextData}
+                  />
+                </div>
               </div>
-            </div>
-          </TabPanel>
-          <TabPanel>
-            <h2>tab 2</h2>
-          </TabPanel>
-        </Tabs>
+            </TabPanel>
+            <TabPanel>
+              <h2>tab 2</h2>
+            </TabPanel>
+          </Tabs>
       </div>
     </div>
   );

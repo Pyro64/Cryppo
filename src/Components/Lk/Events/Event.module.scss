@@ -1,6 +1,7 @@
 @import '../../../Style/Mixins.scss';
 
 .container {
+    @include  container;
     @include fluid(margin, 30px, 60px);
 }
 .block {

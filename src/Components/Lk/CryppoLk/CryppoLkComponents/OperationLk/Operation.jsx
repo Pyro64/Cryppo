@@ -9,7 +9,6 @@ export default function Operation(props) {
   // operationModal={props.operationModal}
   return (
     <div>
-      <SubtitleLk arrow={true} subtitle="Последние операции" />
       <div className={style.container}>
         <div className={style.title}>{props.operationData.title}</div>
         <OperationInner
