@@ -12,8 +12,9 @@ const StatisticCashItem = (props) => {
         url = `/lk/event/${category}/${props.category}`;
     }
     const foo = () => {
-        // props.addTag(tag)
-
+        if (child !== undefined){
+            props.updateChart(child)
+        }
     }
     return (
         <NavLink
@@ -22,7 +23,7 @@ const StatisticCashItem = (props) => {
             className={style.item}
             onMouseEnter={() => props.setChartText(value)}
             onMouseLeave={() => props.initChartText()}
-            onClick={() => props.updateChart(child)}
+            onClick={foo}
         >
             <div
                 style={{ background: `${props.color}` }}
