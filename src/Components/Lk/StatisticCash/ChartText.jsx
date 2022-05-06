@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { CSSTransition } from 'react-transition-group';
-import style from "./StatisticMain.module.scss";
+import style from "./StatisticCash.module.scss";
 export default function ChartText(props) {
     const chartText = props.chartTextData
     const classNames = {

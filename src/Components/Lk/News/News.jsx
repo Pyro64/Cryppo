@@ -11,8 +11,8 @@ import style from "./News.module.scss";
 const News = (props) => {
   const swiper = useSwiper();
   let newsItem = props.news.map((e) => (
-    <SwiperSlide>
-      <NewsItem id={e.id} key={e.key} text={e.text} img={e.img} />
+    <SwiperSlide id={e.id} key={e.id}>
+      <NewsItem   text={e.text} img={e.img} />
     </SwiperSlide>
   ));
   return (

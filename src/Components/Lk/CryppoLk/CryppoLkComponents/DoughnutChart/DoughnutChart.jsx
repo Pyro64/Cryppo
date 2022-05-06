@@ -1,8 +1,8 @@
 import React from "react";
 import style from "./DoughnutChart.module.scss";
 import { Doughnut } from "react-chartjs-2";
-import ChartText from "../../../../Lk/StatisticMain/ChartText";
-import StatisticMainItem from "../../../StatisticMain/StatisticMainItem";
+import ChartText from "../../../StatisticCash/ChartText";
+import StatisticCashItem from "../../../StatisticCash/StatisticCashItem";
 
 const DoughnutChart = (props) => {
     let dataItems = [];
@@ -12,7 +12,7 @@ const DoughnutChart = (props) => {
         backgroundColorItems.push(e.color);
     });
     let elementItem = props.currency.map((e) => (
-        <StatisticMainItem
+        <StatisticCashItem
             setChartText={props.setChartText}
             initChartText={props.initChartText}
             percent={e.percent}

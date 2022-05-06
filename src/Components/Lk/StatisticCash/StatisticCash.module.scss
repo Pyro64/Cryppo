@@ -1,8 +1,5 @@
 @import "../../../Style/Mixins.scss";
 
-.container {
-  @include fluid(margin-bottom, 30px, 60px);
-}
 .block {
   @include neumorphism;
   @include fluid(padding-top, 10px, 20px);
@@ -10,6 +7,7 @@
   @include fluid(padding-left, 25px, 50px);
   @include fluid(padding-right, 25px, 50px);
   border-radius: 15px;
+  @include fluid(margin-bottom, 30px, 60px);
 }
 .list {
   display: flex;
@@ -139,4 +137,11 @@
 .hoverEnterDone {
   opacity: 1;
   transition: opacity 200ms;
+}
+.category {
+  color:#fff;
+  @include fluid(margin-right, 3px, 5px);
+  &:last-child {
+    margin-right: 0;
+  }
 }
