@@ -7,6 +7,29 @@
   margin: 0;
   padding: 0;
 }
+p {
+  margin-bottom: 0;
+}
+.ant-picker-range .ant-picker-active-bar {
+background: $green;
+  border-radius: 5px;
+}
+.ant-picker-input > input {
+  color:#fff;
+}
+.ant-picker-panel-container {
+  background: #2d2d2d;
+}
+.ant-picker-cell-in-view {
+  color:#fff;
+}
+.ant-picker-panel,
+.ant-picker-header {
+  border: 1px solid #545454;
+}
+h2 {
+  color:#fff;
+}
 .App {
   position: relative;
   &::before {

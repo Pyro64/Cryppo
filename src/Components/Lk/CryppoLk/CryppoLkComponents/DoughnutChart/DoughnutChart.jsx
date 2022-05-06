@@ -3,7 +3,8 @@ import style from "./DoughnutChart.module.scss";
 import { Doughnut } from "react-chartjs-2";
 import ChartText from "../../../StatisticCash/ChartText";
 import StatisticCashItem from "../../../StatisticCash/StatisticCashItem";
-
+import {ArcElement, Chart as ChartJS, Legend, Tooltip} from "chart.js";
+ChartJS.register(ArcElement, Tooltip, Legend);
 const DoughnutChart = (props) => {
     let dataItems = [];
     let backgroundColorItems = [];
@@ -13,6 +14,9 @@ const DoughnutChart = (props) => {
     });
     let elementItem = props.currency.map((e) => (
         <StatisticCashItem
+            updateChart={props.updateChart}
+            child={e.childCurrencyStatistics}
+            addTag={props.addTag}
             setChartText={props.setChartText}
             initChartText={props.initChartText}
             percent={e.percent}

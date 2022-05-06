@@ -23,7 +23,10 @@ const AUTHORIZATION = 'AUTHORIZATION';
 const LOGIN = "LOGIN_CRYPPO";
 const CHANGE_ACTIVE_INDEX = "CHANGE_ACTIVE_INDEX";
 const FILTER_OPERATIONS = "FILTER_OPERATIONS";
-
+const UPDATE_CHART = "UPDATE_CHART";
+const ADD_TAG = "ADD_TAG";
+const REMOVE_TAG = "REMOVE_TAG";
+const INPUT_CHANGE = "INPUT_CHANGE";
 
 let statusPay = {
     status: {
@@ -440,6 +443,11 @@ let initialState = {
         img: annaBobs,
         name: "Index Bobs",
     },
+    operationsFilter:{
+        type:"initial",
+        searchQuery:"",
+        tags:[]
+    },
     isLogin: false,
 
 }
@@ -466,6 +474,46 @@ const userReducer = (state = initialState, action) => {
                 compositionData: {
                     activeIndex: action.value,
                     compositions: state.compositionData.compositions
+                }
+            };
+        case UPDATE_CHART:
+            return {
+                ...state,
+                currencyStatisticData:action.child,
+                operationsFilter:{
+                    type: "Tags",
+                    searchQuery: "",
+                    tags: [ ...state.operationsFilter.tags, {id:2,name:action.child[0].parentCategory}],
+
+                }
+            };
+        case ADD_TAG:
+            let body = state.operationsFilter.searchQuery;
+            return {
+                ...state,
+                operationsFilter:{
+                    type: "Tags",
+                    searchQuery: "",
+                    tags: [ ...state.operationsFilter.tags, {id:2,name:body}],
+
+                }
+            };
+        case INPUT_CHANGE:
+            return {
+                ...state,
+                operationsFilter:{
+                    // type: state.operationsFilter.type,
+                    searchQuery: action.value,
+                    tags: [...state.operationsFilter.tags]
+                }
+            };
+        case REMOVE_TAG:
+            return {
+                ...state,
+                operationsFilter:{
+                    type: "Tags",
+                    searchQuery: "",
+                    tags: [ ...state.operationsFilter.tags.filter((item)=> {return item !== action.value})]
                 }
             };
         default:
@@ -504,7 +552,10 @@ export const filterOperationsThunkCreator = (props, category, subcategory) => {
         dispatch({ type: FILTER_OPERATIONS, value: { currency, operations } });
     }
 }
-
+export const inputChange = (value) =>({type: INPUT_CHANGE, value});
+export const addTag = (tag) => ({ type: ADD_TAG, tag });
+export const removeTag = (value) => ({ type: REMOVE_TAG, value });
+export const updateChart = (child) => ({ type: UPDATE_CHART, child })
 export const login = (value) => ({ type: LOGIN, value })
 export const changeActiveIndex = (value) => ({ type: CHANGE_ACTIVE_INDEX, value });
 export default userReducer;

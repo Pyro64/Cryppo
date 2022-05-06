@@ -1,7 +1,7 @@
 @import '../../../../Style/Mixins.scss';
 
 .container {
-    @include fluid(margin, 30px, 60px);
+    @include fluid(margin-bottom, 30px, 60px);
 }
 .block {
     @include neumorphism;
@@ -14,6 +14,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 }
 .calendar{
     display: flex;
@@ -23,6 +24,11 @@
     border-radius: 76px;
     @include fluid(margin-left, 25px, 50px);
     @include fluid(margin-right, 25px, 50px);
+}
+.flex {
+    @include  flex;
+    flex-grow: 1;
+    @include fluid(margin-right, 15px, 30px);
 }
 .button{
     @include fluid(padding-left, 10px, 25px);
@@ -79,4 +85,21 @@
     align-items: center;
     background-color: #6D6D6D;
     border-radius: 5px;
+}
+
+.picker {
+    background: #2d2d2d;
+    border-radius: 10px;
+    border: 1px solid #545454;
+    @include fluid(margin-right, 15px, 35px);
+    svg {
+        fill: #fff;
+    }
+    &:hover {
+        border: 1px solid $green
+    }
+}
+.dropdown{
+    background: #2d2d2d;
+    color:white;
 }
