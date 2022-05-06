@@ -1,25 +1,15 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import style from "./Event.module.scss";
 import SearchBar from "./SearchBar/SearchBar";
 import StatisticCash from "../StatisticCash/StatisticCash";
 import Operation from "../CryppoLk/CryppoLkComponents/OperationLk/Operation";
-import { useParams } from "react-router-dom";
 
 const Event = (props) => {
-    let operations = props.operationData.operation;
-    let currency = props.currency;
-    const chartRef = useRef(null);
-    const { category, subcategory } = useParams();
-    // useEffect(() => {
-    //     if (props.filter === true) {
-    //         currency = props.filterOperationsThunkCreator(
-    //             props,
-    //             category,
-    //             subcategory
-    //         );
-    //     }
-    // }, []);
-
+    if (props.filter === true) {
+        props.operationData.operation = props.operationData.operation.filter((item) => {
+            return props.currency[0].parentCategory === item.type;
+        });
+    }
     return (
         <div className="main container">
             <SearchBar
@@ -36,12 +26,7 @@ const Event = (props) => {
                 currency={props.currency}
                 chartTextData={props.chartTextData}
                 initChartText={props.initChartText}
-                operationData={props.operationData}
-                setModal={props.setModal}
-                operationModal={props.operationModal}
-                isModal={props.isModal}
                 addTag={props.addTag}
-                switchModal={props.switchModal}
             />
             <div className={style.wrapper}>
                 <Operation
