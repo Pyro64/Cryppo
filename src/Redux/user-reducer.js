@@ -449,6 +449,7 @@ let initialState = {
         tags:[]
     },
     isLogin: false,
+    templateStatisticData:[]
 
 }
 const userReducer = (state = initialState, action) => {
@@ -479,7 +480,7 @@ const userReducer = (state = initialState, action) => {
         case UPDATE_CHART:
             return {
                 ...state,
-                currencyStatisticData:action.child,
+                templateStatisticData:action.child,
                 operationsFilter:{
                     type: "Tags",
                     searchQuery: "",
