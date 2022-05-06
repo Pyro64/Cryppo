@@ -1,8 +1,8 @@
 import React from "react";
-import style from "./StatisticMain.module.scss";
+import style from "./StatisticCash.module.scss";
 import { NavLink, useParams } from "react-router-dom";
 
-const StatisticMainItem = (props) => {
+const StatisticCashItem = (props) => {
     let value = props;
     const tag = props.category;
     const { category, subcategory } = useParams();
@@ -24,10 +24,10 @@ const StatisticMainItem = (props) => {
                 className={style.circle}
             ></div>
             <div className={style.category}>{props.category}</div>
-            <div className={style.cash}>{props.cash}</div>
-            <div className={style.currency}>{props.currency}</div>
+            <div className={style.category}>{props.cash}</div>
+            <div className={style.category}>{props.currency}</div>
         </NavLink>
     );
 };
 
-export default StatisticMainItem;
+export default StatisticCashItem;

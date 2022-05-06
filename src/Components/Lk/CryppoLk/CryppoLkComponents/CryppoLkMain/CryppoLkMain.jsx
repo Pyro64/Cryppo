@@ -4,7 +4,7 @@ import Operation from "../OperationLk/Operation";
 import Statistic from "../StatisticLk/Statistic";
 
 import News from '../../../News/News';
-import StatisticMain from '../../../StatisticMain/StatisticMain';
+import StatisticCash from '../../../StatisticCash/StatisticCash';
 import SidebarTabs from "../../../SidebarTabs/SidebarTabs";
 import SubtitleLk from "../../../SubtitleLk/SubtitleLk";
 export default function CryppoLkMain(props) {
@@ -24,7 +24,7 @@ export default function CryppoLkMain(props) {
           <SubtitleLk arrow={true} subtitle="Последние операции" />
           <Operation operationData={props.operationData} setModal={props.setModal} operationModal={props.operationModal} isModal={props.isModal} switchModal={props.switchModal} />
           <SubtitleLk arrow={true} subtitle="Статистика за март" />
-          <StatisticMain filter={true} isHover={props.isHover} setChartText={props.setChartText} currency={props.currency} chartTextData={props.chartTextData} initChartText={props.initChartText} operationData={props.operationData} setModal={props.setModal} operationModal={props.operationModal} isModal={props.isModal} switchModal={props.switchModal}/>
+          <StatisticCash filter={false} isHover={props.isHover} setChartText={props.setChartText} currency={props.currency} chartTextData={props.chartTextData} initChartText={props.initChartText} operationData={props.operationData} setModal={props.setModal} operationModal={props.operationModal} isModal={props.isModal} switchModal={props.switchModal}/>
           <Statistic statistic={props.statistic} />
         </div>
       </div>
