@@ -1,72 +1,16 @@
-import React, {useEffect} from "react";
+import React from "react";
 import style from "./SearchBar.module.scss";
-import arrow from "../../../../Images/icon/arrow2.svg";
 import search from "../../../../Images/icon/search.svg";
-import {Tag} from "antd";
-import AnimIndexAtom from "../../../AnimIndex/AnimIndexAtom";
-import {useLocation} from "react-router-dom";
-import {addTag} from "../../../../Redux/cryppoLk-reducer";
+import {Tag, DatePicker, ConfigProvider} from "antd";
+import moment from 'moment';
+import 'moment/locale/ru';
+import locale from 'antd/lib/locale/ru_RU';
+import {SubTitle} from "chart.js";
 
-
-// const months = [
-//     "Январь",
-//     "Февраль",
-//     "Март",
-//     "Апрель",
-//     "Май",
-//     "Июнь",
-//     "Июль",
-//     "Август",
-//     "Сентябрь",
-//     "Октябрь",
-//     "Ноябрь",
-//     "Декабрь",
-// ];
+const {RangePicker} = DatePicker;
 
 const Searchbar = (props) => {
-    // const dateNow = new Date();
-    // let index = dateNow.getMonth();
-    // useEffect(() => {
-    //
-    //     let input = document.querySelector("input[type=button]");
-    //     if (props.operationsFilter.type === "initial") {
-    //         input.value = months[index];
-    //     }
-    //     if (props.operationsFilter.type === "Tags") {
-    //
-    //     }
-    // }, []);
 
-
-
-
-    const RemoveTag = (e) => {
-        const tag = props.operationsFilter.tags.filter((item) => {
-            return item === e;
-        });
-        props.removeTag(tag[0]);
-    };
-
-    // const changeMounth = (e) => {
-    //     let input = document.querySelector("input[type=button]");
-    //     if (e === "add") {
-    //         if (index === dateNow.getMonth()) {
-    //             return;
-    //         }
-    //         index++;
-    //         if (index === 12) {
-    //             index = 0;
-    //         }
-    //         input.value = months[index];
-    //     }
-    //     if (e === "dis") {
-    //         index--;
-    //         if (index === -1) {
-    //             index = 11;
-    //         }
-    //         input.value = months[index];
-    //     }
-    // };
     const inputChange = (e) => {
         let value = e.target.value
         props.inputChange(value)
@@ -78,56 +22,50 @@ const Searchbar = (props) => {
         }
     };
 
-    let location = useLocation();
-    let title = location.state;
-    console.log(location)
+    const RemoveTag = (e) => {
+        const tag = props.operationsFilter.tags.filter((item) => {
+            return item === e;
+        });
+        props.removeTag(tag[0]);
+    };
+
+    // let location = useLocation();
+    // let title = location.state;
+    // console.log(location)
     return (
         <div className={style.container}>
             <div className={style.block}>
-                {/*<div className={style.calendar}>*/}
-                {/*    <button*/}
-                {/*        className={`${style.button} ${style.buttonLeft}`}*/}
-                {/*        onClick={() => {*/}
-                {/*            changeMounth("dis");*/}
-                {/*        }}*/}
-                {/*    >*/}
-                {/*        <img src={arrow} alt="arrow"/>*/}
-                {/*    </button>*/}
-                {/*    <div>*/}
-                {/*        <input className={style.calendarInput} type="button"/>*/}
-                {/*    </div>*/}
-                {/*    <button*/}
-                {/*        className={`${style.button} ${style.buttonRight}`}*/}
-                {/*        // onClick={() => {*/}
-                {/*        //     changeMounth("add");*/}
-                {/*        // }}*/}
-                {/*    >*/}
-                {/*        <img src={arrow} alt="arrow"/>*/}
-                {/*    </button>*/}
-                {/*</div>*/}
-                <div className={style.input}>
-                    {props.operationsFilter.tags.map((e) => (
-                        <Tag
-                            className={style.tag}
-                            closable
-                            onClose={() => {
-                                RemoveTag(e);
-                            }}
-                        >
-                            {e.name}
-                        </Tag>
-                    ))}
-                    <input
-                        className={style.inputItem}
-                        placeholder="Найдите любые события и операции"
-                        type="text"
-                        onKeyDown={inputKeyDown}
-                        onChange={inputChange}
-                    />
+                <div className={style.flex}>
+                    <ConfigProvider locale={locale}>
+                        <RangePicker
+                            inputReadOnly={true} className={style.picker}
+                            defaultValue={moment('2015-01-01', 'YYYY-MM-DD')}/>
+                    </ConfigProvider>
+                    <div className={style.input}>
+                        {props.operationsFilter.tags.map((e) => (
+                            <Tag
+                                id={e.id}
+                                key={e.id}
+                                className={style.tag}
+                                closable
+                                onClose={() => {
+                                    RemoveTag(e);
+                                }}
+                            >
+                                {e.name}
+                            </Tag>
+                        ))}
+                        <input
+                            value={props.operationsFilter.searchQuery}
+                            className={style.inputItem}
+                            placeholder="Найдите любые события и операции"
+                            type="text"
+                            onKeyDown={inputKeyDown}
+                            onChange={inputChange}
+                        />
+                    </div>
                 </div>
-                <div className={style.icon} onClick={props.addTag}>
-                    <img src={search} alt="search"/>
-                </div>
+                <img className={style.icon} onClick={props.addTag} src={search} alt="search"/>
             </div>
         </div>
     );

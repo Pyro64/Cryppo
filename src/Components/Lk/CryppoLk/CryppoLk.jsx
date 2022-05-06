@@ -64,6 +64,7 @@ export default function CryppoLk(props) {
                 path="event"
                 element={
                     <Event
+                        updateChart={props.updateChart}
                         operationData={props.operationData}
                         currency={props.currency}
                         setModal={props.setModal}
@@ -87,8 +88,9 @@ export default function CryppoLk(props) {
                 path="event/:category"
                 element={
                     <Event
+                        updateChart={props.updateChart}
                         operationData={props.operationData}
-                        currency={props.currency}
+                        currency={props.currency.childCurrencyStatistics}
                         setModal={props.setModal}
                         operationModal={props.operationModal}
                         isModal={props.isModal}
@@ -110,8 +112,9 @@ export default function CryppoLk(props) {
                 path="event/:category/:subcategory"
                 element={
                     <Event
+                        updateChart={props.updateChart}
                         operationData={props.operationData}
-                        currency={props.currency}
+                        currency={props.currency.childCurrencyStatistics}
                         setModal={props.setModal}
                         operationModal={props.operationModal}
                         isModal={props.isModal}

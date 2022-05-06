@@ -9,9 +9,7 @@ import { CryppoLkGet } from "../Api/api";
 const GET = "GET";
 const SET_MODAL = "SET_MODAL";
 const SWITCH_MODAL = "SWITCH_MODAL";
-const ADD_TAG = "ADD_TAG";
-const REMOVE_TAG = "REMOVE_TAG";
-const INPUT_CHANGE = "INPUT_CHANGE";
+
 
 let initialState = {
 
@@ -103,12 +101,7 @@ let initialState = {
             title: "Купить индекс",
         },
     },
-    operationsFilter:{
-        type:"initial",
-        searchQuery:"",
-        tags:[
-        ]
-    }
+
 };
 
 const cryppoLkReducer = (state = initialState, action) => {
@@ -128,34 +121,7 @@ const cryppoLkReducer = (state = initialState, action) => {
                 ...state,
                 isModal: action.isModal,
             };
-        case ADD_TAG:
-            let body = state.operationsFilter.searchQuery;
-            return {
-                ...state,
-                operationsFilter:{
-                    type: "Tags",
-                    searchQuery: "",
-                    tags: [ ...state.operationsFilter.tags, {id:2,name:action.tag}]
-                }
-            };
-        case INPUT_CHANGE:
-                return {
-                    ...state,
-                    operationsFilter:{
-                        // type: state.operationsFilter.type,
-                        searchQuery: action.value,
-                        tags: [...state.operationsFilter.tags]
-                    }
-                };
-        case REMOVE_TAG:
-            return {
-                ...state,
-                operationsFilter:{
-                    type: "Tags",
-                    searchQuery: "",
-                    tags: [ ...state.operationsFilter.tags.filter((item)=> {return item !== action.value})]
-                }
-            };
+
 
         
         default:
@@ -176,9 +142,7 @@ export const getCryppoLkThunkCreator = () => {
             });
     };
 }
-export const inputChange = (value) =>({type: INPUT_CHANGE, value});
-export const addTag = (tag) => ({ type: ADD_TAG, tag });
-export const removeTag = (value) => ({ type: REMOVE_TAG, value });
+
 export const switchModal = (isModal) => ({ type: SWITCH_MODAL, isModal });
 export const setModal = (value) => ({ type: SET_MODAL, value });
 export const get = (value) => ({ type: GET, value });

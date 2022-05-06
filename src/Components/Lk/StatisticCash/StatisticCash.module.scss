@@ -42,7 +42,7 @@
     opacity: 0;
     background: $purpleGradient;
   }
-  p {
+  div {
     @include fluid(font-size, 10px, 12px);
     color: #6d6d6d;
     transition: 0.38s ease-in-out;
@@ -55,7 +55,7 @@
     opacity: 1;
     width: 100%;
   }
-  p {
+  div {
     color: #ffffff;
   }
 }

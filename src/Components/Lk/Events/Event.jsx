@@ -10,15 +10,15 @@ const Event = (props) => {
     let currency = props.currency;
     const chartRef = useRef(null);
     const { category, subcategory } = useParams();
-    useEffect(() => {
-        if (props.filter === true) {
-            currency = props.filterOperationsThunkCreator(
-                props,
-                category,
-                subcategory
-            );
-        }
-    }, []);
+    // useEffect(() => {
+    //     if (props.filter === true) {
+    //         currency = props.filterOperationsThunkCreator(
+    //             props,
+    //             category,
+    //             subcategory
+    //         );
+    //     }
+    // }, []);
 
     return (
         <div className="main container">
@@ -29,6 +29,7 @@ const Event = (props) => {
                 inputChange={props.inputChange}
             />
             <StatisticCash
+                updateChart={props.updateChart}
                 filter={false}
                 isHover={props.isHover}
                 setChartText={props.setChartText}
@@ -39,6 +40,7 @@ const Event = (props) => {
                 setModal={props.setModal}
                 operationModal={props.operationModal}
                 isModal={props.isModal}
+                addTag={props.addTag}
                 switchModal={props.switchModal}
             />
             <div className={style.wrapper}>

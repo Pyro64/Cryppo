@@ -6,7 +6,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import DoughnutChart from "../CryppoLk/CryppoLkComponents/DoughnutChart/DoughnutChart";
 
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+
 
 const StatisticCash = (props) => {
   return (
@@ -14,14 +14,14 @@ const StatisticCash = (props) => {
           <Tabs>
             <TabList className={style.list}>
               <Tab className={style.tab} selectedClassName={style.activeTab}>
-                <p>Расходы</p>
+                <div>Расходы</div>
               </Tab>
               <Tab className={style.tab} selectedClassName={style.activeTab}>
-                <p>Поступления</p>
+                <div>Поступления</div>
               </Tab>
             </TabList>
             <TabPanel>
-              <DoughnutChart filter={true} isHover={props.isHover} setChartText={props.setChartText} currency={props.currency} chartTextData={props.chartTextData} initChartText={props.initChartText} />
+              <DoughnutChart updateChart={props.updateChart} addTag={props.addTag} filter={true} isHover={props.isHover} setChartText={props.setChartText} currency={props.currency} chartTextData={props.chartTextData} initChartText={props.initChartText} />
             </TabPanel>
             <TabPanel>
               <h2>tab 2</h2>
