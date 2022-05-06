@@ -12,7 +12,7 @@ import {
 import { setChartText, initChartText } from "../../../Redux/interface-reducer";
 import {
     changeActiveIndex,
-    filterOperations,
+    filterOperationsThunkCreator,
 } from "../../../Redux/user-reducer";
 
 let mapStateToProps = (state) => {
@@ -46,7 +46,7 @@ const CryppoLkContainer = connect(mapStateToProps, {
     changeActiveIndex,
     addTag,
     removeTag,
-    filterOperations,
+    filterOperationsThunkCreator,
     inputChange
 })(CryppoLk);
 export default CryppoLkContainer;

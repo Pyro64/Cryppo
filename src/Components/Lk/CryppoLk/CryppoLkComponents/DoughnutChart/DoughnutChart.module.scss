@@ -1,0 +1,13 @@
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+}
+.flex {
+    display: flex;
+    align-items: center;
+}
+.chartInner {
+    position: relative;
+    width: 40%;
+}

@@ -12,7 +12,7 @@ export default function Operation(props) {
       <div className={style.container}>
         <div className={style.title}>{props.operationData.title}</div>
         <OperationInner
-          operationData={props.operationData.operation}
+          operationData={props.operationData}
           setModal={props.setModal}
           isModal={props.isModal}
           switchModal={props.switchModal}

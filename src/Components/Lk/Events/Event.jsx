@@ -1,67 +1,29 @@
-import React, {useRef} from "react";
-import {Tab, Tabs, TabList, TabPanel} from "react-tabs";
+import React, { useRef } from "react";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
-import {Chart as ChartJS, ArcElement, Tooltip, Legend} from "chart.js";
-import {Doughnut, getElementsAtEvent} from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Doughnut, getElementsAtEvent } from "react-chartjs-2";
 import StatisticMainItem from "../StatisticMain/StatisticMainItem";
 import ChartText from "../StatisticMain/ChartText";
-import {useParams} from "react-router-dom";
-import OperationInner from "../CryppoLk/CryppoLkComponents/OperationLk/OperationInner";
-import OperationModal from "../Modal/OperationModal";
+import { useParams } from "react-router-dom";
+import Operation from "../CryppoLk/CryppoLkComponents/OperationLk/Operation";
 import style from "./Event.module.scss";
 import SearchBar from "./SearchBar/SearchBar";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Event = (props) => {
+    const chartRef = useRef(null);
+    const { category, subcategory } = useParams();
     let value = props;
     let dataItems = [];
     let backgroundColorItems = [];
     let elementItem = [];
-    const {category, subcategory} = useParams();
     let operations = props.operationData.operation;
     let currency = props.currency;
-    const chartRef = useRef(null);
-
-    const onClick = (event) => {
-        const {current: chart} = chartRef;
-        if (!chart) {
-            return;
-        }
-        let eTarget = getElementsAtEvent(chart, event);
-        props.setChartText(value[eTarget[0].index]);
-    };
-
-    if (category !== undefined) {
-        value = value.currency.filter((item) => {
-            return item.category === category;
-        });
-
-        value = value[0].childCurrencyStatistics.filter((item) => {
-            return item.parentCategory === category;
-        });
-
-        currency = props.currency.filter((item) => {
-            return item.category === category;
-        });
-
-        currency = currency[0];
-        if (subcategory !== undefined) {
-            operations = operations.filter((item) => {
-                return item.firm === subcategory;
-            });
-        } else {
-            operations = operations.filter((item) => {
-                return item.type === category;
-            });
-        }
-
-        currency.childCurrencyStatistics.map((e) => {
-            dataItems.push(e.percent);
-            backgroundColorItems.push(e.color);
-        });
-
-        elementItem = currency.childCurrencyStatistics.map((e) => (
+    if (props.filter === true) {
+        currency = props.filterOperationsThunkCreator(props, category, subcategory);
+        elementItem = currency.map((e) => (
             <StatisticMainItem
                 setChartText={props.setChartText}
                 initChartText={props.initChartText}
@@ -94,6 +56,15 @@ const Event = (props) => {
             backgroundColorItems.push(e.color);
         });
     }
+
+    const onClick = (event) => {
+        const { current: chart } = chartRef;
+        if (!chart) {
+            return;
+        }
+        let eTarget = getElementsAtEvent(chart, event);
+        props.setChartText(value[eTarget[0].index]);
+    };
 
     const options = {
         plugins: {
@@ -147,10 +118,16 @@ const Event = (props) => {
                 <div className={style.block}>
                     <Tabs>
                         <TabList className={style.list}>
-                            <Tab className={style.tab} selectedClassName={style.activeTab}>
+                            <Tab
+                                className={style.tab}
+                                selectedClassName={style.activeTab}
+                            >
                                 <p>Расходы</p>
                             </Tab>
-                            <Tab className={style.tab} selectedClassName={style.activeTab} >
+                            <Tab
+                                className={style.tab}
+                                selectedClassName={style.activeTab}
+                            >
                                 <p>Поступления</p>
                             </Tab>
                         </TabList>
@@ -163,7 +140,9 @@ const Event = (props) => {
                                         options={options}
                                         onClick={onClick}
                                         ref={chartRef}
-                                        onMouseLeave={() => props.initChartText()}
+                                        onMouseLeave={() =>
+                                            props.initChartText()
+                                        }
                                     />
                                     <ChartText
                                         isHover={props.isHover}
@@ -176,6 +155,13 @@ const Event = (props) => {
                             <h2>tab 2</h2>
                         </TabPanel>
                     </Tabs>
+                    <Operation
+                        operationData={operations}
+                        setModal={props.setModal}
+                        operationModal={props.operationModal}
+                        isModal={props.isModal}
+                        switchModal={props.switchModal}
+                    />
                 </div>
             </div>
         </div>

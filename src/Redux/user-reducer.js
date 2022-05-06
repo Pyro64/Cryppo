@@ -15,8 +15,9 @@ import xtz from "../Images/payIcon/5.svg";
 import eos from "../Images/payIcon/4.svg";
 import bnb from "../Images/payIcon/BNB.svg";
 import bch from "../Images/payIcon/BCH.svg";
-import annaBobs from '../Images/login/anna_bobs.svg'
-import { AuthorizationPost, RegistrationPost } from "../Api/api"
+import annaBobs from '../Images/login/anna_bobs.svg';
+import { AuthorizationPost, RegistrationPost } from "../Api/api";
+import filtersTool from "../Utils/filter"
 
 const AUTHORIZATION = 'AUTHORIZATION';
 const LOGIN = "LOGIN_CRYPPO";
@@ -357,7 +358,7 @@ let initialState = {
     ],
     compositionData: {
         activeIndex: 0,
-        compositions:[
+        compositions: [
             {
                 id: 1,
                 name: "BTC",
@@ -432,7 +433,7 @@ let initialState = {
             },
         ],
     },
-    
+
     userData:
     {
         id: 1,
@@ -451,15 +452,13 @@ const userReducer = (state = initialState, action) => {
             };
         case LOGIN:
             return {
-              ...state,
-              isLogin: action.value,
+                ...state,
+                isLogin: action.value,
             };
         case FILTER_OPERATIONS:
             return {
-              ...state,
-              currencyStatisticData: state.currencyStatisticData.filter((item)=>{
-                  return item.category === action.value;
-              }),
+                ...state,
+                currencyStatisticData: action.value.currency
             };
         case CHANGE_ACTIVE_INDEX:
             return {
@@ -470,7 +469,7 @@ const userReducer = (state = initialState, action) => {
                 }
             };
         default:
-            return {...state};
+            return { ...state };
     }
 }
 export const authorizationPostThunkCreator = (email, password) => {
@@ -499,8 +498,13 @@ export const registrationPostThunkCreator = (email, password, company) => {
             })
     }
 }
+export const filterOperationsThunkCreator = (props, category, subcategory) => {
+    return (dispatch) => {
+        const { currency, operations } = filtersTool(props, category, subcategory)
+        dispatch({ type: FILTER_OPERATIONS, value: { currency, operations } });
+    }
+}
 
 export const login = (value) => ({ type: LOGIN, value })
 export const changeActiveIndex = (value) => ({ type: CHANGE_ACTIVE_INDEX, value });
-export const filterOperations = (value) => ({ type: FILTER_OPERATIONS, value });
 export default userReducer;
