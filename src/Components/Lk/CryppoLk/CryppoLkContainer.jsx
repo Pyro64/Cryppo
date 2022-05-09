@@ -35,6 +35,7 @@ let mapStateToProps = (state) => {
         chartTextData: state.interface.chartTextData,
         isHover: state.interface.isHover,
         operationsFilter: state.user.operationsFilter,
+        templateStatisticData: state.user.templateStatisticData
     };
 };
 
