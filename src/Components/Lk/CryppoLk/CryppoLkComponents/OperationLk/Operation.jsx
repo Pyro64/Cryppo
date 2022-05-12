@@ -1,12 +1,11 @@
 import React from "react";
 import style from "./Operation.module.scss";
-import SubtitleLk from "../../../SubtitleLk/SubtitleLk";
 import Btn from "../../../../Btn/Btn";
 import OperationInner from "./OperationInner";
-import OperationModal from "../../../Modal/OperationModal";
+import OperationModal from "./OperationModal";
+import MyModal from "../../../../MyModal/MyModal";
 
 export default function Operation(props) {
-  // operationModal={props.operationModal}
   return (
     <div>
       <div className={style.container}>
@@ -21,7 +20,9 @@ export default function Operation(props) {
           <Btn link="#" text="Все операции" />
         </div>
         <div>
-          <OperationModal operationModal={props.operationModal} isModal={props.isModal} switchModal={props.switchModal} />
+          <MyModal isModal={props.isModal} switchModal={props.switchModal}>
+            <OperationModal operationModal={props.operationModal} />
+          </MyModal>
         </div>
       </div>
     </div>
