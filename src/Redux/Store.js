@@ -10,6 +10,7 @@ import linkReducer from "./link-reducer";
 import interfaceReducer from "./interface-reducer";
 import userReducer from "./user-reducer";
 import thunkMiddleware from "redux-thunk"
+import { composeWithDevTools } from '@redux-devtools/extension';
 
 let reducers = combineReducers({
   cryppoPage: cryppoReducer,
@@ -24,6 +25,15 @@ let reducers = combineReducers({
   form: formReducer,
 });
 
-let store = createStore(reducers, applyMiddleware(thunkMiddleware));
+const store = createStore(
+    reducers,
+    composeWithDevTools(
+        applyMiddleware(thunkMiddleware)
+    )
+);
 window.store = store;
 export default store;
+
+
+
+

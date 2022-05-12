@@ -1,27 +1,14 @@
-import React from 'react'
-import { Field, reduxForm } from "redux-form";
-import { email, required, password } from "../../Utils/validators";
-import Input from "../Input/Input";
+import React, {useState} from 'react'
 
 export default function Authorization(props) {
-    const AuthorizationForm = (props) => {
-        return (
-            <form onSubmit={props.handleSubmit}>
-                <Field component={Input} name='email' id="email-input" validate={[required, email]} />
-                <Field component={Input} name='password' id="password-input" validate={[required, password]} />
-                <button className="btn">Авторизоваться</button>
-            </form>
-        )
-    }
-    const AuthorizationReduxForm = reduxForm({ form: 'authorization' })(AuthorizationForm);
-    const onSubmit = (formData) => {
-        console.log(formData)
-        let password = document.querySelector("#password-input").value;
-        let email = document.querySelector("#email-input").value;
-        props.authorizationPostThunkCreator(email, password);
-    }
+    const [emailName,setEmailName] = useState('');
+    const [passwordName,setPasswordName] = useState('');
 
     return (
-        <AuthorizationReduxForm onSubmit={onSubmit}/>
+        <form>
+            <input value={emailName} onChange={e => setEmailName(e.target.value)}  name='email'   />
+            <input value={passwordName} onChange={e => setPasswordName(e.target.value)} name='password'   />
+            <button className="btn">Авторизоваться</button>
+        </form>
     )
 }

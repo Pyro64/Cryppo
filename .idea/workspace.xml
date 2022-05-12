@@ -4,26 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471b77c2-28e2-41c8-bdca-fc64aa24c0bd" name="Changes" comment="tw0 commit from ws">
+    <list default="true" id="471b77c2-28e2-41c8-bdca-fc64aa24c0bd" name="Changes" comment="fix auth">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Cryppo/Cryppo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Cryppo/Cryppo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Cryppo/CryppoContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Cryppo/CryppoContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/CryppoBusiness/CryppoBusiness.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CryppoBusiness/CryppoBusiness.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/CryppoBusiness/CryppoBusinessContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CryppoBusiness/CryppoBusinessContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/CryppoIndex/CryppoIndex.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CryppoIndex/CryppoIndex.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/CryppoIndex/CryppoIndexContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CryppoIndex/CryppoIndexContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/Events/SearchBar/SearchBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/Events/SearchBar/SearchBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/StatisticCash/StatisticCash.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/StatisticCash/StatisticCash.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/User/User.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/User/User.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/User/User.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/User/User.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/User/UserBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/User/UserBlock.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/cryppo-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/cryppo-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/cryppoBusiness-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/cryppoBusiness-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/cryppoIndex-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/cryppoIndex-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/user-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/user-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Style/Style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Style/Style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Authorization/Authorization.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Authorization/Authorization.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +80,8 @@
       <workItem from="1652247838543" duration="150000" />
       <workItem from="1652277180759" duration="353000" />
       <workItem from="1652331208757" duration="99000" />
-      <workItem from="1652335249005" duration="4524000" />
+      <workItem from="1652335249005" duration="4804000" />
+      <workItem from="1652344709988" duration="4000000" />
     </task>
     <task id="LOCAL-00001" summary="first commit from ws">
       <created>1651817410900</created>
@@ -124,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652079708493</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix auth">
+      <created>1652340441808</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1652340441808</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +138,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit from ws" />
     <MESSAGE value="tw0 commit from ws" />
-    <option name="LAST_COMMIT_MESSAGE" value="tw0 commit from ws" />
+    <MESSAGE value="fix auth" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix auth" />
   </component>
 </project>
