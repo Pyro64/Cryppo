@@ -1,0 +1,222 @@
+Index: src/Components/Lk/CryppoLk/CryppoLkComponents/CryppoLkMain/CryppoLkMain.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\nimport Check from \"../CheckLk/Check\";\r\nimport Operation from \"../OperationLk/Operation\";\r\nimport Statistic from \"../StatisticLk/Statistic\";\r\n\r\nimport News from '../../../News/News';\r\nimport StatisticMain from '../../../StatisticMain/StatisticMain';\r\nimport SidebarTabs from \"../../../SidebarTabs/SidebarTabs\";\r\nimport SubtitleLk from \"../../../SubtitleLk/SubtitleLk\";\r\nexport default function CryppoLkMain(props) {\r\n  return (\r\n\r\n    <div className=\"main\">\r\n      <div className=\"flex container\">\r\n        <div className=\"sidebar\">\r\n          <div className=\"sidebar__inner\">\r\n            <Check card={props.card} bankCard={props.bankCard} />\r\n            <SidebarTabs tabs={props.tabs.invest} />\r\n            <SidebarTabs tabs={props.tabs.addCart} />\r\n          </div>\r\n        </div>\r\n        <div className=\"content\">\r\n          <News news={props.news} />\r\n          <SubtitleLk arrow={true} subtitle=\"Последние операции\" />\r\n          <Operation operationData={props.operationData} setModal={props.setModal} operationModal={props.operationModal} isModal={props.isModal} switchModal={props.switchModal} />\r\n          <SubtitleLk arrow={true} subtitle=\"Статистика за март\" />\r\n          <StatisticMain isHover={props.isHover} setChartText={props.setChartText} currency={props.currency} chartTextData={props.chartTextData} initChartText={props.initChartText} />\r\n          <Statistic statistic={props.statistic} />\r\n        </div>\r\n      </div>\r\n    </div>\r\n  )\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Components/Lk/CryppoLk/CryppoLkComponents/CryppoLkMain/CryppoLkMain.jsx b/src/Components/Lk/CryppoLk/CryppoLkComponents/CryppoLkMain/CryppoLkMain.jsx
+--- a/src/Components/Lk/CryppoLk/CryppoLkComponents/CryppoLkMain/CryppoLkMain.jsx	
++++ b/src/Components/Lk/CryppoLk/CryppoLkComponents/CryppoLkMain/CryppoLkMain.jsx	
+@@ -24,7 +24,7 @@
+           <SubtitleLk arrow={true} subtitle="Последние операции" />
+           <Operation operationData={props.operationData} setModal={props.setModal} operationModal={props.operationModal} isModal={props.isModal} switchModal={props.switchModal} />
+           <SubtitleLk arrow={true} subtitle="Статистика за март" />
+-          <StatisticMain isHover={props.isHover} setChartText={props.setChartText} currency={props.currency} chartTextData={props.chartTextData} initChartText={props.initChartText} />
++          <StatisticMain filter={false} isHover={props.isHover} setChartText={props.setChartText} currency={props.currency} chartTextData={props.chartTextData} initChartText={props.initChartText} />
+           <Statistic statistic={props.statistic} />
+         </div>
+       </div>
+Index: src/Components/Lk/CryppoLk/CryppoLk.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {useEffect} from \"react\";\r\nimport {Navigate, Route, Routes} from \"react-router\";\r\nimport CryppoLkMain from \"./CryppoLkComponents/CryppoLkMain/CryppoLkMain\";\r\nimport CryppoLkSettings from \"./CryppoLkComponents/CryppoLkSettings/CryppoLkSettings\";\r\nimport CryppoLkTranslation from \"../CryppoLk/CryppoLkComponents/CryppoLkTranslation/CryppoLkTranslation\";\r\nimport CryppoLkInvest from \"./CryppoLkComponents/CryppoLkInvest/CryppoLkInvest\";\r\nimport Event from \"../Events/Event\";\r\n\r\nexport default function CryppoLk(props) {\r\n    // const get = () => props.getCryppoLkThunkCreator();\r\n    // useEffect(() => {\r\n    //   const interval = setInterval(get, 5000);\r\n    // }, []);\r\n    // alert(props.isLogin)\r\n    // if (props.isLogin === false) return <Navigate to={'/auth'} />\r\n    return (\r\n        <Routes>\r\n            <Route\r\n                path=\"/\"\r\n                element={\r\n                    <CryppoLkMain\r\n                        card={props.card}\r\n                        statistic={props.statistic}\r\n                        bankCard={props.bankCard}\r\n                        invest={props.invest}\r\n                        newCard={props.newCard}\r\n                        operationData={props.operationData}\r\n                        news={props.news}\r\n                        currency={props.currency}\r\n                        tabs={props.tabs}\r\n                        setModal={props.setModal}\r\n                        operationModal={props.operationModal}\r\n                        isModal={props.isModal}\r\n                        switchModal={props.switchModal}\r\n                        chartTextData={props.chartTextData}\r\n                        setChartText={props.setChartText}\r\n                        initChartText={props.initChartText}\r\n                        isHover={props.isHover}\r\n                    />\r\n                }\r\n            />\r\n            <Route\r\n                path=\"translations/*\"\r\n                element={\r\n                    <CryppoLkTranslation translations={props.translations}/>\r\n                }\r\n            />\r\n            <Route\r\n                path=\"invest/*\"\r\n                element={\r\n                    <CryppoLkInvest\r\n                        tabs={props.tabs}\r\n                        composition={props.composition}\r\n                        changeActiveIndex={props.changeActiveIndex}\r\n                    />\r\n                }\r\n            />\r\n            <Route\r\n                path=\"settings/*\"\r\n                element={<CryppoLkSettings/>}\r\n                composition={props.composition}\r\n            />\r\n            <Route\r\n                path=\"event\"\r\n                element={\r\n                    <Event\r\n                        operationData={props.operationData}\r\n                        currency={props.currency}\r\n                        setModal={props.setModal}\r\n                        operationModal={props.operationModal}\r\n                        isModal={props.isModal}\r\n                        switchModal={props.switchModal}\r\n                        chartTextData={props.chartTextData}\r\n                        setChartText={props.setChartText}\r\n                        initChartText={props.initChartText}\r\n                        isHover={props.isHover}\r\n                        operationsFilter={props.operationsFilter}\r\n                        addTag={props.addTag}\r\n                        removeTag={props.removeTag}\r\n                        filterOperations={props.filterOperations}\r\n                        inputChange={props.inputChange}\r\n                    />\r\n                }\r\n            />\r\n            <Route\r\n                path=\"event/:category\"\r\n                element={\r\n                    <Event\r\n                        operationData={props.operationData}\r\n                        currency={props.currency}\r\n                        setModal={props.setModal}\r\n                        operationModal={props.operationModal}\r\n                        isModal={props.isModal}\r\n                        switchModal={props.switchModal}\r\n                        chartTextData={props.chartTextData}\r\n                        setChartText={props.setChartText}\r\n                        initChartText={props.initChartText}\r\n                        isHover={props.isHover}\r\n                        operationsFilter={props.operationsFilter}\r\n                        addTag={props.addTag}\r\n                        removeTag={props.removeTag}\r\n                        filterOperations={props.filterOperations}\r\n                        inputChange={props.inputChange}\r\n                    />\r\n                }\r\n            />\r\n            <Route\r\n                path=\"event/:category/:subcategory\"\r\n                element={\r\n                    <Event\r\n                        operationData={props.operationData}\r\n                        currency={props.currency}\r\n                        setModal={props.setModal}\r\n                        operationModal={props.operationModal}\r\n                        isModal={props.isModal}\r\n                        switchModal={props.switchModal}\r\n                        chartTextData={props.chartTextData}\r\n                        setChartText={props.setChartText}\r\n                        initChartText={props.initChartText}\r\n                        isHover={props.isHover}\r\n                        operationsFilter={props.operationsFilter}\r\n                        addTag={props.addTag}\r\n                        removeTag={props.removeTag}\r\n                        filterOperations={props.filterOperations}\r\n                        inputChange={props.inputChange}\r\n                    />\r\n                }\r\n            />\r\n        </Routes>\r\n    );\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Components/Lk/CryppoLk/CryppoLk.jsx b/src/Components/Lk/CryppoLk/CryppoLk.jsx
+--- a/src/Components/Lk/CryppoLk/CryppoLk.jsx	
++++ b/src/Components/Lk/CryppoLk/CryppoLk.jsx	
+@@ -83,7 +83,6 @@
+                 }
+             />
+             <Route
+-                path="event/:category"
+                 element={
+                     <Event
+                         operationData={props.operationData}
+Index: src/Components/Lk/Events/Event.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {useRef} from \"react\";\r\nimport {Tab, Tabs, TabList, TabPanel} from \"react-tabs\";\r\n\r\nimport {Chart as ChartJS, ArcElement, Tooltip, Legend} from \"chart.js\";\r\nimport {Doughnut, getElementsAtEvent} from \"react-chartjs-2\";\r\nimport StatisticMainItem from \"../StatisticMain/StatisticMainItem\";\r\nimport ChartText from \"../StatisticMain/ChartText\";\r\nimport {useParams} from \"react-router-dom\";\r\nimport OperationInner from \"../CryppoLk/CryppoLkComponents/OperationLk/OperationInner\";\r\nimport OperationModal from \"../Modal/OperationModal\";\r\nimport style from \"./Event.module.scss\";\r\nimport SearchBar from \"./SearchBar/SearchBar\";\r\n\r\nChartJS.register(ArcElement, Tooltip, Legend);\r\n\r\nconst Event = (props) => {\r\n    let value = props;\r\n    let dataItems = [];\r\n    let backgroundColorItems = [];\r\n    let elementItem = [];\r\n    const {category, subcategory} = useParams();\r\n    let operations = props.operationData.operation;\r\n    let currency = props.currency;\r\n    const chartRef = useRef(null);\r\n\r\n    const onClick = (event) => {\r\n        const {current: chart} = chartRef;\r\n        if (!chart) {\r\n            return;\r\n        }\r\n        let eTarget = getElementsAtEvent(chart, event);\r\n        props.setChartText(value[eTarget[0].index]);\r\n    };\r\n\r\n    if (category !== undefined) {\r\n        value = value.currency.filter((item) => {\r\n            return item.category === category;\r\n        });\r\n\r\n        value = value[0].childCurrencyStatistics.filter((item) => {\r\n            return item.parentCategory === category;\r\n        });\r\n\r\n        currency = props.currency.filter((item) => {\r\n            return item.category === category;\r\n        });\r\n\r\n        currency = currency[0];\r\n        if (subcategory !== undefined) {\r\n            operations = operations.filter((item) => {\r\n                return item.firm === subcategory;\r\n            });\r\n        } else {\r\n            operations = operations.filter((item) => {\r\n                return item.type === category;\r\n            });\r\n        }\r\n\r\n        currency.childCurrencyStatistics.map((e) => {\r\n            dataItems.push(e.percent);\r\n            backgroundColorItems.push(e.color);\r\n        });\r\n\r\n        elementItem = currency.childCurrencyStatistics.map((e) => (\r\n            <StatisticMainItem\r\n                setChartText={props.setChartText}\r\n                initChartText={props.initChartText}\r\n                percent={e.percent}\r\n                id={e.id}\r\n                key={e.id}\r\n                color={e.color}\r\n                category={e.category}\r\n                cash={e.cash}\r\n                currency={e.currency}\r\n                addTag={props.addTag}\r\n            />\r\n        ));\r\n    } else {\r\n        elementItem = currency.map((e) => (\r\n            <StatisticMainItem\r\n                setChartText={props.setChartText}\r\n                initChartText={props.initChartText}\r\n                percent={e.percent}\r\n                id={e.id}\r\n                key={e.id}\r\n                color={e.color}\r\n                category={e.category}\r\n                cash={e.cash}\r\n                currency={e.currency}\r\n            />\r\n        ));\r\n        currency.map((e) => {\r\n            dataItems.push(e.percent);\r\n            backgroundColorItems.push(e.color);\r\n        });\r\n    }\r\n\r\n    const options = {\r\n        plugins: {\r\n            options: {},\r\n            tooltip: {\r\n                enabled: false,\r\n            },\r\n        },\r\n        cutout: 110,\r\n    };\r\n    const data = {\r\n        labels: [],\r\n        datasets: [\r\n            {\r\n                data: dataItems,\r\n                backgroundColor: backgroundColorItems,\r\n                borderWidth: 0,\r\n                hoverOffset: 20,\r\n            },\r\n        ],\r\n    };\r\n    // if (subcategory !== undefined) {\r\n    //     return (\r\n    //         <div className={style.container}>\r\n    //             <div className={style.title}>{props.operationData.title}</div>\r\n    //             <OperationInner\r\n    //                 operationData={operations}\r\n    //                 setModal={props.setModal}\r\n    //                 isModal={props.isModal}\r\n    //                 switchModal={props.switchModal}\r\n    //             />\r\n    //             <div>\r\n    //                 <OperationModal\r\n    //                     operationModal={props.operationModal}\r\n    //                     isModal={props.isModal}\r\n    //                     switchModal={props.switchModal}\r\n    //                 />\r\n    //             </div>\r\n    //         </div>\r\n    //     );\r\n    // }\r\n    return (\r\n        <div className=\"main\">\r\n            <div сlassName={style.container}>\r\n                <SearchBar\r\n                    operationsFilter={props.operationsFilter}\r\n                    addTag={props.addTag}\r\n                    removeTag={props.removeTag}\r\n                    inputChange={props.inputChange}\r\n                />\r\n                <div className={style.block}>\r\n                    <Tabs>\r\n                        <TabList className={style.list}>\r\n                            <Tab className={style.tab} selectedClassName={style.activeTab}>\r\n                                <p>Расходы</p>\r\n                            </Tab>\r\n                            <Tab className={style.tab} selectedClassName={style.activeTab} >\r\n                                <p>Поступления</p>\r\n                            </Tab>\r\n                        </TabList>\r\n                        <TabPanel>\r\n                            <div className={style.flex}>\r\n                                <div className={style.items}>{elementItem}</div>\r\n                                <div className={style.chartInner}>\r\n                                    <Doughnut\r\n                                        data={data}\r\n                                        options={options}\r\n                                        onClick={onClick}\r\n                                        ref={chartRef}\r\n                                        onMouseLeave={() => props.initChartText()}\r\n                                    />\r\n                                    <ChartText\r\n                                        isHover={props.isHover}\r\n                                        chartTextData={props.chartTextData}\r\n                                    />\r\n                                </div>\r\n                            </div>\r\n                        </TabPanel>\r\n                        <TabPanel>\r\n                            <h2>tab 2</h2>\r\n                        </TabPanel>\r\n                    </Tabs>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default Event;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Components/Lk/Events/Event.jsx b/src/Components/Lk/Events/Event.jsx
+--- a/src/Components/Lk/Events/Event.jsx	
++++ b/src/Components/Lk/Events/Event.jsx	
+@@ -10,131 +10,13 @@
+ import OperationModal from "../Modal/OperationModal";
+ import style from "./Event.module.scss";
+ import SearchBar from "./SearchBar/SearchBar";
++import StatisticMain from "../StatisticMain/StatisticMain";
++import Operation from "../CryppoLk/CryppoLkComponents/OperationLk/Operation";
+ 
+ ChartJS.register(ArcElement, Tooltip, Legend);
+ 
+ const Event = (props) => {
+-    let value = props;
+-    let dataItems = [];
+-    let backgroundColorItems = [];
+-    let elementItem = [];
+-    const {category, subcategory} = useParams();
+-    let operations = props.operationData.operation;
+-    let currency = props.currency;
+-    const chartRef = useRef(null);
+-
+-    const onClick = (event) => {
+-        const {current: chart} = chartRef;
+-        if (!chart) {
+-            return;
+-        }
+-        let eTarget = getElementsAtEvent(chart, event);
+-        props.setChartText(value[eTarget[0].index]);
+-    };
+-
+-    if (category !== undefined) {
+-        value = value.currency.filter((item) => {
+-            return item.category === category;
+-        });
+-
+-        value = value[0].childCurrencyStatistics.filter((item) => {
+-            return item.parentCategory === category;
+-        });
+ 
+-        currency = props.currency.filter((item) => {
+-            return item.category === category;
+-        });
+-
+-        currency = currency[0];
+-        if (subcategory !== undefined) {
+-            operations = operations.filter((item) => {
+-                return item.firm === subcategory;
+-            });
+-        } else {
+-            operations = operations.filter((item) => {
+-                return item.type === category;
+-            });
+-        }
+-
+-        currency.childCurrencyStatistics.map((e) => {
+-            dataItems.push(e.percent);
+-            backgroundColorItems.push(e.color);
+-        });
+-
+-        elementItem = currency.childCurrencyStatistics.map((e) => (
+-            <StatisticMainItem
+-                setChartText={props.setChartText}
+-                initChartText={props.initChartText}
+-                percent={e.percent}
+-                id={e.id}
+-                key={e.id}
+-                color={e.color}
+-                category={e.category}
+-                cash={e.cash}
+-                currency={e.currency}
+-                addTag={props.addTag}
+-            />
+-        ));
+-    } else {
+-        elementItem = currency.map((e) => (
+-            <StatisticMainItem
+-                setChartText={props.setChartText}
+-                initChartText={props.initChartText}
+-                percent={e.percent}
+-                id={e.id}
+-                key={e.id}
+-                color={e.color}
+-                category={e.category}
+-                cash={e.cash}
+-                currency={e.currency}
+-            />
+-        ));
+-        currency.map((e) => {
+-            dataItems.push(e.percent);
+-            backgroundColorItems.push(e.color);
+-        });
+-    }
+-
+-    const options = {
+-        plugins: {
+-            options: {},
+-            tooltip: {
+-                enabled: false,
+-            },
+-        },
+-        cutout: 110,
+-    };
+-    const data = {
+-        labels: [],
+-        datasets: [
+-            {
+-                data: dataItems,
+-                backgroundColor: backgroundColorItems,
+-                borderWidth: 0,
+-                hoverOffset: 20,
+-            },
+-        ],
+-    };
+-    // if (subcategory !== undefined) {
+-    //     return (
+-    //         <div className={style.container}>
+-    //             <div className={style.title}>{props.operationData.title}</div>
+-    //             <OperationInner
+-    //                 operationData={operations}
+-    //                 setModal={props.setModal}
+-    //                 isModal={props.isModal}
+-    //                 switchModal={props.switchModal}
+-    //             />
+-    //             <div>
+-    //                 <OperationModal
+-    //                     operationModal={props.operationModal}
+-    //                     isModal={props.isModal}
+-    //                     switchModal={props.switchModal}
+-    //                 />
+-    //             </div>
+-    //         </div>
+-    //     );
+-    // }
+     return (
+         <div className="main">
+             <div сlassName={style.container}>
+@@ -145,38 +27,9 @@
+                     inputChange={props.inputChange}
+                 />
+                 <div className={style.block}>
+-                    <Tabs>
+-                        <TabList className={style.list}>
+-                            <Tab className={style.tab} selectedClassName={style.activeTab}>
+-                                <p>Расходы</p>
+-                            </Tab>
+-                            <Tab className={style.tab} selectedClassName={style.activeTab} >
+-                                <p>Поступления</p>
+-                            </Tab>
+-                        </TabList>
+-                        <TabPanel>
+-                            <div className={style.flex}>
+-                                <div className={style.items}>{elementItem}</div>
+-                                <div className={style.chartInner}>
+-                                    <Doughnut
+-                                        data={data}
+-                                        options={options}
+-                                        onClick={onClick}
+-                                        ref={chartRef}
+-                                        onMouseLeave={() => props.initChartText()}
+-                                    />
+-                                    <ChartText
+-                                        isHover={props.isHover}
+-                                        chartTextData={props.chartTextData}
+-                                    />
+-                                </div>
+-                            </div>
+-                        </TabPanel>
+-                        <TabPanel>
+-                            <h2>tab 2</h2>
+-                        </TabPanel>
+-                    </Tabs>
++                    <StatisticMain filter={true}/>
+                 </div>
++                <Operation/>
+             </div>
+         </div>
+     );

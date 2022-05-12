@@ -39,7 +39,7 @@ const Userblock = (props) => {
             <NavLink
               to={val}
               className={style.out}
-              onClick={() => props.login(!props.value)}
+              onClick={() => props.login(props.value)}
             >
               выйти
             </NavLink>

@@ -6,9 +6,9 @@ import CryppoIndexLanding from "./CryppoIndexLanding/CryppoIndexLanding";
 import IndexLk from "../Lk/IndexLk/IndexLk";
 
 export default function CryppoIndex(props) {
-    useEffect(() => {
-        props.getCryppoIndexThunkCreator();
-    }, [])
+    // useEffect(() => {
+    //     props.getCryppoIndexThunkCreator();
+    // }, [])
     return (
         <div>
             <Header logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} user={props.user} nav={props.nav} />

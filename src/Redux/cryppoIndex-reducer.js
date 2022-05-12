@@ -61,7 +61,7 @@ let initialState = {
             text: 'ПРИБЫЛИ USDT',
         },
     ],
-    
+    isLogin:true,
 }
 const cryppoIndexReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -73,7 +73,6 @@ const cryppoIndexReducer = (state = initialState, action) => {
         case GET:
             return {
                 ...state,
-                isLogin: action.value,
             };
         default:
             return state;
