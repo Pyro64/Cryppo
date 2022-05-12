@@ -5,7 +5,7 @@ import {Tag, DatePicker, ConfigProvider} from "antd";
 import moment from 'moment';
 import 'moment/locale/ru';
 import locale from 'antd/lib/locale/ru_RU';
-import {SubTitle} from "chart.js";
+
 
 const {RangePicker} = DatePicker;
 

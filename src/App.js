@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import  'antd/dist/antd.css';
+
 import "../src/Style/Style.scss";
 import { ParallaxProvider } from "react-scroll-parallax";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";

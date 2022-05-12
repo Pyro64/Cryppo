@@ -6,9 +6,9 @@ import Header from '../Header/Header'
 import FooterContainer from '../Footer/FooterContainer'
 import Authorization from '../Authorization/Authorization'
 export default function CryppoBusiness(props) {
-  useEffect(() => {
-    props.getCryppoBusinessThunkCreator();
-  }, [])
+  // useEffect(() => {
+  //   props.getCryppoBusinessThunkCreator();
+  // }, [])
   return (
     <div>
       <Header logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} user={props.user} nav={props.nav} />

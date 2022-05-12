@@ -31,6 +31,7 @@ import annaBobs from '../Images/login/anna_bobs.svg'
 
 import { CryppoBusinessGet } from "../Api/api"
 const GET = 'GET';
+const LOGIN_BUSINESS = 'LOGIN_BUSINESS';
 let initialState = {
     bannerData: {
         title: 'Принимайте платежи в криптовалюте по всему миру',
@@ -338,6 +339,11 @@ const cryppoBusinessReducer = (state = initialState, action) => {
                 ...state,
                 ...action.value,
             };
+        case LOGIN_BUSINESS:
+            return {
+                ...state,
+                isLogin: action.value,
+            };
         default:
             return state;
     }
@@ -357,4 +363,5 @@ export const getCryppoBusinessThunkCreator = () => {
     }
 }
 export const get = (value) => ({ type: GET, value })
+export const login = (value) => ({ type: LOGIN_BUSINESS, value })
 export default cryppoBusinessReducer;

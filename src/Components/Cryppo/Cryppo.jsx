@@ -6,10 +6,10 @@ import CryppoLanding from "./CryppoLanding/CryppoLanding";
 import CryppoLkContainer from "../Lk/CryppoLk/CryppoLkContainer";
 
 export default function Cryppo(props) {
-  useEffect(() => {
-    props.getCryppoThunkCreator()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  // useEffect(() => {
+  //   props.getCryppoThunkCreator()
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [])
   return (
     <div>
       <Header

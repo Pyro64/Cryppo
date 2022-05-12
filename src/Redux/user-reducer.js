@@ -459,11 +459,6 @@ const userReducer = (state = initialState, action) => {
                 ...state,
                 ...action.value,
             };
-        case LOGIN:
-            return {
-                ...state,
-                isLogin: action.value,
-            };
         case FILTER_OPERATIONS:
             return {
                 ...state,
@@ -557,6 +552,5 @@ export const inputChange = (value) =>({type: INPUT_CHANGE, value});
 export const addTag = (tag) => ({ type: ADD_TAG, tag });
 export const removeTag = (value) => ({ type: REMOVE_TAG, value });
 export const updateChart = (child) => ({ type: UPDATE_CHART, child })
-export const login = (value) => ({ type: LOGIN, value })
 export const changeActiveIndex = (value) => ({ type: CHANGE_ACTIVE_INDEX, value });
 export default userReducer;

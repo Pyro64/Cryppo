@@ -3,7 +3,7 @@ import {CryppoGet} from "../Api/api"
 
 
 const GET = 'GET';
-
+const LOGIN_CRYPPO = 'LOGIN_CRYPPO';
 
 let initialState = {
   route: {
@@ -16,7 +16,7 @@ let initialState = {
       },
     ],
   },
-  
+  isLogin:true
 };
 const cryppoReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -25,6 +25,11 @@ const cryppoReducer = (state = initialState, action) => {
           return {
             ...state,
             ...action.value
+          };
+      case LOGIN_CRYPPO:
+          return {
+              ...state,
+              isLogin: action.value,
           };
     default:
       return state;
@@ -45,4 +50,5 @@ export const getCryppoThunkCreator = () =>{
 }
 
 export const get = (value) => ({ type: GET, value });
+export const login = (value) => ({ type: LOGIN_CRYPPO, value })
 export default cryppoReducer;

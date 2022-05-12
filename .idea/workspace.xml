@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471b77c2-28e2-41c8-bdca-fc64aa24c0bd" name="Changes" comment="tw0 commit from ws" />
+    <list default="true" id="471b77c2-28e2-41c8-bdca-fc64aa24c0bd" name="Changes" comment="tw0 commit from ws">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Cryppo/Cryppo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Cryppo/Cryppo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Cryppo/CryppoContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Cryppo/CryppoContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/CryppoBusiness/CryppoBusiness.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CryppoBusiness/CryppoBusiness.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/CryppoBusiness/CryppoBusinessContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CryppoBusiness/CryppoBusinessContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/CryppoIndex/CryppoIndex.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CryppoIndex/CryppoIndex.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/CryppoIndex/CryppoIndexContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CryppoIndex/CryppoIndexContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Lk/Events/SearchBar/SearchBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/Events/SearchBar/SearchBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Lk/StatisticCash/StatisticCash.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/StatisticCash/StatisticCash.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/User/User.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/User/User.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/User/User.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/User/User.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/User/UserBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/User/UserBlock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/cryppo-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/cryppo-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/cryppoBusiness-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/cryppoBusiness-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/cryppoIndex-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/cryppoIndex-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/user-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/user-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Style/Style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Style/Style.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,21 +42,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Медок/Desktop/Cryppo&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.1\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Медок/Desktop/Cryppo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.1\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -68,6 +88,13 @@
       <workItem from="1651827385093" duration="15602000" />
       <workItem from="1651844579430" duration="1551000" />
       <workItem from="1652076394100" duration="1549000" />
+      <workItem from="1652079601389" duration="1064000" />
+      <workItem from="1652083419568" duration="60000" />
+      <workItem from="1652102029976" duration="508000" />
+      <workItem from="1652247838543" duration="150000" />
+      <workItem from="1652277180759" duration="353000" />
+      <workItem from="1652331208757" duration="99000" />
+      <workItem from="1652335249005" duration="4524000" />
     </task>
     <task id="LOCAL-00001" summary="first commit from ws">
       <created>1651817410900</created>
@@ -90,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651843317527</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="tw0 commit from ws">
+      <created>1652079708493</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1652079708493</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,15 +145,5 @@
     <MESSAGE value="first commit from ws" />
     <MESSAGE value="tw0 commit from ws" />
     <option name="LAST_COMMIT_MESSAGE" value="tw0 commit from ws" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Components/Lk/StatisticCash/StatisticCash.jsx</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
