@@ -2,7 +2,7 @@ import React from "react";
 import style from "./Event.module.scss";
 import SearchBar from "./SearchBar/SearchBar";
 import StatisticCash from "../StatisticCash/StatisticCash";
-import Operation from "../CryppoLk/CryppoLkComponents/OperationLk/Operation";
+import Operation from "../OperationLk/Operation";
 
 const Event = (props) => {
     if (props.filter === true) {

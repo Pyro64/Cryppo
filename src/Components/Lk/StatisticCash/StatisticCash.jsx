@@ -3,7 +3,7 @@ import SubtitleLk from "../SubtitleLk/SubtitleLk";
 import style from "./StatisticCash.module.scss";
 import {Tab, Tabs, TabList, TabPanel} from "react-tabs";
 import {Chart as ChartJS, ArcElement, Tooltip, Legend} from "chart.js";
-import DoughnutChart from "../CryppoLk/CryppoLkComponents/DoughnutChart/DoughnutChart";
+import DoughnutChart from "../DoughnutChart/DoughnutChart";
 
 
 const StatisticCash = (props) => {

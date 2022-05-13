@@ -1,0 +1,51 @@
+@import "../../../Style/Mixins";
+.block {
+  @include container;
+  @include fluid(margin-bottom, 70px, 170px);
+}
+.flex {
+  @include flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.number {
+  font-weight: 700;
+  @include fluid(margin-bottom, 10px, 20px);
+  @include fluid(font-size, 24px, 36px);
+}
+.item {
+  width: 30%;
+  margin-right: 5%;
+  position: relative;
+  @include fluid(margin-bottom, 15px, 30px);
+  &:last-child {
+    margin-right: 0;
+  }
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: contain;
+    @include fluid(width, 30px, 40px);
+    @include fluid(height, 30px, 40px);
+  }
+}
+.wrapper {
+  @include fluid(padding-left, 40px, 55px);
+  p {
+    width: 70%;
+    @include fluid(font-size, 14px, 18px);
+  }
+}
+@media screen and(max-width:992px) {
+  .flex {
+    flex-direction: column;
+  }
+  .item {
+    width: 100%;
+    margin-right: 0;
+    align-items: center;
+    justify-content: center;
+  }
+}

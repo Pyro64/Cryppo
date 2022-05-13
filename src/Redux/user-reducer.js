@@ -436,7 +436,6 @@ let initialState = {
             },
         ],
     },
-
     userData:
     {
         id: 1,

@@ -1,0 +1,14 @@
+@import '../../../Style/Mixins';
+
+.title {
+    font-family: 'Days One Regular';
+    position: relative;
+    width: 100%;
+    color: #fff;
+    @include fluid(font-size, 30px, 53px);
+    @include fluid(margin-bottom, 30px, 50px);
+
+    span {
+        @include textGradient;
+    }
+}

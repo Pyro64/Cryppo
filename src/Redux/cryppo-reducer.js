@@ -1,7 +1,5 @@
 import cryppoSvg from "../Images/cryppo.svg";
 import {CryppoGet} from "../Api/api"
-
-
 const GET = 'GET';
 const LOGIN_CRYPPO = 'LOGIN_CRYPPO';
 

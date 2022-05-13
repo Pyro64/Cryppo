@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./Searc.module.scss";
 import icon from "../../../Images/icon/search.svg";
-import TypeTranslationItem from "../CryppoLk/CryppoLkComponents/TypeTranslation/TypeTranslationItem";
+import TypeTranslationItem from "../TypeTranslation/TypeTranslationItem";
 const Search = (props) => {
   const [value, setValue] = useState("");
   const filterTranslation = props.translations.filter((e) => {
