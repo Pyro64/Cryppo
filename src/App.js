@@ -5,9 +5,6 @@ import "../src/Style/Style.scss";
 import { ParallaxProvider } from "react-scroll-parallax";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import Spinner from './Components/Spinner/Spinner';
-import AuthorizationContainer from "./Components/Authorization/AuthorizationContainer";
-import RegistrationContainer from "./Components/Registration/RegistrationContainer";
-
 const CryppoContainer = React.lazy(() => import('./Components/Cryppo/CryppoContainer'));
 const CryppoBusinessContainer = React.lazy(() => import('./Components/CryppoBusiness/CryppoBusinessContainer'));
 const CryppoIndexContainer = React.lazy(() => import('./Components/CryppoIndex/CryppoIndexContainer'));
@@ -29,14 +26,7 @@ function App() {
                 path="cryppoinvest/*"
                 element={<CryppoIndexContainer />}
               />
-              <Route
-                path="/auth"
-                element={<AuthorizationContainer />}
-              />
-              <Route
-                path="/register"
-                element={<RegistrationContainer />}
-              />
+
             </Routes>
           </Suspense>
 

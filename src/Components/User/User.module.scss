@@ -6,6 +6,7 @@
   cursor: pointer;
   transition: 0.38s ease-in-out;
   p {
+    color: #FFF;
     transition: 0.38s ease-in-out;
     @include fluid(margin-right, 10px, 20px);
   }

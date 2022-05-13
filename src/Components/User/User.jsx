@@ -2,12 +2,11 @@ import React from "react";
 import style from "../User/User.module.scss";
 import img from "../../Images/icon/open.png";
 import Userblock from "./UserBlock";
+import {NavLink} from "react-router-dom";
 
 export default function User(props) {
     let value = !props.isLogin;
-    const test = () => {
-    props.login(value)
-    }
+
     return (
         <div>
             {props.isLogin
@@ -17,10 +16,10 @@ export default function User(props) {
                     name={props.user.name}
                     login={props.login}/>
                 :
-                <div onClick={test} className={style.container}>
+                <NavLink to="entrance" className={style.container}>
                     <p>Войти</p>
                     <img src={img} alt="login"/>
-                </div>
+                </NavLink>
             }
         </div>
     )
