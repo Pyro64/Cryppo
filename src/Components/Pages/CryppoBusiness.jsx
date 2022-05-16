@@ -4,6 +4,7 @@ import CryppoBusinessLanding from './CryppoBusinessLanding'
 import Header from '../UI/Header/Header'
 import FooterContainer from '../UI/Footer/FooterContainer'
 import EntranceBussines from "../Lk/BusinessLk/EntranceBusiness/EntranceBussines";
+import BusinessLkContainer from './BusinessLkContainer'
 export default function CryppoBusiness(props) {
   // useEffect(() => {
   //   props.getCryppoBusinessThunkCreator();
@@ -19,12 +20,14 @@ export default function CryppoBusiness(props) {
             faq={props.faq} connectionList={props.connectionList} banner={props.banner} logo={props.logo} />}
         />
         <Route
-          path="/businesslk"
+          path="businesslk/*"
+          element={<BusinessLkContainer />}
         />
           <Route
               path="/entrance"
-              element={<EntranceBussines ></EntranceBussines>}
-              ></Route>
+              element={<EntranceBussines/>}
+              >
+          </Route>
       </Routes>
       <FooterContainer logo={props.logo} />
     </div>

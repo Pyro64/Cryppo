@@ -331,7 +331,7 @@ let initialState = {
         },
     ],
     isLogin: true,
-    router: '/business'
+    router: '/businesslk'
 };
 const cryppoBusinessReducer = (state = initialState, action) => {
     switch (action.type) {
