@@ -30,11 +30,17 @@ const Header = (props) => {
                     <Logo logo={props.logo}/>
                     <div className={style.wrapper}>
                         <Nav/>
-                        <User
+                        {props.isEntrance != false
+                            ?
+                            <User
                             login={props.login}
                             isLogin={props.isLogin}
                             user={props.user}
-                        />
+                            router={props.router}
+                            />
+                            : null
+                        }
+
                     </div>
                 </div>
                 {props.isLogin

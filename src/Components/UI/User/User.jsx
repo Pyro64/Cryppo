@@ -14,7 +14,10 @@ export default function User(props) {
                     value={value}
                     img={props.user.img}
                     name={props.user.name}
-                    login={props.login}/>
+                    login={props.login}
+                    router={props.router}
+                    />
+
                 :
                 <NavLink to="entrance" className={style.container}>
                     <p>Войти</p>

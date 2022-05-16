@@ -1,25 +1,29 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes } from "react-router";
 import FooterContainer from "../UI/Footer/FooterContainer";
 import Header from '../UI/Header/Header'
-import CryppoInvestLanding from "./CryppoInvestLanding";
-import IndexLk from "../Lk/IndexLk/IndexLk";
+import Banner from "../UI/Banner/Banner";
+import Suggestions from "../Landing/Suggestions/Suggestions";
+import AboutIndex from "../Landing/AboutIndex/AboutIndex";
+import BenefitsIndex from "../Landing/BenefitsIndex/BenefitsIndex";
+import StatisticIndex from "../Landing/StatisticIndex/StatisticIndex";
+import TechnologiesIndex from "../Landing/TechnologiesIndex/TechnologiesIndex";
 
 export default function CryppoInvest(props) {
     // useEffect(() => {
     //     props.getCryppoIndexThunkCreator();
     // }, [])
+    const isEntrance = false
     return (
         <div>
-            <Header logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} user={props.user} nav={props.nav} />
-            <Routes>
-                <Route
-                    path="/"
-                    element={<CryppoInvestLanding banner={props.banner} bannerIndex={props.bannerIndex}
-                                                  addStep={props.addStep} step={props.step} suggestions={props.suggestions}
-                                                  aboutDataIndex={props.aboutDataIndex} benefits={props.benefits} logo={props.logo} />}
-                />
-            </Routes>
+            <Header isEntrance={isEntrance} logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} user={props.user} nav={props.nav} />
+                <div className='main'>
+                    <Banner page="index" banner={props.banner} bannerIndex={props.bannerIndex} addStep={props.addStep} step={props.step} />
+                    <Suggestions suggestions={props.suggestions} />
+                    <AboutIndex aboutDataIndex={props.aboutDataIndex} />
+                    <BenefitsIndex benefits={props.benefits} />
+                    <StatisticIndex />
+                    <TechnologiesIndex />
+                </div>
             <FooterContainer logo={props.logo} />
         </div>
     )

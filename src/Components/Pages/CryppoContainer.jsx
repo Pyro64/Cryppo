@@ -4,11 +4,12 @@ import Cryppo from "./Cryppo";
 import {login} from "../../Redux/cryppo-reducer";
 let mapStateToProps = (state) => {
   return {
-    logo: state.link.route.logo,
-    btn: state.link.route.btn,
+    logo: state.cryppoPage.route.logo,
+    btn: state.cryppoPage.route.btn,
     isLogin: state.cryppoPage.isLogin,
     user: state.user.userData,
-    nav: state.link.navData,
+    nav: state.cryppoPage.navData,
+    router: state.cryppoPage.router
   };
 };
 

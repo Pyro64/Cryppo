@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react'
 import { Route, Routes } from "react-router";
 import CryppoBusinessLanding from './CryppoBusinessLanding'
-import CryppoBusinessLk from '../Lk/BusinessLk/BusinessLk'
 import Header from '../UI/Header/Header'
 import FooterContainer from '../UI/Footer/FooterContainer'
-import Authorization from '../UI/Authorization/Authorization'
 import EntranceBussines from "../Lk/BusinessLk/EntranceBusiness/EntranceBussines";
 export default function CryppoBusiness(props) {
   // useEffect(() => {
@@ -22,7 +20,6 @@ export default function CryppoBusiness(props) {
         />
         <Route
           path="/businesslk"
-          element={<CryppoBusinessLk isLogin={props.isLogin} />}
         />
           <Route
               path="/entrance"

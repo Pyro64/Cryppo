@@ -8,14 +8,11 @@ const Userblock = (props) => {
     setOpen(!open);
   };
 
-  let url = useLocation();
-  let val = url.pathname.split("/")[0];
-
   return (
     <div className={style.block}>
       <div className={style.flex}>
         <NavLink
-          to="lk"
+          to={props.router}
           className={({ isActive }) =>
             isActive ? `${style.link} ${style.active}` : `${style.link}`
           }
@@ -37,7 +34,7 @@ const Userblock = (props) => {
           <div>
             <p className="list-text">{props.name}</p>
             <NavLink
-              to={val}
+              to="/"
               className={style.out}
               onClick={() => props.login(props.value)}
             >

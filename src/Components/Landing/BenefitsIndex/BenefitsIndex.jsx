@@ -1,8 +1,9 @@
 import React from 'react'
-import Subtitle from '../../../Subtitle/Subtitle'
+
 import style from './BenefitsIndex.module.scss'
 import BenefitsIndexItem from './BenefitsIndexItem'
 import { Parallax } from 'react-scroll-parallax';
+import Subtitle from "../../UI/Subtitle/Subtitle";
 export default function BenefitsIndex(props) {
 
   let elementItem = props.benefits.map(e =>
