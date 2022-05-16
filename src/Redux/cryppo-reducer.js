@@ -34,7 +34,12 @@ let initialState = {
             href: 'cryppo/lk/translations'
         },
         {
-            id: 4,
+          id: 4,
+          name: "Инвестиции",
+          href: 'cryppolk/invest'
+      },
+        {
+            id: 5,
             name: "Настройки",
             href: 'cryppo/lk/settings'
         },
@@ -43,6 +48,7 @@ let initialState = {
             name: "Инвестиции",
             href: 'cryppo/lk/invest'
         },
+        
     ],
     router: '/cryppo'
 };
