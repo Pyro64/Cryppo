@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {Navigate, Route, Routes} from "react-router";
-import BusinessMain from '../Lk/BusinessMain/BusinessMain'
+import  BusinessLkMain from '../Lk/BusinessLkMain/BusinessLkMain'
 const BusinessLk = (props) => {
     // const get = () => props.getCryppoLkThunkCreator();
     // useEffect(() => {
@@ -11,10 +11,9 @@ const BusinessLk = (props) => {
     return (
         <Routes>
             <Route
-                path="main"
+                path="/"
                 element={
-                    <BusinessMain
-                    />
+                <BusinessLkMain coin={props.coin}/>
                 }
             />
         </Routes>

@@ -21,13 +21,10 @@ export default function Cryppo(props) {
                 router={props.router}
             />
             <Routes>
-                {/*<Route path="/"*/}
-                {/*       element={<div>криппо лендинг</div>}> */}
                 <Route path="/"
                        element={<div>тест</div>}/>
-
                     <Route
-                        path="cryppolk/*"
+                        path="cryppo/lk/*"
                         element={
                             <CryppoLkContainer
                                 card={props.card}

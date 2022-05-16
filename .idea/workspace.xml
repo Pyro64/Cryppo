@@ -5,12 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="488c5b31-f6d2-4269-bb6a-95acaa9e7e6a" name="Changes" comment="wq">
-      <change afterPath="$PROJECT_DIR$/src/Components/Lk/BusinessMain/BusinessMain.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Lk/BusinessLk/EntranceBusiness/EntranceBussines.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/BusinessEntrance/BussinesEntrance.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Lk/BusinessLk/EntranceBusiness/EntranceBussinses.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/BusinessEntrance/BussinsesEntrance.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Lk/BusinessMain/BusinessMain.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/BusinessLkMain/BusinessLkMain.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Lk/CryppoLkMain/CryppoLkMain.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/CryppoLkMain/CryppoLkMain.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLkContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLkContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Cryppo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Cryppo.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/CryppoBusiness.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/CryppoBusiness.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/CryppoBusinessContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/CryppoBusinessContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/CryppoLk.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/CryppoLk.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/UI/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/UI/Nav/Nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/Nav/Nav.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/UI/Nav/NavItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/Nav/NavItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/UI/User/User.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/User/User.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/UI/User/UserBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/User/UserBlock.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/businessLk-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/businessLk-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/cryppo-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/cryppo-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/cryppoBusiness-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/cryppoBusiness-reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +48,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Медок/Desktop/Cryppo/src/Components/Lk",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -43,6 +57,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Медок\Desktop\Cryppo\src\Components\Lk" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -68,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652689520690</updated>
-      <workItem from="1652689581153" duration="8511000" />
+      <workItem from="1652689581153" duration="17859000" />
     </task>
     <task id="LOCAL-00001" summary="w">
       <created>1652694078184</created>
@@ -98,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652699571532</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="wq">
+      <created>1652701929897</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1652701929897</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

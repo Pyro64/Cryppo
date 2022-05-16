@@ -16,6 +16,8 @@ export default function User(props) {
                     name={props.user.name}
                     login={props.login}
                     router={props.router}
+                    hasLk={props.hasLk}
+                    isLk={props.isLk}
                     />
 
                 :

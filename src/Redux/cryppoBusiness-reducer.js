@@ -29,9 +29,11 @@ import banner from '../Images/content/banner-business.svg'
 import businessSvg from '../Images/cryppo-business.svg';
 import annaBobs from '../Images/login/anna_bobs.svg'
 
-import { CryppoBusinessGet } from "../Api/api"
+import {CryppoBusinessGet} from "../Api/api"
+
 const GET = 'GET';
 const LOGIN_BUSINESS = 'LOGIN_BUSINESS';
+const HAS_LK = 'HAS_LK';
 let initialState = {
     bannerData: {
         title: 'Принимайте платежи в криптовалюте по всему миру',
@@ -303,35 +305,36 @@ let initialState = {
         ],
     },
     userData:
-    {
-        id: 1,
-        img: annaBobs,
-        name: "Business Bobs",
-    },
+        {
+            id: 1,
+            img: annaBobs,
+            name: "Business Bobs",
+        },
     navData: [
         {
             id: 1,
             name: "Главная",
-            href: '/'
+            href: 'main'
         },
         {
             id: 2,
             name: "Балансы",
-            href: '/balance'
+            href: 'balance'
         },
         {
             id: 3,
             name: "История операций",
-            href: '/history'
+            href: 'history'
         },
         {
             id: 4,
             name: "Статистика",
-            href: '/statistic'
+            href: 'statistic'
         },
     ],
     isLogin: true,
-    router: '/businesslk'
+    router: '/business',
+    isLk: false
 };
 const cryppoBusinessReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -339,6 +342,11 @@ const cryppoBusinessReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...action.value,
+            };
+        case HAS_LK:
+            return {
+                ...state,
+                isLk: action.isLk,
             };
         case LOGIN_BUSINESS:
             return {
@@ -355,7 +363,7 @@ export const getCryppoBusinessThunkCreator = () => {
         CryppoBusinessGet()
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data))
-                dispatch({ type: 'GET', value });
+                dispatch({type: 'GET', value});
             })
             .catch((response) => {
                 console.log(response);
@@ -363,6 +371,7 @@ export const getCryppoBusinessThunkCreator = () => {
             })
     }
 }
-export const get = (value) => ({ type: GET, value })
-export const login = (value) => ({ type: LOGIN_BUSINESS, value })
+export const hasLk = (isLk) => ({type: HAS_LK,isLk})
+export const get = (value) => ({type: GET, value})
+export const login = (value) => ({type: LOGIN_BUSINESS, value})
 export default cryppoBusinessReducer;

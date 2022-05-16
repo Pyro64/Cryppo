@@ -29,21 +29,24 @@ const Header = (props) => {
                 <div className={style.block}>
                     <Logo logo={props.logo}/>
                     <div className={style.wrapper}>
-                        <Nav/>
+                        <Nav hasLk={props.hasLk}
+                             isLk={props.isLk}/>
                         {props.isEntrance != false
                             ?
                             <User
-                            login={props.login}
-                            isLogin={props.isLogin}
-                            user={props.user}
-                            router={props.router}
+                                login={props.login}
+                                isLogin={props.isLogin}
+                                user={props.user}
+                                router={props.router}
+                                hasLk={props.hasLk}
+                                isLk={props.isLk}
                             />
                             : null
                         }
 
                     </div>
                 </div>
-                {props.isLogin
+                {props.isLk
                     ? <div className={style.item}>{scrollBtn}</div>
                     : <div className={style.item}>{linkBtn}</div>
                 }

@@ -16,7 +16,7 @@ export default function CryppoLk(props) {
     return (
         <Routes>
             <Route
-                path="main"
+                path="/"
                 element={
                     <CryppoLkMain
                         card={props.card}

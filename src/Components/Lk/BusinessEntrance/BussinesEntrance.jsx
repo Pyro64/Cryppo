@@ -1,9 +1,9 @@
 import React,{useState} from 'react';
-import style from"./EntranceBussinses.module.scss";
+import style from"./BussinsesEntrance.module.scss";
 import {NavLink} from "react-router-dom";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 
-const EntranceBussines = () => {
+const BussinesEntrance = () => {
     const [emailName,setEmailName] = useState('');
     const [passwordName,setPasswordName] = useState('');
 
@@ -43,5 +43,5 @@ const EntranceBussines = () => {
     )
 };
 
-export default EntranceBussines;
+export default BussinesEntrance;
 
