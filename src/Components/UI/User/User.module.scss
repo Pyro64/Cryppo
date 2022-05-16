@@ -1,4 +1,4 @@
-@import "../../../Style/Mixins";
+@import "../../Style/Mixins";
 
 .container {
   display: flex;
@@ -6,7 +6,7 @@
   cursor: pointer;
   transition: 0.38s ease-in-out;
   p {
-    color: #FFF;
+    color: #fff;
     transition: 0.38s ease-in-out;
     @include fluid(margin-right, 10px, 20px);
   }
@@ -26,6 +26,12 @@
     }
   }
 }
+.out {
+  display: block;
+}
+.listText {
+  @include fluid(margin-bottom, 10px, 15px);
+}
 .link {
   display: block;
   color: #fff;
@@ -36,6 +42,7 @@
       width: 50%;
     }
   }
+
   &::after {
     content: "";
     position: absolute;
