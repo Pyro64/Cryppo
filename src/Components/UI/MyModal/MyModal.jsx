@@ -19,7 +19,7 @@ export default function MyModal(props) {
             >
                 <div className={style.container}>
                     <div className={style.header}>
-                        {/*<div className={style.dataPay}>{props.operationModal.data}</div>*/}
+                    <div className={style.dataPay}>{props.operationModal.data}</div>
                         <div className={style.close} onClick={handleCloseModal}></div>
                     </div>
                     <div className={style.wrapper}>
