@@ -5,6 +5,7 @@ import cryppoBusinessReducer from "./cryppoBusiness-reducer";
 import cryppoInvestReducer from "./cryppoInvest-reducer";
 import footerReducer from "./footer-reducer";
 import cryppoLkReducer from "./cryppoLk-reducer";
+import businessLkReducer from "./businessLk-reducer";
 import userReducer from "./user-reducer";
 import thunkMiddleware from "redux-thunk"
 import { composeWithDevTools } from '@redux-devtools/extension';
@@ -17,6 +18,7 @@ let reducers = combineReducers({
   footer: footerReducer,
   user: userReducer,
   form: formReducer,
+  businessLk:businessLkReducer
 });
 
 const store = createStore(

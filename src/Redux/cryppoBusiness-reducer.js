@@ -316,21 +316,22 @@ let initialState = {
         },
         {
             id: 2,
-            name: "События",
-            href: '/event'
+            name: "Балансы",
+            href: '/balance'
         },
         {
             id: 3,
-            name: "Переводы",
-            href: '/translations'
+            name: "История операций",
+            href: '/history'
         },
         {
             id: 4,
-            name: "Настройки",
-            href: '/settings'
+            name: "Статистика",
+            href: '/statistic'
         },
     ],
-    isLogin: false,
+    isLogin: true,
+    router: '/business'
 };
 const cryppoBusinessReducer = (state = initialState, action) => {
     switch (action.type) {

@@ -1,4 +1,4 @@
-@import "../../Style/Mixins";
+@import "../../../Style/Mixins";
 
 .container {
   @include fluid(width, 320px, 600px);
@@ -40,7 +40,7 @@
 
 .close {
   position: absolute;
-  background: url("../../Images/icon/close.svg") no-repeat;
+  background: url("../../../Images/icon/close.svg") no-repeat;
   @include fluid(width, 10px, 16px);
   @include fluid(height, 10px, 16px);
   background-size: cover;

@@ -10,7 +10,7 @@ export default function CryppoBusiness(props) {
   // }, [])
   return (
     <div>
-      <Header logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} user={props.user} nav={props.nav} />
+      <Header router={props.router} logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin} user={props.user} nav={props.nav} />
       <Routes>
         <Route
           path="/"
