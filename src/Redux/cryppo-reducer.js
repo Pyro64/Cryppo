@@ -21,7 +21,7 @@ let initialState = {
         {
             id: 1,
             name: "Главная",
-            href: '/'
+            href: '/cryppolk'
         },
         {
             id: 2,
