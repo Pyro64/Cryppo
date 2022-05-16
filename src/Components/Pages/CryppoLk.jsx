@@ -63,7 +63,7 @@ export default function CryppoLk(props) {
                 composition={props.composition}
             />
             <Route
-                path="event"
+                path="event/*"
                 element={
                     <Event
                         updateChart={props.updateChart}

@@ -18,14 +18,13 @@ export default function MyModal(props) {
                 closeTimeoutMS={380}
             >
                 <div className={style.container}>
-                    <div className={style.header}>
-                    <div className={style.dataPay}>{props.operationModal.data}</div>
-                        <div className={style.close} onClick={handleCloseModal}></div>
-                    </div>
-                    <div className={style.wrapper}>
-                        {props.children}
-                    </div>
+               
+                <div >
+                {props.children}
                 </div>
+                    
+                </div>
+                
             </ReactModal>
         </div>
     );

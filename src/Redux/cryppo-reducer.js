@@ -34,10 +34,16 @@ let initialState = {
             href: 'cryppolk/translations'
         },
         {
-            id: 4,
+          id: 4,
+          name: "Инвестиции",
+          href: 'cryppolk/invest'
+      },
+        {
+            id: 5,
             name: "Настройки",
             href: 'cryppolk/settings'
         },
+        
     ],
     router: '/cryppolk'
 };

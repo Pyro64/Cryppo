@@ -21,7 +21,7 @@ export default function Operation(props) {
         </div>
         <div>
           <MyModal isModal={props.isModal} switchModal={props.switchModal}>
-            <OperationModal operationModal={props.operationModal} />
+            <OperationModal isModal={props.isModal} switchModal={props.switchModal} operationModal={props.operationModal} />
           </MyModal>
         </div>
       </div>

@@ -24,39 +24,3 @@
   border-radius: 10px;
   backdrop-filter: blur(3px);
 }
-
-.wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  @include fluid(padding-top, 30px, 60px);
-  @include fluid(padding-left, 35px, 70px);
-  @include fluid(padding-right, 35px, 70px);
-  @include fluid(padding-bottom, 30px, 60px);
-  background: #2d2d2d;
-  border-radius: 12px;
-}
-
-.close {
-  position: absolute;
-  background: url("../../../Images/icon/close.svg") no-repeat;
-  @include fluid(width, 10px, 16px);
-  @include fluid(height, 10px, 16px);
-  background-size: cover;
-  right: 5%;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-.header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @include fluid(padding-top, 15px, 30px);
-  @include fluid(padding-bottom, 15px, 30px);
-  border-radius: 12px;
-  @include fluid(margin-bottom, 5px, 15px);
-  background: #2d2d2d;
-}
