@@ -27,7 +27,7 @@ export default function Cryppo(props) {
                        element={<div>тест</div>}/>
 
                     <Route
-                        path="cryppolk"
+                        path="cryppolk/*"
                         element={
                             <CryppoLkContainer
                                 card={props.card}
@@ -37,6 +37,7 @@ export default function Cryppo(props) {
                                 operationData={props.operationData}
                                 statistic={props.statistic}
                                 isLogin={props.isLogin}
+                                router={props.router}
                             />
                         }
                     />

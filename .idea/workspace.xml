@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="488c5b31-f6d2-4269-bb6a-95acaa9e7e6a" name="Changes" comment="">
+    <list default="true" id="488c5b31-f6d2-4269-bb6a-95acaa9e7e6a" name="Changes" comment="w">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Lk/StatisticCash/StatisticCashItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/StatisticCash/StatisticCashItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Cryppo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Cryppo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/CryppoLk.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/CryppoLk.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/UI/Header/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/Header/Header.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/UI/Nav/NavItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/Nav/NavItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/UI/User/User.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/User/User.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/UI/User/UserBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/User/UserBlock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/cryppo-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/cryppo-reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,11 +70,34 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652689520690</updated>
-      <workItem from="1652689581153" duration="1304000" />
+      <workItem from="1652689581153" duration="4461000" />
     </task>
+    <task id="LOCAL-00001" summary="w">
+      <created>1652694078184</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1652694078184</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="w" />
+    <option name="LAST_COMMIT_MESSAGE" value="w" />
   </component>
 </project>

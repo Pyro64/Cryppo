@@ -100,7 +100,7 @@
 .nav {
   @include flex;
   align-items: center;
-  @include fluid(margin-right, 30px, 60px);
+
 }
 .link {
   color: #fff;

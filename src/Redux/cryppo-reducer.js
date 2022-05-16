@@ -21,22 +21,22 @@ let initialState = {
         {
             id: 1,
             name: "Главная",
-            href: '/cryppolk'
+            href: 'cryppolk/main'
         },
         {
             id: 2,
             name: "События",
-            href: '/event'
+            href: 'cryppolk/event'
         },
         {
             id: 3,
             name: "Переводы",
-            href: '/translations'
+            href: 'cryppolk/translations'
         },
         {
             id: 4,
             name: "Настройки",
-            href: '/settings'
+            href: 'cryppolk/settings'
         },
     ],
     router: '/cryppolk'

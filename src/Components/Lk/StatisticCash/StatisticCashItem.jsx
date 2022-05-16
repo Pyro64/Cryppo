@@ -7,9 +7,9 @@ const StatisticCashItem = (props) => {
     let value = props;
     const tag = props.category;
     const { category, subcategory } = useParams();
-    let url = `/lk/event/${props.category}`;
+    let url = `/cryppolk/event/${props.category}`;
     if (category !== undefined) {
-        url = `/lk/event/${category}/${props.category}`;
+        url = `/cryppolk/event/${category}/${props.category}`;
     }
     const foo = () => {
         if (child !== undefined){

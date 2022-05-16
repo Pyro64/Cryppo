@@ -12,7 +12,7 @@ const Userblock = (props) => {
     <div className={style.block}>
       <div className={style.flex}>
         <NavLink
-          to={props.router}
+          to={`${props.router}/main`}
           className={({ isActive }) =>
             isActive ? `${style.link} ${style.active}` : `${style.link}`
           }

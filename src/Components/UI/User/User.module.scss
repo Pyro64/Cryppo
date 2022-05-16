@@ -5,6 +5,7 @@
   align-items: center;
   cursor: pointer;
   transition: 0.38s ease-in-out;
+  @include fluid(margin-left, 30px, 60px);
   p {
     color: #FFF;
     transition: 0.38s ease-in-out;
@@ -72,6 +73,7 @@
 }
 .block {
   position: relative;
+  @include fluid(margin-left, 30px, 60px);
 }
 .login {
   display: none;
