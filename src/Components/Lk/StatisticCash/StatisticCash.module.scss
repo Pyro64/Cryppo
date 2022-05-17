@@ -1,7 +1,8 @@
-@import "../../../Style/Mixins.scss";
+@import '../../../Style/Mixins.scss';
 
 .block {
   @include neumorphism;
+  @include fluid(min-height, 250px, 400px);
   @include fluid(padding-top, 10px, 20px);
   @include fluid(padding-bottom, 10px, 20px);
   @include fluid(padding-left, 25px, 50px);
@@ -31,7 +32,7 @@
   @include fluid(padding-bottom, 3px, 5px);
   overflow: hidden;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 50%;
     top: 0;
@@ -139,7 +140,7 @@
   transition: opacity 200ms;
 }
 .category {
-  color:#fff;
+  color: #fff;
   @include fluid(margin-right, 3px, 5px);
   &:last-child {
     margin-right: 0;
