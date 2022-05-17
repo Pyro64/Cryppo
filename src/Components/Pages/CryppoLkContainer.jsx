@@ -37,7 +37,8 @@ let mapStateToProps = (state) => {
         chartTextData: state.cryppoLk.chartTextData,
         isHover: state.cryppoLk.isHover,
         operationsFilter: state.user.operationsFilter,
-        templateStatisticData: state.user.templateStatisticData
+        templateExpensesStatisticData: state.user.templateExpensesStatisticData,
+        templateArrivalStatisticData: state.user.templateArrivalStatisticData
     };
 };
 

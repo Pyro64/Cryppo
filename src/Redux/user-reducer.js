@@ -472,7 +472,7 @@ const userReducer = (state = initialState, action) => {
         case FILTER_OPERATIONS:
             return {
                 ...state,
-                currencyStatisticData: action.value.currency
+                expensesStatisticData: action.value.currency
             };
         case CHANGE_ACTIVE_INDEX:
             return {
@@ -490,7 +490,7 @@ const userReducer = (state = initialState, action) => {
         case UPDATE_CHART:
             return {
                 ...state,
-                templateStatisticData: action.child,
+                templateExpensesStatisticData: action.child,
                 operationsFilter: {
                     type: "Tags",
                     searchQuery: "",
