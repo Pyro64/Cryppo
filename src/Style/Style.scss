@@ -30,7 +30,15 @@ body {
   font-style: normal;
   overflow-x: hidden;
 }
-
+.block {
+  @include neumorphism;
+  @include fluid(padding-top, 10px, 20px);
+  @include fluid(padding-bottom, 10px, 20px);
+  @include fluid(padding-left, 25px, 50px);
+  @include fluid(padding-right, 25px, 50px);
+  border-radius: 15px;
+  @include fluid(margin-bottom, 30px, 60px);
+}
 a {
   text-decoration: none;
 }

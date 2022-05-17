@@ -2,7 +2,10 @@ import { connect } from "react-redux";
 import {
     setModal,
     switchModal,
+    setChartText,
+    initChartText
 } from "../../Redux/cryppoLk-reducer";
+import { updateChart } from "../../Redux/user-reducer"
 import BusinessLk from './BusinessLk'
 let mapStateToProps = (state) => {
     return {
@@ -12,9 +15,13 @@ let mapStateToProps = (state) => {
         operationModal: state.cryppoLk.operationModal,
         isModal: state.cryppoLk.isModal,
         composition: state.user.compositionData,
+        isHover: state.cryppoLk.isHover,
+        chartTextData: state.cryppoLk.chartTextData,
+        expenses: state.user.expensesStatisticData,
+        arrival: state.user.arrivalStatisticData,
     }
 }
 
-const BusinessLkContainer = connect(mapStateToProps, { switchModal, setModal })(BusinessLk);
+const BusinessLkContainer = connect(mapStateToProps, { switchModal, setModal, updateChart, setChartText, initChartText })(BusinessLk);
 
 export default BusinessLkContainer;

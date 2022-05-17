@@ -3,6 +3,7 @@ import style from "./Check.module.scss";
 import CheckItem from "./CheckItem";
 import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
 import CheckCardBlock from "./CheckCardBlock";
+import Btn from './../../UI/Btn/Btn';
 
 export default function Check(props) {
   let elementCard = props.card.map((e) => (
@@ -25,7 +26,7 @@ export default function Check(props) {
         </div>
         {props.isBankCard !== false
           ? <CheckCardBlock bankCard={props.bankCard} />
-          : null
+          : <Btn href="#" style={{ margin: 'auto' }}>Оставить заявку</Btn>
         }
       </div>
     </div>

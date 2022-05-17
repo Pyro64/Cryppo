@@ -17,7 +17,7 @@ export default function Operation(props) {
           switchModal={props.switchModal}
         />
         <div className={style.btnContainer}>
-          <Btn link="#" text="Все операции" />
+          <Btn href="#">Все операции</Btn>
         </div>
         <div>
           <MyModal isModal={props.isModal} switchModal={props.switchModal}>

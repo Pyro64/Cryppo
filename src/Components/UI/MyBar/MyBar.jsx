@@ -8,7 +8,11 @@ const MyBar = (props) => {
                 {`${value}`}
             </text>
         );
+
     };
+    // const handleClick = (props) => {
+    //     fill={props.entry.color}
+    //   };
     return (
         <div style={{ height: `${props.height}` }} className={style.transition}>
             <ResponsiveContainer width="100%" height="100%">
@@ -31,22 +35,24 @@ const MyBar = (props) => {
                         radius={[8, 8, 0, 0]}
                         label={renderCustomBarLabel}
                         minPointSize={10}
+                    // onMouseEnter={handleClick}
                     >
                         {props.composition.compositions.map((entry, index) => (
                             <Cell
                                 className={style.transition}
                                 cursor="pointer"
+
                                 fill={
                                     index === props.composition.activeIndex
                                         ? entry.color
                                         : "#6D6D6D"
                                 }
                                 key={`cell-${index}`}
-                                //   onMouseEnter={(index, entry, fill) => {
-                                //     console.log(index);
-                                //     fill = entry.color;
-                                //   }}
-                                //      onMouseLeave={index === true}
+                            //   onMouseEnter={(index, entry, fill) => {
+                            //     console.log(index);
+                            //     fill = entry.color;
+                            //   }}
+                            //      onMouseLeave={index === true}
                             />
                         ))}
                     </Bar>
