@@ -27,7 +27,7 @@ const UPDATE_CHART = "UPDATE_CHART";
 const ADD_TAG = "ADD_TAG";
 const REMOVE_TAG = "REMOVE_TAG";
 const INPUT_CHANGE = "INPUT_CHANGE";
-
+const HAS_LK = 'HAS_LK';
 let statusPay = {
     status: {
         error: {
@@ -449,8 +449,8 @@ let initialState = {
         tags:[]
     },
     isLogin: false,
-    templateStatisticData:[]
-
+    templateStatisticData:[],
+    isLk: false
 }
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -471,6 +471,11 @@ const userReducer = (state = initialState, action) => {
                     activeIndex: action.value,
                     compositions: state.compositionData.compositions
                 }
+            };
+        case HAS_LK:
+            return {
+                ...state,
+                isLk: action.isLk,
             };
         case UPDATE_CHART:
             return {
@@ -516,6 +521,7 @@ const userReducer = (state = initialState, action) => {
             return { ...state };
     }
 }
+export const hasLk = (isLk) => ({type: HAS_LK,isLk})
 export const authorizationPostThunkCreator = (email, password) => {
     return (dispatch) => {
         AuthorizationPost(email, password)

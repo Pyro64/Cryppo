@@ -1,8 +1,8 @@
 import React from "react";
 import SidebarTabs from "../SidebarTabs/SidebarTabs";
-import SubtitleLk from "../SubtitleLk/SubtitleLk";
 import ChartIndex from "../../Landing/ChartIndex/ChartIndex";
 import CompositionIndex from "../CompositionIndex/CompositionIndex";
+import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
 
 export default function CryppoLkInvest(props) {
   return (

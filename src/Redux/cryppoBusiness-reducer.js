@@ -33,7 +33,7 @@ import {CryppoBusinessGet} from "../Api/api"
 
 const GET = 'GET';
 const LOGIN_BUSINESS = 'LOGIN_BUSINESS';
-const HAS_LK = 'HAS_LK';
+
 let initialState = {
     bannerData: {
         title: 'Принимайте платежи в криптовалюте по всему миру',
@@ -334,7 +334,6 @@ let initialState = {
     ],
     isLogin: true,
     router: '/business',
-    isLk: false
 };
 const cryppoBusinessReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -343,11 +342,7 @@ const cryppoBusinessReducer = (state = initialState, action) => {
                 ...state,
                 ...action.value,
             };
-        case HAS_LK:
-            return {
-                ...state,
-                isLk: action.isLk,
-            };
+
         case LOGIN_BUSINESS:
             return {
                 ...state,
@@ -371,7 +366,7 @@ export const getCryppoBusinessThunkCreator = () => {
             })
     }
 }
-export const hasLk = (isLk) => ({type: HAS_LK,isLk})
+
 export const get = (value) => ({type: GET, value})
 export const login = (value) => ({type: LOGIN_BUSINESS, value})
 export default cryppoBusinessReducer;

@@ -1,8 +1,8 @@
 import React from "react";
-import SubtitleLk from "../SubtitleLk/SubtitleLk";
+import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
 import style from "./StatisticCash.module.scss";
-import {Tab, Tabs, TabList, TabPanel} from "react-tabs";
-import {Chart as ChartJS, ArcElement, Tooltip, Legend} from "chart.js";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import DoughnutChart from "../DoughnutChart/DoughnutChart";
 
 
@@ -20,8 +20,8 @@ const StatisticCash = (props) => {
                 </TabList>
                 <TabPanel>
                     <DoughnutChart updateChart={props.updateChart} addTag={props.addTag} filter={true}
-                                   isHover={props.isHover} setChartText={props.setChartText} currency={props.currency}
-                                   chartTextData={props.chartTextData} initChartText={props.initChartText}/>
+                        isHover={props.isHover} setChartText={props.setChartText} currency={props.currency}
+                        chartTextData={props.chartTextData} initChartText={props.initChartText} />
                 </TabPanel>
                 <TabPanel>
                     <h2>tab 2</h2>

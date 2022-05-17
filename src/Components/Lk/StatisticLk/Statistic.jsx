@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Statistic.module.scss";
 import StatisticItem from "./StatisticItem";
-import SubtitleLk from "../SubtitleLk/SubtitleLk";
+import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
 
 export default function Statistic(props) {
   let elementItem = props.statistic.map((e) => (

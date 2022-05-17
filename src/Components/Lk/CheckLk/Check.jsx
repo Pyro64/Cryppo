@@ -2,7 +2,7 @@ import React from "react";
 import style from "./Check.module.scss";
 import CheckItem from "./CheckItem";
 import CheckCard from "./CheckCard";
-import SubtitleLk from "../SubtitleLk/SubtitleLk";
+import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
 
 export default function Check(props) {
   let elementCard = props.card.map((e) => (
