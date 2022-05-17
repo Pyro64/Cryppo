@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import NewsItem from "./NewsItem";
 import { useSwiper } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper";
-import SubtitleLk from "../SubtitleLk/SubtitleLk";
+import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
 import "swiper/css";
 
 import style from "./News.module.scss";
@@ -12,7 +12,7 @@ const News = (props) => {
   const swiper = useSwiper();
   let newsItem = props.news.map((e) => (
     <SwiperSlide id={e.id} key={e.id}>
-      <NewsItem   text={e.text} img={e.img} />
+      <NewsItem text={e.text} img={e.img} />
     </SwiperSlide>
   ));
   return (

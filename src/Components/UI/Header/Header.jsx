@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../Logo/Logo";
 import Nav from "../Nav/Nav";
 import NavItem from "../Nav/NavItem";
@@ -14,10 +14,10 @@ const Header = (props) => {
         });
     }, []);
     let linkBtn = props.btn.map((e) => (
-        <Scrollbtn id={e.id} key={e.id} name={e.name} to={e.to}/>
+        <Scrollbtn id={e.id} key={e.id} name={e.name} to={e.to} />
     ));
     let scrollBtn = props.nav.map((e) => (
-        <NavItem id={e.id} key={e.id} name={e.name} href={e.href}/>
+        <NavItem id={e.id} key={e.id} name={e.name} href={e.href} />
     ));
     return (
         <header
@@ -27,11 +27,11 @@ const Header = (props) => {
             }>
             <div className={style.container}>
                 <div className={style.block}>
-                    <Logo logo={props.logo}/>
+                    <Logo logo={props.logo} />
                     <div className={style.wrapper}>
                         <Nav hasLk={props.hasLk}
-                             isLk={props.isLk}/>
-                        {props.isEntrance != false
+                            isLk={props.isLk} />
+                        {props.isEntrance !== false
                             ?
                             <User
                                 login={props.login}

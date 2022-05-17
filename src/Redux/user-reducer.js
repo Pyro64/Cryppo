@@ -20,14 +20,13 @@ import { AuthorizationPost, RegistrationPost } from "../Api/api";
 import filtersTool from "../Utils/filter"
 
 const AUTHORIZATION = 'AUTHORIZATION';
-const LOGIN = "LOGIN_CRYPPO";
 const CHANGE_ACTIVE_INDEX = "CHANGE_ACTIVE_INDEX";
 const FILTER_OPERATIONS = "FILTER_OPERATIONS";
 const UPDATE_CHART = "UPDATE_CHART";
 const ADD_TAG = "ADD_TAG";
 const REMOVE_TAG = "REMOVE_TAG";
 const INPUT_CHANGE = "INPUT_CHANGE";
-
+const HAS_LK = 'HAS_LK';
 let statusPay = {
     status: {
         error: {
@@ -443,14 +442,14 @@ let initialState = {
         img: annaBobs,
         name: "Index Bobs",
     },
-    operationsFilter:{
-        type:"initial",
-        searchQuery:"",
-        tags:[]
+    operationsFilter: {
+        type: "initial",
+        searchQuery: "",
+        tags: []
     },
     isLogin: false,
-    templateStatisticData:[]
-
+    templateStatisticData: [],
+    isLk: false
 }
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -472,14 +471,19 @@ const userReducer = (state = initialState, action) => {
                     compositions: state.compositionData.compositions
                 }
             };
+        case HAS_LK:
+            return {
+                ...state,
+                isLk: action.isLk,
+            };
         case UPDATE_CHART:
             return {
                 ...state,
-                templateStatisticData:action.child,
-                operationsFilter:{
+                templateStatisticData: action.child,
+                operationsFilter: {
                     type: "Tags",
                     searchQuery: "",
-                    tags: [ ...state.operationsFilter.tags, {id:2,name:action.child[0].parentCategory}],
+                    tags: [...state.operationsFilter.tags, { id: 2, name: action.child[0].parentCategory }],
 
                 }
             };
@@ -487,17 +491,17 @@ const userReducer = (state = initialState, action) => {
             let body = state.operationsFilter.searchQuery;
             return {
                 ...state,
-                operationsFilter:{
+                operationsFilter: {
                     type: "Tags",
                     searchQuery: "",
-                    tags: [ ...state.operationsFilter.tags, {id:2,name:body}],
+                    tags: [...state.operationsFilter.tags, { id: 2, name: body }],
 
                 }
             };
         case INPUT_CHANGE:
             return {
                 ...state,
-                operationsFilter:{
+                operationsFilter: {
                     // type: state.operationsFilter.type,
                     searchQuery: action.value,
                     tags: [...state.operationsFilter.tags]
@@ -506,16 +510,17 @@ const userReducer = (state = initialState, action) => {
         case REMOVE_TAG:
             return {
                 ...state,
-                operationsFilter:{
+                operationsFilter: {
                     type: "Tags",
                     searchQuery: "",
-                    tags: [ ...state.operationsFilter.tags.filter((item)=> {return item !== action.value})]
+                    tags: [...state.operationsFilter.tags.filter((item) => { return item !== action.value })]
                 }
             };
         default:
             return { ...state };
     }
 }
+export const hasLk = (isLk) => ({ type: HAS_LK, isLk })
 export const authorizationPostThunkCreator = (email, password) => {
     return (dispatch) => {
         AuthorizationPost(email, password)
@@ -548,7 +553,7 @@ export const filterOperationsThunkCreator = (props, category, subcategory) => {
         dispatch({ type: FILTER_OPERATIONS, value: { currency, operations } });
     }
 }
-export const inputChange = (value) =>({type: INPUT_CHANGE, value});
+export const inputChange = (value) => ({ type: INPUT_CHANGE, value });
 export const addTag = (tag) => ({ type: ADD_TAG, tag });
 export const removeTag = (value) => ({ type: REMOVE_TAG, value });
 export const updateChart = (child) => ({ type: UPDATE_CHART, child })
