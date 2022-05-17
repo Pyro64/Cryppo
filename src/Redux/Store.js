@@ -18,14 +18,14 @@ let reducers = combineReducers({
   footer: footerReducer,
   user: userReducer,
   form: formReducer,
-  businessLk:businessLkReducer
+  businessLk: businessLkReducer
 });
 
 const store = createStore(
-    reducers,
-    composeWithDevTools(
-        applyMiddleware(thunkMiddleware)
-    )
+  reducers,
+  composeWithDevTools(
+    applyMiddleware(thunkMiddleware)
+  )
 );
 window.store = store;
 export default store;

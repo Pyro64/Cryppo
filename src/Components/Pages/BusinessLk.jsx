@@ -13,7 +13,7 @@ const BusinessLk = (props) => {
             <Route
                 path="/"
                 element={
-                    <BusinessLkMain historyItem={props.historyItem} coin={props.coin} />
+                    <BusinessLkMain composition={props.composition} card={props.card} historyItem={props.historyItem} operationData={props.operationData} setModal={props.setModal} operationModal={props.operationModal} isModal={props.isModal} switchModal={props.switchModal} />
                 }
             />
         </Routes>

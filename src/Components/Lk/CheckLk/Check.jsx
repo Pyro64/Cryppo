@@ -1,8 +1,8 @@
 import React from "react";
 import style from "./Check.module.scss";
 import CheckItem from "./CheckItem";
-import CheckCard from "./CheckCard";
 import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
+import CheckCardBlock from "./CheckCardBlock";
 
 export default function Check(props) {
   let elementCard = props.card.map((e) => (
@@ -15,21 +15,18 @@ export default function Check(props) {
       prise={e.prise}
     />
   ));
-  let bankCard = props.bankCard.map((e) => (
-    <CheckCard id={e.id} key={e.id} number={e.number} logo={e.logo} />
-  ));
+
   return (
     <div className={style.containers}>
-      <SubtitleLk arrow={false} subtitle="Счета и карты" />
+      <SubtitleLk arrow={false} subtitle="Счета" />
       <div className={style.block}>
-        <div className={style.item}>{elementCard}</div>
-        <div className={style.card}>
-          <div className={style.last}>
-            <div className={style.drop} />
-            <div className={style.bankText}>Банковские карты</div>
-          </div>
-          <div className={style.cardLine}>{bankCard}</div>
+        <div className={style.item}>
+          {elementCard}
         </div>
+        {props.isBankCard !== false
+          ? <CheckCardBlock bankCard={props.bankCard} />
+          : null
+        }
       </div>
     </div>
   );

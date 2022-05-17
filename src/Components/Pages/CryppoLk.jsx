@@ -1,5 +1,5 @@
-import React, {useEffect} from "react";
-import {Navigate, Route, Routes} from "react-router";
+import React, { useEffect } from "react";
+import { Navigate, Route, Routes } from "react-router";
 import CryppoLkMain from "../Lk/CryppoLkMain/CryppoLkMain";
 import CryppoLkSettings from "../Lk/CryppoLkSettings/CryppoLkSettings";
 import CryppoLkTranslation from "../Lk/CryppoLkTranslation/CryppoLkTranslation";
@@ -24,11 +24,11 @@ export default function CryppoLk(props) {
                         bankCard={props.bankCard}
                         invest={props.invest}
                         newCard={props.newCard}
-                        operationData={props.operationData}
                         news={props.news}
                         expenses={props.expenses}
                         arrival={props.arrival}
                         tabs={props.tabs}
+                        operationData={props.operationData}
                         setModal={props.setModal}
                         operationModal={props.operationModal}
                         isModal={props.isModal}
@@ -45,7 +45,7 @@ export default function CryppoLk(props) {
             <Route
                 path="translations/*"
                 element={
-                    <CryppoLkTranslation translations={props.translations}/>
+                    <CryppoLkTranslation translations={props.translations} />
                 }
             />
             <Route
@@ -60,7 +60,7 @@ export default function CryppoLk(props) {
             />
             <Route
                 path="settings/*"
-                element={<CryppoLkSettings/>}
+                element={<CryppoLkSettings />}
                 composition={props.composition}
             />
             <Route

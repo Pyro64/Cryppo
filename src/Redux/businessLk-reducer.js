@@ -1,29 +1,37 @@
 
 let initialState = {
-    HistoryItem: [
+    historyItem: [
         {
+            id: 1,
             date: '17 апреля',
             statusText: 'Полученно',
             code: '3JGVRYVJKn6a7wj7sezzcaecHrXaoZiHJT',
-            status: 'completed'
+            status: 'completed',
+            cash: '0.22513515 BTC'
         },
         {
+            id: 2,
             date: '17 апреля',
             statusText: 'Отказ',
             code: '3JGVRYVJKn6a7wj7sezzcaecHrXaoZiHJT',
-            status: 'error'
+            status: 'error',
+            cash: '0.22513515 BTC'
         },
         {
+            id: 3,
             date: '17 апреля',
             statusText: 'Полученно',
             code: '3JGVRYVJKn6a7wj7sezzcaecHrXaoZiHJT',
-            status: 'completed'
+            status: 'completed',
+            cash: '0.22513515 BTC'
         },
         {
+            id: 4,
             date: '17 апреля',
             statusText: 'Отправленно',
             code: '3JGVRYVJKn6a7wj7sezzcaecHrXaoZiHJT',
-            status: 'wait'
+            status: 'wait',
+            cash: '0.22513515 BTC'
         },
     ],
 };
