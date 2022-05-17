@@ -8,11 +8,11 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const DoughnutChart = (props) => {
     let dataItems = [];
     let backgroundColorItems = [];
-    props.currency.map((e) => {
+    props.operations.map((e) => {
         dataItems.push(e.percent);
         backgroundColorItems.push(e.color);
     });
-    let elementItem = props.currency.map((e) => (
+    let elementItem = props.operations.map((e) => (
         <StatisticCashItem
             updateChart={props.updateChart}
             child={e.childCurrencyStatistics}
@@ -25,7 +25,6 @@ const DoughnutChart = (props) => {
             color={e.color}
             category={e.category}
             cash={e.cash}
-            currency={e.currency}
         />
     ));
     const options = {

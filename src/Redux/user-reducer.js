@@ -199,7 +199,17 @@ let initialState = {
             descripthion: "Больше февраля на 345 $",
         },
     ],
-    currencyStatisticData: [
+    arrivalStatisticData:[
+        {
+            id: 1,
+            category: "Внесение через банкомат",
+            cash: 9.56,
+            currency: "USD",
+            color: "#4A6CBF",
+            percent: 35,
+        }
+    ],
+    expensesStatisticData: [
         {
             id: 1,
             category: "Транспорт",
@@ -207,7 +217,7 @@ let initialState = {
             currency: "USD",
             color: "#2F69FF",
             percent: 10,
-            childCurrencyStatistics: [
+            childExpensesStatistics: [
                 {
                     id: 1,
                     parentCategory: "Транспорт",
@@ -244,7 +254,7 @@ let initialState = {
             currency: "USD",
             color: "#FF612F",
             percent: 5,
-            childCurrencyStatistics: [
+            childExpensesStatistics: [
                 {
                     id: 1,
                     parentCategory: "Связь",
@@ -281,7 +291,7 @@ let initialState = {
             currency: "USD",
             color: "#BC2FFF",
             percent: 8,
-            childCurrencyStatistics: [
+            childExpensesStatistics: [
                 {
                     id: 1,
                     parentCategory: "Супермаркеты",
@@ -318,7 +328,7 @@ let initialState = {
             currency: "USD",
             color: "#FF40D5",
             percent: 5,
-            childCurrencyStatistics: [
+            childExpensesStatistics: [
                 {
                     id: 1,
                     parentCategory: "Перевод",
@@ -355,7 +365,7 @@ let initialState = {
             currency: "USD",
             color: "#FF4949",
             percent: 12,
-            childCurrencyStatistics: []
+            childExpensesStatistics: []
         },
     ],
     compositionData: {
@@ -448,7 +458,8 @@ let initialState = {
         tags: []
     },
     isLogin: false,
-    templateStatisticData: [],
+    templateExpensesStatisticData: [],
+    templateArrivalStatisticData: [],
     isLk: false
 }
 const userReducer = (state = initialState, action) => {
