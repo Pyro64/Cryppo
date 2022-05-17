@@ -15,7 +15,7 @@ const DoughnutChart = (props) => {
     let elementItem = props.operations.map((e) => (
         <StatisticCashItem
             updateChart={props.updateChart}
-            child={e.childCurrencyStatistics}
+            child={e.childExpensesStatistics}
             addTag={props.addTag}
             setChartText={props.setChartText}
             initChartText={props.initChartText}

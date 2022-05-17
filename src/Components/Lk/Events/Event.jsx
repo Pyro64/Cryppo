@@ -7,7 +7,7 @@ import Operation from "../OperationLk/Operation";
 const Event = (props) => {
     if (props.filter === true) {
         props.operationData.operation = props.operationData.operation.filter((item) => {
-            return props.currency[0].parentCategory === item.type;
+            return props.expenses[0].parentCategory === item.type;
         });
     }
     return (
@@ -23,7 +23,8 @@ const Event = (props) => {
                 filter={false}
                 isHover={props.isHover}
                 setChartText={props.setChartText}
-                currency={props.currency}
+                expenses={props.expenses}
+                arrival={props.arrival}
                 chartTextData={props.chartTextData}
                 initChartText={props.initChartText}
                 addTag={props.addTag}
