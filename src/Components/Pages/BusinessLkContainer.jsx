@@ -1,12 +1,12 @@
 import { connect } from "react-redux";
 
-import  BusinessLk from './BusinessLk'
+import BusinessLk from './BusinessLk'
 let mapStateToProps = (state) => {
     return {
-    coin: state.businessLk.coin
+        historyItem: state.businessLk.historyItem
     }
 }
 
-const BusinessLkContainer =  connect(mapStateToProps)(BusinessLk);
+const BusinessLkContainer = connect(mapStateToProps)(BusinessLk);
 
 export default BusinessLkContainer;
