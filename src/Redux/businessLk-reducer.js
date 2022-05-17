@@ -1,11 +1,31 @@
-import ten from '../Images/payIcon/10.svg'
-let initialState = {
-    coin: [
-    {
-        img: ten,
 
-    }
-]
+let initialState = {
+    HistoryItem: [
+        {
+            date: '17 апреля',
+            statusText: 'Полученно',
+            code: '3JGVRYVJKn6a7wj7sezzcaecHrXaoZiHJT',
+            status: 'completed'
+        },
+        {
+            date: '17 апреля',
+            statusText: 'Отказ',
+            code: '3JGVRYVJKn6a7wj7sezzcaecHrXaoZiHJT',
+            status: 'error'
+        },
+        {
+            date: '17 апреля',
+            statusText: 'Полученно',
+            code: '3JGVRYVJKn6a7wj7sezzcaecHrXaoZiHJT',
+            status: 'completed'
+        },
+        {
+            date: '17 апреля',
+            statusText: 'Отправленно',
+            code: '3JGVRYVJKn6a7wj7sezzcaecHrXaoZiHJT',
+            status: 'wait'
+        },
+    ],
 };
 const businessLkReducer = (state = initialState, action) => {
     switch (action.type) {
