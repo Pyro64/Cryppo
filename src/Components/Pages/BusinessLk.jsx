@@ -30,7 +30,8 @@ const BusinessLk = (props) => {
                         arrival={props.arrival}
                         chartTextData={props.chartTextData}
                         initChartText={props.initChartText}
-                        updateChart={props.updateChart} />
+                        updateChart={props.updateChart}
+                        changeActiveIndex={props.changeActiveIndex} />
                 }
             />
             <Route

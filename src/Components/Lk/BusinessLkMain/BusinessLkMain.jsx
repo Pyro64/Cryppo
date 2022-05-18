@@ -5,6 +5,7 @@ import Check from '../CheckLk/Check';
 import Operation from '../OperationLk/Operation';
 import StatisticCash from '../StatisticCash/StatisticCash';
 import DoughnutChart from './../DoughnutChart/DoughnutChart';
+import CompositionIndex from './../CompositionIndex/CompositionIndex';
 const BusinessLkMain = (props) => {
     return (
         <div className="main container">
@@ -22,9 +23,10 @@ const BusinessLkMain = (props) => {
                             isHover={props.isHover} setChartText={props.setChartText} operations={props.expenses} chartTextData={props.chartTextData} initChartText={props.initChartText} />
                     </div>
                     <SubtitleLk arrow={true} subtitle="Статистика валют" />
-                    <div className="block">
-                        <MyBar composition={props.composition} height={'300px'} />
-                    </div>
+                    <CompositionIndex
+                        composition={props.composition}
+                        changeActiveIndex={props.changeActiveIndex}
+                    />
                     <SubtitleLk arrow={true} subtitle="Последние операции" />
                     <Operation
                         operationData={props.operationData}

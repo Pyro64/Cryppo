@@ -5,7 +5,7 @@ import {
     setChartText,
     initChartText
 } from "../../Redux/cryppoLk-reducer";
-import { updateChart } from "../../Redux/user-reducer"
+import { updateChart, changeActiveIndex } from "../../Redux/user-reducer"
 import BusinessLk from './BusinessLk'
 let mapStateToProps = (state) => {
     return {
@@ -22,6 +22,6 @@ let mapStateToProps = (state) => {
     }
 }
 
-const BusinessLkContainer = connect(mapStateToProps, { switchModal, setModal, updateChart, setChartText, initChartText })(BusinessLk);
+const BusinessLkContainer = connect(mapStateToProps, { switchModal, setModal, updateChart, setChartText, initChartText, changeActiveIndex })(BusinessLk);
 
 export default BusinessLkContainer;

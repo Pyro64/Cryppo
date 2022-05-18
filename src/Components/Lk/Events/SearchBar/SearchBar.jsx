@@ -5,6 +5,7 @@ import { Tag, DatePicker, ConfigProvider } from "antd";
 import moment from 'moment';
 import 'moment/locale/ru';
 import locale from 'antd/lib/locale/ru_RU';
+import SearchWithTag from "../../../UI/SearchWithTag/SearchWithTag";
 
 
 const { RangePicker } = DatePicker;
@@ -38,7 +39,7 @@ const Searchbar = (props) => {
                 <div className={style.flex}>
                     <ConfigProvider locale={locale}>
                         <RangePicker
-                            inputReadOnly={true} className={style.picker}
+                            inputReadOnly={true}
                             defaultValue={moment('2015-01-01', 'YYYY-MM-DD')} />
                     </ConfigProvider>
                     <div className={style.input}>
@@ -55,14 +56,15 @@ const Searchbar = (props) => {
                                 {e.name}
                             </Tag>
                         ))}
-                        <input
+                        {/* <
                             value={props.operationsFilter.searchQuery}
                             className={style.inputItem}
                             placeholder="Найдите любые события и операции"
                             type="text"
                             onKeyDown={inputKeyDown}
                             onChange={inputChange}
-                        />
+                        /> */}
+                        <SearchWithTag />
                     </div>
                 </div>
                 <img className={style.icon} onClick={props.addTag} src={search} alt="search" />
