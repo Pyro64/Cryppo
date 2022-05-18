@@ -14,6 +14,7 @@ export default function CryppoLkMain(props) {
       <div className="flex container">
         <div className="sidebar">
           <div className="sidebar__inner">
+            <SubtitleLk arrow={false} subtitle="Счета и карты" />
             <Check card={props.card} bankCard={props.bankCard} />
             <SidebarTabs tabs={props.tabs.invest} />
             <SidebarTabs tabs={props.tabs.addCart} />

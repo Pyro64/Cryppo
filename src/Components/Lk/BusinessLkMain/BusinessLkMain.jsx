@@ -1,24 +1,26 @@
 import React from 'react';
 import MyBar from '../../UI/MyBar/MyBar';
-import Subtitle from '../../UI/Subtitle/Subtitle'
 import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
 import Check from '../CheckLk/Check';
-import HistoryBlock from '../History/HistoryBlock';
 import Operation from '../OperationLk/Operation';
 import StatisticCash from '../StatisticCash/StatisticCash';
+import DoughnutChart from './../DoughnutChart/DoughnutChart';
 const BusinessLkMain = (props) => {
     return (
         <div className="main container">
-
             <div className="flex ">
                 <div className="sidebar">
                     <div className="sidebar__inner">
+                        <SubtitleLk arrow={false} subtitle="Счета" />
                         <Check isBankCard={false} card={props.card} />
                     </div>
                 </div>
                 <div className="content">
                     <SubtitleLk subtitle="Главная" />
-                    <StatisticCash filter={false} isHover={props.isHover} setChartText={props.setChartText} expenses={props.expenses} arrival={props.arrival} chartTextData={props.chartTextData} initChartText={props.initChartText} operationData={props.operationData} setModal={props.setModal} operationModal={props.operationModal} isModal={props.isModal} switchModal={props.switchModal} updateChart={props.updateChart} />
+                    <div className='block'>
+                        <DoughnutChart updateChart={props.updateChart} addTag={props.addTag} filter={true}
+                            isHover={props.isHover} setChartText={props.setChartText} operations={props.expenses} chartTextData={props.chartTextData} initChartText={props.initChartText} />
+                    </div>
                     <SubtitleLk arrow={true} subtitle="Статистика валют" />
                     <div className="block">
                         <MyBar composition={props.composition} height={'300px'} />

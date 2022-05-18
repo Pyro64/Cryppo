@@ -42,7 +42,19 @@ body {
 a {
   text-decoration: none;
 }
-
+.subtitle {
+  font-family: 'Days One Regular';
+  width: 100%;
+  color: #fff;
+  @include fluid(font-size, 24px, 32px);
+  @include fluid(margin-bottom, 20px, 30px);
+  span {
+    @include textGradient;
+  }
+}
+.text-align {
+  text-align: center;
+}
 .main {
   @include fluid(padding-top, 100px, 130px);
   transition: 0.38s ease-in-out;
@@ -279,4 +291,10 @@ textarea:focus::-webkit-input-placeholder {
 .swiper-wrapper {
   @include fluid(padding-top, 7px, 10px);
   @include fluid(padding-bottom, 7px, 10px);
+}
+@media screen and(max-width:992px) {
+  .subtitle {
+    width: 100%;
+    text-align: center;
+  }
 }

@@ -15,7 +15,7 @@ export default function AboutBusiness(props) {
     )
     return (
         <div id="benefitsBusiness" className={style.container}>
-            <Subtitle modify={{ textAlign: 'center' }} subtitle="Почему CRYPPO Business" gradient="?" />
+            <Subtitle className="subtitle text-align"  gradient="?">Почему CRYPPO Business</Subtitle>
             <div className={style.flex}>
                 {elementItem}
             </div>

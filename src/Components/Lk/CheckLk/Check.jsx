@@ -19,7 +19,6 @@ export default function Check(props) {
 
   return (
     <div className={style.containers}>
-      <SubtitleLk arrow={false} subtitle="Счета" />
       <div className={style.block}>
         <div className={style.item}>
           {elementCard}

@@ -29,7 +29,7 @@ import banner from '../Images/content/banner-business.svg'
 import businessSvg from '../Images/cryppo-business.svg';
 import annaBobs from '../Images/login/anna_bobs.svg'
 
-import {CryppoBusinessGet} from "../Api/api"
+import { CryppoBusinessGet } from "../Api/api"
 
 const GET = 'GET';
 const LOGIN_BUSINESS = 'LOGIN_BUSINESS';
@@ -305,21 +305,21 @@ let initialState = {
         ],
     },
     userData:
-        {
-            id: 1,
-            img: annaBobs,
-            name: "Business Bobs",
-        },
+    {
+        id: 1,
+        img: annaBobs,
+        name: "Business Bobs",
+    },
     navData: [
         {
             id: 1,
             name: "Главная",
-            href: 'main'
+            href: '/business/lk'
         },
         {
             id: 2,
             name: "Балансы",
-            href: 'balance'
+            href: '/business/lk/balance'
         },
         {
             id: 3,
@@ -358,7 +358,7 @@ export const getCryppoBusinessThunkCreator = () => {
         CryppoBusinessGet()
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data))
-                dispatch({type: 'GET', value});
+                dispatch({ type: 'GET', value });
             })
             .catch((response) => {
                 console.log(response);
@@ -367,6 +367,6 @@ export const getCryppoBusinessThunkCreator = () => {
     }
 }
 
-export const get = (value) => ({type: GET, value})
-export const login = (value) => ({type: LOGIN_BUSINESS, value})
+export const get = (value) => ({ type: GET, value })
+export const login = (value) => ({ type: LOGIN_BUSINESS, value })
 export default cryppoBusinessReducer;

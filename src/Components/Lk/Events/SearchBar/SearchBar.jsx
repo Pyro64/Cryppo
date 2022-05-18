@@ -1,13 +1,13 @@
 import React from "react";
 import style from "./SearchBar.module.scss";
 import search from "../../../../Images/icon/search.svg";
-import {Tag, DatePicker, ConfigProvider} from "antd";
+import { Tag, DatePicker, ConfigProvider } from "antd";
 import moment from 'moment';
 import 'moment/locale/ru';
 import locale from 'antd/lib/locale/ru_RU';
 
 
-const {RangePicker} = DatePicker;
+const { RangePicker } = DatePicker;
 
 const Searchbar = (props) => {
 
@@ -39,7 +39,7 @@ const Searchbar = (props) => {
                     <ConfigProvider locale={locale}>
                         <RangePicker
                             inputReadOnly={true} className={style.picker}
-                            defaultValue={moment('2015-01-01', 'YYYY-MM-DD')}/>
+                            defaultValue={moment('2015-01-01', 'YYYY-MM-DD')} />
                     </ConfigProvider>
                     <div className={style.input}>
                         {props.operationsFilter.tags.map((e) => (
@@ -65,7 +65,7 @@ const Searchbar = (props) => {
                         />
                     </div>
                 </div>
-                <img className={style.icon} onClick={props.addTag} src={search} alt="search"/>
+                <img className={style.icon} onClick={props.addTag} src={search} alt="search" />
             </div>
         </div>
     );

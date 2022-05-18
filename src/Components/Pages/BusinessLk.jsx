@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router";
+import Balance from "../Lk/Balance/Balance";
 import BusinessLkMain from '../Lk/BusinessLkMain/BusinessLkMain'
 const BusinessLk = (props) => {
     // const get = () => props.getCryppoLkThunkCreator();
@@ -15,6 +16,27 @@ const BusinessLk = (props) => {
                 element={
                     <BusinessLkMain
                         composition={props.composition}
+                        card={props.card}
+                        historyItem={props.historyItem}
+                        operationData={props.operationData}
+                        setModal={props.setModal}
+                        operationModal={props.operationModal}
+                        isModal={props.isModal}
+                        switchModal={props.switchModal}
+                        filter={false}
+                        isHover={props.isHover}
+                        setChartText={props.setChartText}
+                        expenses={props.expenses}
+                        arrival={props.arrival}
+                        chartTextData={props.chartTextData}
+                        initChartText={props.initChartText}
+                        updateChart={props.updateChart} />
+                }
+            />
+            <Route
+                path="balance"
+                element={
+                    <Balance
                         card={props.card}
                         historyItem={props.historyItem}
                         operationData={props.operationData}

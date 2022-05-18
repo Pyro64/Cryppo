@@ -1,10 +1,9 @@
 
 import React from 'react'
-import style from './Subtitle.module.scss'
-export default function Subtitle(props) {
+export default function Subtitle({ children, ...props }) {
     return (
-        <p style={props.modify} className={`${style.subtitle}`}>
-            {props.subtitle}
+        <p  {...props}>
+            {children}
             <span>{props.gradient}</span>
         </p>
     )

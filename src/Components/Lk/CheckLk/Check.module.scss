@@ -7,11 +7,12 @@
   border-radius: 15px;
   @include fluid(padding-top, 15px, 25px);
   @include fluid(padding-bottom, 15px, 25px);
-  @include fluid(padding-left, 15px, 30px);
-  @include fluid(padding-right, 15px, 30px);
+
   @include fluid(margin-bottom, 20px, 35px);
 }
 .line {
+  @include fluid(padding-left, 15px, 30px);
+  @include fluid(padding-right, 15px, 30px);
   @include fluid(margin-bottom, 15px, 30px);
   @include fluid(padding-top, 2px, 3px);
   @include fluid(padding-bottom, 2px, 3px);
