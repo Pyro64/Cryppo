@@ -1,34 +1,43 @@
-@import '../Style/Mixins';
-@import '../fonts/cera-pro/stylesheet.css';
-@import '../fonts/style.css';
+@import "../Style/Mixins";
+@import "../fonts/cera-pro/stylesheet.css";
+@import "../fonts/style.css";
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 .App {
   position: relative;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     z-index: -1;
     right: -40%;
     top: -5%;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(47, 105, 255, 0.4) 0%, rgba(47, 105, 255, 0) 100%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(47, 105, 255, 0.4) 0%,
+      rgba(47, 105, 255, 0) 100%
+    );
     width: 100%;
     @include fluid(height, 400px, 800px);
   }
 }
 body {
-  font-family: 'Cera pro';
+  font-family: "Cera pro";
   background: #0d0d0d;
   color: #fff;
   height: 100%;
   font-weight: 400;
   font-style: normal;
   overflow-x: hidden;
+  max-width: 100%;
 }
 .block {
   @include neumorphism;
@@ -202,7 +211,7 @@ textarea:focus::-webkit-input-placeholder {
 .next {
   @include fluid(width, 15px, 22px);
   @include fluid(height, 15px, 22px);
-  background: url('../Images/icon/sec-next.svg') no-repeat;
+  background: url("../Images/icon/sec-next.svg") no-repeat;
   background-size: contain;
   position: absolute;
   right: 0px;
@@ -213,7 +222,7 @@ textarea:focus::-webkit-input-placeholder {
 .prev {
   @include fluid(width, 15px, 22px);
   @include fluid(height, 15px, 22px);
-  background: url('../Images/icon/sec-prev.svg') no-repeat;
+  background: url("../Images/icon/sec-prev.svg") no-repeat;
   background-size: contain;
   position: absolute;
   right: 25px;
@@ -225,7 +234,7 @@ textarea:focus::-webkit-input-placeholder {
 .nextE {
   @include fluid(width, 15px, 22px);
   @include fluid(height, 15px, 22px);
-  background: url('../Images/icon/sec-next.svg') no-repeat;
+  background: url("../Images/icon/sec-next.svg") no-repeat;
   background-size: contain;
   position: absolute;
   right: 0px;
@@ -236,7 +245,7 @@ textarea:focus::-webkit-input-placeholder {
 .prevE {
   @include fluid(width, 15px, 22px);
   @include fluid(height, 15px, 22px);
-  background: url('../Images/icon/sec-prev.svg') no-repeat;
+  background: url("../Images/icon/sec-prev.svg") no-repeat;
   background-size: contain;
   position: absolute;
   right: 25px;
