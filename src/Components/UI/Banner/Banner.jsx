@@ -27,7 +27,7 @@ export default function Banner(props) {
                     <div className={style.block}>
                         <Title text={props.banner.title} gradient={props.banner.gradient} />
                         <div className={style.textIndex}>Автоматически ребалансируемый индекс из 8 самых высококапитализированных цифровых активов на основе машинного обучения (искусственного интеллекта)</div>
-                        <Btn link="#" text="Узнать больше" />
+                        <Btn href="#" >Узнать больше</Btn>
                     </div>
                     <div className={style.item}>
                         <Suspense fallback={<Spinner />}>
