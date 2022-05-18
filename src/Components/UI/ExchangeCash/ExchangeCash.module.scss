@@ -1,0 +1,12 @@
+@import '../../../Style/Mixins.scss';
+
+.select {
+    width: 50%;
+    border-radius: 5px;
+}
+.option {
+    width: 100%;
+}
+.item {
+    display: flex;
+}

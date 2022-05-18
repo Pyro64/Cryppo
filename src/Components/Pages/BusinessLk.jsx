@@ -31,7 +31,9 @@ const BusinessLk = (props) => {
                         chartTextData={props.chartTextData}
                         initChartText={props.initChartText}
                         updateChart={props.updateChart}
-                        changeActiveIndex={props.changeActiveIndex} />
+                        changeActiveIndex={props.changeActiveIndex}
+
+                    />
                 }
             />
             <Route
@@ -52,7 +54,9 @@ const BusinessLk = (props) => {
                         arrival={props.arrival}
                         chartTextData={props.chartTextData}
                         initChartText={props.initChartText}
-                        updateChart={props.updateChart} />
+                        updateChart={props.updateChart}
+                        cashOption={props.cashOption}
+                    />
                 }
             />
         </Routes>

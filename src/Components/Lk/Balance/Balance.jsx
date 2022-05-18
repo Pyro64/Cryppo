@@ -20,7 +20,7 @@ export default function Balance(props) {
                         <DoughnutChart updateChart={props.updateChart} addTag={props.addTag} filter={true}
                             isHover={props.isHover} setChartText={props.setChartText} operations={props.expenses} chartTextData={props.chartTextData} initChartText={props.initChartText} />
                     </div>
-                    <ExchangeCash />
+                    <ExchangeCash cashOption={props.cashOption} />
                 </div>
             </div>
         </div>

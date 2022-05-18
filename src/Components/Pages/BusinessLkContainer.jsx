@@ -19,6 +19,7 @@ let mapStateToProps = (state) => {
         chartTextData: state.cryppoLk.chartTextData,
         expenses: state.user.expensesStatisticData,
         arrival: state.user.arrivalStatisticData,
+        cashOption: state.businessLk.cashOption
     }
 }
 
