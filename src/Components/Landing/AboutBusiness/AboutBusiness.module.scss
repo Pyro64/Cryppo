@@ -74,21 +74,21 @@
   @include fluid(font-size, 12px, 14px);
   @include fluid(line-height, 18px, 20px);
 }
-.parallax {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  right: 0;
-  top: -80%;
-  transform: translate(-50%);
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(47, 105, 255, 0.3) 0%,
-    rgba(47, 105, 255, 0) 100%
-  );
-  @include fluid(width, 1000px, 2000px);
-  @include fluid(height, 1000px, 2000px);
-}
+// .parallax {
+//   content: "";
+//   position: absolute;
+//   z-index: -1;
+//   right: 0;
+//   top: -80%;
+//   transform: translate(-50%);
+//   background: radial-gradient(
+//     50% 50% at 50% 50%,
+//     rgba(47, 105, 255, 0.3) 0%,
+//     rgba(47, 105, 255, 0) 100%
+//   );
+//   @include fluid(width, 1000px, 2000px);
+//   @include fluid(height, 1000px, 2000px);
+// }
 @media screen and (max-width: 992px) {
   .flex {
     flex-wrap: wrap;
@@ -97,7 +97,7 @@
   .block {
     width: 48%;
     padding: 20px;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     margin-right: 0;
   }
   .item {

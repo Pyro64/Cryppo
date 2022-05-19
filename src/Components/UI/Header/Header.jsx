@@ -8,6 +8,11 @@ import style from "./Header.module.scss";
 
 const Header = (props) => {
     const [scroll, setScroll] = useState(false);
+    const [burger, setBurger] = useState(false);
+    const burgerModal = () => {
+        setBurger(!burger);
+        console.log(burger)
+    };
     useEffect(() => {
         window.addEventListener("scroll", () => {
             setScroll(window.scrollY > 30);
@@ -19,6 +24,7 @@ const Header = (props) => {
     let scrollBtn = props.nav.map((e) => (
         <NavItem id={e.id} key={e.id} name={e.name} href={e.href} />
     ));
+    
     return (
         <header
             className={scroll
@@ -28,7 +34,8 @@ const Header = (props) => {
             <div className={style.container}>
                 <div className={style.block}>
                     <Logo logo={props.logo} />
-                    <div className={style.wrapper}>
+                   
+                    <div className={burger ? `${style.wrapper}` : `${style.wrapper} ${style.wrapperOpen}`}>
                         <Nav hasLk={props.hasLk}
                             isLk={props.isLk} />
                         {props.isEntrance !== false
@@ -45,9 +52,12 @@ const Header = (props) => {
                         }
 
                     </div>
+                    <div  onClick={burgerModal} className={burger ? `${style.burger}` : `${style.burger} ${style.open}`}>
+                    <span></span>
+                </div>
                 </div>
                 {props.isLk
-                    ? <div className={style.item}>{scrollBtn}</div>
+                    ? <div className={ burger ? `${style.item}` : `${style.item} ${style.wrapperOpen}`}>{scrollBtn}</div>
                     : <div className={style.item}>{linkBtn}</div>
                 }
             </div>

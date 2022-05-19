@@ -1,33 +1,19 @@
 import { React, useState } from "react";
-import { CSSTransition } from 'react-transition-group';
+import { Collapse } from "antd";
 import style from './Accordeon.module.scss'
 export default function Accordeon(props) {
-    const [open, setOpen] = useState(false);
-    const classNames = {
-        appear: `${style.hover}`,
-        appearActive: 'my-active-appear',
-        appearDone: 'my-done-appear',
-        enter: `${style.hoverEnter}`,
-        enterActive: 'my-active-enter',
-        enterDone: `${style.hoverEnterDone}`,
-        exit: `${style.hoverExit}`,
-        exitActive: 'my-active-exit',
-        exitDone: `${style.hoverExitDone}`,
-    }
+   const {Panel} = Collapse
     return (
-        <CSSTransition
-            in={open}
-            classNames={{ ...classNames }}
-            timeout={300}
-        >
-            <div className={open ? `${style.container} ${style.open}` : `${style.container}`}>
-                <div className={style.block} onClick={() => setOpen(!open)}>
-                    <div>{props.title}</div>
-                    <div className={style.dropdown}></div>
-                </div>
-                <div className={style.content}>{props.text} </div>
-            </div>
-        </CSSTransition>
+        <div></div>
+        // <Collapse  efaultActiveKey={[props.id]}>
+        
+        // // <Panel className={style.block} header={<div>{props.title}</div>  
+        // // <div className={style.dropdown}></div>}>  
+        // //             <p className={style.content}>{props.text} </p>
+        // //             </Panel>
+              
 
-    )
+        // </Collapse>
+
+    );
 }

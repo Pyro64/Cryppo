@@ -1,10 +1,11 @@
-
 import React from 'react'
+
+
 export default function Subtitle({ children, ...props }) {
     return (
-        <p  {...props}>
+        <p {...props}>
             {children}
-            <span>{props.gradient}</span>
+            <span >{props.gradient}</span>
         </p>
     )
 }

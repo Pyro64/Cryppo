@@ -11,7 +11,7 @@ const WhatsBussiness = (props) => {
             <Parallax className={style.parallax} translateX={[-100, 100,]} />
             <div className={style.block}>
                 <div className={style.item}>
-                    <Subtitle subtitle="Что такое CRYPPO Business" gradient="?" />
+                    <Subtitle className={style.subtitle} >Что такое CRYPPO Business<span className={style.gradient}>?</span></Subtitle>
                     <div className={style.text}>
                         <p>CRYPPO Business – это платёжная система,
                             которая принимает платежи в криптовалютах и защищает ваши доходы от колебаний курса на криптовалютной бирже.</p>
@@ -20,7 +20,7 @@ const WhatsBussiness = (props) => {
                     </div>
                 </div>
                 <div className={style.item}>
-                    <Subtitle subtitle="CRYPPO Business принимает к оплате" gradient=":" />
+                <Subtitle className={style.subtitle} >CRYPPO Business принимает к оплате<span className={style.gradient}>:</span></Subtitle>
                     <IconPay appIcon={props.appIcon} />
                 </div>
             </div>

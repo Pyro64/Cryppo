@@ -14,7 +14,7 @@ export default function WhoSuits(props) {
     )
     return (
         <div id="about" className={style.container}>
-            <Subtitle modify={{ textAlign: 'center' }} subtitle="Кому подойдёт CRYPPO Business" gradient="?" />
+            <Subtitle className={style.subtitle} >Кому подойдёт CRYPPO Business <span>?</span></Subtitle>
             <div className={style.flex}>
                 {elementItem}
             </div>

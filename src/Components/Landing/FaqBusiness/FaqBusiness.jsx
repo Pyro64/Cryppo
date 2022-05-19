@@ -14,7 +14,7 @@ export default function FaqBusiness(props) {
     return (
         <div id="faq" className={style.container}>
             <div className={style.wrapper}>
-                <Subtitle subtitle="Часто задаваемые вопросы" gradient="." />
+                <Subtitle className={style.subtitle}>Часто задаваемые вопросы<span>.</span></Subtitle>
             </div>
             {elementItem}
         </div>

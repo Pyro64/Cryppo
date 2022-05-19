@@ -17,7 +17,7 @@ export default function BenefitsIndex(props) {
   return (
     <div id="benefitsIndex" className={style.container}>
       <Parallax className={style.parallax} translateX={[-200, 200,]} />
-      <Subtitle modify={{ textAlign: "center" }} subtitle="Преимущества и гарантии" gradient="." />
+      <Subtitle className={style.subtitle}>Преимущества и гарантии<span>.</span></Subtitle>
       <div className={style.block}>
         {elementItem}
       </div>

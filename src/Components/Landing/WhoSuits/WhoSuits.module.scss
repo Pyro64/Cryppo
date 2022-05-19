@@ -35,6 +35,18 @@
     }
   }
 }
+.subtitle{
+  @include fluid(font-size, 28px, 32px);
+  line-height: 150%;
+  font-family: 'Days One',sans-serif;
+  font-weight: 600;
+  text-align: center;
+  @include fluid(margin-right, 35px, 70px);
+  span{
+    color:  #2f69ff;
+  }
+}
+
 .item {
   position: relative;
   z-index: 2;
