@@ -6,7 +6,8 @@ import B2B from '../../../Images/icon/B2B.png'
 export default function LevelBusiness() {
   return (
     <div className={style.flex}>
-    <Subtitle subtitle="Выведите свой бизнес на новый уровень вместе с CRYPPO Business">
+    <Subtitle className={style.subtitle}>
+    Выведите свой бизнес на новый уровень вместе с CRYPPO Business
     <span>.</span>
     </Subtitle>
        

@@ -8,7 +8,7 @@ import ChartIndex from '../ChartIndex/ChartIndex'
 export default function StatisticIndex() {
   return (
     <div className={style.chartContainer}>
-      <Subtitle subtitle="Статистика роста индекса" gradient="." />
+      <Subtitle className={style.subtitle}  >Статистика роста индекса<span>.</span></Subtitle>
       <div className={style.number}>867%</div>
       <Text text="Процентный показатель изменения курса индекса за все время" />
       <ChartIndex />

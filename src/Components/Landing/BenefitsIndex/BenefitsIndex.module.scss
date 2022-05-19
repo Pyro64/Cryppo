@@ -25,6 +25,16 @@
   justify-content: space-between;
   position: relative;
 }
+.subtitle{
+  @include fluid(font-size, 28px, 32px);
+  line-height: 150%;
+  font-family: 'Days One',sans-serif;
+  font-weight: 600;
+  text-align: center;
+  span{
+    color:  #2f69ff;
+  }
+}
 .wrapper {
   @include fluid(width, 35px, 55px);
   @include fluid(height, 35px, 55px);
