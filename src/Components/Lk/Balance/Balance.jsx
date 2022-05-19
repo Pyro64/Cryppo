@@ -1,5 +1,6 @@
 import React from 'react'
 import ExchangeCash from '../../UI/ExchangeCash/ExchangeCash';
+import ExchangeOutput from '../../UI/ExchangeCash/ExchangeOutput';
 import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
 import Check from '../CheckLk/Check';
 import DoughnutChart from './../DoughnutChart/DoughnutChart';
@@ -23,6 +24,8 @@ export default function Balance(props) {
                     </div>
                     <SubtitleLk arrow={false} subtitle="Обмен" />
                     <ExchangeCash cashOption={props.cashOption} />
+                    <SubtitleLk arrow={false} subtitle="Вывод" />
+                    <ExchangeOutput  cashOption={props.cashOption}/>
                 </div>
             </div>
         </div>

@@ -7,23 +7,25 @@ import MyModal from "../../UI/MyModal/MyModal";
 
 export default function Operation(props) {
   return (
-    <div>
-      <div className={style.container}>
-        <div className={style.title}>{props.operationData.title}</div>
-        <OperationInner
-          operationData={props.operationData}
-          setModal={props.setModal}
-          isModal={props.isModal}
-          switchModal={props.switchModal}
-        />
-        <div className={style.btnContainer}>
-          <Btn href="#">Все операции</Btn>
-        </div>
-        <div>
-          <MyModal isModal={props.isModal} switchModal={props.switchModal}>
-            <OperationModal isModal={props.isModal} switchModal={props.switchModal} operationModal={props.operationModal} />
-          </MyModal>
-        </div>
+    <div className={style.container}>
+      <div className={style.title}>{props.operationData.title}</div>
+      <OperationInner
+        operationData={props.operationData}
+        setModal={props.setModal}
+        isModal={props.isModal}
+        switchModal={props.switchModal}
+      />
+      <div className={style.btnContainer}>
+        <Btn href="#">Все операции</Btn>
+      </div>
+      <div>
+        <MyModal isModal={props.isModal} switchModal={props.switchModal}>
+          <OperationModal
+            isModal={props.isModal}
+            switchModal={props.switchModal}
+            operationModal={props.operationModal}
+          />
+        </MyModal>
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 import React from 'react'
 import style from './ExchangeCash.module.scss'
 import MySelect from './../MySelect/MySelect';
-import Input from 'antd/lib/input/Input';
 import LkInput from './../LkInput/LkInput';
 import ExchangeCashShow from './ExchanheCashShow';
 export default function ExchangeCash(props) {
@@ -18,7 +17,7 @@ export default function ExchangeCash(props) {
                     <LkInput type="number" title="Сумма на продажу" />
                 </div>
             </div>
-            <ExchangeCashShow />
+            <ExchangeCashShow  title="Выберите валюту для обмена" value="1 ETH = 12213.090909090909 USDа" btn="Продолжить" />
         </div>
     )
 }

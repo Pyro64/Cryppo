@@ -4,7 +4,8 @@ import Check from "../CheckLk/Check";
 import Operation from "../OperationLk/Operation";
 import DoughnutChart from "./../DoughnutChart/DoughnutChart";
 import CompositionIndex from "./../CompositionIndex/CompositionIndex";
-const BusinessLkMain = (props) => {
+import StatisticIndex from "../../Landing/StatisticIndex/StatisticIndex";
+export default function LkStatistic(props) {
   return (
     <div className="main container">
       <div className="flex ">
@@ -15,7 +16,7 @@ const BusinessLkMain = (props) => {
           </div>
         </div>
         <div className="content">
-          <SubtitleLk subtitle="Главная" />
+          <SubtitleLk subtitle="Статистика" />
           <div className="block">
             <DoughnutChart
               updateChart={props.updateChart}
@@ -33,18 +34,10 @@ const BusinessLkMain = (props) => {
             composition={props.composition}
             changeActiveIndex={props.changeActiveIndex}
           />
-          <SubtitleLk arrow={true} subtitle="Последние операции" />
-          <Operation
-            operationData={props.operationData}
-            setModal={props.setModal}
-            operationModal={props.operationModal}
-            isModal={props.isModal}
-            switchModal={props.switchModal}
-          />
         </div>
       </div>
+      <SubtitleLk arrow={true} subtitle="Статистика поступлений" />
+      <StatisticIndex />
     </div>
   );
-};
-
-export default BusinessLkMain;
+}

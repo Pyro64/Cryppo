@@ -3,9 +3,9 @@ import React from 'react';
 import style from './LkInput.module.scss'
 const LkInput = (props) => {
     return (
-        <div className={style.block}>
+        <div className={style.container}>
             <p>{props.title}</p>
-            <Input type={props.type} />
+            <Input disable={props.disable} type={props.type} value={props.value} />
         </div>
     );
 }
