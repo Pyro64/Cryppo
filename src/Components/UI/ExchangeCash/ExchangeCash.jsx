@@ -1,25 +1,24 @@
 import React from 'react'
-import { Select } from 'antd';
 import style from './ExchangeCash.module.scss'
-import img from '../../../Images/icon/arrow.svg'
-const { Option } = Select;
+import MySelect from './../MySelect/MySelect';
+import Input from 'antd/lib/input/Input';
+import LkInput from './../LkInput/LkInput';
+import ExchangeCashShow from './ExchanheCashShow';
 export default function ExchangeCash(props) {
-    let option = props.cashOption.map(e =>
-        <Option className={`${style.option}`} value={`${e.id}`} key={e.id} id={e.id}>
-            <div className={style.item}>
-                <img src={e.img} alt={e.value} />
-                <div className={style.name}>{e.value}</div>
-            </div>
-        </Option>
-    )
-    function handleChange(value) {
-        // console.log(`selected ${value}`);
-    }
+
     return (
         <div className='block'>
-            <Select className={`${style.select}`} defaultValue="" onChange={handleChange}>
-                {option}
-            </Select>
+            <div className={style.container}>
+                <div className={style.item}>
+                    <MySelect cashOption={props.cashOption} title="Продать" />
+                    <LkInput type="number" title="Сумма на продажу" />
+                </div>
+                <div className={style.item}>
+                    <MySelect cashOption={props.cashOption} title="Купить" />
+                    <LkInput type="number" title="Сумма на продажу" />
+                </div>
+            </div>
+            <ExchangeCashShow />
         </div>
     )
 }

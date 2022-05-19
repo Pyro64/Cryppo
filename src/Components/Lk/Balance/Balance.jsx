@@ -5,6 +5,7 @@ import Check from '../CheckLk/Check';
 import DoughnutChart from './../DoughnutChart/DoughnutChart';
 
 export default function Balance(props) {
+
     return (
         <div className="main container">
             <div className="flex ">
@@ -20,6 +21,7 @@ export default function Balance(props) {
                         <DoughnutChart updateChart={props.updateChart} addTag={props.addTag} filter={true}
                             isHover={props.isHover} setChartText={props.setChartText} operations={props.expenses} chartTextData={props.chartTextData} initChartText={props.initChartText} />
                     </div>
+                    <SubtitleLk arrow={false} subtitle="Обмен" />
                     <ExchangeCash cashOption={props.cashOption} />
                 </div>
             </div>

@@ -1,12 +1,15 @@
 @import '../../../Style/Mixins.scss';
 
-.select {
-    width: 50%;
-    border-radius: 5px;
-}
-.option {
+.container {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
 }
 .item {
-    display: flex;
+    width: 45%;
+}
+.bottom {
+    border-top: 1px solid #424242;
+    @include fluid(padding-top, 15px, 30px);
+    @include fluid(margin-top, 15px, 30px);
 }
