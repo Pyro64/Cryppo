@@ -30,8 +30,12 @@ export default function CryppoBusiness(props) {
                 <Route
                     path="/entrance"
                     element={<BussinesEntrance/>}
-                >
-                </Route>
+                />
+                <Route
+                    path="/registry"
+                    element={<BussinesEntrance/>}
+                />
+                
             </Routes>
             <FooterContainer logo={props.logo}/>
         </div>

@@ -1,47 +1,35 @@
-import React,{useState} from 'react';
-import style from"./BussinsesEntrance.module.scss";
-import {NavLink} from "react-router-dom";
-import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
+import React, { useState } from "react";
+import style from "./BussinsesEntrance.module.scss";
+import { NavLink } from "react-router-dom";
+import LkInput from "../../UI/LkInput/LkInput";
 
 const BussinesEntrance = () => {
-    const [emailName,setEmailName] = useState('');
-    const [passwordName,setPasswordName] = useState('');
-
-
+    const [emailName, setEmailName] = useState("");
+    const [passwordName, setPasswordName] = useState("");
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        let formData = new FormData(e.currentTarget);
+        let email = formData.get("email");
+        let password = formData.get("password");
+    };
 
     return (
         <div className="main">
             <div className={style.entance}>
-                <Tabs className={style.tabs}>
-                    <TabList className={style.tabsItem}>
-                        <Tab className={style.tabsText}>Авторизация</Tab>
-                        <Tab className={style.tabsText}>Регистрация</Tab>
-                    </TabList>
-                    <TabPanel>
-                        <form className={style.modal}>
-                            <div className={style.title}>Авторизация</div>
-                            <input value={emailName} onChange={e => setEmailName(e.target.value)}  name='email' className={style.input}   />
-                            <input value={passwordName} onChange={e => setPasswordName(e.target.value)} name='password' className={style.input}  />
-                            <NavLink to="lk" className="btn">Авторизоваться</NavLink>
-                        </form>
-                    </TabPanel>
-                    <TabPanel>
-                        <form className={style.modal}>
-                            <div className={style.title}>Регистрация</div>
-                            <input value={emailName} onChange={e => setEmailName(e.target.value)}  name='email' className={style.input}   />
-                            <input value={passwordName} onChange={e => setPasswordName(e.target.value)} name='password' className={style.input}  />
-                            <NavLink to="lk"  className="btn">Авторизоваться</NavLink>
-                        </form>
-                    </TabPanel>
-
-                </Tabs>
-
+                <form className={style.modal} onSubmit={handleSubmit}>
+                    <div className={style.title}>Авторизация</div>
+                    <LkInput title="Email" disable={false} type="text" value="" name="email"/>
+                    <LkInput title="Пароль" disable={false} type="text" value="" name="password"/>
+                    <button className={style.button} type="submit">
+                        Авторизоваться
+                    </button>
+                    <NavLink to="business/registry">
+                        Зарегистрироваться?
+                    </NavLink>
+                </form>
             </div>
         </div>
-
-
-    )
+    );
 };
 
 export default BussinesEntrance;
-

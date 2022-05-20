@@ -21,7 +21,7 @@ export default function User(props) {
                     />
 
                 :
-                <NavLink to="entrance" className={style.container}>
+                <NavLink to="cryppo/entrance" className={style.container}>
                     <p>Войти</p>
                     <img src={img} alt="login"/>
                 </NavLink>
