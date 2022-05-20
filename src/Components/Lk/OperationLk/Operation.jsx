@@ -4,6 +4,7 @@ import Btn from "../../UI/Btn/Btn";
 import OperationInner from "./OperationInner";
 import OperationModal from "./OperationModal";
 import MyModal from "../../UI/MyModal/MyModal";
+import MyPagination from "../../UI/MyPagination/MyPagination";
 
 export default function Operation(props) {
   return (
@@ -15,9 +16,13 @@ export default function Operation(props) {
         isModal={props.isModal}
         switchModal={props.switchModal}
       />
-      <div className={style.btnContainer}>
-        <Btn href="#">Все операции</Btn>
-      </div>
+      {props.pagination ? (
+        <MyPagination />
+      ) : (
+        <div className={style.btnContainer}>
+          <Btn href="#">Все операции</Btn>
+        </div>
+      )}
       <div>
         <MyModal isModal={props.isModal} switchModal={props.switchModal}>
           <OperationModal

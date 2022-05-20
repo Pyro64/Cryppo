@@ -7,6 +7,9 @@ const Search = (props) => {
   const filterTranslation = props.translations.filter((e) => {
     return e.title.toLowerCase().includes(value.toLowerCase());
   });
+  const item = filterTranslation.map((e) => {
+    <TypeTranslationItem id={e.id} key={e.id} icon={e.icon} title={e.title} />;
+  });
 
   return (
     <div>
@@ -19,24 +22,7 @@ const Search = (props) => {
         ></input>
       </div>
       <div className={style.container}>
-        {filterTranslation.map((e) => {
-          if (e.length !== 0 || e.length !== null || e.length !== undefined) {
-            return (
-              <TypeTranslationItem
-                id={e.id}
-                key={e.id}
-                icon={e.icon}
-                title={e.title}
-              />
-            );
-          } else {
-            return (
-              <div className={style.null}>
-                Ничего не найдено, проверьте свой запрос
-              </div>
-            );
-          }
-        })}
+        {item.length === 0 ? <div>пусто</div> : <TypeTranslationItem />}
       </div>
     </div>
   );
