@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import style from "./Searc.module.scss";
 import icon from "../../../Images/icon/search.svg";
 import TypeTranslationItem from "../TypeTranslation/TypeTranslationItem";
+import SearchResult from "./SearchResult";
 const Search = (props) => {
   const [value, setValue] = useState("");
   const filterTranslation = props.translations.filter((e) => {
     return e.title.toLowerCase().includes(value.toLowerCase());
   });
-  const item = filterTranslation.map((e) => {
-    <TypeTranslationItem id={e.id} key={e.id} icon={e.icon} title={e.title} />;
+  const result = filterTranslation.map((e) => {
+    return (
+      <TypeTranslationItem id={e.id} key={e.id} icon={e.icon} title={e.title} />
+    );
   });
 
   return (
@@ -22,7 +25,7 @@ const Search = (props) => {
         ></input>
       </div>
       <div className={style.container}>
-        {item.length === 0 ? <div>пусто</div> : <TypeTranslationItem />}
+        <SearchResult result={result} />
       </div>
     </div>
   );
