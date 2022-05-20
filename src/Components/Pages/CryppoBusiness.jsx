@@ -3,7 +3,8 @@ import {Route, Routes} from "react-router";
 import CryppoBusinessLanding from './CryppoBusinessLanding'
 import Header from '../UI/Header/Header'
 import FooterContainer from '../UI/Footer/FooterContainer'
-import BussinesEntrance from "../Lk/BusinessEntrance/BussinesEntrance";
+import BussinesAuthorization from "../Lk/BussinesAuthorization/BussinesAuthorization";
+import BussinessRegistry from "../Lk/BussinessRegistry/BussinessRegistry";
 import BusinessLkContainer from './BusinessLkContainer'
 
 export default function CryppoBusiness(props) {
@@ -13,7 +14,7 @@ export default function CryppoBusiness(props) {
     return (
         <div>
             <Header router={props.router} logo={props.logo} btn={props.btn} login={props.login} isLogin={props.isLogin}
-                    user={props.user} nav={props.nav} isLk={props.isLk} hasLk={props.hasLk}/>
+                    user={props.user} nav={props.nav} isLk={props.isLk} hasLk={props.hasLk} isBusiness={true}/>
             <Routes>
                 <Route
                     path="/"
@@ -29,11 +30,11 @@ export default function CryppoBusiness(props) {
                 />
                 <Route
                     path="/entrance"
-                    element={<BussinesEntrance/>}
+                    element={<BussinesAuthorization loginThunkCreator={props.loginThunkCreator} isLogin={props.isLogin}/>}
                 />
                 <Route
                     path="/registry"
-                    element={<BussinesEntrance/>}
+                    element={<BussinessRegistry registryThunkCreator={props.registryThunkCreator} isLogin={props.isLogin}/>}
                 />
                 
             </Routes>

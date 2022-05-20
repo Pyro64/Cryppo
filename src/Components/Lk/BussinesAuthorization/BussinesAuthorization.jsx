@@ -1,18 +1,21 @@
-import React, { useState } from "react";
-import style from "./BussinsesEntrance.module.scss";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import style from "./BussinesAuthorization.module.scss";
+import { NavLink, useNavigate } from "react-router-dom";
 import LkInput from "../../UI/LkInput/LkInput";
 
-const BussinesEntrance = () => {
+const BussinesAuthorization = (props) => {
+  const navigate = useNavigate();
   const [emailName, setEmailName] = useState("");
   const [passwordName, setPasswordName] = useState("");
+  const value = true;
+  if(props.isLogin)
+  {
+    navigate("/business/lk");
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
-    let formData = new FormData(e.currentTarget);
-    let email = formData.get("email");
-    let password = formData.get("password");
+    props.loginThunkCreator(emailName, passwordName, value);
   };
-  console.log(emailName, passwordName);
   return (
     <div className="main">
       <div className={style.entance}>
@@ -35,11 +38,11 @@ const BussinesEntrance = () => {
           <button className={style.button} type="submit">
             Авторизоваться
           </button>
-          <NavLink to="business/registry">Зарегистрироваться?</NavLink>
+          <NavLink to="/business/registry">Зарегистрироваться?</NavLink>
         </form>
       </div>
     </div>
   );
 };
 
-export default BussinesEntrance;
+export default BussinesAuthorization;

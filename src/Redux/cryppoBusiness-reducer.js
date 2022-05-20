@@ -33,6 +33,8 @@ import { CryppoBusinessGet } from "../Api/api";
 
 const GET = "GET";
 const LOGIN_BUSINESS = "LOGIN_BUSINESS";
+const EMAIL = "cryppo@cryppo.com";
+const PASSWORD = "cryppo333";
 
 let initialState = {
   bannerData: {
@@ -395,4 +397,11 @@ export const getCryppoBusinessThunkCreator = () => {
 
 export const get = (value) => ({ type: GET, value });
 export const login = (value) => ({ type: LOGIN_BUSINESS, value });
+export const loginThunkCreator = (email, password, value) => {
+  return (dispatch) => {
+    if(email === EMAIL && password === PASSWORD){
+      dispatch({ type: LOGIN_BUSINESS, value });
+    }
+  };
+};
 export default cryppoBusinessReducer;

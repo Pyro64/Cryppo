@@ -2,11 +2,11 @@ import React from "react";
 import style from "./User.module.scss";
 import img from "../../../Images/icon/open.png";
 import Userblock from "./UserBlock";
-import {NavLink} from "react-router-dom";
+import {NavLink, useParams} from "react-router-dom";
 
 export default function User(props) {
     let value = !props.isLogin;
-
+    const url = props.isBusiness ? "entrance" : "/entrance"
     return (
         <div>
             {props.isLogin
@@ -18,10 +18,11 @@ export default function User(props) {
                     router={props.router}
                     hasLk={props.hasLk}
                     isLk={props.isLk}
+                    isBusiness={props.isBusiness}
                     />
 
                 :
-                <NavLink to="cryppo/entrance" className={style.container}>
+                <NavLink to={url} className={style.container}>
                     <p>Войти</p>
                     <img src={img} alt="login"/>
                 </NavLink>

@@ -47,6 +47,7 @@ const Header = (props) => {
                                 router={props.router}
                                 hasLk={props.hasLk}
                                 isLk={props.isLk}
+                                isBusiness={props.isBusiness}
                             />
                             : null
                         }
