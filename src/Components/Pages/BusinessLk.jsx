@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router";
 import Balance from "../Lk/Balance/Balance";
+import BusinessLkHistory from "../Lk/BusinessLkHistory/BusinessLkHistory";
 import BusinessLkMain from "../Lk/BusinessLkMain/BusinessLkMain";
 import BusinessLkStatistic from "../Lk/BusinessLkStatistic/BusinessLkStatistic";
 const BusinessLk = (props) => {
@@ -80,6 +81,18 @@ const BusinessLk = (props) => {
             initChartText={props.initChartText}
             updateChart={props.updateChart}
             changeActiveIndex={props.changeActiveIndex}
+          />
+        }
+      />
+      <Route
+        path="history"
+        element={
+          <BusinessLkHistory
+            operationData={props.operationData}
+            setModal={props.setModal}
+            operationModal={props.operationModal}
+            isModal={props.isModal}
+            switchModal={props.switchModal}
           />
         }
       />
