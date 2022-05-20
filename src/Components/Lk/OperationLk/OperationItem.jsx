@@ -29,7 +29,9 @@ export default function OperationItem(props) {
         />
       </div>
 
-      <div className={style.cash}>{props.cash} ETH</div>
+      <div className={style.cash}>
+        {props.cash} {props.id} ETH
+      </div>
     </div>
   );
 }

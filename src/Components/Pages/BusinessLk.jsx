@@ -93,6 +93,7 @@ const BusinessLk = (props) => {
             operationModal={props.operationModal}
             isModal={props.isModal}
             switchModal={props.switchModal}
+            cashOption={props.cashOption}
           />
         }
       />

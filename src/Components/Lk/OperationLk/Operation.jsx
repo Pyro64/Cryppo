@@ -7,30 +7,29 @@ import MyModal from "../../UI/MyModal/MyModal";
 import MyPagination from "../../UI/MyPagination/MyPagination";
 import { Pagination } from "antd";
 import OperationItem from "./OperationItem";
-
+var Scroll = require("react-scroll");
+var Element = Scroll.Element;
+var scroller = Scroll.scroller;
 export default function Operation(props) {
   const [totalPages, setTotalPages] = useState(
     props.operationData.operation.length
   );
-  const test = {
-    data: [],
-    totalPage: 0,
-    current: 1,
-    minIndex: 0,
-    maxIndex: 0,
-  };
   const [page, setPage] = useState(1);
-  const [posts, setPosts] = useState(test);
-  const [pageSize, setPageSize] = useState(4);
-  const handleChange = (page) => {
-    setPosts({
-      current: page,
-      minIndex: (page - 1) * pageSize,
-      maxIndex: page * pageSize,
+  const [posts, setPosts] = useState([]);
+  const [pageSize, setPageSize] = useState(8);
+  const changePage = (page) => {
+    setPage(page);
+
+    scroller.scrollTo("myScrollToElement", {
+      duration: 1500,
+      isDynamic: true,
+      smooth: true,
+      containerId: "ContainerElementID",
+      offset: -150,
     });
   };
-  function onShowSizeChange(current, pageSize) {
-    console.log(current, pageSize);
+  function onShowSizeChange(page, pageSize) {
+    setPageSize(pageSize);
   }
   let sliceItem = props.operationData.operation
     .map((e) => (
@@ -53,15 +52,19 @@ export default function Operation(props) {
         bankCardData={e.bankCardData}
       />
     ))
-    .slice(page * pageSize, (page - 1) * pageSize);
-  console.log(sliceItem);
+    .slice((page - 1) * pageSize, page * pageSize);
+
   return (
     <div className={style.container}>
       <div className={style.title}>{props.operationData.title}</div>
       <div className={style.inner}>{sliceItem}</div>
       {props.pagination ? (
         <Pagination
-          onChange={handleChange}
+          showTitle={false}
+          pageSizeOptions={[8, 20]}
+          defaultPageSize={8}
+          className={style.pagination}
+          onChange={changePage}
           responsive={true}
           showSizeChanger
           onShowSizeChange={onShowSizeChange}

@@ -3,7 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import style from "./User.module.scss";
 import { CSSTransition } from "react-transition-group";
 const Userblock = (props) => {
-  let isLk = true
+  let isLk = true;
   const [open, setOpen] = useState(false);
   let toggleHandler = (e) => {
     setOpen(!open);
@@ -13,7 +13,7 @@ const Userblock = (props) => {
     <div className={style.block}>
       <div className={style.flex}>
         <NavLink
-            onClick={() =>  props.hasLk(isLk)}
+          onClick={() => props.hasLk(isLk)}
           to={`${props.router}/lk`}
           className={({ isActive }) =>
             isActive ? `${style.link} ${style.active}` : `${style.link}`
@@ -35,13 +35,9 @@ const Userblock = (props) => {
           <img src={props.img} alt="avatar" />
           <div>
             <p className="list-text">{props.name}</p>
-            <NavLink
-              to="/"
-              className={style.out}
-              onClick={() => props.login(props.value)}
-            >
+            <div className={style.out} onClick={() => props.login(props.value)}>
               выйти
-            </NavLink>
+            </div>
           </div>
         </div>
       </CSSTransition>
