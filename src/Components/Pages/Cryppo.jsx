@@ -3,7 +3,8 @@ import {Route, Routes} from "react-router";
 import FooterContainer from "../UI/Footer/FooterContainer";
 import Header from "../UI/Header/Header";
 import CryppoLkContainer from "./CryppoLkContainer";
-import Authorization from "../UI/Authorization/Authorization"
+import CryppoAuthorization from "../UI/CryppoAuthorization/CryppoAuthorization"
+import CryppoRegistry from "../Lk/CryppoRegistry/CryppoRegistry"
 
 export default function Cryppo(props) {
     // useEffect(() => {
@@ -22,6 +23,7 @@ export default function Cryppo(props) {
                 router={props.router}
                 isLk={props.isLk}
                 hasLk={props.hasLk}
+                isBusiness={false}
             />
             <Routes>
                 <Route path="/"
@@ -42,18 +44,15 @@ export default function Cryppo(props) {
                     }
                 />
                 <Route
-                    path="cryppo/entrance/*"
+                    path="entrance"
                     element={
-                        <Authorization
-                            card={props.card}
-                            bankCard={props.bankCard}
-                            invest={props.invest}
-                            newCard={props.newCard}
-                            operationData={props.operationData}
-                            statistic={props.statistic}
-                            isLogin={props.isLogin}
-                            router={props.router}
-                        />
+                        <CryppoAuthorization loginThunkCreator={props.loginThunkCreator} isLogin={props.isLogin}/>
+                    }
+                />
+                <Route
+                    path="registry"
+                    element={
+                        <CryppoRegistry loginThunkCreator={props.loginThunkCreator} isLogin={props.isLogin}/>
                     }
                 />
             </Routes>
