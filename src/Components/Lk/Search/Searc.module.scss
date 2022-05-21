@@ -1,4 +1,4 @@
-@import '../../../Style/Mixins.scss';
+@import "../../../Style/Mixins.scss";
 .containerSearch {
   background: rgba(91, 91, 91, 0.2);
   border-radius: 15px;
@@ -15,6 +15,14 @@
   object-fit: contain;
   @include fluid(margin-right, 10px, 15px);
 }
+.itemCon {
+  width: 100%;
+}
+.result {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
 .input {
   font-family: "Cera Pro";
   background: none;
@@ -26,6 +34,16 @@
   &:active {
     border: none;
   }
+}
+.null {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include fluid(font-size, 24px, 32px);
+  font-weight: 600;
+  @include fluid(padding-top, 40px, 80px);
+  @include fluid(padding-bottom, 40px, 80px);
 }
 .container {
   @include container;

@@ -5,8 +5,6 @@
   z-index: 1;
   @include fluid(top, 30px, 90px);
   transition: 0.5s ease-in-out;
-
-  overflow-x: hidden;
 }
 .header.scroll {
   position: sticky;
@@ -109,6 +107,7 @@
   font-weight: 400;
   transition: 0.38s ease-in-out;
   @include fluid(margin-right, 25px, 55px);
+  @include fluid(font-size, 14px, 18px);
   &:last-child {
     margin-right: 0;
   }

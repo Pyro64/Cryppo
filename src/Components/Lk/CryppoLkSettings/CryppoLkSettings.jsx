@@ -33,7 +33,7 @@ const Cryppolksettings = () => {
             Подпишитесь на получение счетов, чтобы оплачивать все в два клика, а
             также редактируйте ваши подписки.
           </div>
-          <Btn text="Добавить подписку" />
+          <Btn text="" >Добавить подписку</Btn>
         </div>
         <div className={style.item}>
           <div className={style.title}>Обращения</div>

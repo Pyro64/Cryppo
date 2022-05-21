@@ -1,0 +1,32 @@
+@import "../../../Style/Mixins.scss";
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include fluid(padding-top, 20px, 40px);
+}
+.item {
+  width: 45%;
+}
+.title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  transition: 0.38s ease-in-out;
+}
+.subtitle {
+  font-family: "Cera Pro";
+  font-size: 12px;
+  color: #fff;
+  margin-bottom: 15px;
+  transition: 0.38s ease-in-out;
+}
+.content {
+  background: rgba(91, 91, 91, 0.2);
+  border: 1px solid #545454;
+  backdrop-filter: blur(100px);
+  border-radius: 15px;
+  @include fluid(padding, 20px, 40px);
+}

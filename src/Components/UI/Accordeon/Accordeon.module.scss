@@ -1,7 +1,6 @@
-@import '../../../Style/Mixins';
+@import "../../../Style/Mixins";
 .container {
-  transition: 0.3s linear;
-  transition: border 0s ease-in-out;
+  transition: 0.38s ease-in-out;
   display: flex;
   flex-direction: column;
   border-radius: 40px;
@@ -10,26 +9,14 @@
   @include fluid(padding-right, 50px, 100px);
   @include fluid(margin-bottom, 15px, 25px);
 }
+.containerOpen {
+  background: rgba(91, 91, 91, 0.2);
+  backdrop-filter: blur(100px);
+  border-radius: 30px;
+}
 
-.block {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: 0.38s ease-in-out;
-  &:hover {
-    .dropdown {
-      background-image: url('../../../Images/icon/color-dropdown.svg');
-    }
-  }
-}
-.content {
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
-}
 .dropdown {
-  background: url('../../../Images/icon/dropdown.svg') no-repeat;
+  background: url("../../../Images/icon/dropdown.svg") no-repeat;
   background-size: contain;
   @include fluid(width, 12px, 15px);
   @include fluid(height, 6px, 8px);
@@ -37,44 +24,66 @@
   transform: rotate(0deg);
   transform-origin: center;
 }
-
-.open {
-  @include neumorphism;
-  border: none;
-  border-radius: 40px;
-  @include fluid(padding, 15px, 25px);
-  @include fluid(padding-left, 50px, 100px);
-  @include fluid(padding-right, 50px, 100px);
-  .block {
-    @include fluid(margin-bottom, 15px, 25px);
-  }
-  .content {
-    overflow: auto;
-    height: auto;
-    opacity: 1;
-  }
-  .dropdown {
-    background-image: url('../../../Images/icon/color-dropdown.svg');
-    transform: rotate(180deg);
-  }
+.dropdownOpen {
+  background-image: url("../../../Images/icon/color-dropdown.svg");
+  transform: rotate(180deg);
 }
-.hoverExit {
+.content {
+  color: #fff;
+  max-height: 0;
   opacity: 0;
+  transition: 0.4s ease-in-out;
+  animation: open 1s;
 }
-.hoverEnter {
-  opacity: 0;
-}
-.hoverExitDone {
+.contentOpen {
+  animation: open 1s;
+  transition: 0.4s ease-in-out;
   opacity: 1;
-  transition: opacity 1000ms;
+  max-height: 100%;
+  @include fluid(margin-bottom, 15px, 35px);
+  @include fluid(margin-top, 10px, 25px);
 }
-.hoverEnterDone {
-  opacity: 1;
-  transition: opacity 1000ms;
+.title {
+  @include fluid(margin-top, 15px, 25px);
+  @include fluid(font-size, 14px, 18px);
 }
-@media screen and (max-width: 768px) {
-  .container {
-    padding-left: 10px;
-    padding-right: 10px;
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+@keyframes open {
+  0% {
+    height: 0%;
+  }
+  25% {
+    height: 25%;
+  }
+  50% {
+    height: 50%;
+  }
+  75% {
+    height: 75%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@keyframes close {
+  0% {
+    height: 100%;
+  }
+  25% {
+    height: 75%;
+  }
+  50% {
+    height: 50%;
+  }
+  75% {
+    height: 25%;
+  }
+  100% {
+    height: 0%;
   }
 }

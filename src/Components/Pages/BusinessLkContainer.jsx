@@ -20,6 +20,7 @@ let mapStateToProps = (state) => {
     expenses: state.user.expensesStatisticData,
     arrival: state.user.arrivalStatisticData,
     cashOption: state.businessLk.cashOption,
+    setting: state.businessLk.settingData,
   };
 };
 

@@ -703,6 +703,79 @@ let initialState = {
       },
     ],
   },
+  settingData:[
+    {
+      id:1,
+      icon:one,
+      name:"BTC",
+      value:true,
+
+    },
+    {
+      id:2,
+      icon:two,
+      name:"ETX",
+      value:true,
+
+    },
+    {
+      id:3,
+      icon:three,
+      name:"ICX",
+      value:true,
+
+    },
+    {
+      id:4,
+      icon:four,
+      name:"ARDE",
+      value:true,
+
+    },
+    {
+      id:5,
+      icon:two,
+      name:"ETH",
+      value:true,
+
+    },
+    {
+      id:6,
+      icon:one,
+      name:"ARDE",
+      value:true,
+
+    },
+    {
+      id:7,
+      icon:four,
+      name:"BTC",
+      value:true,
+
+    },
+    {
+      id:8,
+      icon:one,
+      name:"BTC",
+      value:true,
+
+    },
+    {
+      id:9,
+      icon:five,
+      name:"BTC",
+      value:true,
+
+    },
+    {
+      id:10,
+      icon:six,
+      name:"BTC",
+      value:true,
+
+    },
+  ]
+   
 };
 const businessLkReducer = (state = initialState, action) => {
   switch (action.type) {
