@@ -109,3 +109,8 @@
   justify-content: center;
   width: 100%;
 }
+.pagination {
+  @include fluid(padding-left, 25px, 55px);
+  @include fluid(padding-right, 25px, 55px);
+  @include fluid(margin-top, 15px, 30px);
+}
