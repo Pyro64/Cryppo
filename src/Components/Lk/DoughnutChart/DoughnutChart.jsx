@@ -6,6 +6,7 @@ import StatisticCashItem from "../StatisticCash/StatisticCashItem";
 import {ArcElement, Chart as ChartJS, Legend, Tooltip} from "chart.js";
 ChartJS.register(ArcElement, Tooltip, Legend);
 const DoughnutChart = (props) => {
+    
     let dataItems = [];
     let backgroundColorItems = [];
     props.operations.map((e) => {
@@ -45,6 +46,13 @@ const DoughnutChart = (props) => {
                     return pb;
                 },
             },
+        },
+        onHover: function(evt, element) {
+            if(element.length > 0) {
+                console.log(element,element[0]._datasetIndex)
+                // you can also get dataset of your selected element
+                console.log(data.datasets[element[0]._datasetIndex])
+            }
         },
 
         cutout: 110,

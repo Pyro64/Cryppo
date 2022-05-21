@@ -23,7 +23,7 @@ export default function CompositionIndex(props) {
         индексе
       </div>
       <div className={style.wrapperIndex}>{items}</div>
-      <MyBar composition={props.composition} height={`300px`} />
+      <MyBar composition={props.composition} height={`300px`} changeActiveIndex={props.changeActiveIndex} />
     </div>
   );
 }
