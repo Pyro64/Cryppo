@@ -1,4 +1,4 @@
-@import '../../../Style/Mixins.scss';
+@import "../../../Style/Mixins.scss";
 
 .block {
   @include neumorphism;
@@ -32,7 +32,7 @@
   @include fluid(padding-bottom, 3px, 5px);
   overflow: hidden;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 50%;
     top: 0;
@@ -88,17 +88,7 @@
   flex-wrap: wrap;
   width: 60%;
 }
-.item {
-  display: flex;
-  align-items: center;
-  @include fluid(padding-left, 7px, 9px);
-  @include fluid(padding-right, 7px, 9px);
-  @include fluid(padding-bottom, 1px, 3px);
-  @include fluid(padding-top, 1px, 3px);
-  @include fluid(margin, 6px, 8px);
-  background: #2d2d2d;
-  border-radius: 10px;
-}
+
 .circle {
   width: 10px;
   height: 10px;
@@ -145,4 +135,36 @@
   &:last-child {
     margin-right: 0;
   }
+}
+.item {
+  display: flex;
+  align-items: center;
+  @include fluid(padding-left, 7px, 9px);
+  // @include fluid(padding-bottom, 1px, 3px);
+  // @include fluid(padding-top, 1px, 3px);
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  @include fluid(margin, 6px, 8px);
+  background: #2d2d2d;
+  transition: 0.38s ease-in-out;
+  border-radius: 10px;
+  &:hover {
+    .cross {
+      opacity: 1;
+    }
+  }
+}
+.cross {
+  opacity: 0;
+  @include fluid(padding-left, 7px, 9px);
+  @include fluid(padding-bottom, 1px, 3px);
+  @include fluid(padding-top, 1px, 3px);
+  @include fluid(padding-right, 7px, 9px);
+  transition: 0.38s ease-in-out;
+  cursor: pointer;
+  margin-left: 10px;
+  background: $purpleGradient;
 }
