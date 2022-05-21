@@ -15,7 +15,7 @@ import xtz from "../Images/payIcon/5.svg";
 import eos from "../Images/payIcon/4.svg";
 import bnb from "../Images/payIcon/BNB.svg";
 import bch from "../Images/payIcon/BCH.svg";
-import annaBobs from '../Images/login/anna_bobs.svg';
+
 import { AuthorizationPost, RegistrationPost } from "../Api/api";
 import filtersTool from "../Utils/filter"
 
@@ -444,13 +444,6 @@ let initialState = {
                 dataKey: "xrp",
             },
         ],
-    },
-
-    userData:
-    {
-        id: 1,
-        img: annaBobs,
-        name: "Index Bobs",
     },
     operationsFilter: {
         type: "initial",

@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import style from "./BussinessRegistry.module.scss";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import LkInput from "../../UI/LkInput/LkInput";
 
-const BussinessRegistry = () => {
+const BussinessRegistry = (props) => {
+    const navigate = useNavigate();
+    const [companyName, setCompanyName] = useState("");
     const [emailName, setEmailName] = useState("");
+    const [name, setName] = useState("");
+    const [surname, setSurname] = useState("");
     const [passwordName, setPasswordName] = useState("");
+    const [repeatPasswordName, setRepeatPasswordName] = useState("");
+    const value = true;
+    if (props.isLogin) {
+        navigate("/business/lk");
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
-        let formData = new FormData(e.currentTarget);
-        let email = formData.get("email");
-        let password = formData.get("password");
+        props.registryThunkCreator(companyName, emailName, name, surname, passwordName, repeatPasswordName, value);
     };
 
     return (
@@ -23,43 +31,132 @@ const BussinessRegistry = () => {
                     </TabList>
                     <TabPanel>
                         <form className={style.modal} onSubmit={handleSubmit}>
-                            <div className={style.title}>Авторизация</div>
-                            <input
-                                value={emailName}
-                                onChange={(e) => setEmailName(e.target.value)}
-                                name="email"
-                                className={style.input}
-                            />
-                            <input
-                                value={passwordName}
-                                onChange={(e) =>
-                                    setPasswordName(e.target.value)
-                                }
-                                name="password"
-                                className={style.input}
-                            />
-                            <button className={style.button} type="submit">Авторизоваться</button>
-                            <NavLink to="business/registry">Зарегистрироваться?</NavLink>
+                            <div className={style.modalRow}>
+                                <LkInput
+                                    className={style.input}
+                                    title="Ваше имя"
+                                    type="text"
+                                    value={name}
+                                    name="name"
+                                    onChange={(e) => setName(e.target.value)}
+                                />
+                            </div>
+                            <div className={style.modalRow}>
+                                <LkInput
+                                    className={style.input}
+                                    title="Ваша фамилия"
+                                    type="text"
+                                    value={surname}
+                                    name="surname"
+                                    onChange={(e) => setSurname(e.target.value)}
+                                />
+                                <LkInput
+                                    className={style.input}
+                                    title="Email"
+                                    type="text"
+                                    value={emailName}
+                                    name="email"
+                                    onChange={(e) =>
+                                        setEmailName(e.target.value)
+                                    }
+                                />
+                            </div>
+                            <div className={style.modalRow}>
+                                <LkInput
+                                    className={style.input}
+                                    title="Введите пароль"
+                                    type="text"
+                                    value={passwordName}
+                                    name="password"
+                                    onChange={(e) =>
+                                        setPasswordName(e.target.value)
+                                    }
+                                />
+                                <LkInput
+                                    className={style.input}
+                                    title="Повторите пароль"
+                                    type="text"
+                                    value={repeatPasswordName}
+                                    name="email"
+                                    onChange={(e) =>
+                                        setRepeatPasswordName(e.target.value)
+                                    }
+                                />
+                            </div>
+
+                            <button className={style.button} type="submit">
+                                Зарегистрироваться
+                            </button>
                         </form>
                     </TabPanel>
                     <TabPanel>
                         <form className={style.modal} onSubmit={handleSubmit}>
-                            <div className={style.title}>Регистрация</div>
-                            <input
-                                value={emailName}
-                                onChange={(e) => setEmailName(e.target.value)}
-                                name="email"
-                                className={style.input}
-                            />
-                            <input
-                                value={passwordName}
-                                onChange={(e) =>
-                                    setPasswordName(e.target.value)
-                                }
-                                name="password"
-                                className={style.input}
-                            />
-                            <button className={style.button} type="submit">Авторизоваться</button>
+                            <div className={style.modalRow}>
+                                <LkInput
+                                    className={style.input}
+                                    title="Название компании"
+                                    type="text"
+                                    value={companyName}
+                                    name="company"
+                                    onChange={(e) =>
+                                        setCompanyName(e.target.value)
+                                    }
+                                />
+                                <LkInput
+                                    className={style.input}
+                                    title="Ваше имя"
+                                    type="text"
+                                    value={name}
+                                    name="name"
+                                    onChange={(e) => setName(e.target.value)}
+                                />
+                            </div>
+                            <div className={style.modalRow}>
+                                <LkInput
+                                    className={style.input}
+                                    title="Ваша фамилия"
+                                    type="text"
+                                    value={surname}
+                                    name="surname"
+                                    onChange={(e) => setSurname(e.target.value)}
+                                />
+                                <LkInput
+                                    className={style.input}
+                                    title="Email"
+                                    type="text"
+                                    value={emailName}
+                                    name="email"
+                                    onChange={(e) =>
+                                        setEmailName(e.target.value)
+                                    }
+                                />
+                            </div>
+                            <div className={style.modalRow}>
+                                <LkInput
+                                    className={style.input}
+                                    title="Введите пароль"
+                                    type="text"
+                                    value={passwordName}
+                                    name="password"
+                                    onChange={(e) =>
+                                        setPasswordName(e.target.value)
+                                    }
+                                />
+                                <LkInput
+                                    className={style.input}
+                                    title="Повторите пароль"
+                                    type="text"
+                                    value={repeatPasswordName}
+                                    name="email"
+                                    onChange={(e) =>
+                                        setRepeatPasswordName(e.target.value)
+                                    }
+                                />
+                            </div>
+
+                            <button className={style.button} type="submit">
+                                Зарегистрироваться
+                            </button>
                         </form>
                     </TabPanel>
                 </Tabs>

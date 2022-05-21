@@ -1,16 +1,31 @@
 import React, { useState } from "react";
 import style from "./CryppoRegistry.module.scss";
-import { NavLink } from "react-router-dom";
 import LkInput from "../../UI/LkInput/LkInput";
+import { useNavigate } from "react-router";
 
 const CryppoRegistry = (props) => {
     const [emailName, setEmailName] = useState("");
+    const [name, setName] = useState("");
+    const [surname, setSurname] = useState("");
     const [passwordName, setPasswordName] = useState("");
+    const [repeatPasswordName, setRepeatPasswordName] = useState("");
+    const value = true;
+    const navigate = useNavigate();
+    if (props.isLogin) {
+        navigate("/cryppo/lk");
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        let formData = new FormData(e.currentTarget);
-        let email = formData.get("email");
-        let password = formData.get("password");
+        props.registryThunkCreator(
+            null,
+            emailName,
+            name,
+            surname,
+            passwordName,
+            repeatPasswordName,
+            value
+        );
     };
 
     return (
@@ -21,11 +36,21 @@ const CryppoRegistry = (props) => {
                     <div className={style.modalRow}>
                         <LkInput
                             className={style.input}
-                            title="Email"
+                            title="Ваше имя"
                             type="text"
-                            value={emailName}
-                            name="email"
-                            onChange={(e) => setEmailName(e.target.value)}
+                            value={name}
+                            name="name"
+                            onChange={(e) => setName(e.target.value)}
+                        />
+                    </div>
+                    <div className={style.modalRow}>
+                        <LkInput
+                            className={style.input}
+                            title="Ваша фамилия"
+                            type="text"
+                            value={surname}
+                            name="surname"
+                            onChange={(e) => setSurname(e.target.value)}
                         />
                         <LkInput
                             className={style.input}
@@ -39,37 +64,21 @@ const CryppoRegistry = (props) => {
                     <div className={style.modalRow}>
                         <LkInput
                             className={style.input}
-                            title="Email"
+                            title="Введите пароль"
                             type="text"
-                            value={emailName}
-                            name="email"
-                            onChange={(e) => setEmailName(e.target.value)}
+                            value={passwordName}
+                            name="password"
+                            onChange={(e) => setPasswordName(e.target.value)}
                         />
                         <LkInput
                             className={style.input}
-                            title="Email"
+                            title="Повторите пароль"
                             type="text"
-                            value={emailName}
+                            value={repeatPasswordName}
                             name="email"
-                            onChange={(e) => setEmailName(e.target.value)}
-                        />
-                    </div>
-                    <div className={style.modalRow}>
-                        <LkInput
-                            className={style.input}
-                            title="Email"
-                            type="text"
-                            value={emailName}
-                            name="email"
-                            onChange={(e) => setEmailName(e.target.value)}
-                        />
-                        <LkInput
-                            className={style.input}
-                            title="Email"
-                            type="text"
-                            value={emailName}
-                            name="email"
-                            onChange={(e) => setEmailName(e.target.value)}
+                            onChange={(e) =>
+                                setRepeatPasswordName(e.target.value)
+                            }
                         />
                     </div>
 

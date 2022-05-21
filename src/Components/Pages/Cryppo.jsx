@@ -52,7 +52,7 @@ export default function Cryppo(props) {
                 <Route
                     path="registry"
                     element={
-                        <CryppoRegistry loginThunkCreator={props.loginThunkCreator} isLogin={props.isLogin}/>
+                        <CryppoRegistry registryThunkCreator={props.registryThunkCreator} isLogin={props.isLogin}/>
                     }
                 />
             </Routes>
