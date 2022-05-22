@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Drawer, Button, Alert } from "antd";
+import { Drawer, Button, Alert, Space } from "antd";
 import DrawerTitle from "./DrawerTitle";
 import style from "./Drawer.module.scss";
 import NavItem from "../Nav/NavItem";
 import CheckItem from "../../Lk/CheckLk/CheckItem";
 import { NavLink } from "react-router-dom";
+import Switch from "../Switch/Switch";
 export default function MyDrawer(props) {
   let elementCard = props.card
     .map((e) => (
@@ -20,12 +21,16 @@ export default function MyDrawer(props) {
     .slice(0, 2);
   return (
     <Drawer
-      title={<DrawerTitle title="Профиль" />}
       placement="right"
+      closable={false}
       onClose={props.onClose}
       visible={props.visible}
       bodyStyle={{ padding: "0px" }}
     >
+      <div className={style.header}>
+        <DrawerTitle title="Профиль" />
+        <Switch />
+      </div>
       <div className={style.block}>
         <img src={props.img} className={style.img} alt="avatar" />
         <div>

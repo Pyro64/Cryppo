@@ -5,6 +5,13 @@
   @include fluid(font-size, 14px, 18px);
   margin-bottom: 16px;
 }
+.header {
+  @include fluid(padding, 16px, 24px);
+  border-bottom: 1px solid #303030;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
 .block {
   display: flex;
   align-items: center;
@@ -38,7 +45,10 @@
 }
 .link {
   display: block;
-  @include fluid(padding, 5px, 10px);
+  @include fluid(padding-top, 5px, 10px);
+  @include fluid(padding-bottom, 5px, 10px);
+  @include fluid(padding-right, 5px, 10px);
+  padding-left: 30px;
   position: relative;
   &::before {
     content: "";
