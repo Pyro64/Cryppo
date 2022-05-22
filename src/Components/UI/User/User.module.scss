@@ -110,8 +110,9 @@
 .wrapper {
   width: 30px;
   height: 30px;
-  position: relative;
   margin-left: 10px;
+  position: relative;
+
   z-index: 2;
   &::before {
     width: 30px;
@@ -136,6 +137,17 @@
     transform: translate(-50%, -50%);
     border: 1px solid $purple;
     animation: pulse 1.5s infinite linear;
+  }
+}
+.none {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  &::before {
+    display: none;
+  }
+  &::after {
+    display: none;
   }
 }
 .icon {

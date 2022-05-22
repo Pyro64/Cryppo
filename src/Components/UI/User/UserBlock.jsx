@@ -25,7 +25,7 @@ const Userblock = (props) => {
         >
           Личный Кабинет
         </NavLink>
-        <div className={style.wrapper}>
+        <div className={props.alert.length === 0 ? style.none : style.wrapper}>
           <UserOutlined onClick={showDrawer} className={style.icon} />
         </div>
       </div>
@@ -38,6 +38,8 @@ const Userblock = (props) => {
         login={props.login}
         value={props.value}
         card={props.card}
+        alert={props.alert}
+        removeAlert={props.removeAlert}
       />
     </div>
   );

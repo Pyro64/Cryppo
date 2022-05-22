@@ -7,6 +7,23 @@ import CheckItem from "../../Lk/CheckLk/CheckItem";
 import { NavLink } from "react-router-dom";
 import Switch from "../Switch/Switch";
 export default function MyDrawer(props) {
+  let alertItem = props.alert.map((e) => (
+    <Alert
+      key={e.id}
+      message={e.message}
+      description={e.description}
+      type={e.type}
+      showIcon
+      closable
+      id={e.id}
+      onClick={() =>
+        setTimeout(() => {
+          props.removeAlert(e.id);
+        }, 380)
+      }
+    />
+  ));
+
   let elementCard = props.card
     .map((e) => (
       <CheckItem
@@ -62,28 +79,13 @@ export default function MyDrawer(props) {
         {elementCard}
       </div>
       <div className={style.alerts}>
-        <div className={style.subtitle}>Уведомления</div>
-        <Alert
-          message="Success Tips"
-          description="Detailed description and advice about successful copywriting."
-          type="success"
-          showIcon
-          closable
-        />
-        <Alert
-          message="Informational Notes"
-          description="Additional description and information about copywriting."
-          type="info"
-          showIcon
-          closable
-        />
-        <Alert
-          message="Warning"
-          description="This is a warning notice about copywriting."
-          type="warning"
-          showIcon
-          closable
-        />
+        {props.alert.length > 0 ? (
+          <div className={style.subtitle}>Уведомления</div>
+        ) : (
+          <div className={style.subtitle}>Нет уведомлений</div>
+        )}
+
+        {alertItem}
       </div>
     </Drawer>
   );

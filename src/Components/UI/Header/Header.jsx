@@ -50,6 +50,8 @@ const Header = (props) => {
                 isLk={props.isLk}
                 isBusiness={props.isBusiness}
                 card={props.card}
+                alert={props.alert}
+                removeAlert={props.removeAlert}
               />
             ) : null}
           </div>

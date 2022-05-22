@@ -20,6 +20,8 @@ export default function User(props) {
           isLk={props.isLk}
           isBusiness={props.isBusiness}
           card={props.card}
+          alert={props.alert}
+          removeAlert={props.removeAlert}
         />
       ) : (
         <NavLink to={url} className={style.container}>

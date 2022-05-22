@@ -1,6 +1,10 @@
 import { connect } from "react-redux";
 import CryppoBusiness from "./CryppoBusiness";
-import { authorizationPostThunkCreator, hasLk } from "../../Redux/user-reducer";
+import {
+  authorizationPostThunkCreator,
+  hasLk,
+  removeAlert,
+} from "../../Redux/user-reducer";
 import {
   get,
   getCryppoBusinessThunkCreator,
@@ -27,6 +31,7 @@ let mapStateToProps = (state) => {
     router: state.cryppoBusinessPage.router,
     isLk: state.user.isLk,
     card: state.businessLk.cardData,
+    alert: state.user.alertData,
   };
 };
 
@@ -38,6 +43,7 @@ const CryppoBusinessContainer = connect(mapStateToProps, {
   hasLk,
   loginThunkCreator,
   registryThunkCreator,
+  removeAlert,
 })(CryppoBusiness);
 
 export default CryppoBusinessContainer;
