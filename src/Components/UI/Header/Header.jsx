@@ -11,7 +11,6 @@ const Header = (props) => {
   const [burger, setBurger] = useState(false);
   const burgerModal = () => {
     setBurger(!burger);
-    console.log(burger);
   };
   useEffect(() => {
     window.addEventListener("scroll", () => {
