@@ -1,20 +1,20 @@
 import { connect } from "react-redux";
 import CryppoLk from "./CryppoLk";
 import {
-  get,
-  getCryppoLkThunkCreator,
-  setModal,
-  switchModal,
-  setChartText,
-  initChartText,
+    get,
+    getCryppoLkThunkCreator,
+    setModal,
+    switchModal,
+    setChartText,
+    initChartText
 } from "../../Redux/cryppoLk-reducer";
 import {
-  changeActiveIndex,
-  filterOperationsThunkCreator,
-  updateChart,
-  addTag,
-  removeTag,
-  inputChange,
+    changeActiveIndex,
+    filterOperationsThunkCreator,
+    updateChart,
+    addTag,
+    removeTag,
+    inputChange,disableItem
 } from "../../Redux/user-reducer";
 
 let mapStateToProps = (state) => {
@@ -42,17 +42,19 @@ let mapStateToProps = (state) => {
 };
 
 const CryppoLkContainer = connect(mapStateToProps, {
-  get,
-  getCryppoLkThunkCreator,
-  setModal,
-  switchModal,
-  setChartText,
-  initChartText,
-  changeActiveIndex,
-  addTag,
-  removeTag,
-  filterOperationsThunkCreator,
-  inputChange,
-  updateChart,
+    get,
+    getCryppoLkThunkCreator,
+    setModal,
+    switchModal,
+    setChartText,
+    initChartText,
+    changeActiveIndex,
+    addTag,
+    removeTag,
+    filterOperationsThunkCreator,
+    inputChange,
+    updateChart,
+    disableItem
+
 })(CryppoLk);
 export default CryppoLkContainer;

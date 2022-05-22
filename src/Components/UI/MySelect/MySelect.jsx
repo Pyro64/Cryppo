@@ -13,6 +13,14 @@ export default function MySelect(props) {
             </div>
         </Option>
     )
+    let lang = props.langOption.map(e =>
+        <Option className={`${style.option}`} value={`${e.id}`} key={e.id} id={e.id}>
+            <div className={style.item}>
+                <img src={e.img} alt={e.value} />
+                <div className={style.name}>{e.value}</div>
+            </div>
+        </Option>
+    )
     function handleChange(value) {
         // console.log(`selected ${value}`);
     }
@@ -21,6 +29,7 @@ export default function MySelect(props) {
             <MySelectTitle title={props.title} />
             <Select dropdownClassName={style.dropdown} className={`${style.select}`} defaultValue="" onChange={handleChange}>
                 {option}
+                {lang}
             </Select>
         </div>
     )

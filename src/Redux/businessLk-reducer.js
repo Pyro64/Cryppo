@@ -10,6 +10,9 @@ import yandex from "../Images/icon/yandex.svg";
 import usd from "../Images/payIcon/12.svg";
 import icx from "../Images/payIcon/6.svg";
 import arde from "../Images/payIcon/arde.svg";
+import rus from  "../Images/counry/russia.png"
+import ukr from "../Images/counry/ukraine.png"
+import kaz from "../Images/counry/kazakhstan.png"
 let statusPay = {
   status: {
     error: {
@@ -92,6 +95,26 @@ let initialState = {
       value: "Bitcoin5",
       img: six,
     },
+  ],
+  langOpthion:[
+    {
+      id:1,
+      flag: rus,
+      name:"Русский"
+    },
+    {
+      id:2,
+      flag:ukr,
+      name:"Украинский"
+    },
+     {
+      id:3,
+      flag:kaz,
+      name:"Казахстанский"
+    },
+
+
+
   ],
   operationData: {
     title: "Сегодня",

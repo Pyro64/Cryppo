@@ -67,7 +67,7 @@ export default function MyDrawer(props) {
           Служба поддержки
         </NavLink>
         <NavLink
-          to="/"
+          to="/business/lk/setting"
           className={({ isActive }) =>
             isActive ? `${style.link} ${style.active}` : `${style.link}`
           }
