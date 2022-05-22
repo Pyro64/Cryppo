@@ -98,12 +98,7 @@ const BusinessLk = (props) => {
           />
         }
       />
-      <Route
-      path="setting"
-      element={<SettingLk
-        setting={props.setting}
-        />}
-      />
+      <Route path="setting" element={<SettingLk setting={props.setting} />} />
     </Routes>
   );
 };

@@ -25,6 +25,7 @@ const FILTER_OPERATIONS = "FILTER_OPERATIONS";
 const UPDATE_CHART = "UPDATE_CHART";
 const ADD_TAG = "ADD_TAG";
 const REMOVE_TAG = "REMOVE_TAG";
+const REMOVE_ALERT = "REMOVE_ALERT";
 const INPUT_CHANGE = "INPUT_CHANGE";
 const HAS_LK = "HAS_LK";
 let statusPay = {
@@ -453,6 +454,27 @@ let initialState = {
   templateExpensesStatisticData: [],
   templateArrivalStatisticData: [],
   isLk: false,
+  alertData: [
+    {
+      id: 1,
+      message: "Success Tips",
+      description:
+        "Detailed description and advice about successful copywriting.",
+      type: "success",
+    },
+    {
+      id: 2,
+      message: "Success Tips",
+      description: "Additional description and information about copywriting.",
+      type: "info",
+    },
+    {
+      id: 3,
+      message: "Warning Tips",
+      description: "This is a warning notice about copywriting.",
+      type: "warning",
+    },
+  ],
 };
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -473,6 +495,11 @@ const userReducer = (state = initialState, action) => {
           activeIndex: action.value,
           compositions: state.compositionData.compositions,
         },
+      };
+    case REMOVE_ALERT:
+      return {
+        ...state,
+        alertData: state.alertData.filter((e) => e.id !== action.value),
       };
     case HAS_LK:
       return {
@@ -564,6 +591,7 @@ export const filterOperationsThunkCreator = (props, category, subcategory) => {
 export const inputChange = (value) => ({ type: INPUT_CHANGE, value });
 export const addTag = (tag) => ({ type: ADD_TAG, tag });
 export const removeTag = (value) => ({ type: REMOVE_TAG, value });
+export const removeAlert = (value) => ({ type: REMOVE_ALERT, value });
 export const updateChart = (child) => ({ type: UPDATE_CHART, child });
 export const changeActiveIndex = (value) => ({
   type: CHANGE_ACTIVE_INDEX,

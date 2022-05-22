@@ -7,7 +7,7 @@ import {
   registryThunkCreator,
 } from "../../Redux/cryppo-reducer";
 import Cryppo from "./Cryppo";
-import { hasLk } from "../../Redux/user-reducer";
+import { hasLk, removeAlert } from "../../Redux/user-reducer";
 let mapStateToProps = (state) => {
   return {
     logo: state.cryppoPage.route.logo,
@@ -18,6 +18,7 @@ let mapStateToProps = (state) => {
     router: state.cryppoPage.router,
     isLk: state.user.isLk,
     card: state.user.cardData,
+    alert: state.user.alertData,
   };
 };
 
@@ -28,5 +29,6 @@ const CryppoContainer = connect(mapStateToProps, {
   hasLk,
   loginThunkCreator,
   registryThunkCreator,
+  removeAlert,
 })(Cryppo);
 export default CryppoContainer;
