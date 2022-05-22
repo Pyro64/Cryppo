@@ -19,6 +19,7 @@ function App() {
     <BrowserRouter>
       <ParallaxProvider>
         <div className="App">
+          <div className="gradient"></div>
           <ScrollToTop />
           <Suspense fallback={<Spinner />}>
             <Routes>
