@@ -7,6 +7,9 @@ import six from "../Images/payIcon/6.svg";
 import eth from "../Images/payIcon/eth.svg";
 import masterCard from "../Images/icon/mastercard.svg";
 import yandex from "../Images/icon/yandex.svg";
+import usd from "../Images/payIcon/12.svg";
+import icx from "../Images/payIcon/6.svg";
+import arde from "../Images/payIcon/arde.svg";
 let statusPay = {
   status: {
     error: {
@@ -703,79 +706,98 @@ let initialState = {
       },
     ],
   },
-  settingData:[
+  settingData: [
     {
-      id:1,
-      icon:one,
-      name:"BTC",
-      value:true,
-
+      id: 1,
+      icon: one,
+      name: "BTC",
+      value: true,
     },
     {
-      id:2,
-      icon:two,
-      name:"ETX",
-      value:true,
-
+      id: 2,
+      icon: two,
+      name: "ETX",
+      value: true,
     },
     {
-      id:3,
-      icon:three,
-      name:"ICX",
-      value:true,
-
+      id: 3,
+      icon: three,
+      name: "ICX",
+      value: true,
     },
     {
-      id:4,
-      icon:four,
-      name:"ARDE",
-      value:true,
-
+      id: 4,
+      icon: four,
+      name: "ARDE",
+      value: true,
     },
     {
-      id:5,
-      icon:two,
-      name:"ETH",
-      value:true,
-
+      id: 5,
+      icon: two,
+      name: "ETH",
+      value: true,
     },
     {
-      id:6,
-      icon:one,
-      name:"ARDE",
-      value:true,
-
+      id: 6,
+      icon: one,
+      name: "ARDE",
+      value: true,
     },
     {
-      id:7,
-      icon:four,
-      name:"BTC",
-      value:true,
-
+      id: 7,
+      icon: four,
+      name: "BTC",
+      value: true,
     },
     {
-      id:8,
-      icon:one,
-      name:"BTC",
-      value:true,
-
+      id: 8,
+      icon: one,
+      name: "BTC",
+      value: true,
     },
     {
-      id:9,
-      icon:five,
-      name:"BTC",
-      value:true,
-
+      id: 9,
+      icon: five,
+      name: "BTC",
+      value: true,
     },
     {
-      id:10,
-      icon:six,
-      name:"BTC",
-      value:true,
-
+      id: 10,
+      icon: six,
+      name: "BTC",
+      value: true,
     },
-  ]
-   
+  ],
+  cardData: [
+    {
+      id: 1,
+      icon: eth,
+      text: "ETH",
+      availability: "00000000000000001.234 ETH",
+      prise: "9 656 $",
+    },
+    {
+      id: 2,
+      icon: icx,
+      text: "ICX",
+      availability: "78.444 ICX",
+      prise: "9 656 $",
+    },
+    {
+      id: 3,
+      icon: arde,
+      text: "ARDE",
+      availability: "17.235 ARDE",
+      prise: "9 656 $",
+    },
+    {
+      id: 4,
+      icon: usd,
+      text: "USD",
+      availability: "56.254 USD",
+      prise: "9 656 $",
+    },
+  ],
 };
 const businessLkReducer = (state = initialState, action) => {
   switch (action.type) {

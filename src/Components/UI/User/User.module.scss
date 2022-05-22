@@ -32,6 +32,9 @@
 .out {
   display: block;
 }
+.menu {
+  display: none;
+}
 .listText {
   @include fluid(margin-bottom, 10px, 15px);
 }
@@ -60,12 +63,8 @@
   }
 }
 .dropdown {
-  width: 30px;
-  height: 30px;
-  background: $purpleGradient;
-  cursor: pointer;
-  margin-left: 20px;
-  border-radius: 50%;
+  display: flex;
+  align-items: center;
 }
 .active {
   font-weight: bold;
@@ -107,4 +106,73 @@
 .hoverEnterDone {
   opacity: 1;
   transition: 1000ms ease-in-out;
+}
+.wrapper {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin-left: 10px;
+  z-index: 2;
+  &::before {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid $blue;
+    animation: pulse 1s infinite linear;
+  }
+  &::after {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid $purple;
+    animation: pulse 1.5s infinite linear;
+  }
+}
+.icon {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  background: $blueGradient;
+  display: flex;
+  background-size: 100% 100%;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  transition: 0.38s ease-in-out;
+  opacity: 0.9;
+
+  &:hover {
+    opacity: 1;
+    background-size: 150% 100%;
+  }
+}
+@keyframes pulse {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  50% {
+    width: 150%;
+    height: 150%;
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
 }

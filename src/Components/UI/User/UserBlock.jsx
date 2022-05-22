@@ -1,14 +1,17 @@
 import React, { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import style from "./User.module.scss";
-import { CSSTransition } from "react-transition-group";
+import MyDrawer from "../Drawer/MyDrawer";
+import { UserOutlined } from "@ant-design/icons";
 const Userblock = (props) => {
   let isLk = true;
-  const [open, setOpen] = useState(false);
-  let toggleHandler = (e) => {
-    setOpen(!open);
+  const [visible, setVisible] = useState(false);
+  const showDrawer = () => {
+    setVisible(true);
   };
-
+  const onClose = () => {
+    setVisible(false);
+  };
   return (
     <div className={style.block}>
       <div className={style.flex}>
@@ -22,25 +25,20 @@ const Userblock = (props) => {
         >
           Личный Кабинет
         </NavLink>
-        <div onClick={toggleHandler} className={style.dropdown}></div>
-      </div>
-      <CSSTransition
-        in={open}
-        classNames="list-transition"
-        unmountOnExit
-        appear
-        timeout={380}
-      >
-        <div className="list-body">
-          <img src={props.img} alt="avatar" />
-          <div>
-            <p className="list-text">{props.name}</p>
-            <div className={style.out} onClick={() => props.login(props.value)}>
-              выйти
-            </div>
-          </div>
+        <div className={style.wrapper}>
+          <UserOutlined onClick={showDrawer} className={style.icon} />
         </div>
-      </CSSTransition>
+      </div>
+
+      <MyDrawer
+        visible={visible}
+        onClose={onClose}
+        img={props.img}
+        name={props.name}
+        login={props.login}
+        value={props.value}
+        card={props.card}
+      />
     </div>
   );
 };
