@@ -102,6 +102,7 @@ export const getCryppoThunkCreator = () => {
 
 export const get = (value) => ({ type: GET, value });
 export const login = (value) => ({ type: LOGIN_CRYPPO, value })
+
 export const loginThunkCreator = (email, password, value) => {
     return (dispatch) => {
         if (email === EMAIL && password === PASSWORD) {

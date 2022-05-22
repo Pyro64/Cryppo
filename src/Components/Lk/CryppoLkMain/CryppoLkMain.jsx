@@ -25,7 +25,7 @@ export default function CryppoLkMain(props) {
           <SubtitleLk arrow={true} subtitle="Последние операции" />
           <Operation operationData={props.operationData} setModal={props.setModal} operationModal={props.operationModal} isModal={props.isModal} switchModal={props.switchModal} />
           <SubtitleLk arrow={true} subtitle="Статистика за март" />
-          <StatisticCash filter={false} isHover={props.isHover} setChartText={props.setChartText} expenses={props.expenses} arrival={props.arrival} chartTextData={props.chartTextData} initChartText={props.initChartText} operationData={props.operationData} setModal={props.setModal} operationModal={props.operationModal} isModal={props.isModal} switchModal={props.switchModal} updateChart={props.updateChart} />
+          <StatisticCash disableItem={props.disableItem} filter={false} isHover={props.isHover} setChartText={props.setChartText} expenses={props.expenses} arrival={props.arrival} chartTextData={props.chartTextData} initChartText={props.initChartText} operationData={props.operationData} setModal={props.setModal} operationModal={props.operationModal} isModal={props.isModal} switchModal={props.switchModal} updateChart={props.updateChart} />
           <Statistic statistic={props.statistic} />
         </div>
       </div>

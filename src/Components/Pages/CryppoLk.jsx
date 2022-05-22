@@ -39,6 +39,7 @@ export default function CryppoLk(props) {
                         isHover={props.isHover}
                         updateChart={props.updateChart}
                         filter={false}
+                        disableItem = {props.disableItem}
                     />
                 }
             />

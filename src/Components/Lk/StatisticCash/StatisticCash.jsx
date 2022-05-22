@@ -19,11 +19,11 @@ const StatisticCash = (props) => {
                     </Tab>
                 </TabList>
                 <TabPanel>
-                    <DoughnutChart updateChart={props.updateChart} addTag={props.addTag} filter={true}
+                    <DoughnutChart disableItem = {props.disableItem} updateChart={props.updateChart} addTag={props.addTag} filter={true}
                         isHover={props.isHover} setChartText={props.setChartText} operations={props.expenses} chartTextData={props.chartTextData} initChartText={props.initChartText} />
                 </TabPanel>
                 <TabPanel>
-                    <DoughnutChart updateChart={props.updateChart} addTag={props.addTag} filter={true}
+                    <DoughnutChart disableItem = {props.disableItem} updateChart={props.updateChart} addTag={props.addTag} filter={true}
                         isHover={props.isHover} setChartText={props.setChartText} operations={props.arrival}
                         chartTextData={props.chartTextData} initChartText={props.initChartText} />
                 </TabPanel>

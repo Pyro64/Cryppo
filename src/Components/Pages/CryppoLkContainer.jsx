@@ -7,7 +7,6 @@ import {
     switchModal,
     setChartText,
     initChartText
-
 } from "../../Redux/cryppoLk-reducer";
 import {
     changeActiveIndex,
@@ -15,7 +14,7 @@ import {
     updateChart,
     addTag,
     removeTag,
-    inputChange,
+    inputChange,disableItem
 } from "../../Redux/user-reducer";
 
 let mapStateToProps = (state) => {
@@ -54,6 +53,7 @@ const CryppoLkContainer = connect(mapStateToProps, {
     removeTag,
     filterOperationsThunkCreator,
     inputChange,
-    updateChart
+    updateChart,
+    disableItem
 })(CryppoLk);
 export default CryppoLkContainer;

@@ -17,7 +17,7 @@ const StatisticCashItem = (props) => {
     }
   };
   return (
-    <div className={style.wrapper}>
+    <div className={props.disable ? style.wrapper : style.disable}>
       <NavLink
         to={url}
         state={{ name: props.category }}
@@ -35,7 +35,7 @@ const StatisticCashItem = (props) => {
         <div className={style.category}>{props.currency}</div>
       </NavLink>
       <div className={style.cross}>
-        <CloseOutlined twoToneColor="#eb2f96" />
+        <CloseOutlined twoToneColor="#eb2f96" onClick={()=>{props.disableItem(props)}}/>
       </div>
     </div>
   );
