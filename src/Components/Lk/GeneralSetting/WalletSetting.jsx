@@ -6,7 +6,7 @@ export default function WalletSetting(props) {
     let cryptoItem = props.setting.map((e) => (
         <WalletSettingItem
         id={e.id}
-        key={e.key}
+        key={e.id}
         icon={e.icon}
         name={e.name}
         value={e.value}

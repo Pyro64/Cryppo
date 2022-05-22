@@ -6,6 +6,7 @@ import BusinessLkMain from "../Lk/BusinessLkMain/BusinessLkMain";
 import BusinessLkStatistic from "../Lk/BusinessLkStatistic/BusinessLkStatistic";
 import SettingLk from "../Lk/SettingLk/SettingLk";
 const BusinessLk = (props) => {
+  
   // const get = () => props.getCryppoLkThunkCreator();
   // useEffect(() => {
   //   const interval = setInterval(get, 5000);
