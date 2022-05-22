@@ -8,6 +8,7 @@ import {
 import { updateChart, changeActiveIndex } from "../../Redux/user-reducer";
 import BusinessLk from "./BusinessLk";
 let mapStateToProps = (state) => {
+  
   return {
     historyItem: state.businessLk.historyItem,
     card: state.user.cardData,
@@ -21,6 +22,7 @@ let mapStateToProps = (state) => {
     arrival: state.user.arrivalStatisticData,
     cashOption: state.businessLk.cashOption,
     setting: state.businessLk.settingData,
+    alert: state.user.alertData,
   };
 };
 

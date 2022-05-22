@@ -25,6 +25,8 @@ export default function Cryppo(props) {
         hasLk={props.hasLk}
         isBusiness={false}
         card={props.card}
+        alert={props.alert}
+        removeAlert={props.removeAlert}
       />
       <Routes>
         <Route path="/" element={<div>тест</div>} />

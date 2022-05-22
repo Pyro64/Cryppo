@@ -12,7 +12,7 @@ const prodApi = axios.create({
 })
 //Прод Api
 export const AuthorizationPost = (email, password) => {
-    debugger;
+    ;
     return prodApi.post('Account/Login', {
         email,
         password,
@@ -26,7 +26,7 @@ export const AuthorizationPost = (email, password) => {
 }
 
 export const RegistrationPost = (email, password, company) => {
-    debugger;
+    ;
     return prodApi.post('Account/Register', {
         email,
         password,

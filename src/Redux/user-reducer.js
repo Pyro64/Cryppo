@@ -25,6 +25,7 @@ const FILTER_OPERATIONS = "FILTER_OPERATIONS";
 const UPDATE_CHART = "UPDATE_CHART";
 const ADD_TAG = "ADD_TAG";
 const REMOVE_TAG = "REMOVE_TAG";
+const REMOVE_ALERT = "REMOVE_ALERT";
 const INPUT_CHANGE = "INPUT_CHANGE";
 const HAS_LK = "HAS_LK";
 const DISABLE_ITEM = 'DISABLE_ITEM';
@@ -207,7 +208,7 @@ let initialState = {
             currency: "USD",
             color: "#4A6CBF",
             percent: 35,
-            disable:false
+            disable: false
         },
     ],
     expensesStatisticData: [
@@ -218,7 +219,7 @@ let initialState = {
             currency: "USD",
             color: "#2F69FF",
             percent: 10,
-            disable:false,
+            disable: false,
             childExpensesStatistics: [
                 {
                     id: 1,
@@ -228,7 +229,7 @@ let initialState = {
                     currency: "USD",
                     color: "#4A6CBF",
                     percent: 35,
-                    disable:false
+                    disable: false
                 },
                 {
                     id: 2,
@@ -238,7 +239,7 @@ let initialState = {
                     currency: "USD",
                     color: "#0F3AA6",
                     percent: 40,
-                    disable:false
+                    disable: false
                 },
                 {
                     id: 3,
@@ -248,7 +249,7 @@ let initialState = {
                     currency: "USD",
                     color: "#6390FF",
                     percent: 25,
-                    disable:false
+                    disable: false
                 },
             ],
         },
@@ -259,7 +260,7 @@ let initialState = {
             currency: "USD",
             color: "#FF612F",
             percent: 5,
-            disable:false,
+            disable: false,
             childExpensesStatistics: [
                 {
                     id: 1,
@@ -269,7 +270,7 @@ let initialState = {
                     currency: "USD",
                     color: "#FF4D14",
                     percent: 35,
-                    disable:false,
+                    disable: false,
                 },
                 {
                     id: 2,
@@ -279,7 +280,7 @@ let initialState = {
                     currency: "USD",
                     color: "#BF5B3B",
                     percent: 40,
-                    disable:false
+                    disable: false
                 },
                 {
                     id: 3,
@@ -289,7 +290,7 @@ let initialState = {
                     currency: "USD",
                     color: "#A62D07",
                     percent: 25,
-                    disable:false
+                    disable: false
                 },
             ],
         },
@@ -300,7 +301,7 @@ let initialState = {
             currency: "USD",
             color: "#BC2FFF",
             percent: 8,
-            disable:false,
+            disable: false,
             childExpensesStatistics: [
                 {
                     id: 1,
@@ -310,7 +311,7 @@ let initialState = {
                     currency: "USD",
                     color: "#9A4ABF",
                     percent: 35,
-                    disable:false
+                    disable: false
                 },
                 {
                     id: 2,
@@ -320,7 +321,7 @@ let initialState = {
                     currency: "USD",
                     color: "#760FA6",
                     percent: 40,
-                    disable:false
+                    disable: false
                 },
                 {
                     id: 3,
@@ -330,7 +331,7 @@ let initialState = {
                     currency: "USD",
                     color: "#CD63FF",
                     percent: 25,
-                    disable:false
+                    disable: false
                 },
             ],
         },
@@ -341,7 +342,7 @@ let initialState = {
             currency: "USD",
             color: "#FF40D5",
             percent: 5,
-            disable:false,
+            disable: false,
             childExpensesStatistics: [
                 {
                     id: 1,
@@ -351,7 +352,7 @@ let initialState = {
                     currency: "USD",
                     color: "#BF54A8",
                     percent: 35,
-                    disable:false
+                    disable: false
                 },
                 {
                     id: 2,
@@ -361,7 +362,7 @@ let initialState = {
                     currency: "USD",
                     color: "#A61586",
                     percent: 40,
-                    disable:false
+                    disable: false
                 },
                 {
                     id: 3,
@@ -371,7 +372,7 @@ let initialState = {
                     currency: "USD",
                     color: "#FF96E8",
                     percent: 25,
-                    disable:false
+                    disable: false
                 },
             ],
         },
@@ -382,7 +383,7 @@ let initialState = {
             currency: "USD",
             color: "#FF4949",
             percent: 12,
-            disable:false,
+            disable: false,
             childExpensesStatistics: [],
         },
     ],
@@ -472,7 +473,29 @@ let initialState = {
     templateExpensesStatisticData: [],
     templateArrivalStatisticData: [],
     isLk: false,
+    alertData: [
+        {
+            id: 1,
+            message: "Success Tips",
+            description:
+                "Detailed description and advice about successful copywriting.",
+            type: "success",
+        },
+        {
+            id: 2,
+            message: "Success Tips",
+            description: "Additional description and information about copywriting.",
+            type: "info",
+        },
+        {
+            id: 3,
+            message: "Warning Tips",
+            description: "This is a warning notice about copywriting.",
+            type: "warning",
+        },
+    ],
 };
+
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
         case AUTHORIZATION:
@@ -531,17 +554,17 @@ const userReducer = (state = initialState, action) => {
                 },
             };
         case DISABLE_ITEM:
-            const filter = (element, index, array)=>{
+            const filter = (element, index, array) => {
                 return element.id === action.value.id;
             }
             const editItem = state.expensesStatisticData.find(filter);
             editItem.disable = !editItem.disable;
             const arr = [];
             state.expensesStatisticData.forEach((item, index) => {
-                if(editItem.id === item.id){
+                if (editItem.id === item.id) {
                     arr.push(editItem);
                 }
-                else{
+                else {
                     arr.push(item)
                 }
             })
@@ -561,6 +584,11 @@ const userReducer = (state = initialState, action) => {
                         }),
                     ],
                 },
+            };
+        case REMOVE_ALERT:
+            return {
+                ...state,
+                alertData: state.alertData.filter((e) => e.id !== action.value),
             };
         default:
             return { ...state };
@@ -603,6 +631,7 @@ export const disableItem = (value) => ({ type: DISABLE_ITEM, value })
 export const inputChange = (value) => ({ type: INPUT_CHANGE, value });
 export const addTag = (tag) => ({ type: ADD_TAG, tag });
 export const removeTag = (value) => ({ type: REMOVE_TAG, value });
+export const removeAlert = (value) => ({ type: REMOVE_ALERT, value });
 export const updateChart = (child) => ({ type: UPDATE_CHART, child });
 export const changeActiveIndex = (value) => ({
     type: CHANGE_ACTIVE_INDEX,

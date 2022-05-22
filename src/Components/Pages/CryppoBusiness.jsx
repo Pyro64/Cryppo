@@ -25,6 +25,8 @@ export default function CryppoBusiness(props) {
         hasLk={props.hasLk}
         isBusiness={true}
         card={props.card}
+        alert={props.alert}
+        removeAlert={props.removeAlert}
       />
       <Routes>
         <Route

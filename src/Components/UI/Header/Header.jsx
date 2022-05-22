@@ -24,7 +24,6 @@ const Header = (props) => {
   let scrollBtn = props.nav.map((e) => (
     <NavItem id={e.id} key={e.id} name={e.name} href={e.href} />
   ));
-
   return (
     <header
       className={scroll ? `${style.header} ${style.scroll}` : `${style.header}`}
@@ -51,6 +50,8 @@ const Header = (props) => {
                 isLk={props.isLk}
                 isBusiness={props.isBusiness}
                 card={props.card}
+                alert={props.alert}
+                removeAlert={props.removeAlert}
               />
             ) : null}
           </div>
