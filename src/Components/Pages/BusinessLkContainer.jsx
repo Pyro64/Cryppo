@@ -24,6 +24,10 @@ let mapStateToProps = (state) => {
     cashOption: state.businessLk.cashOption,
     setting: state.businessLk.settingData,
     alert: state.user.alertData,
+    langOption:state.businessLk.langOption,
+    user:state.cryppoPage.userData,
+    settingOption:state.businessLk.settingOption,
+
   };
 };
 

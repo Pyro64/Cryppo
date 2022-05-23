@@ -56,6 +56,7 @@ let initialState = {
         id: 1,
         img: annaBobs,
         name: "Index Bobs",
+        mail:"k.konstantinopolskiy@gmail.com",
     },
 
 };

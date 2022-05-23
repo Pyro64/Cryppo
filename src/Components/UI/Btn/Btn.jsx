@@ -1,8 +1,9 @@
-import React, { Children } from 'react'
-import style from './Btn.module.scss'
+import React, { Children } from "react";
 
 export default function Btn({ children, ...props }) {
   return (
-    <a {...props} className={style.btn} >{children}</a>
-  )
+    <a {...props} className="btn">
+      {children}
+    </a>
+  );
 }

@@ -17,6 +17,7 @@ const SearchWithTag = (props) => {
             navigate(`/cryppo/lk/event/${category[0].category}`);
         }
 
+
     }
     const { category, subcategory } = useParams();
     let url = `/cryppo/lk/event/${props.category}`;

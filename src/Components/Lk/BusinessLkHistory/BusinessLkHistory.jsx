@@ -11,13 +11,19 @@ export default function BusinessLkHistory(props) {
         <div className="sidebar">
           <div className="sidebar__inner">
             <SubtitleLk arrow={false} subtitle="Фильтр" />
-            <FilterHistory cashOption={props.cashOption} filterDate={props.filterDate} filterWallet={props.filterWallet} filterValute={props.filterValute}/>
+            <FilterHistory
+              cashOption={props.cashOption}
+              filterDate={props.filterDate}
+              filterWallet={props.filterWallet}
+              filterValute={props.filterValute}
+            />
           </div>
         </div>
         <div className="content">
           <SubtitleLk arrow={false} subtitle="История" />
           <Element name="myScrollToElement" />
           <Operation
+            fullOperation={true}
             pagination={true}
             operationData={props.operationData}
             setModal={props.setModal}

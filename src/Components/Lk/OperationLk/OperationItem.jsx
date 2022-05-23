@@ -2,13 +2,17 @@ import React from "react";
 import style from "./Operation.module.scss";
 export default function OperationItem(props) {
   let value = props;
-  let isModal = !props.isModal;
-  const a = () => {
+  // let isModal = !props.isModal;
+  // const a = () => {
+  //   props.setModal(value);
+  //   props.switchModal(isModal);
+  // };
+  function switchModal() {
+    props.openModal(!props.modal);
     props.setModal(value);
-    props.switchModal(isModal);
-  };
+  }
   return (
-    <div className={style.line} onClick={() => a()}>
+    <div className={style.line} onClick={switchModal}>
       <div className={style.flex}>
         <img src={props.icon} className={style.icon} alt="icon" />
         <div className={style.wrapper}>
@@ -30,7 +34,7 @@ export default function OperationItem(props) {
       </div>
 
       <div className={style.cash}>
-        {props.cash} {props.id} ETH
+        {props.cash} {props.id} {props.currencyPay}
       </div>
     </div>
   );

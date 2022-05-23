@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Event.module.scss";
-import SearchBar from "./SearchBar/SearchBar";
+import SearchBar from "../SearchBar/SearchBar";
 import StatisticCash from "../StatisticCash/StatisticCash";
 import Operation from "../OperationLk/Operation";
 
@@ -43,7 +43,8 @@ const Event = (props) => {
                 />
             </div>
         </div>
+
     );
-};
+  }
 
 export default Event;
