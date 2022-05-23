@@ -9,7 +9,7 @@ export default function GeneralSetting(props) {
      <WalletSetting setting={props.setting}/>
      </div>
      <div className={style.item}>
-     <MailPasswordSetting/>
+     <MailPasswordSetting cashOption={props.cashOption} user={props.user} langOption={props.langOption}/>
      </div>
     </div>
   )

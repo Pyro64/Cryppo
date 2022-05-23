@@ -25,9 +25,9 @@ const BussinessRegistry = (props) => {
         <div className="main">
             <div className={style.entance}>
                 <Tabs className={style.tabs}>
-                    <TabList className={style.tabsItem}>
-                        <Tab className={style.tabsText}>Персональный</Tab>
-                        <Tab className={style.tabsText}>Компания</Tab>
+                    <TabList className={style.list}>
+                        <Tab className={style.tab} selectedClassName={style.activeTab}><div>Персональный</div></Tab>
+                        <Tab className={style.tab} selectedClassName={style.activeTab}><div>Компания</div></Tab>
                     </TabList>
                     <TabPanel>
                         <form className={style.modal} onSubmit={handleSubmit}>

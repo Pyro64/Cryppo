@@ -25,12 +25,15 @@ const BussinesAuthorization = (props) => {
             title="Email"
             type="text"
             value={emailName}
+            className={style.input}
             name="email"
             onChange={(e) => setEmailName(e.target.value)}
           />
           <LkInput
             onChange={(e) => setPasswordName(e.target.value)}
             title="Пароль"
+            className={style.input}
+
             type="text"
             value={passwordName}
             name="password"
@@ -38,7 +41,7 @@ const BussinesAuthorization = (props) => {
           <button className={style.button} type="submit">
             Авторизоваться
           </button>
-          <NavLink to="/business/registry">Зарегистрироваться?</NavLink>
+          <NavLink to="/business/registry" className={style.link}>Зарегистрироваться?</NavLink>
         </form>
       </div>
     </div>
