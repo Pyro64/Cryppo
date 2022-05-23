@@ -624,10 +624,7 @@ const userReducer = (state = initialState, action) => {
                 operationsFilter: {
                     type: "Tags",
                     searchQuery: "",
-                    tags: [
-                        ...state.operationsFilter.tags,
-                        { id: 2, name: action.child[0].parentCategory },
-                    ],
+                    tags: [],
                 },
             };
         case ADD_TAG:
@@ -637,7 +634,7 @@ const userReducer = (state = initialState, action) => {
                 operationsFilter: {
                     type: "Tags",
                     searchQuery: "",
-                    tags: [...state.operationsFilter.tags, { id: 2, name: body }],
+                    tags: [],
                 },
             };
         case INPUT_CHANGE:
