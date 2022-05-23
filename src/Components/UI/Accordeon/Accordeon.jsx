@@ -6,7 +6,6 @@ export default function Accordeon(props) {
   const [open, setOpen] = useState(false);
   const openedAccordeon = () => {
     setOpen(!open);
-    console.log(open);
   };
   return (
     <div

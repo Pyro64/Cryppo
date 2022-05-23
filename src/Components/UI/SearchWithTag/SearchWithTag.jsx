@@ -6,7 +6,6 @@ const { Option } = Select;
 
 const SearchWithTag = (props) => {
     function handleChange(value) {
-    console.log(`selected ${value}`);
     }
     const { category, subcategory } = useParams();
     let url = `/cryppo/lk/event/${props.category}`;

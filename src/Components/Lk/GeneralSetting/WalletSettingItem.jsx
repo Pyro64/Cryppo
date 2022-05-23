@@ -5,7 +5,6 @@ export default function WalletSettingItem(props) {
     const [togglez, setToggle] = useState(false);
     function test() {
       setToggle(!togglez)
-      console.log(togglez)
     }
     return (
     <div className={style.line} >

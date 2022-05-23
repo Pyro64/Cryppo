@@ -16,7 +16,6 @@ export default function Registration(props) {
     }
     const RegistrationReduxForm = reduxForm({ form: 'registration' })(RegistrationForm);
     const onSubmit = (formData) => {
-        console.log(formData);
         let password = document.querySelector("#password-input").value;
         let email = document.querySelector("#email-input").value;
         props.registrationPostThunkCreator(email, password);
