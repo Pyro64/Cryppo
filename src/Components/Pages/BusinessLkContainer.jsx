@@ -11,7 +11,11 @@ import {
   filterDate,
   deleteAddress,
 } from "../../Redux/businessLk-reducer";
-import { updateChart, changeActiveIndex } from "../../Redux/user-reducer";
+import {
+  updateChart,
+  changeActiveIndex,
+  disableItem,
+} from "../../Redux/user-reducer";
 import BusinessLk from "./BusinessLk";
 let mapStateToProps = (state) => {
   return {
@@ -46,6 +50,7 @@ const BusinessLkContainer = connect(mapStateToProps, {
   filterWallet,
   filterDate,
   deleteAddress,
+  disableItem,
 })(BusinessLk);
 
 export default BusinessLkContainer;

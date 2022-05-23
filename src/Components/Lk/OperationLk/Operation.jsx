@@ -82,9 +82,7 @@ export default function Operation(props) {
         />
       ) : (
         <div className={style.btnContainer}>
-          <NavLink className="btn" to="/business/lk/history">
-            Все операции
-          </NavLink>
+          <Btn className="btn">Все операции</Btn>
         </div>
       )}
       <div>

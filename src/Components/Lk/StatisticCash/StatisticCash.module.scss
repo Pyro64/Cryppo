@@ -160,6 +160,7 @@
     left: 0;
     top: 0;
     opacity: 0;
+    display: none;
     position: absolute;
     content: "";
     background: rgba(45, 45, 45, 0.9);
@@ -185,6 +186,7 @@
 }
 .disable {
   &::before {
+    display: block;
     opacity: 1;
   }
   .cross {

@@ -4,6 +4,7 @@ import { Doughnut } from "react-chartjs-2";
 import ChartText from "../StatisticCash/ChartText";
 import StatisticCashItem from "../StatisticCash/StatisticCashItem";
 import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js";
+import { useParams } from "react-router";
 ChartJS.register(ArcElement, Tooltip, Legend);
 const DoughnutChart = (props) => {
   let dataItems = [];
@@ -50,8 +51,7 @@ const DoughnutChart = (props) => {
         },
       },
     },
-
-    cutout: 110,
+    cutout: props.big ? 160 : 110,
   };
   const data = {
     labels: [],

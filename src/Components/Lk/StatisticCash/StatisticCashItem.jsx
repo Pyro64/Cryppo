@@ -7,6 +7,7 @@ const StatisticCashItem = (props) => {
   let value = props;
   const tag = props.category;
   const { category, subcategory } = useParams();
+
   let url = `/cryppo/lk/event/${props.category}`;
   if (category !== undefined) {
     url = `/cryppo/lk/event/${category}/${props.category}`;
@@ -17,7 +18,6 @@ const StatisticCashItem = (props) => {
     }
   };
   return (
-
     <div
       className={
         props.disable
@@ -25,7 +25,6 @@ const StatisticCashItem = (props) => {
           : ` ${style.wrapper} `
       }
     >
-
       <NavLink
         to={url}
         state={{ name: props.category }}
@@ -42,15 +41,17 @@ const StatisticCashItem = (props) => {
         <div className={style.category}>{props.cash}</div>
         <div className={style.category}>{props.currency}</div>
       </NavLink>
-      <div className={style.cross} onClick={() => {
-              props.disableItem(props);
-            }}>
+
+      <div
+        className={style.cross}
+        onClick={() => {
+          props.disableItem(props);
+        }}
+      >
         {props.disable ? (
           <CheckOutlined />
         ) : (
-          <CloseOutlined
-            twoToneColor="#eb2f96"
-          />
+          <CloseOutlined twoToneColor="#eb2f96" />
         )}
       </div>
     </div>

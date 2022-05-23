@@ -1,13 +1,15 @@
 .items {
-    display: flex;
-    flex-wrap: wrap;
-    width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
 }
 .flex {
-    display: flex;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .chartInner {
-    position: relative;
-    width: 40%;
+  flex-grow: 1;
+  position: relative;
+  width: 40%;
 }
