@@ -13,6 +13,7 @@ const Event = (props) => {
     return (
         <div className="main container">
             <SearchBar
+                updateChart={props.updateChart}
                 operationsFilter={props.operationsFilter}
                 addTag={props.addTag}
                 removeTag={props.removeTag}

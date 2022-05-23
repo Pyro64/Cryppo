@@ -22,7 +22,9 @@ export default function MySelect(props) {
     //     </Option>
     // )
     function handleChange(value) {
-        props.change(value)
+        if(props.change){
+            props.change(value)
+        }
         // console.log(`selected ${value}`);
     }
     return (
