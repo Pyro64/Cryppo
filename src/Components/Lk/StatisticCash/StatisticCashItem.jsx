@@ -42,19 +42,14 @@ const StatisticCashItem = (props) => {
         <div className={style.category}>{props.cash}</div>
         <div className={style.category}>{props.currency}</div>
       </NavLink>
-      <div className={style.cross}>
-        {props.disable ? (
-          <CheckOutlined
-            onClick={() => {
+      <div className={style.cross} onClick={() => {
               props.disableItem(props);
-            }}
-          />
+            }}>
+        {props.disable ? (
+          <CheckOutlined />
         ) : (
           <CloseOutlined
             twoToneColor="#eb2f96"
-            onClick={() => {
-              props.disableItem(props);
-            }}
           />
         )}
       </div>
