@@ -17,6 +17,7 @@ import kaz from "../Images/counry/kazakhstan.png";
 const FILTER_VALUTE = "FILTER_VALUTE";
 const FILTER_WALLET = "FILTER_WALLET";
 const FILTER_DATE = "FILTER_DATE";
+const DELETE_ITEM = "DELETE_ITEM";
 
 let CURRENCY = null;
 let QUERY = null;
@@ -81,27 +82,27 @@ let initialState = {
     },
     {
       id: 6,
-      value: "BTC",
+      value: "Bitcoin1",
       img: two,
     },
     {
       id: 7,
-      value: "BNB",
+      value: "Bitcoin2",
       img: three,
     },
     {
       id: 8,
-      value: "ICX",
+      value: "Bitcoin3",
       img: four,
     },
     {
       id: 9,
-      value: "ARDE",
+      value: "Bitcoin4",
       img: five,
     },
     {
       id: 10,
-      value: "LTC",
+      value: "Bitcoin5",
       img: six,
     },
   ],
@@ -133,7 +134,7 @@ let initialState = {
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
         data: "03.03.2022",
         iconPay: eth,
-        currencyPay: "LTC",
+        currencyPay: "ETH",
         cash: -1.234,
         firm: "Яндекс",
         bankCardData: {
@@ -171,7 +172,7 @@ let initialState = {
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
         data: "03.03.2022",
         iconPay: eth,
-        currencyPay: "ICX",
+        currencyPay: "ETH",
         firm: "Яндекс",
         cash: -1.234,
         bankCardData: {
@@ -187,10 +188,10 @@ let initialState = {
         type: "Транспорт",
         icon: yandex,
         title: "Яндекс Такси 4",
-        check: "fgbj935srtbrtaer",
-        data: "12.05.2022",
+        check: "kdgка67lvkdlfdboTGFsodokfNFT",
+        data: "03.03.2022",
         iconPay: eth,
-        currencyPay: "LTC",
+        currencyPay: "ETH",
         firm: "Яндекс",
         cash: -1.234,
         bankCardData: {
@@ -206,10 +207,10 @@ let initialState = {
         type: "Транспорт",
         icon: yandex,
         title: "Яндекс Такси 1",
-        check: "stbaersbjk5rtbsdv",
-        data: "25.02.2022",
+        check: "kdgка67lvkdlfdboTGFsodokfNFT",
+        data: "03.03.2022",
         iconPay: eth,
-        currencyPay: "ICX",
+        currencyPay: "ETH",
         cash: -1.234,
         firm: "Яндекс",
         bankCardData: {
@@ -225,10 +226,10 @@ let initialState = {
         type: "Транспорт",
         icon: yandex,
         title: "Яндекс Такси 2",
-        check: "gstbni84sbjnstbjnsrtbjn",
-        data: "30.01.2022",
+        check: "kdgка67lvkdlfdboTGFsodokfNFT",
+        data: "03.03.2022",
         iconPay: eth,
-        currencyPay: "LTC",
+        currencyPay: "ETH",
         firm: "Яндекс",
         cash: -1.234,
         bankCardData: {
@@ -244,8 +245,8 @@ let initialState = {
         type: "Транспорт",
         icon: yandex,
         title: "Яндекс Такси 3",
-        check: "gstbni84sbjnstbjnsrtbjn",
-        data: "13.05.2022",
+        check: "kdgка67lvkdlfdboTGFsodokfNFT",
+        data: "03.03.2022",
         iconPay: eth,
         currencyPay: "ETH",
         firm: "Яндекс",
@@ -302,9 +303,9 @@ let initialState = {
         icon: yandex,
         title: "Яндекс Такси 2",
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
-        data: "03.06.2022",
+        data: "03.03.2022",
         iconPay: eth,
-        currencyPay: "LTC",
+        currencyPay: "ETH",
         firm: "Яндекс",
         cash: -1.234,
         bankCardData: {
@@ -359,7 +360,7 @@ let initialState = {
         icon: yandex,
         title: "Яндекс Такси 1",
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
-        data: "01.09.2022",
+        data: "03.03.2022",
         iconPay: eth,
         currencyPay: "ETH",
         cash: -1.234,
@@ -399,7 +400,7 @@ let initialState = {
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
         data: "03.03.2022",
         iconPay: eth,
-        currencyPay: "LTC",
+        currencyPay: "ETH",
         firm: "Яндекс",
         cash: -1.234,
         bankCardData: {
@@ -456,7 +457,7 @@ let initialState = {
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
         data: "03.03.2022",
         iconPay: eth,
-        currencyPay: "BTC",
+        currencyPay: "ETH",
         firm: "Яндекс",
         cash: -1.234,
         bankCardData: {
@@ -475,7 +476,7 @@ let initialState = {
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
         data: "03.03.2022",
         iconPay: eth,
-        currencyPay: "LTC",
+        currencyPay: "ETH",
         firm: "Яндекс",
         cash: -1.234,
         bankCardData: {
@@ -494,7 +495,7 @@ let initialState = {
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
         data: "03.03.2022",
         iconPay: eth,
-        currencyPay: "BTC",
+        currencyPay: "ETH",
         firm: "Яндекс",
         cash: -1.234,
         bankCardData: {
@@ -513,7 +514,7 @@ let initialState = {
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
         data: "03.03.2022",
         iconPay: eth,
-        currencyPay: "BTC",
+        currencyPay: "ETH",
         cash: -1.234,
         firm: "Яндекс",
         bankCardData: {
@@ -532,7 +533,7 @@ let initialState = {
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
         data: "03.03.2022",
         iconPay: eth,
-        currencyPay: "BTC",
+        currencyPay: "ETH",
         firm: "Яндекс",
         cash: -1.234,
         bankCardData: {
@@ -551,7 +552,7 @@ let initialState = {
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
         data: "03.03.2022",
         iconPay: eth,
-        currencyPay: "BTC",
+        currencyPay: "ETH",
         firm: "Яндекс",
         cash: -1.234,
         bankCardData: {
@@ -589,7 +590,7 @@ let initialState = {
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
         data: "03.03.2022",
         iconPay: eth,
-        currencyPay: "BTC",
+        currencyPay: "ETH",
         cash: -1.234,
         firm: "Яндекс",
         bankCardData: {
@@ -608,7 +609,7 @@ let initialState = {
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
         data: "03.03.2022",
         iconPay: eth,
-        currencyPay: "BTC",
+        currencyPay: "ETH",
         firm: "Яндекс",
         cash: -1.234,
         bankCardData: {
@@ -684,7 +685,7 @@ let initialState = {
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
         data: "03.03.2022",
         iconPay: eth,
-        currencyPay: "BTC",
+        currencyPay: "ETH",
         firm: "Яндекс",
         cash: -1.234,
         bankCardData: {
@@ -722,7 +723,7 @@ let initialState = {
         check: "kdgка67lvkdlfdboTGFsodokfNFT",
         data: "03.03.2022",
         iconPay: eth,
-        currencyPay: "BTC",
+        currencyPay: "ETH",
         firm: "Яндекс",
         cash: -1.234,
         bankCardData: {
@@ -735,6 +736,78 @@ let initialState = {
       },
     ],
   },
+  settingOption: [
+    {
+      id: 1,
+      name: "Системные уведомления",
+    },
+    {
+      id: 2,
+      name: "Успешный вход",
+    },
+    {
+      id: 3,
+      name: "Неуспешный вход",
+    },
+    {
+      id: 4,
+      name: "Отправлен платеж",
+    },
+    {
+      id: 5,
+      name: "Получен платеж",
+    },
+    {
+      id: 6,
+      name: "Совершен обмен",
+    },
+    {
+      id: 7,
+      name: "Изменена двухфакторная авторизация",
+    },
+    {
+      id: 8,
+      name: "Изменен пароль",
+    },
+    {
+      id: 9,
+      name: "Изменены уведомления",
+    },
+  ],
+  connectOption: [
+    {
+      id: 1,
+      date: "2020-05-07 16:44:33 UTC+03:00",
+      ip: "255.255.255.255",
+      geo: "Moscow / Russia",
+      status: "Successful login",
+      device: "OS X",
+    },
+    {
+      id: 2,
+      date: "2020-05-07 16:44:33 UTC+03:00",
+      ip: "255.255.255.255",
+      geo: "Moscow / Russia",
+      status: "Successful login",
+      device: "OS X",
+    },
+    {
+      id: 3,
+      date: "2020-05-07 16:44:33 UTC+03:00",
+      ip: "255.255.255.255",
+      geo: "Moscow / Russia",
+      status: "Successful login",
+      device: "OS X",
+    },
+    {
+      id: 4,
+      date: "2020-05-07 16:44:33 UTC+03:00",
+      ip: "255.255.255.255",
+      geo: "Moscow / Russia",
+      status: "Successful login",
+      device: "OS X",
+    },
+  ],
   settingData: [
     {
       id: 1,
@@ -870,6 +943,11 @@ const businessLkReducer = (state = initialState, action) => {
           operation: operation,
         },
       };
+    case DELETE_ITEM:
+      return {
+        ...state,
+        connectOption: state.connectOption.filter((e) => e.id !== action.value),
+      };
     case FILTER_WALLET:
       if (action.value === "" || action.value === false) {
         QUERY = null;
@@ -981,4 +1059,5 @@ const businessLkReducer = (state = initialState, action) => {
 export const filterValute = (value) => ({ type: FILTER_VALUTE, value });
 export const filterWallet = (value) => ({ type: FILTER_WALLET, value });
 export const filterDate = (value) => ({ type: FILTER_DATE, value });
+export const deleteAddress = (value) => ({ type: DELETE_ITEM, value });
 export default businessLkReducer;

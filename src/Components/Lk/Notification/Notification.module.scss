@@ -7,6 +7,7 @@
   border-radius: 15px;
   @include fluid(padding, 20px, 40px);
   width: 70%;
+  @include fluid(margin-bottom, 25px, 50px);
 }
 .title {
   color: #fff;

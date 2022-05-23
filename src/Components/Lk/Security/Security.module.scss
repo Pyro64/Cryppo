@@ -79,12 +79,15 @@
 .block {
   width: 48%;
 }
+.blockMin {
+  width: 48%;
+}
 .content {
   background: rgba(91, 91, 91, 0.2);
   border: 1px solid #545454;
   backdrop-filter: blur(100px);
   border-radius: 15px;
-  @include fluid(padding, 20px, 40px);
+  @include fluid(padding, 10px, 20px);
   @include fluid(margin-bottom, 20px, 40px);
 }
 .title {
@@ -143,4 +146,51 @@
 .infoText {
   font-size: 14px;
   color: #5d5d5d;
+}
+.line {
+  display: flex;
+  align-items: center;
+  background: #2d2d2d;
+  @include fluid(padding-top, 3px, 5px);
+  @include fluid(padding-bottom, 3px, 5px);
+  margin-bottom: 7px;
+  @include fluid(padding-left, 3px, 5px);
+  @include fluid(padding-right, 3px, 5px);
+  border-radius: 15px;
+}
+.item {
+  width: 20%;
+  @include fluid(font-size, 10px, 12px);
+  padding-left: 5px;
+  &:last-child {
+    color: $green;
+  }
+}
+.headerItem {
+  width: 20%;
+  @include fluid(font-size, 10px, 12px);
+  padding-left: 5px;
+}
+.itemMax {
+  width: 40%;
+  @include fluid(font-size, 10px, 12px);
+}
+.header {
+  display: flex;
+  align-items: center;
+}
+.headerItem {
+  @include fluid(font-size, 12px, 14px);
+}
+.headerItemMax {
+  width: 40%;
+  padding-left: 5px;
+}
+.close {
+  background: url("../../../Images/icon/close.svg") no-repeat;
+  @include fluid(width, 10px, 15px);
+  @include fluid(height, 10px, 15px);
+  @include fluid(margin-left, 15px, 30px);
+  background-size: contain;
+  cursor: pointer;
 }

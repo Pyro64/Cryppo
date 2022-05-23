@@ -105,6 +105,7 @@ const BusinessLk = (props) => {
           />
         }
       />
+
       <Route
         path="setting"
         element={
@@ -114,6 +115,8 @@ const BusinessLk = (props) => {
             cashOption={props.cashOption}
             user={props.user}
             settingOption={props.settingOption}
+            connectOption={props.connectOption}
+            deleteAddress={props.deleteAddress}
           />
         }
       />
