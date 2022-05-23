@@ -5,6 +5,7 @@ import {
   setChartText,
   initChartText,
 } from "../../Redux/cryppoLk-reducer";
+import {filterValute, filterWallet, filterDate} from "../../Redux/businessLk-reducer";
 import { updateChart, changeActiveIndex } from "../../Redux/user-reducer";
 import BusinessLk from "./BusinessLk";
 let mapStateToProps = (state) => {
@@ -33,6 +34,9 @@ const BusinessLkContainer = connect(mapStateToProps, {
   setChartText,
   initChartText,
   changeActiveIndex,
+  filterValute,
+  filterWallet,
+  filterDate
 })(BusinessLk);
 
 export default BusinessLkContainer;

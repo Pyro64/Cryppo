@@ -86,6 +86,7 @@ export default function CryppoLk(props) {
                         filterOperationsThunkCreator={props.filterOperationsThunkCreator}
                         inputChange={props.inputChange}
                         filter={false}
+                        filterDate={props.filterDate}
                     />
                 }
             />

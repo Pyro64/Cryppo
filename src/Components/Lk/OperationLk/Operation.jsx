@@ -69,7 +69,7 @@ export default function Operation(props) {
           showSizeChanger
           onShowSizeChange={onShowSizeChange}
           defaultCurrent={1}
-          total={totalPages}
+          total={props.operationData.operation.length}
         />
       ) : (
         <div className={style.btnContainer}>

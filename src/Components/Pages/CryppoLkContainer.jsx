@@ -14,7 +14,7 @@ import {
     updateChart,
     addTag,
     removeTag,
-    inputChange,disableItem
+    inputChange,disableItem, filterDate
 } from "../../Redux/user-reducer";
 
 let mapStateToProps = (state) => {
@@ -54,7 +54,7 @@ const CryppoLkContainer = connect(mapStateToProps, {
     filterOperationsThunkCreator,
     inputChange,
     updateChart,
-    disableItem
+    disableItem, filterDate
 
 })(CryppoLk);
 export default CryppoLkContainer;

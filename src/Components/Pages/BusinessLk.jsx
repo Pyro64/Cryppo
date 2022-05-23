@@ -96,6 +96,9 @@ const BusinessLk = (props) => {
             isModal={props.isModal}
             switchModal={props.switchModal}
             cashOption={props.cashOption}
+            filterValute={props.filterValute}
+            filterWallet={props.filterWallet}
+            filterDate={props.filterDate}
           />
         }
       />

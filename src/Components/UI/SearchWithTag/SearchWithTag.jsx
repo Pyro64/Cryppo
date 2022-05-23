@@ -1,53 +1,44 @@
 import React from 'react';
 import { Select } from 'antd';
+import { NavLink, useParams } from "react-router-dom";
 
 const { Option } = Select;
 
-function handleChange(value) {
+const SearchWithTag = (props) => {
+    function handleChange(value) {
     console.log(`selected ${value}`);
-}
-const SearchWithTag = () => {
+    }
+    const { category, subcategory } = useParams();
+    let url = `/cryppo/lk/event/${props.category}`;
+    if (category !== undefined) {
+      url = `/cryppo/lk/event/${category}/${props.category}`;
+    }
+
+    const options = [];
+    props.props.expenses.forEach((item) =>{
+        options.push(item.category)
+    })
+    props.props.arrival.forEach((item) =>{
+        options.push(item.category)
+    })
+
     return (
         <Select
             mode="multiple"
             style={{ width: '100%' }}
             placeholder="Найдите любые события и операции"
-            defaultValue={['china']}
             onChange={handleChange}
+            defaultValue={[]}
             optionLabelProp="label"
         >
-            <Option value="china" label="China">
+            {options.map((item) => (
+                <Option value={item} label={item}>
                 <div className="demo-option-label-item">
-                    <span role="img" aria-label="China">
-                        🇨🇳
-                    </span>
-                    China (中国)
+                    {item}
                 </div>
             </Option>
-            <Option value="usa" label="USA">
-                <div className="demo-option-label-item">
-                    <span role="img" aria-label="USA">
-                        🇺🇸
-                    </span>
-                    USA (美国)
-                </div>
-            </Option>
-            <Option value="japan" label="Japan">
-                <div className="demo-option-label-item">
-                    <span role="img" aria-label="Japan">
-                        🇯🇵
-                    </span>
-                    Japan (日本)
-                </div>
-            </Option>
-            <Option value="korea" label="Korea">
-                <div className="demo-option-label-item">
-                    <span role="img" aria-label="Korea">
-                        🇰🇷
-                    </span>
-                    Korea (韩国)
-                </div>
-            </Option>
+        ))}
+            
         </Select>
     );
 }

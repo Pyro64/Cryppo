@@ -29,6 +29,7 @@ const REMOVE_ALERT = "REMOVE_ALERT";
 const INPUT_CHANGE = "INPUT_CHANGE";
 const HAS_LK = "HAS_LK";
 const DISABLE_ITEM = 'DISABLE_ITEM';
+const FILTER_DATE = "FILTER_DATE";
 let statusPay = {
     status: {
         error: {
@@ -508,6 +509,24 @@ const userReducer = (state = initialState, action) => {
                 ...state,
                 expensesStatisticData: action.value.currency,
             };
+        case FILTER_DATE:
+            const temp = []
+            state.expensesStatisticData.forEach((item, index) =>{
+                temp.push(item);
+                temp[index].cash = Math.round(Math.random() * 1000) / 10;
+                temp[index].percent = Math.round(Math.random() * 10) / 10;
+            })
+            const temp2 = []
+            state.arrivalStatisticData.forEach((item, index) =>{
+                temp2.push(item);
+                temp2[index].cash = Math.round(Math.random() * 1000) / 10;
+                temp2[index].percent = Math.round(Math.random() * 10) / 10;
+            })
+            return {
+                ...state,
+                expensesStatisticData:temp,
+                arrivalStatisticData:temp2
+            };
         case CHANGE_ACTIVE_INDEX:
             return {
                 ...state,
@@ -632,6 +651,7 @@ export const inputChange = (value) => ({ type: INPUT_CHANGE, value });
 export const addTag = (tag) => ({ type: ADD_TAG, tag });
 export const removeTag = (value) => ({ type: REMOVE_TAG, value });
 export const removeAlert = (value) => ({ type: REMOVE_ALERT, value });
+export const filterDate = (value) => ({ type: FILTER_DATE, value });
 export const updateChart = (child) => ({ type: UPDATE_CHART, child });
 export const changeActiveIndex = (value) => ({
     type: CHANGE_ACTIVE_INDEX,

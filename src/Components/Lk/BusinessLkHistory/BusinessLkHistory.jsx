@@ -11,7 +11,7 @@ export default function BusinessLkHistory(props) {
         <div className="sidebar">
           <div className="sidebar__inner">
             <SubtitleLk arrow={false} subtitle="Фильтр" />
-            <FilterHistory cashOption={props.cashOption} />
+            <FilterHistory cashOption={props.cashOption} filterDate={props.filterDate} filterWallet={props.filterWallet} filterValute={props.filterValute}/>
           </div>
         </div>
         <div className="content">

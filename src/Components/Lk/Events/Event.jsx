@@ -17,6 +17,9 @@ const Event = (props) => {
                 addTag={props.addTag}
                 removeTag={props.removeTag}
                 inputChange={props.inputChange}
+                filterDate={props.filterDate}
+                expenses={props.expenses}
+                arrival={props.arrival}
             />
             <StatisticCash
                 updateChart={props.updateChart}

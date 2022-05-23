@@ -11,6 +11,9 @@ import SearchWithTag from "../../../UI/SearchWithTag/SearchWithTag";
 const { RangePicker } = DatePicker;
 
 const Searchbar = (props) => {
+    const enterDataRange = (value, dateString) => {
+        props.filterDate(dateString)
+    };
 
     const inputChange = (e) => {
         let value = e.target.value
@@ -40,7 +43,8 @@ const Searchbar = (props) => {
                     <ConfigProvider locale={locale}>
                         <RangePicker
                             inputReadOnly={true}
-                            defaultValue={moment('2015-01-01', 'YYYY-MM-DD')} />
+                            defaultValue={moment('2015-01-01', 'YYYY-MM-DD')} 
+                            onChange={enterDataRange}/>
                     </ConfigProvider>
                     <div className={style.input}>
                         {props.operationsFilter.tags.map((e) => (
@@ -64,7 +68,7 @@ const Searchbar = (props) => {
                             onKeyDown={inputKeyDown}
                             onChange={inputChange}
                         /> */}
-                        <SearchWithTag />
+                        <SearchWithTag props={props}/>
                     </div>
                 </div>
                 <img className={style.icon} onClick={props.addTag} src={search} alt="search" />
