@@ -6,6 +6,7 @@ import NavItem from "../Nav/NavItem";
 import CheckItem from "../../Lk/CheckLk/CheckItem";
 import { NavLink } from "react-router-dom";
 import Switch from "../Switch/Switch";
+import { CloseOutlined } from "@ant-design/icons";
 export default function MyDrawer(props) {
   let alertItem = props.alert.map((e) => (
     <Alert
@@ -39,12 +40,13 @@ export default function MyDrawer(props) {
   return (
     <Drawer
       placement="right"
-      closable={false}
       onClose={props.onClose}
+      closable={false}
       visible={props.visible}
       bodyStyle={{ padding: "0px" }}
     >
       <div className={style.header}>
+        <CloseOutlined className={style.close} onClick={props.onClose} />
         <DrawerTitle title="Профиль" />
         <Switch />
       </div>

@@ -23,28 +23,32 @@
     }
   }
 }
-.subtitle{
+.subtitle {
   @include fluid(font-size, 28px, 32px);
   line-height: 150%;
-  font-family: 'Days One',sans-serif;
+  font-family: "Days One", sans-serif;
   font-weight: 600;
   @include fluid(margin-right, 35px, 70px);
-  span{
-    color:  #2f69ff;
+  span {
+    color: #2f69ff;
   }
 }
 
-// .parallax {
-//     content: '';
-//     position: absolute;
-//     z-index: -1;
-//     left: 0;
-//     top: -30%;
-//     transform: translate(-50%);
-//     background: radial-gradient(50% 50% at 50% 50%, rgba(47, 105, 255, 0.4) 0%, rgba(47, 105, 255, 0) 100%);
-//     width: 100%;
-//     @include fluid(height, 500px, 1000px);
-// }
+.parallax {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: -30%;
+  transform: translate(-50%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(47, 105, 255, 0.4) 0%,
+    rgba(47, 105, 255, 0) 100%
+  );
+  width: 100%;
+  @include fluid(height, 500px, 1000px);
+}
 @media screen and(max-width:992px) {
   .item {
     flex-direction: column;

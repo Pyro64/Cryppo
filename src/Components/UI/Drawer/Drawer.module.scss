@@ -88,3 +88,12 @@
 .alerts {
   @include fluid(padding-top, 10px, 16px);
 }
+.close {
+  font-size: 20px;
+  @include fluid(margin-right, 20px, 38px);
+  opacity: 0.8;
+  transition: 0.38s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
+}
