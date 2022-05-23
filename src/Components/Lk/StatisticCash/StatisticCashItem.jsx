@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./StatisticCash.module.scss";
 import { NavLink, useParams } from "react-router-dom";
-import { CloseOutlined } from "@ant-design/icons";
+import { CloseOutlined, CheckOutlined } from "@ant-design/icons";
 const StatisticCashItem = (props) => {
   let child = props.child;
   let value = props;
@@ -17,7 +17,15 @@ const StatisticCashItem = (props) => {
     }
   };
   return (
-    <div className={props.disable ? style.disable : style.wrapper}>
+
+    <div
+      className={
+        props.disable
+          ? ` ${style.disable} ${style.wrapper}`
+          : ` ${style.wrapper} `
+      }
+    >
+
       <NavLink
         to={url}
         state={{ name: props.category }}
@@ -35,7 +43,20 @@ const StatisticCashItem = (props) => {
         <div className={style.category}>{props.currency}</div>
       </NavLink>
       <div className={style.cross}>
-        <CloseOutlined twoToneColor="#eb2f96" onClick={()=>{props.disableItem(props)}}/>
+        {props.disable ? (
+          <CheckOutlined
+            onClick={() => {
+              props.disableItem(props);
+            }}
+          />
+        ) : (
+          <CloseOutlined
+            twoToneColor="#eb2f96"
+            onClick={() => {
+              props.disableItem(props);
+            }}
+          />
+        )}
       </div>
     </div>
   );

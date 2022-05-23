@@ -151,6 +151,19 @@
   background: #2d2d2d;
   transition: 0.38s ease-in-out;
   border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  &::before {
+    transition: 0.38s ease-in-out;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    position: absolute;
+    content: "";
+    background: rgba(45, 45, 45, 0.9);
+  }
   &:hover {
     .cross {
       opacity: 1;
@@ -158,6 +171,8 @@
   }
 }
 .cross {
+  position: relative;
+  z-index: 2;
   opacity: 0;
   @include fluid(padding-left, 7px, 9px);
   @include fluid(padding-bottom, 1px, 3px);
@@ -167,4 +182,12 @@
   cursor: pointer;
   margin-left: 10px;
   background: $purpleGradient;
+}
+.disable {
+  &::before {
+    opacity: 1;
+  }
+  .cross {
+    opacity: 1;
+  }
 }

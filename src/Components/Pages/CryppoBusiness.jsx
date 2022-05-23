@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router";
+import { Navigate, Route, Routes } from "react-router";
 import CryppoBusinessLanding from "./CryppoBusinessLanding";
 import Header from "../UI/Header/Header";
 import FooterContainer from "../UI/Footer/FooterContainer";
