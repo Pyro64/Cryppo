@@ -7,13 +7,16 @@ import MyModal from "../../UI/MyModal/MyModal";
 import MyPagination from "../../UI/MyPagination/MyPagination";
 import { Pagination } from "antd";
 import OperationItem from "./OperationItem";
+import { NavLink } from "react-router-dom";
 var Scroll = require("react-scroll");
 var Element = Scroll.Element;
 var scroller = Scroll.scroller;
+
 export default function Operation(props) {
   const [totalPages, setTotalPages] = useState(
     props.operationData.operation.length
   );
+  const [open, setOpen] = useState(false);
   const [page, setPage] = useState(1);
   const [posts, setPosts] = useState([]);
   const [pageSize, setPageSize] = useState(8);
@@ -28,36 +31,42 @@ export default function Operation(props) {
       offset: -150,
     });
   };
+  function openModal() {
+    setOpen(!open);
+  }
   function onShowSizeChange(page, pageSize) {
     setPageSize(pageSize);
   }
-  let sliceItem = props.operationData.operation
-    .map((e) => (
-      <OperationItem
-        isModal={props.isModal}
-        setModal={props.setModal}
-        switchModal={props.switchModal}
-        id={e.id}
-        key={e.id}
-        type={e.type}
-        icon={e.icon}
-        data={e.data}
-        iconPay={e.iconPay}
-        currencyPay={e.currencyPay}
-        title={e.title}
-        check={e.check}
-        status={e.status}
-        cash={e.cash}
-        firm={e.firm}
-        bankCardData={e.bankCardData}
-      />
-    ))
-    .slice((page - 1) * pageSize, page * pageSize);
+
+  let sliceItem = props.operationData.operation.map((e) => (
+    <OperationItem
+      open={open}
+      setModal={props.setModal}
+      openModal={openModal}
+      id={e.id}
+      key={e.id}
+      type={e.type}
+      icon={e.icon}
+      data={e.data}
+      iconPay={e.iconPay}
+      currencyPay={e.currencyPay}
+      title={e.title}
+      check={e.check}
+      status={e.status}
+      cash={e.cash}
+      firm={e.firm}
+      bankCardData={e.bankCardData}
+    />
+  ));
+  let filterItem;
+  props.fullOperation
+    ? (filterItem = sliceItem.slice((page - 1) * pageSize, page * pageSize))
+    : (filterItem = sliceItem.slice(0, 4));
 
   return (
     <div className={style.container}>
       <div className={style.title}>{props.operationData.title}</div>
-      <div className={style.inner}>{sliceItem}</div>
+      <div className={style.inner}>{filterItem}</div>
       {props.pagination ? (
         <Pagination
           showTitle={false}
@@ -73,14 +82,16 @@ export default function Operation(props) {
         />
       ) : (
         <div className={style.btnContainer}>
-          <Btn href="#">Все операции</Btn>
+          <NavLink className="btn" to="/business/lk/history">
+            Все операции
+          </NavLink>
         </div>
       )}
       <div>
-        <MyModal isModal={props.isModal} switchModal={props.switchModal}>
+        <MyModal setOpen={setOpen} open={open}>
           <OperationModal
-            isModal={props.isModal}
-            switchModal={props.switchModal}
+            open={open}
+            openModal={openModal}
             operationModal={props.operationModal}
           />
         </MyModal>

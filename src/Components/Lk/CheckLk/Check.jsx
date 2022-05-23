@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./Check.module.scss";
 import CheckItem from "./CheckItem";
 import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
 import CheckCardBlock from "./CheckCardBlock";
-import Btn from './../../UI/Btn/Btn';
+import Btn from "./../../UI/Btn/Btn";
+import MyModal from "../../UI/MyModal/MyModal";
+import CheckModal from "./CheckModal";
 
 export default function Check(props) {
+  const [open, setOpen] = useState(false);
+  function openModal() {
+    setOpen(!open);
+  }
   let elementCard = props.card.map((e) => (
     <CheckItem
       id={e.id}
@@ -20,14 +26,18 @@ export default function Check(props) {
   return (
     <div className={style.containers}>
       <div className={style.block}>
-        <div className={style.item}>
-          {elementCard}
-        </div>
-        {props.isBankCard !== false
-          ? <CheckCardBlock bankCard={props.bankCard} />
-          : <Btn href="#" style={{ margin: 'auto' }}>Оставить заявку</Btn>
-        }
+        <div className={style.item}>{elementCard}</div>
+        {props.isBankCard !== false ? (
+          <CheckCardBlock bankCard={props.bankCard} />
+        ) : (
+          <Btn onClick={openModal} style={{ margin: "auto" }}>
+            Оставить заявку
+          </Btn>
+        )}
       </div>
+      <MyModal setOpen={setOpen} open={open}>
+        <CheckModal />
+      </MyModal>
     </div>
   );
 }
