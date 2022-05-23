@@ -69,7 +69,7 @@ export default function MyDrawer(props) {
       </div>
       <div className={style.links}>
         <NavLink
-          to="/business/lk"
+          to="/business/lk/support"
           className={({ isActive }) =>
             isActive ? `${style.link} ${style.active}` : `${style.link}`
           }

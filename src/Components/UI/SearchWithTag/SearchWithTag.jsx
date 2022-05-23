@@ -8,6 +8,9 @@ const SearchWithTag = (props) => {
     let child = props.child;
     const navigate = useNavigate();
     function handleChange(e){
+        if(e.lenght===0){
+            navigate(`/cryppo/lk/event}`);
+        }
         let category =props.props.expenses.filter((item)=> item.category === e[0])
         if (category === undefined){
             category = props.props.expenses.filter((item)=> item.category === e[1])
@@ -16,13 +19,6 @@ const SearchWithTag = (props) => {
             props.props.updateChart(category[0].childExpensesStatistics);
             navigate(`/cryppo/lk/event/${category[0].category}`);
         }
-
-
-    }
-    const { category, subcategory } = useParams();
-    let url = `/cryppo/lk/event/${props.category}`;
-    if (category !== undefined) {
-        url = `/cryppo/lk/event/${category}/${props.category}`;
     }
 
     const options = [];

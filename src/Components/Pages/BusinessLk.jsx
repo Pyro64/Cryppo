@@ -5,6 +5,7 @@ import BusinessLkHistory from "../Lk/BusinessLkHistory/BusinessLkHistory";
 import BusinessLkMain from "../Lk/BusinessLkMain/BusinessLkMain";
 import BusinessLkStatistic from "../Lk/BusinessLkStatistic/BusinessLkStatistic";
 import SettingLk from "../Lk/SettingLk/SettingLk";
+import Support from "../UI/Support/Support";
 const BusinessLk = (props) => {
   // const get = () => props.getCryppoLkThunkCreator();
   // useEffect(() => {
@@ -106,6 +107,7 @@ const BusinessLk = (props) => {
           />
         }
       />
+
       <Route
         path="setting"
         element={
@@ -115,9 +117,12 @@ const BusinessLk = (props) => {
             cashOption={props.cashOption}
             user={props.user}
             settingOption={props.settingOption}
+            connectOption={props.connectOption}
+            deleteAddress={props.deleteAddress}
           />
         }
       />
+      <Route path="support" element={<Support />} />
     </Routes>
   );
 };
