@@ -17,7 +17,7 @@ const StatisticCashItem = (props) => {
     }
   };
   return (
-    <div className={props.disable ? style.wrapper : style.disable}>
+    <div className={props.disable ? style.disable : style.wrapper}>
       <NavLink
         to={url}
         state={{ name: props.category }}
