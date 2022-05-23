@@ -5,6 +5,7 @@ import Header from "../UI/Header/Header";
 import CryppoLkContainer from "./CryppoLkContainer";
 import CryppoAuthorization from "../UI/CryppoAuthorization/CryppoAuthorization";
 import CryppoRegistry from "../Lk/CryppoRegistry/CryppoRegistry";
+import CryppoLanding from "./CryppoLanding";
 
 export default function Cryppo(props) {
   // useEffect(() => {
@@ -12,7 +13,7 @@ export default function Cryppo(props) {
   //   // eslint-disable-next-line react-hooks/exhaustive-deps
   // }, [])
   return (
-    <div>
+    <div className="page">
       <Header
         logo={props.logo}
         btn={props.btn}
@@ -29,7 +30,7 @@ export default function Cryppo(props) {
         removeAlert={props.removeAlert}
       />
       <Routes>
-        <Route path="/" element={<div>тест</div>} />
+        <Route path="/" element={<CryppoLanding />} />
         <Route
           path="cryppo/lk/*"
           element={
