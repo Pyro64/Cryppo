@@ -12,7 +12,7 @@ export default function CryppoBusiness(props) {
   //   props.getCryppoBusinessThunkCreator();
   // }, [])
   return (
-    <div>
+    <div className="page">
       <Header
         router={props.router}
         logo={props.logo}

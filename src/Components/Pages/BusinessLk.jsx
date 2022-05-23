@@ -86,6 +86,7 @@ const BusinessLk = (props) => {
             updateChart={props.updateChart}
             changeActiveIndex={props.changeActiveIndex}
             disableItem={props.disableItem}
+            cashOption={props.cashOption}
           />
         }
       />

@@ -553,21 +553,21 @@ let initialState = {
   alertData: [
     {
       id: 1,
-      message: "Success Tips",
-      description:
-        "Detailed description and advice about successful copywriting.",
+      message: "Вывод прошел успешно",
+      description: "Вывод средств с криптокошелька на карту прошел успешно",
       type: "success",
     },
     {
       id: 2,
-      message: "Success Tips",
-      description: "Additional description and information about copywriting.",
+      message: "Внимание",
+      description:
+        "Настоятельно рекомендуем подключить двухфакторную аунтификацию",
       type: "info",
     },
     {
       id: 3,
-      message: "Warning Tips",
-      description: "This is a warning notice about copywriting.",
+      message: "Опасность",
+      description: "Выполнен вход с чужого аккаунта",
       type: "warning",
     },
   ],

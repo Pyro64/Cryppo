@@ -38,9 +38,12 @@ export default function MyDrawer(props) {
     ))
     .slice(0, 2);
   function removeLk() {
-    let value = false;
-    props.hasLk(value);
-    props.login(value);
+    props.onClose();
+    setTimeout(() => {
+      let value = false;
+      props.hasLk(value);
+      props.login(value);
+    }, 380);
   }
   return (
     <Drawer
