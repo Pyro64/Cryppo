@@ -4,7 +4,11 @@ import style from "./User.module.scss";
 import MyDrawer from "../Drawer/MyDrawer";
 import { UserOutlined } from "@ant-design/icons";
 const Userblock = (props) => {
-  let isLk = true;
+  function addLk() {
+    let value = true;
+    props.hasLk(value);
+  }
+
   const [visible, setVisible] = useState(false);
   const showDrawer = () => {
     setVisible(true);
@@ -16,7 +20,7 @@ const Userblock = (props) => {
     <div className={style.block}>
       <div className={style.flex}>
         <NavLink
-          onClick={() => props.hasLk(isLk)}
+          onClick={addLk}
           to={`${props.router}/lk`}
           className={({ isActive }) =>
             isActive ? `${style.link} ${style.active}` : `${style.link}`
@@ -40,6 +44,8 @@ const Userblock = (props) => {
         card={props.card}
         alert={props.alert}
         removeAlert={props.removeAlert}
+        hasLk={props.hasLk}
+        isLk={props.isLk}
       />
     </div>
   );

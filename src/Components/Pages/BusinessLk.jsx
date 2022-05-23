@@ -11,7 +11,7 @@ const BusinessLk = (props) => {
   //   const interval = setInterval(get, 5000);
   // }, []);
   // alert(props.isLogin)
-  // if (props.isLogin === false) return <Navigate to={'/auth'} />
+  if (props.isLogin === false) return <Navigate to={"/business"} />;
   return (
     <Routes>
       <Route
@@ -36,6 +36,7 @@ const BusinessLk = (props) => {
             updateChart={props.updateChart}
             changeActiveIndex={props.changeActiveIndex}
             cashOption={props.cashOption}
+            disableItem={props.disableItem}
           />
         }
       />
@@ -59,6 +60,7 @@ const BusinessLk = (props) => {
             initChartText={props.initChartText}
             updateChart={props.updateChart}
             cashOption={props.cashOption}
+            disableItem={props.disableItem}
           />
         }
       />
@@ -83,6 +85,7 @@ const BusinessLk = (props) => {
             initChartText={props.initChartText}
             updateChart={props.updateChart}
             changeActiveIndex={props.changeActiveIndex}
+            disableItem={props.disableItem}
           />
         }
       />

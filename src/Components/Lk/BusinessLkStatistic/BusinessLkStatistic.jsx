@@ -27,6 +27,7 @@ export default function LkStatistic(props) {
               operations={props.expenses}
               chartTextData={props.chartTextData}
               initChartText={props.initChartText}
+              disableItem={props.disableItem}
             />
           </div>
           <SubtitleLk arrow={true} subtitle="Статистика валют" />

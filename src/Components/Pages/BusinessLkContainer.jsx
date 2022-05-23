@@ -5,11 +5,18 @@ import {
   setChartText,
   initChartText,
 } from "../../Redux/cryppoLk-reducer";
-import {filterValute, filterWallet, filterDate} from "../../Redux/businessLk-reducer";
-import { updateChart, changeActiveIndex } from "../../Redux/user-reducer";
+import {
+  filterValute,
+  filterWallet,
+  filterDate,
+} from "../../Redux/businessLk-reducer";
+import {
+  updateChart,
+  changeActiveIndex,
+  disableItem,
+} from "../../Redux/user-reducer";
 import BusinessLk from "./BusinessLk";
 let mapStateToProps = (state) => {
-  
   return {
     historyItem: state.businessLk.historyItem,
     card: state.user.cardData,
@@ -24,10 +31,10 @@ let mapStateToProps = (state) => {
     cashOption: state.businessLk.cashOption,
     setting: state.businessLk.settingData,
     alert: state.user.alertData,
-    langOption:state.businessLk.langOption,
-    user:state.cryppoPage.userData,
-    settingOption:state.businessLk.settingOption,
-
+    langOption: state.businessLk.langOption,
+    user: state.cryppoPage.userData,
+    settingOption: state.businessLk.settingOption,
+    isLogin: state.cryppoBusinessPage.isLogin,
   };
 };
 
@@ -40,7 +47,8 @@ const BusinessLkContainer = connect(mapStateToProps, {
   changeActiveIndex,
   filterValute,
   filterWallet,
-  filterDate
+  filterDate,
+  disableItem,
 })(BusinessLk);
 
 export default BusinessLkContainer;

@@ -37,6 +37,11 @@ export default function MyDrawer(props) {
       />
     ))
     .slice(0, 2);
+  function removeLk() {
+    let value = false;
+    props.hasLk(value);
+    props.login(value);
+  }
   return (
     <Drawer
       placement="right"
@@ -54,7 +59,9 @@ export default function MyDrawer(props) {
         <img src={props.img} className={style.img} alt="avatar" />
         <div>
           <p className={style.name}>{props.name}</p>
-          <button className={style.out}>выйти</button>
+          <button onClick={removeLk} className={style.out}>
+            выйти
+          </button>
         </div>
       </div>
       <div className={style.links}>
