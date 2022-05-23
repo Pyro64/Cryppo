@@ -105,7 +105,7 @@ let initialState = {
             img: six,
         },
     ],
-    langOpthion: [
+    langOption: [
         {
             id: 1,
             flag: rus,

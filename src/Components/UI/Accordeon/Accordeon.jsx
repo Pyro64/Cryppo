@@ -9,7 +9,6 @@ export default function Accordeon(props) {
 const [open, setOpen] = useState(true);
 const openedAccordeon = () => {
     setOpen(!open);
-    console.log(open)
 };
     return (
         <div className={open? `${style.container}`:` ${style.container} ${style.containerOpen} `}>
