@@ -6,7 +6,6 @@ import BusinessLkMain from "../Lk/BusinessLkMain/BusinessLkMain";
 import BusinessLkStatistic from "../Lk/BusinessLkStatistic/BusinessLkStatistic";
 import SettingLk from "../Lk/SettingLk/SettingLk";
 const BusinessLk = (props) => {
-  
   // const get = () => props.getCryppoLkThunkCreator();
   // useEffect(() => {
   //   const interval = setInterval(get, 5000);
@@ -36,6 +35,7 @@ const BusinessLk = (props) => {
             initChartText={props.initChartText}
             updateChart={props.updateChart}
             changeActiveIndex={props.changeActiveIndex}
+            cashOption={props.cashOption}
           />
         }
       />
@@ -102,8 +102,18 @@ const BusinessLk = (props) => {
           />
         }
       />
-      <Route path="setting" element={<SettingLk setting={props.setting} langOption={props.langOption} cashOption={props.cashOption} user={props.user} settingOption={props.settingOption}/>} />
-
+      <Route
+        path="setting"
+        element={
+          <SettingLk
+            setting={props.setting}
+            langOption={props.langOption}
+            cashOption={props.cashOption}
+            user={props.user}
+            settingOption={props.settingOption}
+          />
+        }
+      />
     </Routes>
   );
 };

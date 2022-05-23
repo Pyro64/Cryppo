@@ -1,4 +1,4 @@
-@import '../../../Style/Mixins';
+@import "../../../Style/Mixins";
 .block {
   background: rgba(91, 91, 91, 0.2);
   border: 1px solid #545454;
@@ -20,12 +20,16 @@
   position: relative;
   &::before {
     position: absolute;
-    content: '';
+    content: "";
     left: 0;
     height: 100%;
     top: 0;
     width: 0;
-    background: linear-gradient(90deg, rgba(45, 45, 45, 0.8) 0%, rgba(45, 45, 45, 0) 100%);
+    background: linear-gradient(
+      90deg,
+      rgba(45, 45, 45, 0.8) 0%,
+      rgba(45, 45, 45, 0) 100%
+    );
     transition: 0.38s ease-in-out;
   }
   &:last-child {
@@ -67,7 +71,7 @@
   @include fluid(margin-bottom, 20px, 40px);
 }
 .drop {
-  background: url('../../../Images/drop.svg') no-repeat;
+  background: url("../../../Images/drop.svg") no-repeat;
   @include fluid(width, 5px, 8px);
   @include fluid(height, 8px, 11px);
   background-size: contain;
@@ -137,4 +141,15 @@
   &:hover {
     transform: scale(1.1);
   }
+}
+.modalWrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  @include fluid(padding-top, 30px, 60px);
+  @include fluid(padding-left, 35px, 70px);
+  @include fluid(padding-right, 35px, 70px);
+  @include fluid(padding-bottom, 30px, 60px);
+  background: #2d2d2d;
+  border-radius: 12px;
 }

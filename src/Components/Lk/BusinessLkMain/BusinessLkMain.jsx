@@ -11,7 +11,11 @@ const BusinessLkMain = (props) => {
         <div className="sidebar">
           <div className="sidebar__inner">
             <SubtitleLk arrow={false} subtitle="Счета" />
-            <Check isBankCard={false} card={props.card} />
+            <Check
+              isBankCard={false}
+              card={props.card}
+              cashOption={props.cashOption}
+            />
           </div>
         </div>
         <div className="content">

@@ -36,7 +36,7 @@ export default function Check(props) {
         )}
       </div>
       <MyModal setOpen={setOpen} open={open}>
-        <CheckModal />
+        <CheckModal cashOption={props.cashOption} />
       </MyModal>
     </div>
   );
