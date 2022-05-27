@@ -16,7 +16,7 @@ import eos from "../Images/payIcon/4.svg";
 import bnb from "../Images/payIcon/BNB.svg";
 import bch from "../Images/payIcon/BCH.svg";
 
-import { AuthorizationPost, RegistrationPost } from "../Api/api";
+import { LoginPost, RegisterPost } from "../Api/accountApi";
 import filtersTool from "../Utils/filter";
 
 const AUTHORIZATION = "AUTHORIZATION";
@@ -696,9 +696,9 @@ const userReducer = (state = initialState, action) => {
     }
 };
 export const hasLk = (value) => ({ type: HAS_LK, value });
-export const authorizationPostThunkCreator = (email, password) => {
+export const LoginPostThunkCreator = (email, password) => {
     return (dispatch) => {
-        AuthorizationPost(email, password)
+        LoginPost(email, password)
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
                 dispatch({ type: AUTHORIZATION, value });
@@ -711,7 +711,7 @@ export const authorizationPostThunkCreator = (email, password) => {
 };
 export const registrationPostThunkCreator = (email, password, company) => {
     return (dispatch) => {
-        RegistrationPost(email, password, company)
+        RegisterPost(email, password, company)
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
                 dispatch({ type: AUTHORIZATION, value });
