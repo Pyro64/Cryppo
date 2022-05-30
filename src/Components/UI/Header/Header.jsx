@@ -7,20 +7,18 @@ import User from "../User/User";
 import style from "./Header.module.scss";
 
 const Header = (props) => {
+  const state = props.header;
   const [scroll, setScroll] = useState(false);
   const [burger, setBurger] = useState(false);
-  const burgerModal = () => {
-    setBurger(!burger);
-  };
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 30);
     });
   }, []);
-  let linkBtn = props.btn.map((e) => (
+  let linkBtn = state.route.btn.map((e) => (
     <Scrollbtn id={e.id} key={e.id} name={e.name} to={e.to} />
   ));
-  let scrollBtn = props.nav.map((e) => (
+  let scrollBtn = state.navData.map((e) => (
     <NavItem id={e.id} key={e.id} name={e.name} href={e.href} />
   ));
   return (
@@ -29,7 +27,7 @@ const Header = (props) => {
     >
       <div className={style.container}>
         <div className={style.block}>
-          <Logo logo={props.logo} />
+          <Logo logo={state.route.logo} />
 
           <div
             className={
@@ -41,13 +39,9 @@ const Header = (props) => {
             <Nav hasLk={props.hasLk} isLk={props.isLk} />
             {props.isEntrance !== false ? (
               <User
-                login={props.login}
-                isLogin={props.isLogin}
                 user={props.user}
-                router={props.router}
                 hasLk={props.hasLk}
                 isLk={props.isLk}
-                isBusiness={props.isBusiness}
                 card={props.card}
                 alert={props.alert}
                 removeAlert={props.removeAlert}
@@ -55,7 +49,7 @@ const Header = (props) => {
             ) : null}
           </div>
           <div
-            onClick={burgerModal}
+            onClick={setBurger(!burger)}
             className={
               burger ? `${style.burger}` : `${style.burger} ${style.open}`
             }
