@@ -1,7 +1,7 @@
 import cryppoSvg from "../Images/cryppo.svg";
 import annaBobs from "../Images/login/anna_bobs.svg";
 
-import { CryppoGet } from "../Api/api";
+import { CryppoGet } from "../Api/Api";
 
 const GET = "GET";
 const LOGIN_CRYPPO = "LOGIN_CRYPPO";

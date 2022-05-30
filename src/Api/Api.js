@@ -1,5 +1,11 @@
 import axios from "axios";
 
+export const Api = axios.create({
+    baseURL: "https://b.cryppowallet.com/",
+    headers: { "Access-Control-Allow-Origin": "*" },
+});
+
+
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
 const localApi = axios.create({
     baseURL: 'http://192.168.88.61/NetCoreTemplateApi/v1.0/',
@@ -12,7 +18,6 @@ const prodApi = axios.create({
 })
 //Прод Api
 export const AuthorizationPost = (email, password) => {
-    ;
     return prodApi.post('Account/Login', {
         email,
         password,

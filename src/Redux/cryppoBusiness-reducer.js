@@ -29,7 +29,7 @@ import banner from "../Images/content/banner-business.svg";
 import businessSvg from "../Images/cryppo-business.svg";
 import annaBobs from "../Images/login/anna_bobs.svg";
 
-import { CryppoBusinessGet } from "../Api/api";
+import { CryppoBusinessGet } from "../Api/Api";
 
 const GET = "GET";
 const LOGIN_BUSINESS = "LOGIN_BUSINESS";

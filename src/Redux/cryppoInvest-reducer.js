@@ -2,7 +2,7 @@ import one from '../Images/payIcon/1.svg'
 import two from '../Images/payIcon/2.svg'
 import three from '../Images/payIcon/3.svg'
 
-import { CryppoIndexGet } from "../Api/api"
+import { CryppoIndexGet } from "../Api/Api"
 import img1 from '../Images/payIcon/1.svg'
 import img2 from '../Images/payIcon/2.svg'
 import img3 from '../Images/payIcon/3.svg'

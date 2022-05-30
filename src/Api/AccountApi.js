@@ -1,9 +1,5 @@
 import axios from "axios";
-
-const Api = axios.create({
-    baseURL: "https://b.cryppowallet.com/",
-    headers: { "Access-Control-Allow-Origin": "*" },
-});
+import {Api} from "./Api"
 
 export const LoginPost = (email, password) => {
     return Api.post("Account/Login", {
@@ -70,3 +66,15 @@ export const ResetPasswordPost = (
         return response.data;
     });
 };
+
+export const BalanceGet = () => {
+    return Api.get("Balance/All").then((response) => {
+        return response.data;
+    });
+}
+
+export const GeneralInfoGet = () => {
+    return Api.get("General/Info").then((response) => {
+        return response.data;
+    });
+}

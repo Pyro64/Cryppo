@@ -4,7 +4,7 @@ import elementum from "../Images/icon/elementum.svg";
 import index from "../Images/icon/index.svg";
 import profit from "../Images/icon/profit.svg";
 import plus from "../Images/icon/plus.svg";
-import { CryppoLkGet } from "../Api/api";
+import { CryppoLkGet } from "../Api/Api";
 import calculate from "../Images/news/1.svg";
 import analitica from "../Images/news/2.svg";
 import cryptocard from "../Images/news/3.svg";
