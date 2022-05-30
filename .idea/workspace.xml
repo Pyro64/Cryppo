@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="488c5b31-f6d2-4269-bb6a-95acaa9e7e6a" name="Changes" comment="fix nav">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/BussinesAuthorization/BussinesAuthorization.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/BussinesAuthorization/BussinesAuthorization.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Lk/CryppoRegistry/CryppoRegistry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/CryppoRegistry/CryppoRegistry.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Cryppo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Cryppo.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/CryppoBusinessContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/CryppoBusinessContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/CryppoContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/CryppoContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/UI/CryppoAuthorization/CryppoAuthorization.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/CryppoAuthorization/CryppoAuthorization.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/UI/CryppoAuthorization/CryppoAuthorization.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/CryppoAuthorization/CryppoAuthorization.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/user-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/user-reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +23,9 @@
     <disable_hints>
       <file url="file://$PROJECT_DIR$/src/Components/Lk/CryppoLkInvest/CryppoLkInvest.jsx" />
     </disable_hints>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,6 +40,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="ProjectId" id="29EsKI2Ag3gNVSwzrU1xQuXVHJr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -44,6 +54,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "code.cleanup.on.save": "true",
     "full.screen.before.presentation.mode": "true",
     "last_opened_file_path": "E:/NoName/MedOk/Cryppo",
     "node.js.detected.package.eslint": "true",
@@ -51,7 +62,8 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.scopes",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\Snail\\AppData\\Roaming\\npm\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "actions.on.save",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -60,6 +72,7 @@
       <recent name="C:\Users\Медок\Desktop\Cryppo\src\Components\Lk" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\NoName\MedOk\Cryppo\src\Components\Lk" />
       <recent name="C:\Users\Медок\Desktop\Cryppo\src\Components\UI" />
     </key>
   </component>
@@ -95,7 +108,8 @@
       <workItem from="1652774535666" duration="1080000" />
       <workItem from="1652775641106" duration="402000" />
       <workItem from="1652776057185" duration="534000" />
-      <workItem from="1653642514967" duration="672000" />
+      <workItem from="1653642514967" duration="1169000" />
+      <workItem from="1653891842319" duration="3133000" />
     </task>
     <task id="LOCAL-00001" summary="w">
       <created>1652694078184</created>
@@ -139,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652718669596</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix nav">
+      <created>1653644750525</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1653644750525</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,7 +171,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -161,5 +194,9 @@
     <MESSAGE value="wq" />
     <MESSAGE value="fix nav" />
     <option name="LAST_COMMIT_MESSAGE" value="fix nav" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -1,16 +1,12 @@
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import CryppoBusiness from "./CryppoBusiness";
 import {
-    LoginPostThunkCreator,
-    hasLk,
-    removeAlert,
+    LoginBusinessPostThunkCreator, RegistrationBusinessPostThunkCreator, hasLk, removeAlert,
 } from "../../Redux/user-reducer";
 import {
-    get,
-    getCryppoBusinessThunkCreator,
-    login,
-    registryThunkCreator,
+    get, getCryppoBusinessThunkCreator, login, registryThunkCreator,
 } from "../../Redux/cryppoBusiness-reducer";
+
 let mapStateToProps = (state) => {
     return {
         appIcon: state.cryppoBusinessPage.appIconData,
@@ -35,13 +31,7 @@ let mapStateToProps = (state) => {
 };
 
 const CryppoBusinessContainer = connect(mapStateToProps, {
-    login,
-    get,
-    getCryppoBusinessThunkCreator,
-    LoginPostThunkCreator,
-    hasLk,
-    registryThunkCreator,
-    removeAlert,
+    login, get, getCryppoBusinessThunkCreator, LoginBusinessPostThunkCreator, hasLk, RegistrationBusinessPostThunkCreator, removeAlert,
 })(CryppoBusiness);
 
 export default CryppoBusinessContainer;

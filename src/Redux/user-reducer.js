@@ -19,7 +19,10 @@ import bch from "../Images/payIcon/BCH.svg";
 import { LoginPost, RegisterPost } from "../Api/accountApi";
 import filtersTool from "../Utils/filter";
 
-const AUTHORIZATION = "AUTHORIZATION";
+const AUTHORIZATION_BUSINESS = "AUTHORIZATION_BUSINESS";
+const AUTHORIZATION_WALLET = "AUTHORIZATION_WALLET";
+const REGISTRATION_BUSINESS = "REGISTRATION_BUSINESS";
+const REGISTRATION_WALLET = "REGISTRATION_WALLET";
 const CHANGE_ACTIVE_INDEX = "CHANGE_ACTIVE_INDEX";
 const FILTER_OPERATIONS = "FILTER_OPERATIONS";
 const UPDATE_CHART = "UPDATE_CHART";
@@ -577,7 +580,12 @@ let initialState = {
 
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
-        case AUTHORIZATION:
+        case AUTHORIZATION_BUSINESS:
+            return {
+                ...state,
+                ...action.value,
+            };
+        case AUTHORIZATION_WALLET:
             return {
                 ...state,
                 ...action.value,
@@ -696,12 +704,13 @@ const userReducer = (state = initialState, action) => {
     }
 };
 export const hasLk = (value) => ({ type: HAS_LK, value });
-export const LoginPostThunkCreator = (email, password) => {
+
+export const LoginBusinessPostThunkCreator = (email, password) => {
     return (dispatch) => {
         LoginPost(email, password)
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: AUTHORIZATION, value });
+                dispatch({ type: AUTHORIZATION_BUSINESS, value });
             })
             .catch((response) => {
                 console.log(response);
@@ -709,12 +718,41 @@ export const LoginPostThunkCreator = (email, password) => {
             });
     };
 };
-export const registrationPostThunkCreator = (email, password, company) => {
+
+export const LoginWalletPostThunkCreator = (email, password) => {
+    return (dispatch) => {
+        LoginPost(email, password)
+            .then((data) => {
+                let value = JSON.parse(JSON.stringify(data));
+                dispatch({ type: AUTHORIZATION_WALLET, value });
+            })
+            .catch((response) => {
+                console.log(response);
+                console.log("error");
+            });
+    };
+};
+
+export const RegistrationBusinessPostThunkCreator = (email, password, company) => {
     return (dispatch) => {
         RegisterPost(email, password, company)
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: AUTHORIZATION, value });
+                dispatch({ type: REGISTRATION_BUSINESS, value });
+            })
+            .catch((response) => {
+                console.log(response);
+                console.log("error");
+            });
+    };
+};
+
+export const RegistrationWalletPostThunkCreator = (email, password, company) => {
+    return (dispatch) => {
+        RegisterPost(email, password, company)
+            .then((data) => {
+                let value = JSON.parse(JSON.stringify(data));
+                dispatch({ type: REGISTRATION_WALLET, value });
             })
             .catch((response) => {
                 console.log(response);

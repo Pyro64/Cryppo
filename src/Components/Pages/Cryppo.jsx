@@ -3,7 +3,7 @@ import { Navigate, Route, Routes } from "react-router";
 import FooterContainer from "../UI/Footer/FooterContainer";
 import Header from "../UI/Header/Header";
 import CryppoLkContainer from "./CryppoLkContainer";
-import CryppoAuthorization from "../UI/CryppoAuthorization/CryppoAuthorization";
+import CryppoAuthorization from "../Lk/CryppoAuthorization/CryppoAuthorization";
 import CryppoRegistry from "../Lk/CryppoRegistry/CryppoRegistry";
 import CryppoLanding from "./CryppoLanding";
 
@@ -50,7 +50,7 @@ export default function Cryppo(props) {
           path="entrance"
           element={
             <CryppoAuthorization
-              loginThunkCreator={props.loginThunkCreator}
+                LoginWalletPostThunkCreator={props.LoginWalletPostThunkCreator}
               isLogin={props.isLogin}
             />
           }
@@ -59,7 +59,7 @@ export default function Cryppo(props) {
           path="registry"
           element={
             <CryppoRegistry
-              registryThunkCreator={props.registryThunkCreator}
+                RegistrationWalletPostThunkCreator={props.RegistrationWalletPostThunkCreator}
               isLogin={props.isLogin}
             />
           }
