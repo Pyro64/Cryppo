@@ -10,7 +10,7 @@ import {
 } from "../../Redux/cryppoLk-reducer";
 import {
   changeActiveIndex,
-  filterOperationsThunkCreator,
+  filterOperationsTC,
   updateChart,
   addTag,
   removeTag,
@@ -54,7 +54,7 @@ const CryppoLkContainer = connect(mapStateToProps, {
   changeActiveIndex,
   addTag,
   removeTag,
-  filterOperationsThunkCreator,
+  filterOperationsTC,
   inputChange,
   updateChart,
   disableItem,

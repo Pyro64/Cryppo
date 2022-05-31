@@ -8,8 +8,8 @@ import Cryppo from "./Cryppo";
 import {
     hasLk,
     removeAlert,
-    LoginWalletPostThunkCreator,
-    RegistrationWalletPostThunkCreator
+    LoginWalletPostTC,
+    RegistrationWalletPostTC
 } from "../../Redux/user-reducer";
 
 let mapStateToProps = (state) => {
@@ -31,8 +31,8 @@ const CryppoContainer = connect(mapStateToProps, {
     get,
     getCryppoThunkCreator,
     hasLk,
-    LoginWalletPostThunkCreator,
-    RegistrationWalletPostThunkCreator,
+    LoginWalletPostTC,
+    RegistrationWalletPostTC,
     removeAlert,
 })(Cryppo);
 export default CryppoContainer;
