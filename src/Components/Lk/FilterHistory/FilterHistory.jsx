@@ -18,7 +18,7 @@ export default function FilterHistory(props) {
         <div className="block">
             <MySelect
                 title="Валюта"
-                cashOption={props.cashOption}
+                currencyList={props.currencyList}
                 change={props.filterValute}
             />
             <LkInput

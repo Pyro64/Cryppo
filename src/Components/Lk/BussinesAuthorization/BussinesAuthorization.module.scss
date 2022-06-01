@@ -41,7 +41,7 @@
 .button {
   @include fluid(font-size, 16px, 18px);
   border: none;
-  background: $green;
+  background: $purpleGradient;
   @include fluid(margin-top, 20px, 35px);
   @include fluid(padding-left, 15px, 30px);
   @include fluid(padding-right, 15px, 30px);

@@ -9,17 +9,15 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const DoughnutChart = (props) => {
   let dataItems = [];
   let backgroundColorItems = [];
-  props.operations.map((e) => {
+  props.operationList.map((e) => {
     if (e.disable === false) {
       dataItems.push(e.percent);
       backgroundColorItems.push(e.color);
     }
   });
-  let elementItem = props.operations.map((e) => (
+  let elementItem = props.operationList.map((e) => (
     <StatisticCashItem
       updateChart={props.updateChart}
-      child={e.childExpensesStatistics}
-      addTag={props.addTag}
       setChartText={props.setChartText}
       initChartText={props.initChartText}
       percent={e.percent}

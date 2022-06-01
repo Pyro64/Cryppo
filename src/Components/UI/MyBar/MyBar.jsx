@@ -21,7 +21,7 @@ const MyBar = (props) => {
                 <BarChart
                     width={150}
                     height={40}
-                    data={props.composition.compositions}
+                    data={props.compositions}
                     margin={{
                         top: 30,
                         right: 10,
@@ -38,12 +38,12 @@ const MyBar = (props) => {
                         label={renderCustomBarLabel}
                         minPointSize={10}
                     >
-                        {props.composition.compositions.map((entry, index) => (
+                        {props.compositions.map((entry, index) => (
                             <Cell
                                 className={style.transition}
                                 cursor="pointer"
                                 fill={
-                                    index === props.composition.activeIndex
+                                    index === props.activeIndex
                                         ? entry.color
                                         : "#6D6D6D"
                                 }

@@ -1,8 +1,8 @@
 import React from "react";
 import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
-import FilterHistory from "../FilterHistory/FilterHistory";
-import Operation from "../OperationLk/Operation";
-import style from "./BusinessLKHistory.module.scss";
+import FilterHistory from "../../Lk/FilterHistory/FilterHistory";
+import Operation from "../../Lk/OperationLk/Operation";
+import style from "../Styles/BusinessLKHistory.module.scss";
 var Scroll = require("react-scroll");
 var Element = Scroll.Element;
 export default function BusinessLkHistory(props) {
@@ -13,7 +13,7 @@ export default function BusinessLkHistory(props) {
                     <div className="sidebar__inner">
                         <SubtitleLk arrow={false} subtitle="Фильтр" />
                         <FilterHistory
-                            cashOption={props.cashOption}
+                            currencyList={props.currencyList}
                             filterDate={props.filterDate}
                             filterWallet={props.filterWallet}
                             filterValute={props.filterValute}
@@ -23,11 +23,11 @@ export default function BusinessLkHistory(props) {
                 <div className="content">
                     <SubtitleLk arrow={false} subtitle="История" />
                     <Element name="myScrollToElement" />
-                    {props.operationData.operation.length !== 0 ? (
+                    {props.operationList.length !== 0 ? (
                         <Operation
                             fullOperation={true}
                             pagination={true}
-                            operationData={props.operationData}
+                            operationList={props.operationList}
                             setModal={props.setModal}
                             operationModal={props.operationModal}
                             isModal={props.isModal}

@@ -1,5 +1,10 @@
 import annaBobs from "../Images/login/anna_bobs.svg";
-
+import usd from "../Images/payIcon/12.svg";
+import icx from "../Images/payIcon/6.svg";
+import arde from "../Images/payIcon/arde.svg";
+import eth from "../Images/payIcon/eth.svg";
+import visa from "../Images/icon/VISA.svg";
+import masterCard from "../Images/icon/mastercard.svg";
 import { LoginPost, RegisterPost } from "../Api/AccountApi";
 import * as SettingsApi from "../Api/SettingsApi";
 import filtersTool from "../Utils/filter";
@@ -14,6 +19,48 @@ let initialState = {
         isLogin: true,
         router: "/business",
         mail: "k.konstantinopolskiy@gmail.com",
+        cardList: [
+            {
+                id: 1,
+                icon: eth,
+                text: "ETH",
+                availability: "1.234 ETH",
+                prise: "9 656 $",
+            },
+            {
+                id: 2,
+                icon: icx,
+                text: "ICX",
+                availability: "78.444 ICX",
+                prise: "9 656 $",
+            },
+            {
+                id: 3,
+                icon: arde,
+                text: "ARDE",
+                availability: "17.235 ARDE",
+                prise: "9 656 $",
+            },
+            {
+                id: 4,
+                icon: usd,
+                text: "USD",
+                availability: "56.254 USD",
+                prise: "9 656 $",
+            },
+        ],
+        bankCardList: [
+            {
+                id: 1,
+                number: 5678,
+                logo: masterCard,
+            },
+            {
+                id: 2,
+                number: 7658,
+                logo: visa,
+            },
+        ],
     },
     cryppo: {
         isLogin: true,
@@ -28,6 +75,7 @@ let initialState = {
 
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
+
         case ActionType.AUTHORIZATION_BUSINESS:
             return {
                 ...state,
@@ -383,5 +431,6 @@ export const removeAlert = (value) => ({
     type: ActionType.REMOVE_ALERT,
     value,
 });
+
 
 export default userReducer;
