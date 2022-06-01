@@ -36,8 +36,9 @@ export default function Accordeon(props) {
         classNames="accordion-wrapper__content"
         unmountOnExit
       >
-        <section className="accordion-wrapper__content-body color">
-          {props.text}
+        <section className="accordion-wrapper__content-body">
+          {/* стиль темы */}
+          <div className="color">{props.text}</div>
         </section>
       </CSSTransition>
     </div>
