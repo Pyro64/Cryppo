@@ -7,7 +7,7 @@ import User from "../User/User";
 import style from "./Header.module.scss";
 
 const Header = (props) => {
-  const state = props.header;
+  let state = props;
   const [scroll, setScroll] = useState(false);
   const [burger, setBurger] = useState(false);
   useEffect(() => {
@@ -15,10 +15,10 @@ const Header = (props) => {
       setScroll(window.scrollY > 30);
     });
   }, []);
-  let linkBtn = state.route.btn.map((e) => (
+  let linkBtn = state.btn.map((e) => (
     <Scrollbtn id={e.id} key={e.id} name={e.name} to={e.to} />
   ));
-  let scrollBtn = state.navData.map((e) => (
+  let scrollBtn = state.nav.map((e) => (
     <NavItem id={e.id} key={e.id} name={e.name} href={e.href} />
   ));
   return (
@@ -27,7 +27,7 @@ const Header = (props) => {
     >
       <div className={style.container}>
         <div className={style.block}>
-          <Logo logo={state.route.logo} />
+          <Logo logo={props.logo} />
 
           <div
             className={

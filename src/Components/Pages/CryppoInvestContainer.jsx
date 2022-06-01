@@ -1,7 +1,6 @@
 import { connect } from 'react-redux'
 import CryppoInvest from './CryppoInvest'
-import { getCryppoIndexThunkCreator } from '../../Redux/cryppoInvest-reducer';
-import {login, addStep} from '../../Redux/cryppoInvest-reducer'
+
 let mapStateToProps = (state) => {
     return {
         benefits: state.cryppoInvestPage.benefitsData,
@@ -18,5 +17,5 @@ let mapStateToProps = (state) => {
     }
 }
 
-const CryppoInvestContainer = connect(mapStateToProps, { addStep, login, getCryppoIndexThunkCreator })(CryppoInvest);
+const CryppoInvestContainer = connect(mapStateToProps, {  })(CryppoInvest);
 export default CryppoInvestContainer

@@ -8,26 +8,18 @@ import CryppoRegistry from "../Lk/CryppoRegistry/CryppoRegistry";
 import CryppoLanding from "./CryppoLanding";
 
 export default function Cryppo(props) {
-  // useEffect(() => {
-  //   props.getCryppoThunkCreator()
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [])
   return (
     <div className="page">
       <Header
-        logo={props.logo}
-        btn={props.btn}
-        login={props.login}
-        isLogin={props.isLogin}
-        user={props.user}
-        nav={props.nav}
-        router={props.router}
-        isLk={props.isLk}
-        hasLk={props.hasLk}
-        isBusiness={false}
-        card={props.card}
-        alert={props.alert}
-        removeAlert={props.removeAlert}
+          user={props.user}
+          isLk={props.isLk}
+          hasLk={props.hasLk}
+          header={props.header}
+          card={props.card}
+          alert={props.alert}
+          removeAlert={props.removeAlert}
+          btn={props.btn}
+          nav={props.nav}
       />
       <Routes>
         <Route path="/" element={<CryppoLanding />} />
