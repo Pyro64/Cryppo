@@ -27,6 +27,7 @@ let initialState = {
           to: "faq",
         },
       ],
+      routeLk: "/business",
     },
     navData: [
       {
@@ -61,6 +62,7 @@ let initialState = {
           to: "about",
         },
       ],
+      routeLk: "/cryppo",
     },
     navData: [
       {
@@ -128,6 +130,7 @@ let initialState = {
           to: "benefitsIndex",
         },
       ],
+      routeLk: "/cryppo",
     },
   },
 };

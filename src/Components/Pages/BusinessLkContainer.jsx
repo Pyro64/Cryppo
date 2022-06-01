@@ -9,7 +9,6 @@ import {
   updateChart,
   changeActiveIndex,
   disableItem,
-
 } from "../../Redux/operation-reducer";
 import BusinessLk from "./BusinessLk";
 let mapStateToProps = (state) => {
@@ -41,10 +40,6 @@ const BusinessLkContainer = connect(mapStateToProps, {
   setChartText,
   initChartText,
   changeActiveIndex,
-  filterValute,
-  filterWallet,
-  filterDate,
-  deleteAddress,
   disableItem,
 })(BusinessLk);
 

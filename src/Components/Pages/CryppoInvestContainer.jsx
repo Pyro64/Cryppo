@@ -1,21 +1,24 @@
-import { connect } from 'react-redux'
-import CryppoInvest from './CryppoInvest'
+import { connect } from "react-redux";
+import CryppoInvest from "./CryppoInvest";
 
 let mapStateToProps = (state) => {
-    return {
-        benefits: state.cryppoInvestPage.benefitsData,
-        suggestions: state.cryppoInvestPage.suggestionsData,
-        banner: state.cryppoInvestPage.bannerData,
-        aboutDataIndex: state.cryppoInvestPage.aboutDataIndex,
-        logo: state.cryppoInvestPage.route.logo,
-        btn: state.cryppoInvestPage.route.btn,
-        isLogin: state.cryppoInvestPage.isLogin,
-        bannerIndex: state.cryppoInvestPage.bannerIndex,
-        step: state.cryppoInvestPage.step,
-        user: state.user.userData,
-        nav: state.cryppoInvestPage.navData,
-    }
-}
+  return {
+    benefits: state.landing.invest.benefitsData,
+    suggestions: state.landing.invest.suggestionsData,
+    banner: state.landing.invest.bannerData,
+    aboutDataIndex: state.landing.invest.aboutDataIndex,
+    bannerIndex: state.landing.invest.bannerIndex,
+    step: state.landing.invest.step,
+    isLogin: state.user.cryppo.isLogin,
+    header: state.header.cryppo,
+    user: state.user.cryppo,
+    isLk: state.user.isLk,
+    card: state.operation.cryppo.cardData,
+    alert: state.lk.cryppo.alertData,
+    logo: state.header.invest.route.logo,
+    routeLk: state.header.cryppo.route.routeLk,
+  };
+};
 
-const CryppoInvestContainer = connect(mapStateToProps, {  })(CryppoInvest);
-export default CryppoInvestContainer
+const CryppoInvestContainer = connect(mapStateToProps, {})(CryppoInvest);
+export default CryppoInvestContainer;

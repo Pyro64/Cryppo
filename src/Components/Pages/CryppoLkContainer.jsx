@@ -1,17 +1,14 @@
 import { connect } from "react-redux";
 import CryppoLk from "./CryppoLk";
-import {
-  filterOperationsTC,
-  disableItem,
-} from "../../Redux/user-reducer";
+import { filterOperationsTC, disableItem } from "../../Redux/user-reducer";
 
 let mapStateToProps = (state) => {
   return {
-    card: state.user.cardData,
-    bankCard: state.user.bankCardData,
-    invest: state.cryppoLk.investData,
+    card: state.operation.cryppo.cardData,
+    bankCard: state.operation.cryppo.bankCardData,
+    invest: state.lk.cryppo.investData,
     newCard: state.cryppoLk.newCardData,
-    news: state.cryppoLk.newsData,
+    news: state.lk.cryppo.newsData,
     statistic: state.user.statisticData,
     translations: state.cryppoLk.translationsData,
     tabs: state.cryppoLk.tabsData,

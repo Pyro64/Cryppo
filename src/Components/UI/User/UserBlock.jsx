@@ -21,7 +21,7 @@ const Userblock = (props) => {
       <div className={style.flex}>
         <NavLink
           onClick={addLk}
-          to={`${props.router}/lk`}
+          to={`${props.routeLk}/lk`}
           className={({ isActive }) =>
             isActive ? `${style.link} ${style.active}` : `${style.link}`
           }

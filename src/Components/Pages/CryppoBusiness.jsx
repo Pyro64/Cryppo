@@ -12,20 +12,23 @@ export default function CryppoBusiness(props) {
   // useEffect(() => {
   //   props.getCryppoBusinessThunkCreator();
   // }, [])
+  debugger;
   return (
     <div className="page">
       <Header
         user={props.user}
         isLk={props.isLk}
         hasLk={props.hasLk}
+        isLogin={props.isLogin}
         header={props.header}
         card={props.card}
+        routeLk={props.routeLk}
         alert={props.alert}
         removeAlert={props.removeAlert}
       />
       <Routes>
         <Route path="/" element={<BusinessLandingContainer />} />
-        <Route path="lk/*" element={<BusinessLkContainer />} />
+        {/* <Route path="lk/*" element={<BusinessLkContainer />} /> */}
         <Route
           path="/entrance"
           element={<BussinesAuthorization isLogin={props.isLogin} />}

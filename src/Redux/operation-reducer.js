@@ -983,6 +983,7 @@ let initialState = {
       cash: "100",
       percent: "100%",
     },
+    isHover: false,
   },
   templateExpensesStatisticData: [],
   templateArrivalStatisticData: [],

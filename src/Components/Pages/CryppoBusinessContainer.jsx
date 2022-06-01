@@ -1,7 +1,10 @@
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import CryppoBusiness from "./CryppoBusiness";
 import {
-    LoginBusinessPostTC, RegistrationBusinessPostTC, hasLk, removeAlert,
+  LoginBusinessPostTC,
+  RegistrationBusinessPostTC,
+  hasLk,
+  removeAlert,
 } from "../../Redux/user-reducer";
 
 let mapStateToProps = (state) => {
@@ -11,13 +14,17 @@ let mapStateToProps = (state) => {
     isLk: state.user.isLk,
     user: state.user.business,
     logo: state.header.business.route.logo,
+    routeLk: state.header.business.route.routeLk,
     card: state.operation.cryppo.cardData,
     alert: state.lk.business.alertData,
   };
 };
 
 const CryppoBusinessContainer = connect(mapStateToProps, {
-    LoginBusinessPostTC, hasLk, RegistrationBusinessPostTC, removeAlert,
+  LoginBusinessPostTC,
+  hasLk,
+  RegistrationBusinessPostTC,
+  removeAlert,
 })(CryppoBusiness);
 
 export default CryppoBusinessContainer;
