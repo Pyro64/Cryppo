@@ -4,21 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="488c5b31-f6d2-4269-bb6a-95acaa9e7e6a" name="Changes" comment="fix nav">
-      <change afterPath="$PROJECT_DIR$/src/Components/UI/MyBar/MyBar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/UI/MyBar/MyBar.module.scss" afterDir="false" />
+    <list default="true" id="488c5b31-f6d2-4269-bb6a-95acaa9e7e6a" name="Changes" comment="More Api Methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/BusinessLkMain/BusinessLkMain.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/BusinessLkMain/BusinessLkMain.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/CompositionIndex/CompositionIndex.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/CompositionIndex/CompositionIndex.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/CompositionIndex/CompositionIndex.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/CompositionIndex/CompositionIndex.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/StatisticCash/StatisticCashItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/StatisticCash/StatisticCashItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/SubtitleLk/SubtitleLk.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/SubtitleLk/SubtitleLk.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/SubtitleLk/SubtitleLk.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/SubtitleLk/SubtitleLk.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLkContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLkContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/Cryppo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Cryppo.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/CryppoBusinessContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/CryppoBusinessContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/CryppoContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/CryppoContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/cryppo-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/cryppo-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/cryppoBusiness-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/cryppoBusiness-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/CryppoInvestContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/CryppoInvestContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/CryppoLkContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/CryppoLkContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/UI/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/Header/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/user-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/user-reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +24,13 @@
     <disable_hints>
       <file url="file://$PROJECT_DIR$/src/Components/Lk/CryppoLkInvest/CryppoLkInvest.jsx" />
     </disable_hints>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,27 +51,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "full.screen.before.presentation.mode": "true",
-    "last_opened_file_path": "C:/Users/Медок/Desktop/Cryppo",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.scopes",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/NoName/MedOk/Cryppo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\Snail\\AppData\\Roaming\\npm\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Медок\Desktop\Cryppo\src\Components\Lk" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\NoName\MedOk\Cryppo\src\Components\Lk" />
       <recent name="C:\Users\Медок\Desktop\Cryppo\src\Components\UI" />
     </key>
   </component>
@@ -106,6 +109,11 @@
       <workItem from="1652774535666" duration="1080000" />
       <workItem from="1652775641106" duration="402000" />
       <workItem from="1652776057185" duration="534000" />
+      <workItem from="1653642514967" duration="1169000" />
+      <workItem from="1653891842319" duration="19095000" />
+      <workItem from="1653917212100" duration="819000" />
+      <workItem from="1653974146225" duration="5866000" />
+      <workItem from="1653989196447" duration="5328000" />
     </task>
     <task id="LOCAL-00001" summary="w">
       <created>1652694078184</created>
@@ -149,7 +157,35 @@
       <option name="project" value="LOCAL" />
       <updated>1652718669596</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix nav">
+      <created>1653644750525</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1653644750525</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add Api Methods">
+      <created>1653896822709</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1653896822710</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Create ThunkCreators">
+      <created>1653907936645</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1653907936645</updated>
+    </task>
+    <task id="LOCAL-00010" summary="More Api Methods">
+      <created>1653979394868</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1653979394868</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +196,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -170,6 +218,13 @@
     <MESSAGE value="w" />
     <MESSAGE value="wq" />
     <MESSAGE value="fix nav" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix nav" />
+    <MESSAGE value="Add Api Methods" />
+    <MESSAGE value="Create ThunkCreators" />
+    <MESSAGE value="More Api Methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="More Api Methods" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -9,7 +9,6 @@ const CryppoRegistry = (props) => {
     const [surname, setSurname] = useState("");
     const [passwordName, setPasswordName] = useState("");
     const [repeatPasswordName, setRepeatPasswordName] = useState("");
-    const value = true;
     const navigate = useNavigate();
     if (props.isLogin) {
         navigate("/cryppo/lk");
@@ -17,15 +16,16 @@ const CryppoRegistry = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.registryThunkCreator(
+        props.RegistrationWalletPostThunkCreator(
             null,
             emailName,
             name,
             surname,
             passwordName,
             repeatPasswordName,
-            value
+            true
         );
+        navigate("/cryppo/lk");
     };
 
     return (

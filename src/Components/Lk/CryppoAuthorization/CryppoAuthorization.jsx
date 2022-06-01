@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./CryppoAuthorization.module.scss";
 import { NavLink, useNavigate } from "react-router-dom";
-import LkInput from "../LkInput/LkInput";
+import LkInput from "../../UI/LkInput/LkInput";
 import { Input, Space } from "antd";
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 
@@ -9,13 +9,13 @@ export default function CryppoAuthorization(props) {
     const navigate = useNavigate();
     const [emailName, setEmailName] = useState("");
     const [passwordName, setPasswordName] = useState("");
-    const value = true;
     if (props.isLogin) {
         navigate("/cryppo/lk");
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.loginThunkCreator(emailName, passwordName, value);
+        props.LoginWalletPostThunkCreator(emailName, passwordName, true);
+        navigate("/cryppo/lk");
     };
     return (
         <div className="main">

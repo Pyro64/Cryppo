@@ -15,7 +15,7 @@ export default function User(props) {
           img={props.user.img}
           name={props.user.name}
           login={props.login}
-          router={props.router}
+          routeLk={props.routeLk}
           hasLk={props.hasLk}
           isLk={props.isLk}
           isBusiness={props.isBusiness}
