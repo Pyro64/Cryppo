@@ -1,12 +1,12 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "../src/Style/Style.scss";
 import { ParallaxProvider } from "react-scroll-parallax";
 import ScrollToTop from "./Components/UI/ScrollToTop/ScrollToTop";
 import Spinner from "./Components/UI/Spinner/Spinner";
 import CryppoInvestContainer from "./Components/Pages/CryppoInvestContainer";
-import MyDrawer from "./Components/UI/Drawer/MyDrawer";
-
+import { ThemeProvider } from "styled-components";
+import { darkTheme, lightTheme, GlobalStyles } from "./theme";
 const CryppoContainer = React.lazy(() =>
   import("./Components/Pages/CryppoContainer")
 );
@@ -15,23 +15,50 @@ const CryppoBusinessContainer = React.lazy(() =>
 );
 
 function App() {
+  const [theme, setTheme] = useState("light");
+  const switchTheme = () => {
+    theme === true ? setTheme(false) : setTheme(true);
+  };
   return (
-    <BrowserRouter>
-      <ParallaxProvider>
-        <div className="App">
-          <div className="gradient"></div>
-          <ScrollToTop />
-          <Suspense fallback={<Spinner />}>
-            <Routes>
-              <Route path="/*" element={<CryppoContainer />} />
-              <Route path="/business/*" element={<CryppoBusinessContainer />} />
-              <Route path="/invest" element={<CryppoInvestContainer />} />
-            </Routes>
-          </Suspense>
-        </div>
-      </ParallaxProvider>
-    </BrowserRouter>
+    <ThemeProvider theme={theme === true ? lightTheme : darkTheme}>
+      <GlobalStyles />
+      <BrowserRouter>
+        <ParallaxProvider>
+          <div className="App">
+            <div className="gradient"></div>
+            <ScrollToTop />
+            <Suspense fallback={<Spinner />}>
+              <Routes>
+                <Route
+                  path="/*"
+                  element={
+                    <CryppoContainer switchTheme={switchTheme} theme={theme} />
+                  }
+                />
+                <Route
+                  path="/business/*"
+                  element={
+                    <CryppoBusinessContainer
+                      switchTheme={switchTheme}
+                      theme={theme}
+                    />
+                  }
+                />
+                <Route
+                  path="/invest"
+                  element={
+                    <CryppoInvestContainer
+                      switchTheme={switchTheme}
+                      theme={theme}
+                    />
+                  }
+                />
+              </Routes>
+            </Suspense>
+          </div>
+        </ParallaxProvider>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
-
 export default App;

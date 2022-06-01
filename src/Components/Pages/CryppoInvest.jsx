@@ -26,6 +26,8 @@ export default function CryppoInvest(props) {
         alert={props.alert}
         removeAlert={props.removeAlert}
         routeLk={props.routeLk}
+        switchTheme={props.switchTheme}
+        theme={props.theme}
       />
       <div className="main">
         <Banner

@@ -22,6 +22,8 @@ export default function User(props) {
           card={props.card}
           alert={props.alert}
           removeAlert={props.removeAlert}
+          switchTheme={props.switchTheme}
+          theme={props.theme}
         />
       ) : (
         <NavLink to={url} className={style.container}>

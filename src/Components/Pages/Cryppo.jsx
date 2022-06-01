@@ -20,6 +20,8 @@ export default function Cryppo(props) {
         card={props.card}
         alert={props.alert}
         removeAlert={props.removeAlert}
+        switchTheme={props.switchTheme}
+        theme={props.theme}
       />
       <Routes>
         <Route path="/" element={<CryppoLanding />} />

@@ -46,6 +46,8 @@ const Header = (props) => {
                 alert={props.alert}
                 removeAlert={props.removeAlert}
                 routeLk={props.routeLk}
+                switchTheme={props.switchTheme}
+                theme={props.theme}
               />
             ) : null}
           </div>

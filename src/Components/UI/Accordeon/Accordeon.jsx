@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
+import styled from "styled-components";
 import style from "./Accordeon.module.scss";
 
 export default function Accordeon(props) {
@@ -7,6 +8,9 @@ export default function Accordeon(props) {
   const openedAccordeon = () => {
     setOpen(!open);
   };
+  // const Text = styled.div`
+  //   color: ${(props) => props.theme.color};
+  // `;
   return (
     <div
       className={
@@ -32,7 +36,7 @@ export default function Accordeon(props) {
         classNames="accordion-wrapper__content"
         unmountOnExit
       >
-        <section className="accordion-wrapper__content-body">
+        <section className="accordion-wrapper__content-body color">
           {props.text}
         </section>
       </CSSTransition>

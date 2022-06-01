@@ -46,6 +46,8 @@ const Userblock = (props) => {
         removeAlert={props.removeAlert}
         hasLk={props.hasLk}
         isLk={props.isLk}
+        switchTheme={props.switchTheme}
+        theme={props.theme}
       />
     </div>
   );

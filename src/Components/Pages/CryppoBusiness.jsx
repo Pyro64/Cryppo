@@ -25,6 +25,8 @@ export default function CryppoBusiness(props) {
         routeLk={props.routeLk}
         alert={props.alert}
         removeAlert={props.removeAlert}
+        switchTheme={props.switchTheme}
+        theme={props.theme}
       />
       <Routes>
         <Route path="/" element={<BusinessLandingContainer />} />
