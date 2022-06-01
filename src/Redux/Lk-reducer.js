@@ -46,7 +46,7 @@ let initialState = {
         type: "warning",
       },
     ],
-    cashOption: [
+    currencyList: [
       {
         id: 5,
         value: "ETH",
@@ -229,6 +229,29 @@ let initialState = {
         value: true,
       },
     ],
+    isModal: false,
+    operationModal: {
+      id: null,
+      type: null,
+      icon: null,
+      title: null,
+      check: null,
+      data: null,
+      iconPay: null,
+      currencyPay: null,
+      cash: null,
+      firm: null,
+      bankCardData: {
+        id: null,
+        number: null,
+        logo: null,
+        color: null,
+      },
+      status: {
+        color: null,
+        text: null,
+      },
+    },
   },
   cryppo: {
     alertData: [
@@ -261,7 +284,7 @@ let initialState = {
       povered: "Powered by Elementum",
       poveredIcon: elementum,
     },
-    newCardData: {
+    cardData: {
       id: 1,
       title: "Привязать карту",
       povered: "Powered by QRON",
@@ -412,6 +435,7 @@ let initialState = {
         icon: gipo,
       },
     ],
+    isHover:false,
   },
 };
 const LkReducer = (state = initialState, action) => {
@@ -426,18 +450,7 @@ const LkReducer = (state = initialState, action) => {
         ...state,
         isModal: action.isModal,
       };
-    case SET_CHART_TEXT:
-      return {
-        ...state,
-        chartTextData: action.value,
-        isHover: true,
-      };
-    case INIT_CHART_TEXT:
-      return {
-        ...state,
-        chartTextData: initialState.chartTextData,
-        isHover: false,
-      };
+
     case REMOVE_ALERT:
       return {
         ...state,
@@ -448,8 +461,7 @@ const LkReducer = (state = initialState, action) => {
   }
 };
 export const removeAlert = (value) => ({ type: REMOVE_ALERT, value });
-export const initChartText = () => ({ type: INIT_CHART_TEXT });
-export const setChartText = (value) => ({ type: SET_CHART_TEXT, value });
+
 export const switchModal = (isModal) => ({ type: SWITCH_MODAL, isModal });
 export const setModal = (value) => ({ type: SET_MODAL, value });
 export default LkReducer;

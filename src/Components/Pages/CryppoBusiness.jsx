@@ -2,17 +2,13 @@ import React from "react";
 import { Navigate, Route, Routes } from "react-router";
 import CryppoBusinessLanding from "./CryppoBusinessLanding";
 import Header from "../UI/Header/Header";
+import BusinessLk from "./BusinessLk";
 import FooterContainer from "../UI/Footer/FooterContainer";
 import BussinesAuthorization from "../Lk/BussinesAuthorization/BussinesAuthorization";
 import BussinessRegistry from "../Lk/BussinessRegistry/BussinessRegistry";
-import BusinessLkContainer from "./BusinessLkContainer";
 import BusinessLandingContainer from "./BusinessLandingContainer";
 
 export default function CryppoBusiness(props) {
-  // useEffect(() => {
-  //   props.getCryppoBusinessThunkCreator();
-  // }, [])
-  debugger;
   return (
     <div className="page">
       <Header
@@ -28,7 +24,7 @@ export default function CryppoBusiness(props) {
       />
       <Routes>
         <Route path="/" element={<BusinessLandingContainer />} />
-        {/* <Route path="lk/*" element={<BusinessLkContainer />} /> */}
+        <Route path="lk/*" element={<BusinessLk />} />
         <Route
           path="/entrance"
           element={<BussinesAuthorization isLogin={props.isLogin} />}

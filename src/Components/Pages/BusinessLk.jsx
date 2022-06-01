@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router";
 import Balance from "../Lk/Balance/Balance";
-import BusinessLkHistory from "../Lk/BusinessLkHistory/BusinessLkHistory";
-import BusinessLkMain from "../Lk/BusinessLkMain/BusinessLkMain";
-import BusinessLkStatistic from "../Lk/BusinessLkStatistic/BusinessLkStatistic";
+import BusinessLkHistoryContainer from "./BusinessLk/BusinessLkHistoryContainer";
+import BusinessLkStatistic from "./BusinessLk/BusinessLkStatistic";
 import SettingLk from "../Lk/SettingLk/SettingLk";
 import Support from "../UI/Support/Support";
+import BusinessLkMainContainer from "./BusinessLk/BusinessLkMainContainer";
 const BusinessLk = (props) => {
   // const get = () => props.getCryppoLkThunkCreator();
   // useEffect(() => {
@@ -18,27 +18,7 @@ const BusinessLk = (props) => {
       <Route
         path="/"
         element={
-          <BusinessLkMain
-            composition={props.composition}
-            card={props.card}
-            historyItem={props.historyItem}
-            operationData={props.operationData}
-            setModal={props.setModal}
-            operationModal={props.operationModal}
-            isModal={props.isModal}
-            switchModal={props.switchModal}
-            filter={false}
-            isHover={props.isHover}
-            setChartText={props.setChartText}
-            expenses={props.expenses}
-            arrival={props.arrival}
-            chartTextData={props.chartTextData}
-            initChartText={props.initChartText}
-            updateChart={props.updateChart}
-            changeActiveIndex={props.changeActiveIndex}
-            cashOption={props.cashOption}
-            disableItem={props.disableItem}
-          />
+          <BusinessLkMainContainer/>
         }
       />
       <Route
@@ -94,17 +74,7 @@ const BusinessLk = (props) => {
       <Route
         path="history"
         element={
-          <BusinessLkHistory
-            operationData={props.operationData}
-            setModal={props.setModal}
-            operationModal={props.operationModal}
-            isModal={props.isModal}
-            switchModal={props.switchModal}
-            cashOption={props.cashOption}
-            filterValute={props.filterValute}
-            filterWallet={props.filterWallet}
-            filterDate={props.filterDate}
-          />
+          <BusinessLkHistoryContainer/>
         }
       />
 

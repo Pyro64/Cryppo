@@ -4,7 +4,7 @@ import CompositionIndexItem from "./CompositionIndexItem";
 import MyBar from "../../UI/MyBar/MyBar";
 
 export default function CompositionIndex(props) {
-  let items = props.composition.compositions.map((e) => (
+  let items = props.barData.compositions.map((e) => (
     <CompositionIndexItem
       changeActiveIndex={props.changeActiveIndex}
       id={e.id}
@@ -23,7 +23,7 @@ export default function CompositionIndex(props) {
         индексе
       </div>
       <div className={style.wrapperIndex}>{items}</div>
-      <MyBar composition={props.composition} height={`300px`} changeActiveIndex={props.changeActiveIndex} />
+      <MyBar compositions={props.barData.compositions} height={`300px`} changeActiveIndex={props.changeActiveIndex} />
     </div>
   );
 }
