@@ -15,12 +15,7 @@ const BusinessLk = (props) => {
   if (props.isLogin === false) return <Navigate to={"/business"} />;
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-          <BusinessLkMainContainer/>
-        }
-      />
+      <Route path="/" element={<BusinessLkMainContainer />} />
       <Route
         path="balance"
         element={
@@ -71,12 +66,7 @@ const BusinessLk = (props) => {
           />
         }
       />
-      <Route
-        path="history"
-        element={
-          <BusinessLkHistoryContainer/>
-        }
-      />
+      <Route path="history" element={<BusinessLkHistoryContainer />} />
 
       <Route
         path="setting"
@@ -92,7 +82,6 @@ const BusinessLk = (props) => {
           />
         }
       />
-      <Route path="support" element={<Support />} />
     </Routes>
   );
 };
