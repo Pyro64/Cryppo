@@ -4,7 +4,6 @@ import Balance from "../Lk/Balance/Balance";
 import BusinessLkHistoryContainer from "./BusinessLk/BusinessLkHistoryContainer";
 import BusinessLkStatistic from "./BusinessLk/BusinessLkStatistic";
 import SettingLk from "../Lk/SettingLk/SettingLk";
-import Support from "../UI/Support/Support";
 import BusinessLkMainContainer from "./BusinessLk/BusinessLkMainContainer";
 const BusinessLk = (props) => {
   // const get = () => props.getCryppoLkThunkCreator();
