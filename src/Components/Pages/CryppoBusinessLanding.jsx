@@ -10,7 +10,6 @@ import Banner from "../UI/Banner/Banner";
 import LevelBusiness from "../Landing/LevelBusiness/LevelBusiness";
 
 export default function CryppoBusinessLanding(props) {
-  debugger;
   return (
     <div className="main">
       <Banner page="business" banner={props.banner} />

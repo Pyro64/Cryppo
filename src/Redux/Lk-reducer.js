@@ -323,7 +323,6 @@ let initialState = {
         text: "Powered by Elementum",
         povered: elementum,
       },
-
       addCart: {
         id: 1,
         icon: plus,
@@ -331,7 +330,13 @@ let initialState = {
         text: "Powered by QRON",
         povered: qron,
       },
-
+      addTerminal: {
+        id: 1,
+        icon: plus,
+        title: "Привязать терминал",
+        text: "Powered by QRON",
+        povered: qron,
+      },
       indexNow: {
         id: 1,
         icon: index,
@@ -435,7 +440,7 @@ let initialState = {
         icon: gipo,
       },
     ],
-    isHover:false,
+    isHover: false,
   },
 };
 const LkReducer = (state = initialState, action) => {

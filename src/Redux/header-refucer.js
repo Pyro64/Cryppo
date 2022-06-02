@@ -50,6 +50,7 @@ let initialState = {
         name: "Статистика",
         href: "/business/lk/statistic",
       },
+      { id: 5, name: "Настройки", href: "/business/lk/setting" },
     ],
   },
   cryppo: {

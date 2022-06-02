@@ -26,7 +26,7 @@ export default function CryppoBusiness(props) {
       />
       <Routes>
         <Route path="/" element={<BusinessLandingContainer />} />
-        <Route path="lk/*" element={<BusinessLk />} />
+        <Route path="lk/*" element={<BusinessLk addCard={props.addCard} />} />
         <Route
           path="/entrance"
           element={<BussinesAuthorization isLogin={props.isLogin} />}

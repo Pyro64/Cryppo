@@ -77,6 +77,17 @@ export const GlobalStyles = createGlobalStyle`
       margin: auto;
     }
 `;
+// function calcFluidFontSize($fmin, $fmax, $wmin, $wmax, $units: px) {
+//   $fmin = strip-unit($fmin);
+//   $fmax = strip-unit($fmax);
+//   $wmin = strip-unit($wmin),
+//   $wmax= strip-unit($wmax);
+//   $k: ($fmax - $fmin)/ ($wmax - $wmin);
+//   $b: $fmin - $k * $wmin;
+//   $b: $b + $units;
+
+//    return calc(#{$k} * 100vw + #{$b});;
+// }
 // @media screen and (max-width: $breakpoint-lg) {
 //   max-width: $container-md;
 // }

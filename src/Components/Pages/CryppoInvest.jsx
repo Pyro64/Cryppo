@@ -12,7 +12,6 @@ export default function CryppoInvest(props) {
   // useEffect(() => {
   //     props.getCryppoIndexThunkCreator();
   // }, [])
-  debugger;
   return (
     <div className="page">
       <Header

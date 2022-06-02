@@ -4,7 +4,9 @@ import Check from "../../Lk/CheckLk/Check";
 import Operation from "../../Lk/OperationLk/Operation";
 import DoughnutChart from "../../Lk/DoughnutChart/DoughnutChart";
 import CompositionIndex from "../../Lk/CompositionIndex/CompositionIndex";
+import SidebarTabs from "../../Lk/SidebarTabs/SidebarTabs";
 const BusinessLkMain = (props) => {
+  debugger;
   return (
     <div className="main container">
       <div className="flex ">
@@ -16,6 +18,7 @@ const BusinessLkMain = (props) => {
               cardList={props.cardList}
               currencyList={props.currencyList}
             />
+            <SidebarTabs tabs={props.tabs.tabsData.addTerminal} />
           </div>
         </div>
         <div className="content">
@@ -34,7 +37,7 @@ const BusinessLkMain = (props) => {
           </div>
           <SubtitleLk arrow={true} subtitle="Статистика валют" />
           <CompositionIndex
-              barData={props.barData}
+            barData={props.barData}
             changeActiveIndex={props.changeActiveIndex}
           />
           <SubtitleLk arrow={true} subtitle="Последние операции" />

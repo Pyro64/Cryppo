@@ -16,6 +16,7 @@ let mapStateToProps = (state) => {
     logo: state.header.business.route.logo,
     routeLk: state.header.business.route.routeLk,
     card: state.operation.cryppo.cardData,
+    addCard: state.lk.cryppo.addTerminal,
     alert: state.lk.business.alertData,
   };
 };

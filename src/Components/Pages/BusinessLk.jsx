@@ -17,9 +17,7 @@ const BusinessLk = (props) => {
     <Routes>
       <Route
         path="/"
-        element={
-          <BusinessLkMainContainer/>
-        }
+        element={<BusinessLkMainContainer addCard={props.addCard} />}
       />
       <Route
         path="balance"
@@ -71,12 +69,7 @@ const BusinessLk = (props) => {
           />
         }
       />
-      <Route
-        path="history"
-        element={
-          <BusinessLkHistoryContainer/>
-        }
-      />
+      <Route path="history" element={<BusinessLkHistoryContainer />} />
 
       <Route
         path="setting"
