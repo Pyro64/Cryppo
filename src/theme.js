@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css } from "styled-components";
 
 export const darkTheme = {
   background: "#1B1B1B",
@@ -18,7 +18,35 @@ export const lightTheme = {
   left: "calc(100% - 25px)",
   color: "#333",
 };
+const breakpointToFluid = "992px";
+const breakpointToSm = " 720px";
+const baseVw = "1920px";
+const breakpointLg = "992px";
+const breakpointMd = "768px";
+const breakpointSm = "576px";
+const containerLg = "1230px";
+const containerMd = "720px";
+const containerSm = "540px";
+const padding = "15px";
+export const container = css`
+  width: 100%;
+  max-width: ${containerLg};
+  padding-left: ${padding};
+  padding-right: ${padding};
+  margin: auto;
 
+  @media screen and (max-width: ${breakpointLg}) {
+    max-width: ${containerMd};
+  }
+
+  @media screen and (max-width: ${breakpointMd}) {
+    max-width: ${containerSm};
+  }
+
+  @media screen and (max-width: ${breakpointSm}) {
+    max-width: none;
+  }
+`;
 export const GlobalStyles = createGlobalStyle`
     body {
         background: ${(props) => props.theme.body};
@@ -41,4 +69,22 @@ export const GlobalStyles = createGlobalStyle`
     .text {
       color:  ${(props) => props.theme.color};
     }
+    .container = {
+      width: "100%",
+      max-width: ${containerLg};
+      padding-left: ${padding};
+      padding-right: ${padding};
+      margin: auto;
+    }
 `;
+// @media screen and (max-width: $breakpoint-lg) {
+//   max-width: $container-md;
+// }
+
+// @media screen and (max-width: $breakpoint-md) {
+//   max-width: $container-sm;
+// }
+
+// @media screen and (max-width: $breakpoint-sm) {
+//   max-width: none;
+// }
