@@ -4,14 +4,8 @@ import Balance from "../Lk/Balance/Balance";
 import BusinessLkHistoryContainer from "./BusinessLk/BusinessLkHistoryContainer";
 import BusinessLkStatistic from "./BusinessLk/BusinessLkStatistic";
 import SettingLk from "../Lk/SettingLk/SettingLk";
-<<<<<<< HEAD
-<<<<<<< HEAD
 import BusinessLkMainContainer from "./BusinessLk/BusinessLkMainContainer";
-=======
->>>>>>> parent of 97801ed ()
-=======
 import Support from "../UI/Support/Support";
->>>>>>> 97801ed ()
 const BusinessLk = (props) => {
   // const get = () => props.getCryppoLkThunkCreator();
   // useEffect(() => {
