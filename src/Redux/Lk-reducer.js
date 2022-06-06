@@ -23,6 +23,8 @@ const SWITCH_MODAL = "SWITCH_MODAL";
 const SET_CHART_TEXT = "SET_CHART_TEXT";
 const INIT_CHART_TEXT = "INIT_CHART_TEXT";
 const REMOVE_ALERT = "REMOVE_ALERT";
+const DELETE_ITEM = "DELETE_ITEM";
+
 let initialState = {
   business: {
     alertData: [
@@ -445,6 +447,11 @@ let initialState = {
 };
 const LkReducer = (state = initialState, action) => {
   switch (action.type) {
+    case DELETE_ITEM:
+      return {
+        ...state,
+        connectOption: state.connectOption.filter((e) => e.id !== action.value),
+      };
     case SET_MODAL:
       return {
         ...state,
@@ -466,7 +473,7 @@ const LkReducer = (state = initialState, action) => {
   }
 };
 export const removeAlert = (value) => ({ type: REMOVE_ALERT, value });
-
+export const deleteAddress = (value) => ({ type: DELETE_ITEM, value });
 export const switchModal = (isModal) => ({ type: SWITCH_MODAL, isModal });
 export const setModal = (value) => ({ type: SET_MODAL, value });
 export default LkReducer;

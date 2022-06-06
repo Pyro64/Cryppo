@@ -5,26 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="488c5b31-f6d2-4269-bb6a-95acaa9e7e6a" name="Changes" comment="Проброс пропсов">
-      <change afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkHistoryContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkMainContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BalanceContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkStatisticContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/SettingLkContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/BusinessLkHistory/BusinessLKHistory.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Styles/BusinessLKHistory.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/BusinessLkHistory/BusinessLkHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkHistory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/BusinessLkMain/BusinessLkMain.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkMain.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/BusinessLkStatistic/BusinessLkStatistic.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkStatistic.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/CheckLk/Check.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/CheckLk/Check.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/CompositionIndex/CompositionIndex.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/CompositionIndex/CompositionIndex.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/DoughnutChart/DoughnutChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/DoughnutChart/DoughnutChart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/FilterHistory/FilterHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/FilterHistory/FilterHistory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/OperationLk/Operation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/OperationLk/Operation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Lk/Balance/Balance.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/Balance.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Lk/GeneralSetting/GeneralSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/GeneralSetting/GeneralSetting.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Lk/GeneralSetting/MailPasswordSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/GeneralSetting/MailPasswordSetting.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Lk/SettingLk/SettingLk.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/SettingLk.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Lk/SettingLk/SettingLk.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Styles/SettingLk.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLkContainer.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/CryppoBusiness.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/CryppoBusiness.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/UI/MyBar/MyBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/MyBar/MyBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/UI/MySelect/MySelect.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/MySelect/MySelect.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkHistoryContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkHistoryContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkStatistic.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkStatistic.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/UI/ExchangeCash/ExchangeCash.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/ExchangeCash/ExchangeCash.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/UI/ExchangeCash/ExchangeOutput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/ExchangeCash/ExchangeOutput.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/Lk-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Lk-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/operation-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/operation-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/user-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/user-reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +47,6 @@
     <setting file="file://$PROJECT_DIR$/src/Components/Lk/CryppoLkInvest/CryppoLkInvest.jsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Components/Lk/CryppoLkMain/CryppoLkMain.jsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkHistory.jsx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkHistoryContainer.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkMain.jsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Components/Pages/CryppoBusiness.jsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Components/Pages/CryppoBusinessContainer.jsx" root0="FORCE_HIGHLIGHTING" />
@@ -72,7 +67,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "full.screen.before.presentation.mode": "true",
-    "last_opened_file_path": "E:/NoName/MedOk/Cryppo/src/Components/Pages/BusinessLk",
+    "last_opened_file_path": "E:/NoName/MedOk/Cryppo/src/Components/Pages/Styles",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -88,8 +83,8 @@
       <recent name="C:\Users\Медок\Desktop\Cryppo\src\Components\Lk" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\NoName\MedOk\Cryppo\src\Components\Pages\BusinessLk" />
       <recent name="E:\NoName\MedOk\Cryppo\src\Components\Pages\Styles" />
+      <recent name="E:\NoName\MedOk\Cryppo\src\Components\Pages\BusinessLk" />
       <recent name="E:\NoName\MedOk\Cryppo\src\Components\Lk" />
       <recent name="C:\Users\Медок\Desktop\Cryppo\src\Components\UI" />
     </key>
@@ -133,6 +128,7 @@
       <workItem from="1653989196447" duration="5328000" />
       <workItem from="1654062276190" duration="228000" />
       <workItem from="1654080045338" duration="12569000" />
+      <workItem from="1654505995886" duration="8919000" />
     </task>
     <task id="LOCAL-00001" summary="w">
       <created>1652694078184</created>

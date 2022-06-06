@@ -8,11 +8,11 @@ export default function ExchangeCash(props) {
     <div className="block">
       <div className={style.container}>
         <div className={style.item}>
-          <MySelect cashOption={props.cashOption} title="Продать" />
+          <MySelect cashOption={props.currencyList} title="Продать" />
           <LkInput type="number" title="Сумма на продажу" />
         </div>
         <div className={style.item}>
-          <MySelect cashOption={props.cashOption} title="Купить" />
+          <MySelect cashOption={props.currencyList} title="Купить" />
           <LkInput type="number" title="Сумма на продажу" />
         </div>
       </div>

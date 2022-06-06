@@ -2,8 +2,8 @@ import React from "react";
 import ExchangeCash from "../../UI/ExchangeCash/ExchangeCash";
 import ExchangeOutput from "../../UI/ExchangeCash/ExchangeOutput";
 import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
-import Check from "../CheckLk/Check";
-import DoughnutChart from "./../DoughnutChart/DoughnutChart";
+import Check from "../../Lk/CheckLk/Check";
+import DoughnutChart from "../../Lk/DoughnutChart/DoughnutChart";
 
 export default function Balance(props) {
   return (
@@ -14,8 +14,8 @@ export default function Balance(props) {
             <SubtitleLk arrow={false} subtitle="Балансы" />
             <Check
               isBankCard={false}
-              card={props.card}
-              cashOption={props.cashOption}
+              cardList={props.cardList}
+              currencyList={props.currencyList}
             />
           </div>
         </div>
@@ -25,7 +25,6 @@ export default function Balance(props) {
             <DoughnutChart
               disableItem={props.disableItem}
               updateChart={props.updateChart}
-              addTag={props.addTag}
               filter={true}
               isHover={props.isHover}
               setChartText={props.setChartText}
@@ -35,9 +34,9 @@ export default function Balance(props) {
             />
           </div>
           <SubtitleLk arrow={false} subtitle="Обмен" />
-          <ExchangeCash cashOption={props.cashOption} />
+          <ExchangeCash currencyList={props.currencyList} />
           <SubtitleLk arrow={false} subtitle="Вывод" />
-          <ExchangeOutput cashOption={props.cashOption} />
+          <ExchangeOutput currencyList={props.currencyList} />
         </div>
       </div>
     </div>

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router";
-import Balance from "../Lk/Balance/Balance";
+import BalanceContainer from "./BusinessLk/BalanceContainer";
 import BusinessLkHistoryContainer from "./BusinessLk/BusinessLkHistoryContainer";
-import BusinessLkStatistic from "./BusinessLk/BusinessLkStatistic";
-import SettingLk from "../Lk/SettingLk/SettingLk";
+import BusinessLkStatisticContainer from "./BusinessLk/BusinessLkStatisticContainer";
+import SettingLkContainer from "./BusinessLk/SettingLkContainer";
 import Support from "../UI/Support/Support";
 import BusinessLkMainContainer from "./BusinessLk/BusinessLkMainContainer";
 const BusinessLk = (props) => {
@@ -22,51 +22,13 @@ const BusinessLk = (props) => {
       <Route
         path="balance"
         element={
-          <Balance
-            card={props.card}
-            historyItem={props.historyItem}
-            operationData={props.operationData}
-            setModal={props.setModal}
-            operationModal={props.operationModal}
-            isModal={props.isModal}
-            switchModal={props.switchModal}
-            filter={false}
-            isHover={props.isHover}
-            setChartText={props.setChartText}
-            expenses={props.expenses}
-            arrival={props.arrival}
-            chartTextData={props.chartTextData}
-            initChartText={props.initChartText}
-            updateChart={props.updateChart}
-            cashOption={props.cashOption}
-            disableItem={props.disableItem}
-          />
+          <BalanceContainer/>
         }
       />
       <Route
         path="statistic"
         element={
-          <BusinessLkStatistic
-            composition={props.composition}
-            card={props.card}
-            historyItem={props.historyItem}
-            operationData={props.operationData}
-            setModal={props.setModal}
-            operationModal={props.operationModal}
-            isModal={props.isModal}
-            switchModal={props.switchModal}
-            filter={false}
-            isHover={props.isHover}
-            setChartText={props.setChartText}
-            expenses={props.expenses}
-            arrival={props.arrival}
-            chartTextData={props.chartTextData}
-            initChartText={props.initChartText}
-            updateChart={props.updateChart}
-            changeActiveIndex={props.changeActiveIndex}
-            disableItem={props.disableItem}
-            cashOption={props.cashOption}
-          />
+          <BusinessLkStatisticContainer/>
         }
       />
       <Route path="history" element={<BusinessLkHistoryContainer />} />
@@ -74,15 +36,7 @@ const BusinessLk = (props) => {
       <Route
         path="setting"
         element={
-          <SettingLk
-            setting={props.setting}
-            langOption={props.langOption}
-            cashOption={props.cashOption}
-            user={props.user}
-            settingOption={props.settingOption}
-            connectOption={props.connectOption}
-            deleteAddress={props.deleteAddress}
-          />
+          <SettingLkContainer/>
         }
       />
       <Route path="support" element={<Support />} />

@@ -25,7 +25,6 @@ const DISABLE_ITEM = "DISABLE_ITEM";
 const FILTER_DATE = "FILTER_DATE";
 const FILTER_VALUTE = "FILTER_VALUTE";
 const FILTER_WALLET = "FILTER_WALLET";
-const DELETE_ITEM = "DELETE_ITEM";
 const SET_CHART_TEXT = "SET_CHART_TEXT";
 const INIT_CHART_TEXT = "SET_CHART_TEXT";
 let CURRENCY = null;
@@ -866,11 +865,7 @@ const operationReducer = (state = initialState, action) => {
           operation: operation,
         },
       };
-    case DELETE_ITEM:
-      return {
-        ...state,
-        connectOption: state.connectOption.filter((e) => e.id !== action.value),
-      };
+
     case FILTER_WALLET:
       if (action.value === "" || action.value === false) {
         QUERY = null;
@@ -1022,7 +1017,6 @@ export const changeActiveIndex = (value) => ({
 });
 export const filterValute = (value) => ({ type: FILTER_VALUTE, value });
 export const filterWallet = (value) => ({ type: FILTER_WALLET, value });
-export const deleteAddress = (value) => ({ type: DELETE_ITEM, value });
 export const initChartText = () => ({ type: INIT_CHART_TEXT });
 export const setChartText = (value) => ({ type: SET_CHART_TEXT, value });
 export default operationReducer;

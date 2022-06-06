@@ -12,7 +12,7 @@ export default function MailPasswordSetting(props) {
      <MailSetting user={props.user}  />
      <div className={style.title}>Валюта баланса</div>
      <div className={style.subtitle}>Вы можете выбрать в какой валюте отображать общую стоимость ваших криптовалют на балансе, а также стоимость портфеля.</div>
-     <MySelect cashOption={props.cashOption}/>
+     <MySelect currencyList={props.currencyList}/>
      <div className={style.title}>Язык</div>
      <div className={style.subtitle}>Язык уведомлений, отправляемых на ваш email. Сообщения об операциях по счету, ежемесячный отчет по балансу и т.д.</div>
       <MySelectFlag langOption={props.langOption} />

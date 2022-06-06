@@ -14,8 +14,8 @@ export default function LkStatistic(props) {
             <SubtitleLk arrow={false} subtitle="Счета" />
             <Check
               isBankCard={false}
-              card={props.card}
-              cashOption={props.cashOption}
+              cardList={props.cardList}
+              currencyList={props.currencyList}
             />
           </div>
         </div>
@@ -24,11 +24,10 @@ export default function LkStatistic(props) {
           <div className="block">
             <DoughnutChart
               updateChart={props.updateChart}
-              addTag={props.addTag}
               filter={true}
               isHover={props.isHover}
               setChartText={props.setChartText}
-              operations={props.expenses}
+              operationList={props.expenses}
               chartTextData={props.chartTextData}
               initChartText={props.initChartText}
               disableItem={props.disableItem}
@@ -36,7 +35,7 @@ export default function LkStatistic(props) {
           </div>
           <SubtitleLk arrow={true} subtitle="Статистика валют" />
           <CompositionIndex
-            composition={props.composition}
+              barData={props.barData}
             changeActiveIndex={props.changeActiveIndex}
           />
         </div>

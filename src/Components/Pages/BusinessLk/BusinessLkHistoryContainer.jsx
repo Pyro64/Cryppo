@@ -4,7 +4,7 @@ import { hasLk, removeAlert } from "../../../Redux/user-reducer";
 import {
     setModal,switchModal,
 } from "../../../Redux/Lk-reducer";
-import { filterValute, filterWallet, filterDate} from "../../../Redux/operation-reducer"
+import { filterValute, filterWallet, filterDate } from "../../../Redux/operation-reducer"
 
 let mapStateToProps = (state) => {
   return {

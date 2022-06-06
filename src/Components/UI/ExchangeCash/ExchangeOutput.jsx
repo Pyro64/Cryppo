@@ -8,7 +8,7 @@ export default function ExchangeOutput(props) {
     <div className="block">
       <div className={style.container}>
         <div className={style.item}>
-          <MySelect cashOption={props.cashOption} title="Вывод" />
+          <MySelect currencyList={props.currencyList} title="Вывод" />
           <LkInput type="number" title="Сумма перевода" />
         </div>
         <div className={style.item}>
