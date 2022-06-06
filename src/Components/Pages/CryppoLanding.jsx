@@ -7,7 +7,7 @@ const Text = styled.div`
 export default function CryppoLanding() {
   return (
     <div className="main container">
-      <Text>Текстс</Text>
+      <div className="cryppo">Страница в разработке</div>
     </div>
   );
 }
