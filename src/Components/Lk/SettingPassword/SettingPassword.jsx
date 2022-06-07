@@ -1,0 +1,38 @@
+import React, { useState } from "react";
+
+import style from "./SettingPassword.module.scss";
+import MyModal from "../../UI/MyModal/MyModal";
+import LkInput from "../../UI/LkInput/LkInput";
+import close from "../../../Images/icon/close.svg";
+
+export default function SettingPassword(props) {
+  const [open, setOpen] = useState(false);
+  function modal() {
+    setOpen(!open);
+  }
+  return (
+    <div>
+      <div className={style.linkItem} onClick={modal}>
+        Сменить пароль
+      </div>
+      <MyModal open={open} setOpen={setOpen}>
+        <form className={style.container}>
+          <img
+            alt="close"
+            className={style.close}
+            src={close}
+            onClick={modal}
+          />
+          <div className={style.title}>Смена Email</div>
+          <div className={style.subtitle}>Текущий адрес: ru...@mail.ru</div>
+          <LkInput placeholder="Введите новый Email" />
+          <div className={style.subtitle}>
+            Чтобы продолжить, введите ваш текущий пароль
+          </div>
+          <LkInput placeholder="Введите пароль" />
+          <button className={style.btn}>Изменить Email</button>
+        </form>
+      </MyModal>
+    </div>
+  );
+}
