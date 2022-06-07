@@ -1,9 +1,9 @@
 import React from "react";
 import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
-import Check from "../../Lk/CheckLk/Check";
-import Operation from "../../Lk/OperationLk/Operation";
-import DoughnutChart from "../../Lk/DoughnutChart/DoughnutChart";
-import CompositionIndex from "../../Lk/CompositionIndex/CompositionIndex";
+import Check from "../CheckLk/Check";
+import Operation from "../OperationLk/Operation";
+import DoughnutChart from "../DoughnutChart/DoughnutChart";
+import CompositionIndex from "../CompositionIndex/CompositionIndex";
 import StatisticIndex from "../../Landing/StatisticIndex/StatisticIndex";
 export default function LkStatistic(props) {
   return (

@@ -11,10 +11,9 @@ import {
 } from "../../../Redux/operation-reducer";
 
 let mapStateToProps = (state) => {
-  debugger;
   return {
     barData: state.operation.business.barData,
-    tabs: state.lk.cryppo,
+    tabs: state.lk.business.tabsData,
     cardList: state.user.business.cardList,
     bankCardList: state.user.business.bankCardList,
     operationList: state.operation.business.operationList,
@@ -35,6 +34,7 @@ const BusinessLkMainContainer = connect(mapStateToProps, {
   initChartText,
   setChartText,
   disableItem,
+  changeActiveIndex
 })(BusinessLkMain);
 
 export default BusinessLkMainContainer;

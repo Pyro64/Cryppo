@@ -4,21 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="488c5b31-f6d2-4269-bb6a-95acaa9e7e6a" name="Changes" comment="Проброс пропсов">
-      <change afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BalanceContainer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkStatisticContainer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/SettingLkContainer.jsx" afterDir="false" />
+    <list default="true" id="488c5b31-f6d2-4269-bb6a-95acaa9e7e6a" name="Changes" comment="Add All Container in BusinessLK">
+      <change afterPath="$PROJECT_DIR$/src/Components/Pages/CryppoLk/CryppoLkMainContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/Balance/Balance.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/Balance.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/GeneralSetting/GeneralSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/GeneralSetting/GeneralSetting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/GeneralSetting/MailPasswordSetting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/GeneralSetting/MailPasswordSetting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/SettingLk/SettingLk.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/SettingLk.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/SettingLk/SettingLk.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Styles/SettingLk.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Lk/CryppoLkMain/CryppoLkMain.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/CryppoLk/CryppoLkMain.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Lk/SidebarTabs/SidebarTabs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/SidebarTabs/SidebarTabs.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkHistoryContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkHistoryContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkStatistic.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkStatistic.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/UI/ExchangeCash/ExchangeCash.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/ExchangeCash/ExchangeCash.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/UI/ExchangeCash/ExchangeOutput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/ExchangeCash/ExchangeOutput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/Balance.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/Balance/Balance.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BalanceContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/Balance/BalanceContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/BusinessLkHistory/BusinessLkHistory.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkHistoryContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/BusinessLkHistory/BusinessLkHistoryContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkMain.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/BusinessLkMain/BusinessLkMain.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkMainContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/BusinessLkMain/BusinessLkMainContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkStatistic.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/BusinessLkStatistic/BusinessLkStatistic.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkStatisticContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/BusinessLkStatistic/BusinessLkStatisticContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/SettingLk.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/SettingLk/SettingLk.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/SettingLkContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/SettingLk/SettingLkContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLkContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLkContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/CryppoLanding.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/CryppoLanding.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/CryppoLk.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/CryppoLk.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Styles/BusinessLKHistory.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/BusinessLkHistory/BusinessLKHistory.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Styles/SettingLk.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/SettingLk/SettingLk.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/Lk-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Lk-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/operation-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/operation-reducer.js" afterDir="false" />
     </list>
@@ -43,13 +51,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/Components/Lk/BusinessLkHistory/BusinessLkHistory.jsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Components/Lk/BusinessLkMain/BusinessLkMain.jsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Components/Lk/CompositionIndex/CompositionIndex.jsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Components/Lk/CryppoLkInvest/CryppoLkInvest.jsx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Components/Lk/CryppoLkMain/CryppoLkMain.jsx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkHistory.jsx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkMain.jsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Components/Pages/CryppoBusiness.jsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Components/Pages/CryppoBusinessContainer.jsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Components/Pages/CryppoLk/CryppoLkMain.jsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Components/UI/MyBar/MyBar.jsx" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -67,14 +75,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "full.screen.before.presentation.mode": "true",
-    "last_opened_file_path": "E:/NoName/MedOk/Cryppo/src/Components/Pages/Styles",
+    "last_opened_file_path": "E:/NoName/MedOk/Cryppo/src/Components/Lk/SettingLk",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "C:\\Users\\Snail\\AppData\\Roaming\\npm\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "editing.templates",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -83,10 +91,11 @@
       <recent name="C:\Users\Медок\Desktop\Cryppo\src\Components\Lk" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\NoName\MedOk\Cryppo\src\Components\Pages\Styles" />
-      <recent name="E:\NoName\MedOk\Cryppo\src\Components\Pages\BusinessLk" />
-      <recent name="E:\NoName\MedOk\Cryppo\src\Components\Lk" />
-      <recent name="C:\Users\Медок\Desktop\Cryppo\src\Components\UI" />
+      <recent name="E:\NoName\MedOk\Cryppo\src\Components\Lk\SettingLk" />
+      <recent name="E:\NoName\MedOk\Cryppo\src\Components\Lk\BusinessLkHistory" />
+      <recent name="E:\NoName\MedOk\Cryppo\src\Components\Lk\BusinessLkStatistic" />
+      <recent name="E:\NoName\MedOk\Cryppo\src\Components\Lk\BusinessLkMain" />
+      <recent name="E:\NoName\MedOk\Cryppo\src\Components\Lk\Balance" />
     </key>
   </component>
   <component name="RunManager">
@@ -128,7 +137,8 @@
       <workItem from="1653989196447" duration="5328000" />
       <workItem from="1654062276190" duration="228000" />
       <workItem from="1654080045338" duration="12569000" />
-      <workItem from="1654505995886" duration="8919000" />
+      <workItem from="1654505995886" duration="16322000" />
+      <workItem from="1654584347366" duration="9014000" />
     </task>
     <task id="LOCAL-00001" summary="w">
       <created>1652694078184</created>
@@ -207,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654062430392</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add All Container in BusinessLK">
+      <created>1654518850833</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1654518850855</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +276,8 @@
     <MESSAGE value="Create ThunkCreators" />
     <MESSAGE value="More Api Methods" />
     <MESSAGE value="Проброс пропсов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Проброс пропсов" />
+    <MESSAGE value="Add All Container in BusinessLK" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add All Container in BusinessLK" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

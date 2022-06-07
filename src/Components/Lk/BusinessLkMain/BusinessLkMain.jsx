@@ -1,12 +1,11 @@
 import React from "react";
 import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
-import Check from "../../Lk/CheckLk/Check";
-import Operation from "../../Lk/OperationLk/Operation";
-import DoughnutChart from "../../Lk/DoughnutChart/DoughnutChart";
-import CompositionIndex from "../../Lk/CompositionIndex/CompositionIndex";
-import SidebarTabs from "../../Lk/SidebarTabs/SidebarTabs";
+import Check from "../CheckLk/Check";
+import Operation from "../OperationLk/Operation";
+import DoughnutChart from "../DoughnutChart/DoughnutChart";
+import CompositionIndex from "../CompositionIndex/CompositionIndex";
+import SidebarTabs from "../SidebarTabs/SidebarTabs";
 const BusinessLkMain = (props) => {
-  debugger;
   return (
     <div className="main container">
       <div className="flex ">
@@ -18,7 +17,7 @@ const BusinessLkMain = (props) => {
               cardList={props.cardList}
               currencyList={props.currencyList}
             />
-            <SidebarTabs tabs={props.tabs.tabsData.addTerminal} />
+            <SidebarTabs tabs={props.tabs.addTerminal} />
           </div>
         </div>
         <div className="content">

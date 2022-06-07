@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router";
-import BalanceContainer from "./BusinessLk/BalanceContainer";
-import BusinessLkHistoryContainer from "./BusinessLk/BusinessLkHistoryContainer";
-import BusinessLkStatisticContainer from "./BusinessLk/BusinessLkStatisticContainer";
-import SettingLkContainer from "./BusinessLk/SettingLkContainer";
+import BalanceContainer from "../Lk/Balance/BalanceContainer";
+import BusinessLkHistoryContainer from "../Lk/BusinessLkHistory/BusinessLkHistoryContainer";
+import BusinessLkStatisticContainer from "../Lk/BusinessLkStatistic/BusinessLkStatisticContainer";
+import SettingLkContainer from "../Lk/SettingLk/SettingLkContainer";
 import Support from "../UI/Support/Support";
-import BusinessLkMainContainer from "./BusinessLk/BusinessLkMainContainer";
+import BusinessLkMainContainer from "../Lk/BusinessLkMain/BusinessLkMainContainer";
 const BusinessLk = (props) => {
   // const get = () => props.getCryppoLkThunkCreator();
   // useEffect(() => {

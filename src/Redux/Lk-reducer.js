@@ -232,6 +232,59 @@ let initialState = {
       },
     ],
     isModal: false,
+    tabsData: {
+      invest: {
+        id: 1,
+        icon: bag,
+        title: "Инвестиции CRYPPO INVEST",
+        statistic: "0.00000000",
+        cash: "$ 0.00",
+        text: "Powered by Elementum",
+        povered: elementum,
+      },
+      addCart: {
+        id: 1,
+        icon: plus,
+        title: "Привязать карту",
+        text: "Powered by QRON",
+        povered: qron,
+      },
+      addTerminal: {
+        id: 1,
+        icon: plus,
+        title: "Привязать терминал",
+        text: "Powered by QRON",
+        povered: qron,
+      },
+      indexNow: {
+        id: 1,
+        icon: index,
+        title: "Текущая стоимость индекса",
+        cash: "$ 28.84",
+      },
+
+      volumeIndex: {
+        id: 1,
+        icon: bag,
+        title: "Объем вашего индекса",
+        statistic: "0.00000000 TOP8",
+        cash: "$ 0.00",
+      },
+
+      indexProfit: {
+        id: 1,
+        icon: profit,
+        title: "Индексный доход за сегодня",
+        statistic: "$ 0.00",
+        text: "0% за последние 30 дней",
+      },
+
+      buyNow: {
+        id: 1,
+        icon: plus,
+        title: "Купить индекс",
+      },
+    },
     operationModal: {
       id: null,
       type: null,

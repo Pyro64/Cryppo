@@ -12,7 +12,6 @@ import {
 } from "../../Redux/operation-reducer";
 import BusinessLk from "./BusinessLk";
 let mapStateToProps = (state) => {
-  debugger;
   return {
     historyItem: state.businessLk.historyItem,
     card: state.lk.cardData,

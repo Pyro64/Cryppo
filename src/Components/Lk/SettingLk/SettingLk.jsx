@@ -1,9 +1,9 @@
 import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
-import GeneralSetting from "../../Lk/GeneralSetting/GeneralSetting";
-import Notification from "../../Lk/Notification/Notification";
-import Security from "../../Lk/Security/Security";
-import style from "../Styles/SettingLk.module.scss";
+import GeneralSetting from "../GeneralSetting/GeneralSetting";
+import Notification from "../Notification/Notification";
+import Security from "../Security/Security";
+import style from "./SettingLk.module.scss";
 
 export default function SettingLk(props) {
   return (

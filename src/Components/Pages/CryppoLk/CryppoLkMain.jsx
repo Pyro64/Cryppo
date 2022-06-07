@@ -1,11 +1,11 @@
 import React from "react";
-import Check from "../CheckLk/Check";
-import Operation from "../OperationLk/Operation";
-import Statistic from "../StatisticLk/Statistic";
+import Check from "../../Lk/CheckLk/Check";
+import Operation from "../../Lk/OperationLk/Operation";
+import Statistic from "../../Lk/StatisticLk/Statistic";
 
-import News from '../News/News';
-import StatisticCash from '../StatisticCash/StatisticCash';
-import SidebarTabs from "../SidebarTabs/SidebarTabs";
+import News from '../../Lk/News/News';
+import StatisticCash from '../../Lk/StatisticCash/StatisticCash';
+import SidebarTabs from "../../Lk/SidebarTabs/SidebarTabs";
 import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
 export default function CryppoLkMain(props) {
   return (
@@ -15,9 +15,9 @@ export default function CryppoLkMain(props) {
         <div className="sidebar">
           <div className="sidebar__inner">
             <SubtitleLk arrow={false} subtitle="Счета и карты" />
-            <Check card={props.card} bankCard={props.bankCard} />
-            <SidebarTabs tabs={props.tabs.invest} />
-            <SidebarTabs tabs={props.tabs.addCart} />
+            <Check cardList={props.cardList} bankCardList={props.bankCardList} />
+            <SidebarTabs tabs={props.tabs} />
+            <SidebarTabs tabs={props.tabs} />
           </div>
         </div>
         <div className="content">

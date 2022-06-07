@@ -825,151 +825,6 @@ const operationReducer = (state = initialState, action) => {
         chartTextData: initialState.chartTextData,
         isHover: false,
       };
-    case FILTER_VALUTE:
-      const filterValute = (element, index, array) => {
-        return element.id == action.value;
-      };
-      const currency = state.cashOption.find(filterValute);
-      CURRENCY = currency;
-      const operation = initialState.operationData.operation.filter((item) => {
-        if (QUERY && DATERANGE) {
-          return (
-            item.check.includes(action.value) &&
-            item.currencyPay === CURRENCY.value &&
-            new Date(item.data).valueOf() <= new Date(DATERANGE[1]).valueOf() &&
-            new Date(item.data).valueOf() >= new Date(DATERANGE[0]).valueOf()
-          );
-        } else {
-          if (QUERY) {
-            return (
-              item.check.includes(action.value) &&
-              item.currencyPay === CURRENCY.value
-            );
-          }
-          if (DATERANGE) {
-            return (
-              item.currencyPay === CURRENCY.value &&
-              new Date(item.data).valueOf() <=
-                new Date(DATERANGE[1]).valueOf() &&
-              new Date(item.data).valueOf() >= new Date(DATERANGE[0]).valueOf()
-            );
-          }
-        }
-        return item.currencyPay === currency.value;
-      });
-
-      return {
-        ...state,
-        operationData: {
-          title: state.operationData.title,
-          operation: operation,
-        },
-      };
-
-    case FILTER_WALLET:
-      if (action.value === "" || action.value === false) {
-        QUERY = null;
-        return {
-          ...state,
-          operationData: {
-            title: state.operationData.title,
-            operation: initialState.operationData.operation,
-          },
-        };
-      }
-
-      QUERY = action.value;
-      return {
-        ...state,
-        operationData: {
-          title: state.operationData.title,
-          operation: initialState.operationData.operation.filter((item) => {
-            if (CURRENCY && DATERANGE) {
-              return (
-                item.check.includes(action.value) &&
-                item.currencyPay === CURRENCY.value &&
-                new Date(item.data).valueOf() <=
-                  new Date(DATERANGE[1]).valueOf() &&
-                new Date(item.data).valueOf() >=
-                  new Date(DATERANGE[0]).valueOf()
-              );
-            } else {
-              if (CURRENCY) {
-                return (
-                  item.check.includes(action.value) &&
-                  item.currencyPay === CURRENCY.value
-                );
-              }
-              if (DATERANGE) {
-                return (
-                  item.check.includes(action.value) &&
-                  new Date(item.data).valueOf() <=
-                    new Date(DATERANGE[1]).valueOf() &&
-                  new Date(item.data).valueOf() >=
-                    new Date(DATERANGE[0]).valueOf()
-                );
-              }
-            }
-            return item.check.includes(action.value);
-          }),
-        },
-      };
-    case FILTER_DATE:
-      if (action.value[0] === "" || action.value[1] === "") {
-        DATERANGE = null;
-        return {
-          ...state,
-          operationData: {
-            title: state.operationData.title,
-            operation: initialState.operationData.operation,
-          },
-        };
-      }
-
-      DATERANGE = action.value;
-      return {
-        ...state,
-        operationData: {
-          title: state.operationData.title,
-          operation: initialState.operationData.operation.filter((item) => {
-            if (CURRENCY && QUERY) {
-              return (
-                new Date(item.data).valueOf() <=
-                  new Date(action.value[1]).valueOf() &&
-                new Date(item.data).valueOf() >=
-                  new Date(action.value[0]).valueOf() &&
-                item.currencyPay === CURRENCY.value &&
-                item.check.includes(QUERY)
-              );
-            } else {
-              if (CURRENCY) {
-                return (
-                  new Date(item.data).valueOf() <=
-                    new Date(action.value[1]).valueOf() &&
-                  new Date(item.data).valueOf() >=
-                    new Date(action.value[0]).valueOf() &&
-                  item.currencyPay === CURRENCY.value
-                );
-              }
-              if (QUERY) {
-                return (
-                  new Date(item.data).valueOf() <=
-                    new Date(action.value[1]).valueOf() &&
-                  new Date(item.data).valueOf() >=
-                    new Date(action.value[0]).valueOf() &&
-                  item.check.includes(QUERY)
-                );
-              }
-            }
-            return (
-              new Date(item.data).valueOf() <=
-                new Date(action.value[1]).valueOf() &&
-              new Date(item.data).valueOf() >=
-                new Date(action.value[0]).valueOf()
-            );
-          }),
-        },
-      };
     case FILTER_OPERATIONS:
       return {
         ...state,
@@ -978,9 +833,9 @@ const operationReducer = (state = initialState, action) => {
     case CHANGE_ACTIVE_INDEX:
       return {
         ...state,
-        compositionData: {
+        barData: {
           activeIndex: action.value,
-          compositions: state.compositionData.compositions,
+          compositions: state.cryppo.barData.compositions,
         },
       };
     case UPDATE_CHART:

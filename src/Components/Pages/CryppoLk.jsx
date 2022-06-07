@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router";
-import CryppoLkMain from "../Lk/CryppoLkMain/CryppoLkMain";
+import CryppoLkMainContainer from "./CryppoLk/CryppoLkMainContainer";
 import CryppoLkSettings from "../Lk/CryppoLkSettings/CryppoLkSettings";
 import CryppoLkTranslation from "../Lk/CryppoLkTranslation/CryppoLkTranslation";
 import CryppoLkInvest from "../Lk/CryppoLkInvest/CryppoLkInvest";
@@ -18,29 +18,7 @@ export default function CryppoLk(props) {
       <Route
         path="/"
         element={
-          <CryppoLkMain
-            card={props.card}
-            statistic={props.statistic}
-            bankCard={props.bankCard}
-            invest={props.invest}
-            newCard={props.newCard}
-            news={props.news}
-            expenses={props.expenses}
-            arrival={props.arrival}
-            tabs={props.tabs}
-            operationData={props.operationData}
-            setModal={props.setModal}
-            operationModal={props.operationModal}
-            isModal={props.isModal}
-            switchModal={props.switchModal}
-            chartTextData={props.chartTextData}
-            setChartText={props.setChartText}
-            initChartText={props.initChartText}
-            isHover={props.isHover}
-            updateChart={props.updateChart}
-            filter={false}
-            disableItem={props.disableItem}
-          />
+          <CryppoLkMainContainer/>
         }
       />
       <Route
@@ -79,8 +57,6 @@ export default function CryppoLk(props) {
             initChartText={props.initChartText}
             isHover={props.isHover}
             operationsFilter={props.operationsFilter}
-            addTag={props.addTag}
-            removeTag={props.removeTag}
             filterOperationsThunkCreator={props.filterOperationsThunkCreator}
             inputChange={props.inputChange}
             filter={false}
@@ -105,8 +81,6 @@ export default function CryppoLk(props) {
             initChartText={props.initChartText}
             isHover={props.isHover}
             operationsFilter={props.operationsFilter}
-            addTag={props.addTag}
-            removeTag={props.removeTag}
             filterOperationsThunkCreator={props.filterOperationsThunkCreator}
             inputChange={props.inputChange}
             filter={true}
@@ -130,8 +104,6 @@ export default function CryppoLk(props) {
             initChartText={props.initChartText}
             isHover={props.isHover}
             operationsFilter={props.operationsFilter}
-            addTag={props.addTag}
-            removeTag={props.removeTag}
             filterOperationsThunkCreator={props.filterOperationsThunkCreator}
             inputChange={props.inputChange}
             filter={true}

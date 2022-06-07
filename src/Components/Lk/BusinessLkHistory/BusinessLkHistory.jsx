@@ -1,8 +1,8 @@
 import React from "react";
 import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
-import FilterHistory from "../../Lk/FilterHistory/FilterHistory";
-import Operation from "../../Lk/OperationLk/Operation";
-import style from "../Styles/BusinessLKHistory.module.scss";
+import FilterHistory from "../FilterHistory/FilterHistory";
+import Operation from "../OperationLk/Operation";
+import style from "./BusinessLKHistory.module.scss";
 var Scroll = require("react-scroll");
 var Element = Scroll.Element;
 export default function BusinessLkHistory(props) {
