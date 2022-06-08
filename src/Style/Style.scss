@@ -1,7 +1,8 @@
 @import "../Style/Mixins";
 @import "../fonts/cera-pro/stylesheet.css";
 @import "../fonts/style.css";
-@import "antd/dist/antd.variable.min.css";
+@import "antd/dist/antd.css";
+@import "~antd/dist/antd.dark.css";
 
 * {
   box-sizing: border-box;
