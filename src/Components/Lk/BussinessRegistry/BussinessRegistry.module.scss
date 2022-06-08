@@ -112,3 +112,12 @@
     margin-right: 0;
   }
 }
+.text {
+  @include fluid(margin-top, 10px, 15px);
+  @include fluid(margin-bottom, 10, 15px);
+  @include fluid(font-size, 12px, 14px);
+  color: #6d6d6d;
+  span {
+    color: #2f69ff;
+  }
+}

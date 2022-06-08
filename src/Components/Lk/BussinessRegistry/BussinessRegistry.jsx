@@ -75,6 +75,10 @@ const BussinessRegistry = (props) => {
                 name="password"
                 onChange={(e) => setPasswordName(e.target.value)}
               />
+              <div className={style.text}>
+                Пароль должен быть латинскими буквами, минимум 6 символов с
+                использованием спецсимволов *%.
+              </div>
               <LkInput
                 className={style.input}
                 placeholder="Повторите пароль"
@@ -83,7 +87,10 @@ const BussinessRegistry = (props) => {
                 name="email"
                 onChange={(e) => setRepeatPasswordName(e.target.value)}
               />
-
+              <div className={style.text}>
+                Заполняя данную форму, я даю согласие на
+                <span>обработку персональных данных</span>
+              </div>
               <button className={style.button} type="submit">
                 Зарегистрироваться
               </button>
@@ -131,6 +138,10 @@ const BussinessRegistry = (props) => {
                 name="password"
                 onChange={(e) => setPasswordName(e.target.value)}
               />
+              <div className={style.text}>
+                Пароль должен быть латинскими буквами, минимум 6 символов с
+                использованием спецсимволов *%.
+              </div>
               <LkInput
                 className={style.input}
                 placeholder="Повторите пароль"
@@ -139,7 +150,10 @@ const BussinessRegistry = (props) => {
                 name="email"
                 onChange={(e) => setRepeatPasswordName(e.target.value)}
               />
-
+              <div className={style.text}>
+                Заполняя данную форму, я даю согласие на{" "}
+                <span>обработку персональных данных</span>
+              </div>
               <button className={style.button} type="submit">
                 Зарегистрироваться
               </button>
