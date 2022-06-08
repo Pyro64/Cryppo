@@ -15,6 +15,9 @@ import xtz from "../Images/payIcon/5.svg";
 import eos from "../Images/payIcon/4.svg";
 import bnb from "../Images/payIcon/BNB.svg";
 import bch from "../Images/payIcon/BCH.svg";
+
+
+
 // import filtersTool from "../Utils/filter";
 const CHANGE_ACTIVE_INDEX = "CHANGE_ACTIVE_INDEX";
 const FILTER_OPERATIONS = "FILTER_OPERATIONS";
@@ -861,6 +864,9 @@ const operationReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+
+
 
 export const disableItem = (value) => ({ type: DISABLE_ITEM, value });
 export const inputChange = (value) => ({ type: INPUT_CHANGE, value });

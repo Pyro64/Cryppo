@@ -4,31 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="488c5b31-f6d2-4269-bb6a-95acaa9e7e6a" name="Changes" comment="Add All Container in BusinessLK">
-      <change afterPath="$PROJECT_DIR$/src/Components/Pages/CryppoLk/CryppoLkMainContainer.jsx" afterDir="false" />
+    <list default="true" id="488c5b31-f6d2-4269-bb6a-95acaa9e7e6a" name="Changes" comment="move jsx files">
+      <change afterPath="$PROJECT_DIR$/src/Redux/operationSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/CryppoLkMain/CryppoLkMain.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/CryppoLk/CryppoLkMain.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Lk/SidebarTabs/SidebarTabs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/SidebarTabs/SidebarTabs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLk.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/Balance.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/Balance/Balance.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BalanceContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/Balance/BalanceContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/BusinessLkHistory/BusinessLkHistory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkHistoryContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/BusinessLkHistory/BusinessLkHistoryContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkMain.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/BusinessLkMain/BusinessLkMain.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkMainContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/BusinessLkMain/BusinessLkMainContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkStatistic.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/BusinessLkStatistic/BusinessLkStatistic.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/BusinessLkStatisticContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/BusinessLkStatistic/BusinessLkStatisticContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/SettingLk.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/SettingLk/SettingLk.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLk/SettingLkContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/SettingLk/SettingLkContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/BusinessLkContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/BusinessLkContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Lk/Balance/Balance.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/Balance/Balance.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Pages/CryppoLanding.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/CryppoLanding.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/CryppoLk.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/CryppoLk.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Styles/BusinessLKHistory.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/BusinessLkHistory/BusinessLKHistory.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Styles/SettingLk.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lk/SettingLk/SettingLk.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/Lk-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Lk-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/UI/ExchangeCash/ExchangeCash.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/UI/ExchangeCash/ExchangeCash.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/operation-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/operation-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,23 +53,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "full.screen.before.presentation.mode": "true",
-    "last_opened_file_path": "E:/NoName/MedOk/Cryppo/src/Components/Lk/SettingLk",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\Snail\\AppData\\Roaming\\npm\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "editing.templates",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/NoName/MedOk/Cryppo/src/Components/Lk/SettingLk&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\Snail\\AppData\\Roaming\\npm\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Медок\Desktop\Cryppo\src\Components\Lk" />
@@ -138,7 +122,8 @@
       <workItem from="1654062276190" duration="228000" />
       <workItem from="1654080045338" duration="12569000" />
       <workItem from="1654505995886" duration="16322000" />
-      <workItem from="1654584347366" duration="9014000" />
+      <workItem from="1654584347366" duration="15588000" />
+      <workItem from="1654680846355" duration="297000" />
     </task>
     <task id="LOCAL-00001" summary="w">
       <created>1652694078184</created>
@@ -224,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654518850855</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="move jsx files">
+      <created>1654611209851</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1654611209853</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,17 +238,6 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/master" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
               <option name="TEXT_FILTER_SETTINGS">
                 <TextFilterSettings>
                   <option name="MATCH_CASE" value="true" />
@@ -277,7 +258,8 @@
     <MESSAGE value="More Api Methods" />
     <MESSAGE value="Проброс пропсов" />
     <MESSAGE value="Add All Container in BusinessLK" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add All Container in BusinessLK" />
+    <MESSAGE value="move jsx files" />
+    <option name="LAST_COMMIT_MESSAGE" value="move jsx files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
