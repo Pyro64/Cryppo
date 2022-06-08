@@ -4,15 +4,9 @@ import BalanceContainer from "../Lk/Balance/BalanceContainer";
 import BusinessLkHistoryContainer from "../Lk/BusinessLkHistory/BusinessLkHistoryContainer";
 import BusinessLkStatisticContainer from "../Lk/BusinessLkStatistic/BusinessLkStatisticContainer";
 import SettingLkContainer from "../Lk/SettingLk/SettingLkContainer";
-import Balance from "../Lk/Balance/Balance";
-import BusinessLkHistory from "../Lk/BusinessLkHistory/BusinessLkHistory";
-import BusinessLkMain from "../Lk/BusinessLkMain/BusinessLkMain";
-import BusinessLkStatistic from "../Lk/BusinessLkStatistic/BusinessLkStatistic";
-import Email from "../Lk/Email/Email";
 import SupportLk from "../Lk/SupportLk/SupportLk";
-import SettingLk from "../Lk/SettingLk/SettingLk";
-import BusinessLkMainContainer from "./BusinessLk/BusinessLkMainContainer";
-import Support from "../UI/Support/Support";
+import BusinessLkMainContainer from "./../Lk/BusinessLkMain/BusinessLkMainContainer";
+
 const BusinessLk = (props) => {
   // const get = () => props.getCryppoLkThunkCreator();
   // useEffect(() => {
