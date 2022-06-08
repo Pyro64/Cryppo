@@ -1,27 +1,25 @@
 import { connect } from "react-redux";
 import Event from "./Event";
-import { get, setModal, switchModal, setChartText, initChartText } from "../../../Redux/cryppoLk-reducer"
-
+import { setModal, switchModal } from "../../../Redux/Lk-reducer";
+import { setChartText, initChartText } from "../../../Redux/operation-reducer";
 
 let mapStateToProps = (state) => {
-  return {
-    operationData: state.user.operationData,
-    statistic: state.user.statisticData,
-    translations: state.interface.translationsData,
-    currency: state.user.currencyStatisticData,
-    composition: state.user.compositionData,
-    operationModal: state.cryppoLk.operationModal,
-    isModal: state.cryppoLk.isModal,
-    chartTextData: state.interface.chartTextData,
-    isHover: state.interface.isHover,
-  };
+    return {
+        operationData: state.operation.cryppo.operationData,
+        operationList: state.operation.cryppo.operationList,
+        operationModal: state.lk.cryppo.operationModal,
+        expenses: state.operation.cryppo.operationList,
+        arrival: state.operation.cryppo.operationList,
+        isModal: state.lk.cryppo.isModal,
+        isHover: state.lk.business.isHover,
+        chartTextData: state.operation.cryppo.chartTextData,
+    };
 };
 
 const EventContainer = connect(mapStateToProps, {
-  get,
-  setModal,
-  switchModal,
-  setChartText,
-  initChartText
+    setModal,
+    switchModal,
+    setChartText,
+    initChartText,
 })(Event);
 export default EventContainer;
