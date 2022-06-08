@@ -5,6 +5,7 @@ const LkInput = ({ placeholder, title, ...props }) => {
   return (
     <div className={style.container}>
       <p>{title}</p>
+
       <Input {...props} placeholder={placeholder} className={style.input} />
     </div>
   );

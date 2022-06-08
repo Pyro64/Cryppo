@@ -42,10 +42,6 @@ const BusinessLkContainer = connect(mapStateToProps, {
   setChartText,
   initChartText,
   changeActiveIndex,
-  filterValute,
-  filterWallet,
-  filterDate,
-  deleteAddress,
   disableItem,
 })(BusinessLk);
 

@@ -3,12 +3,20 @@ import style from "./Email.module.scss";
 import MyModal from "../../UI/MyModal/MyModal";
 import LkInput from "../../UI/LkInput/LkInput";
 import close from "../../../Images/icon/close.svg";
+import { notification } from "antd";
 
 export default function Email(props) {
   const [open, setOpen] = useState(false);
   function modal() {
     setOpen(!open);
   }
+  const openNotification = (e) => {
+    e.preventDefault();
+    notification.open({
+      type: "success",
+      message: "Email успешно изменен",
+    });
+  };
   return (
     <div>
       <div className={style.linkItem} onClick={modal}>
@@ -29,7 +37,9 @@ export default function Email(props) {
             Чтобы продолжить, введите ваш текущий пароль
           </div>
           <LkInput placeholder="Введите пароль" />
-          <button className={style.btn}>Изменить Email</button>
+          <button className={style.btn} onClick={openNotification}>
+            Изменить Email
+          </button>
         </form>
       </MyModal>
     </div>
