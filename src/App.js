@@ -23,34 +23,35 @@ function App() {
           <div className="App">
             <div className="gradient"></div>
             <ScrollToTop />
-            <Suspense fallback={<Spinner />}>
-              <Routes>
-                <Route
-                  path="/*"
-                  element={
-                    <CryppoContainer switchTheme={switchTheme} theme={theme} />
-                  }
-                />
-                <Route
-                  path="/business/*"
-                  element={
+
+            <Routes>
+              <Route
+                path="/*"
+                element={
+                  <CryppoContainer switchTheme={switchTheme} theme={theme} />
+                }
+              />
+              <Route
+                path="/business/*"
+                element={
+                  <Suspense fallback={<Spinner />}>
                     <CryppoBusinessContainer
                       switchTheme={switchTheme}
                       theme={theme}
                     />
-                  }
-                />
-                <Route
-                  path="/invest"
-                  element={
-                    <CryppoInvestContainer
-                      switchTheme={switchTheme}
-                      theme={theme}
-                    />
-                  }
-                />
-              </Routes>
-            </Suspense>
+                  </Suspense>
+                }
+              />
+              <Route
+                path="/invest"
+                element={
+                  <CryppoInvestContainer
+                    switchTheme={switchTheme}
+                    theme={theme}
+                  />
+                }
+              />
+            </Routes>
           </div>
         </ParallaxProvider>
       </BrowserRouter>
