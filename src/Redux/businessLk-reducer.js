@@ -900,6 +900,26 @@ let initialState = {
       prise: "9 656 $",
     },
   ],
+  helpData: [
+    {
+      id: 1,
+      number: "+7 800 123-23-23",
+      country: "Россия",
+      flag: rus,
+    },
+    {
+      id: 2,
+      number: "+38 0443 123-233",
+      country: "Украина",
+      flag: ukr,
+    },
+    {
+      id: 3,
+      number: "+77 273 505-233",
+      country: "Казахстан",
+      flag: kaz,
+    },
+  ],
 };
 const businessLkReducer = (state = initialState, action) => {
   switch (action.type) {

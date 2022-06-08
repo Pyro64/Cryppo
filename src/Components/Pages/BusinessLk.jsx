@@ -6,6 +6,7 @@ import BusinessLkMain from "../Lk/BusinessLkMain/BusinessLkMain";
 import BusinessLkStatistic from "../Lk/BusinessLkStatistic/BusinessLkStatistic";
 import Email from "../Lk/Email/Email";
 import SettingLk from "../Lk/SettingLk/SettingLk";
+import SupportLk from "../Lk/SupportLk/SupportLk";
 import Support from "../UI/Support/Support";
 const BusinessLk = (props) => {
   // const get = () => props.getCryppoLkThunkCreator();
@@ -123,6 +124,7 @@ const BusinessLk = (props) => {
           />
         }
       />
+      <Route path="support" element={<SupportLk help={props.help} />} />
     </Routes>
   );
 };

@@ -44,6 +44,7 @@ let initialState = {
     text: "С автоматической стабилизацией курса в USDT и BUSD",
     img: banner,
   },
+
   appIconData: [
     {
       id: 1,

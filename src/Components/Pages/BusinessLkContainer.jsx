@@ -36,6 +36,7 @@ let mapStateToProps = (state) => {
     user: state.cryppoPage.userData,
     settingOption: state.businessLk.settingOption,
     connectOption: state.businessLk.connectOption,
+    help: state.businessLk.helpData,
   };
 };
 

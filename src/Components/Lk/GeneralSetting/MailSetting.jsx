@@ -2,6 +2,7 @@ import React from "react";
 import style from "./GeneralSetting.module.scss";
 import Email from "../Email/Email";
 import SettingPassword from "../SettingPassword/SettingPassword";
+import TelegramAdd from "../TelegramAdd/TelegramAdd";
 
 export default function MailSetting(props) {
   return (
@@ -17,6 +18,7 @@ export default function MailSetting(props) {
       <div className={style.link}>
         <Email />
         <SettingPassword />
+        <TelegramAdd />
       </div>
     </div>
   );
