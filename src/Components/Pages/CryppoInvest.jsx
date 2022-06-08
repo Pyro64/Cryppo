@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import FooterContainer from "../UI/Footer/FooterContainer";
 import Header from "../UI/Header/Header";
 import Banner from "../UI/Banner/Banner";
@@ -7,7 +7,7 @@ import AboutIndex from "../Landing/AboutIndex/AboutIndex";
 import BenefitsIndex from "../Landing/BenefitsIndex/BenefitsIndex";
 import StatisticIndex from "../Landing/StatisticIndex/StatisticIndex";
 import TechnologiesIndex from "../Landing/TechnologiesIndex/TechnologiesIndex";
-
+import Spinner from "../UI/Spinner/Spinner";
 export default function CryppoInvest(props) {
   // useEffect(() => {
   //     props.getCryppoIndexThunkCreator();

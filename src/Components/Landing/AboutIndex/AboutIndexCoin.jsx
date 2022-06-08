@@ -18,13 +18,9 @@
 //     )
 // }
 
-import React from 'react'
-import style from './AboutIndex.module.scss'
-import coin from '../../../Images/Coin.svg'
+import React from "react";
+import style from "./AboutIndex.module.scss";
+import coin from "../../../Images/Coin.svg";
 export default function AboutIndexCoin(props) {
-    
-    return (
-        <img src={coin} className={style.coinImg}>
-        </img>
-    )
+  return <img src={coin} alt="" className={style.coinImg}></img>;
 }

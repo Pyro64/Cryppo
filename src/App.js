@@ -7,12 +7,8 @@ import Spinner from "./Components/UI/Spinner/Spinner";
 import CryppoInvestContainer from "./Components/Pages/CryppoInvestContainer";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme, GlobalStyles } from "./theme";
-const CryppoContainer = React.lazy(() =>
-  import("./Components/Pages/CryppoContainer")
-);
-const CryppoBusinessContainer = React.lazy(() =>
-  import("./Components/Pages/CryppoBusinessContainer")
-);
+import CryppoBusinessContainer from "./Components/Pages/CryppoBusinessContainer";
+import CryppoContainer from "./Components/Pages/CryppoContainer";
 
 function App() {
   const [theme, setTheme] = useState("light");
