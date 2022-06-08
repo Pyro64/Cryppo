@@ -5,7 +5,7 @@ import MySelectTitle from "./MySelectTitle";
 
 const { Option } = Select;
 export default function MySelect(props) {
-  let option = props.cashOption.map((e) => (
+  let option = props.currencyList.map((e) => (
     <Option
       className={`${style.option}`}
       value={`${e.id}`}

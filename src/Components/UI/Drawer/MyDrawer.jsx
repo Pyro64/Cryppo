@@ -53,7 +53,7 @@ export default function MyDrawer(props) {
       <div className={style.header}>
         <CloseOutlined className={style.close} onClick={props.onClose} />
         <DrawerTitle title="Профиль" />
-        <Switch />
+        <Switch theme={props.theme} switchTheme={props.switchTheme} />
       </div>
       <div className={style.block}>
         <img src={props.img} className={style.img} alt="avatar" />

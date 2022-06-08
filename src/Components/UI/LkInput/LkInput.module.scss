@@ -2,6 +2,8 @@
 
 .container {
   @include fluid(margin-bottom, 5px, 10px);
+
+  width: 100%;
 }
 .input {
   background: #2c2c2c;

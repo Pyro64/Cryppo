@@ -12,17 +12,22 @@ export default function CryppoInvest(props) {
   // useEffect(() => {
   //     props.getCryppoIndexThunkCreator();
   // }, [])
-  const isEntrance = false;
+  debugger;
   return (
     <div className="page">
       <Header
-        isEntrance={isEntrance}
-        logo={props.logo}
-        btn={props.btn}
-        login={props.login}
-        isLogin={props.isLogin}
         user={props.user}
-        nav={props.nav}
+        isLk={props.isLk}
+        hasLk={props.hasLk}
+        header={props.header}
+        isLogin={props.isLogin}
+        card={props.card}
+        routerLk={props.routerLk}
+        alert={props.alert}
+        removeAlert={props.removeAlert}
+        routeLk={props.routeLk}
+        switchTheme={props.switchTheme}
+        theme={props.theme}
       />
       <div className="main">
         <Banner

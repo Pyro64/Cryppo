@@ -4,18 +4,12 @@ import {
   switchModal,
   setChartText,
   initChartText,
-} from "../../Redux/cryppoLk-reducer";
-import {
-  filterValute,
-  filterWallet,
-  filterDate,
-  deleteAddress,
-} from "../../Redux/businessLk-reducer";
+} from "../../Redux/Lk-reducer";
 import {
   updateChart,
   changeActiveIndex,
   disableItem,
-} from "../../Redux/user-reducer";
+} from "../../Redux/operation-reducer";
 import BusinessLk from "./BusinessLk";
 let mapStateToProps = (state) => {
   return {
@@ -36,7 +30,6 @@ let mapStateToProps = (state) => {
     user: state.cryppoPage.userData,
     settingOption: state.businessLk.settingOption,
     connectOption: state.businessLk.connectOption,
-    help: state.businessLk.helpData,
   };
 };
 
@@ -47,10 +40,7 @@ const BusinessLkContainer = connect(mapStateToProps, {
   setChartText,
   initChartText,
   changeActiveIndex,
-  filterValute,
-  filterWallet,
-  filterDate,
-  deleteAddress,
+
   disableItem,
 })(BusinessLk);
 

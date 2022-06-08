@@ -12,7 +12,7 @@ export default function Check(props) {
   function openModal() {
     setOpen(!open);
   }
-  let elementCard = props.card.map((e) => (
+  let elementCard = props.cardList.map((e) => (
     <CheckItem
       id={e.id}
       key={e.id}
@@ -28,7 +28,7 @@ export default function Check(props) {
       <div className={style.block}>
         <div className={style.item}>{elementCard}</div>
         {props.isBankCard !== false ? (
-          <CheckCardBlock bankCard={props.bankCard} />
+          <CheckCardBlock bankCardList={props.bankCardList} />
         ) : (
           <Btn onClick={openModal} style={{ margin: "auto" }}>
             Оставить заявку

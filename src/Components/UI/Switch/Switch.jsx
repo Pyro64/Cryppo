@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import style from "./Switch.module.scss";
-export default function Switch() {
+export default function Switch(props) {
   const [toggle, setToggle] = useState(false);
-  function switchTheme() {
+
+  function theme() {
+    props.switchTheme(!props.theme);
     setToggle(!toggle);
   }
   return (
     <div
-      onClick={switchTheme}
+      onClick={theme}
       className={toggle ? `${style.switch}` : ` ${style.dark} ${style.switch} `}
     >
       <div className={style.colorMode}></div>

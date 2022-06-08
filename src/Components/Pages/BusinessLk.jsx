@@ -5,8 +5,10 @@ import BusinessLkHistory from "../Lk/BusinessLkHistory/BusinessLkHistory";
 import BusinessLkMain from "../Lk/BusinessLkMain/BusinessLkMain";
 import BusinessLkStatistic from "../Lk/BusinessLkStatistic/BusinessLkStatistic";
 import Email from "../Lk/Email/Email";
-import SettingLk from "../Lk/SettingLk/SettingLk";
 import SupportLk from "../Lk/SupportLk/SupportLk";
+import BusinessLkHistoryContainer from "./BusinessLk/BusinessLkHistoryContainer";
+import SettingLk from "../Lk/SettingLk/SettingLk";
+import BusinessLkMainContainer from "./BusinessLk/BusinessLkMainContainer";
 import Support from "../UI/Support/Support";
 const BusinessLk = (props) => {
   // const get = () => props.getCryppoLkThunkCreator();
@@ -17,32 +19,7 @@ const BusinessLk = (props) => {
   if (props.isLogin === false) return <Navigate to={"/business"} />;
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-          <BusinessLkMain
-            composition={props.composition}
-            card={props.card}
-            historyItem={props.historyItem}
-            operationData={props.operationData}
-            setModal={props.setModal}
-            operationModal={props.operationModal}
-            isModal={props.isModal}
-            switchModal={props.switchModal}
-            filter={false}
-            isHover={props.isHover}
-            setChartText={props.setChartText}
-            expenses={props.expenses}
-            arrival={props.arrival}
-            chartTextData={props.chartTextData}
-            initChartText={props.initChartText}
-            updateChart={props.updateChart}
-            changeActiveIndex={props.changeActiveIndex}
-            cashOption={props.cashOption}
-            disableItem={props.disableItem}
-          />
-        }
-      />
+      <Route path="/" element={<BusinessLkMainContainer />} />
       <Route
         path="balance"
         element={
@@ -93,22 +70,7 @@ const BusinessLk = (props) => {
           />
         }
       />
-      <Route
-        path="history"
-        element={
-          <BusinessLkHistory
-            operationData={props.operationData}
-            setModal={props.setModal}
-            operationModal={props.operationModal}
-            isModal={props.isModal}
-            switchModal={props.switchModal}
-            cashOption={props.cashOption}
-            filterValute={props.filterValute}
-            filterWallet={props.filterWallet}
-            filterDate={props.filterDate}
-          />
-        }
-      />
+      <Route path="history" element={<BusinessLkHistoryContainer />} />
 
       <Route
         path="setting"
