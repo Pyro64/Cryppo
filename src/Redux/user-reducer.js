@@ -30,16 +30,6 @@ let apiState = {
             blockchain: "string",
         },
     ],
-    balances: [
-        {
-            currency: "string",
-            amount: 0,
-            amountInViewCurrency: 0,
-            active: true,
-            alwaysActive: true,
-            percent: 0,
-        },
-    ],
 
     lastPayments: [
         {
@@ -62,7 +52,7 @@ let apiState = {
             blockchain: "string",
         },
     ],
-    notificationLanguage: "string",
+
     registerDate: "2022-06-08T10:36:37.973Z",
     devices: [
         {
@@ -73,37 +63,17 @@ let apiState = {
             location: "string",
         },
     ],
-    entries: [
-        {
-            ip: "string",
-            deviceId: "string",
-            location: "string",
-            deviceOs: "string",
-            status: 0,
-            date: "2022-06-08T10:36:37.973Z",
-        },
-    ],
+
     supportedNotificationsLanguages: [
         {
             name: "string",
             value: "string",
         },
     ],
-    terminals: [
-        {
-            id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            name: "string",
-            login: "string",
-            terminalId: "string",
-            connected: true,
-            createDate: "2022-06-08T10:36:37.975Z",
-        },
-    ],
 };
 
 let initialState = {
     business: {
-        accessToken: "",
         isLogin: true,
         userInfo: {
             userId: "string",
@@ -136,6 +106,39 @@ let initialState = {
                 notificationsChangeTg: true,
                 notificationsChangeEmail: true,
             },
+        },
+        userSettings: {
+            notificationLanguage: "string",
+            balances: [
+                {
+                    currency: "string",
+                    amount: 0,
+                    amountInViewCurrency: 0,
+                    active: true,
+                    alwaysActive: true,
+                    percent: 0,
+                },
+            ],
+            terminals: [
+                {
+                    id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    name: "string",
+                    login: "string",
+                    terminalId: "string",
+                    connected: true,
+                    createDate: "2022-06-08T10:36:37.975Z",
+                },
+            ],
+            entries: [
+                {
+                    ip: "string",
+                    deviceId: "string",
+                    location: "string",
+                    deviceOs: "string",
+                    status: 0,
+                    date: "2022-06-08T10:36:37.973Z",
+                },
+            ],
         },
         router: "/business",
         cardList: [
@@ -217,6 +220,39 @@ let initialState = {
                 notificationsChangeEmail: true,
             },
         },
+        userSettings: {
+            notificationLanguage: "string",
+            balances: [
+                {
+                    currency: "string",
+                    amount: 0,
+                    amountInViewCurrency: 0,
+                    active: true,
+                    alwaysActive: true,
+                    percent: 0,
+                },
+            ],
+            terminals: [
+                {
+                    id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    name: "string",
+                    login: "string",
+                    terminalId: "string",
+                    connected: true,
+                    createDate: "2022-06-08T10:36:37.975Z",
+                },
+            ],
+            entries: [
+                {
+                    ip: "string",
+                    deviceId: "string",
+                    location: "string",
+                    deviceOs: "string",
+                    status: 0,
+                    date: "2022-06-08T10:36:37.973Z",
+                },
+            ],
+        },
         mail: "k.konstantinopolskiy@gmail.com",
         cardList: [
             {
@@ -286,6 +322,25 @@ export const userSlice = createSlice({
         },
         LogoutBusiness(state) {
             state.business.isLogin = false;
+        },
+        SetActiveCurrency(state, action) {
+            state.business.userSettings.balances = action.payload.balances;
+        },
+        SetViewCurrency(state, action) {
+            state.business.userInfo.viewCurrency = action.payload.viewCurrency;
+        },
+        SetNotificationsLang(state, action) {
+            state.business.userSettings.notificationLanguage =
+                action.payload.notificationLanguage;
+        },
+        SetViewCurrency(state, action) {
+            state.business.userInfo.viewCurrency = action.payload.viewCurrency;
+        },
+        SetViewCurrency(state, action) {
+            state.business.userInfo.viewCurrency = action.payload.viewCurrency;
+        },
+        SetViewCurrency(state, action) {
+            state.business.userInfo.viewCurrency = action.payload.viewCurrency;
         },
     },
 });
