@@ -5,7 +5,7 @@ const LkInput = ({ title, ...props }) => {
   return (
     <div className={style.container}>
       <p>{title}</p>
-      <Input {...props} />
+      <Input {...props} className={style.input} />
     </div>
   );
 };

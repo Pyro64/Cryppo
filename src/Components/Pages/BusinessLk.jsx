@@ -4,6 +4,7 @@ import Balance from "../Lk/Balance/Balance";
 import BusinessLkHistory from "../Lk/BusinessLkHistory/BusinessLkHistory";
 import BusinessLkMain from "../Lk/BusinessLkMain/BusinessLkMain";
 import BusinessLkStatistic from "../Lk/BusinessLkStatistic/BusinessLkStatistic";
+import Email from "../Lk/Email/Email";
 import SettingLk from "../Lk/SettingLk/SettingLk";
 import Support from "../UI/Support/Support";
 const BusinessLk = (props) => {
@@ -122,7 +123,6 @@ const BusinessLk = (props) => {
           />
         }
       />
-      <Route path="support" element={<Support />} />
     </Routes>
   );
 };
