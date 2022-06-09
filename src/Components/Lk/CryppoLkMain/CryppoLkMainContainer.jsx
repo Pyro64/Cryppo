@@ -4,8 +4,6 @@ import { setModal, switchModal } from "../../../Redux/Lk-reducer";
 import {
   initChartText,
   setChartText,
-  updateChart,
-  changeActiveIndex,
   disableItem,
 } from "../../../Redux/operation-reducer";
 
@@ -26,6 +24,7 @@ let mapStateToProps = (state) => {
     filter: false,
     isHover: state.lk.business.isHover,
     chartTextData: state.operation.cryppo.chartTextData,
+    operationList: state.operation.cryppo.operationList,
   };
 };
 

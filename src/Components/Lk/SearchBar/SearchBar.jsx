@@ -10,57 +10,37 @@ import SearchWithTag from "../../UI/SearchWithTag/SearchWithTag";
 const { RangePicker } = DatePicker;
 
 const Searchbar = (props) => {
-  const enterDataRange = (value, dateString) => {
-    props.filterDate(dateString);
-  };
+    const enterDataRange = (value, dateString) => {
+        props.filterDate(dateString);
+    };
 
-  const inputChange = (e) => {
-    let value = e.target.value;
-    props.inputChange(value);
-  };
+    const inputChange = (e) => {
+        let value = e.target.value;
+        props.inputChange(value);
+    };
 
-  const inputKeyDown = (e) => {
-    if (e.key === "Enter") {
-      props.addTag();
-    }
-  };
+    const inputKeyDown = (e) => {
+        if (e.key === "Enter") {
+            props.addTag();
+        }
+    };
 
-  const RemoveTag = (e) => {
-    const tag = props.operationsFilter.tags.filter((item) => {
-      return item === e;
-    });
-    props.removeTag(tag[0]);
-  };
-
-  // let location = useLocation();
-  // let title = location.state;
-  // console.log(location)
-  return (
-    <div className={style.container}>
-      <div className={style.block}>
-        <div className={style.flex}>
-          <ConfigProvider locale={locale}>
-            <RangePicker
-              inputReadOnly={true}
-              defaultValue={moment("2015-01-01", "YYYY-MM-DD")}
-              onChange={enterDataRange}
-            />
-          </ConfigProvider>
-          <div className={style.input}>
-            {props.operationsFilter.tags.map((e) => (
-              <Tag
-                id={e.id}
-                key={e.id}
-                className={style.tag}
-                closable
-                onClose={() => {
-                  RemoveTag(e);
-                }}
-              >
-                {e.name}
-              </Tag>
-            ))}
-            {/* <
+    // let location = useLocation();
+    // let title = location.state;
+    // console.log(location)
+    return (
+        <div className={style.container}>
+            <div className={style.block}>
+                <div className={style.flex}>
+                    <ConfigProvider locale={locale}>
+                        <RangePicker
+                            inputReadOnly={true}
+                            defaultValue={moment("2015-01-01", "YYYY-MM-DD")}
+                            onChange={enterDataRange}
+                        />
+                    </ConfigProvider>
+                    <div className={style.input}>
+                        {/* <
                             value={props.operationsFilter.searchQuery}
                             className={style.inputItem}
                             placeholder="Найдите любые события и операции"
@@ -68,18 +48,18 @@ const Searchbar = (props) => {
                             onKeyDown={inputKeyDown}
                             onChange={inputChange}
                         /> */}
-            <SearchWithTag props={props} />
-          </div>
+                        <SearchWithTag props={props} />
+                    </div>
+                </div>
+                <img
+                    className={style.icon}
+                    onClick={props.addTag}
+                    src={search}
+                    alt="search"
+                />
+            </div>
         </div>
-        <img
-          className={style.icon}
-          onClick={props.addTag}
-          src={search}
-          alt="search"
-        />
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Searchbar;

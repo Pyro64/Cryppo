@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import style from "./Check.module.scss";
-import CheckCard from './CheckCard';
+import CheckCard from "./CheckCard";
 const CheckCardBlock = (props) => {
-    let bankCard = props.bankCard.map((e) => (
+    let bankCard = props.bankCardList.map((e) => (
         <CheckCard id={e.id} key={e.id} number={e.number} logo={e.logo} />
     ));
     return (
@@ -14,6 +14,6 @@ const CheckCardBlock = (props) => {
             <div className={style.cardLine}>{bankCard}</div>
         </div>
     );
-}
+};
 
 export default CheckCardBlock;

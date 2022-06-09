@@ -1,4 +1,4 @@
-import {Api} from "./Api"
+import { Api } from "./Api";
 
 export const LoginPost = (email, password) => {
     return Api.post("Account/Login", {
@@ -9,6 +9,7 @@ export const LoginPost = (email, password) => {
         deviceOs: "Android Pie",
         deviceIp: "192.168.0.1",
     }).then((response) => {
+        document.cookie = "access_token=" + response.data.accessToken;
         return response.data;
     });
 };
@@ -70,10 +71,10 @@ export const BalanceGet = () => {
     return Api.get("Balance/All").then((response) => {
         return response.data;
     });
-}
+};
 
 export const GeneralInfoGet = () => {
     return Api.get("General/Info").then((response) => {
         return response.data;
     });
-}
+};
