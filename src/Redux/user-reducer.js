@@ -107,39 +107,37 @@ let initialState = {
                 notificationsChangeEmail: true,
             },
         },
-        userSettings: {
-            notificationLanguage: "string",
-            balances: [
-                {
-                    currency: "string",
-                    amount: 0,
-                    amountInViewCurrency: 0,
-                    active: true,
-                    alwaysActive: true,
-                    percent: 0,
-                },
-            ],
-            terminals: [
-                {
-                    id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                    name: "string",
-                    login: "string",
-                    terminalId: "string",
-                    connected: true,
-                    createDate: "2022-06-08T10:36:37.975Z",
-                },
-            ],
-            entries: [
-                {
-                    ip: "string",
-                    deviceId: "string",
-                    location: "string",
-                    deviceOs: "string",
-                    status: 0,
-                    date: "2022-06-08T10:36:37.973Z",
-                },
-            ],
-        },
+        balances: [
+            {
+                currency: "BTC",
+                amount: 0,
+                amountInViewCurrency: 0,
+                active: true,
+                alwaysActive: true,
+                percent: 0,
+            },
+        ],
+        entries: [
+            {
+                ip: "string",
+                deviceId: "string",
+                location: "string",
+                deviceOs: "string",
+                status: 0,
+                date: "2022-06-08T10:36:37.973Z",
+            },
+        ],
+        terminals: [
+            {
+                id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                name: "string",
+                login: "string",
+                terminalId: "string",
+                connected: true,
+                createDate: "2022-06-08T10:36:37.975Z",
+            },
+        ],
+        notificationLanguage: "string",
         router: "/business",
         cardList: [
             {
@@ -324,23 +322,42 @@ export const userSlice = createSlice({
             state.business.isLogin = false;
         },
         SetActiveCurrency(state, action) {
-            state.business.userSettings.balances = action.payload.balances;
+            state.business.balances = action.payload.balances;
         },
         SetViewCurrency(state, action) {
             state.business.userInfo.viewCurrency = action.payload.viewCurrency;
         },
         SetNotificationsLang(state, action) {
-            state.business.userSettings.notificationLanguage =
+            state.business.notificationLanguage =
                 action.payload.notificationLanguage;
         },
-        SetViewCurrency(state, action) {
-            state.business.userInfo.viewCurrency = action.payload.viewCurrency;
+        ChangeName(state, action) {
+            state.business.userInfo = action.payload.userInfo;
         },
-        SetViewCurrency(state, action) {
-            state.business.userInfo.viewCurrency = action.payload.viewCurrency;
+        ChangeEmail(state, action) {
+            state.business.userInfo = action.payload.userInfo;
         },
-        SetViewCurrency(state, action) {
-            state.business.userInfo.viewCurrency = action.payload.viewCurrency;
+        EnableTwoFactor(state, action) {
+            state.business.userInfo = action.payload.userInfo;
+        },
+        CloseAccount(state) {
+            state.business = null;
+            state.isLk = false;
+        },
+        UploadPhoto(state, action) {
+            state.business.userInfo = action.payload.userInfo;
+        },
+        ChangePhoneNumber(state, action) {
+            state.business.userInfo = action.payload.userInfo;
+        },
+        ConfirmPhoneNumber(state, action) {
+            state.business.userInfo = action.payload.userInfo;
+        },
+        SendNotifications(state, action) {
+            state.business.userInfo = action.payload.userInfo;
+        },
+        DeleteDevice(state, action) {
+            state.business.userInfo = action.payload.userInfo;
         },
     },
 });
@@ -376,27 +393,19 @@ export const LoginWalletPostTC = (email, password) => {
 
 export const RegistrationBusinessPostTC = (email, password, company) => {
     return (dispatch) => {
-        RegisterPost(email, password, company)
-            .then((data) => {
-                let value = JSON.parse(JSON.stringify(data));
-            })
-            .catch((response) => {
-                console.log(response);
-                console.log("error");
-            });
+        RegisterPost(email, password, company).catch((response) => {
+            console.log(response);
+            console.log("error");
+        });
     };
 };
 
 export const RegistrationWalletPostTC = (email, password, company) => {
     return (dispatch) => {
-        RegisterPost(email, password, company)
-            .then((data) => {
-                let value = JSON.parse(JSON.stringify(data));
-            })
-            .catch((response) => {
-                console.log(response);
-                console.log("error");
-            });
+        RegisterPost(email, password, company).catch((response) => {
+            console.log(response);
+            console.log("error");
+        });
     };
 };
 
@@ -421,7 +430,7 @@ export const SetActiveCurrencyPostTC = (currency) => {
         SettingsApi.SetActiveCurrencyPost(currency)
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: ActionType.SET_ACTIVE_CURRENCY, value });
+                dispatch(userSlice.actions.SetActiveCurrency(value.balances));
             })
             .catch((response) => {
                 console.log(response);
@@ -435,7 +444,7 @@ export const SetViewCurrencyPostTC = (currency) => {
         SettingsApi.SetViewCurrencyPost(currency)
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: ActionType.SET_VIEW_CURRENCY, value });
+                dispatch(userSlice.actions.SetActiveCurrency(value.balances));
             })
             .catch((response) => {
                 console.log(response);
@@ -449,7 +458,11 @@ export const SetNotificationsLangPostTC = (lang) => {
         SettingsApi.SetNotificationsLangPost(lang)
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: ActionType.SET_NOTIFICATIONS_LANG, value });
+                dispatch(
+                    userSlice.actions.SetNotificationsLang(
+                        value.notificationLanguage
+                    )
+                );
             })
             .catch((response) => {
                 console.log(response);
@@ -463,7 +476,6 @@ export const CheckPasswordPostTC = (password) => {
         SettingsApi.CheckPasswordPost(password)
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: ActionType.CHECK_PASSWORD, value });
             })
             .catch((response) => {
                 console.log(response);
@@ -484,43 +496,28 @@ export const ChangePasswordPostTC = (
             password,
             passwordConfirm,
             twoFactorCode
-        )
-            .then((data) => {
-                let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: ActionType.CHANGE_PASSWORD, value });
-            })
-            .catch((response) => {
-                console.log(response);
-                console.log("error");
-            });
+        ).catch((response) => {
+            console.log(response);
+            console.log("error");
+        });
     };
 };
 
 export const ChangeNamePostTC = (firstname, lastname) => {
     return (dispatch) => {
-        SettingsApi.ChangeNamePost(firstname, lastname)
-            .then((data) => {
-                let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: ActionType.CHANGE_NAME, value });
-            })
-            .catch((response) => {
-                console.log(response);
-                console.log("error");
-            });
+        SettingsApi.ChangeNamePost(firstname, lastname).catch((response) => {
+            console.log(response);
+            console.log("error");
+        });
     };
 };
 
 export const TwoFactorInfoGetTC = () => {
     return (dispatch) => {
-        SettingsApi.TwoFactorInfoGet()
-            .then((data) => {
-                let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: ActionType.TWO_FACTOR_INFO, value });
-            })
-            .catch((response) => {
-                console.log(response);
-                console.log("error");
-            });
+        SettingsApi.TwoFactorInfoGet().catch((response) => {
+            console.log(response);
+            console.log("error");
+        });
     };
 };
 
@@ -529,7 +526,7 @@ export const ChangeEmailPostTC = (email, password) => {
         SettingsApi.ChangeEmailPost(email, password)
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: ActionType.CHANGE_EMAIL, value });
+                dispatch(userSlice.actions.ChangeEmail(value.userInfo));
             })
             .catch((response) => {
                 console.log(response);
@@ -543,7 +540,7 @@ export const EnableTwoFactorPostTC = (code) => {
         SettingsApi.EnableTwoFactorPost(code)
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: ActionType.ENABLE_TWO_FACTOR_CODE, value });
+                dispatch(userSlice.actions.EnableTwoFactor(value.userInfo));
             })
             .catch((response) => {
                 console.log(response);
@@ -556,8 +553,7 @@ export const CloseAccountGetTC = (code) => {
     return (dispatch) => {
         SettingsApi.CloseAccountGet(code)
             .then((data) => {
-                let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: ActionType.CLOSE_ACCOUNT, value });
+                dispatch(userSlice.actions.CloseAccount());
             })
             .catch((response) => {
                 console.log(response);
@@ -571,7 +567,7 @@ export const UploadPhotoPostTC = (file) => {
         SettingsApi.UploadPhotoPost(file)
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: ActionType.UPLOAD_PHOTO, value });
+                dispatch(userSlice.actions.UploadPhoto(value.userInfo));
             })
             .catch((response) => {
                 console.log(response);
@@ -585,7 +581,7 @@ export const ChangePhoneNumberPostTC = (phoneNumber, password) => {
         SettingsApi.ChangePhoneNumberPost(phoneNumber, password)
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: ActionType.CHANGE_PHONE_NUMBER, value });
+                dispatch(userSlice.actions.ChangePhoneNumber(value.userInfo));
             })
             .catch((response) => {
                 console.log(response);
@@ -599,7 +595,7 @@ export const ConfirmPhoneNumberPostTC = (code) => {
         SettingsApi.ConfirmPhoneNumberPost(code)
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: ActionType.CONFIRM_PHONE_NUMBER, value });
+                dispatch(userSlice.actions.ConfirmPhoneNumber(value.userInfo));
             })
             .catch((response) => {
                 console.log(response);
@@ -643,7 +639,7 @@ export const SendNotificationsPostTC = (
         )
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: ActionType.SEND_NOTIFICATIONS, value });
+                dispatch(userSlice.actions.SendNotifications(value.userInfo));
             })
             .catch((response) => {
                 console.log(response);
@@ -654,10 +650,19 @@ export const SendNotificationsPostTC = (
 
 export const SendEmailConfirmationCodePostTC = (email) => {
     return (dispatch) => {
-        SettingsApi.SendEmailConfirmationCodePost(email)
+        SettingsApi.SendEmailConfirmationCodePost(email).catch((response) => {
+            console.log(response);
+            console.log("error");
+        });
+    };
+};
+
+export const DeleteDevicePostTC = (id) => {
+    return (dispatch) => {
+        SettingsApi.DeleteDevicePost(id)
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: ActionType.SEND_EMAIL_CONFIRMATION, value });
+                dispatch(userSlice.actions.SendNotifications(value.userInfo));
             })
             .catch((response) => {
                 console.log(response);

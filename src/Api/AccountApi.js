@@ -18,6 +18,7 @@ export const RefreshTokenPost = (token) => {
     return Api.post("Account/RefreshToken", {
         token,
     }).then((response) => {
+        document.cookie = "access_token=" + response.data.accessToken;
         return response.data;
     });
 };

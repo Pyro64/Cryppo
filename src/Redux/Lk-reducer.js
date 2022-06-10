@@ -97,78 +97,7 @@ let initialState = {
         name: "Казахстанский",
       },
     ],
-    settingOption: [
-      {
-        id: 1,
-        name: "Системные уведомления",
-      },
-      {
-        id: 2,
-        name: "Успешный вход",
-      },
-      {
-        id: 3,
-        name: "Неуспешный вход",
-      },
-      {
-        id: 4,
-        name: "Отправлен платеж",
-      },
-      {
-        id: 5,
-        name: "Получен платеж",
-      },
-      {
-        id: 6,
-        name: "Совершен обмен",
-      },
-      {
-        id: 7,
-        name: "Изменена двухфакторная авторизация",
-      },
-      {
-        id: 8,
-        name: "Изменен пароль",
-      },
-      {
-        id: 9,
-        name: "Изменены уведомления",
-      },
-    ],
-    connectOption: [
-      {
-        id: 1,
-        date: "2020-05-07 16:44:33 UTC+03:00",
-        ip: "255.255.255.255",
-        geo: "Moscow / Russia",
-        status: "Successful login",
-        device: "OS X",
-      },
-      {
-        id: 2,
-        date: "2020-05-07 16:44:33 UTC+03:00",
-        ip: "255.255.255.255",
-        geo: "Moscow / Russia",
-        status: "Successful login",
-        device: "OS X",
-      },
-      {
-        id: 3,
-        date: "2020-05-07 16:44:33 UTC+03:00",
-        ip: "255.255.255.255",
-        geo: "Moscow / Russia",
-        status: "Successful login",
-        device: "OS X",
-      },
-      {
-        id: 4,
-        date: "2020-05-07 16:44:33 UTC+03:00",
-        ip: "255.255.255.255",
-        geo: "Moscow / Russia",
-        status: "Successful login",
-        device: "OS X",
-      },
-    ],
+
     settingData: [
       {
         id: 1,
@@ -526,7 +455,6 @@ const LkReducer = (state = initialState, action) => {
   }
 };
 export const removeAlert = (value) => ({ type: REMOVE_ALERT, value });
-export const deleteAddress = (value) => ({ type: DELETE_ITEM, value });
 export const switchModal = (isModal) => ({ type: SWITCH_MODAL, isModal });
 export const setModal = (value) => ({ type: SET_MODAL, value });
 export default LkReducer;
