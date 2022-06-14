@@ -7,6 +7,10 @@
 }
 .title {
   @include fluid(font-size, 14px, 18px);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .header {
   @include fluid(padding, 16px, 24px);
@@ -14,6 +18,7 @@
   justify-content: space-between;
   display: flex;
   align-items: center;
+  position: relative;
 }
 .block {
   display: flex;

@@ -8,7 +8,7 @@ export default function User(props) {
   let value = !props.isLogin;
   const url = props.isBusiness ? "entrance" : "/entrance";
   return (
-    <div>
+    <div className={style.main}>
       {props.isLogin ? (
         <Userblock
           value={value}

@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import style from "./User.module.scss";
 import MyDrawer from "../Drawer/MyDrawer";
 import { UserOutlined } from "@ant-design/icons";
+import { CloseOutlined } from "@ant-design/icons";
 const Userblock = (props) => {
   function addLk() {
     let value = true;
@@ -19,6 +20,7 @@ const Userblock = (props) => {
   return (
     <div className={style.block}>
       <div className={style.flex}>
+        <CloseOutlined className={style.close} onClick={props.onClose} />
         <NavLink
           onClick={addLk}
           to={`${props.routeLk}/lk`}

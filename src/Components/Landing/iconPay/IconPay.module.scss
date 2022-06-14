@@ -1,7 +1,7 @@
 @import "../../../Style/Mixins";
 .block {
-  @include flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   width: 53%;
   margin-left: 15%;
 }
@@ -15,8 +15,8 @@
     object-fit: contain;
     transition: 0.38s ease-in-out;
     @include fluid(margin-bottom, 8px, 10px);
-    @include fluid(width, 25px, 58px);
-    @include fluid(height, 25px, 58px);
+    @include fluid(width, 40px, 58px);
+    @include fluid(height, 40px, 58px);
   }
   p {
     transition: 0.38s ease-in-out;

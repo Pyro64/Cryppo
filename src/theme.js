@@ -50,7 +50,7 @@ export const container = css`
 export const GlobalStyles = createGlobalStyle`
     body {
         background: ${(props) => props.theme.body};
-        transition: 0.38s ease-in-out;
+        transition: background 0.38s ease-in-out;
     }
     .background {
         background: ${(props) => props.theme.background};
