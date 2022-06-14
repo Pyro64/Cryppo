@@ -2,11 +2,11 @@ import React, { useId } from "react";
 import NotifocathionItem from "./NotificationItem";
 import style from "./Notification.module.scss";
 
+import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
 export default function Notification(props) {
     let notification = [
         <NotifocathionItem
             id={useId}
-            key={useId}
             email={props.notificationsSettings.systemEmail}
             telegram={props.notificationsSettings.systemTg}
             text="Системные уведомления"

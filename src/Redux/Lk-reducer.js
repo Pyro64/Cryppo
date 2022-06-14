@@ -398,12 +398,145 @@ let initialState = {
                 cash: "$ 0.00",
             },
 
-            indexProfit: {
+            buyNow: {
                 id: 1,
-                icon: profit,
-                title: "Индексный доход за сегодня",
-                statistic: "$ 0.00",
-                text: "0% за последние 30 дней",
+                icon: plus,
+                title: "Купить индекс",
+            },
+        },
+        operationModal: {
+            id: null,
+            type: null,
+            icon: null,
+            title: null,
+            check: null,
+            data: null,
+            iconPay: null,
+            currencyPay: null,
+            cash: null,
+            firm: null,
+            bankCardData: {
+                id: null,
+                number: null,
+                logo: null,
+                color: null,
+            },
+            status: {
+                color: null,
+                text: null,
+            },
+        },
+        helpData: [
+            {
+                id: 1,
+                number: "+7 800 123-23-23",
+                country: "Россия",
+                flag: rus,
+            },
+            {
+                id: 2,
+                number: "+38 0443 123-233",
+                country: "Украина",
+                flag: ukr,
+            },
+            {
+                id: 3,
+                number: "+77 273 505-233",
+                country: "Казахстан",
+                flag: kaz,
+            },
+        ],
+    },
+    cryppo: {
+        alertData: [
+            {
+                id: 1,
+                message: "Вывод прошел успешно",
+                description:
+                    "Вывод средств с криптокошелька на карту прошел успешно",
+                type: "success",
+            },
+            {
+                id: 2,
+                message: "Внимание",
+                description:
+                    "Настоятельно рекомендуем подключить двухфакторную аунтификацию",
+                type: "info",
+            },
+            {
+                id: 3,
+                message: "Опасность",
+                description: "Выполнен вход с чужого аккаунта",
+                type: "warning",
+            },
+        ],
+        investData: {
+            id: 1,
+            title: "Инвестиции CRYPPO INDEX",
+            icon: bag,
+            crypto: "0.00000000",
+            cash: "0.00",
+            povered: "Powered by Elementum",
+            poveredIcon: elementum,
+        },
+        cardData: {
+            id: 1,
+            title: "Привязать карту",
+            povered: "Powered by QRON",
+            poveredIcon: qron,
+        },
+        operationModal: {
+            id: null,
+            type: null,
+            icon: null,
+            title: null,
+            check: null,
+            data: null,
+            iconPay: null,
+            currencyPay: null,
+            cash: null,
+            firm: null,
+            bankCardData: {
+                id: null,
+                number: null,
+                logo: null,
+                color: null,
+            },
+            status: {
+                color: null,
+                text: null,
+            },
+        },
+        isModal: false,
+        tabsData: {
+            invest: {
+                id: 1,
+                icon: bag,
+                title: "Инвестиции CRYPPO INVEST",
+                statistic: "0.00000000",
+                cash: "$ 0.00",
+                text: "Powered by Elementum",
+                povered: elementum,
+            },
+            addCart: {
+                id: 1,
+                icon: plus,
+                title: "Привязать карту",
+                text: "Powered by QRON",
+                povered: qron,
+            },
+            addTerminal: {
+                id: 1,
+                icon: plus,
+                title: "Привязать терминал",
+                text: "Powered by QRON",
+                povered: qron,
+            },
+            indexNow: {
+                id: 1,
+                icon: index,
+                title: "Текущая стоимость индекса",
+                cash: "$ 28.84",
             },
 
             buyNow: {

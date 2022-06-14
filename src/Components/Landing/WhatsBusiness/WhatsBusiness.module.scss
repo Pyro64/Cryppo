@@ -47,7 +47,7 @@
     rgba(47, 105, 255, 0) 100%
   );
   width: 100%;
-  @include fluid(height, 500px, 1000px);
+  @include fluid(height, 800px, 1000px);
 }
 @media screen and(max-width:992px) {
   .item {

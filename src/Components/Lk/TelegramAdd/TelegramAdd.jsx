@@ -1,29 +1,28 @@
 import React, { useState } from "react";
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
-import style from "./SettingPassword.module.scss";
+import style from "./TelegramAdd.module.scss";
 import MyModal from "../../UI/MyModal/MyModal";
 import LkInput from "../../UI/LkInput/LkInput";
 import close from "../../../Images/icon/close.svg";
 import { Input, notification } from "antd";
-
-export default function SettingPassword(props) {
+export default function TelegramAdd() {
   const [open, setOpen] = useState(false);
   function modal() {
     setOpen(!open);
   }
-  const [code, setCode] = useState(false);
+  const [code, setCode] = useState(true);
   const openNotification = (e) => {
     e.preventDefault();
     notification.open({
       type: "success",
-      message: "Код отправлени на почту",
+      message: "Код отправлени на telegram",
     });
     setCode(!code);
   };
   return (
     <div>
       <div className={style.linkItem} onClick={modal}>
-        Сменить пароль
+        Подключить Telegram
       </div>
       <MyModal open={open} setOpen={setOpen}>
         <form
@@ -37,29 +36,14 @@ export default function SettingPassword(props) {
             src={close}
             onClick={modal}
           />
-          <div className={style.title}>Смена пароля</div>
-          <div className={style.subtitle}>
-            Чтобы продолжить, введите ваш текущий пароль
-          </div>
-          <LkInput placeholder="Пароль" />
-          <div className={style.subtitle}>Придумайте сложный пароль</div>
-          <Input.Password
-            className={style.input}
-            placeholder="Введите пароль"
-            iconRender={(visible) =>
-              visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
-            }
-          />
-          <Input.Password
-            className={style.input}
-            placeholder="Повторите пароль"
-            iconRender={(visible) =>
-              visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
-            }
-          />
+          <div className={style.title}>Подключение telegram</div>
+          <div className={style.subtitle}>Введите ник Telegram</div>
+          <LkInput placeholder="@" />
+          <div className={style.subtitle}>Введите пароль</div>
+          <LkInput placeholder="Введите пароль" />
 
           <button onClick={openNotification} className={style.btn}>
-            Сохранить
+            Готово
           </button>
         </form>
         <form
@@ -74,7 +58,7 @@ export default function SettingPassword(props) {
             onClick={modal}
           />
           <div className={style.title}>Подтверждение</div>
-          <div className={style.subtitle}>Код отправлен на ваш Email</div>
+          <div className={style.subtitle}>Код отправлен на ваш Telegram</div>
           <LkInput placeholder="Введите код" />
           <button className={style.codeBtn}>Запросить код еще раз</button>
           <button className={style.btn}>Продолжить</button>

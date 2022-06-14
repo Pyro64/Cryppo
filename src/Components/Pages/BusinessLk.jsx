@@ -4,14 +4,16 @@ import BalanceContainer from "../Lk/Balance/BalanceContainer";
 import BusinessLkHistoryContainer from "../Lk/BusinessLkHistory/BusinessLkHistoryContainer";
 import BusinessLkStatisticContainer from "../Lk/BusinessLkStatistic/BusinessLkStatisticContainer";
 import SettingLkContainer from "../Lk/SettingLk/SettingLkContainer";
-import Support from "../UI/Support/Support";
-import BusinessLkMainContainer from "../Lk/BusinessLkMain/BusinessLkMainContainer";
+import SupportLkContainer from "../Lk/SupportLk/SupportLkContainer";
+import BusinessLkMainContainer from "./../Lk/BusinessLkMain/BusinessLkMainContainer";
+
 const BusinessLk = (props) => {
   // const get = () => props.getCryppoLkThunkCreator();
   // useEffect(() => {
   //   const interval = setInterval(get, 5000);
   // }, []);
   // alert(props.isLogin)
+
   if (props.isLogin === false) return <Navigate to={"/business"} />;
   return (
     <Routes>
@@ -19,27 +21,15 @@ const BusinessLk = (props) => {
         path="/"
         element={<BusinessLkMainContainer addCard={props.addCard} />}
       />
-      <Route
-        path="balance"
-        element={
-          <BalanceContainer/>
-        }
-      />
-      <Route
-        path="statistic"
-        element={
-          <BusinessLkStatisticContainer/>
-        }
-      />
+      <Route path="balance" element={<BalanceContainer />} />
+      <Route path="statistic" element={<BusinessLkStatisticContainer />} />
       <Route path="history" element={<BusinessLkHistoryContainer />} />
 
+      <Route path="setting/*" element={<SettingLkContainer />} />
       <Route
-        path="setting"
-        element={
-          <SettingLkContainer/>
-        }
+        path="support"
+        element={<SupportLkContainer help={props.help} />}
       />
-      <Route path="support" element={<Support />} />
     </Routes>
   );
 };

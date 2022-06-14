@@ -1,57 +1,46 @@
 import React from "react";
-import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import { Routes, Route } from "react-router";
+import SettingLkMain from "./SettingLkMain";
 import GeneralSetting from "../GeneralSetting/GeneralSetting";
-import Notification from "../Notification/Notification";
 import Security from "../Security/Security";
-import style from "./SettingLk.module.scss";
+import Notification from "../Notification/Notification";
 
 export default function SettingLk(props) {
     return (
-        <div className="main container">
-            <Tabs>
-                <TabList className={style.list}>
-                    <Tab
-                        className={style.tab}
-                        selectedClassName={style.activeTab}
-                    >
-                        <div>Общие настройки</div>
-                    </Tab>
-                    <Tab
-                        className={style.tab}
-                        selectedClassName={style.activeTab}
-                    >
-                        <div>Безопасность</div>
-                    </Tab>
-                    <Tab
-                        className={style.tab}
-                        selectedClassName={style.activeTab}
-                    >
-                        <div>Уведомления</div>
-                    </Tab>
-                </TabList>
-                <TabPanel>
+        <Routes>
+            <Route path="/" element={<SettingLkMain />} />
+            <Route
+                path="general"
+                element={
                     <GeneralSetting
                         langOption={props.langOption}
                         currencyList={props.currencyList}
-                        balances={props.balances}
                         user={props.user}
                         setting={props.setting}
+                        balances={props.balances}
                         SetActiveCurrencyPostTC={props.SetActiveCurrencyPostTC}
                     />
-                </TabPanel>
-                <TabPanel>
+                }
+            />
+            <Route
+                path="safety"
+                element={
                     <Security
                         DeleteDevicePostTC={props.DeleteDevicePostTC}
                         entries={props.entries}
                         terminals={props.terminals}
                     />
-                </TabPanel>
-                <TabPanel>
+                }
+            />
+            <Route
+                path="notification"
+                element={
                     <Notification
+                        settingOption={props.settingOption}
                         notificationsSettings={props.notificationsSettings}
                     />
-                </TabPanel>
-            </Tabs>
-        </div>
+                }
+            />
+        </Routes>
     );
 }

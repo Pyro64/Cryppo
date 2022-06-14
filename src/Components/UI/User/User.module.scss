@@ -29,6 +29,16 @@
     }
   }
 }
+.close {
+  display: none;
+  font-size: 20px;
+  @include fluid(margin-right, 20px, 38px);
+  opacity: 0.8;
+  transition: 0.38s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
+}
 .out {
   display: block;
 }
@@ -186,5 +196,23 @@
     width: 100%;
     height: 100%;
     opacity: 0;
+  }
+}
+@media screen and (max-width: 992px) {
+  .block {
+    margin-left: 0;
+    margin-bottom: 30px;
+  }
+  .flex {
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid rgba(109, 109, 109, 0.5);
+    margin-bottom: 20px;
+  }
+  .close {
+    display: block;
+  }
+  .main {
+    width: 100%;
   }
 }

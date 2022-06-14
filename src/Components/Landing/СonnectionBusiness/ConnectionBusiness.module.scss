@@ -2,7 +2,7 @@
 
 .container {
   @include container;
-  max-width: 1430px;
+  @include fluid(max-width, 1230px, 1430px);
   @include fluid(margin-bottom, 70px, 170px);
   @include fluid(padding-top, 30px, 60px);
   @include fluid(padding-bottom, 30px, 60px);
@@ -71,6 +71,11 @@
   );
   @include fluid(width, 1000px, 1000px);
   @include fluid(height, 1000px, 1000px);
+}
+@media screen and (max-width: 1440px) {
+  .container {
+    max-width: 1230px;
+  }
 }
 @media screen and (max-width: 992px) {
   .flex {

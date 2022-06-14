@@ -1,0 +1,8 @@
+@import "../../../Style/Mixins.scss";
+
+.item {
+  @include fluid(margin-bottom, 10px, 15px);
+}
+.title {
+  @include fluid(margin-bottom, 5px, 10px);
+}
