@@ -4,8 +4,6 @@ import { setModal, switchModal } from "../../../Redux/Lk-reducer";
 import {
     initChartText,
     setChartText,
-    updateChart,
-    changeActiveIndex,
     disableItem,
 } from "../../../Redux/operation-reducer";
 
@@ -15,7 +13,7 @@ let mapStateToProps = (state) => {
         cardList: state.user.cryppo.cardList,
         bankCardList: state.user.cryppo.bankCardList,
         invest: state.lk.cryppo.investData,
-        newCard:  state.user.cryppo.cardData,
+        newCard: state.user.cryppo.cardData,
         news: state.lk.cryppo.newsData,
         expenses: state.operation.cryppo.operationData,
         arrival: state.operation.cryppo.operationData,
@@ -26,11 +24,11 @@ let mapStateToProps = (state) => {
         filter: false,
         isHover: state.lk.business.isHover,
         chartTextData: state.operation.cryppo.chartTextData,
+        operationList: state.operation.cryppo.operationList,
     };
 };
 
-const CryppoLkMainContainer = connect(mapStateToProps,
-{
+const CryppoLkMainContainer = connect(mapStateToProps, {
     setModal,
     switchModal,
     initChartText,
