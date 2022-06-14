@@ -1,15 +1,55 @@
-@import '../../../Style/Mixins.scss';
+@import "../../../Style/Mixins.scss";
 
 .container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
-.item {
-    width: 45%;
+.itemContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.content {
+  @include fluid(padding-top, 10px, 20px);
 }
 .bottom {
-    border-top: 1px solid #424242;
-    @include fluid(padding-top, 15px, 30px);
-    @include fluid(margin-top, 10px, 20px);
+  border-top: 1px solid #424242;
+  @include fluid(padding-top, 15px, 30px);
+  @include fluid(margin-top, 10px, 20px);
+}
+.item {
+  width: 48%;
+  @include fluid(margin-bottom, 10px, 15px);
+}
+.comission {
+  @include fluid(font-size, 8px, 10px);
+  color: #6d6d6d;
+}
+.itemFull {
+  width: 100%;
+  @include fluid(margin-bottom, 10px, 15px);
+}
+.title {
+  @include fluid(margin-bottom, 5px, 10px);
+  @include fluid(font-size, 12px, 14px);
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+.subtitle {
+  color: #6d6d6d;
+  @include fluid(margin-bottom, 5px, 10px);
+}
+.text {
+  @include fluid(font-size, 12px, 14px);
+  color: #40ffe8;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include fluid(margin-bottom, 10px, 20px);
+}
+.option {
+  color: #6d6d6d;
 }

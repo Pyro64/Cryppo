@@ -28,7 +28,7 @@ export default function Balance(props) {
               filter={true}
               isHover={props.isHover}
               setChartText={props.setChartText}
-              operationList={props.expenses}
+              operations={props.expenses}
               chartTextData={props.chartTextData}
               initChartText={props.initChartText}
             />

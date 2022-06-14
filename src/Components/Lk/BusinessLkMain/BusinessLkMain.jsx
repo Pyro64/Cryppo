@@ -29,7 +29,7 @@ const BusinessLkMain = (props) => {
               filter={true}
               isHover={props.isHover}
               setChartText={props.setChartText}
-              operationList={props.operationList}
+              operations={props.operationList}
               chartTextData={props.chartTextData}
               initChartText={props.initChartText}
               disableItem={props.disableItem}
