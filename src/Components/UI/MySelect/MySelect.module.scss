@@ -5,7 +5,14 @@
 }
 .select {
   width: 100%;
-  border-radius: 5px;
+  background: #2d2d2d;
+  border-radius: 76px;
+
+  div {
+    border-radius: 76px !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+  }
 }
 .option {
   width: 100%;
@@ -13,6 +20,7 @@
 .item {
   display: flex;
   align-items: center;
+  height: 100%;
   img {
     object-fit: cover;
     border-radius: 50%;

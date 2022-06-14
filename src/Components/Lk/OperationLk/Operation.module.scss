@@ -110,7 +110,31 @@
   width: 100%;
 }
 .pagination {
-  @include fluid(padding-left, 25px, 55px);
-  @include fluid(padding-right, 25px, 55px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
   @include fluid(margin-top, 15px, 30px);
+  @include fluid(padding-top, 5px, 10px);
+  @include fluid(padding-bottom, 5px, 10px);
+  border: 1px solid #6d6d6d;
+  border-radius: 1000px;
+  li {
+    border: none;
+    .ant-pagination-item .ant-pagination-item-active {
+      a {
+        background: linear-gradient(
+          91.42deg,
+          #2f69ff 0%,
+          #bc2fff 100%
+        ) !important;
+        border-radius: 30px;
+      }
+    }
+  }
+}
+.paginationContainer {
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }

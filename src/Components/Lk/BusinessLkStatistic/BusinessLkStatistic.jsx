@@ -27,7 +27,7 @@ export default function LkStatistic(props) {
               filter={true}
               isHover={props.isHover}
               setChartText={props.setChartText}
-              operationList={props.expenses}
+              operations={props.expenses}
               chartTextData={props.chartTextData}
               initChartText={props.initChartText}
               disableItem={props.disableItem}
@@ -35,7 +35,7 @@ export default function LkStatistic(props) {
           </div>
           <SubtitleLk arrow={true} subtitle="Статистика валют" />
           <CompositionIndex
-              barData={props.barData}
+            barData={props.barData}
             changeActiveIndex={props.changeActiveIndex}
           />
         </div>

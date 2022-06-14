@@ -9,13 +9,13 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const DoughnutChart = (props) => {
   let dataItems = [];
   let backgroundColorItems = [];
-  props.operationList.map((e) => {
+  props.operations.map((e) => {
     if (e.disable === false) {
       dataItems.push(e.percent);
       backgroundColorItems.push(e.color);
     }
   });
-  let elementItem = props.operationList.map((e) => (
+  let elementItem = props.operations.map((e) => (
     <StatisticCashItem
       updateChart={props.updateChart}
       setChartText={props.setChartText}
@@ -41,7 +41,7 @@ const DoughnutChart = (props) => {
         bottom(ctx) {
           const chart = ctx.chart;
           let pb = 0;
-          chart.data.datasets.forEach(function(el) {
+          chart.data.datasets.forEach(function (el) {
             const hOffset = el.hoverOffset || 0;
             pb = Math.max(hOffset / 2 + 5, pb);
           });

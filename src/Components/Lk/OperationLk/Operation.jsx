@@ -37,7 +37,7 @@ export default function Operation(props) {
   }
 
   let sliceItem = props.operationList.map((e) => (
-      <div></div>
+    <div></div>
     // <OperationItem
     //   open={open}
     //   setModal={props.setModal}
@@ -66,24 +66,27 @@ export default function Operation(props) {
     <div className={style.container}>
       <div className={style.title}>{props.operationList.title}</div>
       <div className={style.inner}>{filterItem}</div>
-      {props.pagination ? (
-        <Pagination
-          showTitle={false}
-          pageSizeOptions={[8, 20]}
-          defaultPageSize={8}
-          className={style.pagination}
-          onChange={changePage}
-          responsive={true}
-          showSizeChanger
-          onShowSizeChange={onShowSizeChange}
-          defaultCurrent={1}
-          total={props.operationList.length}
-        />
-      ) : (
-        <div className={style.btnContainer}>
-          <Btn className="btn">Все операции</Btn>
-        </div>
-      )}
+      <div className={style.paginationContainer}>
+        {props.pagination ? (
+          <Pagination
+            showTitle={false}
+            pageSizeOptions={[8, 20]}
+            defaultPageSize={8}
+            className={style.pagination}
+            onChange={changePage}
+            responsive={true}
+            showSizeChanger
+            onShowSizeChange={onShowSizeChange}
+            defaultCurrent={1}
+            total={props.operationList.length}
+          />
+        ) : (
+          <div className={style.btnContainer}>
+            <Btn className="btn">Все операции</Btn>
+          </div>
+        )}
+      </div>
+
       <div>
         <MyModal setOpen={setOpen} open={open}>
           <OperationModal

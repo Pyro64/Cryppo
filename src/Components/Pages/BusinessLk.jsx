@@ -4,7 +4,7 @@ import BalanceContainer from "../Lk/Balance/BalanceContainer";
 import BusinessLkHistoryContainer from "../Lk/BusinessLkHistory/BusinessLkHistoryContainer";
 import BusinessLkStatisticContainer from "../Lk/BusinessLkStatistic/BusinessLkStatisticContainer";
 import SettingLkContainer from "../Lk/SettingLk/SettingLkContainer";
-import SupportLk from "../Lk/SupportLk/SupportLk";
+import SupportLkContainer from "../Lk/SupportLk/SupportLkContainer";
 import BusinessLkMainContainer from "./../Lk/BusinessLkMain/BusinessLkMainContainer";
 
 const BusinessLk = (props) => {
@@ -13,6 +13,7 @@ const BusinessLk = (props) => {
   //   const interval = setInterval(get, 5000);
   // }, []);
   // alert(props.isLogin)
+
   if (props.isLogin === false) return <Navigate to={"/business"} />;
   return (
     <Routes>
@@ -24,8 +25,11 @@ const BusinessLk = (props) => {
       <Route path="statistic" element={<BusinessLkStatisticContainer />} />
       <Route path="history" element={<BusinessLkHistoryContainer />} />
 
-      <Route path="setting" element={<SettingLkContainer />} />
-      <Route path="support" element={<SupportLk help={props.help} />} />
+      <Route path="setting/*" element={<SettingLkContainer />} />
+      <Route
+        path="support"
+        element={<SupportLkContainer help={props.help} />}
+      />
     </Routes>
   );
 };

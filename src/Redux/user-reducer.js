@@ -9,16 +9,138 @@ import { LoginPost, RegisterPost } from "../Api/AccountApi";
 import * as SettingsApi from "../Api/SettingsApi";
 import filtersTool from "../Utils/filter";
 import * as ActionType from "./ActionTypes/UsersActionTypes";
+import { createSlice } from "@reduxjs/toolkit";
 
+let apiState = {
+    supportedCryptoCurrencies: [
+        {
+            name: "string",
+            symbol: "string",
+            img: "string",
+            protocol: "string",
+            blockchain: "string",
+        },
+    ],
+    supportedViewCurrencies: [
+        {
+            name: "string",
+            symbol: "string",
+            img: "string",
+            protocol: "string",
+            blockchain: "string",
+        },
+    ],
+
+    lastPayments: [
+        {
+            id: 0,
+            address: "string",
+            status: "string",
+            currency: "string",
+            amount: 0,
+            date: "2022-06-08T10:36:37.972Z",
+            transactions: [
+                {
+                    amount: 0,
+                    hash: "string",
+                    fee: 0,
+                    link: "string",
+                    date: "2022-06-08T10:36:37.973Z",
+                },
+            ],
+            protocol: "string",
+            blockchain: "string",
+        },
+    ],
+
+    registerDate: "2022-06-08T10:36:37.973Z",
+    devices: [
+        {
+            id: 0,
+            name: "string",
+            ip: "string",
+            date: "2022-06-08T10:36:37.973Z",
+            location: "string",
+        },
+    ],
+
+    supportedNotificationsLanguages: [
+        {
+            name: "string",
+            value: "string",
+        },
+    ],
+};
 
 let initialState = {
     business: {
-        id: 1,
-        img: annaBobs,
-        name: "Business Bobs",
         isLogin: true,
+        userInfo: {
+            userId: "string",
+            firstname: "string",
+            lastname: "string",
+            twoFactorEnabled: true,
+            viewCurrency: "string",
+            phoneNumber: "string",
+            totalBalanceInViewCurrency: 0,
+            telegramConfigured: true,
+            telegramLink: "string",
+            photo: "string",
+            shopId: "string",
+            viewCurrencySymbol: "string",
+            lastWeekProfitInViewCurrency: 0,
+            email: "string",
+            notificationsSettings: {
+                systemTg: true,
+                systemEmail: true,
+                entryTg: true,
+                entryEmail: true,
+                failEntryTg: true,
+                failEntryEmail: true,
+                paymentGetTg: true,
+                paymentGetEmail: true,
+                paymentConfirmedTg: true,
+                paymentConfirmedEmail: true,
+                passwordChangeTg: true,
+                passwordChangeEmail: true,
+                notificationsChangeTg: true,
+                notificationsChangeEmail: true,
+            },
+        },
+        userSettings: {
+            notificationLanguage: "string",
+            balances: [
+                {
+                    currency: "string",
+                    amount: 0,
+                    amountInViewCurrency: 0,
+                    active: true,
+                    alwaysActive: true,
+                    percent: 0,
+                },
+            ],
+            terminals: [
+                {
+                    id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    name: "string",
+                    login: "string",
+                    terminalId: "string",
+                    connected: true,
+                    createDate: "2022-06-08T10:36:37.975Z",
+                },
+            ],
+            entries: [
+                {
+                    ip: "string",
+                    deviceId: "string",
+                    location: "string",
+                    deviceOs: "string",
+                    status: 0,
+                    date: "2022-06-08T10:36:37.973Z",
+                },
+            ],
+        },
         router: "/business",
-        mail: "k.konstantinopolskiy@gmail.com",
         cardList: [
             {
                 id: 1,
@@ -63,38 +185,165 @@ let initialState = {
         ],
     },
     cryppo: {
+        accessToken: "",
         isLogin: true,
         router: "/cryppo",
-        id: 2,
-        img: annaBobs,
-        name: "Index Bobs",
+        userInfo: {
+            userId: "string",
+            firstname: "string",
+            lastname: "string",
+            twoFactorEnabled: true,
+            viewCurrency: "string",
+            phoneNumber: "string",
+            totalBalanceInViewCurrency: 0,
+            telegramConfigured: true,
+            telegramLink: "string",
+            photo: "string",
+            shopId: "string",
+            viewCurrencySymbol: "string",
+            lastWeekProfitInViewCurrency: 0,
+            email: "string",
+            notificationsSettings: {
+                systemTg: true,
+                systemEmail: true,
+                entryTg: true,
+                entryEmail: true,
+                failEntryTg: true,
+                failEntryEmail: true,
+                paymentGetTg: true,
+                paymentGetEmail: true,
+                paymentConfirmedTg: true,
+                paymentConfirmedEmail: true,
+                passwordChangeTg: true,
+                passwordChangeEmail: true,
+                notificationsChangeTg: true,
+                notificationsChangeEmail: true,
+            },
+        },
+        userSettings: {
+            notificationLanguage: "string",
+            balances: [
+                {
+                    currency: "string",
+                    amount: 0,
+                    amountInViewCurrency: 0,
+                    active: true,
+                    alwaysActive: true,
+                    percent: 0,
+                },
+            ],
+            terminals: [
+                {
+                    id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    name: "string",
+                    login: "string",
+                    terminalId: "string",
+                    connected: true,
+                    createDate: "2022-06-08T10:36:37.975Z",
+                },
+            ],
+            entries: [
+                {
+                    ip: "string",
+                    deviceId: "string",
+                    location: "string",
+                    deviceOs: "string",
+                    status: 0,
+                    date: "2022-06-08T10:36:37.973Z",
+                },
+            ],
+        },
         mail: "k.konstantinopolskiy@gmail.com",
+        cardList: [
+            {
+                id: 1,
+                icon: eth,
+                text: "ETH",
+                availability: "1.234 ETH",
+                prise: "9 656 $",
+            },
+            {
+                id: 2,
+                icon: icx,
+                text: "ICX",
+                availability: "78.444 ICX",
+                prise: "9 656 $",
+            },
+            {
+                id: 3,
+                icon: arde,
+                text: "ARDE",
+                availability: "17.235 ARDE",
+                prise: "9 656 $",
+            },
+            {
+                id: 4,
+                icon: usd,
+                text: "USD",
+                availability: "56.254 USD",
+                prise: "9 656 $",
+            },
+        ],
+        bankCardList: [
+            {
+                id: 1,
+                number: 5678,
+                logo: masterCard,
+            },
+            {
+                id: 2,
+                number: 7658,
+                logo: visa,
+            },
+        ],
     },
     isLk: false,
 };
 
-const userReducer = (state = initialState, action) => {
-    switch (action.type) {
-
-        case ActionType.AUTHORIZATION_BUSINESS:
-            return {
-                ...state,
-                ...action.value,
-            };
-        case ActionType.AUTHORIZATION_WALLET:
-            return {
-                ...state,
-                ...action.value,
-            };
-        case ActionType.HAS_LK:
-            return {
-                ...state,
-                isLk: action.value,
-            };
-        default:
-            return { ...state };
-    }
-};
+export const userSlice = createSlice({
+    name: "user",
+    initialState,
+    reducers: {
+        LoginBusiness(state, action) {
+            state.business.isLogin = true;
+            state.business.accessToken = action.payload;
+            state.isLk = true;
+        },
+        LoginCryppo(state, action) {
+            state.cryppo.isLogin = true;
+            state.cryppo.accessToken = action.payload;
+            state.isLk = true;
+        },
+        SetLk(state, action) {
+            state.isLk = action.payload;
+        },
+        LogoutCryppo(state) {
+            state.cryppo.isLogin = false;
+        },
+        LogoutBusiness(state) {
+            state.business.isLogin = false;
+        },
+        SetActiveCurrency(state, action) {
+            state.business.userSettings.balances = action.payload.balances;
+        },
+        SetViewCurrency(state, action) {
+            state.business.userInfo.viewCurrency = action.payload.viewCurrency;
+        },
+        SetNotificationsLang(state, action) {
+            state.business.userSettings.notificationLanguage =
+                action.payload.notificationLanguage;
+        },
+        SetViewCurrency(state, action) {
+            state.business.userInfo.viewCurrency = action.payload.viewCurrency;
+        },
+        SetViewCurrency(state, action) {
+            state.business.userInfo.viewCurrency = action.payload.viewCurrency;
+        },
+        SetViewCurrency(state, action) {
+            state.business.userInfo.viewCurrency = action.payload.viewCurrency;
+        },
+    },
+});
 export const hasLk = (value) => ({ type: ActionType.HAS_LK, value });
 
 export const LoginBusinessPostTC = (email, password) => {
@@ -102,7 +351,7 @@ export const LoginBusinessPostTC = (email, password) => {
         LoginPost(email, password)
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: ActionType.AUTHORIZATION_BUSINESS, value });
+                dispatch(userSlice.actions.LoginBusiness(value.accessToken));
             })
             .catch((response) => {
                 console.log(response);
@@ -116,7 +365,7 @@ export const LoginWalletPostTC = (email, password) => {
         LoginPost(email, password)
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: ActionType.AUTHORIZATION_WALLET, value });
+                dispatch(userSlice.actions.LoginBusiness(value.accessToken));
             })
             .catch((response) => {
                 console.log(response);
@@ -125,16 +374,11 @@ export const LoginWalletPostTC = (email, password) => {
     };
 };
 
-export const RegistrationBusinessPostTC = (
-    email,
-    password,
-    company
-) => {
+export const RegistrationBusinessPostTC = (email, password, company) => {
     return (dispatch) => {
         RegisterPost(email, password, company)
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: ActionType.REGISTRATION_BUSINESS, value });
             })
             .catch((response) => {
                 console.log(response);
@@ -143,16 +387,11 @@ export const RegistrationBusinessPostTC = (
     };
 };
 
-export const RegistrationWalletPostTC = (
-    email,
-    password,
-    company
-) => {
+export const RegistrationWalletPostTC = (email, password, company) => {
     return (dispatch) => {
         RegisterPost(email, password, company)
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
-                dispatch({ type: ActionType.REGISTRATION_WALLET, value });
             })
             .catch((response) => {
                 console.log(response);
@@ -163,7 +402,11 @@ export const RegistrationWalletPostTC = (
 
 export const filterOperationsTC = (props, category, subcategory) => {
     return (dispatch) => {
-        const { currency, operations } = filtersTool(props, category, subcategory);
+        const { currency, operations } = filtersTool(
+            props,
+            category,
+            subcategory
+        );
         dispatch({
             type: ActionType.FILTER_OPERATIONS,
             value: { currency, operations },
@@ -432,5 +675,4 @@ export const removeAlert = (value) => ({
     value,
 });
 
-
-export default userReducer;
+export default userSlice.reducer;

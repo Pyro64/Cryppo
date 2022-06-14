@@ -13,9 +13,9 @@ const BussinessRegistry = (props) => {
   const [passwordName, setPasswordName] = useState("");
   const [repeatPasswordName, setRepeatPasswordName] = useState("");
   const value = true;
-  if (props.isLogin) {
-    navigate("/business/lk");
-  }
+  // if (props.isLogin) {
+  //   navigate("/business/lk");
+  // }
   const handleSubmit = (e) => {
     e.preventDefault();
     props.registryThunkCreator(
@@ -28,11 +28,15 @@ const BussinessRegistry = (props) => {
       value
     );
   };
-
+  const [code, setCode] = useState(true);
+  function codeVarify(e) {
+    setCode(!code);
+    e.preventDefault();
+  }
   return (
     <div className="main">
       <div className={style.entance}>
-        <Tabs className={style.tabs}>
+        <Tabs className={code ? `${style.tabs}` : `${style.none}`}>
           <TabList className={style.list}>
             <Tab className={style.tab} selectedClassName={style.activeTab}>
               <div>Персональный</div>
@@ -75,6 +79,10 @@ const BussinessRegistry = (props) => {
                 name="password"
                 onChange={(e) => setPasswordName(e.target.value)}
               />
+              <div className={style.text}>
+                Пароль должен быть латинскими буквами, минимум 6 символов с
+                использованием спецсимволов *%.
+              </div>
               <LkInput
                 className={style.input}
                 placeholder="Повторите пароль"
@@ -83,8 +91,15 @@ const BussinessRegistry = (props) => {
                 name="email"
                 onChange={(e) => setRepeatPasswordName(e.target.value)}
               />
-
-              <button className={style.button} type="submit">
+              <div className={style.text}>
+                Заполняя данную форму, я даю согласие на
+                <span> обработку персональных данных</span>
+              </div>
+              <button
+                className={style.button}
+                onClick={codeVarify}
+                type="submit"
+              >
                 Зарегистрироваться
               </button>
             </form>
@@ -131,6 +146,10 @@ const BussinessRegistry = (props) => {
                 name="password"
                 onChange={(e) => setPasswordName(e.target.value)}
               />
+              <div className={style.text}>
+                Пароль должен быть латинскими буквами, минимум 6 символов с
+                использованием спецсимволов *%.
+              </div>
               <LkInput
                 className={style.input}
                 placeholder="Повторите пароль"
@@ -139,13 +158,27 @@ const BussinessRegistry = (props) => {
                 name="email"
                 onChange={(e) => setRepeatPasswordName(e.target.value)}
               />
-
-              <button className={style.button} type="submit">
+              <div className={style.text}>
+                Заполняя данную форму, я даю согласие на{" "}
+                <span> обработку персональных данных</span>
+              </div>
+              <button
+                className={style.button}
+                onClick={codeVarify}
+                type="submit"
+              >
                 Зарегистрироваться
               </button>
             </form>
           </TabPanel>
         </Tabs>
+        <div className={code ? `${style.none}` : `${style.tabs}`}>
+          <div className={style.title}>Подтверждение</div>
+          <div className={style.subtitle}>Код отправлен на ваш Telegram</div>
+          <LkInput placeholder="Введите код" />
+          <button className={style.codeBtn}>Запросить код еще раз</button>
+          <button className={style.btn}>Продолжить</button>
+        </div>
       </div>
     </div>
   );
