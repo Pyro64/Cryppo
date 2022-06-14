@@ -9,7 +9,7 @@ export default function NotifocathionItem(props) {
 
     return (
         <div className={style.pushContainer}>
-            <div className={style.pushName}>{props.name}</div>
+            <div className={style.pushName}>{props.text}</div>
             <div className={style.pushItem}>
                 <input
                     id={props.id}
