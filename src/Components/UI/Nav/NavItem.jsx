@@ -1,23 +1,39 @@
 import { NavLink } from "react-router-dom";
-import style from '../Header/Header.module.scss'
+import style from "../Header/Header.module.scss";
+import { userSlice } from "../../../Redux/user-reducer";
+import { useDispatch } from "react-redux";
 
 function NavItem(props) {
-    let isLk = false
-    if (props.hasLk) {
+    const { SetLk } = userSlice.actions;
+    const dispatch = useDispatch();
+    if (props.linkToLk) {
         return (
-            <NavLink  onClick={() =>  props.hasLk(isLk)} state={{ name: props.href }} to={props.href} className={({ isActive }) => isActive ? `${style.link} ${style.active}` : `${style.link}`} end>
+            <NavLink
+                onClick={() => dispatch(SetLk(false))}
+                state={{ name: props.href }}
+                to={props.href}
+                className={({ isActive }) =>
+                    isActive ? `${style.link} ${style.active}` : `${style.link}`
+                }
+                end
+            >
                 {props.name}
             </NavLink>
-        )
-    }
-    else {
+        );
+    } else {
         return (
-            <NavLink  state={{ name: props.href }} to={props.href} className={({ isActive }) => isActive ? `${style.link} ${style.active}` : `${style.link}`} end>
+            <NavLink
+                state={{ name: props.href }}
+                to={props.href}
+                className={({ isActive }) =>
+                    isActive ? `${style.link} ${style.active}` : `${style.link}`
+                }
+                end
+            >
                 {props.name}
             </NavLink>
         );
     }
-
 }
 
 export default NavItem;

@@ -14,7 +14,7 @@ export default function Cryppo(props) {
                 user={props.user}
                 isLk={props.isLk}
                 isLogin={props.isLogin}
-                hasLk={props.hasLk}
+                SetLk={props.SetLk}
                 routeLk={props.routeLk}
                 header={props.header}
                 card={props.card}
