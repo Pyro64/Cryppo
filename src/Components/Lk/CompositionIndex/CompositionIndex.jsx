@@ -17,7 +17,7 @@ export default function CompositionIndex(props) {
             icon={e.icon}
             name={e.currency}
             value={e.amount}
-            color="#F6C"
+            color={e.color}
             percent={e.percent}
         />
     ));
@@ -29,6 +29,7 @@ export default function CompositionIndex(props) {
             </div>
             <div className={style.wrapperIndex}>{items}</div>
             <MyBar
+                revenue={props.revenue}
                 compositions={props.barData.compositions}
                 height={`300px`}
                 changeActiveIndex={props.changeActiveIndex}

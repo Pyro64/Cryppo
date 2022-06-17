@@ -25,9 +25,11 @@ export default function BusinessLkHistory(props) {
                     <Element name="myScrollToElement" />
                     {props.operationList.length !== 0 ? (
                         <Operation
+                            PaymentsPostTC={props.PaymentsPostTC}
                             fullOperation={true}
                             pagination={true}
                             operationList={props.operationList}
+                            paymentList={props.paymentList}
                             setModal={props.setModal}
                             operationModal={props.operationModal}
                             isModal={props.isModal}

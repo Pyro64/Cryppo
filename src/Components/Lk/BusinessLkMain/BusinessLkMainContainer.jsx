@@ -12,6 +12,7 @@ import {
 
 let mapStateToProps = (state) => {
     return {
+        revenue: state.LK.business.revenue,
         barData: state.operation.business.barData,
         tabs: state.lk.business.tabsData,
         cardList: state.user.business.cardList,

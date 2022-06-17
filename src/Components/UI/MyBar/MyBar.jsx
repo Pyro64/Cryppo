@@ -2,6 +2,14 @@ import React from "react";
 import { BarChart, Bar, XAxis, ResponsiveContainer, Cell } from "recharts";
 import style from "./MyBar.module.scss";
 const MyBar = (props) => {
+    const barData = props.revenue.map((e) => {
+        return {
+            color: "#2D4",
+            name: e.currency,
+            dataKey: e.currency,
+            value: e.amountInViewCurrency,
+        };
+    });
     const renderCustomBarLabel = ({ payload, x, y, width, height, value }) => {
         return (
             <text
@@ -21,7 +29,7 @@ const MyBar = (props) => {
                 <BarChart
                     width={150}
                     height={40}
-                    data={props.compositions}
+                    data={barData}
                     margin={{
                         top: 30,
                         right: 10,

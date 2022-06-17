@@ -38,6 +38,7 @@ const BusinessLkMain = (props) => {
                     <SubtitleLk arrow={true} subtitle="Статистика валют" />
                     <div className="block">
                         <MyBar
+                            revenue={props.revenue}
                             compositions={props.barData.compositions}
                             height={`300px`}
                             changeActiveIndex={props.changeActiveIndex}

@@ -18,10 +18,28 @@ let initialState = {
                 percent: 4,
             },
             {
-                amount: 3,
-                currency: "BTC",
+                amount: 5,
+                currency: "ASDX",
                 amountInViewCurrency: 647,
-                percent: 10,
+                percent: 8,
+            },
+            {
+                amount: 83,
+                currency: "BNB",
+                amountInViewCurrency: 194,
+                percent: -24,
+            },
+            {
+                amount: 5,
+                currency: "ICX",
+                amountInViewCurrency: 385,
+                percent: 61,
+            },
+            {
+                amount: 17,
+                currency: "ARDE",
+                amountInViewCurrency: 194,
+                percent: 13,
             },
         ],
         chartIndex: [

@@ -6,6 +6,7 @@ import landingReducer from "./landing-reducer";
 import LkReducer from "./Lk-reducer";
 import operationReducer from "./operation-reducer";
 import LKReducer from "./LkReducer";
+import paymentsReducer from "./payments-reducer";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 const rootReducer = combineReducers({
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
     user: userReducer,
     operation: operationReducer,
     LK: LKReducer,
+    payments: paymentsReducer,
     form: formReducer,
 });
 
