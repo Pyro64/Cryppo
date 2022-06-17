@@ -8,13 +8,16 @@ import {
     changeActiveIndex,
     disableItem,
 } from "../../../Redux/operation-reducer";
+import { ChartPostTC, RevenuePostTC } from "../../../Redux/LkReducer";
 let mapStateToProps = (state) => {
     return {
+        revenue: state.LK.business.revenue,
+        chartIndex: state.LK.business.chartIndex,
         barData: state.operation.business.barData,
         isModal: state.lk.business.isModal,
         operationModal: state.lk.business.operationModal,
         filter: false,
-        cardList:state.user.business.cardList,
+        cardList: state.user.business.cardList,
         chartTextData: state.operation.business.chartTextData,
         currencyList: state.lk.business.currencyList,
         isHover: state.lk.business.isHover,
@@ -30,8 +33,9 @@ const BusinessLkStatisticContainer = connect(mapStateToProps, {
     initChartText,
     changeActiveIndex,
     setModal,
-    switchModal
-
+    switchModal,
+    RevenuePostTC,
+    ChartPostTC,
 })(BusinessLkStatistic);
 
 export default BusinessLkStatisticContainer;

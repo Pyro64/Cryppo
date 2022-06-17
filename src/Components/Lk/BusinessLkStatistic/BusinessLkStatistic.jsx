@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
 import Check from "../CheckLk/Check";
 import Operation from "../OperationLk/Operation";
@@ -35,13 +35,18 @@ export default function LkStatistic(props) {
                     </div>
                     <SubtitleLk arrow={true} subtitle="Статистика валют" />
                     <CompositionIndex
+                        RevenuePostTC={props.RevenuePostTC}
                         barData={props.barData}
                         changeActiveIndex={props.changeActiveIndex}
+                        revenue={props.revenue}
                     />
                 </div>
             </div>
             <SubtitleLk arrow={true} subtitle="Статистика поступлений" />
-            <StatisticIndex />
+            <StatisticIndex
+                ChartPostTC={props.ChartPostTC}
+                chartIndex={props.chartIndex}
+            />
         </div>
     );
 }

@@ -19,7 +19,10 @@ export default function CryppoLkInvest(props) {
                 </div>
                 <div className="content">
                     <SubtitleLk subtitle="Состав индекса" />
-                    <CompositionIndex barData={props.barData} />
+                    <CompositionIndex
+                        barData={props.barData}
+                        RevenuePostTC={props.RevenuePostTC}
+                    />
                 </div>
             </div>
         </div>
