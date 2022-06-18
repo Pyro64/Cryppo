@@ -6,6 +6,7 @@ let mapStateToProps = (state) => {
     return {
         tabs: state.lk.cryppo.tabsData,
         barData: state.operation.cryppo.barData,
+        revenue: state.LK.cryppo.revenue,
     };
 };
 

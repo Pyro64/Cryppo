@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
 import FilterHistory from "../FilterHistory/FilterHistory";
 import Operation from "../OperationLk/Operation";
@@ -6,6 +6,22 @@ import style from "./BusinessLKHistory.module.scss";
 var Scroll = require("react-scroll");
 var Element = Scroll.Element;
 export default function BusinessLkHistory(props) {
+    const [walletAddress, setWalletAddress] = useState(null);
+    const [dateRange, setDateRange] = useState([null, null]);
+    const [currency, setCurrency] = useState(null);
+    const [pageNumber, setPageNumber] = useState(1);
+    const [pageSize, setPageSize] = useState(8);
+    useEffect(() => {
+        props.PaymentsPostTC(
+            pageNumber,
+            pageSize,
+            dateRange[0],
+            dateRange[1],
+            currency,
+            "Success",
+            walletAddress
+        );
+    }, [currency, dateRange, walletAddress, pageSize, pageNumber, props]);
     return (
         <div className="main container">
             <div className="flex ">
@@ -13,10 +29,12 @@ export default function BusinessLkHistory(props) {
                     <div className="sidebar__inner">
                         <SubtitleLk arrow={false} subtitle="Фильтр" />
                         <FilterHistory
+                            setCurrency={setCurrency}
+                            setWalletAddress={setWalletAddress}
+                            setDateRange={setDateRange}
+                            walletAddress={walletAddress}
                             currencyList={props.currencyList}
-                            filterDate={props.filterDate}
-                            filterWallet={props.filterWallet}
-                            filterValute={props.filterValute}
+                            PaymentsPostTC={props.PaymentsPostTC}
                         />
                     </div>
                 </div>
@@ -28,6 +46,10 @@ export default function BusinessLkHistory(props) {
                             PaymentsPostTC={props.PaymentsPostTC}
                             fullOperation={true}
                             pagination={true}
+                            pageNumber={pageNumber}
+                            pageSize={pageSize}
+                            setPageNumber={setPageNumber}
+                            setPageSize={setPageSize}
                             operationList={props.operationList}
                             paymentList={props.paymentList}
                             setModal={props.setModal}

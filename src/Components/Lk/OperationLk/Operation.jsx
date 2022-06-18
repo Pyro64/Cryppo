@@ -4,25 +4,18 @@ import Btn from "../../UI/Btn/Btn";
 import OperationInner from "./OperationInner";
 import OperationModal from "./OperationModal";
 import MyModal from "../../UI/MyModal/MyModal";
-import MyPagination from "../../UI/MyPagination/MyPagination";
 import { Pagination } from "antd";
 import OperationItem from "./OperationItem";
-import { NavLink } from "react-router-dom";
+import yandex from "../../../Images/icon/yandex.svg";
+import three from "../../../Images/payIcon/3.svg";
 var Scroll = require("react-scroll");
 var Element = Scroll.Element;
 var scroller = Scroll.scroller;
 
 export default function Operation(props) {
-    useEffect(() => {
-        props.PaymentsPostTC();
-    }, []);
-    const [totalPages, setTotalPages] = useState(props.paymentList.data.length);
     const [open, setOpen] = useState(false);
-    const [page, setPage] = useState(1);
-    const [posts, setPosts] = useState([]);
-    const [pageSize, setPageSize] = useState(8);
     const changePage = (page) => {
-        setPage(page);
+        props.setPageNumber(page);
 
         scroller.scrollTo("myScrollToElement", {
             duration: 1500,
@@ -36,33 +29,35 @@ export default function Operation(props) {
         setOpen(!open);
     }
     function onShowSizeChange(page, pageSize) {
-        setPageSize(pageSize);
+        props.setPageSize(pageSize);
     }
 
     let sliceItem = props.operationList.map((e) => (
-        <div></div>
-        // <OperationItem
-        //   open={open}
-        //   setModal={props.setModal}
-        //   openModal={openModal}
-        //   id={e.id}
-        //   key={e.id}
-        //   type={e.type}
-        //   icon={e.icon}
-        //   data={e.data}
-        //   iconPay={e.iconPay}
-        //   currencyPay={e.currencyPay}
-        //   title={e.title}
-        //   check={e.check}
-        //   status={e.status}
-        //   cash={e.cash}
-        //   firm={e.firm}
-        //   bankCardData={e.bankCardData}
-        // />
+        <OperationItem
+            open={open}
+            setModal={props.setModal}
+            openModal={openModal}
+            id={e.id}
+            key={e.id}
+            type={e.type ?? "Покупка"}
+            icon={e.icon ?? yandex}
+            date={e.date}
+            iconPay={e.iconPay ?? three}
+            currency={e.currency}
+            title={e.title ?? "Яндекс Такси"}
+            check={e.check}
+            status={e.status}
+            amount={e.amount}
+            firm={e.firm}
+            bankCardData={e.bankCardData}
+        />
     ));
     let filterItem;
     props.fullOperation
-        ? (filterItem = sliceItem.slice((page - 1) * pageSize, page * pageSize))
+        ? (filterItem = sliceItem.slice(
+              (props.pageNumber - 1) * props.pageSize,
+              props.pageNumber * props.pageSize
+          ))
         : (filterItem = sliceItem.slice(0, 4));
 
     return (

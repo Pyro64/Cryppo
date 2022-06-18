@@ -9,6 +9,7 @@ import {
     changeActiveIndex,
     disableItem,
 } from "../../../Redux/operation-reducer";
+import { PaymentsPostTC } from "../../../Redux/payments-reducer";
 
 let mapStateToProps = (state) => {
     return {
@@ -25,6 +26,7 @@ let mapStateToProps = (state) => {
         chartTextData: state.operation.business.chartTextData,
         currencyList: state.lk.business.currencyList,
         expenses: state.lk.business.expenses,
+        paymentList: state.payments.business,
     };
 };
 
@@ -37,6 +39,7 @@ const BusinessLkMainContainer = connect(mapStateToProps, {
     setChartText,
     disableItem,
     changeActiveIndex,
+    PaymentsPostTC,
 })(BusinessLkMain);
 
 export default BusinessLkMainContainer;

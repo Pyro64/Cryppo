@@ -116,6 +116,14 @@ let initialState = {
                 alwaysActive: true,
                 percent: 0,
             },
+            {
+                currency: "ETH",
+                amount: 0,
+                amountInViewCurrency: 0,
+                active: true,
+                alwaysActive: true,
+                percent: 0,
+            },
         ],
         entries: [
             {

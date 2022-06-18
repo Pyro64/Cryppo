@@ -47,6 +47,8 @@ const BusinessLkMain = (props) => {
 
                     <SubtitleLk arrow={true} subtitle="Последние операции" />
                     <Operation
+                        PaymentsPostTC={props.PaymentsPostTC}
+                        paymentList={props.paymentList}
                         operationList={props.operationList}
                         setModal={props.setModal}
                         operationModal={props.operationModal}

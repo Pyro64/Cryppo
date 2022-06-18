@@ -11,6 +11,7 @@ import {
 import { ChartPostTC, RevenuePostTC } from "../../../Redux/LkReducer";
 let mapStateToProps = (state) => {
     return {
+        paymentList: state.payments.business,
         revenue: state.LK.business.revenue,
         chartIndex: state.LK.business.chartIndex,
         barData: state.operation.business.barData,
