@@ -1,6 +1,7 @@
 import businessSvg from "../Images/cryppo-business.svg";
 import cryppoSvg from "../Images/cryppo.svg";
 import indexSvg from "../Images/cryppo-index.svg";
+import { createSlice } from "@reduxjs/toolkit";
 let initialState = {
   business: {
     route: {
@@ -135,11 +136,11 @@ let initialState = {
     },
   },
 };
-const headerReducer = (state = initialState, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
 
-export default headerReducer;
+export const headerSlice = createSlice({
+  name: "header",
+  initialState,
+  reducers: { }
+});
+
+export default headerSlice.reducer;

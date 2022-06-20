@@ -679,10 +679,6 @@ export const DeleteDevicePostTC = (id) => {
     };
 };
 
-export const disableItem = (value) => ({
-    type: ActionType.DISABLE_ITEM,
-    value,
-});
 export const removeAlert = (value) => ({
     type: ActionType.REMOVE_ALERT,
     value,
