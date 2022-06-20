@@ -3,6 +3,7 @@ import vk from '../Images/icon/vk.svg';
 import twitter from '../Images/icon/twitter.svg';
 import inst from '../Images/icon/inst.svg';
 import fb from '../Images/icon/fb.svg';
+import { createSlice } from "@reduxjs/toolkit";
 
 let initialState = {
     mail:[
@@ -49,10 +50,10 @@ let initialState = {
         }
     ]
 }
-const footerReducer = (state = initialState, action) => {
-    switch (action.type) {
-        default:
-            return state;
-    }
-}
-export default footerReducer;
+export const footerSlice = createSlice({
+    name: "footer",
+    initialState,
+    reducers: {},
+});
+
+export default footerSlice.reducer;

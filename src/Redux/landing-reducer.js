@@ -34,7 +34,7 @@ import Benefist2 from "../Images/icon/Benefist2.svg";
 import Benefist3 from "../Images/icon/Benefist3.svg";
 import Benefist4 from "../Images/icon/Benefist4.svg";
 import bannerInvest from "../Images/content/banner-index.svg";
-const INDEX_STEP = "INDEX_STEP";
+import { createSlice } from "@reduxjs/toolkit";
 let initialState = {
   business: {
     bannerData: {
@@ -430,16 +430,14 @@ let initialState = {
     },
   },
 };
-const landingReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case INDEX_STEP:
-      return {
-        ...state,
-        step: action.value,
-      };
-    default:
-      return state;
-  }
-};
-export const addStep = (value) => ({ type: INDEX_STEP, value });
-export default landingReducer;
+export const landingSlice = createSlice({
+  name: "landing",
+  initialState,
+  reducers: {
+    AddStep(state, action){
+      state.invest.step = action.payload
+    }
+  },
+});
+
+export default landingSlice.reducer;
