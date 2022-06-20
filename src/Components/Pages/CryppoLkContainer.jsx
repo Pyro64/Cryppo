@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import CryppoLk from "./CryppoLk";
-import { filterOperationsTC, disableItem } from "../../Redux/user-reducer";
+import { filterOperationsTC } from "../../Redux/user-reducer";
 
 let mapStateToProps = (state) => {
     return {
@@ -26,6 +26,5 @@ let mapStateToProps = (state) => {
 
 const CryppoLkContainer = connect(mapStateToProps, {
     filterOperationsTC,
-    disableItem,
 })(CryppoLk);
 export default CryppoLkContainer;

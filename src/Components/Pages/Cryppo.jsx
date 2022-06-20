@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, Route, Routes } from "react-router";
+import { Route, Routes } from "react-router";
 import FooterContainer from "../UI/Footer/FooterContainer";
 import Header from "../UI/Header/Header";
 import CryppoLk from "./CryppoLk";
@@ -19,7 +19,6 @@ export default function Cryppo(props) {
                 header={props.header}
                 card={props.card}
                 alert={props.alert}
-                removeAlert={props.removeAlert}
                 switchTheme={props.switchTheme}
                 theme={props.theme}
             />

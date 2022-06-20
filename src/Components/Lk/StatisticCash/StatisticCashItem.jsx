@@ -2,11 +2,12 @@ import React from "react";
 import style from "./StatisticCash.module.scss";
 import { NavLink, useParams } from "react-router-dom";
 import { CloseOutlined, CheckOutlined } from "@ant-design/icons";
+import {useDispatch} from "react-redux";
+import { doughuntSlice } from "../../../Redux/DoughuntReducer";
 const StatisticCashItem = (props) => {
-  let child = props.child;
-  let value = props;
-  const tag = props.category;
-  const { category, subcategory } = useParams();
+  const dispatch = useDispatch();
+  let child = props.childExpensesStatistics;
+  const { category } = useParams();
 
   let url = `/cryppo/lk/event/${props.category}`;
   if (category !== undefined) {
@@ -14,7 +15,7 @@ const StatisticCashItem = (props) => {
   }
   const foo = () => {
     if (child !== undefined) {
-      props.updateChart(child);
+      dispatch(doughuntSlice.actions.UpdateChart(child))
     }
   };
   return (
@@ -29,8 +30,8 @@ const StatisticCashItem = (props) => {
         to={url}
         state={{ name: props.category }}
         className={style.item}
-        onMouseEnter={() => props.setChartText(value)}
-        onMouseLeave={() => props.initChartText()}
+        onMouseEnter={() => dispatch(doughuntSlice.actions.SetChartText(props))}
+        onMouseLeave={() => dispatch(doughuntSlice.actions.InitChartText())}
         onClick={foo}
       >
         <div
@@ -45,7 +46,7 @@ const StatisticCashItem = (props) => {
       <div
         className={style.cross}
         onClick={() => {
-          props.disableItem(props);
+          dispatch(doughuntSlice.actions.DisableItem(props));
         }}
       >
         {props.disable ? (

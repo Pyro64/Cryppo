@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
 import Check from "../CheckLk/Check";
-import Operation from "../OperationLk/Operation";
 import DoughnutChart from "../DoughnutChart/DoughnutChart";
 import CompositionIndex from "../CompositionIndex/CompositionIndex";
 import StatisticIndex from "../../Landing/StatisticIndex/StatisticIndex";
@@ -23,22 +22,19 @@ export default function LkStatistic(props) {
                     <SubtitleLk subtitle="Статистика" />
                     <div className="block">
                         <DoughnutChart
+                        operationType="expenses"
                             updateChart={props.updateChart}
                             filter={true}
                             isHover={props.isHover}
-                            setChartText={props.setChartText}
                             operations={props.expenses}
-                            chartTextData={props.chartTextData}
-                            initChartText={props.initChartText}
-                            disableItem={props.disableItem}
+                            doughuntTextData={props.doughuntTextData}
                         />
                     </div>
                     <SubtitleLk arrow={true} subtitle="Статистика валют" />
                     <CompositionIndex
                         RevenuePostTC={props.RevenuePostTC}
-                        barData={props.barData}
-                        changeActiveIndex={props.changeActiveIndex}
                         revenue={props.revenue}
+                        compositionActiveIndex={props.compositionActiveIndex}
                     />
                 </div>
             </div>

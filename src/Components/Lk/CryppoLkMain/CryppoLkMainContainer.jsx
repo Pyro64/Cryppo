@@ -1,11 +1,6 @@
 import { connect } from "react-redux";
 import CryppoLkMain from "./CryppoLkMain";
 import { setModal, switchModal } from "../../../Redux/Lk-reducer";
-import {
-  initChartText,
-  setChartText,
-  disableItem,
-} from "../../../Redux/operation-reducer";
 
 let mapStateToProps = (state) => {
   return {
@@ -15,15 +10,15 @@ let mapStateToProps = (state) => {
     invest: state.lk.cryppo.investData,
     newCard: state.user.cryppo.cardData,
     news: state.lk.cryppo.newsData,
-    expenses: state.operation.cryppo.operationData,
-    arrival: state.operation.cryppo.operationData,
+    expenses: state.doughunt.expenses,
+    arrival:state.doughunt.arrival,
+    doughuntTextData: state.doughunt.doughuntTextData,
     tabs: state.lk.cryppo.tabsData,
     operationData: state.operation.cryppo.operationData,
     operationModal: state.lk.cryppo.operationModal,
     isModal: state.lk.cryppo.isModal,
     filter: false,
     isHover: state.lk.business.isHover,
-    chartTextData: state.operation.cryppo.chartTextData,
     operationList: state.operation.cryppo.operationList,
   };
 };
@@ -31,9 +26,6 @@ let mapStateToProps = (state) => {
 const CryppoLkMainContainer = connect(mapStateToProps, {
   setModal,
   switchModal,
-  initChartText,
-  setChartText,
-  disableItem,
 })(CryppoLkMain);
 
 export default CryppoLkMainContainer;

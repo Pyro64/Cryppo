@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import BusinessLkHistory from "./BusinessLkHistory";
-import { hasLk, removeAlert } from "../../../Redux/user-reducer";
 import { setModal, switchModal } from "../../../Redux/Lk-reducer";
 import { PaymentsPostTC } from "../../../Redux/payments-reducer";
 
@@ -15,8 +14,6 @@ let mapStateToProps = (state) => {
 };
 
 const BusinessLkHistoryContainer = connect(mapStateToProps, {
-    hasLk,
-    removeAlert,
     setModal,
     switchModal,
     PaymentsPostTC,

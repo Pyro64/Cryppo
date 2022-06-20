@@ -27,7 +27,6 @@ const Searchbar = (props) => {
 
     // let location = useLocation();
     // let title = location.state;
-    // console.log(location)
     return (
         <div className={style.container}>
             <div className={style.block}>

@@ -27,14 +27,12 @@ export default function Balance(props) {
                     <SubtitleLk subtitle="Дашборд" />
                     <div className="block">
                         <DoughnutChart
-                            disableItem={props.disableItem}
+                            operationType="expenses"
                             updateChart={props.updateChart}
                             filter={true}
                             isHover={props.isHover}
-                            setChartText={props.setChartText}
                             operations={props.expenses}
-                            chartTextData={props.chartTextData}
-                            initChartText={props.initChartText}
+                            doughuntTextData={props.doughuntTextData}
                         />
                     </div>
                     <SubtitleLk arrow={false} subtitle="Обмен" />

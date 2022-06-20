@@ -18,8 +18,8 @@ export default function CryppoLkMain(props) {
                             cardList={props.cardList}
                             bankCardList={props.bankCardList}
                         />
-                        <SidebarTabs tabs={props.tabs} />
-                        <SidebarTabs tabs={props.tabs} />
+                        <SidebarTabs tabs={props.tabs.addCart} />
+                        <SidebarTabs tabs={props.tabs.invest} />
                     </div>
                 </div>
                 <div className="content">
@@ -34,14 +34,11 @@ export default function CryppoLkMain(props) {
                     />
                     <SubtitleLk arrow={true} subtitle="Статистика за март" />
                     <StatisticCash
-                        disableItem={props.disableItem}
                         filter={false}
                         isHover={props.isHover}
-                        setChartText={props.setChartText}
                         expenses={props.expenses}
                         arrival={props.arrival}
-                        chartTextData={props.chartTextData}
-                        initChartText={props.initChartText}
+                        doughuntTextData={props.doughuntTextData}
                         operationData={props.operationData}
                         setModal={props.setModal}
                         operationModal={props.operationModal}

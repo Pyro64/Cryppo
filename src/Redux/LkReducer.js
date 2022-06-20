@@ -1,9 +1,9 @@
-import * as ActionType from "./ActionTypes/UsersActionTypes";
 import { createSlice } from "@reduxjs/toolkit";
 import * as StatisticApi from "../Api/StatisticApi";
 
 let initialState = {
     business: {
+        compositionActiveIndex:-1,
         revenue: [
             {
                 amount: 3,
@@ -60,6 +60,7 @@ let initialState = {
                 amount: 20,
             },
         ],
+
     },
     cryppo: {
         revenue: [
@@ -112,6 +113,9 @@ export const lkSlice = createSlice({
         SetChartIndex(state, action) {
             state.business.chartIndex = action.payload;
         },
+        ChangeActiveIndex(state, action){
+            state.business.compositionActiveIndex = action.payload
+        }
     },
 });
 

@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./GeneralSetting.module.scss";
 import WalletSettingItem from "./WalletSettingItem";
+import icon from "../../../Images/payIcon/3.svg"
 
 export default function WalletSetting(props) {
     let cryptoItem = props.balances.map((e) => (
@@ -8,7 +9,7 @@ export default function WalletSetting(props) {
             SetActiveCurrencyPostTC={props.SetActiveCurrencyPostTC}
             id={e.currency}
             key={e.currency}
-            icon={e.icon}
+            icon={e.icon??icon}
             currency={e.currency}
             active={e.active}
         />

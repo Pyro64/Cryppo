@@ -1,4 +1,3 @@
-import * as ActionType from "./ActionTypes/UsersActionTypes";
 import { createSlice } from "@reduxjs/toolkit";
 import * as PaymentsApi from "../Api/PaymentsApi";
 

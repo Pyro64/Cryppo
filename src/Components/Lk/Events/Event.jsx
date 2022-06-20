@@ -6,7 +6,7 @@ import Operation from "../OperationLk/Operation";
 
 const Event = (props) => {
     if (props.filter === true) {
-        props.operationData.operation = props.operationData.operation.filter(
+        props.expenses = props.expenses.filter(
             (item) => {
                 return props.expenses[0].parentCategory === item.type;
             }
@@ -23,11 +23,9 @@ const Event = (props) => {
                 updateChart={props.updateChart}
                 filter={false}
                 isHover={props.isHover}
-                setChartText={props.setChartText}
                 expenses={props.expenses}
                 arrival={props.arrival}
-                chartTextData={props.chartTextData}
-                initChartText={props.initChartText}
+                doughuntTextData={props.doughuntTextData}
                 big={true}
             />
             <div className={style.wrapper}>

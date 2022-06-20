@@ -1,16 +1,19 @@
 import React from "react";
 import style from "./CompositionIndex.module.scss";
 import three from "../../../Images/payIcon/3.svg";
+import {useDispatch} from "react-redux"
+
 
 export default function CompositionIndexItem(props) {
+    const dispatch = useDispatch();
     return (
         <div
             className={style.index}
             onMouseEnter={() => {
-                props.changeActiveIndex(props.id - 1);
+                dispatch(props.changeActiveIndex(props.id));
             }}
             onMouseLeave={() => {
-                props.changeActiveIndex(-1);
+                dispatch(props.changeActiveIndex(-1));
             }}
         >
             <div className={style.left}>

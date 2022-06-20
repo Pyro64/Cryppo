@@ -1,4 +1,3 @@
-import annaBobs from "../Images/login/anna_bobs.svg";
 import usd from "../Images/payIcon/12.svg";
 import icx from "../Images/payIcon/6.svg";
 import arde from "../Images/payIcon/arde.svg";
@@ -7,8 +6,6 @@ import visa from "../Images/icon/VISA.svg";
 import masterCard from "../Images/icon/mastercard.svg";
 import { LoginPost, RegisterPost } from "../Api/AccountApi";
 import * as SettingsApi from "../Api/SettingsApi";
-import filtersTool from "../Utils/filter";
-import * as ActionType from "./ActionTypes/UsersActionTypes";
 import { createSlice } from "@reduxjs/toolkit";
 
 let apiState = {
@@ -369,7 +366,6 @@ export const userSlice = createSlice({
         },
     },
 });
-export const hasLk = (value) => ({ type: ActionType.HAS_LK, value });
 
 export const LoginBusinessPostTC = (email, password) => {
     return (dispatch) => {
@@ -413,20 +409,6 @@ export const RegistrationWalletPostTC = (email, password, company) => {
         RegisterPost(email, password, company).catch((response) => {
             console.log(response);
             console.log("error");
-        });
-    };
-};
-
-export const filterOperationsTC = (props, category, subcategory) => {
-    return (dispatch) => {
-        const { currency, operations } = filtersTool(
-            props,
-            category,
-            subcategory
-        );
-        dispatch({
-            type: ActionType.FILTER_OPERATIONS,
-            value: { currency, operations },
         });
     };
 };
@@ -483,7 +465,6 @@ export const CheckPasswordPostTC = (password) => {
     return (dispatch) => {
         SettingsApi.CheckPasswordPost(password)
             .then((data) => {
-                let value = JSON.parse(JSON.stringify(data));
             })
             .catch((response) => {
                 console.log(response);
@@ -678,10 +659,5 @@ export const DeleteDevicePostTC = (id) => {
             });
     };
 };
-
-export const removeAlert = (value) => ({
-    type: ActionType.REMOVE_ALERT,
-    value,
-});
 
 export default userSlice.reducer;

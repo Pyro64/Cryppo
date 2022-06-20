@@ -4,8 +4,8 @@ import { Doughnut } from "react-chartjs-2";
 import ChartText from "../StatisticCash/ChartText";
 import StatisticCashItem from "../StatisticCash/StatisticCashItem";
 import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js";
-import { useParams } from "react-router";
 ChartJS.register(ArcElement, Tooltip, Legend);
+
 const DoughnutChart = (props) => {
   let dataItems = [];
   let backgroundColorItems = [];
@@ -17,17 +17,14 @@ const DoughnutChart = (props) => {
   });
   let elementItem = props.operations.map((e) => (
     <StatisticCashItem
-      updateChart={props.updateChart}
-      setChartText={props.setChartText}
-      initChartText={props.initChartText}
       percent={e.percent}
       id={e.id}
       key={e.id}
       color={e.color}
       category={e.category}
       cash={e.cash}
-      disableItem={props.disableItem}
       disable={e.disable}
+      operationType={props.operationType}
     />
   ));
   const options = {
@@ -69,7 +66,7 @@ const DoughnutChart = (props) => {
         <Doughnut data={data} options={options} />
         <ChartText
           isHover={props.isHover}
-          chartTextData={props.chartTextData}
+          doughuntTextData={props.doughuntTextData}
         />
       </div>
     </div>

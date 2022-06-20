@@ -1,8 +1,6 @@
 import React from "react";
-import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
 import style from "./StatisticCash.module.scss";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import DoughnutChart from "../DoughnutChart/DoughnutChart";
 
 const StatisticCash = (props) => {
@@ -25,27 +23,23 @@ const StatisticCash = (props) => {
                 </TabList>
                 <TabPanel>
                     <DoughnutChart
-                        disableItem={props.disableItem}
+                        operationType="expenses"
                         updateChart={props.updateChart}
                         filter={true}
                         big={props.big}
                         isHover={props.isHover}
-                        setChartText={props.setChartText}
                         operations={props.expenses}
-                        chartTextData={props.chartTextData}
-                        initChartText={props.initChartText}
+                        doughuntTextData={props.doughuntTextData}
                     />
                 </TabPanel>
                 <TabPanel>
                     <DoughnutChart
-                        disableItem={props.disableItem}
+                        operationType="arrival"
                         updateChart={props.updateChart}
                         filter={true}
                         isHover={props.isHover}
-                        setChartText={props.setChartText}
                         operations={props.arrival}
-                        chartTextData={props.chartTextData}
-                        initChartText={props.initChartText}
+                        doughuntTextData={props.doughuntTextData}
                         big={props.big}
                     />
                 </TabPanel>

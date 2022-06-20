@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { CSSTransition } from 'react-transition-group';
 import style from "./StatisticCash.module.scss";
 export default function ChartText(props) {
-    const chartText = props.chartTextData
+    const chartText = props.doughuntTextData;
     const classNames = {
         appear: `${style.hover}`,
         enter: `${style.hoverEnter}`,
@@ -14,7 +14,7 @@ export default function ChartText(props) {
         <CSSTransition
             in={props.isHover}
             classNames={{ ...classNames }}
-            timeout={300}
+            timeout={500}
         >
             <div className={style.statisticBlock}>
                 <div className={style.statisticName}>{chartText.category}</div>

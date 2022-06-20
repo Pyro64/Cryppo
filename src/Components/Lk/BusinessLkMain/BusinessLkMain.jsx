@@ -4,7 +4,6 @@ import Check from "../CheckLk/Check";
 import Operation from "../OperationLk/Operation";
 import MyBar from "../../UI/MyBar/MyBar";
 import DoughnutChart from "../DoughnutChart/DoughnutChart";
-import CompositionIndex from "../CompositionIndex/CompositionIndex";
 import SidebarTabs from "../SidebarTabs/SidebarTabs";
 const BusinessLkMain = (props) => {
     return (
@@ -25,21 +24,18 @@ const BusinessLkMain = (props) => {
                     <SubtitleLk subtitle="Главная" />
                     <div className="block">
                         <DoughnutChart
+                            operationType="expenses"
                             updateChart={props.updateChart}
                             filter={true}
                             isHover={props.isHover}
-                            setChartText={props.setChartText}
-                            operations={props.operationList}
-                            chartTextData={props.chartTextData}
-                            initChartText={props.initChartText}
-                            disableItem={props.disableItem}
+                            operations={props.expenses}
+                            doughuntTextData={props.doughuntTextData}
                         />
                     </div>
                     <SubtitleLk arrow={true} subtitle="Статистика валют" />
                     <div className="block">
                         <MyBar
                             revenue={props.revenue}
-                            compositions={props.barData.compositions}
                             height={`300px`}
                             changeActiveIndex={props.changeActiveIndex}
                         />

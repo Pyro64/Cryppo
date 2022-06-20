@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import Cryppo from "./Cryppo";
 import {
-    removeAlert,
     LoginWalletPostTC,
     RegistrationWalletPostTC,
 } from "../../Redux/user-reducer";
@@ -22,6 +21,5 @@ let mapStateToProps = (state) => {
 const CryppoContainer = connect(mapStateToProps, {
     LoginWalletPostTC,
     RegistrationWalletPostTC,
-    removeAlert,
 })(Cryppo);
 export default CryppoContainer;

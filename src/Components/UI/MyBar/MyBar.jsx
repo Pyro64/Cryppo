@@ -46,13 +46,13 @@ const MyBar = (props) => {
                         label={renderCustomBarLabel}
                         minPointSize={10}
                     >
-                        {props.compositions.map((entry, index) => (
+                        {props.revenue.map((entry, index) => (
                             <Cell
                                 className={style.transition}
                                 cursor="pointer"
                                 fill={
                                     index === props.activeIndex
-                                        ? entry.color
+                                        ? (entry.color?? "#2D4")
                                         : "#6D6D6D"
                                 }
                                 key={`cell-${index}`}

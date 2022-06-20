@@ -24,7 +24,6 @@ const BusinessLk = (props) => {
       <Route path="balance" element={<BalanceContainer />} />
       <Route path="statistic" element={<BusinessLkStatisticContainer />} />
       <Route path="history" element={<BusinessLkHistoryContainer />} />
-
       <Route path="setting/*" element={<SettingLkContainer />} />
       <Route
         path="support"

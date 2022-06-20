@@ -22,7 +22,6 @@ const FILTER_OPERATIONS = "FILTER_OPERATIONS";
 const UPDATE_CHART = "UPDATE_CHART";
 
 const INPUT_CHANGE = "INPUT_CHANGE";
-const DISABLE_ITEM = "DISABLE_ITEM";
 const SET_CHART_TEXT = "SET_CHART_TEXT";
 const INIT_CHART_TEXT = "SET_CHART_TEXT";
 
@@ -857,8 +856,6 @@ const operationReducer = (state = initialState, action) => {
     }
 };
 
-export const disableItem = (value) => ({ type: DISABLE_ITEM, value });
-export const inputChange = (value) => ({ type: INPUT_CHANGE, value });
 export const updateChart = (child) => ({ type: UPDATE_CHART, child });
 export const changeActiveIndex = (value) => ({
     type: CHANGE_ACTIVE_INDEX,

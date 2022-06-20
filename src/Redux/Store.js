@@ -7,6 +7,7 @@ import LkReducer from "./Lk-reducer";
 import operationReducer from "./operation-reducer";
 import LKReducer from "./LkReducer";
 import paymentsReducer from "./payments-reducer";
+import doughuntReducer from "./DoughuntReducer";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 const rootReducer = combineReducers({
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
     operation: operationReducer,
     LK: LKReducer,
     payments: paymentsReducer,
+    doughunt:doughuntReducer,
     form: formReducer,
 });
 
