@@ -54,7 +54,41 @@ const BusinessLkMain = (props) => {
                 </div>
             </div>
         </div>
-    );
+        <div className="content">
+          <SubtitleLk subtitle="Главная" />
+          <div className="block">
+            <DoughnutChart
+              updateChart={props.updateChart}
+              filter={true}
+              isHover={props.isHover}
+              setChartText={props.setChartText}
+              operations={props.expenses}
+              chartTextData={props.chartTextData}
+              initChartText={props.initChartText}
+              disableItem={props.disableItem}
+            />
+          </div>
+          <SubtitleLk arrow={true} subtitle="Статистика валют" />
+          <div className="block">
+            <MyBar
+              compositions={props.barData.compositions}
+              height={`300px`}
+              changeActiveIndex={props.changeActiveIndex}
+            />
+          </div>
+
+          <SubtitleLk arrow={true} subtitle="Последние операции" />
+          <Operation
+            operationList={props.operationList}
+            setModal={props.setModal}
+            operationModal={props.operationModal}
+            isModal={props.isModal}
+            switchModal={props.switchModal}
+          />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default BusinessLkMain;

@@ -1,9 +1,7 @@
 import { connect } from "react-redux";
 import BusinessLkMain from "./BusinessLkMain";
 import { setModal, switchModal } from "../../../Redux/Lk-reducer";
-import {
-    changeActiveIndex,
-} from "../../../Redux/operation-reducer";
+import { changeActiveIndex } from "../../../Redux/operation-reducer";
 import { PaymentsPostTC } from "../../../Redux/payments-reducer";
 
 let mapStateToProps = (state) => {
@@ -20,7 +18,7 @@ let mapStateToProps = (state) => {
         doughuntTextData: state.doughunt.doughuntTextData,
         currencyList: state.lk.business.currencyList,
         expenses: state.doughunt.expenses,
-        arrival:state.doughunt.arrival,
+        arrival: state.doughunt.arrival,
         paymentList: state.payments.business,
     };
 };

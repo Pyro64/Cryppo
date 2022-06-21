@@ -29,14 +29,14 @@ export default function SettingLkMain(props) {
             <li className={style.text}>Последние подключения к счёту</li>
           </ul>
         </NavLink>
-        <div className={style.item}>
+        <NavLink to="terminal" className={style.item}>
           <div className={style.title}>Терминалы</div>
           <div className={style.subtitle}>
             Подпишитесь на получение счетов, чтобы оплачивать все в два клика, а
             также редактируйте ваши подписки.
           </div>
           <Btn text="">Добавить подписку</Btn>
-        </div>
+        </NavLink>
         <NavLink to="notification" className={style.item}>
           <div className={style.title}>Уведомления</div>
           <div className={style.subtitle}>Активных обращений нет</div>
