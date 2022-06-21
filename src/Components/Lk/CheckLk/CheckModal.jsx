@@ -17,7 +17,7 @@ export default function CheckModal(props) {
   return (
     <div className={style.modalWrapper}>
       <LkInput title="Логин пользователя" />
-      <MySelect title="Выберите валюту" cashOption={props.cashOption} />
+      <MySelect title="Выберите валюту"currencyList={props.currencyList} />
       <MyTextarea maxLegth={100} title="Комментарий" />
       <Btn style={{ margin: "auto" }} onClick={() => modal("success")}>
         Отправить

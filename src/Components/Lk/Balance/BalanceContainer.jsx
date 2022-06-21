@@ -1,8 +1,5 @@
 import { connect } from "react-redux";
 import Balance from "./Balance";
-import {
-    updateChart
-} from "../../../Redux/operation-reducer";
 let mapStateToProps = (state) => {
     return {
         cardList: state.user.business.cardList,
@@ -13,8 +10,6 @@ let mapStateToProps = (state) => {
     };
 };
 
-const BalanceContainer = connect(mapStateToProps, {
-    updateChart,
-})(Balance);
+const BalanceContainer = connect(mapStateToProps, {})(Balance);
 
 export default BalanceContainer;

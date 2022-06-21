@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-    tempExpenses:[],
-    tempArrival:[],
+    tempExpenses: [],
+    tempArrival: [],
     expenses: [
         {
             id: 1,
@@ -187,7 +187,7 @@ const initialState = {
             color: "#2F69FF",
             percent: 10,
             disable: false,
-            childExpensesStatistics: []
+            childExpensesStatistics: [],
         },
         {
             id: 2,
@@ -208,51 +208,64 @@ const initialState = {
             percent: 8,
             disable: false,
             childExpensesStatistics: [],
-        }
+        },
     ],
     doughuntTextData: {
         category: "Расходы",
         cash: "100",
         percent: "100%",
     },
-    disableItems:[]
-}
+    disableItems: [],
+};
 export const doughuntSlice = createSlice({
     name: "doughunt",
     initialState,
     reducers: {
-        NestedCategory(state, action){
-            state.tempExpenses = action.payload
+        NestedCategory(state, action) {
+            state.tempExpenses = action.payload;
         },
-        SetChartText(state, action){
+        SetChartText(state, action) {
             state.doughuntTextData.category = action.payload.category;
             state.doughuntTextData.cash = action.payload.cash;
             state.doughuntTextData.percent = action.payload.percent;
         },
-        InitChartText(state){
+        InitChartText(state) {
             state.doughuntTextData.category = "Расходы";
             state.doughuntTextData.cash = "100";
             state.doughuntTextData.percent = "100";
         },
-        DisableItem(state, action){
-            if (action.payload.operationType === "expenses"){
-                state.expenses.forEach((item)=>{
-                    if(item.id===action.payload.id){
+        DisableItem(state, action) {
+            if (action.payload.operationType === "expenses") {
+                state.expenses.forEach((item) => {
+                    if (item.id === action.payload.id) {
                         item.disable = !item.disable;
                     }
-                })
-            }
-            else{
-                state.arrival.forEach((item)=>{
-                    if(item.id===action.payload.id){
+                });
+            } else {
+                state.arrival.forEach((item) => {
+                    if (item.id === action.payload.id) {
                         item.disable = !item.disable;
                     }
-                })
+                });
             }
         },
-        UpdateChart(state, action){
+        UpdateChart(state, action) {
             state.tempExpenses = action.payload.child;
-        }
+        },
+        FilterChart(state, action) {
+            state.arrival.forEach((item) => {
+                item.cash = Math.round(Math.random() * 1000) / 10;
+            });
+            state.expenses.forEach((item) => {
+                item.cash = Math.round(Math.random() * 1000) / 10;
+            });
+            state.tempArrival.forEach((item) => {
+                item.cash = Math.round(Math.random() * 1000) / 10;
+            });
+            state.tempExpenses.forEach((item) => {
+                item.cash = Math.round(Math.random() * 1000) / 10;
+            });
+        },
     },
 });
 

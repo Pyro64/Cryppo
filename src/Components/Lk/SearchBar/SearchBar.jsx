@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./SearchBar.module.scss";
 import search from "../../../Images/icon/search.svg";
 import { Tag, DatePicker, ConfigProvider } from "antd";
@@ -6,27 +6,22 @@ import moment from "moment";
 import "moment/locale/ru";
 import locale from "antd/lib/locale/ru_RU";
 import SearchWithTag from "../../UI/SearchWithTag/SearchWithTag";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { doughuntSlice } from "../../../Redux/DoughuntReducer";
 
 const { RangePicker } = DatePicker;
 
 const Searchbar = (props) => {
+    const dispatch = useDispatch();
+    const [dateRange, setDateRange] = useState();
+    const [category, setCategory] = useState();
+    useEffect(() => {
+        dispatch(doughuntSlice.actions.FilterChart());
+    }, [dateRange, category]);
     const enterDataRange = (value, dateString) => {
-        props.filterDate(dateString);
+        setDateRange(dateString);
     };
-
-    const inputChange = (e) => {
-        let value = e.target.value;
-        props.inputChange(value);
-    };
-
-    const inputKeyDown = (e) => {
-        if (e.key === "Enter") {
-            props.addTag();
-        }
-    };
-
-    // let location = useLocation();
-    // let title = location.state;
     return (
         <div className={style.container}>
             <div className={style.block}>
@@ -39,15 +34,10 @@ const Searchbar = (props) => {
                         />
                     </ConfigProvider>
                     <div className={style.input}>
-                        {/* <
-                            value={props.operationsFilter.searchQuery}
-                            className={style.inputItem}
-                            placeholder="Найдите любые события и операции"
-                            type="text"
-                            onKeyDown={inputKeyDown}
-                            onChange={inputChange}
-                        /> */}
-                        <SearchWithTag props={props} />
+                        <SearchWithTag
+                            expenses={props.expenses}
+                            arrival={props.arrival}
+                        />
                     </div>
                 </div>
                 <img
