@@ -3,7 +3,6 @@ import { createGlobalStyle, css } from "styled-components";
 export const darkTheme = {
   background: "#1B1B1B",
   body: "#0D0D0D",
-  color: "#fff",
   filter:
     "invert(100%) sepia(1%) saturate(942%) hue-rotate(223deg) brightness(108%) contrast(101%)",
   left: "2px",
@@ -13,14 +12,10 @@ export const darkTheme = {
 export const lightTheme = {
   background: "#E9E9E9",
   body: "#F3F3F3",
-  color: "#000",
   filter: "",
   left: "calc(100% - 25px)",
   color: "#333",
 };
-const breakpointToFluid = "992px";
-const breakpointToSm = " 720px";
-const baseVw = "1920px";
 const breakpointLg = "992px";
 const breakpointMd = "768px";
 const breakpointSm = "576px";
@@ -69,8 +64,8 @@ export const GlobalStyles = createGlobalStyle`
     .text {
       color:  ${(props) => props.theme.color};
     }
-    .container = {
-      width: "100%",
+    .container  {
+      width: 100%;
       max-width: ${containerLg};
       padding-left: ${padding};
       padding-right: ${padding};
