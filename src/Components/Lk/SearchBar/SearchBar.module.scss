@@ -55,7 +55,8 @@
 .input {
   display: flex;
   flex-direction: row;
-  width: 40%;
+  flex-grow: 1;
+  @include fluid(margin-left, 10px, 20px);
   align-items: center;
 }
 .inputItem {

@@ -4,7 +4,7 @@ import MyModal from "../../../UI/MyModal/MyModal";
 import LkInput from "../../../UI/LkInput/LkInput";
 import close from "../../../../Images/icon/close.svg";
 import { notification } from "antd";
-export default function BusinessLkTerminalLogin(props) {
+export default function BusinessLkTerminalAdd(props) {
   const [open, setOpen] = useState(false);
   function modal() {
     setOpen(!open);
@@ -20,7 +20,7 @@ export default function BusinessLkTerminalLogin(props) {
   };
   return (
     <div>
-      <div className={style.link} onClick={modal}>
+      <div className={style.add} onClick={modal}>
         Изменить логин терминала
       </div>
       <MyModal open={open} setOpen={setOpen}>

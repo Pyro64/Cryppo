@@ -7,6 +7,9 @@
   @include fluid(padding-top, 10px, 20px);
   @include fluid(padding-bottom, 10px, 20px);
   @include fluid(margin-bottom, 15px, 30px);
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 .connected {
   background: $blueGradient;
@@ -20,6 +23,21 @@
   background: $redGradient;
   transition: 0.38s ease-in-out;
   background-size: 100% 100%;
+  &:hover {
+    background-size: 150% 100%;
+  }
+}
+.add {
+  @include fluid(font-size, 14px, 16px);
+  background: $purpleGradient;
+  transition: 0.38s ease-in-out;
+  background-size: 100% 100%;
+  border-radius: 15px;
+  @include fluid(padding-left, 15px, 30px);
+  @include fluid(padding-right, 15px, 30px);
+  @include fluid(padding-top, 5px, 10px);
+  @include fluid(padding-bottom, 5px, 10px);
+  cursor: pointer;
   &:hover {
     background-size: 150% 100%;
   }

@@ -1,5 +1,7 @@
 import React from "react";
 import BusinessLkTerminalItem from "./BusinessLkTerminalItem";
+import style from "./BusinessLkTerminal.module.scss";
+import BusinessLkTerminalAdd from "./BusinessLkTerminalModal/BusinessLkTerminalAdd";
 
 export default function BusinessLkTerminal(props) {
   let terminalItem = props.terminals.map((e) => (
@@ -15,6 +17,9 @@ export default function BusinessLkTerminal(props) {
   ));
   return (
     <div className="main container">
+      <div className={style.flex}>
+        <BusinessLkTerminalAdd />
+      </div>
       <div className="block">{terminalItem}</div>
     </div>
   );
