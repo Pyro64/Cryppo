@@ -5,8 +5,9 @@ import MySelectTitle from "./MySelectTitle";
 
 const { Option } = Select;
 export default function MySelect(props) {
+    let id = 0;
     let option = props.currencyList.map((e) => (
-        <Option className={style.option} value={e.id} key={e.id} id={e.id}>
+        <Option className={style.option} value={e.value} key={id++} id={e.id}>
             <div className={style.item}>
                 <img src={e.img} alt={e.value} />
                 <div className={style.name}>{e.value}</div>

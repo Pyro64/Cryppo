@@ -10,7 +10,7 @@ let mapStateToProps = (state) => {
         expenses: state.doughunt.expenses,
         arrival: state.doughunt.arrival,
         isModal: state.lk.cryppo.isModal,
-        isHover: state.lk.business.isHover,
+        isHover: state.doughunt.isHover,
         doughuntTextData: state.doughunt.doughuntTextData,
     };
 };

@@ -1,9 +1,7 @@
 import { connect } from "react-redux";
 import BusinessLkStatistic from "./BusinessLkStatistic";
 import { setModal, switchModal } from "../../../Redux/Lk-reducer";
-import {
-    changeActiveIndex,
-} from "../../../Redux/operation-reducer";
+import { changeActiveIndex } from "../../../Redux/operation-reducer";
 import { ChartPostTC, RevenuePostTC } from "../../../Redux/LkReducer";
 let mapStateToProps = (state) => {
     return {
@@ -17,7 +15,7 @@ let mapStateToProps = (state) => {
         cardList: state.user.business.cardList,
         chartTextData: state.operation.business.chartTextData,
         currencyList: state.lk.business.currencyList,
-        isHover: state.lk.business.isHover,
+        isHover: state.doughunt.isHover,
         expenses: state.doughunt.expenses,
         arrival: state.doughunt.arrival,
         compositionActiveIndex: state.LK.business.compositionActiveIndex,

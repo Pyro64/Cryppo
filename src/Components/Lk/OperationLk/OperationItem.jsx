@@ -36,8 +36,7 @@ export default function OperationItem(props) {
             </div>
 
             <div className={style.cash}>
-                {props.amount} <img src={props.iconPay} alt="currency icon" />{" "}
-                {props.currency}
+                {props.amount} {props.currency}
             </div>
         </div>
     );

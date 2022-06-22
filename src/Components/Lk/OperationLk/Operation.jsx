@@ -42,7 +42,6 @@ export default function Operation(props) {
             type={e.type ?? "Покупка"}
             icon={e.icon ?? yandex}
             date={e.date}
-            iconPay={e.iconPay ?? three}
             currency={e.currency}
             title={e.title ?? "Яндекс Такси"}
             check={e.check}

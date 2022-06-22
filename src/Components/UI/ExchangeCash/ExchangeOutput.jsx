@@ -6,9 +6,9 @@ import { useEffect } from "react";
 import * as WithdrawApi from "../../../Api/WithdrawApi";
 export default function ExchangeOutput(props) {
     useEffect(() => {}, []);
-    const [walletAddress, setWalletAddress] = useState(null);
+    const [walletAddress, setWalletAddress] = useState("");
     const [currency, setCurrency] = useState(null);
-    const [amount, setAmount] = useState(null);
+    const [amount, setAmount] = useState("");
 
     const Withdraw = () => {
         const id = WithdrawApi.WithdrawPost(
@@ -45,21 +45,33 @@ export default function ExchangeOutput(props) {
                     <div className={style.subtitle}>Сумма к покупке</div>
                     <input
                         className={style.input}
-                        type="number"
+                        type="text"
                         placeholder="0.000000"
                         value={amount}
-                        onChange={(e) => setAmount(e.target.value)}
+                        onChange={(e) => {
+                            e.target.value = e.target.value.replace(/\D+/g, "");
+                            setAmount(e.target.value);
+                        }}
                     />
                 </div>
-                <div className={style.itemFull}>
-                    <div className={style.comission}>Комиссия 0.00000 BTC</div>
-                </div>
+                {amount && currency ? (
+                    <div className={style.itemFull}>
+                        <div className={style.comission}>
+                            {amount / 10} {currency}
+                        </div>
+                    </div>
+                ) : null}
             </div>
             <div className={style.bottom}>
-                <div className={style.flex}>
-                    <div className={style.option}>Сумма к списанию</div>
-                    <div className={style.text}>12213.090909090909 USD</div>
-                </div>
+                {amount && currency ? (
+                    <div className={style.flex}>
+                        <div className={style.option}>Сумма к списанию</div>
+                        <div className={style.text}>
+                            {parseInt(amount) + amount / 10} {currency}
+                        </div>
+                    </div>
+                ) : null}
+
                 <ExchangeCashShow
                     message="Вывод средств прошел успешно"
                     description={`Вы вывели ${amount} BTC`}

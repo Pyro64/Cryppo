@@ -14,7 +14,7 @@ let mapStateToProps = (state) => {
         operationModal: state.lk.business.operationModal,
         isModal: state.lk.business.isModal,
         filter: false,
-        isHover: state.lk.business.isHover,
+        isHover: state.doughunt.isHover,
         doughuntTextData: state.doughunt.doughuntTextData,
         currencyList: state.lk.business.currencyList,
         expenses: state.doughunt.expenses,

@@ -215,7 +215,7 @@ const initialState = {
         cash: "100",
         percent: "100%",
     },
-    disableItems: [],
+    isHover: false,
 };
 export const doughuntSlice = createSlice({
     name: "doughunt",
@@ -228,11 +228,13 @@ export const doughuntSlice = createSlice({
             state.doughuntTextData.category = action.payload.category;
             state.doughuntTextData.cash = action.payload.cash;
             state.doughuntTextData.percent = action.payload.percent;
+            state.isHover = true;
         },
         InitChartText(state) {
             state.doughuntTextData.category = "Расходы";
             state.doughuntTextData.cash = "100";
             state.doughuntTextData.percent = "100";
+            state.isHover = false;
         },
         DisableItem(state, action) {
             if (action.payload.operationType === "expenses") {
@@ -255,15 +257,19 @@ export const doughuntSlice = createSlice({
         FilterChart(state, action) {
             state.arrival.forEach((item) => {
                 item.cash = Math.round(Math.random() * 1000) / 10;
+                item.percent = Math.round(Math.random() * 10) / 10;
             });
             state.expenses.forEach((item) => {
                 item.cash = Math.round(Math.random() * 1000) / 10;
+                item.percent = Math.round(Math.random() * 10) / 10;
             });
             state.tempArrival.forEach((item) => {
                 item.cash = Math.round(Math.random() * 1000) / 10;
+                item.percent = Math.round(Math.random() * 10) / 10;
             });
             state.tempExpenses.forEach((item) => {
                 item.cash = Math.round(Math.random() * 1000) / 10;
+                item.percent = Math.round(Math.random() * 10) / 10;
             });
         },
     },
