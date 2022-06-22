@@ -12,21 +12,29 @@ export default function NotifocathionItem(props) {
             <div className={style.pushName}>{props.text}</div>
             <div className={style.pushItem}>
                 <input
-                    id={props.id}
+                    id={`${props.id}m`}
                     type="checkbox"
                     value={valueEmail}
-                    onChange={() => setValueEmail(!valueTg)}
+                    onChange={() => setValueEmail(!valueEmail)}
                 />
-                <label className={style.pushLabel} htmlFor={props.id}>
+                <label
+                    className={style.pushLabel}
+                    htmlFor={`${props.id}m`}
+                    onClick={() => setValueEmail(!valueEmail)}
+                >
                     <div className={style.pushText}>Email</div>
                 </label>
                 <input
-                    id={`${props.id}`}
+                    id={`${props.id}t`}
                     type="checkbox"
                     value={valueTg}
-                    onChange={() => setValueTg(!setValueEmail)}
+                    onChange={() => setValueTg(!valueTg)}
                 />
-                <label className={style.pushLabel} htmlFor={`${props.id}t`}>
+                <label
+                    className={style.pushLabel}
+                    htmlFor={`${props.id}t`}
+                    onClick={() => setValueTg(!valueTg)}
+                >
                     <div className={style.pushText}>Telegram</div>
                 </label>
             </div>

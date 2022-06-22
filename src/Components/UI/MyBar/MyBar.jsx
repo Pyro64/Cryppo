@@ -1,6 +1,7 @@
 import React from "react";
 import { BarChart, Bar, XAxis, ResponsiveContainer, Cell } from "recharts";
 import style from "./MyBar.module.scss";
+import { randomColor } from "../../../Utils/tools";
 const MyBar = (props) => {
     const barData = props.revenue.map((e) => {
         return {
@@ -51,8 +52,9 @@ const MyBar = (props) => {
                                 className={style.transition}
                                 cursor="pointer"
                                 fill={
-                                    index === props.activeIndex
-                                        ? (entry.color?? "#2D4")
+                                    index === props.activeIndex ||
+                                    props.allwaysColor
+                                        ? entry.color ?? randomColor()
                                         : "#6D6D6D"
                                 }
                                 key={`cell-${index}`}

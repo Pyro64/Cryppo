@@ -1,8 +1,8 @@
 import React from "react";
 import style from "./CompositionIndex.module.scss";
 import three from "../../../Images/payIcon/3.svg";
-import {useDispatch} from "react-redux"
-
+import { useDispatch } from "react-redux";
+import { randomColor } from "../../../Utils/tools";
 
 export default function CompositionIndexItem(props) {
     const dispatch = useDispatch();
@@ -33,13 +33,13 @@ export default function CompositionIndexItem(props) {
                     className={style.activeBar}
                     style={{
                         width: `${props.percent}%`,
-                        backgroundColor: props.color ?? "#2D4",
+                        backgroundColor: props.color ?? randomColor(),
                     }}
                 ></div>
             </div>
             <div
                 className={style.percent}
-                style={{ backgroundColor: props.color ?? "#2D4" }}
+                style={{ backgroundColor: props.color ?? randomColor() }}
             >
                 {props.percent}%
             </div>
