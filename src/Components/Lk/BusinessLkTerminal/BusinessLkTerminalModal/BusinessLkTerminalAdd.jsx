@@ -3,7 +3,9 @@ import style from "../BusinessLkTerminal.module.scss";
 import MyModal from "../../../UI/MyModal/MyModal";
 import LkInput from "../../../UI/LkInput/LkInput";
 import close from "../../../../Images/icon/close.svg";
-import { notification } from "antd";
+import { Input, notification } from "antd";
+
+import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 export default function BusinessLkTerminalAdd(props) {
   const [open, setOpen] = useState(false);
   function modal() {
@@ -12,16 +14,17 @@ export default function BusinessLkTerminalAdd(props) {
   const [code, setCode] = useState(true);
   const openNotification = (e) => {
     e.preventDefault();
+    setOpen(!open);
+
     notification.open({
       type: "success",
-      message: "Успешно",
+      message: "Терминал успешно создан",
     });
-    setCode(!code);
   };
   return (
     <div>
       <div className={style.add} onClick={modal}>
-        Изменить логин терминала
+        Добавить новый терминал
       </div>
       <MyModal open={open} setOpen={setOpen}>
         <form className={style.container}>
@@ -31,9 +34,26 @@ export default function BusinessLkTerminalAdd(props) {
             src={close}
             onClick={modal}
           />
-          <div className={style.title}>Изменения логина</div>
-          <div className={style.subtitle}>Введите новый логин терминала</div>
-          <LkInput />
+          <div className={style.title}>Доавление нового терминала</div>
+          <div className={style.subtitle}>Введите имя терминала</div>
+          <LkInput placeholder="Введите имя терминала" />
+          <div className={style.subtitle}>Введите логин терминала</div>
+          <LkInput placeholder="Введите логин" />
+          <div className={style.subtitle}>Введите пароль терминала</div>
+          <Input.Password
+            placeholder="Введите пароль"
+            className={style.input}
+            iconRender={(visible) =>
+              visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+            }
+          />
+          <Input.Password
+            placeholder="Повторите пароль"
+            className={style.input}
+            iconRender={(visible) =>
+              visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+            }
+          />
           <button onClick={openNotification} className={style.btn}>
             Готово
           </button>

@@ -16,7 +16,7 @@ export default function BusinessLkTerminalLogin(props) {
       type: "success",
       message: "Успешно",
     });
-    setCode(!code);
+    setOpen(!open);
   };
   return (
     <div>

@@ -2,6 +2,7 @@ import React from "react";
 import style from "./BusinessLkTerminal.module.scss";
 import BusinessLkTerminalLogin from "./BusinessLkTerminalModal/BusinessLkTerminalLogin";
 import BusinessLkTerminalName from "./BusinessLkTerminalModal/BusinessLkTerminalName";
+import BusinessLkTerminalPassword from "./BusinessLkTerminalModal/BusinessLkTerminalPassword";
 
 export default function BusinessLkTerminalItem(props) {
   return (
@@ -25,7 +26,7 @@ export default function BusinessLkTerminalItem(props) {
       <div className={style.flex}>
         <BusinessLkTerminalName />
         <BusinessLkTerminalLogin />
-        <div className={style.link}>Изменить пароль терминала</div>
+        <BusinessLkTerminalPassword />
         <div className={style.link}>Удалить терминал</div>
       </div>
     </div>

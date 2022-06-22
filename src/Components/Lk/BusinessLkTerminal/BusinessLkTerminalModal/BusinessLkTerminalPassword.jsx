@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import style from "../BusinessLkTerminal.module.scss";
 import MyModal from "../../../UI/MyModal/MyModal";
-import LkInput from "../../../UI/LkInput/LkInput";
 import close from "../../../../Images/icon/close.svg";
-import { notification } from "antd";
+import { Input, notification } from "antd";
+
+import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 
 export default function BusinessLkTerminalPassword(props) {
   const [open, setOpen] = useState(false);
@@ -17,7 +18,7 @@ export default function BusinessLkTerminalPassword(props) {
       type: "success",
       message: "Успешно",
     });
-    setCode(!code);
+    setOpen(!open);
   };
   return (
     <div>
@@ -33,8 +34,21 @@ export default function BusinessLkTerminalPassword(props) {
             onClick={modal}
           />
           <div className={style.title}>Изменение Пароля</div>
-          <div className={style.subtitle}>Введите новый пароль</div>
-          <LkInput />
+          <div className={style.subtitle}>Введите пароль терминала</div>
+          <Input.Password
+            placeholder="Введите пароль"
+            className={style.input}
+            iconRender={(visible) =>
+              visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+            }
+          />
+          <Input.Password
+            placeholder="Повторите пароль"
+            className={style.input}
+            iconRender={(visible) =>
+              visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+            }
+          />
           <button onClick={openNotification} className={style.btn}>
             Готово
           </button>
