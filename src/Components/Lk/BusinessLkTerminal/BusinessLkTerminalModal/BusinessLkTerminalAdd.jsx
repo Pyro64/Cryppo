@@ -11,7 +11,6 @@ export default function BusinessLkTerminalAdd(props) {
   function modal() {
     setOpen(!open);
   }
-  const [code, setCode] = useState(true);
   const openNotification = (e) => {
     e.preventDefault();
     setOpen(!open);
