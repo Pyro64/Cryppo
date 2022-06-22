@@ -35,8 +35,8 @@
   border-radius: 15px;
   @include fluid(padding-left, 15px, 30px);
   @include fluid(padding-right, 15px, 30px);
-  @include fluid(padding-top, 5px, 10px);
-  @include fluid(padding-bottom, 5px, 10px);
+  @include fluid(padding-top, 5px, 16px);
+  @include fluid(padding-bottom, 5px, 16px);
   cursor: pointer;
   &:hover {
     background-size: 150% 100%;
