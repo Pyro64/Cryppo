@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import style from "./Notification.module.scss";
 import { userSlice } from "../../../Redux/user-reducer";
-import { useDispatch } from "react-router";
+import { useDispatch } from "react-redux";
 
 export default function NotifocathionItem(props) {
-    const [valueTg, setValueTg] = useState(props.telegram);
-    const [valueEmail, setValueEmail] = useState(props.email);
-
+    const dispatch = useDispatch();
     return (
         <div className={style.pushContainer}>
             <div className={style.pushName}>{props.text}</div>
@@ -14,26 +12,40 @@ export default function NotifocathionItem(props) {
                 <input
                     id={`${props.id}m`}
                     type="checkbox"
-                    value={valueEmail}
-                    onChange={() => setValueEmail(!valueEmail)}
+                    value={props.email}
+                    defaultChecked={props.email}
                 />
                 <label
                     className={style.pushLabel}
                     htmlFor={`${props.id}m`}
-                    onClick={() => setValueEmail(!valueEmail)}
+                    onClick={() =>
+                        dispatch(
+                            userSlice.actions.EditNotification({
+                                key: props.emailKey,
+                                value: !props.email,
+                            })
+                        )
+                    }
                 >
                     <div className={style.pushText}>Email</div>
                 </label>
                 <input
                     id={`${props.id}t`}
                     type="checkbox"
-                    value={valueTg}
-                    onChange={() => setValueTg(!valueTg)}
+                    value={props.telegram}
+                    defaultChecked={props.telegram}
                 />
                 <label
                     className={style.pushLabel}
                     htmlFor={`${props.id}t`}
-                    onClick={() => setValueTg(!valueTg)}
+                    onClick={() => {
+                        dispatch(
+                            userSlice.actions.EditNotification({
+                                key: props.tgKey,
+                                value: !props.telegram,
+                            })
+                        );
+                    }}
                 >
                     <div className={style.pushText}>Telegram</div>
                 </label>

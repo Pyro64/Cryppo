@@ -143,37 +143,9 @@ export const SendEmailConfirmationCodePost = (email) => {
     });
 };
 
-export const SendNotificationsPost = (
-    systemTg,
-    systemEmail,
-    entryTg,
-    entryEmail,
-    failEntryTg,
-    failEntryEmail,
-    paymentGetTg,
-    paymentGetEmail,
-    paymentConfirmedTg,
-    paymentConfirmedEmail,
-    passwordChangeTg,
-    passwordChangeEmail,
-    notificationsChangeTg,
-    notificationsChangeEmail
-) => {
+export const SendNotificationsPost = (notificationsSettings) => {
     return Api.post("Settings/SendEmailConfirmationCode", {
-        systemTg,
-        systemEmail,
-        entryTg,
-        entryEmail,
-        failEntryTg,
-        failEntryEmail,
-        paymentGetTg,
-        paymentGetEmail,
-        paymentConfirmedTg,
-        paymentConfirmedEmail,
-        passwordChangeTg,
-        passwordChangeEmail,
-        notificationsChangeTg,
-        notificationsChangeEmail,
+        notificationsSettings,
     }).then((response) => {
         return response.data;
     });

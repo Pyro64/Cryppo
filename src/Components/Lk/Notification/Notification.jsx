@@ -1,67 +1,71 @@
-import NotifocathionItem from "./NotificationItem";
+import NotificathionItem from "./NotificationItem";
 import style from "./Notification.module.scss";
 import { useState } from "react";
 export default function Notification(props) {
     let id = 0;
-    const [notificationsSettings, setNotificationsSettings] = useState(
-        props.notificationsSettings
-    );
     let notification = [
-        <NotifocathionItem
+        <NotificathionItem
             id={id++}
             key={id++}
-            email={notificationsSettings.systemEmail}
-            telegram={notificationsSettings.systemTg}
+            email={props.notificationsSettings.systemEmail}
+            telegram={props.notificationsSettings.systemTg}
+            emailKey="systemEmail"
+            tgKey="systemTg"
             text="Системные уведомления"
-            setNotificationsSettings={setNotificationsSettings}
         />,
-        <NotifocathionItem
+        <NotificathionItem
             id={id++}
             key={id++}
-            email={notificationsSettings.entryEmail}
-            telegram={notificationsSettings.entryTg}
+            email={props.notificationsSettings.entryEmail}
+            telegram={props.notificationsSettings.entryTg}
+            emailKey="entryEmail"
+            tgKey="entryTg"
             text="Успешный вход"
-            setNotificationsSettings={setNotificationsSettings}
         />,
-        <NotifocathionItem
+        <NotificathionItem
             id={id++}
             key={id++}
-            email={notificationsSettings.failEntryEmail}
-            telegram={notificationsSettings.failEntryTg}
+            email={props.notificationsSettings.failEntryEmail}
+            telegram={props.notificationsSettings.failEntryTg}
+            emailKey="failEntryEmail"
+            tgKey="failEntryTg"
             text="Неуспешный вход"
-            setNotificationsSettings={setNotificationsSettings}
         />,
-        <NotifocathionItem
+        <NotificathionItem
             id={id++}
             key={id++}
-            email={notificationsSettings.paymentGetEmail}
-            telegram={notificationsSettings.paymentGetTg}
+            email={props.notificationsSettings.paymentGetEmail}
+            telegram={props.notificationsSettings.paymentGetTg}
+            emailKey="paymentGetEmail"
+            tgKey="paymentGetTg"
             text="Получен платеж"
-            setNotificationsSettings={setNotificationsSettings}
         />,
-        <NotifocathionItem
+        <NotificathionItem
             id={id++}
             key={id++}
-            email={notificationsSettings.paymentConfirmedEmail}
-            telegram={notificationsSettings.paymentConfirmedTg}
+            email={props.notificationsSettings.paymentConfirmedEmail}
+            telegram={props.notificationsSettings.paymentConfirmedTg}
+            emailKey="paymentConfirmedEmail"
+            tgKey="paymentConfirmedTg"
             text="Отправлен платеж"
-            setNotificationsSettings={setNotificationsSettings}
         />,
-        <NotifocathionItem
+        <NotificathionItem
             id={id++}
             key={id++}
-            email={notificationsSettings.passwordChangeEmail}
-            telegram={notificationsSettings.passwordChangeTg}
+            email={props.notificationsSettings.passwordChangeEmail}
+            telegram={props.notificationsSettings.passwordChangeTg}
+            emailKey="passwordChangeEmail"
+            tgKey="passwordChangeTg"
             text="Изменен пароль"
-            setNotificationsSettings={setNotificationsSettings}
         />,
-        <NotifocathionItem
+        <NotificathionItem
             id={id++}
             key={id++}
-            email={notificationsSettings.notificationsChangeEmail}
-            telegram={notificationsSettings.notificationsChangeTg}
+            email={props.notificationsSettings.notificationsChangeEmail}
+            telegram={props.notificationsSettings.notificationsChangeTg}
+            emailKey="notificationsChangeEmail"
+            tgKey="notificationsChangeTg"
             text="Изменены уведомления"
-            setNotificationsSettings={setNotificationsSettings}
         />,
     ];
 
@@ -78,7 +82,9 @@ export default function Notification(props) {
                 <button
                     onClick={() => {
                         console.log(props);
-                        props.SendNotificationsPostTC();
+                        props.SendNotificationsPostTC(
+                            props.notificationsSettings
+                        );
                     }}
                     className={style.btn}
                 >
