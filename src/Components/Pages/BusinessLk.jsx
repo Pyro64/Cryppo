@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from "react-router";
 import BalanceContainer from "../Lk/Balance/BalanceContainer";
 import BusinessLkHistoryContainer from "../Lk/BusinessLkHistory/BusinessLkHistoryContainer";
 import BusinessLkStatisticContainer from "../Lk/BusinessLkStatistic/BusinessLkStatisticContainer";
+import PageWork from "../Lk/PageWork/PageWork";
 import SettingLkContainer from "../Lk/SettingLk/SettingLkContainer";
 import SupportLkContainer from "../Lk/SupportLk/SupportLkContainer";
 import BusinessLkMainContainer from "./../Lk/BusinessLkMain/BusinessLkMainContainer";
@@ -21,6 +22,7 @@ const BusinessLk = (props) => {
         path="/"
         element={<BusinessLkMainContainer addCard={props.addCard} />}
       />
+
       <Route path="balance" element={<BalanceContainer />} />
       <Route path="statistic" element={<BusinessLkStatisticContainer />} />
       <Route path="history" element={<BusinessLkHistoryContainer />} />

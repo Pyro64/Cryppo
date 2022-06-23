@@ -5,7 +5,7 @@ import CryppoLkSettings from "../Lk/CryppoLkSettings/CryppoLkSettings";
 import CryppoLkTranslationContainer from "../Lk/CryppoLkTranslation/CryppoLkTranslationContainer";
 import CryppoLkInvestContainer from "../Lk/CryppoLkInvest/CryppoLkInvestContainer";
 import EventContainer from "../Lk/Events/EventContainer";
-
+import PageWork from "../Lk/PageWork/PageWork";
 export default function CryppoLk(props) {
     // const get = () => props.getCryppoLkThunkCreator();
     // useEffect(() => {
