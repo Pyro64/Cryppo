@@ -16,6 +16,9 @@ export const lightTheme = {
   left: "calc(100% - 25px)",
   color: "#333",
 };
+const breakpointToFluid = "992px";
+const breakpointToSm = " 720px";
+const baseVw = "1920px";
 const breakpointLg = "992px";
 const breakpointMd = "768px";
 const breakpointSm = "576px";
@@ -63,13 +66,6 @@ export const GlobalStyles = createGlobalStyle`
     }
     .text {
       color:  ${(props) => props.theme.color};
-    }
-    .container  {
-      width: 100%;
-      max-width: ${containerLg};
-      padding-left: ${padding};
-      padding-right: ${padding};
-      margin: auto;
     }
 `;
 // function calcFluidFontSize($fmin, $fmax, $wmin, $wmax, $units: px) {
