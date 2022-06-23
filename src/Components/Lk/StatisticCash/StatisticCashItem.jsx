@@ -15,10 +15,11 @@ const StatisticCashItem = (props) => {
     if (category !== undefined) {
         url = `/cryppo/lk/event/${category}/${props.category}`;
     }
-    const foo = () => {
+    const foo = (e) => {
         if (child !== undefined) {
             dispatch(doughuntSlice.actions.UpdateChart(child));
         }
+        dispatch(doughuntSlice.actions.EditDefaultSearch(e));
         navigate(url);
     };
     return (
@@ -38,7 +39,9 @@ const StatisticCashItem = (props) => {
                 onMouseLeave={() =>
                     dispatch(doughuntSlice.actions.InitChartText())
                 }
-                onClick={foo}
+                onClick={(e) => {
+                    foo(e);
+                }}
             >
                 <div
                     style={{ background: `${props.color}` }}

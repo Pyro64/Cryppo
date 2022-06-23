@@ -25,7 +25,7 @@ const rootReducer = combineReducers({
 
 export const setupStore = () => {
     return configureStore({
-        reducer: combineReducers({}), //rootReducer,
+        reducer: rootReducer,
         middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
     });
 };
