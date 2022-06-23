@@ -37,6 +37,7 @@ const Searchbar = (props) => {
                         <SearchWithTag
                             expenses={props.expenses}
                             arrival={props.arrival}
+                            defaultSearch={props.defaultSearch}
                         />
                     </div>
                 </div>

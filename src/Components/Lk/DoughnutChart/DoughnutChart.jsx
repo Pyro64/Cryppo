@@ -25,6 +25,7 @@ const DoughnutChart = (props) => {
             cash={e.cash}
             disable={e.disable}
             operationType={props.operationType}
+            childExpensesStatistics={e.childExpensesStatistics}
         />
     ));
     const options = {

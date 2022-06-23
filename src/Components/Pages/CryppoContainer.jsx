@@ -15,6 +15,10 @@ let mapStateToProps = (state) => {
         card: state.operation.cryppo.cardData,
         alert: state.lk.cryppo.alertData,
         routeLk: state.header.cryppo.route.routeLk,
+        tempExpenses: state.doughunt.tempExpenses,
+        tempArrival: state.doughunt.tempArrival,
+        expenses: state.doughunt.expenses,
+        arrival: state.doughunt.arrival,
     };
 };
 

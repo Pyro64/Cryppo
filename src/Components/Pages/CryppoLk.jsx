@@ -22,14 +22,35 @@ export default function CryppoLk(props) {
             />
             <Route path="invest/*" element={<CryppoLkInvestContainer />} />
             <Route path="settings/*" element={<CryppoLkSettings />} />
-            <Route path="event/*" element={<EventContainer filter={false} />} />
+            <Route
+                path="event/*"
+                element={
+                    <EventContainer
+                        expenses={props.expenses}
+                        arrival={props.arrival}
+                        filter={false}
+                    />
+                }
+            />
             <Route
                 path="event/:category"
-                element={<EventContainer filter={true} />}
+                element={
+                    <EventContainer
+                        filter={true}
+                        expenses={props.tempExpenses}
+                        arrival={props.tempArrival}
+                    />
+                }
             />
             <Route
                 path="event/:category/:subcategory"
-                element={<EventContainer filter={true} />}
+                element={
+                    <EventContainer
+                        filter={true}
+                        expenses={props.tempExpenses}
+                        arrival={props.tempArrival}
+                    />
+                }
             />
         </Routes>
     );

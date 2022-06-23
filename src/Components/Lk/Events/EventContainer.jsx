@@ -7,11 +7,10 @@ let mapStateToProps = (state) => {
         operationData: state.operation.cryppo.operationData,
         operationList: state.operation.cryppo.operationList,
         operationModal: state.lk.cryppo.operationModal,
-        expenses: state.doughunt.expenses,
-        arrival: state.doughunt.arrival,
         isModal: state.lk.cryppo.isModal,
         isHover: state.doughunt.isHover,
         doughuntTextData: state.doughunt.doughuntTextData,
+        defaultSearch: state.doughunt.defaultSearch,
     };
 };
 

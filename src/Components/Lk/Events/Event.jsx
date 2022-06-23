@@ -5,17 +5,13 @@ import StatisticCash from "../StatisticCash/StatisticCash";
 import Operation from "../OperationLk/Operation";
 
 const Event = (props) => {
-    if (props.filter === true) {
-        props.expenses = props.expenses.filter((item) => {
-            return props.expenses[0].parentCategory === item.type;
-        });
-    }
     return (
         <div className="main container">
             <SearchBar
                 updateChart={props.updateChart}
                 expenses={props.expenses}
                 arrival={props.arrival}
+                defaultSearch={props.defaultSearch}
             />
             <StatisticCash
                 updateChart={props.updateChart}

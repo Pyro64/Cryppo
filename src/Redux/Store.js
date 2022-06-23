@@ -19,13 +19,13 @@ const rootReducer = combineReducers({
     operation: operationReducer,
     LK: LKReducer,
     payments: paymentsReducer,
-    doughunt:doughuntReducer,
+    doughunt: doughuntReducer,
     form: formReducer,
 });
 
 export const setupStore = () => {
     return configureStore({
-        reducer: rootReducer,
+        reducer: combineReducers({}), //rootReducer,
         middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
     });
 };

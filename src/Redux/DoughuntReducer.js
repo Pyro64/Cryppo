@@ -216,6 +216,7 @@ const initialState = {
         percent: "100%",
     },
     isHover: false,
+    defaultSearch: [],
 };
 export const doughuntSlice = createSlice({
     name: "doughunt",
@@ -243,8 +244,18 @@ export const doughuntSlice = createSlice({
                         item.disable = !item.disable;
                     }
                 });
+                state.tempExpenses.forEach((item) => {
+                    if (item.id === action.payload.id) {
+                        item.disable = !item.disable;
+                    }
+                });
             } else {
                 state.arrival.forEach((item) => {
+                    if (item.id === action.payload.id) {
+                        item.disable = !item.disable;
+                    }
+                });
+                state.tempArrival.forEach((item) => {
                     if (item.id === action.payload.id) {
                         item.disable = !item.disable;
                     }
@@ -252,7 +263,7 @@ export const doughuntSlice = createSlice({
             }
         },
         UpdateChart(state, action) {
-            state.tempExpenses = action.payload.child;
+            state.tempExpenses = action.payload;
         },
         FilterChart(state, action) {
             state.arrival.forEach((item) => {
@@ -271,6 +282,9 @@ export const doughuntSlice = createSlice({
                 item.cash = Math.round(Math.random() * 1000) / 10;
                 item.percent = Math.round(Math.random() * 10) / 10;
             });
+        },
+        EditDefaultSearch(state, action) {
+            state.defaultSearch = action.payload;
         },
     },
 });

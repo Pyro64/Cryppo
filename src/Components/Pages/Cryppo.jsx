@@ -24,7 +24,17 @@ export default function Cryppo(props) {
             />
             <Routes>
                 <Route path="/" element={<CryppoLanding />} />
-                <Route path="cryppo/lk/*" element={<CryppoLk />} />
+                <Route
+                    path="cryppo/lk/*"
+                    element={
+                        <CryppoLk
+                            expenses={props.expenses}
+                            arrival={props.arrival}
+                            tempExpenses={props.tempExpenses}
+                            tempArrival={props.tempArrival}
+                        />
+                    }
+                />
                 <Route
                     path="entrance"
                     element={
