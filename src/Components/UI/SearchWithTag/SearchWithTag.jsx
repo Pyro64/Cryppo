@@ -30,12 +30,16 @@ const SearchWithTag = (props) => {
     }
 
     const options = [];
-    props.expenses.forEach((item) => {
-        options.push(item);
-    });
-    props.arrival.forEach((item) => {
-        options.push(item);
-    });
+    if (props.expenses) {
+        props.expenses.forEach((item) => {
+            options.push(item);
+        });
+    }
+    if (props.arrival) {
+        props.arrival.forEach((item) => {
+            options.push(item);
+        });
+    }
 
     return (
         <Select

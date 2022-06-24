@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { Drawer, Button, Alert, Space } from "antd";
 import DrawerTitle from "./DrawerTitle";
 import style from "./Drawer.module.scss";
-import NavItem from "../Nav/NavItem";
 import CheckItem from "../../Lk/CheckLk/CheckItem";
 import { NavLink } from "react-router-dom";
 import Switch from "../Switch/Switch";
-import { CloseOutlined } from "@ant-design/icons";
+import { CloseOutlined, UserOutlined } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
 import { userSlice } from "../../../Redux/user-reducer";
+import avatar from "../../../Images/icon/avatar.svg";
 export default function MyDrawer(props) {
   const dispatch = useDispatch();
   let alertItem = props.alert.map((e) => (
@@ -59,6 +59,38 @@ export default function MyDrawer(props) {
       </div>
       <div className={style.block}>
         <img src={props.img} className={style.img} alt="avatar" />
+        <div>
+          <p className={style.name}>{props.name}</p>
+          <button onClick={removeLk} className={style.out}>
+            выйти
+          </button>
+        </div>
+      </div>
+      <div className={style.links}>
+        <NavLink
+          to="/business/lk/support"
+          className={({ isActive }) =>
+            isActive ? `${style.link} ${style.active}` : `${style.link}`
+          }
+        >
+          Служба поддержки
+        </NavLink>
+        <NavLink
+          to="/business/lk/setting"
+          className={({ isActive }) =>
+            isActive ? `${style.link} ${style.active}` : `${style.link}`
+          }
+        >
+          Настройки
+        </NavLink>
+      </div>
+      <div className={style.header}>
+        <CloseOutlined className={style.close} onClick={props.onClose} />
+        <DrawerTitle title="Профиль" />
+        <Switch theme={props.theme} switchTheme={props.switchTheme} />
+      </div>
+      <div className={style.block}>
+        <img src={props.img ?? avatar} className={style.img} alt="avatar" />
         <div>
           <p className={style.name}>{props.name}</p>
           <button onClick={removeLk} className={style.out}>
