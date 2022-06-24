@@ -64,6 +64,9 @@
     @include fluid(height, 15px, 20px);
     object-fit: contain;
     transition: 0.38s ease-in-out;
+    &:hover {
+      filter: invert(63%) sepia(14%) saturate(6671%) hue-rotate(129deg) brightness(90%) contrast(102%);
+    }
   }
 }
 @media screen and (max-width: 992px) {

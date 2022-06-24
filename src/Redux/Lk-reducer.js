@@ -375,7 +375,7 @@ let initialState = {
         title: "Привязать карту",
         text: "Powered by QRON",
         povered: qron,
-        href: "",
+        href: "pageWork/",
       },
       addTerminal: {
         id: 1,

@@ -28,7 +28,7 @@ export default function SidebarTabs(props) {
             </div>
           </div>
 
-          <div>{props.tabs.povered ? povered : ""}</div>
+          {props.tabs.povered ? povered : ""}
         </div>
       </div>
     </NavLink>

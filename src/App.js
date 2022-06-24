@@ -9,17 +9,16 @@ import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme, GlobalStyles } from "./theme";
 import CryppoBusinessContainer from "./Components/Pages/CryppoBusinessContainer";
 import CryppoContainer from "./Components/Pages/CryppoContainer";
-import { ConfigProvider } from 'antd';
+import { ConfigProvider } from "antd";
 function App() {
   const [theme, setTheme] = useState("light");
   const switchTheme = () => {
     theme === true ? setTheme(false) : setTheme(true);
   };
   return (
-
-      <ThemeProvider theme={theme === true ? lightTheme : darkTheme}>
-        <GlobalStyles />
-        <ConfigProvider theme={theme === true ? 'light' : 'dark'}>
+    <ThemeProvider theme={theme === true ? lightTheme : darkTheme}>
+      <GlobalStyles />
+      <ConfigProvider theme={theme === true ? "light" : "dark"}>
         <BrowserRouter>
           <ParallaxProvider>
             <div className="App">
@@ -57,10 +56,8 @@ function App() {
             </div>
           </ParallaxProvider>
         </BrowserRouter>
-        </ConfigProvider>
-      </ThemeProvider>
-
-
+      </ConfigProvider>
+    </ThemeProvider>
   );
 }
 export default App;

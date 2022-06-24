@@ -22,10 +22,7 @@
 }
 .link {
   display: block;
-  @include fluid(margin-bottom, 20px, 30px);
-  &:last-child {
-    margin-bottom: 0;
-  }
+  @include fluid(margin-top, 20px, 30px);
 }
 .icon {
   object-fit: contain;
@@ -58,6 +55,12 @@
 
 .povered {
   @include fluid(font-size, 10px, 12px);
+}
+.poveredIcon {
+  @include fluid(width, 20px, 35px);
+  @include fluid(height, 20px, 35px);
+  object-fit: contain;
+  margin-top: auto;
 }
 .wrapper {
   display: flex;

@@ -11,23 +11,23 @@ import doughuntReducer from "./DoughuntReducer";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 const rootReducer = combineReducers({
-    header: headerReducer,
-    footer: footerReducer,
-    landing: landingReducer,
-    lk: LkReducer,
-    user: userReducer,
-    operation: operationReducer,
-    LK: LKReducer,
-    payments: paymentsReducer,
-    doughunt: doughuntReducer,
-    form: formReducer,
+  header: headerReducer,
+  footer: footerReducer,
+  landing: landingReducer,
+  lk: LkReducer,
+  user: userReducer,
+  operation: operationReducer,
+  LK: LKReducer,
+  payments: paymentsReducer,
+  doughunt: doughuntReducer,
+  form: formReducer,
 });
 
 export const setupStore = () => {
-    return configureStore({
-        reducer: combineReducers({}), //rootReducer,
-        middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
-    });
+  return configureStore({
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
+  });
 };
 
 export default setupStore;

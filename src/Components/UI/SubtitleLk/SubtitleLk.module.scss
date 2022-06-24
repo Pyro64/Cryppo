@@ -4,7 +4,8 @@
   width: fit-content;
   @include fluid(font-size, 18px, 24px);
   font-family: "Days One Regular";
-  @include fluid(margin-bottom, 15px, 35px);
+  @include fluid(margin-top,10px,15px);
+  @include fluid(margin-bottom, 15px, 20px);
   position: relative;
 }
 .arrow {
