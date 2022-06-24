@@ -10,7 +10,7 @@ export default function SidebarTabs(props) {
   let povered = (
     <img src={props.tabs.povered} className={style.poveredIcon} alt="img" />
   );
-
+  debugger;
   return (
     <NavLink
       to={props.tabs.href ? `${props.tabs.href}` : ""}

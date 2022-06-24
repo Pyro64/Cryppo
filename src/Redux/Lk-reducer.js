@@ -488,6 +488,7 @@ let initialState = {
       title: "Привязать карту",
       povered: "Powered by QRON",
       poveredIcon: qron,
+      href: "pageWork",
     },
     operationModal: {
       id: null,
@@ -528,6 +529,7 @@ let initialState = {
         title: "Привязать карту",
         text: "Powered by QRON",
         povered: qron,
+        href: "pageWork",
       },
       addTerminal: {
         id: 1,
@@ -608,6 +610,7 @@ let initialState = {
       title: "Привязать карту",
       povered: "Powered by QRON",
       poveredIcon: qron,
+      href: "pageWork",
     },
     operationModal: {
       id: null,
@@ -641,6 +644,7 @@ let initialState = {
         cash: "$ 0.00",
         text: "Powered by Elementum",
         povered: elementum,
+        href: "invest",
       },
       addCart: {
         id: 1,
@@ -648,6 +652,7 @@ let initialState = {
         title: "Привязать карту",
         text: "Powered by QRON",
         povered: qron,
+        href: "pageWork",
       },
       addTerminal: {
         id: 1,
@@ -683,6 +688,7 @@ let initialState = {
         id: 1,
         icon: plus,
         title: "Купить индекс",
+        href: "pageWork",
       },
     },
     newsData: [

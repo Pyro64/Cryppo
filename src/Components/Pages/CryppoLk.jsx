@@ -20,6 +20,7 @@ export default function CryppoLk(props) {
       <Route path="pageWork" element={<PageWork />}></Route>
       <Route path="invest/*" element={<CryppoLkInvestContainer />} />
       <Route path="settings/*" element={<CryppoLkSettings />} />
+      <Route path="history" element={<PageWork />} />
       <Route
         path="event/*"
         element={
