@@ -14,7 +14,6 @@ var scroller = Scroll.scroller;
 
 export default function Operation(props) {
   const [open, setOpen] = useState(false);
-
   const changePage = (page) => {
     props.setPageNumber(page);
     scroller.scrollTo("myScrollToElement", {
@@ -28,6 +27,7 @@ export default function Operation(props) {
   function openModal() {
     setOpen(!open);
   }
+
   function onShowSizeChange(page, pageSize) {
     props.setPageSize(pageSize);
   }
@@ -49,6 +49,7 @@ export default function Operation(props) {
       amount={e.amount}
       firm={e.firm}
       bankCardData={e.bankCardData}
+      address={e.address}
     />
   ));
   let filterItem;
@@ -79,22 +80,11 @@ export default function Operation(props) {
           />
         ) : (
           <div className={style.btnContainer}>
-            {" "}
             <Btn className="btn" href="lk/history">
               Все операции
             </Btn>
           </div>
         )}
-      </div>
-
-      <div>
-        <MyModal setOpen={setOpen} open={open}>
-          <OperationModal
-            open={open}
-            openModal={openModal}
-            operationModal={props.operationModal}
-          />
-        </MyModal>
       </div>
     </div>
   );

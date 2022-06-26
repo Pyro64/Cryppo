@@ -21,7 +21,7 @@ let statusPay = {
       color: "linear-gradient(91.42deg, #FFEA2F 0%, #FF612F 100%), #C4C4C4",
       text: "Операция в обработке",
     },
-    access: {
+    Success: {
       color: "linear-gradient(91.42deg, #2F69FF 0%, #00C0A9 100%)",
       text: "Операция одобрена",
     },
