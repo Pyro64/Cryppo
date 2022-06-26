@@ -1,14 +1,23 @@
 import { Api } from "./Api";
+import getCookies, { deleteCookie } from "../Utils/cookies";
 
-export const LoginPost = (email, password) => {
+export const LoginPost = (
+    email,
+    password,
+    twoFactorCode,
+    deviceId,
+    deviceOs,
+    deviceIp
+) => {
     return Api.post("Account/Login", {
         email,
         password,
-        twoFactorCode: "",
-        deviceId: "1",
-        deviceOs: "Android Pie",
-        deviceIp: "192.168.0.1",
+        twoFactorCode,
+        deviceId,
+        deviceOs,
+        deviceIp,
     }).then((response) => {
+        deleteCookie("access_token");
         document.cookie = "access_token=" + response.data.accessToken;
         return response.data;
     });
@@ -64,6 +73,30 @@ export const ResetPasswordPost = (
         newPassword,
         confirmPassword,
     }).then((response) => {
+        return response.data;
+    });
+};
+export const SendDeviceConfirmationCodePost = () => {
+    return Api.post("Account/SendDeviceConfirmationCode", {
+        Authorization: "bearer " + getCookies("access_token"),
+    }).then((response) => {
+        console.log(response.status);
+        return response.data;
+    });
+};
+
+export const DeviceConfirmPost = (code) => {
+    const header = {
+        headers: { Authorization: "bearer " + getCookies("access_token") },
+    };
+    return Api.post(
+        "Account/SendDeviceConfirmationCode",
+        {
+            code: "1111",
+        },
+        header
+    ).then((response) => {
+        console.log(response.status);
         return response.data;
     });
 };

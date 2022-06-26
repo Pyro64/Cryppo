@@ -4,8 +4,10 @@ import arde from "../Images/payIcon/arde.svg";
 import eth from "../Images/payIcon/eth.svg";
 import visa from "../Images/icon/VISA.svg";
 import masterCard from "../Images/icon/mastercard.svg";
-import { LoginPost, RegisterPost } from "../Api/AccountApi";
+import * as AccountApi from "../Api/AccountApi";
 import * as SettingsApi from "../Api/SettingsApi";
+import * as TerminalsApi from "../Api/TerminalsApi";
+import * as GeneralApi from "../Api/GeneralApi";
 import { createSlice } from "@reduxjs/toolkit";
 
 let apiState = {
@@ -71,7 +73,46 @@ let apiState = {
 
 let initialState = {
     business: {
-        isLogin: true,
+        supportedCryptoCurrencies: [
+            {
+                name: "TRX",
+                img: "http://b.cryppowallet.com/Images/Coins/trx.svg",
+            },
+            {
+                name: "USDT (TRC20)",
+                img: "http://b.cryppowallet.com/Images/Coins/usdt.svg",
+            },
+            {
+                name: "BNB",
+                img: "http://b.cryppowallet.com/Images/Coins/bnb.svg",
+            },
+            {
+                name: "BUSD (BEP20)",
+                img: "http://b.cryppowallet.com/Images/Coins/busd.svg",
+            },
+            {
+                name: "BTC",
+                img: "http://b.cryppowallet.com/Images/Coins/btc.svg",
+            },
+            {
+                name: "ETH",
+                img: "http://b.cryppowallet.com/Images/Coins/eth.svg",
+            },
+            {
+                name: "USDT",
+                img: "http://b.cryppowallet.com/Images/Coins/usdt.svg",
+            },
+        ],
+        supportedViewCurrencies: [
+            {
+                name: "USD",
+                symbol: "$",
+            },
+            {
+                name: "EUR",
+                symbol: "€",
+            },
+        ],
         userInfo: {
             userId: "string",
             firstname: "string",
@@ -135,7 +176,7 @@ let initialState = {
         terminals: [
             {
                 id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                name: "string",
+                name: "Основной",
                 login: "string",
                 terminalId: "string",
                 connected: true,
@@ -143,7 +184,7 @@ let initialState = {
             },
             {
                 id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                name: "тест",
+                name: "Запасной терминал",
                 login: "string",
                 terminalId: "string",
                 connected: false,
@@ -151,7 +192,7 @@ let initialState = {
             },
             {
                 id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                name: "string",
+                name: "Костин",
                 login: "string",
                 terminalId: "string",
                 connected: true,
@@ -188,6 +229,16 @@ let initialState = {
                 text: "USD",
                 availability: "56.254 USD",
                 prise: "9 656 $",
+            },
+        ],
+        supportedNotificationsLanguages: [
+            {
+                name: "Русский",
+                value: "ru",
+            },
+            {
+                name: "English",
+                value: "en",
             },
         ],
         bankCardList: [
@@ -317,15 +368,15 @@ let initialState = {
         ],
     },
     isLk: false,
+    isLogin: false,
 };
 
 export const userSlice = createSlice({
     name: "user",
     initialState,
     reducers: {
-        LoginBusiness(state, action) {
-            state.business.isLogin = true;
-            state.business.accessToken = action.payload;
+        LoginBusiness(state) {
+            state.isLogin = true;
             state.isLk = true;
         },
         LoginCryppo(state, action) {
@@ -334,7 +385,7 @@ export const userSlice = createSlice({
             state.isLk = true;
         },
         SetLk(state, action) {
-            state.isLk = action.payload;
+            state.isLk = action.payload.isLk;
         },
         LogoutCryppo(state) {
             state.cryppo.isLogin = false;
@@ -342,6 +393,10 @@ export const userSlice = createSlice({
         LogoutBusiness(state) {
             state.business.isLogin = false;
         },
+        SetInfo(state, action) {
+            state.business = action.payload;
+        },
+        //Setting Actions
         SetActiveCurrency(state, action) {
             state.business.balances = action.payload.balances;
         },
@@ -384,26 +439,55 @@ export const userSlice = createSlice({
         DeleteDevice(state, action) {
             state.business.userInfo = action.payload.userInfo;
         },
+        //Terminals Actions
+        TerminalAdd(state, action) {
+            state.business = action.payload;
+        },
+        TerminalChangeName(state, action) {
+            state.business = action.payload;
+        },
+        TerminalChangeLogin(state, action) {
+            state.business = action.payload;
+        },
+        TerminalChangePassword(state, action) {
+            state.business = action.payload;
+        },
+        TerminalDelete(state, action) {
+            state.business = action.payload;
+        },
     },
 });
 
-export const LoginBusinessPostTC = (email, password) => {
-    return (dispatch) => {
-        LoginPost(email, password)
-            .then((data) => {
-                let value = JSON.parse(JSON.stringify(data));
-                dispatch(userSlice.actions.LoginBusiness(value.accessToken));
-            })
-            .catch((response) => {
-                console.log(response);
-                console.log("error");
-            });
+export const LoginBusinessPostTC = (
+    email,
+    password,
+    twoFactorCode,
+    deviceId,
+    deviceOs,
+    deviceIp
+) => {
+    return async (dispatch) => {
+        const loginResponse = await AccountApi.LoginPost(
+            email,
+            password,
+            twoFactorCode,
+            deviceId,
+            deviceOs,
+            deviceIp
+        );
+        console.log(loginResponse);
+        const sendDeviceConfirmationCode =
+            await AccountApi.SendDeviceConfirmationCodePost();
+        console.log(sendDeviceConfirmationCode);
+        const deviceConfirm = await AccountApi.DeviceConfirmPost();
+        console.log(deviceConfirm);
+        dispatch(userSlice.actions.LoginBusiness(loginResponse.accessToken));
     };
 };
 
 export const LoginWalletPostTC = (email, password) => {
     return (dispatch) => {
-        LoginPost(email, password)
+        AccountApi.LoginPost(email, password)
             .then((data) => {
                 let value = JSON.parse(JSON.stringify(data));
                 dispatch(userSlice.actions.LoginBusiness(value.accessToken));
@@ -417,7 +501,7 @@ export const LoginWalletPostTC = (email, password) => {
 
 export const RegistrationBusinessPostTC = (email, password, company) => {
     return (dispatch) => {
-        RegisterPost(email, password, company).catch((response) => {
+        AccountApi.RegisterPost(email, password, company).catch((response) => {
             console.log(response);
             console.log("error");
         });
@@ -426,7 +510,7 @@ export const RegistrationBusinessPostTC = (email, password, company) => {
 
 export const RegistrationWalletPostTC = (email, password, company) => {
     return (dispatch) => {
-        RegisterPost(email, password, company).catch((response) => {
+        AccountApi.RegisterPost(email, password, company).catch((response) => {
             console.log(response);
             console.log("error");
         });
@@ -634,7 +718,7 @@ export const SendEmailConfirmationCodePostTC = (email) => {
         });
     };
 };
-
+//TERMINAL THUNK
 export const DeleteDevicePostTC = (id) => {
     return (dispatch) => {
         SettingsApi.DeleteDevicePost(id)
@@ -649,4 +733,88 @@ export const DeleteDevicePostTC = (id) => {
     };
 };
 
+export const TerminalsAddPostTC = (name, login, password, passwordConfirm) => {
+    return (dispatch) => {
+        TerminalsApi.AddPost(name, login, password, passwordConfirm)
+            .then((data) => {
+                let value = JSON.parse(JSON.stringify(data));
+                dispatch(userSlice.actions.TerminalAdd(value));
+            })
+            .catch((response) => {
+                console.log(response);
+                console.log("error");
+            });
+    };
+};
+
+export const TerminalsChangeNamePostTC = (name, id) => {
+    return (dispatch) => {
+        TerminalsApi.ChangeNamePost(name, id)
+            .then((data) => {
+                let value = JSON.parse(JSON.stringify(data));
+                dispatch(userSlice.actions.TerminalChangeName(value));
+            })
+            .catch((response) => {
+                console.log(response);
+                console.log("error");
+            });
+    };
+};
+export const TerminalsChangeLoginPostTC = (login, id) => {
+    return (dispatch) => {
+        TerminalsApi.ChangeLoginPost(login, id)
+            .then((data) => {
+                let value = JSON.parse(JSON.stringify(data));
+                dispatch(userSlice.actions.TerminalChangeLogin(value));
+            })
+            .catch((response) => {
+                console.log(response);
+                console.log("error");
+            });
+    };
+};
+export const TerminalsChangePasswordPostTC = (
+    passwordConfirm,
+    password,
+    id
+) => {
+    return (dispatch) => {
+        TerminalsApi.ChangePasswordPost(passwordConfirm, password, id)
+            .then((data) => {
+                let value = JSON.parse(JSON.stringify(data));
+                dispatch(userSlice.actions.TerminalChangePassword(value));
+            })
+            .catch((response) => {
+                console.log(response);
+                console.log("error");
+            });
+    };
+};
+export const TerminalsDeletePostTC = (id) => {
+    return (dispatch) => {
+        TerminalsApi.DeletePost(id)
+            .then((data) => {
+                let value = JSON.parse(JSON.stringify(data));
+                dispatch(userSlice.actions.TerminalDelete(value));
+            })
+            .catch((response) => {
+                console.log(response);
+                console.log("error");
+            });
+    };
+};
+//GENERAL THUNK
+export const GeneralInfoGetTC = () => {
+    return (dispatch) => {
+        GeneralApi.InfoGet()
+            .then((data) => {
+                let value = JSON.parse(JSON.stringify(data));
+                dispatch(userSlice.actions.SetInfo(value));
+            })
+            .catch((response) => {
+                console.log(response);
+                console.log("error");
+            });
+    };
+};
 export default userSlice.reducer;

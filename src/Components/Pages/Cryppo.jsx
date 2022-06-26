@@ -28,6 +28,7 @@ export default function Cryppo(props) {
                     path="cryppo/lk/*"
                     element={
                         <CryppoLk
+                            isLogin={props.isLogin}
                             expenses={props.expenses}
                             arrival={props.arrival}
                             tempExpenses={props.tempExpenses}

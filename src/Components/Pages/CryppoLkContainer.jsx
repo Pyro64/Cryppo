@@ -9,7 +9,7 @@ let mapStateToProps = (state) => {
         news: state.lk.cryppo.newsData,
         translations: state.lk.cryppo.translationsData,
         tabs: state.lk.cryppo.tabsData,
-        isLogin: state.cryppoPage.isLogin,
+        isLogin: state.user.isLogin,
     };
 };
 

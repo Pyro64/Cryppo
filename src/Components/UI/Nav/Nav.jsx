@@ -8,12 +8,14 @@ function Nav(props) {
             <NavItem
                 linkToLk={true}
                 isLk={props.isLk}
+                isBusiness={false}
                 href="/"
                 name="CRYPPO Wallet"
             />
             <NavItem
                 linkToLk={true}
                 isLk={props.isLk}
+                isBusiness={true}
                 href="/business"
                 name="CRYPPO Business"
             />

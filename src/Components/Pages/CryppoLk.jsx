@@ -6,13 +6,11 @@ import CryppoLkTranslationContainer from "../Lk/CryppoLkTranslation/CryppoLkTran
 import CryppoLkInvestContainer from "../Lk/CryppoLkInvest/CryppoLkInvestContainer";
 import EventContainer from "../Lk/Events/EventContainer";
 import PageWork from "../Lk/PageWork/PageWork";
+
 export default function CryppoLk(props) {
-    // const get = () => props.getCryppoLkThunkCreator();
-    // useEffect(() => {
-    //   const interval = setInterval(get, 5000);
-    // }, []);
-    // alert(props.isLogin)
-    if (props.isLogin === false) return <Navigate to={"/"} />;
+    if (!props.isLogin) {
+        return <Navigate to={"/"} />;
+    }
     return (
         <Routes>
             <Route path="/" element={<CryppoLkMainContainer />} />

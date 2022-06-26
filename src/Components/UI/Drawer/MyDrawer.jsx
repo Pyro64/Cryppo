@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { Drawer, Button, Alert, Space } from "antd";
+import React from "react";
+import { Drawer, Alert } from "antd";
 import DrawerTitle from "./DrawerTitle";
 import style from "./Drawer.module.scss";
 import CheckItem from "../../Lk/CheckLk/CheckItem";
 import { NavLink } from "react-router-dom";
 import Switch from "../Switch/Switch";
-import { CloseOutlined, UserOutlined } from "@ant-design/icons";
+import { CloseOutlined } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
 import { userSlice } from "../../../Redux/user-reducer";
 import avatar from "../../../Images/icon/avatar.svg";

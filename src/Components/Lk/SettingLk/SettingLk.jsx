@@ -20,6 +20,10 @@ export default function SettingLk(props) {
                         setting={props.setting}
                         balances={props.balances}
                         SetActiveCurrencyPostTC={props.SetActiveCurrencyPostTC}
+                        supportedViewCurrencies={props.supportedViewCurrencies}
+                        supportedNotificationsLanguages={
+                            props.supportedNotificationsLanguages
+                        }
                     />
                 }
             />
