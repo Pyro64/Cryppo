@@ -7,6 +7,7 @@ let mapStateToProps = (state) => {
         currencyList: state.user.business.balances,
         isHover: state.lk.business.isHover,
         expenses: state.doughunt.expenses,
+        balances: state.user.business.balances,
     };
 };
 

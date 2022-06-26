@@ -8,7 +8,7 @@ import {
 let mapStateToProps = (state) => {
     return {
         logo: state.header.cryppo.route.logo,
-        isLogin: state.user.cryppo.isLogin,
+        isLogin: state.user.isLogin,
         header: state.header.cryppo,
         user: state.user.cryppo,
         isLk: state.user.isLk,

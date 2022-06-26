@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import BusinessLkMain from "./BusinessLkMain";
 import { setModal, switchModal } from "../../../Redux/Lk-reducer";
-import { changeActiveIndex } from "../../../Redux/operation-reducer";
 import { PaymentsPostTC } from "../../../Redux/payments-reducer";
+import { GeneralInfoGetTC } from "../../../Redux/user-reducer";
 
 let mapStateToProps = (state) => {
     return {
@@ -20,14 +20,15 @@ let mapStateToProps = (state) => {
         expenses: state.doughunt.expenses,
         arrival: state.doughunt.arrival,
         paymentList: state.payments.business,
+        balances: state.user.business.balances,
     };
 };
 
 const BusinessLkMainContainer = connect(mapStateToProps, {
     setModal,
     switchModal,
-    changeActiveIndex,
     PaymentsPostTC,
+    GeneralInfoGetTC,
 })(BusinessLkMain);
 
 export default BusinessLkMainContainer;

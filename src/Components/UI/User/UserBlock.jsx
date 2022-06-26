@@ -7,7 +7,6 @@ import { CloseOutlined } from "@ant-design/icons";
 import { userSlice } from "../../../Redux/user-reducer";
 import { useDispatch } from "react-redux";
 const Userblock = (props) => {
-    const { SetLk } = userSlice.actions;
     const dispatch = useDispatch();
     const [visible, setVisible] = useState(false);
     const showDrawer = () => {
@@ -24,7 +23,7 @@ const Userblock = (props) => {
                     onClick={props.onClose}
                 />
                 <NavLink
-                    onClick={() => dispatch(SetLk(true))}
+                    onClick={() => dispatch(userSlice.actions.SetLk(true))}
                     to={`${props.routeLk}/lk`}
                     className={({ isActive }) =>
                         isActive
@@ -50,7 +49,6 @@ const Userblock = (props) => {
                 img={props.img}
                 name={props.name}
                 login={props.login}
-                value={props.value}
                 card={props.card}
                 alert={props.alert}
                 removeAlert={props.removeAlert}

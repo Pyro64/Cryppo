@@ -3,15 +3,14 @@ import style from "./Security.module.scss";
 import AddressItem from "./AddressItem";
 
 export default function Address(props) {
-    let address = props.entries.map((e) => (
+    let address = props.devices.map((e) => (
         <AddressItem
             id={e.id}
             key={e.id}
             date={e.date}
             ip={e.ip}
             location={e.location}
-            status={e.status}
-            deviceOs={e.deviceOs}
+            name={e.name}
             DeleteDevicePostTC={props.DeleteDevicePostTC}
         />
     ));

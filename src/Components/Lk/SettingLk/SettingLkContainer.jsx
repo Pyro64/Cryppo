@@ -17,6 +17,10 @@ let mapStateToProps = (state) => {
         notificationsSettings:
             state.user.business.userInfo.notificationsSettings,
         user: state.user.business,
+        supportedViewCurrencies: state.user.business.supportedViewCurrencies,
+        supportedNotificationsLanguages:
+            state.user.business.supportedNotificationsLanguages,
+        devices: state.user.business.devices,
     };
 };
 

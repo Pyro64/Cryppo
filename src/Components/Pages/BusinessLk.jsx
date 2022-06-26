@@ -7,32 +7,37 @@ import PageWork from "../Lk/PageWork/PageWork";
 import SettingLkContainer from "../Lk/SettingLk/SettingLkContainer";
 import SupportLkContainer from "../Lk/SupportLk/SupportLkContainer";
 import BusinessLkMainContainer from "./../Lk/BusinessLkMain/BusinessLkMainContainer";
+import getCookies, { deleteCookie } from "../../Utils/cookies";
+import { userSlice } from "../../Redux/user-reducer";
+import { useDispatch } from "react-redux";
 
 const BusinessLk = (props) => {
-  // const get = () => props.getCryppoLkThunkCreator();
-  // useEffect(() => {
-  //   const interval = setInterval(get, 5000);
-  // }, []);
-  // alert(props.isLogin)
+    const dispatch = useDispatch();
+    if (!getCookies("access_token")) {
+        deleteCookie("access_token");
+        return <Navigate to={"/business"} />;
+    }
+    dispatch(userSlice.actions.LoginBusiness());
+    return (
+        <Routes>
+            <Route
+                path="/"
+                element={<BusinessLkMainContainer addCard={props.addCard} />}
+            />
 
-  if (props.isLogin === false) return <Navigate to={"/business"} />;
-  return (
-    <Routes>
-      <Route
-        path="/"
-        element={<BusinessLkMainContainer addCard={props.addCard} />}
-      />
-
-      <Route path="balance" element={<BalanceContainer />} />
-      <Route path="statistic" element={<BusinessLkStatisticContainer />} />
-      <Route path="history" element={<BusinessLkHistoryContainer />} />
-      <Route path="setting/*" element={<SettingLkContainer />} />
-      <Route
-        path="support"
-        element={<SupportLkContainer help={props.help} />}
-      />
-    </Routes>
-  );
+            <Route path="balance" element={<BalanceContainer />} />
+            <Route
+                path="statistic"
+                element={<BusinessLkStatisticContainer />}
+            />
+            <Route path="history" element={<BusinessLkHistoryContainer />} />
+            <Route path="setting/*" element={<SettingLkContainer />} />
+            <Route
+                path="support"
+                element={<SupportLkContainer help={props.help} />}
+            />
+        </Routes>
+    );
 };
 
 export default BusinessLk;

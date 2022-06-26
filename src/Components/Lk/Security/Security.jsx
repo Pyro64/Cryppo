@@ -90,7 +90,7 @@ export default function Security(props) {
                         </div>
                         <Address
                             DeleteDevicePostTC={props.DeleteDevicePostTC}
-                            entries={props.entries}
+                            devices={props.devices}
                         />
                     </div>
                 </div>

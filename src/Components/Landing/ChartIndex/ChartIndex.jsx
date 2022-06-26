@@ -38,7 +38,7 @@ export default function ChartIndex(props) {
     useEffect(() => {
         const from = new Date();
         from.setDate(from.getDate() - 5);
-        props.ChartPostTC(from, new Date().toISOString(), null);
+        props.ChartPostTC(from.toISOString(), new Date().toISOString(), null);
     }, []);
     const data = props.chartIndex.map((e) => {
         return { date: month[new Date(e.date).getMonth], amount: e.amount };

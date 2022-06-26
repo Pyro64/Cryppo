@@ -43,6 +43,7 @@ const Header = (props) => {
                         {props.isEntrance !== false ? (
                             <User
                                 user={props.user}
+                                isBusiness={props.isBusiness}
                                 isLogin={props.isLogin}
                                 isLk={props.isLk}
                                 card={props.card}

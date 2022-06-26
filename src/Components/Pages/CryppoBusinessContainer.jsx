@@ -8,7 +8,8 @@ import {
 let mapStateToProps = (state) => {
     return {
         header: state.header.business,
-        isLogin: state.user.business.isLogin,
+        isLogin: state.user.isLogin,
+        isBusiness: true,
         isLk: state.user.isLk,
         user: state.user.business,
         logo: state.header.business.route.logo,

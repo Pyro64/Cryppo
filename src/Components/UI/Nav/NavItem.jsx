@@ -4,12 +4,18 @@ import { userSlice } from "../../../Redux/user-reducer";
 import { useDispatch } from "react-redux";
 
 function NavItem(props) {
-    const { SetLk } = userSlice.actions;
     const dispatch = useDispatch();
     if (props.linkToLk) {
         return (
             <NavLink
-                onClick={() => dispatch(SetLk(false))}
+                onClick={() =>
+                    dispatch(
+                        userSlice.actions.SetLk({
+                            isLk: true,
+                            isBusiness: props.isBusiness,
+                        })
+                    )
+                }
                 state={{ name: props.href }}
                 to={props.href}
                 className={({ isActive }) =>
@@ -23,6 +29,14 @@ function NavItem(props) {
     } else {
         return (
             <NavLink
+                onClick={() =>
+                    dispatch(
+                        userSlice.actions.SetLk({
+                            isLk: true,
+                            isBusiness: props.isBusiness,
+                        })
+                    )
+                }
                 state={{ name: props.href }}
                 to={props.href}
                 className={({ isActive }) =>
