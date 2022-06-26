@@ -20,6 +20,7 @@ let mapStateToProps = (state) => {
         supportedViewCurrencies: state.user.business.supportedViewCurrencies,
         supportedNotificationsLanguages:
             state.user.business.supportedNotificationsLanguages,
+        devices: state.user.business.devices,
     };
 };
 

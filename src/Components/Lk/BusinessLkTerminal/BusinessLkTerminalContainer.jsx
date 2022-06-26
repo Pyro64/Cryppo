@@ -6,6 +6,7 @@ import {
     TerminalsChangeNamePostTC,
     TerminalsChangeLoginPostTC,
     TerminalsChangePasswordPostTC,
+    GeneralInfoGetTC,
 } from "../../../Redux/user-reducer";
 
 let mapStateToProps = (state) => {
@@ -20,6 +21,7 @@ const BusinessLkTerminalContainer = connect(mapStateToProps, {
     TerminalsChangeLoginPostTC,
     TerminalsChangePasswordPostTC,
     TerminalsDeletePostTC,
+    GeneralInfoGetTC,
 })(BusinessLkTerminal);
 
 export default BusinessLkTerminalContainer;

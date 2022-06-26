@@ -78,7 +78,7 @@ export const ResetPasswordPost = (
 };
 export const SendDeviceConfirmationCodePost = () => {
     return Api.post("Account/SendDeviceConfirmationCode", {
-        Authorization: "bearer " + getCookies("access_token"),
+        Authorization: "Bearer " + getCookies("access_token"),
     }).then((response) => {
         console.log(response.status);
         return response.data;
@@ -87,10 +87,10 @@ export const SendDeviceConfirmationCodePost = () => {
 
 export const DeviceConfirmPost = (code) => {
     const header = {
-        headers: { Authorization: "bearer " + getCookies("access_token") },
+        headers: { Authorization: "Bearer " + getCookies("access_token") },
     };
     return Api.post(
-        "Account/SendDeviceConfirmationCode",
+        "Account/DeviceConfirm",
         {
             code: "1111",
         },
@@ -103,12 +103,6 @@ export const DeviceConfirmPost = (code) => {
 
 export const BalanceGet = () => {
     return Api.get("Balance/All").then((response) => {
-        return response.data;
-    });
-};
-
-export const GeneralInfoGet = () => {
-    return Api.get("General/Info").then((response) => {
         return response.data;
     });
 };

@@ -34,6 +34,7 @@ export default function SettingLk(props) {
                         DeleteDevicePostTC={props.DeleteDevicePostTC}
                         entries={props.entries}
                         terminals={props.terminals}
+                        devices={props.devices}
                     />
                 }
             />

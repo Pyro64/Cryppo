@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import style from "./BussinesAuthorization.module.scss";
 import { Navigate, NavLink } from "react-router-dom";
 import LkInput from "../../UI/LkInput/LkInput";
+import getCookies from "../../../Utils/cookies";
 
 const BussinesAuthorization = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    if (props.isLogin) {
+    if (getCookies("access_token")) {
         return <Navigate to={"/business/lk"} />;
     }
     const handleSubmit = async (e) => {

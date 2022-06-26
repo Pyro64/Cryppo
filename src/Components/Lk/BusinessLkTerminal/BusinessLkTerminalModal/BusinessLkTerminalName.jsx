@@ -4,14 +4,24 @@ import MyModal from "../../../UI/MyModal/MyModal";
 import LkInput from "../../../UI/LkInput/LkInput";
 import close from "../../../../Images/icon/close.svg";
 import { notification } from "antd";
+import { userSlice } from "../../../../Redux/user-reducer";
+import { useDispatch } from "react-redux";
 
 export default function BusinessLkTerminalName(props) {
+    const dispatch = useDispatch();
     const [open, setOpen] = useState(false);
+    const [name, setName] = useState("");
     function modal() {
         setOpen(!open);
     }
-    const openNotification = (e) => {
+    const onSubmit = (e) => {
         e.preventDefault();
+        dispatch(
+            userSlice.actions.TerminalChangeName({
+                id: props.id,
+                name: name,
+            })
+        );
         notification.open({
             type: "success",
             message: "Успешно",
@@ -24,7 +34,7 @@ export default function BusinessLkTerminalName(props) {
                 Изменить имя терминала
             </div>
             <MyModal open={open} setOpen={setOpen}>
-                <form className={style.container}>
+                <form className={style.container} onSubmit={onSubmit}>
                     <img
                         alt="close"
                         className={style.close}
@@ -35,8 +45,13 @@ export default function BusinessLkTerminalName(props) {
                     <div className={style.subtitle}>
                         Введите новое имя терминала
                     </div>
-                    <LkInput />
-                    <button onClick={openNotification} className={style.btn}>
+                    <LkInput
+                        value={name}
+                        onChange={(e) => {
+                            setName(e.target.value);
+                        }}
+                    />
+                    <button type="submit" className={style.btn}>
                         Готово
                     </button>
                 </form>

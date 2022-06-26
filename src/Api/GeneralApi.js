@@ -1,11 +1,13 @@
 import { Api } from "./Api";
-import getCookies from "../Utils/cookies";
+import getCookies, { deleteCookie } from "../Utils/cookies";
 
 export const InfoGet = () => {
-    const header = {
-        headers: { Authorization: "bearer " + getCookies("access_token") },
-    };
-    return Api.get("General/Info", header).then((response) => {
+    return Api.get("General/Info", {
+        Authorization: "bearer " + getCookies("access_token"),
+    }).then((response) => {
+        if (response.status === 401) {
+            deleteCookie("access_token");
+        }
         return response.data;
     });
 };

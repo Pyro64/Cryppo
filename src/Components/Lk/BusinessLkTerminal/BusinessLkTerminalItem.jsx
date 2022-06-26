@@ -1,10 +1,13 @@
 import React from "react";
+import { userSlice } from "../../../Redux/user-reducer";
 import style from "./BusinessLkTerminal.module.scss";
 import BusinessLkTerminalLogin from "./BusinessLkTerminalModal/BusinessLkTerminalLogin";
 import BusinessLkTerminalName from "./BusinessLkTerminalModal/BusinessLkTerminalName";
 import BusinessLkTerminalPassword from "./BusinessLkTerminalModal/BusinessLkTerminalPassword";
+import { useDispatch } from "react-redux";
 
 export default function BusinessLkTerminalItem(props) {
+    const dispatch = useDispatch();
     return (
         <div
             className={
@@ -27,9 +30,11 @@ export default function BusinessLkTerminalItem(props) {
             </div>
             <div className={style.flex}>
                 <BusinessLkTerminalName
+                    id={props.id}
                     TerminalsChangeNamePostTC={props.TerminalsChangeNamePostTC}
                 />
                 <BusinessLkTerminalLogin
+                    id={props.id}
                     TerminalsChangeLoginPostTC={
                         props.TerminalsChangeLoginPostTC
                     }
@@ -42,7 +47,8 @@ export default function BusinessLkTerminalItem(props) {
                 <div
                     className={style.link}
                     onClick={() => {
-                        props.TerminalsDeletePostTC(props.id);
+                        //props.TerminalsDeletePostTC(props.id);
+                        dispatch(userSlice.actions.TerminalDelete(props.id));
                     }}
                 >
                     Удалить терминал

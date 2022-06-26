@@ -9,6 +9,7 @@ import * as SettingsApi from "../Api/SettingsApi";
 import * as TerminalsApi from "../Api/TerminalsApi";
 import * as GeneralApi from "../Api/GeneralApi";
 import { createSlice } from "@reduxjs/toolkit";
+import { act } from "react-dom/test-utils";
 
 let apiState = {
     supportedCryptoCurrencies: [
@@ -53,15 +54,6 @@ let apiState = {
     ],
 
     registerDate: "2022-06-08T10:36:37.973Z",
-    devices: [
-        {
-            id: 0,
-            name: "string",
-            ip: "string",
-            date: "2022-06-08T10:36:37.973Z",
-            location: "string",
-        },
-    ],
 
     supportedNotificationsLanguages: [
         {
@@ -165,17 +157,26 @@ let initialState = {
         ],
         entries: [
             {
-                ip: "string",
-                deviceId: "string",
-                location: "string",
-                deviceOs: "string",
-                status: 0,
-                date: "2022-06-08T10:36:37.973Z",
+                ip: "192.168.0.1",
+                deviceId: "0",
+                location: " / ",
+                deviceOs: "Windows NT 10.0",
+                status: 1,
+                date: "2022-06-26T09:13:35.15465Z",
+            },
+        ],
+        devices: [
+            {
+                id: 77,
+                name: "Windows NT 10.0",
+                ip: "192.168.0.1",
+                date: "2022-06-26T08:24:18.35106Z",
+                location: null,
             },
         ],
         terminals: [
             {
-                id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                id: "3fa85f64-5717-4562-b3fc-2c963f66afa5",
                 name: "Основной",
                 login: "string",
                 terminalId: "string",
@@ -191,7 +192,7 @@ let initialState = {
                 createDate: "2022-06-08T10:36:37.975Z",
             },
             {
-                id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                id: "3fa85f64-5717-4562-b3fc-2c963f66afa7",
                 name: "Костин",
                 login: "string",
                 terminalId: "string",
@@ -436,24 +437,59 @@ export const userSlice = createSlice({
             state.business.userInfo.notificationsSettings[action.payload.key] =
                 action.payload.value;
         },
+        // DeleteDevice(state, action) {
+        //     state.business.userInfo = action.payload.userInfo;
+        // },
         DeleteDevice(state, action) {
-            state.business.userInfo = action.payload.userInfo;
+            state.business.devices = state.business.devices.filter((item) => {
+                return item.date != action.payload;
+            });
         },
         //Terminals Actions
+        // TerminalAdd(state, action) {
+        //     state.business = action.payload;
+        // },
         TerminalAdd(state, action) {
-            state.business = action.payload;
+            state.business.terminals.push(action.payload);
         },
+        // TerminalChangeName(state, action) {
+        //     state.business = action.payload;
+        // },
         TerminalChangeName(state, action) {
-            state.business = action.payload;
+            state.business.terminals = state.business.terminals.filter(
+                (item) => {
+                    if (item.id == action.payload.id) {
+                        item.name = action.payload.name;
+                    }
+                    return item;
+                }
+            );
         },
+        // TerminalChangeLogin(state, action) {
+        //     state.business = action.payload;
+        // },
         TerminalChangeLogin(state, action) {
-            state.business = action.payload;
+            state.business.terminals = state.business.terminals.filter(
+                (item) => {
+                    if (item.id == action.payload.id) {
+                        item.login = action.payload.login;
+                    }
+                    return item;
+                }
+            );
         },
         TerminalChangePassword(state, action) {
             state.business = action.payload;
         },
+        // TerminalDelete(state, action) {
+        //     state.business = action.payload;
+        // },
         TerminalDelete(state, action) {
-            state.business = action.payload;
+            state.business.terminals = state.business.terminals.filter(
+                (item) => {
+                    return item.id != action.payload;
+                }
+            );
         },
     },
 });

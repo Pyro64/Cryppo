@@ -6,7 +6,11 @@ import close from "../../../../Images/icon/close.svg";
 import { Input, notification } from "antd";
 
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
+import { userSlice } from "../../../../Redux/user-reducer";
+import { useDispatch } from "react-redux";
+
 export default function BusinessLkTerminalAdd(props) {
+    const dispatch = useDispatch();
     const [name, setName] = useState("");
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
@@ -17,7 +21,19 @@ export default function BusinessLkTerminalAdd(props) {
         setOpen(!open);
     }
     const TerminalAdd = (e) => {
-        props.TerminalsAddPostTC(name, login, password, passwordConfirm);
+        e.preventDefault();
+        //props.TerminalsAddPostTC(name, login, password, passwordConfirm);
+        dispatch(
+            userSlice.actions.TerminalAdd({
+                id: `${new Date()}`,
+                name: name,
+                login: login,
+                terminalId: "string",
+                connected: false,
+                createDate: new Date().toISOString(),
+            })
+        );
+        setOpen(!open);
     };
     const openNotification = (e) => {
         e.preventDefault();

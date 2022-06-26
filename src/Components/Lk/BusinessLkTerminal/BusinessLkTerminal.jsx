@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BusinessLkTerminalItem from "./BusinessLkTerminalItem";
 import style from "./BusinessLkTerminal.module.scss";
 import BusinessLkTerminalAdd from "./BusinessLkTerminalModal/BusinessLkTerminalAdd";
 import icon from "../../../Images/icon/search.svg";
 export default function BusinessLkTerminal(props) {
-    const [value, setValue] = useState("");
+    // useEffect(() => {
+    //     props.GeneralInfoGetTC();
+    // }, []);
+    const [searchQuery, setSearchQuery] = useState("");
     const filterTranslation = props.terminals.filter((e) => {
-        return e.name.toLowerCase().includes(value.toLowerCase());
+        return e.name.toLowerCase().includes(searchQuery.toLowerCase());
     });
     let terminalItem = filterTranslation.map((e) => (
         <BusinessLkTerminalItem
@@ -32,7 +35,7 @@ export default function BusinessLkTerminal(props) {
                     <input
                         className={style.inputSearch}
                         placeholder={"Введите имя терминала"}
-                        onChange={(event) => setValue(event.target.value)}
+                        onChange={(event) => setSearchQuery(event.target.value)}
                     ></input>
                 </div>
                 <BusinessLkTerminalAdd
@@ -41,7 +44,7 @@ export default function BusinessLkTerminal(props) {
             </div>
             {terminalItem.length === 0 ? (
                 <div className="block">
-                    <div className={style.null}>Запрос не найден </div>
+                    <div className={style.null}>Терминалы отсутствуют </div>
                 </div>
             ) : (
                 <div className="block">{terminalItem}</div>
