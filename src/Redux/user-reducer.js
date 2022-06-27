@@ -369,7 +369,7 @@ let initialState = {
         ],
     },
     isLk: false,
-    isLogin: false,
+    isLogin: true,
 };
 
 export const userSlice = createSlice({
