@@ -46,3 +46,8 @@
     margin-right: 0;
   }
 }
+@media screen and(max-width:576px) {
+  .wrapper {
+    width: 100%;
+  }
+}

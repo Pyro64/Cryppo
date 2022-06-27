@@ -88,4 +88,24 @@
     flex-direction: column;
     align-items: center;
   }
+  .wrapper {
+    margin-bottom: 15px;
+  }
+  .mail {
+    margin-bottom: 10px;
+  }
+  .phone {
+    margin-bottom: 15px;
+  }
+  .icon {
+    margin-left: 15px;
+    margin-right: 15px;
+    img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  .flex {
+    padding-bottom: 30px;
+  }
 }

@@ -61,9 +61,9 @@ const StatisticCashItem = (props) => {
                 }}
             >
                 {props.disable ? (
-                    <CheckOutlined />
+                    <CloseOutlined />
                 ) : (
-                    <CloseOutlined twoToneColor="#eb2f96" />
+                    <CheckOutlined twoToneColor="#eb2f96" />
                 )}
             </div>
         </div>
