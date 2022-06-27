@@ -188,6 +188,24 @@ input[type="number"] {
 }
 .my-node-exit {
   opacity: 0;
+}.ant-pagination-item-link{
+  border:none !important;
+}
+
+.ant-pagination-item{
+  border:none !important;
+  a{
+    color:#6D6D6D !important;
+  }
+}
+.ant-pagination-item ,.ant-pagination-item-active {
+  background: linear-gradient(91.42deg, #2F69FF 0%, #BC2FFF 100%);
+border-radius: 30px;
+border:none !important;
+a{
+  color:#fff !important;
+
+}
 }
 .my-node-exit-done {
   opacity: 1;
@@ -387,9 +405,23 @@ a {
   max-height: 0;
   transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
 }
+
 @media screen and(max-width:992px) {
   .subtitle {
     width: 100%;
     text-align: center;
+  }
+}
+@media screen and(max-width:768px){
+  .flex{
+    flex-direction:column;
+    align-items:center;
+  }
+  .sidebar{
+    width:100%;
+    align-items:center
+  }
+  .content{
+    width:100%;
   }
 }

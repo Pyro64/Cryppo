@@ -54,6 +54,7 @@
 .bankText {
   @include fluid(font-size, 12px, 14px);
 }
+
 .status {
   display: flex;
   align-items: center;
@@ -65,7 +66,12 @@
   align-items: baseline;
   @include fluid(padding-left, 15px, 20px);
 }
-
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
 .current {
   display: flex;
   align-items: center;
@@ -137,7 +143,9 @@
   background: #2d2d2d;
   border-radius: 12px;
 }
-
+.none {
+  display: none;
+}
 .close {
   position: absolute;
   background: url("../../../Images/icon/close.svg") no-repeat;

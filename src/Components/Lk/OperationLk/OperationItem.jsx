@@ -6,10 +6,6 @@ import MyModal from "../../UI/MyModal/MyModal";
 export default function OperationItem(props) {
   let value = props;
 
-  function switchModal() {
-    props.openModal(!props.modal);
-    props.setModal(value);
-  }
   const [open, setOpen] = useState(false);
   function openModal() {
     setOpen(!open);

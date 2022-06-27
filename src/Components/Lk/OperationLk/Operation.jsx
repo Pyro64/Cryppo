@@ -66,18 +66,7 @@ export default function Operation(props) {
       <div className={style.inner}>{filterItem}</div>
       <div className={style.paginationContainer}>
         {props.pagination ? (
-          <Pagination
-            showTitle={false}
-            pageSizeOptions={[8, 20]}
-            defaultPageSize={8}
-            className={style.pagination}
-            onChange={changePage}
-            responsive={true}
-            showSizeChanger
-            onShowSizeChange={onShowSizeChange}
-            defaultCurrent={1}
-            total={props.operationList.length}
-          />
+          <Pagination defaultCurrent={1} total={props.operationList.length} />
         ) : (
           <div className={style.btnContainer}>
             <Btn className="btn" href="lk/history">

@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./OperationModal.module.scss";
 import icon from "../../../Images/payIcon/1.svg";
+import Btn from "../../UI/Btn/Btn";
+import MyModal from "../../UI/MyModal/MyModal";
+import OperationReceipt from "./OperationReceipt";
 export default function OperationModal(props) {
   function switchModal() {
     props.openModal(!props.modal);
   }
+  const [toggle, setToggle] = useState(false);
+  function openToggle() {
+    setToggle(!toggle);
+  }
+
   const dt = new Date(props.date);
   return (
     <div>
