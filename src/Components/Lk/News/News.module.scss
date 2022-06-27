@@ -12,8 +12,8 @@
   @include fluid(padding, 3px, 6px);
   border: 1px solid #2f69ff;
   border-radius: 13px;
-  @include fluid(width, 110px, 182px);
-  @include fluid(height, 110px, 182px);
+  @include fluid(width, 145px, 182px);
+  @include fluid(height, 145px, 182px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,5 +73,9 @@
   right: 0px;
   top: 10px;
 }
-@media screen and(max-width:768px) {
+@media screen and(max-width:992px) {
+  .item {
+    width: 115px;
+    height: 115px;
+  }
 }

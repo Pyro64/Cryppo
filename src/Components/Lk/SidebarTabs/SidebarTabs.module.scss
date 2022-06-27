@@ -57,8 +57,8 @@
   @include fluid(font-size, 10px, 12px);
 }
 .poveredIcon {
-  @include fluid(width, 20px, 35px);
-  @include fluid(height, 20px, 35px);
+  @include fluid(width, 30px, 35px);
+  @include fluid(height, 30px, 35px);
   object-fit: contain;
   margin-top: auto;
 }
