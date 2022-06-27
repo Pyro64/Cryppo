@@ -48,15 +48,15 @@ export default function OperationModalWallet(props) {
                     </div>
                     <div
                         style={{
-                            background: `${props.bankCardData.color}`,
+                            background: `${props.bankCardData[0].color}`,
                         }}
                         className={style.cardLine}
                     >
                         <div className={style.number}>
-                            {props.bankCardData.number}
+                            {props.bankCardData[0].number}
                         </div>
                         <img
-                            src={props.bankCardData.logo}
+                            src={props.bankCardData[0].logo}
                             className={style.logo}
                         ></img>
                     </div>
