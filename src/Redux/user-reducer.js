@@ -9,7 +9,6 @@ import * as SettingsApi from "../Api/SettingsApi";
 import * as TerminalsApi from "../Api/TerminalsApi";
 import * as GeneralApi from "../Api/GeneralApi";
 import { createSlice } from "@reduxjs/toolkit";
-import { act } from "react-dom/test-utils";
 
 let apiState = {
     supportedCryptoCurrencies: [

@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./StatisticCash.module.scss";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import DoughnutChart from "../DoughnutChart/DoughnutChart";
+import { useParams } from "react-router";
 
 const StatisticCash = (props) => {
+    const { category } = useParams();
+    const expenses = props.expenses.filter((e) => {
+        if (
+            props.filter &&
+            e.parentCategory != undefined &&
+            e.parentCategory == category
+        ) {
+            return e;
+        }
+        if (props.filter == false) {
+            if (e.parentCategory == undefined) return e;
+        }
+    });
     return (
         <div className={style.block}>
             <Tabs>
@@ -25,10 +39,10 @@ const StatisticCash = (props) => {
                     <DoughnutChart
                         operationType="expenses"
                         updateChart={props.updateChart}
-                        filter={true}
+                        filter={props.filter}
                         big={props.big}
                         isHover={props.isHover}
-                        operations={props.expenses}
+                        operations={expenses}
                         doughuntTextData={props.doughuntTextData}
                     />
                 </TabPanel>
@@ -36,7 +50,7 @@ const StatisticCash = (props) => {
                     <DoughnutChart
                         operationType="arrival"
                         updateChart={props.updateChart}
-                        filter={true}
+                        filter={props.filter}
                         isHover={props.isHover}
                         operations={props.arrival}
                         doughuntTextData={props.doughuntTextData}

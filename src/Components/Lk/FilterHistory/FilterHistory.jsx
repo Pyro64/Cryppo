@@ -37,10 +37,6 @@ export default function FilterHistory(props) {
                     defaultValue="allCoin"
                     onSelect={(value) => {
                         props.setCurrency(value);
-                        setUiContext({ ...uiContext, scrollable: true });
-                    }}
-                    onFocus={() => {
-                        setUiContext({ ...uiContext, scrollable: false });
                     }}
                 >
                     <Option

@@ -37,8 +37,8 @@ export default function CryppoLk(props) {
                 element={
                     <EventContainer
                         filter={true}
-                        expenses={props.tempExpenses}
-                        arrival={props.tempArrival}
+                        expenses={props.expenses}
+                        arrival={props.arrival}
                     />
                 }
             />
@@ -47,8 +47,8 @@ export default function CryppoLk(props) {
                 element={
                     <EventContainer
                         filter={true}
-                        expenses={props.tempExpenses}
-                        arrival={props.tempArrival}
+                        expenses={props.expenses}
+                        arrival={props.arrival}
                     />
                 }
             />

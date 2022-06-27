@@ -5,6 +5,9 @@ import DoughnutChart from "../DoughnutChart/DoughnutChart";
 import CompositionIndex from "../CompositionIndex/CompositionIndex";
 import StatisticIndex from "../../Landing/StatisticIndex/StatisticIndex";
 export default function LkStatistic(props) {
+    const expenses = props.expenses.filter((e) => {
+        if (e.parentCategory == undefined) return e;
+    });
     return (
         <div className="main container">
             <div className="flex ">
@@ -22,11 +25,11 @@ export default function LkStatistic(props) {
                     <SubtitleLk subtitle="Статистика" />
                     <div className="block">
                         <DoughnutChart
-                        operationType="expenses"
+                            operationType="expenses"
                             updateChart={props.updateChart}
                             filter={true}
                             isHover={props.isHover}
-                            operations={props.expenses}
+                            operations={expenses}
                             doughuntTextData={props.doughuntTextData}
                         />
                     </div>

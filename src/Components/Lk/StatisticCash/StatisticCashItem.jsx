@@ -8,7 +8,6 @@ import { doughuntSlice } from "../../../Redux/DoughuntReducer";
 const StatisticCashItem = (props) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    let child = props.childExpensesStatistics;
     const { category } = useParams();
 
     let url = `/cryppo/lk/event/${props.category}`;
@@ -16,12 +15,7 @@ const StatisticCashItem = (props) => {
         url = `/cryppo/lk/event/${category}/${props.category}`;
     }
     const foo = (e) => {
-        if (child !== undefined) {
-            dispatch(doughuntSlice.actions.UpdateChart(child));
-        }
-        dispatch(
-            doughuntSlice.actions.EditDefaultSearch(child[0].parentCategory)
-        );
+        dispatch(doughuntSlice.actions.EditDefaultSearch(props.parentCategory));
         navigate(url);
     };
     return (
