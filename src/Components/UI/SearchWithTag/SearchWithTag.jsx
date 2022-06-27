@@ -30,7 +30,7 @@ const SearchWithTag = (props) => {
     }
 
     const options = [];
-    if (props.expenses) {
+    if (props.expenses && !props.expenses[0].parentCategory) {
         props.expenses.forEach((item) => {
             options.push(item);
         });
@@ -46,7 +46,7 @@ const SearchWithTag = (props) => {
             mode="multiple"
             style={{ width: "100%" }}
             placeholder="Найдите любые события и операции"
-            defaultValue={props.defaultSearch}
+            defaultValue={props.defaultValue}
             optionLabelProp="label"
             onChange={(e) => handleChange(e)}
         >

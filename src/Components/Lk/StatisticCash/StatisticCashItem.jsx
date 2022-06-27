@@ -19,7 +19,9 @@ const StatisticCashItem = (props) => {
         if (child !== undefined) {
             dispatch(doughuntSlice.actions.UpdateChart(child));
         }
-        dispatch(doughuntSlice.actions.EditDefaultSearch(e));
+        dispatch(
+            doughuntSlice.actions.EditDefaultSearch(child[0].parentCategory)
+        );
         navigate(url);
     };
     return (
