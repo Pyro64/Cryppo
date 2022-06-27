@@ -5,11 +5,15 @@ export default function WalletSettingItem(props) {
     const [toggle, setToggle] = useState(props.active);
     return (
         <div className={style.line}>
-            <input type="checkbox" className={style.input} id={props.id} />
+            <input
+                type="checkbox"
+                className={style.input}
+                id={props.id}
+                value={props.active}
+            />
             <label
                 onClick={() => {
                     props.SetActiveCurrencyPostTC(props.currency);
-                    setToggle(!toggle);
                 }}
                 className={style.label}
                 htmlFor={props.id}
@@ -24,7 +28,7 @@ export default function WalletSettingItem(props) {
                 </div>
                 <div
                     className={
-                        toggle
+                        props.active
                             ? `${style.labelCheck}`
                             : `${style.labelCheck} ${style.check}`
                     }

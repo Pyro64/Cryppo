@@ -4,6 +4,7 @@ import {
     SetActiveCurrencyPostTC,
     DeleteDevicePostTC,
     SendNotificationsPostTC,
+    GeneralInfoGetTC,
 } from "../../../Redux/user-reducer";
 
 let mapStateToProps = (state) => {
@@ -28,6 +29,7 @@ const SettingLkContainer = connect(mapStateToProps, {
     SetActiveCurrencyPostTC,
     DeleteDevicePostTC,
     SendNotificationsPostTC,
+    GeneralInfoGetTC,
 })(SettingLk);
 
 export default SettingLkContainer;

@@ -76,13 +76,19 @@ export const ResetPasswordPost = (
         return response.data;
     });
 };
-export const SendDeviceConfirmationCodePost = () => {
-    return Api.post("Account/SendDeviceConfirmationCode", {
-        Authorization: "Bearer " + getCookies("access_token"),
-    }).then((response) => {
-        console.log(response.status);
-        return response.data;
-    });
+export const SendDeviceConfirmationCodePost = async () => {
+    const token = getCookies("access_token");
+    console.log(token);
+
+    const response = await Api.post(
+        "Account/SendDeviceConfirmationCode",
+        null,
+        {
+            authorization: "Bearer " + token,
+        }
+    );
+    console.log(response);
+    return response.data;
 };
 
 export const DeviceConfirmPost = (code) => {

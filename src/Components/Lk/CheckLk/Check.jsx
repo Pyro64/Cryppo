@@ -6,22 +6,27 @@ import CheckCardBlock from "./CheckCardBlock";
 import Btn from "./../../UI/Btn/Btn";
 import MyModal from "../../UI/MyModal/MyModal";
 import CheckModal from "./CheckModal";
+import three from "../../../Images/payIcon/3.svg";
 
 export default function Check(props) {
     const [open, setOpen] = useState(false);
     function openModal() {
         setOpen(!open);
     }
-    let elementCard = props.cardList.map((e) => (
-        <CheckItem
-            id={e.id}
-            key={e.id}
-            icon={e.icon}
-            text={e.text}
-            availability={e.availability}
-            prise={e.prise}
-        />
-    ));
+    let elementCard = props.balances.map((e) => {
+        if (e.active === true) {
+            return (
+                <CheckItem
+                    id={e.id}
+                    key={e.currency}
+                    icon={e.icon ?? three}
+                    currency={e.currency}
+                    amount={e.amount}
+                    amountInViewCurrency={e.amountInViewCurrency}
+                />
+            );
+        }
+    });
 
     return (
         <div className={style.containers}>

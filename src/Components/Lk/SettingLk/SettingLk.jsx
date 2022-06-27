@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router";
 import SettingLkMain from "./SettingLkMain";
 import GeneralSetting from "../GeneralSetting/GeneralSetting";
@@ -7,6 +7,9 @@ import Notification from "../Notification/Notification";
 import BusinessLkTerminalContainer from "../BusinessLkTerminal/BusinessLkTerminalContainer";
 
 export default function SettingLk(props) {
+    useEffect(() => {
+        props.GeneralInfoGetTC();
+    }, []);
     return (
         <Routes>
             <Route path="/" element={<SettingLkMain />} />

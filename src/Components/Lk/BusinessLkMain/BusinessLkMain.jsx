@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
 import Check from "../CheckLk/Check";
 import Operation from "../OperationLk/Operation";
@@ -6,17 +6,16 @@ import MyBar from "../../UI/MyBar/MyBar";
 import DoughnutChart from "../DoughnutChart/DoughnutChart";
 import SidebarTabs from "../SidebarTabs/SidebarTabs";
 const BusinessLkMain = (props) => {
+    useEffect(() => {
+        props.GeneralInfoGetTC();
+    }, []);
     return (
         <div className="main container">
             <div className="flex ">
                 <div className="sidebar">
                     <div className="sidebar__inner">
                         <SubtitleLk arrow={false} subtitle="Счета" />
-                        <Check
-                            isBankCard={false}
-                            cardList={props.cardList}
-                            currencyList={props.currencyList}
-                        />
+                        <Check isBankCard={false} balances={props.balances} />
                         <SidebarTabs tabs={props.tabs.addTerminal} />
                     </div>
                 </div>

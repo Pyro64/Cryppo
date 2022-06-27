@@ -9,28 +9,8 @@ import * as SettingsApi from "../Api/SettingsApi";
 import * as TerminalsApi from "../Api/TerminalsApi";
 import * as GeneralApi from "../Api/GeneralApi";
 import { createSlice } from "@reduxjs/toolkit";
-import { act } from "react-dom/test-utils";
 
 let apiState = {
-    supportedCryptoCurrencies: [
-        {
-            name: "string",
-            symbol: "string",
-            img: "string",
-            protocol: "string",
-            blockchain: "string",
-        },
-    ],
-    supportedViewCurrencies: [
-        {
-            name: "string",
-            symbol: "string",
-            img: "string",
-            protocol: "string",
-            blockchain: "string",
-        },
-    ],
-
     lastPayments: [
         {
             id: 0,
@@ -54,17 +34,10 @@ let apiState = {
     ],
 
     registerDate: "2022-06-08T10:36:37.973Z",
-
-    supportedNotificationsLanguages: [
-        {
-            name: "string",
-            value: "string",
-        },
-    ],
 };
 
 let initialState = {
-    business: {
+    businessApi: {
         supportedCryptoCurrencies: [
             {
                 name: "TRX",
@@ -255,7 +228,7 @@ let initialState = {
             },
         ],
     },
-    cryppo: {
+    cryppoApi: {
         accessToken: "",
         isLogin: true,
         router: "/cryppo",
@@ -368,8 +341,6 @@ let initialState = {
             },
         ],
     },
-    isLk: false,
-    isLogin: false,
 };
 
 export const userSlice = createSlice({

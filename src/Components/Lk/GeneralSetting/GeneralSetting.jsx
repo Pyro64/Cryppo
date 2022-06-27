@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import style from "./GeneralSetting.module.scss";
 import MailPasswordSetting from "./MailPasswordSetting";
 import WalletSetting from "./WalletSetting";
