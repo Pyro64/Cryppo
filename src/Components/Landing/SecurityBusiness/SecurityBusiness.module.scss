@@ -95,3 +95,12 @@
     width: 100%;
   }
 }
+@media screen and (max-width: 576px) {
+  .animate {
+    width: 320px;
+  }
+  .animateImg {
+    left: 38%;
+    top: 15%;
+  }
+}

@@ -1,5 +1,10 @@
-@import '../../../Style/Mixins.scss';
+@import "../../../Style/Mixins.scss";
 
 .wrapper {
-    width: 65%;
+  width: 65%;
+}
+@media screen and(max-width:768px) {
+  .wrapper {
+    width: 100%;
+  }
 }

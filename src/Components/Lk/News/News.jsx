@@ -25,8 +25,8 @@ const News = (props) => {
 
       <Swiper
         spaceBetween={25}
-        slidesPerView={4}
-        slidesPerGroup={4}
+        slidesPerView={2}
+        slidesPerGroup={2}
         navigation={{ nextEl: ".next", prevEl: ".prev", slidesPerGroup: 4 }}
         pagination={{
           type: "bullets",
@@ -34,7 +34,12 @@ const News = (props) => {
           el: ".dot",
           slidesPerGroup: 4,
         }}
+        breakpoints={{
+          420: { slidesPerView: 4, slidesPerGroup: 4 },
+          350: { slidesPerView: 3, slidesPerGroup: 3 },
+        }}
         className={style.swiper}
+        bre
         centeredSlides={false}
         modules={[Navigation, Pagination]}
       >

@@ -88,10 +88,19 @@
     align-items: center;
     justify-content: center;
   }
+  .parallax {
+    display: none;
+  }
 }
 @media screen and (max-width: 576px) {
   .block {
     padding: 5px;
+  }
+  .title {
+    margin-top: 20px;
+  }
+  .description {
+    font-size: 15px;
   }
   .item {
     width: 100%;
