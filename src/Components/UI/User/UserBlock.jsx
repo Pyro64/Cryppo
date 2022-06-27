@@ -23,7 +23,9 @@ const Userblock = (props) => {
                     onClick={props.onClose}
                 />
                 <NavLink
-                    onClick={() => dispatch(userSlice.actions.SetLk(true))}
+                    onClick={() =>
+                        dispatch(userSlice.actions.SetLk({ isLk: true }))
+                    }
                     to={`${props.routeLk}/lk`}
                     className={({ isActive }) =>
                         isActive

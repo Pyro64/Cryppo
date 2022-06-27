@@ -33,13 +33,13 @@ export default function CompositionIndexItem(props) {
                     className={style.activeBar}
                     style={{
                         width: `${props.percent}%`,
-                        backgroundColor: props.color ?? randomColor(),
+                        backgroundColor: props.color,
                     }}
                 ></div>
             </div>
             <div
                 className={style.percent}
-                style={{ backgroundColor: props.color ?? randomColor() }}
+                style={{ backgroundColor: props.color }}
             >
                 {props.percent}%
             </div>
