@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import style from "./Operation.module.scss";
 import Btn from "../../UI/Btn/Btn";
 import OperationInner from "./OperationInner";
@@ -69,9 +70,9 @@ export default function Operation(props) {
           <Pagination defaultCurrent={1} total={props.operationList.length} />
         ) : (
           <div className={style.btnContainer}>
-            <Btn className="btn" href="lk/history">
+            <NavLink className="btn" to="history">
               Все операции
-            </Btn>
+            </NavLink>
           </div>
         )}
       </div>
