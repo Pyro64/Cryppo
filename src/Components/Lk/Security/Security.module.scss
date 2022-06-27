@@ -194,3 +194,21 @@
   background-size: contain;
   cursor: pointer;
 }
+@media screen and(max-width:768px){
+  .container{
+    flex-direction:column;
+  }
+  .blockMin{
+    width:100%;
+    margin-bottom:20px;
+  }
+  .block{
+    width:100%;
+  }
+  .btnContainer{
+    width:100%;
+  }
+  .btn{
+    font-size:14px;
+  }
+}
