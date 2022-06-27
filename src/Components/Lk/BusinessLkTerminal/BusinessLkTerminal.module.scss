@@ -150,3 +150,13 @@
     border: none;
   }
 }
+@media screen and (max-width: 576px) {
+  .flex {
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .containerSearch {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
