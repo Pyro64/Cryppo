@@ -284,7 +284,10 @@ export const doughuntSlice = createSlice({
             });
         },
         EditDefaultSearch(state, action) {
-            state.defaultSearch = action.payload;
+            state.defaultSearch.push(action.payload);
+        },
+        GetCategories(state, action) {
+            return state;
         },
     },
 });
