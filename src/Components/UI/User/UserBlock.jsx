@@ -46,6 +46,7 @@ const Userblock = (props) => {
             </div>
 
             <MyDrawer
+                isBusiness={props.isBusiness}
                 visible={visible}
                 onClose={onClose}
                 img={props.img}

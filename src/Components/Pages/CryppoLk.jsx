@@ -8,9 +8,9 @@ import EventContainer from "../Lk/Events/EventContainer";
 import PageWork from "../Lk/PageWork/PageWork";
 
 export default function CryppoLk(props) {
-    // if (!props.isLogin) {
-    //     return <Navigate to={"/"} />;
-    // }
+    if (!props.isLogin) {
+        return <Navigate to={"/"} />;
+    }
     return (
         <Routes>
             <Route path="/" element={<CryppoLkMainContainer />} />
