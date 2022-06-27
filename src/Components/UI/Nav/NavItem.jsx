@@ -12,7 +12,6 @@ function NavItem(props) {
                     dispatch(
                         userSlice.actions.SetLk({
                             isLk: true,
-                            isBusiness: props.isBusiness,
                         })
                     )
                 }
@@ -32,8 +31,7 @@ function NavItem(props) {
                 onClick={() =>
                     dispatch(
                         userSlice.actions.SetLk({
-                            isLk: true,
-                            isBusiness: props.isBusiness,
+                            isLk: false,
                         })
                     )
                 }

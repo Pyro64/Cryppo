@@ -23,7 +23,13 @@ const Header = (props) => {
         <Scrollbtn id={e.id} key={e.id} name={e.name} to={e.to} />
     ));
     let scrollBtn = props.header.navData.map((e) => (
-        <NavItem id={e.id} key={e.id} name={e.name} href={e.href} />
+        <NavItem
+            id={e.id}
+            key={e.id}
+            name={e.name}
+            href={e.href}
+            linkToLk={true}
+        />
     ));
 
     if (width > 992) {
