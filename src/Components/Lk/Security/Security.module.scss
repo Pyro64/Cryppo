@@ -194,21 +194,29 @@
   background-size: contain;
   cursor: pointer;
 }
-@media screen and(max-width:768px){
-  .container{
-    flex-direction:column;
+@media screen and(max-width:768px) {
+  .container {
+    flex-direction: column;
   }
-  .blockMin{
-    width:100%;
-    margin-bottom:20px;
+  .blockMin {
+    width: 100%;
+    margin-bottom: 20px;
   }
-  .block{
-    width:100%;
+  .block {
+    width: 100%;
   }
-  .btnContainer{
-    width:100%;
+  .btnContainer {
+    width: 100%;
   }
-  .btn{
-    font-size:14px;
+  .btn {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .headerItem {
+    font-size: 8px;
+  }
+  .headerItemMax {
+    font-size: 8px;
   }
 }
