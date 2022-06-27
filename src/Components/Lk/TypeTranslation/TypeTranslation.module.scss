@@ -1,4 +1,4 @@
-@import '../../../Style/Mixins';
+@import "../../../Style/Mixins";
 
 .container {
   @include container;
@@ -39,4 +39,10 @@
 .title {
   @include fluid(font-size, 12px, 14px);
   color: #fff;
+}
+@media screen and(max-width:768px) {
+  .wrapper {
+    width: 43%;
+    margin-right: 0;
+  }
 }

@@ -27,8 +27,8 @@
 }
 .img {
   @include fluid(margin-right, 15px, 30px);
-  @include fluid(width, 20px, 60px);
-  @include fluid(height, 20px, 60px);
+  @include fluid(width, 60px, 80px);
+  @include fluid(height, 60px, 80px);
   border-radius: 50%;
   object-fit: cover;
 }

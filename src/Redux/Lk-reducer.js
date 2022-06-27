@@ -406,7 +406,7 @@ let initialState = {
         id: 1,
         icon: plus,
         title: "Купить индекс",
-        href: "",
+        href: "cryppo/lk/pageWork",
       },
     },
     operationModal: {
@@ -688,7 +688,7 @@ let initialState = {
         id: 1,
         icon: plus,
         title: "Купить индекс",
-        href: "pageWork",
+        href: "/cryppo/lk/pageWork",
       },
     },
     newsData: [

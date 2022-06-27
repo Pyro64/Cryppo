@@ -74,7 +74,11 @@ export default function Operation(props) {
                 {props.pagination ? (
                     <Pagination
                         defaultCurrent={1}
+                        defaultPageSize={8}
                         total={props.operationList.length}
+                        onShowSizeChange={onShowSizeChange}
+                        onChange={changePage}
+                        responsive={true}
                     />
                 ) : (
                     <div className={style.btnContainer}>

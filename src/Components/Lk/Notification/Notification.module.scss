@@ -115,6 +115,11 @@
   @include fluid(padding-top, 10px, 15px);
   @include fluid(padding-bottom, 10px, 15px);
   @include fluid(margin-top, 15px, 30px);
+  background-size: 100% 100%;
+  transition: 0.38s ease-in-out;
+  &:hover {
+    background-size: 150% 100%;
+  }
 }
 @media screen and(max-width:768px) {
   .content {
