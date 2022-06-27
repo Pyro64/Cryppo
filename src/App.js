@@ -11,7 +11,6 @@ import CryppoBusinessContainer from "./Components/Pages/CryppoBusinessContainer"
 import CryppoContainer from "./Components/Pages/CryppoContainer";
 import { ConfigProvider } from "antd";
 import { UIContextProvider } from "./Components/Context/UIContext";
-import { Scrollable } from "./Components/Context/UIProvider";
 
 function App() {
     const [theme, setTheme] = useState("light");

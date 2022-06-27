@@ -6,6 +6,9 @@ import MyBar from "../../UI/MyBar/MyBar";
 import DoughnutChart from "../DoughnutChart/DoughnutChart";
 import SidebarTabs from "../SidebarTabs/SidebarTabs";
 const BusinessLkMain = (props) => {
+    const expenses = props.expenses.filter((e) => {
+        if (e.parentCategory == undefined) return e;
+    });
     return (
         <div className="main container">
             <div className="flex ">
@@ -26,9 +29,9 @@ const BusinessLkMain = (props) => {
                         <DoughnutChart
                             operationType="expenses"
                             updateChart={props.updateChart}
-                            filter={true}
+                            filter={false}
                             isHover={props.isHover}
-                            operations={props.expenses}
+                            operations={expenses}
                             doughuntTextData={props.doughuntTextData}
                         />
                     </div>

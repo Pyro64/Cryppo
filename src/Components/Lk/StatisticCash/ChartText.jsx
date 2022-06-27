@@ -16,13 +16,23 @@ export default function ChartText(props) {
             classNames={{ ...classNames }}
             timeout={300}
         >
-            <div className={style.statisticBlock}>
-                <div className={style.statisticName}>{chartText.category}</div>
-                <div className={style.statisticCash}>{chartText.cash} USD</div>
-                <div className={style.statisticPercent}>
-                    {chartText.percent} %
+            {props.isEmpty == true ? (
+                <div className={style.statisticBlock}>
+                    <div>Нет данных</div>
                 </div>
-            </div>
+            ) : (
+                <div className={style.statisticBlock}>
+                    <div className={style.statisticName}>
+                        {chartText.category}
+                    </div>
+                    <div className={style.statisticCash}>
+                        {chartText.cash} USD
+                    </div>
+                    <div className={style.statisticPercent}>
+                        {chartText.percent} %
+                    </div>
+                </div>
+            )}
         </CSSTransition>
     );
 }
