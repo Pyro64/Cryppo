@@ -10,7 +10,7 @@ export default function Balance(props) {
     const expenses = props.expenses.filter((e) => {
         if (e.parentCategory == undefined) return e;
     });
-    const currencyList = props.currencyList.map((e) => {
+    const currencyList = props.balances.map((e) => {
         return {
             img: e.image ?? three,
             value: e.currency,
@@ -24,11 +24,7 @@ export default function Balance(props) {
                 <div className="sidebar">
                     <div className="sidebar__inner">
                         <SubtitleLk arrow={false} subtitle="Балансы" />
-                        <Check
-                            isBankCard={false}
-                            cardList={props.cardList}
-                            currencyList={currencyList}
-                        />
+                        <Check isBankCard={false} balances={currencyList} />
                     </div>
                 </div>
                 <div className="content">

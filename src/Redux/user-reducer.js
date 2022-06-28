@@ -9,35 +9,11 @@ import * as SettingsApi from "../Api/SettingsApi";
 import * as TerminalsApi from "../Api/TerminalsApi";
 import * as GeneralApi from "../Api/GeneralApi";
 import { createSlice } from "@reduxjs/toolkit";
-
-let apiState = {
-    lastPayments: [
-        {
-            id: 0,
-            address: "string",
-            status: "string",
-            currency: "string",
-            amount: 0,
-            date: "2022-06-08T10:36:37.972Z",
-            transactions: [
-                {
-                    amount: 0,
-                    hash: "string",
-                    fee: 0,
-                    link: "string",
-                    date: "2022-06-08T10:36:37.973Z",
-                },
-            ],
-            protocol: "string",
-            blockchain: "string",
-        },
-    ],
-
-    registerDate: "2022-06-08T10:36:37.973Z",
-};
+import getCookie, { deleteCookie, setCookie } from "../Utils/cookies";
+import { refreshAccesssToken } from "../Utils/tools";
 
 let initialState = {
-    businessApi: {
+    business: {
         supportedCryptoCurrencies: [
             {
                 name: "TRX",
@@ -78,6 +54,7 @@ let initialState = {
                 symbol: "€",
             },
         ],
+
         userInfo: {
             userId: "string",
             firstname: "string",
@@ -109,6 +86,27 @@ let initialState = {
                 notificationsChangeTg: true,
                 notificationsChangeEmail: true,
             },
+            lastPayments: [
+                {
+                    id: 1,
+                    address: "v6ftwfl50c1nmyqy5rqj4xys6e3xokux",
+                    status: "Success",
+                    currency: "BTC",
+                    amount: 12,
+                    date: "2022-06-17T11:49:19.708Z",
+                    transactions: [
+                        {
+                            amount: 12,
+                            hash: "d28rjm0ugbitq1cunkj6avt6iwwskxrq",
+                            fee: 0,
+                            link: "string",
+                            date: "2022-06-17T11:49:19.708Z",
+                        },
+                    ],
+                    protocol: "string",
+                    blockchain: "string",
+                },
+            ],
         },
         balances: [
             {
@@ -174,37 +172,8 @@ let initialState = {
             },
         ],
         notificationLanguage: "string",
+        registerDate: "2022-06-08T10:36:37.973Z",
         router: "/business",
-        cardList: [
-            {
-                id: 1,
-                icon: eth,
-                text: "ETH",
-                availability: "1.234 ETH",
-                prise: "9 656 $",
-            },
-            {
-                id: 2,
-                icon: icx,
-                text: "ICX",
-                availability: "78.444 ICX",
-                prise: "9 656 $",
-            },
-            {
-                id: 3,
-                icon: arde,
-                text: "ARDE",
-                availability: "17.235 ARDE",
-                prise: "9 656 $",
-            },
-            {
-                id: 4,
-                icon: usd,
-                text: "USD",
-                availability: "56.254 USD",
-                prise: "9 656 $",
-            },
-        ],
         supportedNotificationsLanguages: [
             {
                 name: "Русский",
@@ -213,18 +182,6 @@ let initialState = {
             {
                 name: "English",
                 value: "en",
-            },
-        ],
-        bankCardList: [
-            {
-                id: 1,
-                number: 5678,
-                logo: masterCard,
-            },
-            {
-                id: 2,
-                number: 7658,
-                logo: visa,
             },
         ],
     },
@@ -390,73 +347,59 @@ export const userSlice = createSlice({
             state.business.userInfo.notificationsSettings[action.payload.key] =
                 action.payload.value;
         },
-        // DeleteDevice(state, action) {
-        //     state.business.userInfo = action.payload.userInfo;
-        // },
         DeleteDevice(state, action) {
-            state.business.devices = state.business.devices.filter((item) => {
-                return item.date != action.payload;
-            });
+            state.business.userInfo = action.payload.userInfo;
         },
         //Terminals Actions
-        // TerminalAdd(state, action) {
-        //     state.business = action.payload;
-        // },
         TerminalAdd(state, action) {
-            state.business.terminals.push(action.payload);
+            state.business = action.payload;
         },
-        // TerminalChangeName(state, action) {
-        //     state.business = action.payload;
-        // },
         TerminalChangeName(state, action) {
-            state.business.terminals = state.business.terminals.filter(
-                (item) => {
-                    if (item.id == action.payload.id) {
-                        item.name = action.payload.name;
-                    }
-                    return item;
-                }
-            );
+            state.business = action.payload;
         },
-        // TerminalChangeLogin(state, action) {
-        //     state.business = action.payload;
-        // },
         TerminalChangeLogin(state, action) {
-            state.business.terminals = state.business.terminals.filter(
-                (item) => {
-                    if (item.id == action.payload.id) {
-                        item.login = action.payload.login;
-                    }
-                    return item;
-                }
-            );
+            state.business = action.payload;
         },
         TerminalChangePassword(state, action) {
             state.business = action.payload;
         },
-        // TerminalDelete(state, action) {
-        //     state.business = action.payload;
-        // },
         TerminalDelete(state, action) {
-            state.business.terminals = state.business.terminals.filter(
-                (item) => {
-                    return item.id != action.payload;
-                }
-            );
+            state.business = action.payload;
         },
     },
 });
 
-export const LoginBusinessPostTC = async (LoginBusinessRequest) => {
+export const LoginBusinessPostTC = (LoginBusinessRequest) => {
     return async (dispatch) => {
         const loginResponse = await AccountApi.LoginPost(LoginBusinessRequest);
+        const accessTokenExpire = new Date(
+            loginResponse.data.accessTokenExpire
+        );
+        const timezoneOffset =
+            (accessTokenExpire.getTimezoneOffset() / 60) * -1;
+
+        let hours = accessTokenExpire.getUTCHours();
+        hours = hours + timezoneOffset;
+        accessTokenExpire.setHours(hours);
+        setCookie(
+            "business_token",
+            loginResponse.data.accessToken,
+            accessTokenExpire,
+            "/business"
+        );
+        setCookie(
+            "business_refreshToken",
+            loginResponse.data.refreshToken,
+            loginResponse.data.refreshTokenExpire,
+            "/business"
+        );
         console.log(loginResponse);
         const sendDeviceConfirmationCode =
             await AccountApi.SendDeviceConfirmationCodePost();
         console.log(sendDeviceConfirmationCode);
         const deviceConfirm = await AccountApi.DeviceConfirmPost();
         console.log(deviceConfirm);
-        dispatch(userSlice.actions.SetInfo());
+        dispatch(userSlice.actions.SetInfo({}));
     };
 };
 
@@ -487,16 +430,16 @@ export const RegistrationWalletPostTC = (email, password, company) => {
 //SETTINGS ACTIONS
 
 export const SetActiveCurrencyPostTC = (currency) => {
-    return (dispatch) => {
-        SettingsApi.SetActiveCurrencyPost(currency)
-            .then((data) => {
-                let value = JSON.parse(JSON.stringify(data));
-                dispatch(userSlice.actions.SetActiveCurrency(value.balances));
-            })
-            .catch((response) => {
-                console.log(response);
-                console.log("error");
-            });
+    return async (dispatch) => {
+        const response = await SettingsApi.SetActiveCurrencyPost(currency);
+        if (response.status === 200) {
+            dispatch(
+                userSlice.actions.SetActiveCurrency(response.data.balances)
+            );
+        } else {
+            console.log(response);
+            console.log("error");
+        }
     };
 };
 
@@ -745,43 +688,43 @@ export const TerminalsChangePasswordPostTC = (
     password,
     id
 ) => {
-    return (dispatch) => {
-        TerminalsApi.ChangePasswordPost(passwordConfirm, password, id)
-            .then((data) => {
-                let value = JSON.parse(JSON.stringify(data));
-                dispatch(userSlice.actions.TerminalChangePassword(value));
-            })
-            .catch((response) => {
-                console.log(response);
-                console.log("error");
-            });
+    return async (dispatch) => {
+        const response = await TerminalsApi.ChangePasswordPost(
+            passwordConfirm,
+            password,
+            id
+        );
+        if (response.status === 200) {
+            dispatch(userSlice.actions.TerminalChangePassword(response.data));
+        } else {
+            console.log(response);
+            console.log("error");
+        }
     };
 };
 export const TerminalsDeletePostTC = (id) => {
-    return (dispatch) => {
-        TerminalsApi.DeletePost(id)
-            .then((data) => {
-                let value = JSON.parse(JSON.stringify(data));
-                dispatch(userSlice.actions.TerminalDelete(value));
-            })
-            .catch((response) => {
-                console.log(response);
-                console.log("error");
-            });
+    return async (dispatch) => {
+        const response = await TerminalsApi.DeletePost(id);
+        if (response.status === 200) {
+            dispatch(userSlice.actions.TerminalDelete(response.data));
+        } else {
+            console.log(response);
+            console.log("error");
+        }
     };
 };
 //GENERAL THUNK
 export const GeneralInfoGetTC = () => {
-    return (dispatch) => {
-        GeneralApi.InfoGet()
-            .then((data) => {
-                let value = JSON.parse(JSON.stringify(data));
-                dispatch(userSlice.actions.SetInfo(value));
-            })
-            .catch((response) => {
-                console.log(response);
-                console.log("error");
-            });
+    return async (dispatch) => {
+        let response = await GeneralApi.InfoGet();
+        if (response.status === 401) {
+            console.log(response);
+            await refreshAccesssToken();
+            response = await GeneralApi.InfoGet();
+            dispatch(userSlice.actions.SetInfo(response.data));
+        } else {
+            dispatch(userSlice.actions.SetInfo(response.data));
+        }
     };
 };
 export default userSlice.reducer;

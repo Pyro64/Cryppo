@@ -13,8 +13,7 @@ const { Option } = Select;
 
 export default function FilterHistory(props) {
     const [uiContext, setUiContext] = useContext(UIContext);
-    console.log(uiContext);
-    let option = props.currencyList.map((e) => (
+    let option = props.balances.map((e) => (
         <Option
             className={style.option}
             value={e.currency}

@@ -12,10 +12,10 @@ export default function User(props) {
     const url = uiContext.isBusiness ? "entrance" : "/entrance";
     return (
         <div>
-            {props.isLogin ? (
+            {token ? (
                 <Userblock
-                    img={props.user.img}
-                    name={props.user.name}
+                    photo={props.userInfo.photo}
+                    firstname={props.userInfo.firstname}
                     login={props.login}
                     routeLk={props.routeLk}
                     card={props.card}

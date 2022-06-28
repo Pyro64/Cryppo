@@ -19,6 +19,7 @@ let mapStateToProps = (state) => {
         arrival: state.doughunt.arrival,
         paymentList: state.payments.business,
         balances: state.user.business.balances,
+        lastPayments: state.user.business.userInfo.lastPayments,
     };
 };
 

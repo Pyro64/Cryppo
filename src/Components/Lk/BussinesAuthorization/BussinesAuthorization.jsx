@@ -19,16 +19,14 @@ const BussinesAuthorization = (props) => {
             navigator.userAgent.indexOf(";")
         );
         let deviceIp = "192.168.0.1";
-        props
-            .LoginBusinessPostTC({
-                email,
-                password,
-                twoFactorCode: null,
-                deviceId,
-                deviceOs,
-                deviceIp,
-            })
-            .then((data) => console.log(data));
+        props.LoginBusinessPostTC({
+            email,
+            password,
+            twoFactorCode: null,
+            deviceId,
+            deviceOs,
+            deviceIp,
+        });
     };
     return (
         <div className="main">

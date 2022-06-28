@@ -50,9 +50,8 @@ const Header = (props) => {
                         <Nav />
                         {props.isEntrance !== false ? (
                             <User
-                                user={props.user}
+                                userInfo={props.userInfo}
                                 isBusiness={props.isBusiness}
-                                isLogin={props.isLogin}
                                 card={props.card}
                                 alert={props.alert}
                                 removeAlert={props.removeAlert}
@@ -110,7 +109,7 @@ const Header = (props) => {
                             <div className={style.mobileBlock}>
                                 {props.isEntrance !== false ? (
                                     <User
-                                        user={props.user}
+                                        userInfo={props.userInfo}
                                         card={props.card}
                                         alert={props.alert}
                                         removeAlert={props.removeAlert}

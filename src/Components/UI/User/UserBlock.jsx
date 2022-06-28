@@ -45,8 +45,8 @@ const Userblock = (props) => {
             <MyDrawer
                 visible={visible}
                 onClose={onClose}
-                img={props.img}
-                name={props.name}
+                photo={props.photo}
+                firstname={props.firstname}
                 login={props.login}
                 card={props.card}
                 alert={props.alert}

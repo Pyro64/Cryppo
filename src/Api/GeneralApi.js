@@ -1,13 +1,6 @@
-import { Api } from "./Api";
-import getCookies, { deleteCookie } from "../Utils/cookies";
+import axios from "axios";
 
-export const InfoGet = () => {
-    return Api.get("General/Info", {
-        Authorization: "bearer " + getCookies("business_token"),
-    }).then((response) => {
-        if (response.status === 401) {
-            deleteCookie("business_token");
-        }
-        return response.data;
-    });
+export const InfoGet = async () => {
+    const response = await axios.get("General/Info");
+    return response;
 };

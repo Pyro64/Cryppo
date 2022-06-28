@@ -1,28 +1,19 @@
-import { Api } from "./Api";
-import { deleteCookie, setCookie } from "../Utils/cookies";
+import axios from "axios";
 
 export const LoginPost = async (LoginBusinessRequest) => {
-    const response = await Api.post("Account/Login", LoginBusinessRequest);
-    deleteCookie("business_token");
-    setCookie(
-        "business_token",
-        response.data.accessToken,
-        response.data.accessTokenExpire,
-        "/business"
-    );
-    return response.data;
+    const response = await axios.post("Account/Login", LoginBusinessRequest);
+    return response;
 };
 
 export const RefreshTokenPost = async (token) => {
-    const response = await Api.post("Account/RefreshToken", {
+    const response = await axios.post("Account/RefreshToken", {
         token,
     });
-    document.cookie = "business_token=" + response.data.accessToken;
-    return response.data;
+    return response;
 };
 
 export const RegisterPost = async (email, password, company) => {
-    const response = await Api.post("Account/Register", {
+    const response = await axios.post("Account/Register", {
         email,
         password,
         company,
@@ -31,7 +22,7 @@ export const RegisterPost = async (email, password, company) => {
 };
 
 export const ConfirmEmailPost = async (email, code) => {
-    const response = await Api.post("Account/ConfirmEmail", {
+    const response = await axios.post("Account/ConfirmEmail", {
         email,
         code,
     });
@@ -39,7 +30,7 @@ export const ConfirmEmailPost = async (email, code) => {
 };
 
 export const ForgotPasswordPost = async (email) => {
-    const response = await Api.post("Account/ForgotPassword", {
+    const response = await axios.post("Account/ForgotPassword", {
         email,
     });
     return response.data;
@@ -52,7 +43,7 @@ export const ResetPasswordPost = async (
     newPassword,
     confirmPassword
 ) => {
-    const response = await Api.post("Account/ResetPassword", {
+    const response = await axios.post("Account/ResetPassword", {
         email,
         resetPasswordCode,
         resetPasswordToken,
@@ -62,13 +53,13 @@ export const ResetPasswordPost = async (
     return response.data;
 };
 export const SendDeviceConfirmationCodePost = async () => {
-    const response = await Api.post("Account/SendDeviceConfirmationCode");
+    const response = await axios.post("Account/SendDeviceConfirmationCode");
     console.log(response);
     return response.data;
 };
 
 export const DeviceConfirmPost = async (code) => {
-    const response = Api.post("Account/DeviceConfirm", {
+    const response = axios.post("Account/DeviceConfirm", {
         code: "1111",
     });
     console.log(response.status);
@@ -76,6 +67,6 @@ export const DeviceConfirmPost = async (code) => {
 };
 
 export const BalanceGet = async () => {
-    const response = await Api.get("Balance/All");
+    const response = await axios.get("Balance/All");
     return response.data;
 };

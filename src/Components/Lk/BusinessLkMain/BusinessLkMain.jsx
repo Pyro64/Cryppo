@@ -1,12 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
 import Check from "../CheckLk/Check";
 import Operation from "../OperationLk/Operation";
 import MyBar from "../../UI/MyBar/MyBar";
 import DoughnutChart from "../DoughnutChart/DoughnutChart";
 import SidebarTabs from "../SidebarTabs/SidebarTabs";
+import { UIContext } from "../../Context/UIContext";
 const BusinessLkMain = (props) => {
+    const [uiContext, setUiContext] = useContext(UIContext);
     useEffect(() => {
+        setUiContext({ ...uiContext, isLk: true });
         props.GeneralInfoGetTC();
     }, []);
     const expenses = props.expenses.filter((e) => {
@@ -46,9 +49,7 @@ const BusinessLkMain = (props) => {
 
                     <SubtitleLk arrow={true} subtitle="Последние операции" />
                     <Operation
-                        PaymentsPostTC={props.PaymentsPostTC}
-                        paymentList={props.paymentList}
-                        operationList={props.operationList}
+                        operationList={props.lastPayments}
                         setModal={props.setModal}
                         operationModal={props.operationModal}
                         isModal={props.isModal}

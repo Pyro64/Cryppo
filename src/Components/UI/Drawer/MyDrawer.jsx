@@ -68,12 +68,12 @@ export default function MyDrawer(props) {
             </div>
             <div className={style.block}>
                 <img
-                    src={props.img ?? avatar}
+                    src={props.photo ?? avatar}
                     className={style.img}
                     alt="avatar"
                 />
                 <div>
-                    <p className={style.name}>{props.name}</p>
+                    <p className={style.name}>{props.firstname}</p>
                     <button onClick={removeLk} className={style.out}>
                         выйти
                     </button>

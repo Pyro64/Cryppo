@@ -1,68 +1,58 @@
-import { Api } from "./Api";
+import axios from "axios";
 import getCookies from "../Utils/cookies";
 
 export const AddPost = (name, login, password, passwordConfirm) => {
-    return Api.post(
-        "Terminals/add",
-        {
+    return axios
+        .post("Terminals/add", {
             name,
             login,
             password,
             passwordConfirm,
-        },
-        { Authorization: "bearer " + getCookies("business_token") }
-    ).then((response) => {
-        return response.data;
-    });
+        })
+        .then((response) => {
+            return response.data;
+        });
 };
 
 export const ChangeNamePost = (name, id) => {
-    return Api.post(
-        "Terminals/ChangeName",
-        {
+    return axios
+        .post("Terminals/ChangeName", {
             name,
             id,
-        },
-        { Authorization: "bearer " + getCookies("business_token") }
-    ).then((response) => {
-        return response.data;
-    });
+        })
+        .then((response) => {
+            return response.data;
+        });
 };
 
 export const ChangeLoginPost = (login, id) => {
-    return Api.post(
-        "Terminals/ChangeLogin",
-        {
+    return axios
+        .post("Terminals/ChangeLogin", {
             login,
             id,
-        },
-        { Authorization: "bearer " + getCookies("business_token") }
-    ).then((response) => {
-        return response.data;
-    });
+        })
+        .then((response) => {
+            return response.data;
+        });
 };
 
 export const ChangePasswordPost = (passwordConfirm, password, id) => {
-    return Api.post(
-        "Terminals/ChangePassword",
-        {
+    return axios
+        .post("Terminals/ChangePassword", {
             passwordConfirm,
             password,
             id,
-        },
-        { Authorization: "bearer " + getCookies("business_token") }
-    ).then((response) => {
-        return response.data;
-    });
+        })
+        .then((response) => {
+            return response.data;
+        });
 };
 export const DeletePost = (id) => {
-    return Api.post(
-        "Terminals/Delete",
-        {
+    return axios
+        .post("Terminals/Delete", {
             id,
-        },
-        { Authorization: "bearer " + getCookies("business_token") }
-    ).then((response) => {
-        return response.data;
-    });
+        })
+        .then((response) => {
+            return response.data;
+        });
 };

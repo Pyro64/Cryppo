@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router";
 import BalanceContainer from "../Lk/Balance/BalanceContainer";
 import BusinessLkHistoryContainer from "../Lk/BusinessLkHistory/BusinessLkHistoryContainer";
@@ -7,11 +7,10 @@ import PageWork from "../Lk/PageWork/PageWork";
 import SettingLkContainer from "../Lk/SettingLk/SettingLkContainer";
 import SupportLkContainer from "../Lk/SupportLk/SupportLkContainer";
 import BusinessLkMainContainer from "./../Lk/BusinessLkMain/BusinessLkMainContainer";
-import getCookies, { deleteCookie } from "../../Utils/cookies";
+import getCookies from "../../Utils/cookies";
 
 const BusinessLk = (props) => {
-    const token = getCookies("business_token");
-    if (!token) {
+    if (!getCookies("business_token")) {
         return <Navigate to={"/business"} />;
     }
     return (

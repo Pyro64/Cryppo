@@ -18,7 +18,7 @@ export default function CryppoBusiness(props) {
     return (
         <div className="page">
             <Header
-                user={props.user}
+                userInfo={props.userInfo}
                 isBusiness={props.isBusiness}
                 isLogin={props.isLogin}
                 header={props.header}

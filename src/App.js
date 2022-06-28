@@ -11,6 +11,18 @@ import CryppoBusinessContainer from "./Components/Pages/CryppoBusinessContainer"
 import CryppoContainer from "./Components/Pages/CryppoContainer";
 import { ConfigProvider } from "antd";
 import { UIContextProvider } from "./Components/Context/UIContext";
+import axios from "axios";
+import getCookies from "./Utils/cookies";
+axios.interceptors.request.use(
+    (config) => {
+        const token = getCookies("business_token");
+        const auth = token ? `Bearer ${token}` : "";
+        config.headers.common["Authorization"] = auth;
+        config.baseURL = "https://b.cryppowallet.com/";
+        return config;
+    },
+    (error) => Promise.reject(error)
+);
 
 function App() {
     const [theme, setTheme] = useState("light");

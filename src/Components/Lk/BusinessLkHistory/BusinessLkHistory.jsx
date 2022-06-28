@@ -33,7 +33,7 @@ export default function BusinessLkHistory(props) {
                             setWalletAddress={setWalletAddress}
                             setDateRange={setDateRange}
                             walletAddress={walletAddress}
-                            currencyList={props.currencyList}
+                            balances={props.balances}
                             PaymentsPostTC={props.PaymentsPostTC}
                         />
                     </div>

@@ -1,16 +1,23 @@
-import {Api} from "./Api"
+import axios from "axios";
 
 export const AddTickerPost = (subject, message) => {
-    return Api.put("Support/AddTicker", {
-        subject, message
-    }).then((response) => {
-        return response.data;
-    });
+    return axios
+        .put("Support/AddTicker", {
+            subject,
+            message,
+        })
+        .then((response) => {
+            return response.data;
+        });
 };
 export const ChartPost = (from, to, period) => {
-    return Api.post("Support/Chart", {
-        from, to, period
-    }).then((response) => {
-        return response.data;
-    });
+    return axios
+        .post("Support/Chart", {
+            from,
+            to,
+            period,
+        })
+        .then((response) => {
+            return response.data;
+        });
 };
