@@ -71,6 +71,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  @include fluid(margin-bottom, 10px, 20px);
 }
 .current {
   display: flex;
@@ -139,6 +140,18 @@
   @include fluid(padding-top, 30px, 60px);
   @include fluid(padding-left, 35px, 70px);
   @include fluid(padding-right, 35px, 70px);
+  @include fluid(padding-bottom, 30px, 60px);
+  background: #2d2d2d;
+  border-radius: 12px;
+}
+.wrapperBusiness {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @include fluid(padding-top, 30px, 60px);
+  @include fluid(padding-left, 15px, 30px);
+  @include fluid(padding-right, 15px, 30px);
   @include fluid(padding-bottom, 30px, 60px);
   background: #2d2d2d;
   border-radius: 12px;

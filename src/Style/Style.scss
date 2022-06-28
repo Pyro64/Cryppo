@@ -197,7 +197,11 @@ input[type="number"] {
         color: #6d6d6d !important;
     }
 }
-.ant-pagination-item,
+.ant-pagination-item {
+    a {
+      color: #6d6d6d !important;
+    }
+  }
 .ant-pagination-item-active {
     background: linear-gradient(91.42deg, #2f69ff 0%, #bc2fff 100%);
     border-radius: 30px;
@@ -210,6 +214,13 @@ input[type="number"] {
     opacity: 1;
     transition: opacity 1000ms;
 }
+.exit {
+    opacity: 1;
+  }
+  .exit-active {
+    opacity: 0;
+    transition: opacity .38s;
+  }
 
 .ReactModal__Overlay {
     opacity: 0;
@@ -382,6 +393,9 @@ a {
             background: #6d6d6d;
         }
     }
+}
+.terminal{
+    transition:.38s ease-in-out;
 }
 .swiper-wrapper {
     @include fluid(padding-top, 7px, 10px);
