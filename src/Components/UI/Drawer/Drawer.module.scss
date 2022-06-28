@@ -78,6 +78,9 @@
     }
   }
 }
+.linkMobile {
+  display: none;
+}
 .active {
   &::before {
     width: 100%;
@@ -100,5 +103,10 @@
   transition: 0.38s ease-in-out;
   &:hover {
     opacity: 1;
+  }
+}
+@media screen and(max-width:992px) {
+  .linkMobile {
+    display: block;
   }
 }
