@@ -12,7 +12,7 @@ const Header = (props) => {
   const [burger, setBurger] = useState(false);
   const { width } = useWindowSize();
   const onClose = () => {
-    setBurger(false);
+    setBurger(!burger);
   };
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -92,11 +92,34 @@ const Header = (props) => {
               placement="left"
               bodyStyle={{ padding: "0px" }}
             >
+              <div className={style.title}>
+                <div className={style.titleText}>Навигация</div>
+                <div
+                  className={style.titleIcon}
+                  onClick={() => {
+                    onClose();
+                  }}
+                ></div>
+              </div>
               <div className={style.mobileBlock}>
                 {props.isLk ? (
-                  <div className={style.item}>{scrollBtn}</div>
+                  <div
+                    className={style.item}
+                    onClick={() => {
+                      onClose();
+                    }}
+                  >
+                    {scrollBtn}
+                  </div>
                 ) : (
-                  <div className={style.item}>{linkBtn}</div>
+                  <div
+                    className={style.item}
+                    onClick={() => {
+                      onClose();
+                    }}
+                  >
+                    {linkBtn}
+                  </div>
                 )}
               </div>
             </Drawer>

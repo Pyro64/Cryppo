@@ -134,8 +134,11 @@
   }
   .pushName {
     width: 100%;
+    text-align: center;
   }
   .pushItem {
     width: 100%;
+    justify-content: center;
+    padding-right: 0;
   }
 }

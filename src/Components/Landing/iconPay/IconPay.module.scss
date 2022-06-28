@@ -49,3 +49,10 @@
     }
   }
 }
+@media screen and (max-width: 576px) {
+  .block {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

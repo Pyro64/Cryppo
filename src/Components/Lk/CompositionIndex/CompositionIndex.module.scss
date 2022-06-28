@@ -83,3 +83,29 @@
   justify-content: end;
   align-items: flex-end;
 }
+@media screen and (max-width: 992px) {
+  .wrapperIndex {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .index {
+    width: 80%;
+  }
+  .bar {
+    width: 120px;
+  }
+}
+@media screen and(max-width:768px) {
+  .index {
+    width: 100%;
+  }
+  .bar {
+    width: 140px;
+  }
+}
+@media screen and(max-width:576px) {
+  .bar {
+    width: 85px;
+  }
+}

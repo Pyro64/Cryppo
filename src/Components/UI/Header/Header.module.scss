@@ -206,13 +206,37 @@
 
   .item {
     flex-direction: column;
+    .link {
+      margin-top: 20px;
+      margin-right: 0;
+    }
   }
   .mobileBlock {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .link {
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #6d6d6d;
+  }
+  .titleText {
+    text-align: center;
+    font-size: 18px;
+    text-align: center;
+  }
+  .titleIcon {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    background: url("../../../Images/icon/close.svg") no-repeat;
+    width: 15px;
+    height: 15px;
+    background-size: contain;
   }
 }

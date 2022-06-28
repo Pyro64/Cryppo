@@ -84,6 +84,7 @@ export default function MyDrawer(props) {
         </NavLink>
         <NavLink
           to="/business/lk/support"
+          onClick={props.onClose}
           className={({ isActive }) =>
             isActive ? `${style.link} ${style.active}` : `${style.link}`
           }
@@ -92,6 +93,7 @@ export default function MyDrawer(props) {
         </NavLink>
         <NavLink
           to="/business/lk/setting"
+          onClick={props.onClose}
           className={({ isActive }) =>
             isActive ? `${style.link} ${style.active}` : `${style.link}`
           }
