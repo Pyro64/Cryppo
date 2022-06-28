@@ -8,8 +8,6 @@ let mapStateToProps = (state) => {
     return {
         revenue: state.LK.business.revenue,
         tabs: state.lk.business.tabsData,
-        cardList: state.user.business.cardList,
-        bankCardList: state.user.business.bankCardList,
         operationList: state.operation.business.operationList,
         operationModal: state.lk.business.operationModal,
         isModal: state.lk.business.isModal,

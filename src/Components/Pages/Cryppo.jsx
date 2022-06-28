@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Route, Routes } from "react-router";
 import FooterContainer from "../UI/Footer/FooterContainer";
 import Header from "../UI/Header/Header";
@@ -8,13 +8,10 @@ import CryppoRegistry from "../Lk/CryppoRegistry/CryppoRegistry";
 import CryppoLanding from "./CryppoLanding";
 
 export default function Cryppo(props) {
-    const uiContext = useContext();
-    console.log(uiContext);
     return (
         <div className="page">
             <Header
                 user={props.user}
-                isLk={props.isLk}
                 isLogin={props.isLogin}
                 SetLk={props.SetLk}
                 routeLk={props.routeLk}

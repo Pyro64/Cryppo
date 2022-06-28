@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Logo from "../Logo/Logo";
 import Nav from "../Nav/Nav";
 import NavItem from "../Nav/NavItem";
@@ -7,7 +7,9 @@ import User from "../User/User";
 import style from "./Header.module.scss";
 import { Drawer } from "antd";
 import { useWindowSize } from "react-use";
+import { UIContext } from "../../Context/UIContext";
 const Header = (props) => {
+    const [uiContext, setUiContext] = useContext(UIContext);
     const [scroll, setScroll] = useState(false);
     const [burger, setBurger] = useState(false);
     const { width } = useWindowSize();
@@ -45,13 +47,12 @@ const Header = (props) => {
                     <div className={style.block}>
                         <Logo logo={props.header.route.logo} />
 
-                        <Nav isLk={props.isLk} />
+                        <Nav />
                         {props.isEntrance !== false ? (
                             <User
                                 user={props.user}
                                 isBusiness={props.isBusiness}
                                 isLogin={props.isLogin}
-                                isLk={props.isLk}
                                 card={props.card}
                                 alert={props.alert}
                                 removeAlert={props.removeAlert}
@@ -72,7 +73,7 @@ const Header = (props) => {
                             <span></span>
                         </div>
                     </div>
-                    {props.isLk ? (
+                    {uiContext.isLk ? (
                         <div
                             className={
                                 burger
@@ -110,9 +111,6 @@ const Header = (props) => {
                                 {props.isEntrance !== false ? (
                                     <User
                                         user={props.user}
-                                        isLogin={props.isLogin}
-                                        SetLk={props.SetLk}
-                                        isLk={props.isLk}
                                         card={props.card}
                                         alert={props.alert}
                                         removeAlert={props.removeAlert}
@@ -121,8 +119,8 @@ const Header = (props) => {
                                         theme={props.theme}
                                     />
                                 ) : null}
-                                <Nav isLk={props.isLk} />
-                                {props.isLk ? (
+                                <Nav />
+                                {uiContext.isLk ? (
                                     <div className={style.item}>
                                         {scrollBtn}
                                     </div>

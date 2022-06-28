@@ -347,24 +347,6 @@ export const userSlice = createSlice({
     name: "user",
     initialState,
     reducers: {
-        LoginBusiness(state) {
-            state.isLogin = true;
-            state.isLk = true;
-        },
-        LoginCryppo(state, action) {
-            state.cryppo.isLogin = true;
-            state.cryppo.accessToken = action.payload;
-            state.isLk = true;
-        },
-        SetLk(state, action) {
-            state.isLk = action.payload.isLk;
-        },
-        LogoutCryppo(state) {
-            state.isLogin = false;
-        },
-        LogoutBusiness(state) {
-            state.isLogin = false;
-        },
         SetInfo(state, action) {
             state.business = action.payload;
         },
@@ -465,44 +447,22 @@ export const userSlice = createSlice({
     },
 });
 
-export const LoginBusinessPostTC = (
-    email,
-    password,
-    twoFactorCode,
-    deviceId,
-    deviceOs,
-    deviceIp
-) => {
+export const LoginBusinessPostTC = async (LoginBusinessRequest) => {
     return async (dispatch) => {
-        const loginResponse = await AccountApi.LoginPost(
-            email,
-            password,
-            twoFactorCode,
-            deviceId,
-            deviceOs,
-            deviceIp
-        );
+        const loginResponse = await AccountApi.LoginPost(LoginBusinessRequest);
         console.log(loginResponse);
         const sendDeviceConfirmationCode =
             await AccountApi.SendDeviceConfirmationCodePost();
         console.log(sendDeviceConfirmationCode);
         const deviceConfirm = await AccountApi.DeviceConfirmPost();
         console.log(deviceConfirm);
-        dispatch(userSlice.actions.LoginBusiness(loginResponse.accessToken));
+        dispatch(userSlice.actions.SetInfo());
     };
 };
 
 export const LoginWalletPostTC = (email, password) => {
-    return (dispatch) => {
-        AccountApi.LoginPost(email, password)
-            .then((data) => {
-                let value = JSON.parse(JSON.stringify(data));
-                dispatch(userSlice.actions.LoginBusiness(value.accessToken));
-            })
-            .catch((response) => {
-                console.log(response);
-                console.log("error");
-            });
+    return async (dispatch) => {
+        const response = await AccountApi.LoginPost(email, password);
     };
 };
 

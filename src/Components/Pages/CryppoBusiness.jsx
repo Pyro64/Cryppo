@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Navigate, Route, Routes } from "react-router";
 import CryppoBusinessLanding from "./CryppoBusinessLanding";
 import Header from "../UI/Header/Header";
@@ -7,15 +7,19 @@ import FooterContainer from "../UI/Footer/FooterContainer";
 import BussinesAuthorization from "../Lk/BussinesAuthorization/BussinesAuthorization";
 import BussinessRegistry from "../Lk/BussinessRegistry/BussinessRegistry";
 import BusinessLandingContainer from "./BusinessLandingContainer";
+import { UIContext } from "../Context/UIContext";
+import { useEffect } from "react";
 
 export default function CryppoBusiness(props) {
+    const [uiContext, setUiContext] = useContext(UIContext);
+    useEffect(() => {
+        setUiContext({ ...uiContext, isBusiness: true, isWallet: false });
+    }, []);
     return (
         <div className="page">
             <Header
                 user={props.user}
-                isLk={props.isLk}
                 isBusiness={props.isBusiness}
-                hasLk={props.hasLk}
                 isLogin={props.isLogin}
                 header={props.header}
                 card={props.card}
@@ -40,7 +44,7 @@ export default function CryppoBusiness(props) {
                     path="/entrance"
                     element={
                         <BussinesAuthorization
-                            isLogin={props.isLogin}
+                            uiContext={uiContext}
                             LoginBusinessPostTC={props.LoginBusinessPostTC}
                         />
                     }

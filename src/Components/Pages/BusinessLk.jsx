@@ -8,15 +8,12 @@ import SettingLkContainer from "../Lk/SettingLk/SettingLkContainer";
 import SupportLkContainer from "../Lk/SupportLk/SupportLkContainer";
 import BusinessLkMainContainer from "./../Lk/BusinessLkMain/BusinessLkMainContainer";
 import getCookies, { deleteCookie } from "../../Utils/cookies";
-import { userSlice } from "../../Redux/user-reducer";
-import { useDispatch } from "react-redux";
 
 const BusinessLk = (props) => {
-    const dispatch = useDispatch();
-    if (!props.isLogin) {
+    const token = getCookies("business_token");
+    if (!token) {
         return <Navigate to={"/business"} />;
     }
-    dispatch(userSlice.actions.LoginBusiness());
     return (
         <Routes>
             <Route

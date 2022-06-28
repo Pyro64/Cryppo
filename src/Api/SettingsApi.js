@@ -1,39 +1,17 @@
-import axios from "axios";
-import getCookies from "../Utils/cookies";
-
-const Api = axios.create({
-    baseURL: "https://b.cryppowallet.com/",
-    headers: {
-        "Access-Control-Allow-Origin": "*",
-    },
-});
+import { Api } from "./Api";
 
 export const SetActiveCurrencyPost = (currency) => {
-    const header = {
-        headers: { Authorization: "bearer " + getCookies("access_token") },
-    };
-    return Api.post(
-        "Settings/SetActiveCurrency",
-        {
-            currency,
-        },
-        header
-    ).then((response) => {
+    return Api.post("Settings/SetActiveCurrency", {
+        currency,
+    }).then((response) => {
         return response.data;
     });
 };
 
 export const SetViewCurrencyPost = (currency) => {
-    const header = {
-        headers: { Authorization: "bearer " + getCookies("access_token") },
-    };
-    return Api.post(
-        "Settings/SetViewCurrency",
-        {
-            currency,
-        },
-        header
-    ).then((response) => {
+    return Api.post("Settings/SetViewCurrency", {
+        currency,
+    }).then((response) => {
         return response.data;
     });
 };

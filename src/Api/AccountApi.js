@@ -1,114 +1,81 @@
 import { Api } from "./Api";
-import getCookies, { deleteCookie } from "../Utils/cookies";
+import { deleteCookie, setCookie } from "../Utils/cookies";
 
-export const LoginPost = (
-    email,
-    password,
-    twoFactorCode,
-    deviceId,
-    deviceOs,
-    deviceIp
-) => {
-    return Api.post("Account/Login", {
-        email,
-        password,
-        twoFactorCode,
-        deviceId,
-        deviceOs,
-        deviceIp,
-    }).then((response) => {
-        deleteCookie("access_token");
-        document.cookie = "access_token=" + response.data.accessToken;
-        return response.data;
-    });
+export const LoginPost = async (LoginBusinessRequest) => {
+    const response = await Api.post("Account/Login", LoginBusinessRequest);
+    deleteCookie("business_token");
+    setCookie(
+        "business_token",
+        response.data.accessToken,
+        response.data.accessTokenExpire,
+        "/business"
+    );
+    return response.data;
 };
 
-export const RefreshTokenPost = (token) => {
-    return Api.post("Account/RefreshToken", {
+export const RefreshTokenPost = async (token) => {
+    const response = await Api.post("Account/RefreshToken", {
         token,
-    }).then((response) => {
-        document.cookie = "access_token=" + response.data.accessToken;
-        return response.data;
     });
+    document.cookie = "business_token=" + response.data.accessToken;
+    return response.data;
 };
 
-export const RegisterPost = (email, password, company) => {
-    return Api.post("Account/Register", {
+export const RegisterPost = async (email, password, company) => {
+    const response = await Api.post("Account/Register", {
         email,
         password,
         company,
-    }).then((response) => {
-        return response.data;
     });
+    return response.data;
 };
 
-export const ConfirmEmailPost = (email, code) => {
-    return Api.post("Account/ConfirmEmail", {
+export const ConfirmEmailPost = async (email, code) => {
+    const response = await Api.post("Account/ConfirmEmail", {
         email,
         code,
-    }).then((response) => {
-        return response.data;
     });
+    return response.data;
 };
 
-export const ForgotPasswordPost = (email) => {
-    return Api.post("Account/ForgotPassword", {
+export const ForgotPasswordPost = async (email) => {
+    const response = await Api.post("Account/ForgotPassword", {
         email,
-    }).then((response) => {
-        return response.data;
     });
+    return response.data;
 };
 
-export const ResetPasswordPost = (
+export const ResetPasswordPost = async (
     email,
     resetPasswordCode,
     resetPasswordToken,
     newPassword,
     confirmPassword
 ) => {
-    return Api.post("Account/ResetPassword", {
+    const response = await Api.post("Account/ResetPassword", {
         email,
         resetPasswordCode,
         resetPasswordToken,
         newPassword,
         confirmPassword,
-    }).then((response) => {
-        return response.data;
     });
+    return response.data;
 };
 export const SendDeviceConfirmationCodePost = async () => {
-    const token = getCookies("access_token");
-    console.log(token);
-
-    const response = await Api.post(
-        "Account/SendDeviceConfirmationCode",
-        null,
-        {
-            authorization: "Bearer " + token,
-        }
-    );
+    const response = await Api.post("Account/SendDeviceConfirmationCode");
     console.log(response);
     return response.data;
 };
 
-export const DeviceConfirmPost = (code) => {
-    const header = {
-        headers: { Authorization: "Bearer " + getCookies("access_token") },
-    };
-    return Api.post(
-        "Account/DeviceConfirm",
-        {
-            code: "1111",
-        },
-        header
-    ).then((response) => {
-        console.log(response.status);
-        return response.data;
+export const DeviceConfirmPost = async (code) => {
+    const response = Api.post("Account/DeviceConfirm", {
+        code: "1111",
     });
+    console.log(response.status);
+    return response.data;
 };
 
-export const BalanceGet = () => {
-    return Api.get("Balance/All").then((response) => {
-        return response.data;
-    });
+export const BalanceGet = async () => {
+    const response = await Api.get("Balance/All");
+    return response.data;
 };

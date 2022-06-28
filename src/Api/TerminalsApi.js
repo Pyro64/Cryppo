@@ -10,7 +10,7 @@ export const AddPost = (name, login, password, passwordConfirm) => {
             password,
             passwordConfirm,
         },
-        { Authorization: "bearer " + getCookies("access_token") }
+        { Authorization: "bearer " + getCookies("business_token") }
     ).then((response) => {
         return response.data;
     });
@@ -23,7 +23,7 @@ export const ChangeNamePost = (name, id) => {
             name,
             id,
         },
-        { Authorization: "bearer " + getCookies("access_token") }
+        { Authorization: "bearer " + getCookies("business_token") }
     ).then((response) => {
         return response.data;
     });
@@ -36,7 +36,7 @@ export const ChangeLoginPost = (login, id) => {
             login,
             id,
         },
-        { Authorization: "bearer " + getCookies("access_token") }
+        { Authorization: "bearer " + getCookies("business_token") }
     ).then((response) => {
         return response.data;
     });
@@ -50,7 +50,7 @@ export const ChangePasswordPost = (passwordConfirm, password, id) => {
             password,
             id,
         },
-        { Authorization: "bearer " + getCookies("access_token") }
+        { Authorization: "bearer " + getCookies("business_token") }
     ).then((response) => {
         return response.data;
     });
@@ -61,7 +61,7 @@ export const DeletePost = (id) => {
         {
             id,
         },
-        { Authorization: "bearer " + getCookies("access_token") }
+        { Authorization: "bearer " + getCookies("business_token") }
     ).then((response) => {
         return response.data;
     });

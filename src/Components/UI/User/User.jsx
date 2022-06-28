@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import style from "./User.module.scss";
 import img from "../../../Images/icon/open.png";
 import Userblock from "./UserBlock";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import getCookie from "../../../Utils/cookies";
+import { UIContext } from "../../Context/UIContext";
 
 export default function User(props) {
-    const url = props.isBusiness ? "entrance" : "/entrance";
+    const [uiContext, setUiContext] = useContext(UIContext);
+    const token = getCookie("business_token");
+    const url = uiContext.isBusiness ? "entrance" : "/entrance";
     return (
         <div>
             {props.isLogin ? (
@@ -14,9 +18,6 @@ export default function User(props) {
                     name={props.user.name}
                     login={props.login}
                     routeLk={props.routeLk}
-                    isLk={props.isLk}
-                    SetLk={props.SetLk}
-                    isBusiness={props.isBusiness}
                     card={props.card}
                     alert={props.alert}
                     removeAlert={props.removeAlert}

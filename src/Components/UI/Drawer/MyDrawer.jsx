@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Drawer, Alert } from "antd";
 import DrawerTitle from "./DrawerTitle";
 import style from "./Drawer.module.scss";
@@ -9,7 +9,9 @@ import { CloseOutlined } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
 import { userSlice } from "../../../Redux/user-reducer";
 import avatar from "../../../Images/icon/avatar.svg";
+import { UIContext } from "../../Context/UIContext";
 export default function MyDrawer(props) {
+    const [uiContext, setUiContext] = useContext(UIContext);
     const dispatch = useDispatch();
     let alertItem = props.alert.map((e) => (
         <Alert
@@ -41,12 +43,13 @@ export default function MyDrawer(props) {
         ))
         .slice(0, 2);
     function removeLk() {
-        if (props.isBusiness) {
+        if (uiContext.isBusiness) {
             dispatch(userSlice.actions.LogoutBusiness());
         } else {
             dispatch(userSlice.actions.LogoutCryppo());
         }
-        dispatch(userSlice.actions.SetLk({ isLk: false }));
+
+        setUiContext({ ...uiContext, isLk: false });
     }
     return (
         <Drawer

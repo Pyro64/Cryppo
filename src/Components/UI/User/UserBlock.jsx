@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import style from "./User.module.scss";
 import MyDrawer from "../Drawer/MyDrawer";
 import { UserOutlined } from "@ant-design/icons";
 import { CloseOutlined } from "@ant-design/icons";
-import { userSlice } from "../../../Redux/user-reducer";
-import { useDispatch } from "react-redux";
+import { UIContext } from "../../Context/UIContext";
 const Userblock = (props) => {
-    const dispatch = useDispatch();
+    const [uiContext, setUiContext] = useContext(UIContext);
     const [visible, setVisible] = useState(false);
     const showDrawer = () => {
         setVisible(true);
@@ -23,9 +22,7 @@ const Userblock = (props) => {
                     onClick={props.onClose}
                 />
                 <NavLink
-                    onClick={() =>
-                        dispatch(userSlice.actions.SetLk({ isLk: true }))
-                    }
+                    onClick={() => setUiContext({ ...uiContext, isLk: true })}
                     to={`${props.routeLk}/lk`}
                     className={({ isActive }) =>
                         isActive
@@ -46,7 +43,6 @@ const Userblock = (props) => {
             </div>
 
             <MyDrawer
-                isBusiness={props.isBusiness}
                 visible={visible}
                 onClose={onClose}
                 img={props.img}
@@ -55,8 +51,6 @@ const Userblock = (props) => {
                 card={props.card}
                 alert={props.alert}
                 removeAlert={props.removeAlert}
-                hasLk={props.hasLk}
-                isLk={props.isLk}
                 switchTheme={props.switchTheme}
                 theme={props.theme}
             />

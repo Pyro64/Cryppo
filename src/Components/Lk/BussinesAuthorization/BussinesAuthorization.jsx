@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import style from "./BussinesAuthorization.module.scss";
 import { Navigate, NavLink } from "react-router-dom";
 import LkInput from "../../UI/LkInput/LkInput";
@@ -7,7 +7,8 @@ import getCookies from "../../../Utils/cookies";
 const BussinesAuthorization = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    if (getCookies("access_token")) {
+
+    if (getCookies("business_token")) {
         return <Navigate to={"/business/lk"} />;
     }
     const handleSubmit = async (e) => {
@@ -18,14 +19,16 @@ const BussinesAuthorization = (props) => {
             navigator.userAgent.indexOf(";")
         );
         let deviceIp = "192.168.0.1";
-        props.LoginBusinessPostTC(
-            email,
-            password,
-            null,
-            deviceId,
-            deviceOs,
-            deviceIp
-        );
+        props
+            .LoginBusinessPostTC({
+                email,
+                password,
+                twoFactorCode: null,
+                deviceId,
+                deviceOs,
+                deviceIp,
+            })
+            .then((data) => console.log(data));
     };
     return (
         <div className="main">

@@ -9,30 +9,12 @@ export default function getCookie(name) {
     return matches ? decodeURIComponent(matches[1]) : undefined;
 }
 
-export function setCookie(name, value, options = {}) {
-    options = {
-        path: "/",
-        // при необходимости добавьте другие значения по умолчанию
-        ...options,
-    };
-
-    if (options.expires instanceof Date) {
-        options.expires = options.expires.toUTCString();
-    }
-
-    let updatedCookie =
-        encodeURIComponent(name) + "=" + encodeURIComponent(value);
-
-    for (let optionKey in options) {
-        updatedCookie += "; " + optionKey;
-        let optionValue = options[optionKey];
-        if (optionValue !== true) {
-            updatedCookie += "=" + optionValue;
-        }
-    }
-
-    document.cookie = updatedCookie;
-}
+export const setCookie = (cName, cValue, expDays, path) => {
+    const date = new Date(expDays);
+    const expires = "expires=" + date.toUTCString();
+    document.cookie =
+        cName + "=" + cValue + /*"; " + expires +*/ "; path=" + path + ";";
+};
 
 export function deleteCookie(name) {
     setCookie(name, "", {
