@@ -15,14 +15,14 @@
   position: relative;
   width: 50%;
 }
-.subtitle{
+.subtitle {
   @include fluid(font-size, 28px, 32px);
   line-height: 150%;
-  font-family: 'Days One',sans-serif;
+  font-family: "Days One", sans-serif;
   font-weight: 600;
   width: 36%;
-  span{
-    color:  #2f69ff;
+  span {
+    color: #2f69ff;
   }
 }
 .gradient {
@@ -175,19 +175,26 @@
     top: 0;
   }
 }
+@media screen and (max-width: 768px) {
+  .subtitle {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 576px) {
   .content {
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
   }
   .chartImg {
     position: relative;
+    display: none;
   }
   .barImg {
     position: relative;
     bottom: 0;
     margin-bottom: 15px;
+    display: none;
   }
   .coinImg {
     margin-top: 15px;

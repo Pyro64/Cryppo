@@ -65,12 +65,27 @@
     object-fit: contain;
     transition: 0.38s ease-in-out;
     &:hover {
-      filter: invert(63%) sepia(14%) saturate(6671%) hue-rotate(129deg) brightness(90%) contrast(102%);
+      filter: invert(63%) sepia(14%) saturate(6671%) hue-rotate(129deg)
+        brightness(90%) contrast(102%);
     }
   }
 }
-@media screen and (max-width: 992px) {
-  .container {
-    display: none;
+@media screen and (max-width: 768px) {
+  .flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  .iconContainer {
+    justify-content: flex-start;
+  }
+  .social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

@@ -13,8 +13,7 @@ import { useDispatch } from "react-redux";
 
 const BusinessLk = (props) => {
     const dispatch = useDispatch();
-    if (!getCookies("access_token")) {
-        deleteCookie("access_token");
+    if (!props.isLogin) {
         return <Navigate to={"/business"} />;
     }
     dispatch(userSlice.actions.LoginBusiness());

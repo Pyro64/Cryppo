@@ -8,9 +8,15 @@ export default function MySelect(props) {
   let id = 0;
   let option = props.currencyList.map((e) => (
     <Option className={style.option} value={e.value} key={id++} id={e.id}>
-      <div className={style.item}>
-        <img src={e.img} alt={e.value} />
-        <div className={style.name}>{e.value}</div>
+      <div className={style.flex}>
+        <div className={style.item}>
+          <img src={e.img} alt={e.value} />
+          <div className={style.name}>{e.value}</div>
+        </div>
+        <div>
+          <div className={style.textBig}>1.234 ETH</div>
+          <div className={style.text}>9 656 $</div>
+        </div>
       </div>
     </Option>
   ));

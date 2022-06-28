@@ -13,3 +13,20 @@
   position: relative;
   width: 40%;
 }
+@media screen and(max-width:1120px) {
+  .flex {
+    flex-direction: column;
+  }
+  .items {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .chartInner {
+    width: 70%;
+  }
+}
+@media screen and (max-width:768px){
+  .chartInner{
+    width:100%;
+  }
+}

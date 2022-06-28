@@ -85,3 +85,8 @@
   @include fluid(font-size, 12px, 14px);
   color: #fff;
 }
+@media screen and(max-width:768px) {
+  .result {
+    justify-content: space-between;
+  }
+}

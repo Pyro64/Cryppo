@@ -8,6 +8,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const DoughnutChart = (props) => {
     let dataItems = [];
+    let isEmpty = false;
     let backgroundColorItems = [];
     props.operations.map((e) => {
         if (e.disable === false) {
@@ -15,6 +16,7 @@ const DoughnutChart = (props) => {
             backgroundColorItems.push(e.color);
         }
     });
+    if (dataItems.length === 0) isEmpty = true;
     let elementItem = props.operations.map((e) => (
         <StatisticCashItem
             percent={e.percent}
@@ -25,7 +27,6 @@ const DoughnutChart = (props) => {
             cash={e.cash}
             disable={e.disable}
             operationType={props.operationType}
-            childExpensesStatistics={e.childExpensesStatistics}
         />
     ));
     const options = {
@@ -66,6 +67,7 @@ const DoughnutChart = (props) => {
             <div className={style.chartInner}>
                 <Doughnut data={data} options={options} />
                 <ChartText
+                    isEmpty={isEmpty}
                     isHover={props.isHover}
                     doughuntTextData={props.doughuntTextData}
                 />

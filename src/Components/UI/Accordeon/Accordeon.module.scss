@@ -55,3 +55,9 @@
   justify-content: space-between;
   cursor: pointer;
 }
+@media screen and(max-width:576px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

@@ -360,10 +360,10 @@ export const userSlice = createSlice({
             state.isLk = action.payload.isLk;
         },
         LogoutCryppo(state) {
-            state.cryppo.isLogin = false;
+            state.isLogin = false;
         },
         LogoutBusiness(state) {
-            state.business.isLogin = false;
+            state.isLogin = false;
         },
         SetInfo(state, action) {
             state.business = action.payload;

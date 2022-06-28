@@ -23,7 +23,9 @@ const Userblock = (props) => {
                     onClick={props.onClose}
                 />
                 <NavLink
-                    onClick={() => dispatch(userSlice.actions.SetLk(true))}
+                    onClick={() =>
+                        dispatch(userSlice.actions.SetLk({ isLk: true }))
+                    }
                     to={`${props.routeLk}/lk`}
                     className={({ isActive }) =>
                         isActive
@@ -44,6 +46,7 @@ const Userblock = (props) => {
             </div>
 
             <MyDrawer
+                isBusiness={props.isBusiness}
                 visible={visible}
                 onClose={onClose}
                 img={props.img}

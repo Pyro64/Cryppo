@@ -20,6 +20,9 @@
     }
   }
 }
+.none {
+  display: none;
+}
 .status {
   @include fluid(width, 10px, 11px);
   @include fluid(height, 10px, 11px);

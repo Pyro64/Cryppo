@@ -15,7 +15,7 @@ const Event = (props) => {
             />
             <StatisticCash
                 updateChart={props.updateChart}
-                filter={false}
+                filter={props.filter}
                 isHover={props.isHover}
                 expenses={props.expenses}
                 arrival={props.arrival}

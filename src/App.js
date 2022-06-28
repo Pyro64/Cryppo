@@ -10,13 +10,9 @@ import { darkTheme, lightTheme, GlobalStyles } from "./theme";
 import CryppoBusinessContainer from "./Components/Pages/CryppoBusinessContainer";
 import CryppoContainer from "./Components/Pages/CryppoContainer";
 import { ConfigProvider } from "antd";
+import { UIContextProvider } from "./Components/Context/UIContext";
+
 function App() {
-    const uiContext = {
-        isBusiness: false,
-        isWallet: true,
-        isLk: false,
-    };
-    const UIContext = React.createContext(uiContext);
     const [theme, setTheme] = useState("light");
     const switchTheme = () => {
         theme === true ? setTheme(false) : setTheme(true);
@@ -30,7 +26,7 @@ function App() {
                         <div className="App">
                             <div className="gradient"></div>
                             <ScrollToTop />
-                            <UIContext.Provider value={UIContext}>
+                            <UIContextProvider>
                                 <Routes>
                                     <Route
                                         path="/*"
@@ -62,7 +58,7 @@ function App() {
                                         }
                                     />
                                 </Routes>
-                            </UIContext.Provider>
+                            </UIContextProvider>
                         </div>
                     </ParallaxProvider>
                 </BrowserRouter>

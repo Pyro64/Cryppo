@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import style from "./SettingPassword.module.scss";
 import MyModal from "../../UI/MyModal/MyModal";
@@ -11,6 +11,16 @@ export default function SettingPassword(props) {
   function modal() {
     setOpen(!open);
   }
+  const [seconds, setSeconds] = useState(60);
+  const [active, setActive] = useState(false);
+  useEffect(() => {
+    if (seconds > 0) {
+      const interval = setInterval(() => setSeconds(seconds - 1), 1000);
+      return () => clearInterval(interval);
+    } else {
+      setActive(!active);
+    }
+  }, [seconds, setSeconds]);
   const [code, setCode] = useState(false);
   const openNotification = (e) => {
     e.preventDefault();
@@ -18,7 +28,17 @@ export default function SettingPassword(props) {
       type: "success",
       message: "Код отправлени на почту",
     });
+
     setCode(!code);
+  };
+  const reset = (e) => {
+    e.preventDefault();
+    setSeconds(60);
+    setActive(!active);
+    notification.open({
+      type: "success",
+      message: "Код был повторно отправлен на почту",
+    });
   };
   return (
     <div>
@@ -76,7 +96,19 @@ export default function SettingPassword(props) {
           <div className={style.title}>Подтверждение</div>
           <div className={style.subtitle}>Код отправлен на ваш Email</div>
           <LkInput placeholder="Введите код" />
-          <button className={style.codeBtn}>Запросить код еще раз</button>
+          <button
+            onClick={reset}
+            className={
+              active
+                ? `  ${style.codeBtn}  `
+                : `${style.noActive} ${style.codeBtn}`
+            }
+          >
+            {active
+              ? `Запросить код повторно`
+              : ` Запросить код еще раз через ${seconds}`}
+          </button>
+
           <button className={style.btn}>Продолжить</button>
         </form>
       </MyModal>

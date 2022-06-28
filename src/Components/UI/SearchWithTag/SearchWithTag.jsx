@@ -1,12 +1,13 @@
 import React from "react";
 import { Select } from "antd";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { doughuntSlice } from "../../../Redux/DoughuntReducer";
 
 const { Option } = Select;
 
 const SearchWithTag = (props) => {
+    const { category } = useParams();
     let id = 0;
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -30,12 +31,14 @@ const SearchWithTag = (props) => {
     }
 
     const options = [];
-    if (props.expenses) {
-        props.expenses.forEach((item) => {
-            options.push(item);
+    if (props.expenses && !category) {
+        props.expenses.forEach((e) => {
+            if (e.parentCategory === undefined) {
+                options.push(e);
+            }
         });
     }
-    if (props.arrival) {
+    if (props.arrival && !category) {
         props.arrival.forEach((item) => {
             options.push(item);
         });
@@ -46,7 +49,7 @@ const SearchWithTag = (props) => {
             mode="multiple"
             style={{ width: "100%" }}
             placeholder="Найдите любые события и операции"
-            defaultValue={props.defaultSearch}
+            defaultValue={props.defaultValue}
             optionLabelProp="label"
             onChange={(e) => handleChange(e)}
         >
