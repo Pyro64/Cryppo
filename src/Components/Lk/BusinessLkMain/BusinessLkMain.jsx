@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import SubtitleLk from "../../UI/SubtitleLk/SubtitleLk";
 import Check from "../CheckLk/Check";
 import Operation from "../OperationLk/Operation";
 import MyBar from "../../UI/MyBar/MyBar";
 import DoughnutChart from "../DoughnutChart/DoughnutChart";
 import SidebarTabs from "../SidebarTabs/SidebarTabs";
+import { UIContext } from "../../Context/UIContext";
 const BusinessLkMain = (props) => {
     const expenses = props.expenses.filter((e) => {
         if (e.parentCategory == undefined) return e;
     });
+    const [uiContext, setUiContext] = useContext(UIContext);
+    useEffect(() => {
+        setUiContext({ ...uiContext, isLk: true });
+    }, []);
     return (
         <div className="main container">
             <div className="flex ">
