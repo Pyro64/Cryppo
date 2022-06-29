@@ -106,8 +106,8 @@ let initialState = {
         ],
         userInfo: {
             userId: "string",
-            firstname: "string",
-            lastname: "string",
+            firstname: "Anna",
+            lastname: "Bobs",
             twoFactorEnabled: true,
             viewCurrency: "string",
             phoneNumber: "string",
@@ -260,8 +260,8 @@ let initialState = {
         router: "/cryppo",
         userInfo: {
             userId: "string",
-            firstname: "string",
-            lastname: "string",
+            firstname: "Anna",
+            lastname: "Baks",
             twoFactorEnabled: true,
             viewCurrency: "string",
             phoneNumber: "string",

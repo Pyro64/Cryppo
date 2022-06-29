@@ -60,88 +60,77 @@ export default function MyDrawer(props) {
             visible={props.visible}
             bodyStyle={{ padding: "0px" }}
         >
+            <div className={style.header}>
+                <CloseOutlined
+                    className={style.close}
+                    onClick={props.onClose}
+                />
+                <DrawerTitle title="Профиль" />
+            </div>
+            <div className={style.block}>
+                <img
+                    src={props.img ?? avatar}
+                    className={style.img}
+                    alt="avatar"
+                />
+                <div>
+                    <p className={style.name}>
+                        {props.user.firstname} {props.user.lastname}
+                    </p>
+                    <button onClick={removeLk} className={style.out}>
+                        выйти
+                    </button>
+                </div>
+            </div>
             <div className={style.links}>
                 <NavLink
-                    onClick={() => props.onClose()}
+                    onClick={() => setUiContext({ ...uiContext, isLk: true })}
                     to={`${props.routeLk}/lk`}
                     className={({ isActive }) =>
                         isActive
                             ? `${style.link} ${style.linkMobile} ${style.active}`
                             : `${style.link} ${style.linkMobile}`
                     }
-                />
-                <div className={style.header}>
-                    <CloseOutlined
-                        className={style.close}
-                        onClick={props.onClose}
-                    />
-                    <DrawerTitle title="Профиль" />
-                </div>
-                <div className={style.block}>
-                    <img
-                        src={props.img ?? avatar}
-                        className={style.img}
-                        alt="avatar"
-                    />
-                    <div>
-                        <p className={style.name}>{props.name}</p>
-                        <button onClick={removeLk} className={style.out}>
-                            выйти
-                        </button>
-                    </div>
-                </div>
-                <div className={style.links}>
-                    <NavLink
-                        onClick={() =>
-                            setUiContext({ ...uiContext, isLk: true })
-                        }
-                        to={`${props.routeLk}/lk`}
-                        className={({ isActive }) =>
-                            isActive
-                                ? `${style.link} ${style.linkMobile} ${style.active}`
-                                : `${style.link} ${style.linkMobile}`
-                        }
-                        end
-                    >
-                        Личный Кабинет
-                    </NavLink>
-                    <NavLink
-                        to="/business/lk/support"
-                        onClick={props.onClose}
-                        className={({ isActive }) =>
-                            isActive
-                                ? `${style.link} ${style.active}`
-                                : `${style.link}`
-                        }
-                    >
-                        Служба поддержки
-                    </NavLink>
-                    <NavLink
-                        to="/business/lk/setting"
-                        onClick={props.onClose}
-                        className={({ isActive }) =>
-                            isActive
-                                ? `${style.link} ${style.active}`
-                                : `${style.link}`
-                        }
-                    >
-                        Настройки
-                    </NavLink>
-                </div>
+                    end
+                >
+                    Личный Кабинет
+                </NavLink>
+                <NavLink
+                    to="/business/lk/support"
+                    onClick={props.onClose}
+                    className={({ isActive }) =>
+                        isActive
+                            ? `${style.link} ${style.active}`
+                            : `${style.link}`
+                    }
+                >
+                    Служба поддержки
+                </NavLink>
+                <NavLink
+                    to="/business/lk/setting"
+                    onClick={props.onClose}
+                    className={({ isActive }) =>
+                        isActive
+                            ? `${style.link} ${style.active}`
+                            : `${style.link}`
+                    }
+                >
+                    Настройки
+                </NavLink>
+            </div>
 
-                <div className={style.balanse}>
-                    <div className={style.subtitle}>Баланс</div>
-                    {elementCard}
-                </div>
-                <div className={style.alerts}>
-                    {props.alert.length > 0 ? (
-                        <div className={style.subtitle}>Уведомления</div>
-                    ) : (
-                        <div className={style.subtitle}>Нет уведомлений</div>
-                    )}
+            <div className={style.balanse}>
+                <div className={style.subtitle}>Баланс</div>
+                {elementCard}
+            </div>
+            <div className={style.alerts}>
+                {props.alert.length > 0 ? (
+                    <div className={style.subtitle}>Уведомления</div>
+                ) : (
+                    <div className={style.subtitle}>Нет уведомлений</div>
+                )}
 
-                    {alertItem}
-                </div>
+                {alertItem}
             </div>
         </Drawer>
     );

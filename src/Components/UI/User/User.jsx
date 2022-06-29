@@ -15,7 +15,7 @@ export default function User(props) {
             {props.isLogin ? (
                 <Userblock
                     img={props.user.img}
-                    name={props.user.name}
+                    user={props.user}
                     login={props.login}
                     routeLk={props.routeLk}
                     card={props.card}

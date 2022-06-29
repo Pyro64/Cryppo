@@ -9,9 +9,7 @@ let mapStateToProps = (state) => {
     return {
         header: state.header.business,
         isLogin: state.user.isLogin,
-        isBusiness: true,
-        isLk: state.user.isLk,
-        user: state.user.business,
+        user: state.user.business.userInfo,
         logo: state.header.business.route.logo,
         routeLk: state.header.business.route.routeLk,
         card: state.operation.cryppo.cardData,

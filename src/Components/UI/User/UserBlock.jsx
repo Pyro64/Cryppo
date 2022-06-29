@@ -47,7 +47,7 @@ const Userblock = (props) => {
                 onClose={onClose}
                 routeLk={props.routeLk}
                 img={props.img}
-                name={props.name}
+                user={props.user}
                 login={props.login}
                 card={props.card}
                 alert={props.alert}
