@@ -141,3 +141,8 @@
   justify-content: center;
   display: flex;
 }
+@media screen and(max-width:768px){
+  .container{
+    margin-bottom:30px;
+  }
+}

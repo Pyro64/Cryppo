@@ -113,6 +113,9 @@
   }
   .block {
     height: 100%;
+    img {
+      display: none;
+    }
   }
   .input {
     margin-top: 20px;

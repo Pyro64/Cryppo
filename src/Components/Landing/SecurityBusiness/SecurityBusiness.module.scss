@@ -95,6 +95,11 @@
     width: 100%;
   }
 }
+@media screen and (max-width: 768px) {
+  .conatiner {
+    padding-bottom: 30px;
+  }
+}
 @media screen and (max-width: 576px) {
   .animate {
     width: 320px;

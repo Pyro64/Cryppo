@@ -92,6 +92,11 @@
     display: none;
   }
 }
+@media screen and(max-width:768px) {
+  .container {
+    margin-bottom: 30px;
+  }
+}
 @media screen and (max-width: 576px) {
   .block {
     padding: 5px;

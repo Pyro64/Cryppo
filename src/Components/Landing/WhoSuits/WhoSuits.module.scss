@@ -99,6 +99,11 @@
     width: 100%;
   }
 }
+@media screen and (max-width: 768px) {
+  .conatiner {
+    margin-bottom: 30px;
+  }
+}
 @media screen and (max-width: 576px) {
   .block {
     width: 100%;

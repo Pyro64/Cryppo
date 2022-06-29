@@ -66,6 +66,11 @@
   @include fluid(height, 25px, 40px);
   object-fit: cover;
 }
+@media screen and (max-width: 768px) {
+  .conatiner {
+    margin-bottom: 30px;
+  }
+}
 @media screen and (max-width: 576px) {
   .item {
     width: 100%;

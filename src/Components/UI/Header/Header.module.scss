@@ -186,8 +186,25 @@
       opacity: 1;
     }
   }
+  .logo {
+    width: 150px;
+    height: 50px;
+  }
+  .header.scroll {
+    .logo {
+      width: 140px;
+      height: 45px;
+    }
+  }
+
   .nav {
-    margin-bottom: 30px;
+    padding-bottom: 10px;
+    overflow-y: hidden;
+
+    width: 400px;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
   }
   .open {
     span {
@@ -214,8 +231,8 @@
   .mobileBlock {
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
+
   .title {
     display: flex;
     align-items: center;
@@ -238,5 +255,16 @@
     width: 15px;
     height: 15px;
     background-size: contain;
+  }
+  .scroll {
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+  .itemMobile {
+    width: 500px;
+    overflow-x: scroll;
+    overflow-y: hidden;
   }
 }

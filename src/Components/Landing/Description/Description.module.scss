@@ -49,3 +49,8 @@
     justify-content: center;
   }
 }
+@media screen and (max-width: 768px) {
+  .block {
+    margin-bottom: 30px;
+  }
+}

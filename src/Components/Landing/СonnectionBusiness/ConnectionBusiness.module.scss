@@ -100,6 +100,11 @@
     display: none;
   }
 }
+@media screen and (max-width: 768px) {
+  .conatiner {
+    margin-bottom: 30px;
+  }
+}
 @media screen and (max-width: 576px) {
   .container {
     padding-left: 10px;
@@ -119,5 +124,8 @@
   }
   .img {
     width: 300px;
+  }
+  .subtitle {
+    text-align: center;
   }
 }

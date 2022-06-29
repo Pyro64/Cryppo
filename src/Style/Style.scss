@@ -10,7 +10,7 @@
     padding: 0;
 }
 .gradientWrapper {
-    // overflow-x: hidden;
+    overflow-x: hidden;
     position: relative;
 }
 button {
@@ -63,10 +63,10 @@ body {
 }
 .ant-select-selector {
     border-radius: 76px !important;
-    height: 35px !important;
     padding-top: 6px !important;
     padding-bottom: 6px !important;
 }
+
 .btn {
     display: block;
     color: #fff;
@@ -270,7 +270,12 @@ a {
     padding: 0;
     list-style-type: none;
 }
-
+.ant-select,.ant-select-selector{
+    height:44px !important;
+}
+.ant-input{
+    height:44px;
+}
 .list-transition-enter,
 .list-transition-appear {
     top: 0;
@@ -449,5 +454,13 @@ a {
     .ant-picker-panels{
         display:flex;
         flex-direction:column;
+    }
+    .sidebar{
+        &__inner{
+            margin-bottom:30px;
+        }
+    }
+    .block{
+        margin-bottom:30px;
     }
 }

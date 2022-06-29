@@ -25,6 +25,11 @@
     color: #2f69ff;
   }
 }
+@media screen and (max-width: 768px) {
+  .chartContainer {
+    margin-bottom: 30px;
+  }
+}
 @media screen and (max-width: 576px) {
   .chartContainer {
     padding-left: 20px;
