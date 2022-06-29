@@ -11,16 +11,41 @@ export default function BusinessLkHistory(props) {
     const [currency, setCurrency] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
     const [pageSize, setPageSize] = useState(8);
+    const [operationList, setOperationList] = useState(props.operationList);
     useEffect(() => {
-        props.PaymentsPostTC(
-            pageNumber,
-            pageSize,
-            dateRange[0],
-            dateRange[1],
-            currency,
-            "Success",
-            walletAddress
-        );
+        if (currency != null && currency != "allCoin") {
+            setOperationList(
+                props.operationList.filter((item) => {
+                    if (item.currency === currency) {
+                        console.log(item);
+                        return item;
+                    }
+                })
+            );
+        } else {
+            setOperationList(props.operationList);
+        }
+        console.log(walletAddress);
+        if (walletAddress != null && walletAddress != "") {
+            setOperationList(
+                operationList.filter((item) => {
+                    return item.address.includes(walletAddress);
+                })
+            );
+        } else {
+            if (currency != null && currency != "allCoin") {
+                setOperationList(
+                    props.operationList.filter((item) => {
+                        if (item.currency === currency) {
+                            console.log(item);
+                            return item;
+                        }
+                    })
+                );
+            } else {
+                setOperationList(props.operationList);
+            }
+        }
     }, [currency, dateRange, walletAddress, pageSize, pageNumber, props]);
     return (
         <div className="main container">
@@ -41,7 +66,7 @@ export default function BusinessLkHistory(props) {
                 <div className="content">
                     <SubtitleLk arrow={false} subtitle="История" />
                     <Element name="myScrollToElement" />
-                    {props.operationList.length !== 0 ? (
+                    {operationList.length !== 0 ? (
                         <Operation
                             PaymentsPostTC={props.PaymentsPostTC}
                             fullOperation={true}
@@ -50,7 +75,7 @@ export default function BusinessLkHistory(props) {
                             pageSize={pageSize}
                             setPageNumber={setPageNumber}
                             setPageSize={setPageSize}
-                            operationList={props.operationList}
+                            operationList={operationList}
                             paymentList={props.paymentList}
                             setModal={props.setModal}
                             operationModal={props.operationModal}

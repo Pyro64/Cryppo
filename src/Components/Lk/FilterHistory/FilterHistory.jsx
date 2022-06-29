@@ -7,13 +7,10 @@ import style from "./FilterHistory.module.scss";
 import { Select } from "antd";
 import MySelectTitle from "../../UI/MySelect/MySelectTitle";
 import three from "../../../Images/payIcon/3.svg";
-import { UIContext } from "../../Context/UIContext";
 const { RangePicker } = DatePicker;
 const { Option } = Select;
 
 export default function FilterHistory(props) {
-    const [uiContext, setUiContext] = useContext(UIContext);
-    console.log(uiContext);
     let option = props.currencyList.map((e) => (
         <Option
             className={style.option}
