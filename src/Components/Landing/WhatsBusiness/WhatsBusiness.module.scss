@@ -63,3 +63,8 @@
     display: none;
   }
 }
+@media screen and (max-width: 768px) {
+  .conatiner {
+    margin-bottom: 30px;
+  }
+}
