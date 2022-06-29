@@ -455,4 +455,12 @@ a {
         display:flex;
         flex-direction:column;
     }
+    .sidebar{
+        &__inner{
+            margin-bottom:30px;
+        }
+    }
+    .block{
+        margin-bottom:30px;
+    }
 }

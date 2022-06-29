@@ -159,6 +159,11 @@
     border: none;
   }
 }
+@media screen and(max-width:768px){
+  .flex{
+    margin-bottom:30px;
+  }
+}
 @media screen and (max-width: 576px) {
   .flex {
     flex-direction: column;
