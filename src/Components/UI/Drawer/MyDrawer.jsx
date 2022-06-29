@@ -60,26 +60,6 @@ export default function MyDrawer(props) {
             visible={props.visible}
             bodyStyle={{ padding: "0px" }}
         >
-            <div className={style.header}>
-                <CloseOutlined
-                    className={style.close}
-                    onClick={props.onClose}
-                />
-                <DrawerTitle title="Профиль" />
-            </div>
-            <div className={style.block}>
-                <img
-                    src={props.img ?? avatar}
-                    className={style.img}
-                    alt="avatar"
-                />
-                <div>
-                    <p className={style.name}>{props.name}</p>
-                    <button onClick={removeLk} className={style.out}>
-                        выйти
-                    </button>
-                </div>
-            </div>
             <div className={style.links}>
                 <NavLink
                     onClick={() => props.onClose()}
