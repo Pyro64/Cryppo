@@ -15,7 +15,7 @@ const StatisticCashItem = (props) => {
         url = `/cryppo/lk/event/${category}/${props.category}`;
     }
     const foo = (e) => {
-        dispatch(doughuntSlice.actions.EditDefaultSearch(props.parentCategory));
+        dispatch(doughuntSlice.actions.EditDefaultSearch(props.category));
         navigate(url);
     };
     return (

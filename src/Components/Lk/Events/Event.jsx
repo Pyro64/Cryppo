@@ -1,27 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
 import style from "./Event.module.scss";
 import SearchBar from "../SearchBar/SearchBar";
 import StatisticCash from "../StatisticCash/StatisticCash";
 import Operation from "../OperationLk/Operation";
+import { useParams } from "react-router";
+import { useWindowSize } from "react-use";
 
 const Event = (props) => {
+    const { width } = useWindowSize();
+    const { category, subcategory } = useParams();
+    console.log(category, subcategory);
+    const defaultSearch = [];
+    if (category) defaultSearch.push(category);
+    if (subcategory) defaultSearch.push(subcategory);
+    console.log(defaultSearch);
     return (
         <div className="main container">
             <SearchBar
                 updateChart={props.updateChart}
                 expenses={props.expenses}
                 arrival={props.arrival}
-                defaultSearch={props.defaultSearch}
+                defaultSearch={defaultSearch}
             />
-            <StatisticCash
-                updateChart={props.updateChart}
-                filter={props.filter}
-                isHover={props.isHover}
-                expenses={props.expenses}
-                arrival={props.arrival}
-                doughuntTextData={props.doughuntTextData}
-                big={true}
-            />
+            {!subcategory ? (
+                <StatisticCash
+                    updateChart={props.updateChart}
+                    filter={props.filter}
+                    isHover={props.isHover}
+                    expenses={props.expenses}
+                    arrival={props.arrival}
+                    doughuntTextData={props.doughuntTextData}
+                    big={width < 525 ? false : true}
+                />
+            ) : null}
+
             <div className={style.wrapper}>
                 <Operation
                     operationList={props.operationList}

@@ -41,7 +41,7 @@ export default function ChartIndex(props) {
         props.ChartPostTC(from.toISOString(), new Date().toISOString(), null);
     }, []);
     const data = props.chartIndex.map((e) => {
-        return { date: month[new Date(e.date).getMonth], amount: e.amount };
+        return { date: month[new Date(e.date).getMonth], Цена: e.amount };
     });
 
     return (
@@ -83,7 +83,7 @@ export default function ChartIndex(props) {
                         r: 5,
                     }}
                     type="linear"
-                    dataKey="amount"
+                    dataKey="Цена"
                     stroke="#40FFE8"
                     fill="url(#colorUv)"
                 />

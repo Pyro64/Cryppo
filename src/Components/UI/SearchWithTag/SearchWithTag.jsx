@@ -7,6 +7,7 @@ import { doughuntSlice } from "../../../Redux/DoughuntReducer";
 const { Option } = Select;
 
 const SearchWithTag = (props) => {
+    console.log(props.defaultSearch);
     const { category } = useParams();
     let id = 0;
     const dispatch = useDispatch();
@@ -49,7 +50,7 @@ const SearchWithTag = (props) => {
             mode="multiple"
             style={{ width: "100%" }}
             placeholder="Найдите любые события и операции"
-            defaultValue={props.defaultValue}
+            defaultValue={props.defaultSearch}
             optionLabelProp="label"
             onChange={(e) => handleChange(e)}
         >
