@@ -446,4 +446,8 @@ a {
     .content {
         width: 100%;
     }
+    .ant-picker-panels{
+        display:flex;
+        flex-direction:column;
+    }
 }
