@@ -93,7 +93,7 @@ export default function MyDrawer(props) {
                 <div className={style.links}>
                     <NavLink
                         onClick={() =>
-                            dispatch(userSlice.actions.SetLk({ isLk: true }))
+                            setUiContext({ ...uiContext, isLk: true })
                         }
                         to={`${props.routeLk}/lk`}
                         className={({ isActive }) =>
