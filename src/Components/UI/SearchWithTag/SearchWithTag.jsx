@@ -44,7 +44,11 @@ const SearchWithTag = (props) => {
             options.push(item);
         });
     }
-
+    if (options.length < 2) {
+        props.defaultSearch.forEach((item) => {
+            options.push({ category: item });
+        });
+    }
     return (
         <Select
             mode="multiple"

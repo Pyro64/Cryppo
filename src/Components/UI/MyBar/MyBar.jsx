@@ -2,15 +2,9 @@ import React from "react";
 import { BarChart, Bar, XAxis, ResponsiveContainer, Cell } from "recharts";
 import style from "./MyBar.module.scss";
 import { randomColor } from "../../../Utils/tools";
+import { useDispatch } from "react-redux";
 const MyBar = (props) => {
-    const barData = props.revenue.map((e) => {
-        return {
-            color: "#2D4",
-            name: e.currency,
-            dataKey: e.currency,
-            value: e.amountInViewCurrency,
-        };
-    });
+    const dispatch = useDispatch();
     const renderCustomBarLabel = ({ payload, x, y, width, height, value }) => {
         return (
             <text
@@ -30,7 +24,7 @@ const MyBar = (props) => {
                 <BarChart
                     width={150}
                     height={40}
-                    data={barData}
+                    data={props.revenue}
                     margin={{
                         top: 30,
                         right: 10,
@@ -40,7 +34,7 @@ const MyBar = (props) => {
                 >
                     <Bar
                         className={style.transition}
-                        dataKey="value"
+                        dataKey="amount"
                         fill="#6D6D6D"
                         barSize={65}
                         radius={[8, 8, 0, 0]}
@@ -59,10 +53,10 @@ const MyBar = (props) => {
                                 }
                                 key={`cell-${index}`}
                                 onMouseEnter={() => {
-                                    props.changeActiveIndex(index);
+                                    dispatch(props.changeActiveIndex(index));
                                 }}
                                 onMouseLeave={() => {
-                                    props.changeActiveIndex(-1);
+                                    dispatch(props.changeActiveIndex(-1));
                                 }}
                             />
                         ))}

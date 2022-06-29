@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import style from "./Operation.module.scss";
-import Btn from "../../UI/Btn/Btn";
-import OperationInner from "./OperationInner";
-import OperationModal from "./OperationModal";
-import MyModal from "../../UI/MyModal/MyModal";
 import { Button, Pagination } from "antd";
 import OperationItem from "./OperationItem";
 import yandex from "../../../Images/icon/yandex.svg";
-import three from "../../../Images/payIcon/3.svg";
 var Scroll = require("react-scroll");
 var Element = Scroll.Element;
 var scroller = Scroll.scroller;
@@ -56,6 +51,9 @@ export default function Operation(props) {
             firm={e.firm}
             bankCardData={props.bankCardData}
             address={e.address}
+            protocol={e.protocol}
+            blockchain={e.blockchain}
+            contact={e.contact}
         />
     ));
     let filterItem;

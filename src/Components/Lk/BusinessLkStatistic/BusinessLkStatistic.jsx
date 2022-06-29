@@ -36,8 +36,8 @@ export default function LkStatistic(props) {
                     <SubtitleLk arrow={true} subtitle="Статистика валют" />
                     <CompositionIndex
                         RevenuePostTC={props.RevenuePostTC}
-                        revenue={props.revenue}
-                        compositionActiveIndex={props.compositionActiveIndex}
+                        revenue={props.barData.compositions}
+                        compositionActiveIndex={props.barData.activeIndex}
                     />
                 </div>
             </div>

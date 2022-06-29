@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import style from "./CompositionIndex.module.scss";
 import CompositionIndexItem from "./CompositionIndexItem";
 import MyBar from "../../UI/MyBar/MyBar";
-import { lkSlice } from "../../../Redux/LkReducer";
+import { doughuntSlice } from "../../../Redux/DoughuntReducer";
 
 export default function CompositionIndex(props) {
-    const changeActiveIndex = lkSlice.actions.ChangeActiveIndex;
+    const changeActiveIndex = doughuntSlice.actions.ChangeActiveIndex;
     let id = 0;
     useEffect(() => {
         const from = new Date();
@@ -16,8 +16,8 @@ export default function CompositionIndex(props) {
     let items = props.revenue.map((e) => (
         <CompositionIndexItem
             changeActiveIndex={changeActiveIndex}
-            id={id++}
-            key={e.id}
+            id={id}
+            key={id++}
             icon={e.icon}
             name={e.currency}
             value={e.amount}

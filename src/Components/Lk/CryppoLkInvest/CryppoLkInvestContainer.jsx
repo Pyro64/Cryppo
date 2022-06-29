@@ -5,8 +5,9 @@ import { ChartPostTC, RevenuePostTC } from "../../../Redux/LkReducer";
 let mapStateToProps = (state) => {
     return {
         tabs: state.lk.cryppo.tabsData,
-        barData: state.operation.cryppo.barData,
+        barData: state.doughunt.barData,
         revenue: state.LK.cryppo.revenue,
+        compositionActiveIndex: state.doughunt.barData.activeIndex,
     };
 };
 

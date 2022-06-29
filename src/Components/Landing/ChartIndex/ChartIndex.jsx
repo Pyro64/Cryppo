@@ -35,11 +35,6 @@ export default function ChartIndex(props) {
         "Ноябрь",
         "Декабрь",
     ];
-    useEffect(() => {
-        const from = new Date();
-        from.setDate(from.getDate() - 5);
-        props.ChartPostTC(from.toISOString(), new Date().toISOString(), null);
-    }, []);
     const data = props.chartIndex.map((e) => {
         return { date: month[new Date(e.date).getMonth], Цена: e.amount };
     });

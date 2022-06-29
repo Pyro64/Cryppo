@@ -8,7 +8,7 @@ let mapStateToProps = (state) => {
         paymentList: state.payments.business,
         revenue: state.LK.business.revenue,
         chartIndex: state.LK.business.chartIndex,
-        barData: state.operation.business.barData,
+        barData: state.doughunt.barData,
         isModal: state.lk.business.isModal,
         operationModal: state.lk.business.operationModal,
         filter: false,
@@ -18,7 +18,7 @@ let mapStateToProps = (state) => {
         isHover: state.doughunt.isHover,
         expenses: state.doughunt.expenses,
         arrival: state.doughunt.arrival,
-        compositionActiveIndex: state.LK.business.compositionActiveIndex,
+        compositionActiveIndex: state.doughunt.barData.activeIndex,
         doughuntTextData: state.doughunt.doughuntTextData,
     };
 };

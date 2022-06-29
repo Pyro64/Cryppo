@@ -2,7 +2,6 @@ import React from "react";
 import style from "./CompositionIndex.module.scss";
 import three from "../../../Images/payIcon/3.svg";
 import { useDispatch } from "react-redux";
-import { randomColor } from "../../../Utils/tools";
 
 export default function CompositionIndexItem(props) {
     const dispatch = useDispatch();
