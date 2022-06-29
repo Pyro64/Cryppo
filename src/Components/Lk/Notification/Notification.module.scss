@@ -110,7 +110,7 @@
   border: none;
   border-radius: 12px;
   background: $purpleGradient;
-  width: 100%;
+  width: 50%;
   cursor: pointer;
   @include fluid(padding-top, 10px, 15px);
   @include fluid(padding-bottom, 10px, 15px);
@@ -140,5 +140,8 @@
     width: 100%;
     justify-content: center;
     padding-right: 0;
+  }
+  .btn {
+    width: 100%;
   }
 }
