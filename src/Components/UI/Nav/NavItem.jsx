@@ -1,19 +1,19 @@
 import { NavLink } from "react-router-dom";
 import style from "../Header/Header.module.scss";
-import { userSlice } from "../../../Redux/user-reducer";
-import { useDispatch } from "react-redux";
+import { useContext } from "react";
+import { UIContext } from "../../Context/UIContext";
 
 function NavItem(props) {
-    const dispatch = useDispatch();
+    const [uiContext, setUiContext] = useContext(UIContext);
     if (props.linkToLk) {
         return (
             <NavLink
                 onClick={() =>
-                    dispatch(
-                        userSlice.actions.SetLk({
-                            isLk: true,
-                        })
-                    )
+                    setUiContext({
+                        ...uiContext,
+                        isLk: true,
+                        isBusiness: props.isBusiness,
+                    })
                 }
                 state={{ name: props.href }}
                 to={props.href}
@@ -29,11 +29,11 @@ function NavItem(props) {
         return (
             <NavLink
                 onClick={() =>
-                    dispatch(
-                        userSlice.actions.SetLk({
-                            isLk: false,
-                        })
-                    )
+                    setUiContext({
+                        ...uiContext,
+                        isLk: false,
+                        isBusiness: props.isBusiness,
+                    })
                 }
                 state={{ name: props.href }}
                 to={props.href}
