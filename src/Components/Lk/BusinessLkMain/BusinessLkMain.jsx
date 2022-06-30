@@ -6,6 +6,7 @@ import MyBar from "../../UI/MyBar/MyBar";
 import DoughnutChart from "../DoughnutChart/DoughnutChart";
 import SidebarTabs from "../SidebarTabs/SidebarTabs";
 import { UIContext } from "../../Context/UIContext";
+import { doughuntSlice } from "../../../Redux/DoughuntReducer";
 const BusinessLkMain = (props) => {
     const expenses = props.expenses.filter((e) => {
         if (e.parentCategory == undefined) return e;
@@ -14,6 +15,7 @@ const BusinessLkMain = (props) => {
     useEffect(() => {
         setUiContext({ ...uiContext, isLk: true });
     }, []);
+    const changeActiveIndex = doughuntSlice.actions.ChangeActiveIndex;
     return (
         <div className="main container">
             <div className="flex ">
@@ -44,9 +46,9 @@ const BusinessLkMain = (props) => {
                     <div className="block">
                         <MyBar
                             allwaysColor={true}
-                            revenue={props.revenue}
+                            revenue={props.barData.compositions}
                             height={`300px`}
-                            changeActiveIndex={props.changeActiveIndex}
+                            changeActiveIndex={changeActiveIndex}
                         />
                     </div>
 
