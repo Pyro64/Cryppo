@@ -18,7 +18,8 @@ export default function ExchangeCash(props) {
         e.target.value = e.target.value.replace(/\D+/g, "");
         if (e.target.value !== "") {
             setBuyAmount(
-                parseInt(e.target.value) * Math.round(Math.random() * 10)
+                parseInt(e.target.value) *
+                    Math.round((Math.random() + 0.1) * 10)
             );
             setSellAmount(e.target.value);
         } else {
