@@ -144,6 +144,23 @@
   background: #2d2d2d;
   border-radius: 12px;
 }
+.btn {
+  display: block;
+  color: #fff;
+  font-size: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: linear-gradient(140.58deg, #2e69ff 13.96%, #bc2fff 82.99%);
+  background-size: 150% 100%;
+  box-shadow: 0px 0px 20px rgba(47, 105, 255, 0.38);
+  border-radius: 8px;
+  transition: 0.38s ease-in-out;
+  &:hover {
+    background-size: 100% 100%;
+  }
+}
 .wrapperBusiness {
   display: flex;
   justify-content: center;

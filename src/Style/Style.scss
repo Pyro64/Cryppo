@@ -190,6 +190,13 @@ input[type="number"] {
 .ant-pagination-item-link {
     border: none !important;
 }
+.ant-input-affix-wrapper{
+    padding:0 11px;
+}
+.ant-select-multiple .ant-select-selection-item{
+    max-width:100%;
+    border-radius:15px !important;
+}
 
 .ant-pagination-item {
     border: none !important;
@@ -216,10 +223,12 @@ input[type="number"] {
 }
 .exit {
     opacity: 1;
+   height:100%;
   }
   .exit-active {
     opacity: 0;
-    transition: opacity .38s;
+    height:0px;
+    transition: all .38s;
   }
 
 .ReactModal__Overlay {
@@ -462,5 +471,14 @@ a {
     }
     .block{
         margin-bottom:30px;
+    }
+   .ant-select-selection-overflow{
+    flex-wrap:unset;
+   }
+    .ant-select-selection-overflow-item{
+        display:flex;
+    }
+    .ant-picker-range{
+        width:100%;
     }
 }
