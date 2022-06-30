@@ -16,15 +16,29 @@ export default function ExchangeCash(props) {
     }, [buyCurrency, sellCurrency]);
     function SetSell(e) {
         e.target.value = e.target.value.replace(/\D+/g, "");
-        setBuyAmount(parseInt(e.target.value) * Math.round(Math.random() * 10));
-        setSellAmount(e.target.value);
+        if (e.target.value !== "") {
+            setBuyAmount(
+                parseInt(e.target.value) *
+                    Math.round((Math.random() + 0.1) * 10)
+            );
+            setSellAmount(e.target.value);
+        } else {
+            setSellAmount("");
+            setBuyAmount("");
+        }
     }
     function SetBuy(e) {
         e.target.value = e.target.value.replace(/\D+/g, "");
-        setSellAmount(
-            parseInt(e.target.value) / Math.round(Math.random() * 10)
-        );
-        setBuyAmount(e.target.value);
+        if (e.target.value !== "") {
+            setSellAmount(
+                parseInt(e.target.value) /
+                    Math.round((Math.random() + 0.1) * 10)
+            );
+            setBuyAmount(e.target.value);
+        } else {
+            setSellAmount("");
+            setBuyAmount("");
+        }
     }
     return (
         <div className="block">

@@ -6,6 +6,7 @@ import { GeneralInfoGetTC } from "../../../Redux/user-reducer";
 
 let mapStateToProps = (state) => {
     return {
+        barData: state.doughunt.barData,
         revenue: state.LK.business.revenue,
         tabs: state.lk.business.tabsData,
         cardList: state.user.business.cardList,
