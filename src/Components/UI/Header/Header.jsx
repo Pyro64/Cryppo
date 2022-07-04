@@ -4,6 +4,7 @@ import Nav from "../Nav/Nav";
 import NavItem from "../Nav/NavItem";
 import Scrollbtn from "../ScrollBtn/ScrollBtn";
 import User from "../User/User";
+import { NavLink } from "react-router-dom";
 import style from "./Header.module.scss";
 import { Drawer } from "antd";
 import { useWindowSize } from "react-use";
@@ -121,7 +122,16 @@ const Header = (props) => {
               <span></span>
             </div>
             <Logo logo={props.header.route.logo} />
-
+            <NavLink
+              onClick={() => setUiContext({ ...uiContext, isLk: true })}
+              to={`${props.routeLk}/lk`}
+              className={({ isActive }) =>
+                isActive ? `${style.link} ${style.active}` : `${style.link}`
+              }
+              end
+            >
+              ЛК
+            </NavLink>
             {props.isEntrance !== false ? (
               <User
                 user={props.user}

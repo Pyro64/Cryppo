@@ -35,7 +35,7 @@
 }
 .logo {
   transition: 0.38s ease-in-out;
-  object-fit: contain;
+  object-fit: cover;
   @include fluid(width, 120px, 180px);
   @include fluid(height, 40px, 50px);
 }
@@ -47,8 +47,8 @@
   border-bottom: 1px solid #6d6d6d;
   @include flex;
   transition: 0.5s ease-in-out;
-  @include fluid(padding-bottom, 15px, 30px);
-  @include fluid(margin-bottom, 25px, 50px);
+  @include fluid(padding-bottom, 15px, 35px);
+  @include fluid(margin-bottom, 25px, 40px);
 }
 // .parallax {
 //     content: '';

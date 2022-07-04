@@ -129,36 +129,31 @@ let initialState = {
       {
         id: 1,
         title: "Международный бизнес",
-        text:
-          "CRYPPO Business упрощает работу с иностранными покупателями и делает ваш бизнес более открытым для новых клиентов и партнёров.",
+        text: "CRYPPO Business упрощает работу с иностранными покупателями и делает ваш бизнес более открытым для новых клиентов и партнёров.",
         img: world2,
       },
       {
         id: 2,
         title: "Интернет-магазины",
-        text:
-          "CRYPPO Business подходит для оплаты любых товаров или услуг в криптовалюте и помогает вашему магазину выйти на новую аудиторию покупателей.",
+        text: "CRYPPO Business подходит для оплаты любых товаров или услуг в криптовалюте и помогает вашему магазину выйти на новую аудиторию покупателей.",
         img: shop,
       },
       {
         id: 3,
         title: "Краудфандинг",
-        text:
-          "CRYPPO Business позволяет принимать пожертвования в криптовалюте со всего мира, чтобы ваш проект получил поддержку в других странах и смог собрать больше денег.",
+        text: "CRYPPO Business позволяет принимать пожертвования в криптовалюте со всего мира, чтобы ваш проект получил поддержку в других странах и смог собрать больше денег.",
         img: heart,
       },
       {
         id: 4,
         title: "Малый бизнес",
-        text:
-          "Условия платёжной системы CRYPPO Business подойдут для компаний с небольшими оборотами и локальных проектов, которые ищут возможности для дальнейшего развития.",
+        text: "Условия платёжной системы CRYPPO Business подойдут для компаний с небольшими оборотами и локальных проектов, которые ищут возможности для дальнейшего развития.",
         img: handshake,
       },
       {
         id: 5,
         title: "Стартапы",
-        text:
-          "CRYPPO Business поможет начать быстрый рост в сфере криптовалютной коммерции и получить преимущество перед конкурентами с первых дней работы. ",
+        text: "CRYPPO Business поможет начать быстрый рост в сфере криптовалютной коммерции и получить преимущество перед конкурентами с первых дней работы. ",
         img: briefcase,
       },
     ],
@@ -166,60 +161,51 @@ let initialState = {
       {
         id: 1,
         title: "Защита от волатильности",
-        text:
-          "CRYPPO Business можно настроить так, чтобы все поступающие средства автоматически переводились в стейблкоины. Это криптовалюты, курс которых привязан к обычным валютам, в нашем случае ‒ к доллару. Благодаря этому вы не потеряете средства при перепадах курсов криптовалют.",
+        text: "CRYPPO Business можно настроить так, чтобы все поступающие средства автоматически переводились в стейблкоины. Это криптовалюты, курс которых привязан к обычным валютам, в нашем случае ‒ к доллару. Благодаря этому вы не потеряете средства при перепадах курсов криптовалют.",
       },
       {
         id: 2,
         title: "Настройка комиссии",
-        text:
-          "CRYPPO Business подходит для оплаты любых товаров или услуг в криптовалюте и помогает вашему магазину выйти на новую аудиторию покупателей.",
+        text: "CRYPPO Business подходит для оплаты любых товаров или услуг в криптовалюте и помогает вашему магазину выйти на новую аудиторию покупателей.",
       },
       {
         id: 3,
         title: "Экономия на транзакциях",
-        text:
-          "CRYPPO Business позволяет принимать пожертвования в криптовалюте со всего мира, чтобы ваш проект получил поддержку в других странах и смог собрать больше денег.",
+        text: "CRYPPO Business позволяет принимать пожертвования в криптовалюте со всего мира, чтобы ваш проект получил поддержку в других странах и смог собрать больше денег.",
       },
       {
         id: 4,
         title: "Единый стиль",
-        text:
-          "CRYPPO Business можно настроить так, чтобы все поступающие средства автоматически переводились в стейблкоины. Это криптовалюты, курс которых привязан к обычным валютам, в нашем случае ‒ к доллару. Благодаря этому вы не потеряете средства при перепадах курсов криптовалют.",
+        text: "CRYPPO Business можно настроить так, чтобы все поступающие средства автоматически переводились в стейблкоины. Это криптовалюты, курс которых привязан к обычным валютам, в нашем случае ‒ к доллару. Благодаря этому вы не потеряете средства при перепадах курсов криптовалют.",
       },
       {
         id: 5,
         title: "Отслеживание заказов",
-        text:
-          "CRYPPO Business поможет начать быстрый рост в сфере криптовалютной коммерции и получить преимущество перед конкурентами с первых дней работы.",
+        text: "CRYPPO Business поможет начать быстрый рост в сфере криптовалютной коммерции и получить преимущество перед конкурентами с первых дней работы.",
       },
       {
         id: 6,
         title: "Без переплат",
-        text:
-          "CRYPPO Business позволяет принимать пожертвования в криптовалюте со всего мира, чтобы ваш проект получил поддержку в других странах и смог собрать больше денег.",
+        text: "CRYPPO Business позволяет принимать пожертвования в криптовалюте со всего мира, чтобы ваш проект получил поддержку в других странах и смог собрать больше денег.",
       },
     ],
     securityData: [
       {
         id: 1,
         title: "Шифрование информации",
-        text:
-          "Все платежи проходят через систему блокчейн, где данные хранятся на нескольких устройствах вместо одной базы данных. Это позволяет снизить риск сбоев и сохранить информацию о каждой транзакции.",
+        text: "Все платежи проходят через систему блокчейн, где данные хранятся на нескольких устройствах вместо одной базы данных. Это позволяет снизить риск сбоев и сохранить информацию о каждой транзакции.",
         img: password,
       },
       {
         id: 2,
         title: "Личные данные под защитой",
-        text:
-          "При оплате через CRYPPO Business вашему клиенту не нужно указывать личные данные, которые могут попасть к злоумышленникам.",
+        text: "При оплате через CRYPPO Business вашему клиенту не нужно указывать личные данные, которые могут попасть к злоумышленникам.",
         img: shield2,
       },
       {
         id: 3,
         title: "Шифрование информации",
-        text:
-          "CRYPPO Business использует передовые протоколы безопасности, которые пом огают зашифровать передаваемые данные и защитить их от перехвата третьими лицами.",
+        text: "CRYPPO Business использует передовые протоколы безопасности, которые пом огают зашифровать передаваемые данные и защитить их от перехвата третьими лицами.",
         img: blockchain,
       },
     ],
@@ -231,18 +217,15 @@ let initialState = {
         },
         {
           id: 2,
-          text:
-            "Укажите реквизиты вашего криптовалютного кошелька, куда будут приходить платежи.",
+          text: "Укажите реквизиты вашего криптовалютного кошелька, куда будут приходить платежи.",
         },
         {
           id: 3,
-          text:
-            "Настройте кнопку или форму для оплаты криптовалютой на вашем сайте.",
+          text: "Настройте кнопку или форму для оплаты криптовалютой на вашем сайте.",
         },
         {
           id: 4,
-          text:
-            "Добавьте сгенерированный код на ваш сайт, где вы хотите принимать оплату криптовалютой или выберите подключение через API.",
+          text: "Добавьте сгенерированный код на ваш сайт, где вы хотите принимать оплату криптовалютой или выберите подключение через API.",
         },
       ],
     },
@@ -250,62 +233,52 @@ let initialState = {
       {
         id: 1,
         title: "Зачем нужен CRYPPO Business?",
-        text:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       },
       {
         id: 2,
         title: "Какую комиссию я буду платить?",
-        text:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       },
       {
         id: 3,
         title: "Будут ли добавляться новые криптовалюты?",
-        text:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       },
       {
         id: 4,
         title: "Что такое стейблкоины?",
-        text:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       },
       {
         id: 5,
         title: "Я могу создать свой кошелёк с помощью CRYPPO Business?",
-        text:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       },
       {
         id: 6,
         title: "Безопасно ли работать с CRYPPO Business?",
-        text:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       },
       {
         id: 7,
         title: "Cryptadium принимает оплату через Visa и Mastercard?",
-        text:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       },
       {
         id: 8,
         title: "У вас есть техническая поддержка?",
-        text:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       },
       {
         id: 9,
         title: "Может ли физическое лицо работать с CRYPPO Business?",
-        text:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       },
       {
         id: 10,
         title: "У вас есть реферальная программа?",
-        text:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       },
     ],
   },
@@ -401,8 +374,7 @@ let initialState = {
       {
         id: 1,
         icon: Benefist1,
-        text:
-          "Ваши инвестиции на личном кошельке инвестора внутри блокчейна CRYPPO INVEST",
+        text: "Ваши инвестиции на личном кошельке инвестора внутри блокчейна CRYPPO INVEST",
       },
       {
         id: 2,
@@ -412,8 +384,7 @@ let initialState = {
       {
         id: 3,
         icon: Benefist3,
-        text:
-          "Отсутствие спекуляций и манипуляций курсом индекса: после вывода средств токены инвестора уничтожаются",
+        text: "Отсутствие спекуляций и манипуляций курсом индекса: после вывода средств токены инвестора уничтожаются",
       },
       {
         id: 4,
@@ -424,8 +395,7 @@ let initialState = {
     bannerData: {
       title: "CRYPPO Invest",
       gradient: ".",
-      text:
-        "Автоматически ребалансируемый индекс из 8 самых высококапитализированных цифровых активов на основе машинного обучения (искусственного интеллекта)",
+      text: "Автоматически ребалансируемый индекс из 8 самых высококапитализированных цифровых активов на основе машинного обучения (искусственного интеллекта)",
       img: bannerInvest,
     },
   },
@@ -434,9 +404,9 @@ export const landingSlice = createSlice({
   name: "landing",
   initialState,
   reducers: {
-    AddStep(state, action){
-      state.invest.step = action.payload
-    }
+    AddStep(state, action) {
+      state.invest.step = action.payload;
+    },
   },
 });
 

@@ -4,11 +4,12 @@
   @include container;
   max-width: 1000px;
   position: relative;
-  @include fluid(margin-bottom, 70px, 170px);
+  @include fluid(margin-bottom, 50px, 200px);
 }
 .flex {
   display: flex;
   flex-wrap: wrap;
+  @include fluid(margin-top, 25px, 65px);
 }
 .block {
   margin-right: 5%;

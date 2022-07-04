@@ -4,7 +4,7 @@
   cursor: pointer;
   position: relative;
   transition: 0.38s linear;
-  @include fluid(margin-right, 30px, 75px);
+  @include fluid(margin-right, 30px, 90px);
   @include fluid(font-size, 14px, 16px);
   // &:hover {
   //     color: $green;

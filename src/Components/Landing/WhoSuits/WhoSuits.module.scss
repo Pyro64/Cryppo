@@ -3,7 +3,7 @@
 .container {
   @include container;
   max-width: 1400px;
-  @include fluid(margin-bottom, 70px, 170px);
+  @include fluid(margin-bottom, 70px, 190px);
 }
 .flex {
   display: flex;

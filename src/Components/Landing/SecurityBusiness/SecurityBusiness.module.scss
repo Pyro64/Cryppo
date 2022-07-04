@@ -2,16 +2,16 @@
 
 .container {
   @include container;
-  @include fluid(padding-bottom, 70px, 170px);
+  @include fluid(padding-bottom, 50px, 150px);
 }
 .flex {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 .wrapper {
-  width: 50%;
+  width: 46%;
   position: relative;
+  @include fluid(margin-top, 20px, 35px);
 }
 .block {
   background: rgba(188, 47, 255, 0.5);
