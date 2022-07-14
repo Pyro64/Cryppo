@@ -396,7 +396,6 @@ a {
 }
 .dotE {
     display: flex;
-    @include fluid(margin-top, 25px, 50px);
     .swiper-pagination-bullet {
         width: 6px;
         height: 6px;
