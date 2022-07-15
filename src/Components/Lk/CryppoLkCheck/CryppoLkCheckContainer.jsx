@@ -13,13 +13,11 @@ let mapStateToProps = (state) => {
     doughuntTextData: state.doughunt.doughuntTextData,
     defaultSearch: state.doughunt.defaultSearch,
     statistic: state.operation.cryppo.statisticData,
-
     invest: state.lk.cryppo.investData,
     newCard: state.user.cryppo.cardData,
     news: state.lk.cryppo.newsData,
     expenses: state.doughunt.expenses,
     arrival: state.doughunt.arrival,
-
     filter: false,
   };
 };

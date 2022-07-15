@@ -13,44 +13,49 @@ export default function CryppoLk(props) {
     return <Navigate to={"/"} />;
   }
   return (
-    <Routes>
-      <Route path="/" element={<CryppoLkMainContainer />} />
-      <Route path="translations/*" element={<CryppoLkTranslationContainer />} />
-      <Route path="check" element={<CryppoLkCheckContainer />} />
-      <Route path="pageWork" element={<PageWork />}></Route>
-      <Route path="invest/*" element={<CryppoLkInvestContainer />} />
-      <Route path="settings/*" element={<CryppoLkSettings />} />
-      <Route path="history" element={<PageWork />} />
-      <Route
-        path="event/*"
-        element={
-          <EventContainer
-            expenses={props.expenses}
-            arrival={props.arrival}
-            filter={false}
-          />
-        }
-      />
-      <Route
-        path="event/:category"
-        element={
-          <EventContainer
-            filter={true}
-            expenses={props.expenses}
-            arrival={props.arrival}
-          />
-        }
-      />
-      <Route
-        path="event/:category/:subcategory"
-        element={
-          <EventContainer
-            filter={true}
-            expenses={props.expenses}
-            arrival={props.arrival}
-          />
-        }
-      />
-    </Routes>
+    <div className="main container">
+      <Routes>
+        <Route path="/" element={<CryppoLkMainContainer />} />
+        <Route
+          path="translations/*"
+          element={<CryppoLkTranslationContainer />}
+        />
+        <Route path="check" element={<CryppoLkCheckContainer />} />
+        <Route path="pageWork" element={<PageWork />}></Route>
+        <Route path="invest/*" element={<CryppoLkInvestContainer />} />
+        <Route path="settings/*" element={<CryppoLkSettings />} />
+        <Route path="history" element={<PageWork />} />
+        <Route
+          path="event/*"
+          element={
+            <EventContainer
+              expenses={props.expenses}
+              arrival={props.arrival}
+              filter={false}
+            />
+          }
+        />
+        <Route
+          path="event/:category"
+          element={
+            <EventContainer
+              filter={true}
+              expenses={props.expenses}
+              arrival={props.arrival}
+            />
+          }
+        />
+        <Route
+          path="event/:category/:subcategory"
+          element={
+            <EventContainer
+              filter={true}
+              expenses={props.expenses}
+              arrival={props.arrival}
+            />
+          }
+        />
+      </Routes>
+    </div>
   );
 }

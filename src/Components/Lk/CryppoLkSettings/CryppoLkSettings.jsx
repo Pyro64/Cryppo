@@ -4,7 +4,7 @@ import style from "./CryppoLkSetting.module.scss";
 
 const Cryppolksettings = () => {
   return (
-    <div className="main container">
+    <>
       <div className={style.block}>
         <div className={style.item}>
           <div className={style.title}>Основные настройки</div>
@@ -33,7 +33,7 @@ const Cryppolksettings = () => {
             Подпишитесь на получение счетов, чтобы оплачивать все в два клика, а
             также редактируйте ваши подписки.
           </div>
-          <Btn text="" >Добавить подписку</Btn>
+          <Btn text="">Добавить подписку</Btn>
         </div>
         <div className={style.item}>
           <div className={style.title}>Обращения</div>
@@ -43,7 +43,7 @@ const Cryppolksettings = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

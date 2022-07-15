@@ -7,44 +7,44 @@ import { useParams } from "react-router";
 import { useWindowSize } from "react-use";
 
 const Event = (props) => {
-    const { width } = useWindowSize();
-    const { category, subcategory } = useParams();
-    console.log(category, subcategory);
-    const defaultSearch = [];
-    if (category) defaultSearch.push(category);
-    if (subcategory) defaultSearch.push(subcategory);
-    console.log(defaultSearch);
-    return (
-        <div className="main container">
-            <SearchBar
-                updateChart={props.updateChart}
-                expenses={props.expenses}
-                arrival={props.arrival}
-                defaultSearch={defaultSearch}
-            />
-            {!subcategory ? (
-                <StatisticCash
-                    updateChart={props.updateChart}
-                    filter={props.filter}
-                    isHover={props.isHover}
-                    expenses={props.expenses}
-                    arrival={props.arrival}
-                    doughuntTextData={props.doughuntTextData}
-                    big={width < 525 ? false : true}
-                />
-            ) : null}
+  const { width } = useWindowSize();
+  const { category, subcategory } = useParams();
+  console.log(category, subcategory);
+  const defaultSearch = [];
+  if (category) defaultSearch.push(category);
+  if (subcategory) defaultSearch.push(subcategory);
+  console.log(defaultSearch);
+  return (
+    <>
+      <SearchBar
+        updateChart={props.updateChart}
+        expenses={props.expenses}
+        arrival={props.arrival}
+        defaultSearch={defaultSearch}
+      />
+      {!subcategory ? (
+        <StatisticCash
+          updateChart={props.updateChart}
+          filter={props.filter}
+          isHover={props.isHover}
+          expenses={props.expenses}
+          arrival={props.arrival}
+          doughuntTextData={props.doughuntTextData}
+          big={width < 525 ? false : true}
+        />
+      ) : null}
 
-            <div className={style.wrapper}>
-                <Operation
-                    operationList={props.operationList}
-                    setModal={props.setModal}
-                    operationModal={props.operationModal}
-                    isModal={props.isModal}
-                    switchModal={props.switchModal}
-                />
-            </div>
-        </div>
-    );
+      <div className={style.wrapper}>
+        <Operation
+          operationList={props.operationList}
+          setModal={props.setModal}
+          operationModal={props.operationModal}
+          isModal={props.isModal}
+          switchModal={props.switchModal}
+        />
+      </div>
+    </>
+  );
 };
 
 export default Event;

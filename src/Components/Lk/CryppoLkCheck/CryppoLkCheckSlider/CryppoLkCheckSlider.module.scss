@@ -17,15 +17,19 @@
     background: rgba(149, 149, 149, 0.3);
     position: absolute;
     top: 15px;
-    width: 100%;
+    left: 50%;
+    width: 95%;
     z-index: 2;
+    transform: translate(-50%);
   }
   &:nth-child(3) {
     background: rgba(166, 166, 166, 0.1);
     position: absolute;
     top: 30px;
+    left: 50%;
+    transform: translate(-50%);
     z-index: 1;
-    width: 100%;
+    width: 90%;
   }
 }
 .text {
