@@ -81,7 +81,6 @@ export default function Notification(props) {
                 {notification}
                 <button
                     onClick={() => {
-                        console.log(props);
                         props.SendNotificationsPostTC(
                             props.notificationsSettings
                         );

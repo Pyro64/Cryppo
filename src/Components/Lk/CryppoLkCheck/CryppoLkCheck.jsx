@@ -6,8 +6,14 @@ import CryppoLkCheckEvent from "./CryypoLkCheckEvent/CryppoLkCheckEvent";
 export default function CryppoLkCheck(props) {
   return (
     <>
-      <CryppoLkCheckSelect {...props.cardList} />
-      <CryppoLkCheckSlider {...props.cardList[0]} />
+      <CryppoLkCheckSelect
+        cardList={props.cardList}
+        bankCardList={props.bankCardList}
+      />
+      <CryppoLkCheckSlider
+        cardList={props.cardList}
+        bankCardList={props.bankCardList}
+      />
       <CryppoLkCheckAction />
       <CryppoLkCheckEvent
         expenses={props.expenses}

@@ -394,6 +394,67 @@ a {
         }
     }
 }
+.checkDot{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    @include fluid(margin-bottom,25px,30px);
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        border: 1px solid #6d6d6d;
+        border-radius: 50%;
+        margin-right: 15px;
+        &-active {
+            background: #6d6d6d;
+        }
+    }
+}
+.CheckItem {
+    display: flex;
+    align-items: center;
+    @include fluid(margin-bottom, 15px, 20px);
+  }
+  .Dropdown {
+    background: url("../Images/icon/dropdown.svg") no-repeat;
+    @include fluid(width, 8px, 10px);
+    @include fluid(height, 8px, 10px);
+    background-size: contain;
+    @include fluid(margin-left, 10px, 12px);
+    transition: .38s ease-in-out;
+  }
+.ant-dropdown-open{
+    .CheckItem{
+      .Dropdown{
+        transform:rotate(180deg);
+      }
+    }
+}
+
+.checkPrev{
+    @include fluid(width, 15px, 20px);
+    @include fluid(height, 15px, 20px);
+    background: url("../Images/icon/checkPrev.svg") no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: -40px;
+    top: 40%;
+    transform:translate(-50%);
+    z-index: 3;
+    cursor: pointer;
+}
+.checkNext{
+    @include fluid(width, 15px, 20px);
+    @include fluid(height, 15px, 20px);
+    background: url("../Images/icon/checkNext.svg") no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: -60px;
+    top: 40%;
+    transform:translate(-50%);
+    z-index: 3;
+    cursor: pointer;
+}
 .dotE {
     display: flex;
     .swiper-pagination-bullet {

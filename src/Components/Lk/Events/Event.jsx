@@ -9,11 +9,9 @@ import { useWindowSize } from "react-use";
 const Event = (props) => {
   const { width } = useWindowSize();
   const { category, subcategory } = useParams();
-  console.log(category, subcategory);
   const defaultSearch = [];
   if (category) defaultSearch.push(category);
   if (subcategory) defaultSearch.push(subcategory);
-  console.log(defaultSearch);
   return (
     <>
       <SearchBar

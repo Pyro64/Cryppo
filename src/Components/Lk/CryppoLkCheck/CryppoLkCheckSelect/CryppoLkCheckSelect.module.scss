@@ -1,5 +1,11 @@
 @import "../../../../Style/Mixins.scss";
-
+.ant-dropdown-open {
+  .item {
+    .dropdown {
+      transform: rotate(180deg);
+    }
+  }
+}
 .item {
   display: flex;
   align-items: center;
@@ -17,4 +23,14 @@
   font-weight: 600;
   line-height: 79%;
   letter-spacing: 0.02em;
+}
+.body {
+  width: 370px;
+}
+.dropdown {
+  background: url("../../../../Images/icon/dropdown.svg") no-repeat;
+  @include fluid(width, 8px, 10px);
+  @include fluid(height, 8px, 10px);
+  background-size: contain;
+  @include fluid(margin-left, 10px, 12px);
 }

@@ -44,10 +44,8 @@ export default function SecurityBusiness(props) {
             {elementItem}
           </Swiper>
           <div className="dotE"></div>
-          <div className={style.navigation}>
             <div className="prevE"></div>
             <div className="nextE"></div>
-          </div>
         </div>
       </div>
     </div>

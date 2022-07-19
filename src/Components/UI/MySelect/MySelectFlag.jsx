@@ -16,7 +16,6 @@ export default function MySelect(props) {
         </Option>
     )
     function handleChange(value) {
-        // console.log(`selected ${value}`);
     }
     return (
         <div className={style.container}>
