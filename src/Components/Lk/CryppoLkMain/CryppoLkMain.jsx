@@ -18,8 +18,9 @@ export default function CryppoLkMain(props) {
               cardList={props.cardList}
               bankCardList={props.bankCardList}
             />
-            <SidebarTabs tabs={props.tabs.addCart} />
+
             <SidebarTabs tabs={props.tabs.invest} />
+            <SidebarTabs tabs={props.tabs.addCart} />
           </div>
         </div>
         <div className="content">

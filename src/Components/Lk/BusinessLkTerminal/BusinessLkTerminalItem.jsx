@@ -13,6 +13,7 @@ export default function BusinessLkTerminalItem(props) {
   return (
     <CSSTransition
       in={inProp}
+      transitionEnterTimeout={500}
       timeout={380}
       onExited={() => setInProp(true)}
       className={

@@ -13,3 +13,9 @@
     @include textGradient;
   }
 }
+@media screen and(max-width:576px) {
+  .title {
+    line-height: 150%;
+    font-style: 28px;
+  }
+}
